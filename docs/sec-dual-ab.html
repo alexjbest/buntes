@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Line Bundles and the Dual Abelian Variety (Angus)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-adventures-buntes.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-endomorphisms.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-adventures-buntes.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-endomorphisms.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab" class="active">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-dual-ab"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Line Bundles and the Dual Abelian Variety (Angus)</span>
+</h2>
+<a href="sec-dual-ab.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><h6 class="heading">Introduction<span></span>
+</h6>
+<article class="paragraphs" id="paragraphs-1"><h5 class="heading"><span class="title">Meta-goal</span></h5>
+<p id="p-163">Understand <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>.</p></article><article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Setup</span></h5>
+<p id="p-164">\(A\) an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(/k\text{.}\)</p></article><article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Last time</span></h5>
+<p id="p-165">For \(L\) a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> on \(A\) we get a map</p>
+<div class="displaymath">
+\begin{align*}
+\phi_L\colon A(K) \amp\to \Pic(A)\\
+a\amp\mapsto t_a^* L\otimes L^{-1}
+\end{align*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+\Pic(A) = \{\text{line bundles on } A\}/\sim\text{.}
+\end{equation*}
+</div>
+<p>This a is a group homomorphism (by the <a knowl="./knowl/thm-square.html" title="Theorem 1.5.15: Theorem of the square (Milne 5.5)">theorem of the square 1.5.15</a>). We define</p>
+<div class="displaymath">
+\begin{equation*}
+K(L)(k) = \ker(\phi_L) = \{a\in A(k) : t_a^* L \simeq L\}\text{.}
+\end{equation*}
+</div></article><article class="paragraphs" id="paragraphs-4"><h5 class="heading"><span class="title">Today</span></h5>
+<p id="p-166">We are going to package these into a big map</p>
+<div class="displaymath">
+\begin{align*}
+\phi\colon \Pic(A)\amp\to \Hom(A(k), \Pic(A))\\
+L \amp\mapsto \phi_L\text{.}
+\end{align*}
+</div>
+<article class="theorem-like" id="proposition-16"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.7.1</span>
+</h6>
+<ol id="p-167" class="decimal">
+<li id="li-27">\(\phi\) is a group homomorphism</li>
+<li id="li-28"><div class="displaymath">
+\begin{equation*}
+\phi_{t_a^* L}  = \phi_L
+\end{equation*}
+</div></li>
+</ol></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-32" id="proof-32"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-32" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-5"><h6 class="heading">1.</h6>
+<div class="displaymath" id="p-168">
+\begin{align*}
+\phi_{L\otimes M}(a) \amp = t_a^*(L\otimes M) \otimes(L\otimes M)^{-1}\\
+\amp = t_a^*L\otimes L^{-1} t_a^*M\otimes M^{-1}\\
+\amp = \phi_L\otimes \phi_M
+\end{align*}
+</div></article><article class="case" id="case-6"><h6 class="heading">2.</h6>
+<div class="displaymath" id="p-169">
+\begin{align*}
+\phi_{t_b^*L}(a) \amp = t_a^*(t_b^*L) \otimes(t_b^*L)^{-1}\\
+\amp = t_{a+b}^*L \otimes(t_b^*L)^{-1}\\
+\amp = t_{a}^*L \otimes t_b^*L \otimes L^{-1} \otimes (t_b^*L)^{-1}\\
+\amp = \phi_L(a)
+\end{align*}
+</div>
+<p>by  the <a knowl="./knowl/thm-square.html" title="Theorem 1.5.15: Theorem of the square (Milne 5.5)">theorem of the square 1.5.15</a></p></article></article></div>
+<article class="definition-like" id="definition-23"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.7.2</span>
+</h6>
+<div class="displaymath" id="p-170">
+\begin{align*}
+\Pic^0(A) \amp = \ker(\phi)\\
+\amp = \{ L \in \Pic(A) : \phi_L = 0\}\\
+\amp = \{ L \in \Pic(A) : t_a^* L\simeq L \ \forall a\in A(k)\}\\
+\amp = \{\text{translation invariant line bundles}\}/\sim
+\end{align*}
+</div></article></article><article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Goals</span></h5>
+<p id="p-171">Study \(\Pic^0(A)\text{,}\) give it an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> structure, solve a moduli problem, demonstrate some duality.</p></article></section><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.1</span> <span class="title">Aside: alternate description of \(\Pic^0(A)\)</span>
+</h3>
+<article class="definition-like" id="def-alg-equivalence"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.7.3</span> <span class="title">Algebraic Equivalence</span>
+</h6>
+<p id="p-172">Two <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> \(L_1,L_2\)  on an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> are <dfn class="terminology">algebraically equivalent</dfn> if there exists a variety \(Y\) with <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L\) on \(A\times Y\) and points \(y_1y_2 \in Y\) s.t. \(L|_{A\times\{y_1\}} \simeq L_1, L|_{A\times\{y_2\}} \simeq L_2\text{.}\)</p></article><article class="remark-like" id="remark-2"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.7.4</span>
+</h6>
+<p id="p-173">This looks like homotopy.</p></article><article class="theorem-like" id="proposition-17"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.7.5</span>
+</h6>
+<div class="displaymath" id="p-174">
+\begin{equation*}
+\Pic^0(A) = \{\text{line bundles which are alg. equiv to } \sheaf O_A\}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-33" id="proof-33"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-33" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-175"><a knowl="./knowl/bib-polishchuck.html" title="Bibliographic Entry 47: Abelian varieties, theta functions and the Fourier transform">[47]</a>.</p></article></div></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">See-Saws</span>
+</h3>
+<article class="theorem-like" id="thm-see-saw"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.7.6</span> <span class="title">See-saw theorem</span>
+</h6>
+<p id="p-176">Let \(X,T\) be varieties      \(X\) <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a>, let \(L\) be a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a>  on \(X\times T\text{,}\) let \(T_1 = \{t\in T : L|_{X\times\{t\}} \text{ is trivial}\}\) then \(T_1\) is closed in \(T\text{.}\) Further let \(p_2\colon X\times T_1 \to T_1\text{,}\) then \(L|_{X\times T_1} \cong p^*_2 M\) for some <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(M\) on \(T_1\text{.}\)</p></article><article class="remark-like" id="remark-3"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.7.7</span>
+</h6>
+<p id="p-177">In fact \(M = p_{2*}L\text{.}\)</p></article><article class="theorem-like" id="corollary-11"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">1.7.8</span> <span class="title">that no one states/only Milne</span>
+</h6>
+<p id="p-178">Let X, T be as above and let \(L, M\) be <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on \(X\times T\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+L|_{X\times \{t\}} \cong M|_{X\times \{t\}} \forall t\in T
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+L|_{\{t\}\times X} \cong M|_{\{t\}\times X} \text{ for some } x\in X
+\end{equation*}
+</div>
+<p>then \(L\cong M\text{.}\)</p></article></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.3</span> <span class="title">Properties of \(\Pic^0 A\)</span>
+</h3>
+<article class="theorem-like" id="lemma-2"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">1.7.9</span>
+</h6>
+<p id="p-179">\(L\in \Pic^0(A)\) and \(m,p_1,p_2\colon A\times A \to A\)</p>
+<ol class="decimal">
+<li id="li-29"><div class="displaymath">
+\begin{equation*}
+m^* L \cong p_1^* L\otimes p_2^* L
+\end{equation*}
+</div></li>
+<li id="li-30">Given \(f,g \colon X \to A\)<div class="displaymath">
+\begin{equation*}
+(f+g)^* L \cong f^* L \otimes g^* L
+\end{equation*}
+</div>
+</li>
+<li id="li-31"><div class="displaymath">
+\begin{equation*}
+[n]^* L \cong L^{\otimes n}
+\end{equation*}
+</div></li>
+<li id="li-32">
+<div class="displaymath">
+\begin{equation*}
+\phi_L(A(k)) \subseteq \Pic^0(A)
+\end{equation*}
+</div>for \(L \in \Pic (A)\text{.}\)</li>
+</ol></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-34" id="proof-34"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-34" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-7"><h6 class="heading">1.</h6>
+<div class="displaymath" id="p-180">
+\begin{equation*}
+(m^*L\otimes (p_1^*l)^{-1} \otimes (p_2^*l)^{-1})|_{A\times\{a\}} = t_a^*L \otimes L^{-1} = \sheaf O_A
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(m^*L\otimes (p_1^*l)^{-1} \otimes (p_2^*l)^{-1})|_{\{a\}\times A} = t_a^*L \otimes L^{-1} = \sheaf O_A
+\end{equation*}
+</div>
+<p>by <a knowl="./knowl/thm-see-saw.html" title="Theorem 1.7.6: See-saw theorem">see-saw 1.7.6</a> whole thing is trivial on \(A\times A\text{.}\)</p></article><article class="case" id="case-8"><h6 class="heading">2.</h6>
+<div class="displaymath" id="p-181">
+\begin{equation*}
+(f+g)^*L\cong (f\times g)^* m^*L \cong (f\times g)^*(p_1^*L \otimes p_2^*L) \cong f^*L \otimes g^*L
+\end{equation*}
+</div></article><article class="case" id="case-9"><h6 class="heading">3.</h6>
+<p id="p-182">Induction of 3.</p></article><article class="case" id="case-10"><h6 class="heading">4.</h6>
+<div class="displaymath" id="p-183">
+\begin{equation*}
+\phi_{\phi_L(a)} = \phi_{t^*_a L}\otimes L^{-1} = \phi _{t_a^*L}\otimes L^{-1} = \phi_L \otimes \phi_{L^{-1}} = 0
+\end{equation*}
+</div></article></article></div>
+<article class="theorem-like" id="proposition-18"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.7.10</span>
+</h6>
+<p id="p-184">If \(L\) is nontrivial in \(\Pic^0(A)\) then \(H^i(A,L) = 0\) \(\forall i\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-35" id="proof-35"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-35" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-185">If \(H^0(A,L) \ne 0\text{,}\) we would have  a nontrivial section \(s\) of \(L\) then \(\lb -1\rb ^* s\) is   a nontrivial section of \(\lb-1\rb^* L = L^{-1}\text{.}\) But if both \(L\) and \(L^{-1}\) have  a nontrivial section then \(L \cong \sheaf O_A\text{.}\) So since \(L\) is nontrivial \(H^0(A,L) = 0\text{.}\) Now assume \(H^i(A,L) = 0\) for all \(i\lt j\text{.}\) Consider</p>
+<div class="displaymath">
+\begin{gather*}
+A\xrightarrow{\id \times 0} A\times A \xrightarrow m A\\
+a\mapsto (a,0)\mapsto a
+\end{gather*}
+</div>
+<p>this gives</p>
+<div class="displaymath">
+\begin{equation*}
+H^j(A, L) \to H^j(A\times A, m^*L) \to H^j(A,L)
+\end{equation*}
+</div>
+<p>which composes to the identity.</p>
+<div class="displaymath">
+\begin{equation*}
+H^j(A\times A, m^*L) =  H^j(A\times A, p_1^*L \otimes p_2^*L) = \bigoplus_{i=0}^j H^i(A,L) \otimes H^{j-i}(A,L)
+\end{equation*}
+</div>
+<p>by Künneth. The RHS is 0 by the inductive hypothesis. So the identity on \(H^j(A,L)\) factors through 0, hence the group is 0.</p></article></div>
+<p id="p-186">We now think of \(\phi_L\) as a map \(\phi_L \colon A(k) \to \Pic^0(A)\) with kernel \(K(L) (k)\text{.}\)</p>
+<article class="theorem-like" id="theorem-14"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.7.11</span>
+</h6>
+<p id="p-187">If \(K(L)(k)\) is finite then \(\phi_L\) is surjective.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-36" id="proof-36"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-36" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-188">Idea is to study</p>
+<div class="displaymath">
+\begin{equation*}
+\Lambda (L) =  m^* L \otimes (p_1^* L)^{-1} \otimes (p_2^* L)^{-1}\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-189">Given an ample <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L\) on \(A\) we now have an isomophism of groups</p>
+<div class="displaymath">
+\begin{equation*}
+A(k)/K(L)(k) \cong \Pic^0(A)
+\end{equation*}
+</div>
+<p>the LHS allows us to put an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> structure on \(\Pic^0(A)\text{.}\)</p></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.4</span> <span class="title">The Dual Abelian Variety</span>
+</h3>
+<article class="theorem-like" id="theorem-15"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.7.12</span>
+</h6>
+<p id="p-190">Let \(A\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> and \(L\) an ample <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> on \(A\text{,}\) then the quotient scheme \(A/K(L)\) exists and is an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> of the same dimension as \(A\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-37" id="proof-37"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-37" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-191">(Sketch) (characteristic 0) Cover \(A\) by affine opens \(U_i = \Spec R_i\) such that for all \(a \in A\) the orbit \(K(L)a \subseteq U_i\) for some \(i\text{.}\) We can do this because <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> are projective. Then we say \(U_i / K(L) = \Spec(R^{K(L)}_i)\) then glue. (details in Mumford, II sec, 6  appendix). Since we are in characteristic 0, the quotient scheme is in fact a variety.</p></article></div>
+<article class="definition-like" id="def-dual-abvar"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.7.13</span> <span class="title">Dual abelian varieties</span>
+</h6>
+<p id="p-192">The <dfn class="terminology">dual <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a></dfn> is</p>
+<div class="displaymath">
+\begin{equation*}
+\hat A = A/K(L)\text{.}
+\end{equation*}
+</div></article><article class="remark-like" id="remark-4"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.7.14</span>
+</h6>
+<ul id="p-193" class="disc">
+<li id="li-33"><div class="displaymath">
+\begin{equation*}
+\hat A(K) = \Pic^0(A)
+\end{equation*}
+</div></li>
+<li id="li-34">We have an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a><div class="displaymath">
+\begin{equation*}
+\phi_L\colon A \to \hat A\text{.}
+\end{equation*}
+</div>
+</li>
+</ul></article><article class="theorem-like" id="thm-poincare-bundle"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.7.15</span>
+</h6>
+<p id="p-194">There is a unique <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(\sheaf P\) on \(A\times \hat A\) called the <dfn class="terminology">Poincaré bundle</dfn> such that</p>
+<ol class="decimal">
+<li id="li-35"><div class="displaymath">
+\begin{equation*}
+\sheaf P|_{A\times \{x\}} \in \Pic^0(A) \text{ for all }x\in \hat A
+\end{equation*}
+</div></li>
+<li id="li-36"><div class="displaymath">
+\begin{equation*}
+\sheaf P|_{0\times \hat A} = 0
+\end{equation*}
+</div></li>
+<li id="li-37">If \(Z\) is a  scheme with a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(R\) on \(A\times Z\) satisfying 1., 2., there exists a unique<div class="displaymath">
+\begin{equation*}
+f\colon Z\to \hat A
+\end{equation*}
+</div>s.t.<div class="displaymath">
+\begin{equation*}
+(\id\times f)^* \sheaf P = R\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<p>That is \((\hat A, \sheaf P)\)  represents the functor</p>
+<div class="displaymath">
+\begin{equation*}
+Z \mapsto \left\{ L\in \Pic (A\times Z) : \substack{ L|_{A\times \{z\}} \in \Pic^0(A) \forall z\in Z \\L|_{ 0 \times Z } = 0}\right\}/\sim\text{.}
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.5</span> <span class="title">Dual morphisms</span>
+</h3>
+<p id="p-195">Let \(f\colon A\to B\) be a homomorphism of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Let \(\sheaf P_A,\sheaf P_B\) be the <a knowl="./knowl/thm-poincare-bundle.html" title="Theorem 1.7.15">Poincaré bundles</a> on  \(A\) and \(B\text{.}\) Consider \(M=    (F\times \id_{\hat B})^* \sheaf P_B\) on \(A\times \hat B\text{,}\) then</p>
+<ol class="decimal">
+<li id="li-38"><div class="displaymath">
+\begin{equation*}
+M|_{A\times \{x\}} \in \Pic^0(A)
+\end{equation*}
+</div></li>
+<li id="li-39"><div class="displaymath">
+\begin{equation*}
+M|_{\{0\} \times \hat B} = 0
+\end{equation*}
+</div></li>
+</ol>
+<p>thus by the universal property we get a unique morphism</p>
+<div class="displaymath">
+\begin{equation*}
+\hat f\colon \hat B \to \hat A
+\end{equation*}
+</div>
+<p>satisfying</p>
+<div class="displaymath">
+\begin{equation*}
+(\id_A\times \hat f)^* \sheaf P_A = (f\times \id_{\hat B})^*\sheaf P_B\text{.}
+\end{equation*}
+</div>
+<article class="definition-like" id="def-dual-morp-abvar"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.7.16</span> <span class="title">Dual morphisms</span>
+</h6>
+<p id="p-196">\(\hat f\) as above is called the <dfn class="terminology">dual morphism</dfn>.</p></article><article class="remark-like" id="remark-5"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.7.17</span>
+</h6>
+<ul id="p-197" class="disc">
+<li id="li-40">
+<div class="displaymath">
+\begin{equation*}
+\hat f\colon \hat B = \Pic^0(B) \to \hat A(k) = \Pic^0(A)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+L\mapsto f^*L
+\end{equation*}
+</div>
+</li>
+<li id="li-41"><div class="displaymath">
+\begin{equation*}
+\hat{\lb n_A\rb} = [n_{\hat A}]
+\end{equation*}
+</div></li>
+</ul></article><p id="p-198">Consider the <a knowl="./knowl/thm-poincare-bundle.html" title="Theorem 1.7.15">Poincaré bundle</a> \(\sheaf P_{\hat A}\) on \(\hat A \times \hat{\hat{A}}\text{,}\) now think of \(\sheaf P_A\) as living on \(\hat A \times A\text{.}\) By the universal property of \(\sheaf P_{\hat A}\) get a unique morphism</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{can}_A\colon A\to\hat{\hat A}\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-17"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.7.18</span>
+</h6>
+<p id="p-199">\(\operatorname{can}_A\) is an isomorphism.</p></article><article class="theorem-like" id="lemma-3"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">1.7.19</span>
+</h6>
+<div class="displaymath" id="p-200">
+\begin{equation*}
+\phi_{f^*L} = \hat f\circ \phi_L\circ f\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="proposition-19"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.7.20</span>
+</h6>
+<p id="p-201">If \(f\colon A \to B\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>, then \(\hat f\colon \hat B \to \hat A\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>. Further if \(N  = \ker f\text{,}\) then \(\hat N = \ker \hat f\) is the Cartier  dual of \(N\text{.}\)</p></article><article class="definition-like" id="def-princ-pol"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.7.21</span> <span class="title">Symmetric morphisms, (principal) polarizations</span>
+</h6>
+<p id="p-202">A morphism \(f\colon A \to \hat A\) is <dfn class="terminology">symmetric</dfn> if \(f = \hat f\circ \operatorname{can}_A\)</p>
+<p id="p-203">A <dfn class="terminology">polarization</dfn> is a <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(f\colon A \to \hat A\) s.t. \(f=  \phi_L\) for some ample <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L\) on \(A\text{.}\)</p>
+<p id="p-204">A <dfn class="terminology">principal <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a></dfn> is a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of degree 1, i.e. an isomorphism.</p></article><article class="remark-like" id="remark-6"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.7.22</span>
+</h6>
+<p id="p-205">Elliptic curves always admit <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarization</a>.</p>
+<p id="p-206">If one wishes to mimic the theory of <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, one should study principally polarized <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>.</p></article></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

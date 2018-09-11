@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Riemann Surfaces and Discrete Groups (Rod)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-riemann-hurwitz.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-rs-discrete-groups-ii.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-riemann-hurwitz.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-rs-discrete-groups-ii.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups" class="active">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-rs-discrete-groups"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Riemann Surfaces and Discrete Groups (Rod)</span>
+</h2>
+<a href="sec-rs-discrete-groups.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><p id="p-539">Welcome to BUGLES (Boston university geometry learning expository seminar), the reason it is called bugles is because bugles are hyperbolic, and today we will see a lot of hyperbolic objects.</p>
+<p id="p-540">Plan</p>
+<ol class="decimal">
+<li id="li-106">Uniformization</li>
+<li id="li-107">Fuchsian groups</li>
+<li id="li-108">Automorphisms of <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>
+</li>
+</ol>
+<article class="theorem-like" id="proposition-42"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.4.1</span>
+</h6>
+<div class="displaymath" id="p-541">
+\begin{equation*}
+\Aut(\hat \CC) =  \{ z\mapsto \frac{az+b }{cz+d}\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Aut(\CC) = \left\{z \mapsto za+b\right\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Aut(\HH) = \{ z\mapsto \frac{az+b }{cz+d},a,b,c,d\in \RR \} = \PSL_2(\RR)
+\end{equation*}
+</div></article><article class="theorem-like" id="theorem-45"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.4.2</span>
+</h6>
+<p id="p-542">\(\Sigma\) has a universal cover \(\widetilde \Sigma\) with \(\pi_1 ( \Sigma) = 1\text{.}\) \(\widetilde \Sigma \to \Sigma\) holomorphic. \(\Sigma  = \widetilde \Sigma /G\) for \(G = \pi_1(\Sigma)\text{.}\) \(G\) acts freely and properly discontinuously.</p></article></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Uniformization</span>
+</h3>
+<article class="theorem-like" id="theorem-46"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.4.3</span>
+</h6>
+<p id="p-543">The only simply connected <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> are \(\hat \CC\text{,}\) \(\CC\text{,}\) \(\HH\text{.}\)</p></article><article class="theorem-like" id="theorem-47"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.4.4</span>
+</h6>
+<p id="p-544">\(\Sigma\) is a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> then</p>
+<div class="displaymath">
+\begin{align*}
+g= 0 : \Sigma \amp\cong \hat \CC\\
+g= 1 : \Sigma \amp\cong \CC/ \Lambda\\
+g\ge2: \Sigma \amp\cong \HH/ K\text{.}
+\end{align*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-86" id="proof-86"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-86" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-545">\(g = 0\) Uniformization.</p>
+<p id="p-546">\(g \ge 1\) \(\hat \CC\) can't be a cover by Riemann-Hurwitz. \(g = 1\) \(\pi_1 (\Sigma) = \ZZ \oplus \ZZ\) abelian.</p>
+<p id="p-547">Claim: no subgroup of \(\Aut (\HH) \) is isomorphic to \(\ZZ \oplus \ZZ\) acting freely and properly discontinuously. So \(\widetilde\Sigma = \hat \CC\) \(z\mapsto az+b\) free id \(a=1\) so \(z\mapsto z+\lambda_1\) \(z\mapsto z+\lambda_2\text{.}\)</p>
+<p id="p-548">\(g= 2\) \(\pi_1(\Sigma)\) is not abelian but \(z\mapsto z + \lambda_1\) is abelian!</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma = \HH/K,\, K \subseteq \PSL_2(\RR)\text{.}
+\end{equation*}
+</div></article></div>
+<article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Goal</span></h5>
+<p id="p-549">Understand \(\Sigma \) through \(\widetilde \Sigma\) and \(G\text{.}\)</p></article><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Fuchsian groups</span></h5>
+<p id="p-550">\(g \ge 2\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Aut (\HH) = \PSL_2(\RR) = \operatorname{Isom}^+ ( \HH, \frac{|\diff z|^2}{\Im Z})
+\end{equation*}
+</div>
+<p>hyperbolic \(\HH, \mathbf D\) and \(\PSL_2(\RR)\) acts transitively on geodesics.</p>
+<article class="definition-like" id="def-fuchsian-group"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.4.5</span> <span class="title">Fuchsian groups</span>
+</h6>
+<p id="p-551">A <dfn class="terminology">Fuchsian group</dfn> is a discrete subgroup of \(\PSL_2(\RR)\text{.}\)</p></article><article class="remark-like" id="remark-10"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.4.6</span>
+</h6>
+<p id="p-552">(proof in book) Even if \(\Gamma\) doesn't act freely the quotient</p>
+<div class="displaymath">
+\begin{equation*}
+\HH \to \HH/\Gamma
+\end{equation*}
+</div>
+<p>is still a covering map and \(\HH/\Gamma\) is a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>.</p></article></article><article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">Reflections on \(\HH\)</span></h5>
+<p id="p-553">Say \(\mu\) is a geodesic in \(\HH\text{,}\) i.e. a horocycle.There is \(M \in \PSL_2(\RR)\) with \(M\mu\) the imaginary axis. Then \(R = -\bar z\) is the reflection  over the imaginary axis. Now \(R_\mu = M\inv\circ R \circ M\) is a reflection over \(\mu\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+R_\mu = \frac{a\bar z  + b}{ c\bar z + d}\not\in \PSL_2(\RR)
+\end{equation*}
+</div>
+<p>this is a a problem for us.</p></article><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Triangle groups</span></h5>
+<p id="p-554">Given \(n, m, l\in \ZZ \cup \{\infty\}\) then there is a hyperbolic triangle with angles \(\pi/n,\pi/m, \pi/l\) if</p>
+<div class="displaymath">
+\begin{equation*}
+\frac 1n + \frac 1m + \frac 1l \lt 1\text{.}
+\end{equation*}
+</div>
+<p>With area \(\pi(1 -  \frac 1n - \frac 1m - \frac 1l)\text{.}\)</p>
+<p id="p-555">In the disk model we can start with a wedge of the disk and by adding a choice third geodesic with endpoints on the edge we can adjust the other angles to be what we like.So we can construct hyperbolic triangles with whatever angles we like. Then let \(R_1\) be the reflection over 1 edge, \(R_2\) , \(R_3\) similarly. By reflecting our original triangle \(T\) with these reflections we can tessellate the disk, colouring alternately the triangles obtained using an odd or even number of reflections.</p>
+<p id="p-556">The only remaining problem is that \(R_i\)'s are not in \(\PSL_2(\RR)\text{.}\) The solution is to define \(x_1 = R_3 \circ R_1\text{,}\) \(x_2 = R_1 \circ R_2\text{,}\) \(x_3 = R_2 \circ R_3\) which are all in \(\PSL_2(\RR)\) now. Now we need to take the union of two adjacent triangles before as a fundamental domain, some quadrilateral that still tessellates. So we have formed a <a knowl="./knowl/def-fuchsian-group.html" title="Definition 2.4.5: Fuchsian groups">Fuchsian group</a> from our triangles.</p>
+<p id="p-557">A presentation for this group is</p>
+<div class="displaymath">
+\begin{equation*}
+\langle x_1, x_2, x_3 | x_1 ^n = x_2 ^ m = x_3 ^l = x_1x_2x_3 = 1\rangle
+\end{equation*}
+</div>
+<p>note \(n,m,l\) can still be \(\infty\text{.}\)</p>
+<article class="definition-like" id="def-triangle-groups"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.4.7</span> <span class="title">Triangle groups</span>
+</h6>
+<p id="p-558">Let \(\Gamma_{n,m,l}\) be the <dfn class="terminology">triangle group</dfn> with signature \((1/n, 1/m, 1/l)\text{.}\)</p></article><article class="remark-like" id="remark-11"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.4.8</span>
+</h6>
+<div class="displaymath" id="p-559">
+\begin{equation*}
+\frac 1n + \frac 1m + \frac 1l = 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac 1n + \frac 1m + \frac 1l \gt 1
+\end{equation*}
+</div>
+<p>still work on \(\CC\) and \(\hat \CC\) respectively.</p></article><article class="example-like" id="example-26"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.4.9</span> <span class="title">\(\PSL_2(\ZZ)\)</span>
+</h6>
+<p id="p-560">Consider \(\Gamma_{2,3,\infty}\) angles \(\pi/2, \pi/3, 0\text{.}\) We can draw such a triangle in the upper half plane with vertices \(i, e^{\pi i/3}, \infty\text{.}\) So a fundamental domain will be the region obtained by reflecting through the imaginary axis, given by \(-\frac 12 \le \Re z \le \frac 12\text{,}\) \(|z| \ge 1\text{.}\) We have \(R_1 = \frac{1}{\bar z}, R_2 = -\bar z +1,R_3 = -\bar z\) so \(x_1 = \frac{-1}{z}, x_2 = \frac{1}{-z+1}, x_3 = z+1\text{.}\) Then \(\Gamma_{2,3,\infty} \cong \PSL_2(\ZZ)\text{.}\) Sometimes denoted \(\Gamma(1)\text{.}\)</p></article><article class="remark-like" id="observation-1"><h6 class="heading">
+<span class="type">Observation</span> <span class="codenumber">2.4.10</span>
+</h6>
+<p id="p-561">If \(\Gamma_1 \lt \Gamma_2\) and \(T\) is a fundamental domain of \(\Gamma_2\) then if \(\gamma_1, \gamma_2, \ldots, \gamma_n \in \Gamma_2\) are representatives of \(\Gamma_1\backslash \Gamma_2\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\bigcup \gamma_i (T)
+\end{equation*}
+</div>
+<p>is a fundamental domain for \(\Gamma_1\text{.}\)</p></article><article class="example-like" id="example-27"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.4.11</span> <span class="title">\(\Gamma(1)\)</span>
+</h6>
+<div class="displaymath" id="p-562">
+\begin{equation*}
+\Gamma(2) = \{\begin{pmatrix} a\amp b \\ c\amp d\end{pmatrix} = \id \pmod 2 \}
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+[\Gamma(1) : \Gamma(2)] = 6
+\end{equation*}
+</div>
+<p>representatives of \(\Gamma(2) \backslash \Gamma(1)\) are</p>
+<div class="displaymath">
+\begin{equation*}
+x_1 = \id,\,x_2 = \frac{-1}{z-1}, x_3 = \frac{z-1}{z},\, x_4 = \frac{z-1}{z},\,x_5 = \frac{-z}{x-1},\,x_6 = \frac{-1}{z}\text{.}
+\end{equation*}
+</div>
+<p>Lets see what these do, for example if \(z= e^{i\theta}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Re(x_2(z) = \frac{-1}{e^{i\theta} - 1} = \frac{-e^{i\theta} + 1}{2- 2\cos \theta}) = \frac{1-\cos \theta}{ 2- 2\cos \theta} \frac 12
+\end{equation*}
+</div>
+<p>if we plot this we see we get two copies of a 0,0,0 triangle so this corresponds to \(\Gamma_{\infty,\infty,\infty}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\langle x_1, x_2, x_3 | x_1x_2x_3 = 1\rangle = \langle x_1,x_2\rangle = \pi_1(\PP^1\smallsetminus\{0,1,\infty\})\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="proposition-43"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.4.12</span>
+</h6>
+<p id="p-563">\(S_1 = \HH/ \Gamma_1\text{,}\) \(S_2 = \HH/\Gamma_2\) then</p>
+<div class="displaymath">
+\begin{equation*}
+S_1 \cong S_2 \iff \Gamma_1 = T\circ \Gamma_2 \circ T\inv,\,T\in \PSL_2(\RR)\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-87" id="proof-87"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-87" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-564">\(\Leftarrow\) Define an \(\phi\colon S_1 \to S_2\) via \(\phi(\lb z\rb_1) = \lb T(z)\rb_2\text{.}\)</p>
+<p id="p-565">\(\Rightarrow\) Take a lift</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+\HH\ar[r]^{\tilde\phi}\ar[d] &amp; \HH\ar[d] \\
+\HH/\Gamma_1\ar[r]_\phi &amp; \HH/\Gamma_2
+}
+\end{equation*}
+</div>
+<p>then \(T= \tilde \phi\text{.}\)</p></article></div>
+<article class="theorem-like" id="proposition-44"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.4.13</span>
+</h6>
+<p id="p-566">\(\Gamma\) a <a knowl="./knowl/def-fuchsian-group.html" title="Definition 2.4.5: Fuchsian groups">Fuchsian group</a> acts freely</p>
+<div class="displaymath">
+\begin{equation*}
+\Aut(\HH/\Gamma) = N(\Gamma)/\Gamma\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-88" id="proof-88"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-88" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-567">Previous proposition, set \(\Gamma_1 = \Gamma_2\)</p>
+<div class="displaymath">
+\begin{equation*}
+N(\Gamma) \to \Aut(\HH/\Gamma)
+\end{equation*}
+</div>
+<p>kernel is \(\Gamma\text{.}\)</p></article></div>
+<article class="theorem-like" id="corollary-32"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.4.14</span>
+</h6>
+<p id="p-568">Let \(\Sigma\) be a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> with \(g \ge 2\) then</p>
+<div class="displaymath">
+\begin{equation*}
+|\Aut(\Sigma)| \lt \infty\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-89" id="proof-89"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-89" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-569">
+\begin{equation*}
+\xymatrix{
+\HH \ar[dr]^{\phi_1} \ar[d]_{\phi_2}\\
+S =\HH/\Gamma \ar[r]_f &amp; \HH/N(\Gamma) = S/\Aut(S)
+}
+\end{equation*}
+</div>
+<p>since \(\phi_1,\phi_2\) are holomorphic then so is \(f\text{.}\) So \(\deg f=  | N(\Gamma) /\Gamma|\) and \(\deg f  \lt \infty\text{.}\)</p></article></div>
+<p id="p-570">Say \(\Sigma\text{,}\) \(g\ge 2\text{,}\) \(G\subseteq \Aut(\Sigma)\text{.}\) Let \(\bar g\) be the <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> of \(\Sigma /G\)</p>
+<div class="displaymath">
+\begin{equation*}
+2g - 2 = |G| (2\bar g - 2) + \sum_p (I(p) - 1) = |G|(2\bar g - 2 + \sum_{i=1}^n (1 - \frac{1}{|I(p_i)|}))
+\end{equation*}
+</div>
+<p>where \(I(p)\) is the stabiliser of \(p\) in \(G\) and \(\{p_i\}\) area maximal set of fixed points of \(G\) inequivalent under the action of \(G\text{.}\)</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-14" id="exercise-14"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.4.15</span>
+</h6></a></article><div id="hk-exercise-14" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-571">\(\Sigma,\,g\ge 2\) then \(|\Aut(\Sigma)| \le 84(g-1)\text{.}\) Hint: cases.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-15" id="exercise-15"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.4.16</span>
+</h6></a></article><div id="hk-exercise-15" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-572">Consider</p>
+<div class="displaymath">
+\begin{equation*}
+1 \to \Gamma(n) \to \Gamma(1) \to \PSL_2(\ZZ/n\ZZ) \to 1
+\end{equation*}
+</div>
+<p>compute <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> of \(\HH/\Gamma(n)\text{.}\)</p></article></div></article></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

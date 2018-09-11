@@ -1,0 +1,122 @@
+{
+    // TODO warn if [ used in inline pug tag
+    plugins: [ {
+        // The postParse hook is activated after parsing is done, which means that
+        // it's not possible to distinguish between `#id` and `(id='id')`.
+
+        // You CAN do this using some other (more complex) way to distinguish between
+        // them.
+        postParse: function (ast) {
+            var pugWalk = require('pug-walk');
+            // Change all ids to xml:ids, pug generates get ids from   tagname#id.
+            return pugWalk(ast, function (node) {
+                // These are all the nodes that can contain a set of attributes.
+                // Check the full list using the AST specification (search for
+                // "AttributedNode"):
+                // https://github.com/pugjs/pug-ast-spec/blob/master/parser.md
+                if (node.type === 'Tag' ||
+                    node.type === 'InterpolatedTag' ||
+                    node.type === 'Mixin' && node.call) {
+                        for (var i = 0; i < node.attrs.length; i++) {
+                            if (node.attrs[i].name === 'id') {
+                                node.attrs[i].name = 'xml:id';
+                            }
+                        }
+                    }
+            });
+        },
+
+        postLink: function (ast) {
+            var terms = [];
+            var refs = new Array();
+            var lastref = "";
+            var count = 0;
+            var fast = 0;
+
+            if (fast)
+                return ast;
+
+            var pluralize = require('pluralize');
+            var pugWalk = require('pug-walk');
+
+            String.prototype.trim = function() {
+                return String(this).replace(/^\s+|\s+$/g, '');
+            };
+            RegExp.escape = function(string) {
+                return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+            };
+            var shouldwarn = 0;
+            pugWalk(ast, function (node) {
+                if (node.type === 'Tag' ) {
+                    for (var i = 0; i < node.attrs.length; i++) {
+                        if (node.attrs[i].name === 'xml:id') {
+                            lastref = node.attrs[i].val;
+                            if (node.name === "definition" || node.name === "lemma" ) //TODO other types
+                            {
+                                shouldwarn = 0;
+                            }
+                        }
+                        else if (node.name === "definition" || node.name === "lemma" )
+                        {
+                            shouldwarn = 1;
+                        }
+                    }
+                }
+                if (node.type === 'Tag' && node.name === 'term') { //TODO collapse if not simple node
+                    var term = pluralize.singular(node.block['nodes'][0].val.trim());
+                    terms.push(term);
+                    if (refs[term]) {
+                        console.log("conflict: " + term + ": " + refs[term] + ", " + lastref);
+                    }
+                    refs[term] = lastref.substr(1, lastref.length - 2);
+                    if (shouldwarn) { // TODO fix
+                        console.log("warning: " + term);
+                    }
+                }
+            });
+
+            // sort terms
+            terms = terms.sort(function(a, b) {
+                // ASC  -> a.length - b.length
+                // DESC -> b.length - a.length
+                return b.length - a.length;
+            });
+
+            var regexs = [];
+            for (var i = 0; i < terms.length; i++) {
+                regexs.push(RegExp('(\\s|\-)(' + RegExp.escape(terms[i]) + '|' + RegExp.escape(pluralize(terms[i])) + ')([\\s.,:/)]|$)', 'gi'));
+            }
+
+            var ou = pugWalk(ast, function (node) {
+                // Don't replace text in certain blocks.
+                var bad = ['title' ,  'macros' ,  'xref' ,  'm' ,  'me' ,  "mrow" , "url"]
+                if (node.type === 'Tag') {
+                    for (let type of bad)
+                    {
+                        if (node.name === type) {
+                            return false;
+                        }
+                    }
+                }
+                if (node.type === 'Text') {
+                    for (var i = 0; i < terms.length; i++) {
+                        node.val = node.val.replace(regexs[i],
+                            function replacer(match,p0,p1,p2,offset,string) {
+                                count++;
+                                return match.replace(p1,'<xref ref="' + refs[terms[i]] + '" text="title">' + p1 + '</xref>');
+                            } );
+                    }
+                    //console.log(node.val);
+                }
+            });
+            //console.log(terms);
+            //console.log(refs);
+            console.log(Object.keys(refs).length);
+            console.log(terms.length);
+            console.log(count);
+
+            return ou;
+        }
+    }
+             ]
+}

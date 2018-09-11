@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Introduction (Angus)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-av-basics.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-av-complex.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-av-basics.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-av-complex.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro" class="active">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-av-intro"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Introduction (Angus)</span>
+</h2>
+<a href="sec-av-intro.html" class="permalink">¶</a><section class="subsection" id="subsec-abvar-defs"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Definitions</span>
+</h3>
+<a href="sec-av-intro.html#subsec-abvar-defs" class="permalink">¶</a><article class="definition-like" id="def-buntes-abvar"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.2.1</span> <span class="title">Abelian varieties</span>
+</h6>
+<p id="p-5">An <dfn class="terminology">abelian variety</dfn> is a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> connected <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a>.</p></article><article class="definition-like" id="def-alg-gp"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.2.2</span> <span class="title">Algebraic groups</span>
+</h6>
+<p id="p-6">An <dfn class="terminology">algebraic group</dfn> is an algebraic variety \(G\) along with regular maps \(m\colon G\times G\to G\text{,}\) \(e \colon * \to G\text{,}\)  \(\operatorname{inv}\colon G\to G\) such that the following diagrams commute.</p>
+<p id="p-7">Identity</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+\ast\times G\ar[dr]_{\sim}\ar[r]^{e\times \id} &amp; G\times G\ar[d]_m &amp;G\times \ast\ar[l]^{\id\times e}\ar[dl]^\sim\\
+&amp; G &amp;
+}
+\end{equation*}
+</div>
+<p id="p-8">Inverse</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+G\ar[d]\ar[r]^{\operatorname{inv}, \id} &amp; G\times G\ar[d]_m &amp;G\ar[l]^{\id, \operatorname{inv}}\ar[d]\\
+\ast\ar[r]_e&amp; G &amp;\ast\ar[l]_e
+}
+\end{equation*}
+</div>
+<p id="p-9">Associativity</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+G \times G \times G \ar[d]_{m\times \id}\ar[r]^{\id\times m} &amp; G\times G\ar[d]_m\\
+G\times G\ar[r]_m &amp; G
+}
+\end{equation*}
+</div></article><article class="definition-like" id="def-abelian-complete-var"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.2.3</span> <span class="title">Complete varieties</span>
+</h6>
+<p id="p-10">A variety \(X\) is <dfn class="terminology">complete</dfn> if every projection map</p>
+<div class="displaymath">
+\begin{equation*}
+X\times Y \to Y
+\end{equation*}
+</div>
+<p>is closed.</p></article><article class="example-like" id="example-1"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.2.4</span> <span class="title">Abelian varieties</span>
+</h6>
+<ul id="p-11" class="disc">
+<li id="li-1">Elliptic curves.</li>
+<li id="li-2">Weil restriction \(\Res_{K/\QQ} E\) of an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E\text{.}\)</li>
+<li id="li-3">Jacobian varieties of curves.</li>
+</ul></article><p id="p-12">Plan:</p>
+<ul class="disc">
+<li id="li-4">Some motivation via <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>.</li>
+<li id="li-5">Gathering some material about “completeness”.</li>
+<li id="li-6">Prove that <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> are abelian.</li>
+</ul></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Elliptic curves (\(\characteristic(k) \ne 2,3\))</span>
+</h3>
+<article class="theorem-like" id="thm-equivalent-ec"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.2.5</span>
+</h6>
+<p id="p-13">TFAE for a projective curve \(E\) over \(k\text{.}\)</p>
+<ol class="decimal">
+<li id="item-cubic-eq">\(E\) is given by \(Y^2Z = X^3 + aXZ^2 + bZ^3\text{,}\) \(4a^3 + 27b^2 \ne 0\text{.}\)</li>
+<li id="item-nonsing-pt">\(E\) is nonsingular of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> 1 with a distinguished point \(P_0\text{.}\)</li>
+<li id="item-nonsing-gp">\(E\) is nonsingular with an <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> structure.</li>
+<li id="item-cmplx">(if \(k \subseteq \CC\)) such that \(E(\CC) = \CC/\Lambda\) for some lattice \(\Lambda \subseteq \CC\text{.}\)</li>
+</ol></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-14">Strategy: <a knowl="./knowl/item-cubic-eq.html" title="Item 1">Item 1</a> \(\iff\) <a knowl="./knowl/item-nonsing-pt.html" title="Item 2">Item 2</a> \(\iff\)<a knowl="./knowl/item-nonsing-gp.html" title="Item 3">Item 3</a> and <a knowl="./knowl/item-nonsing-pt.html" title="Item 2">Item 2</a> \(\implies\) <a knowl="./knowl/item-cmplx.html" title="Item 4">Item 4</a> \(\implies\) <a knowl="./knowl/item-cubic-eq.html" title="Item 1">Item 1</a>.</p>
+<p id="p-15"><a knowl="./knowl/item-cubic-eq.html" title="Item 1">Item 1</a> \(\implies\) <a knowl="./knowl/item-nonsing-pt.html" title="Item 2">Item 2</a> is done.</p>
+<p id="p-16"><a knowl="./knowl/item-nonsing-pt.html" title="Item 2">Item 2</a> \(\implies\)<a knowl="./knowl/item-cubic-eq.html" title="Item 1">Item 1</a>: Riemann-Roch states that \(l(D) = l(K-D) +  \deg(D) + 1 -g \) so here \(l(D) = l(K-D) + \deg (D)\) further is \(D\gt 0\) then \(l(K-D) = 0\) in which case \(l(D) = \deg(D)\text{.}\) Consider \(L(nP_0)\) for \(n \gt 0\) Riemann-Roch implies that \(l(nP_0) = n\) then it always contains the constants.</p>
+<div class="displaymath">
+\begin{equation*}
+L(P_0) = k
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+L(2P_0) = k \oplus kx
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+L(3P_0) = k \oplus kx \oplus ky
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\vdots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+L(6P_0) = k \oplus kx \oplus ky \oplus k x^2 \oplus ky^2 \oplus kxy \oplus kx^3/\sim
+\end{equation*}
+</div>
+<p>so we must have a relation which after manipulation is of the desired form. We get an embedding</p>
+<div class="displaymath">
+\begin{equation*}
+E \hookrightarrow \PP^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P\mapsto (x(P):y(P): 1) \,(P\ne P_0)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P_0 \mapsto (0:1 : 0)
+\end{equation*}
+</div>
+<p>and thus \(E\) is of the desired form.</p></article></div>
+<article class="definition-like" id="def-abelian-elliptic-curve"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.2.6</span> <span class="title">Elliptic curves</span>
+</h6>
+<p id="p-17">An <dfn class="terminology">elliptic curve</dfn> over \(k\) is any/all of <a knowl="./knowl/thm-equivalent-ec.html" title="Theorem 1.2.5">that 1.2.5</a>.</p></article><p id="p-18">Which of the above characterisations generalise to abelian varieties?</p>
+<ol class="decimal">
+<li id="li-11">No, in general we don't know that the equations look like.</li>
+<li id="li-12">One could possibly replace “genus” with a condition on the dimension of cohomology groups.</li>
+<li id="li-13">Yes, this is essentially the definition.</li>
+<li id="li-14">Yes, stay tuned!</li>
+</ol></section><section class="subsection" id="subsec-complete-vars"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.3</span> <span class="title">Complete varieties</span>
+</h3>
+<a href="sec-av-intro.html#subsec-complete-vars" class="permalink">¶</a><p id="p-19">Idea: if \(X \times Y\) had product topology (instead of its Zariski topology) then <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> is equivalent to compact.</p>
+<p id="p-20">We'd like to gather a few results about <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> varieties we can use to access properties of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> (like abelianness).</p>
+<article class="theorem-like" id="proposition-1"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.2.7</span>
+</h6>
+<p id="p-21">Let \(V\) be a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> variety. Given any morphism \(\phi\colon V \to W\) \(\phi (V) \) is closed.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-22">Let \(\Gamma_\phi = \{(v, \phi(v))\} \subseteq V\times W\) be the graph of \(\phi\text{.}\) Its a closed subvariety of \(V\times W\text{.}\) Under the projection \(V\times W \to W\text{,}\) the image of \(\Gamma_\phi\) is \(\phi(V)\) and thus closed.</p></article></div>
+<article class="theorem-like" id="corollary-1"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">1.2.8</span>
+</h6>
+<p id="p-23">If \(V\) is <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> and connected, any regular function on \(V\) is constant.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-3" id="proof-3"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-3" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-24">A regular function is a morphism \(f\colon V \to \aff^1\text{.}\) By the above \(f(V) \subseteq \aff^1\) is closed, and this is a finite set of points. But connected implies we just have one point.</p></article></div>
+<article class="theorem-like" id="corollary-2"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">1.2.9</span>
+</h6>
+<p id="p-25">Let \(V \) be a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> connected variety. Let \(W\) be an affine variety. Given \(\phi\colon V\to W\text{,}\) then \(\phi (V)\) is a point.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-4" id="proof-4"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-4" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-26">We have an embedding \(W \hookrightarrow \aff^n\text{.}\) On \(\aff^n\) we have the coordinate functions \(\aff^n \xrightarrow{x_i} \aff^1\text{.}\) The composition</p>
+<div class="displaymath">
+\begin{equation*}
+V \xrightarrow\phi W \hookrightarrow\aff^n \to \aff^1
+\end{equation*}
+</div>
+<p>be the above is constant. Thus the coordinates of \(\phi(V)\) are constant, so \(\phi(V) = \{\text{pt}\}\text{.}\)</p></article></div>
+<p id="p-27">A final result of interest that I won't prove today:</p>
+<article class="theorem-like" id="theorem-2"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.2.10</span>
+</h6>
+<p id="p-28">Projective varieties are <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a>.</p></article><p id="p-29">The main goal of this section is to prove the following theorem:</p>
+<article class="theorem-like" id="thm-rigidity"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.2.11</span> <span class="title">Rigidity</span>
+</h6>
+<p id="p-30">Let \(V,W\) be varieties such that \(V\) is <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> and  \(V\times W\) is geometrically irreducible. Let \(\alpha\colon V\times W \to U\) be a morphism such that \(\exists u_0\in U(k), v_0\in V(k), w_0\in W(k)\) with \(\alpha(V\times\{w_0\}) = \alpha (\{v_0\}\times W ) = \{u_0\}\text{.}\) Then \(\alpha (V\times W) = \{u_0\}\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-5" id="proof-5"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-5" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-31">Since \(V\times W\) is geometrically irreducible, \(V\) must be connected. Denote the projection \(q\colon V\times W \to W\text{.}\) Let \(U_0 \ni u_0\) be an open neighborhood. We consider the set</p>
+<div class="displaymath">
+\begin{equation*}
+Z = \{w\in W : \alpha((v,w)) \not\in U_0 \text{ for some } v\in V\} = q(\alpha^{-1}(U\smallsetminus U_0))
+\end{equation*}
+</div>
+<p>Since \(q\) is closed, \(Z\subseteq W\) is closed. Since \(w_0\in W\smallsetminus Z\text{,}\) \(W\smallsetminus Z\) is a nonempty open subset of \(W\text{.}\)</p>
+<p id="p-32">Consider \(w \in W\smallsetminus Z\text{.}\) Since \(V\times\{w\} \cong V\) it is <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> and connected. Thus</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha(V\times \{w\}) = \{\text{pt}\} = \alpha((v_0,w)) = \{u_0\}
+\end{equation*}
+</div>
+<p>which implies that</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha(V\times (W\smallsetminus Z)) = \{u_0\}
+\end{equation*}
+</div>
+<p>Since \(V\times (W\smallsetminus Z) \subseteq V\times W\) is open and \(V\times W\) is irreducible, it is dense. So \(\alpha(V\times W) = \{u_0\}\text{.}\)</p></article></div>
+<article class="theorem-like" id="proposition-2"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.2.12</span>
+</h6>
+<p id="p-33">Let \(A,B\) be <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Every morphism \(\alpha \colon A \to B \) is the composition of a homomorphism and a translation.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-6" id="proof-6"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-6" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-34">First compose by a translation on \(B\) such that \(\alpha(0) = 0\text{.}\) Consider the map</p>
+<div class="displaymath">
+\begin{align*}
+\phi \colon A\times A\amp\to B\\
+(a,a')               \amp\mapsto \alpha(a+a') - \alpha(A) -\alpha(a')
+\end{align*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{align*}
+\phi(A\times\{0\}) \amp = \alpha(a+ 0) - \alpha(a) - \alpha(0) = 0\\
+\phi(\{0\}\times A) \amp = \alpha(0+ a) - \alpha(0) - \alpha(a) = 0\text{.}
+\end{align*}
+</div>
+<p>By the <a knowl="./knowl/thm-rigidity.html" title="Theorem 1.2.11: Rigidity">rigidity theorem 1.2.11</a> \(\phi(A\times A) = \{0\}\) hence \(\alpha(a + a') = \alpha(a) + \alpha(a')\text{.}\)</p></article></div>
+<article class="theorem-like" id="corollary-3"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">1.2.13</span>
+</h6>
+<p id="p-35">Abelian varieties are abelian.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-7" id="proof-7"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-7" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-36">The inversion map \(a \mapsto -a\) sends \(0\) to \(0\text{,}\) thus is a homomorphism. Therefore</p>
+<div class="displaymath">
+\begin{equation*}
+a+ b - a -b = a+b -(a+b) = 0
+\end{equation*}
+</div>
+<p>and so</p>
+<div class="displaymath">
+\begin{equation*}
+a+b=b+a\text{.}
+\end{equation*}
+</div></article></div></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

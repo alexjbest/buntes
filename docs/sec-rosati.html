@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS The Rosati involution (Alex)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-weil-pairings.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-avs-over-ffs.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-weil-pairings.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-avs-over-ffs.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati" class="active">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-rosati"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.11</span> <span class="title">The Rosati involution (Alex)</span>
+</h2>
+<a href="sec-rosati.html" class="permalink">¶</a><p id="p-331">Let \(A/k\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> and \(f \in \End(A)\text{.}\) Via pullback we get \(\hat f \in \End(\hat A)\text{,}\) in the case where \(A\) is polarized i.e. we have an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi \colon A\to \hat A\) we might wonder what the relation is between \(\hat f\) and \(f\text{.}\) E.g. \(\hat \id = \id\) but here we have \(\hat \phi \id \phi = \lb \deg \phi\rb\text{,}\) this is a little ugly, depends on the degree of our <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>. If we work with \(\Hom^0(A,B) = \Hom(A,B) \otimes \QQ\) rather than \(\Hom(A,B)\) we have a bona fide inverse \(\phi\inv\) of an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi\text{.}\) So now we can ask precisely, what is the relationship of the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> \(f^\dagger = \phi^{-1}\circ \hat f \circ \phi\in \End^0(A)\) with \(f\text{?}\)</p>
+<p id="p-332">What sort of properties does this map \(f \mapsto f^\dagger\) have?</p>
+<article class="definition-like" id="definition-37"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.11.1</span> <span class="title">The Rosati involution</span>
+</h6>
+<p id="p-333">The map \(\phi^{-1} \hat{-} \phi =  {-}^\dagger \colon \End^0(A) \to \End^0(A)\) is called the <dfn class="terminology">Rosati involution</dfn>.</p></article><article class="theorem-like" id="proposition-28"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.11.2</span>
+</h6>
+<p id="p-334">\(-^\dagger\) is \(\QQ\)-linear</p></article><article class="theorem-like" id="proposition-29"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.11.3</span>
+</h6>
+<p id="p-335">\(-^\dagger\) is an anti-homomorphism i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+(fg)^\dagger = g^\dagger f^\dagger
+\end{equation*}
+</div></article><article class="theorem-like" id="proposition-30"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.11.4</span>
+</h6>
+<p id="p-336">Recall the \(l\)-adic <a knowl="./knowl/prop-weil-pair.html" title="Proposition 1.3.20: Existence of Weil pairing">Weil pairing</a> for \(l \ne \characteristic(k)\text{,}\) fix \(a,a'\in V_lA = T_lA\otimes \QQ\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+e_l^\phi(f a ,a') = e_l^\phi(a, f^\dagger a')\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-57" id="proof-57"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-57" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-337">
+\begin{equation*}
+e_l^\phi(f a ,a')  = e_l(fa, \phi a')= e_l(a, \hat f \phi a') = e_l(a, \phi\phi\inv \hat f \phi a') =  e_l^\phi(a, f^\dagger a')
+\end{equation*}
+</div></article></div>
+<article class="theorem-like" id="proposition-31"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.11.5</span>
+</h6>
+<p id="p-338">\(-^\dagger\) is an involution, i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+{\alpha^\dagger}^{\dagger} = \alpha\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-58" id="proof-58"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-58" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-339">We apply the previous proposition and skew-symmetry of a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> (over some extension)</p>
+<div class="displaymath">
+\begin{equation*}
+e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alpha^\dagger}^{\dagger} a, a')
+\end{equation*}
+</div>
+<p>for all \(a,a'\in V_l A\text{.}\)</p></article></div>
+<p id="p-340">So we have a weird algebra with a weird operation, what can we do? Perhaps inspired by the killing form of a lie algebra:</p>
+<p id="p-341">We can form a bilinear form using the trace</p>
+<div class="displaymath">
+\begin{equation*}
+\End^0(A) \times \End^0(A) \to \QQ
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(f,g) \mapsto \tr(fg^\dagger)\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="proposition-32"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.11.6</span>
+</h6>
+<p id="p-342">This is positive definite. In fact</p>
+<div class="displaymath">
+\begin{equation*}
+\tr(ff^\dagger) = 2g\frac{(D^{g-1}\cdot f^*(D))}{(D^g)}
+\end{equation*}
+</div>
+<p>for \(\phi = \phi_{\sheaf L(D)}\text{.}\)</p></article><p id="p-343">So given a <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> we have a division algebra  \(/ \QQ\) equipped with  a positive definite involution.</p>
+<article class="definition-like" id="def-albert-alg"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.11.7</span> <span class="title punctuated">Albert algebras?</span>
+</h6>
+<p id="p-344">A division algebra \(D\) finite over \(\QQ\) with an involution \('\) such that \(\tr_{D/\QQ}(xx') &gt; 0\ \forall x\in D^\times\) is called an <dfn class="terminology">Albert algebra</dfn>.</p></article><p id="p-345">Such algebras were studied by Albert who proved an important classification theorem.</p>
+<article class="theorem-like" id="theorem-29"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.11.8</span> <span class="title">Albert (1934/5)</span>
+</h6>
+<p id="p-346">Let \((D, ')\) be an <a knowl="./knowl/def-albert-alg.html" title="Definition 1.11.7: Albert algebras?">Albert algebra</a>, let \(K\) be the center of \(D\) and \(K_0\) the subfield fixed by \('\text{.}\) Then we have the following classification</p>
+<ol class="decimal">
+<li id="li-56">Type I: \(D = K = K_0\) a totally real number field and \('\) is the identity.</li>
+<li id="li-57">Type II: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is split at all infinite places and \('\) is defined by letting starting with the standard quaternion algebra conjugation for which \(x + x^* = \tr(x)\) and then letting \(x' = ax^* a^{-1}\) for some \(a \in D\) for which \(a^2 \in K\) and is totally negative.</li>
+<li id="li-58">Type III: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at all infinite places and \('\) is the standard quaternion algebra conjugation as above.</li>
+<li id="li-59">Type IV: \(D\) is a division algebra over a CM field \(K\) and \(K_0\) is the maximal totally real subfield. Additionally if \(v\) is a finite place with \(v = \bar v\) we have \(\operatorname{Inv}_v(D) = 0\) and \(\operatorname{Inv}_v(D) + \operatorname{Inv}_{\bar v}(D) = 0\) for all places \(v\text{.}\)</li>
+</ol></article><p id="p-347">There is a fascinating table in Mumford, page 200 or something.</p>
+<p id="p-348">As one might hope, changing the <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> does not change the type of the algebra + involution pair.</p>
+<p id="p-349">One might wonder which <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphisms</a> are invariant under this process? I.e. what is</p>
+<div class="displaymath">
+\begin{equation*}
+\{f \in \End^0(A) : f^\dagger = f\}\text{.}
+\end{equation*}
+</div>
+<p>Equivalently, for which \(f\) is the dual given by conjugating by our <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>.</p>
+<p id="p-350">We can map</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ \otimes_\ZZ \NS(X) = \QQ \otimes_\ZZ \Pic X/\Pic^0 X \to \Hom(A, \hat A)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sheaf M \mapsto \phi_{\sheaf M}\text{,}
+\end{equation*}
+</div>
+<p>however we also have an isomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+\Hom^0(A, \hat A) \xrightarrow{\sim} \End^0(A)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi \mapsto \lambda\inv \phi
+\end{equation*}
+</div>
+<p>for some fixed <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> \(\lambda\text{,}\) hence we can view \(\NS(A)\otimes \QQ\) inside \(\End^0(A)\text{.}\)</p>
+<article class="theorem-like" id="proposition-33"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.11.9</span>
+</h6>
+<p id="p-351">Assume \(k\) algebraically closed. The image of</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ \otimes_\ZZ \NS(X) \to \End^0(A)
+\end{equation*}
+</div>
+<p>is the fixed subspace</p>
+<div class="displaymath">
+\begin{equation*}
+\{f \in \End^0(A) : f^\dagger = f\}\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-59" id="proof-59"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-59" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-352">Fix \(\alpha \in \End^0(A)\) and \(l\ne \characteristic(k)\) odd. Applying <a knowl="./knowl/prop-milne-av-13-6.html" title="Proposition 1.10.8: 13.6">Proposition 1.10.8</a> we see that \(\lambda \alpha = \phi_{\sheaf L}\) for some \(\sheaf L\) iff \(e^{\lambda\alpha}_l\) is skew-<a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a>, but we also have</p>
+<div class="displaymath">
+\begin{equation*}
+e_l^{\lambda\alpha}(a,a')=  e_l^{\lambda}(a,\alpha a') = -e_l^\lambda(\alpha a',a) = -e_l(a', \hat\alpha \lambda a)
+\end{equation*}
+</div>
+<p>for all \(a,a' \in V_lA\) this is the same as requiring \(\lambda\alpha = \hat \alpha \lambda\) i.e. \(\alpha = \alpha^\dagger\text{.}\) .</p></article></div>
+<p id="p-353">Another cool result we can now prove (in fact this was the reason Weil introduced the notion of a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>).</p>
+<article class="theorem-like" id="theorem-30"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.11.10</span>
+</h6>
+<p id="p-354">The automorphism group of a polarized <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> is finite.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-60" id="proof-60"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-60" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-355">Let \(\alpha\) be an automorphism of \((A, \lambda)\) i.e. \(\lambda =\hat \alpha  \lambda \alpha\text{,}\) then \(\alpha^\dagger \alpha= 1\) and so</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha \in \End(A)\cap \{\beta \in \End(A) \otimes \RR: \trace(\alpha^\dagger \alpha) = 2g\}
+\end{equation*}
+</div>
+<p>but \(\End(A)\) is discrete inside the compact RHS.</p></article></div></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

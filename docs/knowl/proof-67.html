@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>For \(n \in \ZZ_{\ge 0}\) let \(U_n = (W\cap T_l(A)) + l^n T_A\) which is a \(G\)-stable lattice in \(V_l A\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+l^nT_lA \subseteq U_n \subseteq T_l A
+\end{equation*}
+</div>
+<p>let \(\mathcal K_n \subseteq A\lb l^n \rb (k^s) = T_l A/ l^n T_l A\) be the image of \(U_n\text{.}\) \(\mathcal K_n\) is stable under \(G\)-action on \(A\lb l^n \rb (k^s)\) which implies \(\mathcal K_n = K_n (k^s)\text{.}\) Let \(\pi_n \colon A \to B_n = A/ K_n\text{,}\) \(\iota_n \colon B_n \to A\) unique <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\iota_n \circ \pi_n  =  \lb [l^n]_A
+\end{equation*}
+</div>
+<p>then \(T_lB \cong U_n\) as \(\ZZ_l\)-modules with \(G\)-action. As \(T_l(\iota_n) \colon U_n =T_l B  \to T_l A\) is the inclusion map. Assuming \(\operatorname{Hyp}(k,A,l)\) we can find \(n = n_1 \lt n_2 \lt \cdots\) s.t. we have</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha_i \colon B_n \xrightarrow{\sim} B_{n_i}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+B_n \ar[r]^{\alpha_i} &amp; B_{n_i} \ar[d]_{\iota_{n_i}}\\
+A\ar[u]_{\pi_n} \ar@{--&gt;}_{u_i}[r] &amp; A
+}
+\end{equation*}
+</div>
+<p>\(u_i = \iota_{n_i} \circ \alpha_i \circ \pi_n\) is an <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> of \(A\) on Tate modules \(T_l(u_i)\) is induced map</p>
+<div class="displaymath">
+\begin{equation*}
+T_l A \xrightarrow{[l^n]} U_n \xrightarrow{T_l\alpha_i} U_{n_i} \hookrightarrow T_l A
+\end{equation*}
+</div>
+<p>because \(\ZZ_l \otimes \End A\) is a free \(\ZZ_l\)-module of finite rank compact in \(l\)-adic topology subsequence of \(u_i \to u\) in \(\ZZ_l \otimes \End A\)</p>
+<div class="displaymath">
+\begin{equation*}
+U_{n_1} \supseteq U_{n_2} \supseteq \cdots
+\end{equation*}
+</div>
+<p>the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> of \(T_l u\) maps \(T_l A\) to \(\bigcap_{i=1}^\infty U_{n_i} = W\cap T_l A\) passing to \(\QQ_l\)-coefficients, note \(\QQ_l(W\cap T_l A) = \QQ_l(l^n(W\cap T_l A)) = W\) so \(\image(V_l(u)) =W\text{.}\)</p></article><span class="incontext"><a href="sec-tate-thm.html#proof-67">in-context</a></span>
+</body>
+</html>

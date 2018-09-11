@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Permutation representation of a Dessin</span></h5>
+<p>Label the edges of  a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> \(\{1, \ldots, N\}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_0(i) = \text{subsequent edge in the cycle around the white vertex of }i
+\end{equation*}
+</div>
+<p>as we have a positive orientation on the edges</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_1(i) = \text{subsequent edge in the cycle around the black vertex of }i\text{.}
+\end{equation*}
+</div>
+<p>Then we define</p>
+<article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.7.2</span>
+</h6>
+<p>\((\sigma_0, \sigma_1)\) is the permutation representation pair of \((X,D)\text{.}\)</p></article><p>Say</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_0 = (1 , \ldots, N_1) (N_1 + 1 , \ldots, N_2)\cdots
+\end{equation*}
+</div>
+<p>a product of disjoint cycles. Then each of these cycles corresponds to a  white vertex, where the length of the cycle is the degree of the corresponding vertex. Same for \(\sigma_1\) and black vertices.</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{cycles appearing in the decomposition of }\sigma_0\sigma_1\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\updownarrow
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\{\text{faces of }D\}
+\end{equation*}
+</div>
+<article class="exercise-like"><a knowl="./knowl/exercise-17-hidden.html" title="Exercise 2.7.3"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.7.3</span>
+</h6></a></article><article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.7.4</span>
+</h6>
+<p>\(D\) connected implies that \(\langle \sigma_0, \sigma_1 \rangle\) is transitive on \(\Sigma_N\text{.}\) As \(D\) is bicoloured the cycles on \(D\) contain an even number of edges.</p></article><p>A <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> is not a triangulation of \(X\) but</p>
+<div class="displaymath">
+\begin{equation*}
+\chi (X) = \#V -  \#E  + \#F
+\end{equation*}
+</div>
+<p>proof later.</p>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.7.5</span>
+</h6>
+<div class="displaymath">
+\begin{equation*}
+\chi(X) = (\#\text{cycles of }\sigma_0+\#\text{cycles of }\sigma_1) - N + \#\{\text{cycles of }\sigma_0\sigma_1\}\text{.}
+\end{equation*}
+</div></article><div class="displaymath">
+\begin{equation*}
+(\sigma_0, \sigma_1) \leadsto (X',D)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\langle \sigma_0, \sigma_1 \rangle \subseteq \Sigma_N
+\end{equation*}
+</div>
+<p>is transitive.</p>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.7.6</span>
+</h6>
+<p>There exists \((X,D)\) with permutation representation \((\sigma_0, \sigma_1)\text{.}\)</p></article><article class="hiddenproof"><a knowl="./knowl/proof-97-hidden.html" title="Proof 2.7.6.1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.7.7</span>
+</h6>
+<p>We say that</p>
+<div class="displaymath">
+\begin{equation*}
+(X_1, D_1) \sim (X_2, D_2)
+\end{equation*}
+</div>
+<p>if there exists an orientation preserving homeomorphism \(\phi \colon X_1 \to X_2\text{,}\) \(\phi|_{D_1} \colon D_1 \xrightarrow\sim D_2\text{.}\)</p></article><article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.7.8</span>
+</h6>
+<div class="displaymath">
+\begin{equation*}
+\{\text{Dessins}\}/\sim \leftrightarrow \{( \sigma_0, \sigma_1),\,\langle \sigma_0, \sigma_1 \rangle \subseteq \Sigma_N \text{ transitive}\}/\sim
+\end{equation*}
+</div></article></article><span class="incontext"><a href="sec-dessins.html#paragraphs-16">in-context</a></span>
+</body>
+</html>

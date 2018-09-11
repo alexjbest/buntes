@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>First of all we note that the statement is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> in \(e,f,g\text{,}\) so we may arrange that \(h(g) \le h(e,f)\) which implies that \(h(e) = h(f) = h(e,f,g)\text{.}\) The second statement is less obviously invariant but note that \(\phi\) is  a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a> is equivalent to \(1-\phi\) and \(1/\phi\) being Belyi also and this preserves \(\phi(\infty) \in \{0,1,\infty\}\text{,}\) so rearranging does not change the truth of the second statement either. Let \(\phi = f/g\) so \(\deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)\text{,}\) we will denote this by \(h\) now. Apply Riemann-Hurwitz (suprise-suprise)</p>
+<div class="displaymath">
+\begin{equation*}
+-2 = -2h + \sum_{x\in \PP^1} e_\phi(x) - 1\text{.}
+\end{equation*}
+</div>
+<p>Let</p>
+<div class="displaymath">
+\begin{equation*}
+R_y = \sum_{x : f(x) = y} e_\phi(x) - 1
+\end{equation*}
+</div>
+<p>be the ramification above \(y\text{,}\) we will consider \(B_0, B_1, B_\infty\text{.}\) These ramification numbers will simply be \(h - \#(\phi\inv(y))\text{.}\) Lets begin with \(R_1\text{,}\) we have \(f(x)/g(x) = 1\) so \(e(x) = 0\) and in fact</p>
+<div class="displaymath">
+\begin{equation*}
+R_1 = h(e) - r(e) = h - r(e)\text{.}
+\end{equation*}
+</div>
+<p>For \(R_0\) we have either \(f(x) = 0\) or \(g(x) = \infty\text{.}\) Having \(g(x) = \infty\) means \(x = \infty\) but this cannot really happen as \(h(f) \ge h(g)\text{.}\) So this is really just</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{x : f(x) = 0} e_\phi(x) - 1 = h  - r(f)\text{.}
+\end{equation*}
+</div>
+<p>Finally \(\phi(x) = \infty\) only when \(g(x) = 0\) or \(x = \infty\text{.}\) If \(h(f) = h(g)\) then \(\phi(\infty) \ne \infty\) and we have simply</p>
+<div class="displaymath">
+\begin{equation*}
+R_\infty = h - r(g)\text{.}
+\end{equation*}
+</div>
+<p>If \(h(g) \lt h(f)\) then we also have \(\phi(\infty) = \infty\) so we pick up an extra preimage and we get instead</p>
+<div class="displaymath">
+\begin{equation*}
+R_\infty = h - (r(g) + 1)\text{.}
+\end{equation*}
+</div>
+<p>Back up in Riemann-Hurwitz this comes down (magically?) to</p>
+<div class="displaymath">
+\begin{equation*}
+-2 = \cancelto{0}{-2 h + h + h} + h - r(e) -r(f) - r(g) + R - \delta_{h(f) \gt h(g)}
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+R = h - r(efg) - 2 + \delta_{h(f) \gt h(g)}
+\end{equation*}
+</div>
+<p>but of course \(R \ge 0\) so</p>
+<div class="displaymath">
+\begin{equation*}
+h \ge r(efg) + 1
+\end{equation*}
+</div>
+<p>with equality exactly when</p>
+<div class="displaymath">
+\begin{equation*}
+h = r(efg) + 1 \implies R = 0,\, h(f) \gt h(g)\text{.}
+\end{equation*}
+</div>
+<p>\(R= 0\) is equivalent to being Belyi.</p></article></body>
+</html>

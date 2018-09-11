@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Dessins in Physics (Jim)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-three-short-stories-belyi.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-supersing-isog.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-three-short-stories-belyi.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-supersing-isog.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics" class="active">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-dessins-physics"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.12</span> <span class="title">Dessins in Physics (Jim)</span>
+</h2>
+<a href="sec-dessins-physics.html" class="permalink">¶</a><article class="paragraphs" id="paragraphs-20"><h5 class="heading"><span class="title">Physics</span></h5>
+<p id="p-770">Let  \(M\)  be a manifold with  a metric \(g\text{.}\) We call the pair \((M,g)\) a “spacetime manifold”. Let \(\mathcal E\) be  a “space of fields”, either \(\cinf (M)\text{,}\) sections of some \(E\to M\text{,}\) connections, or similar.</p>
+<div class="displaymath">
+\begin{equation*}
+S(\phi) = \int_M \mathcal    L (\phi)
+\end{equation*}
+</div>
+<p>for \(\phi\in \mathcal E\) and \(\mathcal L\) the Lagrangian. “Physically realisable states” are then fields \(\phi\) that minimise \(S(\phi)\text{.}\) \(W\) is a superpotential, this is a term in \(\mathcal L\) that satisfies some special symmetries. E.g. we could also have</p>
+<div class="displaymath">
+\begin{equation*}
+S(\phi_1, \phi_2) = \int_M \mathcal L(\phi_1,\phi_2)
+\end{equation*}
+</div>
+<p>the \(W\) might satisfy \(W(\phi_1, \phi_2) = W(\phi_2, \phi_1)\text{.}\)</p>
+<article class="definition-like" id="def-gauge-transformations"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.12.1</span> <span class="title">Gauge transformations</span>
+</h6>
+<p id="p-771">Let \(G \acts E \xrightarrow p M\) be an action s.t. each fibre \(E_x = p \inv(x)\) is a representation of \(G\text{.}\) A <dfn class="terminology">gauge</dfn> is a section \(s(x)\) of \(E \to M\text{.}\) A <dfn class="terminology">gauge transformation</dfn> is a map \(g\colon M \to G\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+g(x) s(x)
+\end{equation*}
+</div>
+<p>is another section, call \(G\) the <dfn class="terminology">gauge group</dfn>. The important <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge transformations</a> are the ones that fix the set of physically realisable states (i.e. fixes the subset of \(\mathcal E\) that minimise \(S\)).</p></article></article><article class="paragraphs" id="paragraphs-21"><h5 class="heading"><span class="title">Quivers and dessins</span></h5>
+<p id="p-772">Let's now study the relationship between quivers and <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessins</a>.</p>
+<article class="example-like" id="example-39"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.12.2</span>
+</h6>
+<p id="p-773">\(\mathcal N = 4\) SYM (supersymmetric Yang-Mills) (Gauge symmetries given by some product of \(\specialunitary (N)\)) .</p></article><p id="p-774">A quiver is a directed graph, possibly with self-loops. Here we think of the nodes as corresponding to factors of the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a>. And the arrows as fields, so in a bouquet with 3 petals we have three fields, and only \(G = \specialunitary (N)\text{.}\)</p>
+<p id="p-775">There is also the notion of a periodic quiver (a tiling of the plane). We can take the triangular lattice and consider its dual, this is a hexagonal tiling with a bicolouring corresponding to the fact we had upwards pointing and downwards pointing triangles. This is a Dimer model.</p>
+<p id="p-776">Relating the Dimer model back to physics: We have hexagonal faces in correspondence with factors of the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">Gauge group</a>, and edges fields, with vertices terms in \(W\text{.}\)</p>
+<p id="p-777">So one distinct face gives one factor in the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a> so \(G = \specialunitary (N)\text{.}\) 3 distinct edges give 3 fields \(X_1, X_2, X_3\text{.}\) To recover \(W\) consider the permutation arising from reading the edges around the vertices counterclockwise. A black vertex \((1,2,3)\) gives \(\sigma_B\) corresponding to a positive term in \(W\text{.}\) A white vertex \((1,2,3)\) gives \(\sigma_W\) corresponding to a negative term in \(W\text{.}\) Then \(\sigma_\infty = (\sigma_B\sigma_W)\inv = (123)\) \(\sigma_i\) gives a term for each cycle. Each cycle in \(\sigma_B\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_B\) gives \(X_1X_2X_3\text{.}\) Each cycle in \(\sigma_W\inv\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_W\) gives \(X_1X_3X_2\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+W = \trace((\text{sim of }\sigma_B\text{ terms}) - (\text{sim of }\sigma_W\text{ terms}))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \trace(X_1X_2X_3 - X_1X_3X_2)\text{.}
+\end{equation*}
+</div>
+<div class="displaymath" id="p-778">
+\begin{equation*}
+\Aut( \{\sigma_B,\sigma_W,\sigma_\infty\}) = \{ \gamma\in S_3: \gamma\sigma_i \gamma\inv = \sigma_i)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \{1,(123), (132)\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \ZZ/3\ZZ\text{.}
+\end{equation*}
+</div>
+<p id="p-779">The fundamental domain of the Dimer gives a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> on the torus with two vertices of degree 3. This corresponds to the Belyi pair \((\Sigma, \beta)\) where</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma \colon y^2 = x^3 + 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta \colon \Sigma  \to \PP^1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(x,y) \mapsto \frac{y+1}{2}\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Aut(\Sigma, \beta) \simeq \Aut(\{\sigma_B,\sigma_W, \sigma_\infty\})
+\end{equation*}
+</div>
+<p>\(\Aut(\Sigma, \beta)\) is generated by</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y) \mapsto (w^3 x,y)
+\end{equation*}
+</div>
+<p>where \(w^3 = 1\text{.}\)</p>
+<article class="example-like" id="example-40"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.12.3</span>
+</h6>
+<p id="p-780">Take the quiver with two vertices and two edges in each direction connecting them. This has 4 fields and two factors of \(G\) (i.e. \(G = \specialunitary (N) \times \specialunitary (N)\)). The dimer is a square lattice alternately coloured, with \(\sigma_B = \sigma_W = (1234), \sigma_\infty = (13)(24)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+W = \trace (X_1X_2X_3X_4 - X_1 X_4 X_3 X_2)\text{.}
+\end{equation*}
+</div>
+<p>In this case the Belyi pair is</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma \colon y^2= x(x-1)(x-\frac12)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta = \frac{x^2}{2x-1}\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Aut(\{\sigma_B,\sigma_W, \sigma_\infty\}) = \langle (1234) \rangle \simeq \ZZ/4\ZZ
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi_\pm \colon (x,y) \mapsto \left(\frac{x}{2x -1},\frac{\pm i}{(2x-1)^2} \right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi_+^2 = \phi_-^2 \colon (x,y) \mapsto (x,-y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi_+^3 = \phi_+\inv = \phi_-
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi_+^4 = 1
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+\Aut(\Sigma, \beta) \simeq \ZZ/4\ZZ
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta\inv(0)= \{(0,0)\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta\inv(1)= \{(1,0)\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta\inv(\infty)= \{(\frac 12,0), (\infty,\infty)\}
+\end{equation*}
+</div>
+<p>on the Dimer we have the square lattice so taking a fundamental domain containing  of the vertices we see the torus as a topology.</p></article><article class="example-like" id="example-41"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.12.4</span> <span class="title">Final example</span>
+</h6>
+<p id="p-781">Let's jump straight to the Dimer the hexagonal lattice with fundamental domain containing 6 vertices. We have 9 fields and three factors in the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a> \(G = \specialunitary (N)^2\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_B = (147)(258)(369)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sigma_W = (123)(456)(789)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sigma_\infty = (195)(276)(384)
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+W = \trace \sum_{i,j,k} X_{12}^iX_{23}^j X_{31}^k \epsilon_{ijk}
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+\epsilon_{ijk} = \begin{cases} \sgn(ijk) \amp\text{if }i,j,k \text{ distinct}\\ 0 \amp\text{otw}\end{cases}
+\end{equation*}
+</div>
+<p>\(X_{12}^i\) acts on the \(i\)th field by \(N, \bar N, 1\) where \(N\) is the canonical representation, \(\bar N\) the anticanonical and \(1\) is trivial.</p>
+<div class="displaymath">
+\begin{equation*}
+\Aut(\{\sigma_B,\sigma_W, \sigma_\infty\})  \simeq \ZZ/3\ZZ\times \ZZ/3\ZZ
+\end{equation*}
+</div>
+<p>now the Belyi pair</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma = \text{projective closure of } F = \{(x,y) : x^3+ y^3 =1\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta(x,y) = x^3
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\gamma_1(x,y) = (w_1 x, y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\gamma_2(x,y) = (x,w_2  y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+w_i^3 = 1\text{.}
+\end{equation*}
+</div></article></article></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

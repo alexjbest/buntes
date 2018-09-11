@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Polarizations and Étale cohomology (Alex)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-endomorphisms.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-weil-pairings.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-endomorphisms.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-weil-pairings.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale" class="active">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-polarizations-etale"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Polarizations and Étale cohomology (Alex)</span>
+</h2>
+<a href="sec-polarizations-etale.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-243">Plan: <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a>, a little cohomological warmup and a cool finiteness result. <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">Étale</a> cohomology.</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.9.1</span> <span class="title">Polarizations</span>
+</h3>
+<article class="definition-like" id="def-polarization"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.9.1</span> <span class="title">Polarizations</span>
+</h6>
+<p id="p-244">A <dfn class="terminology">polarization</dfn> of an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/k\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a></p>
+<div class="displaymath">
+\begin{equation*}
+\lambda \colon A \to \hat A
+\end{equation*}
+</div>
+<p>such that</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda \simeq_{\overline k} \lambda_{\sheaf{L}} : a\mapsto t_a^*\sheaf L \otimes \sheaf L^{-1}
+\end{equation*}
+</div>
+<p>for an ample invertible sheaf \(\sheaf L\) on \(A_{\overline k}\text{.}\)</p>
+<p id="p-245">We then have a notion of degree, <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a> of degree 1 (i.e. isomorphisms \(A\to \hat A\)) are called <dfn class="terminology">principal <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a></dfn>.</p></article><article class="remark-like" id="remark-7"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.9.2</span>
+</h6>
+<p id="p-246">This is in fact equivalent to the <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">previous definition 1.7.21</a>, see <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 58: Abelian Varieties">[58]</a>.</p></article><p id="p-247">Natural questions: what does the <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(\sheaf L\) tell us about the polarization? Can we tell principality?</p>
+<p id="p-248">To answer this we must (rapidly) recall (Zariski) sheaf cohomology. But this will help us in the next section too.</p>
+<p id="p-249">A <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> (or indeed any sheaf) defines for us for any open subset \(U \hookrightarrow X\) an abelian group of sections \(\sheaf L(U)\text{.}\)</p>
+<p id="p-250">However taking (global) sections doesn't play well with exact sequences!</p>
+<article class="example-like" id="example-10"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.9.3</span> <span class="title">Classic example</span>
+</h6>
+<p id="p-251">Let \(X = \CC^*\) and consider</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \ZZ \hookrightarrow \sheaf O_X \xrightarrow{e^{2\pi i -}} \sheaf O_X^* \to 0
+\end{equation*}
+</div>
+<p>but</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \ZZ \to \sheaf O_X(X) \to \sheaf O_X^*(X)
+\end{equation*}
+</div>
+<p>is not surjective on the right, for example \(f(z) = z\) is a nowhere vanishing <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic function</a> on \(X\) but its not \(\exp\) of anything. Upshot: maps of sheaves can be surjective (by being so locally) but not globally.</p></article><p id="p-252">To understand/control this phenomenon we introduce \(H^1(X, \sheaf F)\) fitting into the above and so on.</p>
+<p id="p-253">Explicitly: for a sheaf \(\sheaf F\) we fix an injective resolution</p>
+<div class="displaymath">
+\begin{equation*}
+0\to \sheaf F \to \sheaf I_0 \to \sheaf I_1 \to \cdots
+\end{equation*}
+</div>
+<p>which we then take global sections of to get a chain complex</p>
+<div class="displaymath">
+\begin{equation*}
+0\to \Gamma(X,\sheaf F) \to \Gamma(X,\sheaf I_0) \to \Gamma(X,\sheaf I_1) \to \cdots
+\end{equation*}
+</div>
+<p>and we truncate and take cohomology of this to measure “failure of exactness”</p>
+<div class="displaymath">
+\begin{equation*}
+H^0(X, \sheaf F) , H^1(X, \sheaf F) , H^2(X, \sheaf F) , \ldots\text{.}
+\end{equation*}
+</div>
+<article class="definition-like" id="def-euler-poincare-char"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.9.4</span> <span class="title">Euler-Poincaré characteristic</span>
+</h6>
+<p id="p-254">Define the <dfn class="terminology">Euler-Poincaré characteristic</dfn> of a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(\sheaf L\) to be</p>
+<div class="displaymath">
+\begin{equation*}
+\chi(\sheaf L) = \sum (-1)^i \dim_k H^i(A,\sheaf L)\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="theorem-21"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.9.5</span> <span class="title">Riemann-Roch</span>
+</h6>
+<p id="p-255">Let \(A\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> of dimension \(g\) then</p>
+<ol class="decimal">
+<li id="li-42">The degree of \(\lambda_{\sheaf L}\) is \(\chi(\sheaf L)^2\text{.}\)</li>
+<li id="li-43">If \(\sheaf L = \sheaf L(D)\) then \(\chi(\sheaf L) = (D^g)/g!\text{,}\) this is the \(g\)-fold self intersection number of \(D\text{.}\)</li>
+</ol></article><article class="theorem-like" id="theorem-22"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.9.6</span> <span class="title">Vanishing</span>
+</h6>
+<p id="p-256">If \(\#K( \sheaf L)\lt \infty\) then there is a unique integer \(0\le i(\sheaf L) \le g\) with \(H^i(A, \sheaf L) \ne  0\) and \(H^p(A, \sheaf L) = 0\) for all \(p \ne i\text{.}\) Moreover \(i(\sheaf L^{-1}) = g - i(\sheaf L)\text{.}\)</p></article><p id="p-257">Recall <a href="sec-adventures-buntes.html#sec-ample-L-finite-KL" class="xref" title="Subsection 1.6.3: In which Owl proves the ampleness of \(L\) implies finiteness of \(K(L)\)">Subsection 1.6.3</a>: So for ample \(\sheaf L\) we have \(K(\sheaf L)\) finite, so the vanishing theorem applies. Additionally for very ample \(\sheaf L\) we know \(H^0(A,\sheaf L) \ne 0\) so in this case we get vanishing of higher cohomology.</p>
+<article class="theorem-like" id="theorem-23"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.9.7</span> <span class="title">Finiteness</span>
+</h6>
+<p id="p-258">Let \(k\) be a finite field, and   \(g,d\ge 1\) integers. Up to isomorphism there are only finitely many <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> \(A/k\) of dimension \(g\) and with a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of degree \(d^2\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-45" id="proof-45"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-45" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-259">(Super sketch)</p>
+<p id="p-260">Over a finite field implies there is an ample \(\sheaf L\) with \(\lambda_{\sheaf L}\) a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of degree \(d^2\text{,}\) then using above \(\chi(\sheaf L^3) = 3^g d\) and \(\sheaf L^3\) is very ample hence \(\dim H^0(A, \sheaf L^3) = 3^g d\) so we get an embedding into \(\PP^{3^g d - 1}\text{.}\)</p>
+<p id="p-261">The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is determined by its Chow form, which by these formulae has some (large) bounded degree, as we are over a finite field however there are only finitely many such.</p></article></div></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Étale Cohomology of Abelian Varieties</span>
+</h3>
+<p id="p-262">See <a knowl="./knowl/bib-milne-etale.html" title="Bibliographic Entry 43: Etale cohomology">[43]</a> or <a knowl="./knowl/bib-tamme.html" title="Bibliographic Entry 55: Introduction to étale cohomology">[55]</a>.</p>
+<p id="p-263">Recall for <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> over \(A/\CC\) we considered singular cohomology of the complex points \(A(\CC)\text{.}\) Indeed this theory was strongly connected to the lattice \(\Lambda\) defining \(A(\CC)\text{.}\)</p>
+<p id="p-264">We saw that in fact \(\pi_1(A,0) = \pi^{-1} (0) = \Lambda \subseteq V\) which was the universal covering space of \(A(\CC)\text{.}\) We want to emulate this over a general field.</p>
+<p id="p-265">We want to allow multiplication by \(n\) to define finite covers for our <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> as they did before.</p>
+<p id="p-266">Problem: Zariski topology is too coarse: we can't find an open \(U\) set around \(0 \in A\) such that \(\lb 2\rb \colon U \to A\) is an isomorphism onto its image. Isogenies are not local isomorphisms for the Zariski topology.</p>
+<p id="p-267">How on earth do we “allow” maps which are clearly not local isomorphisms to become such? First what do we mean by local isomorphism?</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+f^{-1}(U)\ar[d] \ar[r]^{\sim} &amp; U\ar@{^(-&gt;}[d]^i\\
+X \ar[r]_f &amp; Y
+}\text{.}
+\end{equation*}
+</div>
+<p>There exists an open subset \(U\) such that the base change \(X \times_Y U\) is isomorphic with \(\coprod U\) of several copies of \(U\) in a compatible way with the map to \(U\text{.}\)</p>
+<p id="p-268">So let's cheat, the best isomorphism is the identity map</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+X\ar[d] \ar[r]^{\sim} &amp; X\ar[d]^f\\
+X \ar[r]_f &amp; Y
+}
+\end{equation*}
+</div>
+<p>if we define an “open set” \(U\) to be a morphism \(X \to Y\) with the properties we want, then all such become local isomorphisms.</p>
+<p id="p-269">By taking our <em class="emphasis">topology</em> to be given by some maps we decide are decent covering maps we can circumvent these difficulties.</p>
+<p id="p-270">What is the correct class of morphisms to take here, we feel like our \(\lb n\rb\) maps should count. Taking inspiration from differential geometry perhaps, we are led to the notion of a local diffeomorphism, an <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> map.</p>
+<article class="definition-like" id="definition-33"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.9.8</span>
+</h6>
+<p id="p-271">Let \(X,Y\) be nonsingular varieties over \(k = \overline k\text{.}\) Then \(f\colon X\to Y\) is <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> at a point \(P\in X\) if</p>
+<div class="displaymath">
+\begin{equation*}
+\diff f\colon\Tgt_{P}(X) \to \Tgt_{f(P)} (Y)
+\end{equation*}
+</div>
+<p>is an isomorphism.</p></article><article class="theorem-like" id="proposition-21"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.9.9</span>
+</h6>
+<p id="p-272">Let \(f \colon \aff^m\to \aff^m\) then \(f\) is <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> at \((a_1, \cdots, a_m)\) iff</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{\partial(X_i \circ f)}{\partial Y_j}|_{(a_k)} \right)
+\end{equation*}
+</div>
+<p>is nonsingular.</p></article><article class="example-like" id="example-11"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.9.10</span> <span class="title">A non-étale map</span>
+</h6>
+<p id="p-273">Consider the map</p>
+<div class="displaymath">
+\begin{align*}
+\aff^2 \amp\to \aff^2\\
+(x,y) \amp\mapsto (x^3, x^2 + y)
+\end{align*}
+</div>
+<p>we can see that the image of \(y= 0\) is the nodal cubic (\(Y^3 = X^2\)), which is messed up (singular) at \((0,0)\text{.}\) The jacobian is</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{pmatrix} 3x^2 \amp 0 \\ 2x \amp 1\end{pmatrix}
+\end{equation*}
+</div>
+<p>so this matrix is singular exactly when \(x= 0\) (unless characteristic 3). So the map is not <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> at these points.</p></article><article class="theorem-like" id="proposition-22"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.9.11</span>
+</h6>
+<p id="p-274">The maps \(\lb n\rb\) are <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> on an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/k\) for all  \(\characteristic{k} \nmid n\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-46" id="proof-46"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-46" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-275">Key point \(\diff (\alpha+ \beta)_0 = (\diff \alpha )_0 + (\diff \beta)_0\text{.}\) So the map on tangent spaces is simply multiplication by \(n\text{.}\)</p></article></div>
+<article class="definition-like" id="def-etale"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.9.12</span> <span class="title">Étale morphisms</span>
+</h6>
+<p id="p-276">A morphism \(f\colon X\to Y\) of schemes is <dfn class="terminology">étale</dfn> if it is flat and unramified.</p>
+<p id="p-277">Flatness for finite morphisms of varieties is equivalent to each fibre \(f^{-1}(t)\) being of equal cardinality, counting <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicities</a>.</p></article><p id="p-278">All <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> are finite and flat.</p>
+<article class="definition-like" id="definition-35"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.9.13</span>
+</h6>
+<p id="p-279">Let \(\mathrm{FEt}/X\) be the category of finite <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> maps \(\pi\colon Y \to X\) (i.e. finite <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> coverings of \(X\)).</p>
+<p id="p-280">Then after picking a basepoint \(x\in X\) we can map</p>
+<div class="displaymath">
+\begin{equation*}
+F\colon \mathrm{FEt}/X\to \mathrm{Set}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\pi\mapsto \Hom_X(x,Y) \approx\pi^{-1}(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-281">This is in fact pro-representable, i.e. there exists a system</p>
+<div class="displaymath">
+\begin{equation*}
+\tilde X = (X_i)_{i\in I}
+\end{equation*}
+</div>
+<p>with</p>
+<div class="displaymath">
+\begin{equation*}
+F(Y) = \Hom(\tilde X ,Y) = \varinjlim_i \Hom(X_i, Y)\text{.}
+\end{equation*}
+</div>
+<p id="p-282">We then define</p>
+<div class="displaymath">
+\begin{equation*}
+\pi_1(X,x) = \Aut_X(\tilde X) = \varprojlim_i \Aut_X(X_i)\text{.}
+\end{equation*}
+</div></article><p id="p-283">So we need to understand <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> covers of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Following <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 58: Abelian Varieties">[58]</a>:</p>
+<article class="theorem-like" id="proposition-23"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.9.14</span> <span class="title">surprising proposition</span>
+</h6>
+<p id="p-284">Let \(X\)  be a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> variety over a field \(k\) with \(e\in X(k)\) and \(m \colon X\times X\to X\) s.t. \(m(e,x) = m(x,e) = x\) for all \(x \in X\text{.}\) Then \((X, m,e)\) is an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-47" id="proof-47"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-47" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-285">(Sketch)</p>
+<p id="p-286">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\tau\colon X\times X \to X\times X
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\tau(x,y) = (xy,y)
+\end{equation*}
+</div>
+<p>so \(\tau^{-1} (e,e) = (e,e)\text{.}\) Some exercise in Hartshorne implies \(\im \tau\) has dimension \(2\dim X\text{.}\)</p>
+<p id="p-287">Reduce to algebraically closed case.</p>
+<p id="p-288">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\tau^{-1}(\{e\} \times X) =  \{(x,y) : xy = e\} = \Gamma \subseteq X\times X
+\end{equation*}
+</div>
+<p>as \(\tau \) is surjective we get \(p_2 \colon \Gamma \to X\) is also so pick an irreducible \(\Gamma_1 \subseteq \Gamma\) with \(p_2(\Gamma_1) = X\text{.}\) This also implies \(p_1(\Gamma_1) = X\text{.}\)</p>
+<p id="p-289">Let</p>
+<div class="displaymath">
+\begin{equation*}
+f\colon \Gamma_1 \times X\times X \to X
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f((x,y),z,w) = x((yz)w)
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+f(\Gamma_1 \times\{e\}\times\{e\}) = \{eee\} = \{e\}
+\end{equation*}
+</div>
+<p>so a version of <a knowl="./knowl/thm-rigidity.html" title="Theorem 1.2.11: Rigidity">rigidity 1.2.11</a> gives</p>
+<div class="displaymath">
+\begin{equation*}
+x((yz)w) = zw\ \forall (x,y) \in \Gamma_1,\,z,w\in X
+\end{equation*}
+</div>
+<p>So letting \(w = e\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+x(yz) = z\text{.}
+\end{equation*}
+</div>
+<p>Fix \(y \in X(k)\text{,}\) and then by surjectivity we can find \(x,z \in X(k)\) with \((x,y)\in \Gamma_1 \ni (y,z)\text{.}\) So we get</p>
+<div class="displaymath">
+\begin{equation*}
+x = x(yz) = ze = z
+\end{equation*}
+</div>
+<p>and so \(y\) has both a left and right inverse. We then multiply above by \(y\) to get</p>
+<div class="displaymath">
+\begin{equation*}
+y(zw) = y(x((yz)w)) = (yz)w
+\end{equation*}
+</div>
+<p>so \(X(k)\) is associative.</p></article></div>
+<article class="theorem-like" id="theorem-24"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.9.15</span> <span class="title">Lang-Serre</span>
+</h6>
+<p id="p-290">Let \(X/k\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> and \(Y/k\) a variety with \(e_Y\in Y(k)\) s.t. \(f\colon Y \to X\) is an <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> covering where \(f(e_Y) = e_X\text{.}\) Then \(Y\) can be given the structure of an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> so that \(f\) is a separable <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-48" id="proof-48"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-48" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-291">Must construct a group law on \(Y\text{:}\)</p>
+<p id="p-292">Take the graph of \(m\colon X\times X \to X\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma_X \subseteq X\times X\times X
+\end{equation*}
+</div>
+<p>and pullback along \(f\times f\times f\) to</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma'_Y \subseteq Y\times Y\times Y
+\end{equation*}
+</div>
+<p>fix the connected component \(\Gamma_Y\) containing \((e_Y,e_Y,e_Y)\text{.}\)</p>
+<p id="p-293">Call the projections from \(\Gamma_Y\) \(q_I\text{.}\) Now we must show that \(q_{12}\colon \Gamma_Y \to Y\times Y\) is an isomorphism, then \(m_Y\colon Y\times Y \to Y\) can be defined as \(q_3 \circ q_{12}^{-1}\text{.}\) \(q_{12}\) has sections \(s_1,s_2\) over \(\{e_Y\}\times Y\text{,}\) \(Y\times \{e_Y\}\) respectively given by \(s_1(e_Y,y) = (e_Y,y,y)\) and \(s_2(y,e_y,y) = (y,e_y,y)\text{.}\) So \(m_Y\) satisfies the conditions of the surprising proposition.</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+\Gamma_Y \ar[r]\ar[d]_{q_{12}} &amp; \Gamma_X\ar[d]^{p_{12}} \\
+Y\times Y \ar[r]_{f\times f} &amp; X\times X
+}
+\end{equation*}
+</div>
+<p>the horizontal maps are <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> coverings and the rightmost an isomorphism so \(q_{12}\) is an <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> covering. The projection \(p_2 \circ q_{12} = q_2 \colon \Gamma_Y\to Y\) is smooth proper. Fact: all fibres of \(q_2\) are irreducible. So \(Z = q_2^{-1} (e_Y) = q_{12}^{-1}(Y\times \{e_Y\})\) is irreducible. Moreover \(q_{12}\) restricts to an <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> covering \(Z \to Y = Y\times\{e_Y\}\) of  the same degree, but \(s_2\) is a section of this covering, hence it is an isomorphism. Hence \(q_{12}\) has degree 1 and is therefore an isomorphism as required.</p></article></div>
+<p id="p-294">So we have some control over the finite <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> maps, what does the covering space look like? Last week we saw that for an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\alpha\colon B \to A\) we could find \(\beta \colon A \to B\) with \(\beta\circ\alpha = \lb n\rb\colon A \to A\text{.}\) This means we can take our universal covering space to be</p>
+<div class="displaymath">
+\begin{equation*}
+(A)_{i\in I}
+\end{equation*}
+</div>
+<p>with multiplication by \(n\) maps.</p>
+<p id="p-295">So we find</p>
+<div class="displaymath">
+\begin{equation*}
+\pi_1^\et(A,0) =\varprojlim_n \Aut_A(A\xrightarrow{[n]} A)=  \varprojlim_n A[n]\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-25"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.9.16</span>
+</h6>
+<div class="displaymath" id="p-296">
+\begin{equation*}
+H^1_\et(A , \ZZ_l) = \Hom(\pi_1(A,0), \ZZ_l) = \Hom(T_l,\ZZ_l)
+\end{equation*}
+</div></article><article class="theorem-like" id="theorem-26"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.9.17</span>
+</h6>
+<div class="displaymath" id="p-297">
+\begin{equation*}
+H^r(A_\et, \ZZ_l) = \bigwedge^r H^1(A_\et, \ZZ_l)
+\end{equation*}
+</div></article><p id="p-298">Note that Milne gives a combined proof of the above two statements, this relies on some theorems on Hopf algebras such as <a knowl="./knowl/bib-borel-hopf.html" title="Bibliographic Entry 15: Sur La Cohomologie Des Espaces Fibres Principaux Et Des Espaces Homogenes De Groupes De Lie Compacts">[15]</a>.</p></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Overview (Angus)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-dessins.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-dessins-riemann-surfaces.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-dessins.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-dessins-riemann-surfaces.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview" class="active">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-dessins-overview"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Overview (Angus)</span>
+</h2>
+<a href="sec-dessins-overview.html" class="permalink">¶</a><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Belyi morphisms</span>
+</h3>
+<p id="p-457">Let \(X\) be an algebraic curve over \(\CC\) (i.e. a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>) when is \(X\) defined over \(\overline \QQ\text{?}\)</p>
+<article class="theorem-like" id="theorem-39"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.1.1</span> <span class="title">Belyi</span>
+</h6>
+<p id="p-458">An algebraic curve \(X/\CC\) is defined over \(\overline \QQ \iff\) there exists a morphism \(\beta \colon X \to \PP^1 \CC\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> only over \(\{0,1,\infty\}\text{.}\)</p></article><article class="definition-like" id="def-dess-ramified"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.1.2</span> <span class="title">Ramified</span>
+</h6>
+<p id="p-459">(AG) A morphism \(f \colon X \to Y\) is <dfn class="terminology">ramified</dfn> at \(x \in X\) if on local rings the induced map \(f^\# \colon \sheaf O_{Y,f(x)} \to \sheaf O_{X,x}\) descended to</p>
+<div class="displaymath">
+\begin{equation*}
+\sheaf O_{Y,f(x)}/\ideal m \to \sheaf O_{X,x}/ f^\#(\ideal m)
+\end{equation*}
+</div>
+<p>is not a finite inseparable field extension.</p>
+<p id="p-460">(RS) A morphism \(f \colon X \to Y\) is <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at \(x \in X\) if there are charts around \(x\) and \(f(x)\) such that \(f(x) = x^n\text{.}\) This \(n\) is the <dfn class="terminology">ramification index</dfn>.</p></article><article class="definition-like" id="def-belyi-morphism"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.1.3</span> <span class="title">Belyi morphisms</span>
+</h6>
+<p id="p-461">A <dfn class="terminology">Belyi morphism</dfn> is one <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> only over \(\{0,1,\infty\}\)</p>
+<p id="p-462">A <dfn class="terminology">clean <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a></dfn> or <dfn class="terminology">pure <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a></dfn> is a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a> where the <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramification indices</a> over 1 are all exactly 2.</p></article><article class="theorem-like" id="lemma-12"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.1.4</span>
+</h6>
+<p id="p-463">A curve \(X\) admits a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a> iff it admits a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">clean Belyi morphism</a>.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-80" id="proof-80"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-80" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-464">If \(\alpha \colon X\to \PP^1 \CC\) is Belyi, then \(\beta = 4\alpha(1-\alpha)\) is a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">clean Belyi morphism</a>.</p></article></div></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">Dessin d'Enfants</span>
+</h3>
+<article class="definition-like" id="def-dessin-denfant"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.1.5</span>
+</h6>
+<p id="p-465">A <dfn class="terminology">dessin d'Enfant</dfn> (or Grothendieck <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessin</a> or just <dfn class="terminology">Dessin</dfn>) is a triple \((X_0,X_1,X_2)\) where \(X_2\) is a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>, \(X_1\) is a graph, \(X_0 \subset X_1\) is a finite set of points, where \(X_2 \smallsetminus X_1\) is a collection of open cells. \(X_1 \smallsetminus X_0\) is a disjoint union of line segments</p></article><article class="theorem-like" id="lemma-13"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.1.6</span>
+</h6>
+<p id="p-466">The data of a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> is equivalent to a graph with an ordering on the edges coming out of each vertex.</p></article><article class="definition-like" id="def-clean-dessin"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.1.7</span> <span class="title">Clean dessins</span>
+</h6>
+<p id="p-467">A <dfn class="terminology">clean <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a></dfn> is a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> with a colouring (white and black) on the vertices such that adjacent vertices do not share a colour.</p></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">The Grothendieck correspondence</span>
+</h3>
+<p id="p-468">Given a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a> \(\beta\colon X \to \PP^1 \CC\) the graph \(\beta^{-1}(\lb 0,1\rb)\) defines a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a>.</p>
+<article class="theorem-like" id="theorem-40"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.1.8</span>
+</h6>
+<p id="p-469">The map</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{(Clean) Belyi morphisms}\} \to \{\text{(clean) dessins}\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta \mapsto \beta\inv([0,1])
+\end{equation*}
+</div>
+<p>is a bijection up to isomorphisms.</p></article><article class="example-like" id="example-15"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.1.9</span>
+</h6>
+<div class="displaymath" id="p-470">
+\begin{equation*}
+\PP^1 \CC\to \PP^1\CC
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+x\mapsto x^3
+\end{equation*}
+</div>
+<div class="displaymath" id="p-471">
+\begin{equation*}
+\PP^1 \CC\to \PP^1\CC
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+x\mapsto x^3 + 1
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.4</span> <span class="title">Covering spaces and Galois groups</span>
+</h3>
+<p id="p-472">A <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a> defines a covering map.</p>
+<div class="displaymath">
+\begin{equation*}
+\tilde \beta\colon \tilde X \to \PP^1 \CC\smallsetminus \{0,1,\infty\}
+\end{equation*}
+</div>
+<p>the coverings are controlled by the profinite completion of</p>
+<div class="displaymath">
+\begin{equation*}
+\pi_1 (\PP^1 \CC\smallsetminus \{0,1,\infty\}) = \ZZ * \ZZ = F_2\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-41"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.1.10</span>
+</h6>
+<p id="p-473">There is a faithful action</p>
+<div class="displaymath">
+\begin{equation*}
+\absgal\QQ \acts \hat\pi_1 (\PP^1 \CC\smallsetminus \{0,1,\infty\})
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-81" id="proof-81"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-81" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-474">By Belyi's theorem every <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E/\overline \QQ\) admits a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a>. For each \(j \in \overline\QQ\) there exists an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E_j/\overline \QQ\) with \(j\)-invariant \(j\text{.}\)</p>
+<p id="p-475">Given \(\sigma \in \absgal{\QQ}\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma(E_j) = E(\sigma(j))
+\end{equation*}
+</div>
+<p>assume \(\sigma \mapsto 1\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+E_j \cong E_{\sigma(j)}\ \forall j
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+j = \sigma(j) \ \forall j
+\end{equation*}
+</div>
+<p>a contradiction.</p></article></div>
+<article class="theorem-like" id="corollary-30"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.1.11</span>
+</h6>
+<p id="p-476">We have a faithful action of \(\absgal{\QQ}\) on <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessins</a>.</p></article><article class="theorem-like" id="theorem-42"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.1.12</span>
+</h6>
+<p id="p-477">We have a faithful action of \(\absgal{\QQ}\) on the set of <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessins</a> of any fixed <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a>.</p></article></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-4" id="exercise-4"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.1.13</span>
+</h6></a></article><div id="hk-exercise-4" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-478">Compute the <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a> for the following <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphisms</a></p>
+<ol class="decimal">
+<li id="li-98"><div class="displaymath">
+\begin{equation*}
+\PP^1\CC\to \PP^1\CC,\,x\mapsto x^4
+\end{equation*}
+</div></li>
+<li id="li-99"><div class="displaymath">
+\begin{equation*}
+\PP^1\CC\to \PP^1\CC,\,x\mapsto x^2(3-2x)
+\end{equation*}
+</div></li>
+<li id="li-100"><div class="displaymath">
+\begin{equation*}
+\PP^1\CC\to \PP^1\CC,\,x\mapsto \frac{1}{x(2-x)}
+\end{equation*}
+</div></li>
+</ol></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-5" id="exercise-5"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.1.14</span>
+</h6></a></article><div id="hk-exercise-5" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-479">Give an alternate proof of the fact that \(X\) admits a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a> if and only if it admits a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">clean Belyi morphism</a> using <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessins</a> and the Grothendieck correspondence.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-6" id="exercise-6"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.1.15</span>
+</h6></a></article><div id="hk-exercise-6" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-480">Prove that a <a knowl="./knowl/def-belyi-morphism.html" title="Definition 2.1.3: Belyi morphisms">Belyi morphism</a> corresponding to a tree, that sends \(\infty\) to \(\infty\) is a polynomial.</p></article></div></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

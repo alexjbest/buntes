@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Riemann Hurwitz Formula (Sachi)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-dessins-riemann-surfaces.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-rs-discrete-groups.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-dessins-riemann-surfaces.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-rs-discrete-groups.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz" class="active">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-riemann-hurwitz"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Riemann Hurwitz Formula (Sachi)</span>
+</h2>
+<a href="sec-riemann-hurwitz.html" class="permalink">¶</a><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-9" id="exercise-9"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.3.1</span> <span class="title">Unimportant</span>
+</h6></a></article><div id="hk-exercise-9" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-509">The <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> is invariant under changing triangulation.</p></article></div>
+<p id="p-510">In particular there are at least two distinct ways of thinking about <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> for <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> \(R\)</p>
+<ol class="decimal">
+<li id="li-101"><div class="displaymath">
+\begin{equation*}
+\chi(R) = V -E + F = 2-2g
+\end{equation*}
+</div></li>
+<li id="li-102">The dimension of the space of holomorphic differentials on \(R\text{.}\)</li>
+</ol>
+<p id="p-511">Goal: given \(R\) calculate <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a></p>
+<div class="displaymath">
+\begin{equation*}
+y^2 = (x+1)(x-1)(x+2)(x-2)
+\end{equation*}
+</div>
+<p>so in an ad hoc way</p>
+<div class="displaymath">
+\begin{equation*}
+y = \sqrt{(x+1)(x-1)(x+2)(x-2)}
+\end{equation*}
+</div>
+<p>when \(x\) is not a root of the above we have two distinct values for \(y\text{,}\) we can imagine two copies of \(\CC\) sitting above each other and then square root will land in both copies. We have to make branch cuts between the roots and glue along these to account for the fact that going around a small loop surrounding a root will change the sign of our square root. We end up with something looking like a torus here.</p>
+<p id="p-512">Here we examined the value where there were not enough preimages when we plugged in a value for \(x\text{.}\) The idea is to project to \(x\text{,}\) and understand the number of preimages.</p>
+<div class="displaymath">
+\begin{equation*}
+P(x,y) = y^n + p_{n-1}(x) y^{n-1} + \cdots + p_0(x)
+\end{equation*}
+</div>
+<p>an  irreducible polynomial.</p>
+<div class="displaymath">
+\begin{equation*}
+R= \{(x,y) : P(x,y) = 0\}\text{.}
+\end{equation*}
+</div>
+<p>If we fix \(x_0 \in \PP^1 \CC\) we can analyse how many \(y\) values lie over this \(x\text{.}\) If we have fixed our coefficients we expect \(n\) solutions in \(y\) over \(\CC\text{,}\) i.e. points \((x_0,y)\in R\text{.}\)</p>
+<p id="p-513">For some values of \(x_0\) this will not be true, there will be fewer \(y\)-values, this occurs when we have a multiple root. This happens precisely when the discriminant of this polynomial vanishes, the discriminant is a polynomial and so has finitely many roots.</p>
+<article class="definition-like" id="def-branch-point"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.3.2</span> <span class="title">Branch points</span>
+</h6>
+<p id="p-514">Let \(\pi\colon R \to \PP^1 \CC\text{.}\) We say \(x_0\) is a <dfn class="terminology">branch point</dfn> if there are fewer than \(n\) distinct \(y\)-values above \(x\text{.}\) Then define the <dfn class="terminology">total branching index</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+b = \sum_{x\in \PP^1 \CC} (\deg(\pi) - \# \pi\inv (x))\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="claim-euler-degree-total-branching"><h6 class="heading">
+<span class="type">Claim</span> <span class="codenumber">2.3.3</span>
+</h6>
+<div class="displaymath" id="p-515">
+\begin{equation*}
+\chi(R) = \deg \pi \cdot \chi(\PP^1\CC)  - b\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="lemma-14"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.3.4</span>
+</h6>
+<p id="p-516">Locally given some choice of coordinates a non-constant <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">morphism of Riemann surfaces</a></p>
+<div class="displaymath">
+\begin{equation*}
+f\colon R \to S
+\end{equation*}
+</div>
+<p>is given by \(w\mapsto w^n\text{.}\) More precisely given \(r \in R\text{,}\) \(f(r) = s\) and \(V_s \ni s\) a small neighbourhood choose an identification of</p>
+<div class="displaymath">
+\begin{equation*}
+V_s \xrightarrow \Psi D
+\end{equation*}
+</div>
+<p>which sends \(s \mapsto 0\) and we can find an analytic identification</p>
+<div class="displaymath">
+\begin{equation*}
+r\in R_r \xrightarrow \phi D
+\end{equation*}
+</div>
+<p>such that</p>
+<div class="displaymath">
+\begin{equation*}
+f(U_r) \subseteq V_s\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{U_r \ar[r]^f \ar[d]_\phi &amp; V_s \ar[d]^\Psi \\ D \ar[r]_{w\mapsto w^m} &amp; D}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-83" id="proof-83"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-83" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-517">In Sachi's notes.</p></article></div>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-84" id="proof-84"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-84" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-518">Of <a knowl="./knowl/claim-euler-degree-total-branching.html" title="Claim 2.3.3">Claim 2.3.3</a>.</p>
+<p id="p-519">Triangulate \(R\) so that every face lies in some small coordinate neighborhood s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\pi \colon R\to \PP^1 \CC
+\end{equation*}
+</div>
+<p>is given by \(w \mapsto w^m\text{,}\) s.t. every edge, all <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a> are vertices. This ensures that each face edge and vertex has \(n  = \deg (\pi)\) preimages (except <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a>). Then accounting for <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a> we have \(\deg(\pi) -  \# \pi\inv (x_0)\) preimages.</p></article></div>
+<article class="example-like" id="example-23"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.3.5</span>
+</h6>
+<p id="p-520">\(P(x,y)\) plane curve, classically have</p>
+<div class="displaymath">
+\begin{equation*}
+g = \frac{(d-1)(d-2)}{2}
+\end{equation*}
+</div>
+<p>\(\PP^2 = \{ \lb x:y:z \rb\}\) and \((\PP^2)^* = \lb a:b:c \rb\text{,}\) lines in \(\PP^2\)</p>
+<div class="displaymath">
+\begin{equation*}
+ax + by + cz = 0
+\end{equation*}
+</div>
+<p>and we have lines \(\leftrightarrow\) points. We have \(C^*\) the dual curve in \(\PP^2\) cut out by the tangent lines \(t_Q\) for \(Q \in C\text{.}\) Claim \(\deg C^* = (d-1)d\text{.}\)</p>
+<p id="p-521">Want</p>
+<div class="displaymath">
+\begin{equation*}
+R:\{P(x,y) = 0\} \xrightarrow\pi \PP^1\CC
+\end{equation*}
+</div>
+<p>compute \(b\text{.}\) In other words, if we fix an arbitrary point \(Q\in C\) then there are \(d(d-1)\) lines through \(Q\) which are tangent to \(C\text{.}\) Projecting to the \(x\)-coordinate \(\iff\) family of lines through a point at \(\infty\) \(\iff\) \(\ast\) line in \((\PP^2)^*\text{.}\) We have a new question: How many points does this line intersect (up to <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a>). By bezout \(\iff  \deg C^*\text{.}\)</p>
+<p id="p-522">Proof (Matt emerton) Consider a point on \(C\) in \(\PP^2\) such that no tangent line to the curve at   \(\infty\) passes through it. Move this point to the origin. If we write</p>
+<div class="displaymath">
+\begin{equation*}
+P(x,y) = f_d + f_{d-1} + \cdots + f_0
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+(f_d, f_{d-1}) = 1
+\end{equation*}
+</div>
+<p>suppose they share a linear factor:</p>
+<div class="displaymath">
+\begin{equation*}
+0 = (f_d)_x x + (f_d)_y y + f_{d-1}\text{,}
+\end{equation*}
+</div>
+<p>then this defines a line through the origin. (Because this gives an equation of an asymptote, this is a contradiction).</p>
+<div class="displaymath">
+\begin{equation*}
+f_d + f_{d-1} + \cdots + f_0 = 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+d f_d + (d-1) f_{d-1} + \cdots + f_1 = 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}  f_d + f_{d-1} + \cdots + f_0 = 0 \\ f_{d-1} + 2f_{d-2} + \cdots + (d-1) f_1 = 0\end{cases}\text{.}
+\end{equation*}
+</div>
+<p>Now these have \(d(d-1)\) common solutions. \(C^*\) has degree \(d(d-1)\) so \(b = d(d-1)\text{.}\) Riemann-Hurwitz implies</p>
+<div class="displaymath">
+\begin{equation*}
+\chi(R) = 2\deg \pi - d(d-1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\chi(R) = 2d - d(d-1)
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+g=  \frac{(d-1)(d-2)}{2}\text{.}
+\end{equation*}
+</div></article><article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">A 3-fold equivalence of categories</span></h5>
+<p id="p-523">Amazing synthesis.</p>
+<ol class="decimal">
+<li id="li-103">Analysis: Compact connected <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">riemann surfaces</a>.</li>
+<li id="li-104">Algebra: Field extensions \(K/\CC\) where \(K\) is finitely generated of transcendence degree 1 over \(\CC\text{.}\)</li>
+<li id="li-105">Geometry: <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">Complete</a> nonsingular irreducible algebraic curves in \(\PP^n\text{.}\)</li>
+</ol>
+<p id="p-524">3) curve \(\to\) 2) field extension. Over \(C\) all rational functions \(\frac{P(x)}{Q(x)}\) \(\deg P= \deg Q\text{,}\) \(P,Q \colon C\to \CC \cup \{\infty\}\text{.}\)</p>
+<p id="p-525">3) \(\to\) 1) take complex structure induced by \(\PP^n\text{.}\)</p>
+<p id="p-526">1) \(\to\) 2) associated field of <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on \(X\text{.}\)</p>
+<p id="p-527">1) \(\to\) 3) Any curve which is holomorphic has an embedding into \(\PP^n\) (Riemann-Roch).</p>
+<p id="p-528">2) \(\to\) 1) \(K/\CC\) consider valuation rings \(R\) such that \(K\supseteq R\supseteq \CC\text{.}\)</p>
+<article class="example-like" id="example-24"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.3.6</span>
+</h6>
+<p id="p-529">\(g =0\text{,}\) \(\PP^1 \CC\) \(\CC(t)\text{,}\) \(\CC\cup \{\infty\}\text{.}\)</p></article><article class="example-like" id="example-25"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.3.7</span>
+</h6>
+<p id="p-530">\(g =1\text{,}\) <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, \(f(x,y,z)\) smooth plane cubic, \(f= 0\text{,}\) \(\CC(\sqrt{f(x)}, x)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\CC/\Lambda \to \PP^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+z\mapsto (z,\wp(z), \wp'(z))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+z\not\in \Lambda
+\end{equation*}
+</div>
+<p>backwards</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y) \mapsto \int_{(x_0, y_0)}^{(x,y)} \frac{\diff x}{y}
+\end{equation*}
+</div></article></article><article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">Riemann-Hurwitz (generally)</span></h5>
+<p id="p-531">There's nothing that doesn't generalise about the previous proof.</p>
+<article class="theorem-like" id="claim-riemann-hurwitz"><h6 class="heading">
+<span class="type">Claim</span> <span class="codenumber">2.3.8</span>
+</h6>
+<p id="p-532">For \(\pi\colon R\to S\) a non-constant morphism of compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a></p>
+<div class="displaymath">
+\begin{equation*}
+\chi(R) = \deg \pi \cdot \chi(S)  - \sum_{x\in S} (\deg(\pi) - \#\pi\inv(x))\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="corollary-31"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.3.9</span>
+</h6>
+<p id="p-533">There are no non-constant morphisms from a sphere to a surface of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> \(\gt 0\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-85" id="proof-85"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-85" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-534">
+\begin{equation*}
+f\colon \PP^1 \CC \to S
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\chi(\PP^1 \CC) = \deg f \chi(S) - b
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+2 = (+)\cdot (-) - b\text{.}
+\end{equation*}
+</div></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-10" id="exercise-10"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.3.10</span>
+</h6></a></article><div id="hk-exercise-10" class="hidden-content tex2jax_ignore"><article class="exercise-like"><div class="displaymath" id="p-535">
+\begin{equation*}
+x^n  +y^ n + z^n = 0
+\end{equation*}
+</div>
+<p>is not solvable in non-constant polynomials for \(n \gt 2\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-11" id="exercise-11"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.3.11</span>
+</h6></a></article><div id="hk-exercise-11" class="hidden-content tex2jax_ignore"><article class="exercise-like"><div class="displaymath" id="p-536">
+\begin{equation*}
+E = \CC/ \ZZ + \ZZ i
+\end{equation*}
+</div>
+<p>multiplication by \(i\) rotates \(x \mapsto xi\) let \(x \sim xi\text{.}\) If we mod out by \(\sim\) to get \(E/\sim\) this is still a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> and the quotient map</p>
+<div class="displaymath">
+\begin{equation*}
+f \colon E \to E / \sim
+\end{equation*}
+</div>
+<p>is nice, compute the <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a>  of order 4 and order 2.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-12" id="exercise-12"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.3.12</span>
+</h6></a></article><div id="hk-exercise-12" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-537">\(X\) compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> of \(g\ge 2\) then there are at most \(84(g-1)\) automorphisms of \(X\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-13" id="exercise-13"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.3.13</span>
+</h6></a></article><div id="hk-exercise-13" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-538">Klein quartic</p>
+<div class="displaymath">
+\begin{equation*}
+x^3 y + y^3 z + z^3 x = 0
+\end{equation*}
+</div>
+<p>has 168 automorphisms and is <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> 3.</p></article></div></article></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

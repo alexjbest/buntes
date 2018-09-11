@@ -1,0 +1,2377 @@
+title Dessins d'Enfants
+
+introduction
+    p
+        | These are notes for BUNTES Spring 2018, the topic is Dessins d'Enfants, they were last updated #[today/].
+        | For more details see #[url(href="http://math.bu.edu/people/angusmca/buntes/spring2018.html") the webpage].
+        | These notes are by Alex, feel free to email me at #[email alex.j.best@gmail.com] to report typos/suggest improvements, I'll be forever grateful.
+
+section#sec-dessins-overview
+    title Overview (Angus)
+
+    subsection
+        title Belyi morphisms
+
+        p
+            | Let #[m X] be an algebraic curve over #[m \CC] (i.e. a compact Riemann surface) when is #[m X] defined over #[m \overline \QQ]?
+
+        theorem
+            title Belyi
+            statement: p
+                | An algebraic curve #[m X/\CC] is defined over #[m \overline \QQ \iff] there exists a morphism #[m \beta \colon X \to \PP^1 \CC] ramified only over #[m \{0,1,\infty\}].
+
+
+        definition#def-dess-ramified
+            title Ramified
+            statement
+                p
+                    | (AG) A morphism #[m f \colon X \to Y] is #[term ramified] at #[m x \in X] if on local rings the induced map #[m f^\# \colon \sheaf O_{Y,f(x)} \to \sheaf O_{X,x}] descended to
+                    me \sheaf O_{Y,f(x)}/\ideal m \to \sheaf O_{X,x}/ f^\#(\ideal m)
+                    | is not a finite inseparable field extension.
+                p
+                    | (RS) A morphism #[m f \colon X \to Y] is ramified at #[m x \in X] if there are charts around #[m x] and #[m f(x)] such that #[m f(x) = x^n].
+                    | This #[m n] is the #[term ramification index].
+
+        definition#def-belyi-morphism
+            title Belyi morphisms
+            statement
+                p
+                    | A #[term Belyi morphism] is one ramified only over #[m \{0,1,\infty\}]
+                p
+                    | A #[term clean Belyi morphism] or #[term pure Belyi morphism] is a Belyi morphism where the ramification indices over 1 are all exactly 2.
+
+        lemma
+            statement: p
+                | A curve #[m X] admits a Belyi morphism iff it admits a clean Belyi morphism.
+            proof: p
+                | If #[m \alpha \colon X\to \PP^1 \CC] is Belyi, then #[m \beta = 4\alpha(1-\alpha)] is a clean Belyi morphism.
+
+    subsection
+        title Dessin d'Enfants
+
+        definition#def-dessin-denfant
+            statement: p
+                | A #[term dessin d'Enfant] (or Grothendieck Dessin or just #[term Dessin]) is a triple #[m (X_0,X_1,X_2)] where #[m X_2] is a compact Riemann surface, #[m X_1] is a graph, #[m X_0 \subset X_1] is a finite set of points, where #[m X_2 \smallsetminus X_1] is a collection of open cells.
+                | #[m X_1 \smallsetminus X_0] is a disjoint union of line segments
+
+
+        lemma
+            statement: p
+                | The data of a dessin is equivalent to a graph with an ordering on the edges coming out of each vertex.
+
+        definition#def-clean-dessin
+            title Clean dessins
+            statement: p
+                | A #[term clean dessin] is a dessin with a colouring (white and black) on the vertices such that adjacent vertices do not share a colour.
+
+
+    subsection
+        title The Grothendieck correspondence
+
+        p
+            | Given a Belyi morphism #[m \beta\colon X \to \PP^1 \CC] the graph #[m \beta^{-1}(\lb 0,1\rb)] defines a dessin.
+
+        theorem
+            statement: p
+                | The map
+                me \{\text{(Clean) Belyi morphisms}\} \to \{\text{(clean) dessins}\}
+                me \beta \mapsto \beta\inv([0,1])
+                | is a bijection up to isomorphisms.
+
+        example
+            statement
+                p
+                    me \PP^1 \CC\to \PP^1\CC
+                    me x\mapsto x^3
+                    // TODO picture
+                p
+                    me \PP^1 \CC\to \PP^1\CC
+                    me x\mapsto x^3 + 1
+                    // \begin{tikzpicture}
+                    //   \node[draw,circle] (G-1) at (0:0) {};
+                     //  \node[draw,circle] (G-2) at (60:1) {};
+                     //  \node[draw,circle] (G-3) at (120:1) {};
+                     //  \node[draw,circle] (G-4) at (180:1) {};
+                     //  \node[draw,circle] (G-5) at (240:1) {};
+                     //  \node[draw,circle] (G-6) at (300:1) {};
+                     //  \node[draw,circle] (G-7) at (0:1) {};
+                     //  \draw (G-1) - - (G-2);
+                     //  \draw (G-1) - - (G-3);
+                     //  \draw (G-1) - - (G-4);
+                     //  \draw (G-1) - - (G-5);
+                     //  \draw (G-1) - - (G-6);
+                     //  \draw (G-1) - - (G-7);
+                    // end{tikzpicture}
+
+    subsection
+        title Covering spaces and Galois groups
+
+
+        p
+            | A Belyi morphism defines a covering map.
+            me \tilde \beta\colon \tilde X \to \PP^1 \CC\smallsetminus \{0,1,\infty\}
+            | the coverings are controlled by the profinite completion of
+            me \pi_1 (\PP^1 \CC\smallsetminus \{0,1,\infty\}) = \ZZ * \ZZ = F_2
+            | .
+
+        theorem
+            statement: p
+                | There is a faithful action
+                me \absgal\QQ \acts \hat\pi_1 (\PP^1 \CC\smallsetminus \{0,1,\infty\})
+            proof
+                p
+                    | By Belyi's theorem every elliptic curve #[m E/\overline \QQ] admits a Belyi morphism.
+                    | For each #[m j \in \overline\QQ] there exists an elliptic curve #[m E_j/\overline \QQ] with #[m j]-invariant #[m j].
+                p
+                    | Given #[m \sigma \in \absgal{\QQ}],
+                    me \sigma(E_j) = E(\sigma(j))
+                    | assume #[m \sigma \mapsto 1],
+                    me E_j \cong E_{\sigma(j)}\ \forall j
+                    me j = \sigma(j) \ \forall j
+                    | a contradiction.
+
+        corollary
+            statement: p
+                | We have a faithful action of #[m \absgal{\QQ}] on dessins.
+
+        theorem
+            statement: p
+                | We have a faithful action of #[m \absgal{\QQ}] on the set of dessins of any fixed genus.
+
+    subsection
+        title Exercises
+
+        exercise
+            statement: p
+                | Compute the Dessins for the following Belyi morphisms
+                ol
+                    li
+                        me \PP^1\CC\to \PP^1\CC,\,x\mapsto x^4
+                    li
+                        me \PP^1\CC\to \PP^1\CC,\,x\mapsto x^2(3-2x)
+                    li
+                        me \PP^1\CC\to \PP^1\CC,\,x\mapsto \frac{1}{x(2-x)}
+
+        exercise
+            statement: p
+                | Give an alternate proof of the fact that #[m X] admits a Belyi morphism if and only if it admits a clean Belyi morphism using dessins and the Grothendieck correspondence.
+
+        exercise
+            statement: p
+                | Prove that a Belyi morphism corresponding to a tree, that sends #[m \infty] to #[m \infty] is a polynomial.
+
+section#sec-dessins-riemann-surfaces
+    title Riemann Surfaces I (Ricky)
+
+    subsection
+        title Definitions
+
+        definition#def-top-riem-surface
+            statement: p
+                | A #[term topological surface] is a Hausdorff space #[m X] wich has a collection of charts
+                me  \{\phi_i \colon U_i \xrightarrow\sim \phi_i(U_i) \subseteq \CC,\,\text{open}\}_{i\in I}
+                | such that
+                me X= \bigcup_{i\in I} U_i
+                |. We call #[m X] a #[term Riemann surface] if the transition functions #[m \phi_i\circ \phi_j^{-1}] are holomorphic.
+
+
+    subsection
+        title Examples
+        example
+            statement
+                p
+                    | Open subsets of #[m \CC], e.g.
+                    me \CC
+                    me \mathbf D = \{z\in \CC : |z| \lt 1 \}
+                    me \HH = \{z\in \CC : \im z \gt 0 \}
+                    | .
+
+        example
+            statement
+                p
+                    | #[m \hat \CC = ] Riemann sphere #[m  = \CC\cup \{\infty\}].
+                    | A basis of neighborhoods of #[m \infty] is given by
+                    me \{z\in \CC : |z| \gt R \} \cup \{\infty\}
+                    | .
+
+        example
+            statement
+                p
+                    me \PP^1(\CC )= \{ [z_0 :z_1 ] : (z_0,z_1) \ne (0,0)\}
+                    me U_0 =\{[z_0,z_1] : z_0 \ne 0\}\to \CC
+                    me [z_0:z_1] \mapsto \frac{z_1}{z_0}
+                    me U_1 =\{[z_0,z_1] : z_1 \ne 0\}\to \CC
+                    me [z_0:z_1] \mapsto \frac{z_0}{z_1}
+                    | .
+
+        example
+            statement: p
+                | Let #[m \Lambda = \ZZ \oplus \ZZ i \subseteq \CC] then #[m X = \CC/\Lambda] is a Riemann surface.
+
+    subsection
+        title Morphisms
+        definition#def-morph-riem-surf
+            title (Holo/Mero)-morphisms of Riemann surfaces
+            statement
+                p
+                    | A #[term morphism of Riemann surfaces] is a continuous map
+                    me f\colon S\to S'
+                    | such that for all charts #[m \phi, \psi] on  #[m S, S'] respectively we have #[m \psi \circ f \circ \phi\inv] is holomorphic.
+                p
+                    | We call a morphism #[m f\colon S\to \CC] a #[term holomorphic function] on #[m S].
+                p
+                    | We say #[m f \colon S \to \CC] is a #[term meromorphic function] is #[m f\circ \phi\inv] is meromorphic.
+
+        exercise
+            statement: p
+                |  The set of meromorphic functions on a Riemann surface form a field.
+
+        p
+            | We denote the field of meromorphic functions by #[m \mathcal M (S)].
+
+        proposition
+            title 1.26
+            statement: p
+                me \mathcal M(\hat \CC) = \CC(z)
+                | .
+            proof: p
+                | Let #[m f\colon \hat\CC \to \CC] be meromorphic.
+                | Then the number of poles of #[m f] is finite say at #[m a_1, \ldots, a_n].
+                | So, locally at  #[m a_i] we can write
+                me f(z) = \sum_{j=1}^{j_i} \frac{\lambda_{j,i}}{(z-a_i)^j} + h_i(z)
+                | with #[m h_i] holomorphic.
+                | Then
+                me f(z) - \sum_{i=1}^n \sum_{j=1}^{j_i} \frac{\lambda_{j,i}}{(z-a_i)^j}
+                | is holomorphic everywhere.
+                | By Liouville's theorem this is constant.
+
+        p
+            | We say #[m S,S'] are isomorphic if #[m \exists f\colon S\to S'], #[m g\colon S'\to S] morphisms such that #[m f\circ g = \id_{S'}], #[m g\circ f = \id_{S}].
+
+        exercise
+            statement: p
+                | Show that
+                me \hat \CC \simeq \PP^1(\CC)
+                | .
+
+
+        remark
+            p
+                | #[m \CC \not\simeq \mathbf D] by Liouville.
+            p
+                | If #[m S, S'] are connected compact Riemann surfaces, then any nonconstant morphism #[m f\colon S \to S'] is surjective.
+                | (Nonconstant holomorphic maps are open)
+    subsection
+        title Ramification
+
+        definition#def-riem-order-vanish
+            title Orders of vanishing
+            statement
+                p
+                    | The #[term order of vanishing] at #[m P\in S] of a holomorphic function on #[m S] is defined as follows:
+                    | For #[m \phi] a  chart centered at #[m P] write
+                    me f\circ \phi\inv (z) = a_n z^n + a_{n+1}z^{n+1} + \cdots,\,a_n\ne 0
+                    | then #[m \ord_P(f) = n].
+                p
+                    | More generally, for #[m f\colon S \to S'] we can define #[m m_P(f)] (#[term multiplicity] of #[m f] at #[m P]) by using a chart #[m \psi] on #[m S'] and setting
+                    me m_P(f) = \ord_P(\psi\circ f)
+                    | .
+                p
+                    | If #[m m_P(f)\ge 2] then we call #[m P] a #[term branch point] of #[m f] and call #[m f] ramified at #[m P].
+
+        example
+            statement: p
+                me f\colon \CC \to \CC,\,f(z) = z^2
+                | . The chart #[m \phi_a(z) = z-a] is centered at #[m a \in \CC].
+                | Then to compute #[m m_a(f)] we compute
+                me f\circ \phi\inv_a(z) = a^2 + 2az + z^2
+                | hence
+                me \ord_a(f) =\begin{cases} 0,\amp \text{ if } a\ne 0\\ 2,\amp\text{ if } a= 0\end{cases}
+                | .
+
+    subsection
+        title Genus
+        theorem
+            title Rado
+            statement: p
+                | Any orientable compact surface can be triangulated.
+
+        fact: statement: p Riemann surfaces are orientable.
+
+        // TODO computation
+
+        p
+            | Given such an oriented polygon coming from a Riemann surface, we can associate a word #[m w] to it from travelling around the perimeter.
+
+        example
+            statement: p
+                | For the sphere #[m w = a\inv ab\inv bc\inv c].
+
+        fact#fact-existance-genus
+            statement: p
+                | Every such word can be normalised without changing the corresponding Riemann surface.
+                me w = \begin{cases} w_0 = aa\inv,\\ w_g = a_1b_1 a_1\inv b_1\inv \cdots a_gb_g a_g\inv b_g\inv\end{cases}
+                | The (uniquely determined) #[m g] is the #[term genus] of the surface.
+
+        example
+            statement
+                p
+                    | #[m w_1 = a_1b_1 a_1\inv b_1 \inv].
+                p
+                    | #[m w_2 = a_1b_1 a_1\inv b_1a_2b_2 a_2\inv b_2 \inv].
+
+        theorem
+            statement: p
+                me \chi (S) = v- e + f = 2-2g(S)
+                | .
+
+section#sec-riemann-hurwitz
+    title Riemann Hurwitz Formula (Sachi)
+
+    exercise
+        title Unimportant
+        statement: p
+            | The genus is invariant under changing triangulation.
+
+    p
+        | In particular there are at least two distinct ways of thinking about genus for Riemann surfaces #[m R]
+        ol
+            li
+                me \chi(R) = V -E + F = 2-2g
+            li
+                | The dimension of the space of holomorphic differentials on #[m R].
+    p
+        | Goal: given #[m R] calculate genus
+        me y^2 = (x+1)(x-1)(x+2)(x-2)
+        | so in an ad hoc way
+        me y = \sqrt{(x+1)(x-1)(x+2)(x-2)}
+        | when #[m x] is not a root of the above we have two distinct values for #[m y], we can imagine two copies of #[m \CC] sitting above each other and then square root will land in both copies.
+        | We have to make branch cuts between the roots and glue along these to account for the fact that going around a small loop surrounding a root will change the sign of our square root.
+        | We end up with something looking like a torus here.
+
+    p
+        | Here we examined the value where there were not enough preimages when we plugged in a value for #[m x].
+        | The idea is to project to #[m x], and understand the number of preimages.
+        me P(x,y) = y^n + p_{n-1}(x) y^{n-1} + \cdots + p_0(x)
+        | an  irreducible polynomial.
+        me R= \{(x,y) : P(x,y) = 0\}
+        | . If we fix #[m x_0 \in \PP^1 \CC] we can analyse how many #[m y] values lie over this #[m x].
+        | If we have fixed our coefficients we expect #[m n] solutions in #[m y] over #[m \CC], i.e. points #[m (x_0,y)\in R].
+    p
+        | For some values of #[m x_0] this will not be true, there will be fewer #[m y]-values, this occurs when we have a multiple root.
+        | This happens precisely when the discriminant of this polynomial vanishes, the discriminant is a polynomial and so has finitely many roots.
+
+    definition#def-branch-point
+        title Branch points
+        statement: p
+            | Let #[m \pi\colon R \to \PP^1 \CC].
+            | We say #[m x_0] is a #[term branch point] if there are fewer than #[m n] distinct #[m y]-values above #[m x].
+            | Then define the #[term total branching index]
+            me b = \sum_{x\in \PP^1 \CC} (\deg(\pi) - \# \pi\inv (x))
+            | .
+
+    claim#claim-euler-degree-total-branching
+        statement: p
+            me \chi(R) = \deg \pi \cdot \chi(\PP^1\CC)  - b
+            | .
+
+    lemma
+        statement: p
+            | Locally given some choice of coordinates a non-constant morphism of Riemann surfaces
+            me f\colon R \to S
+            | is given by #[m w\mapsto w^n].
+            | More precisely given #[m r \in R], #[m f(r) = s] and #[m V_s \ni s] a small neighbourhood choose an identification of
+            me V_s \xrightarrow \Psi D
+            | which sends #[m s \mapsto 0] and we can find an analytic identification
+            me r\in R_r \xrightarrow \phi D
+            | such that
+            me f(U_r) \subseteq V_s
+            | .
+            me.
+                \xymatrix{U_r \ar[r]^f \ar[d]_\phi &amp; V_s \ar[d]^\Psi \\ D \ar[r]_{w\mapsto w^m} &amp; D}
+        proof: p
+            | In Sachi's notes.
+
+    proof
+        p
+            | Of #[xref(ref="claim-euler-degree-total-branching")/].
+        p
+            | Triangulate #[m R] so that every face lies in some small coordinate neighborhood s.t.
+            me \pi \colon R\to \PP^1 \CC
+            | is given by #[m w \mapsto w^m], s.t. every edge, all branch points are vertices.
+            | This ensures that each face edge and vertex has #[m n  = \deg (\pi)] preimages (except branch points).
+            | Then accounting for branch points we have #[m \deg(\pi) -  \# \pi\inv (x_0)] preimages.
+
+
+    example
+        statement
+            p
+                | #[m P(x,y)] plane curve, classically have
+                me g = \frac{(d-1)(d-2)}{2}
+                | #[m \PP^2 = \{ \lb x:y:z \rb\}] and #[m (\PP^2)^* = \lb a:b:c \rb], lines in #[m \PP^2]
+                me ax + by + cz = 0
+                | and we have lines #[m \leftrightarrow] points. We have #[m C^*] the dual curve in #[m \PP^2] cut out by the tangent lines #[m t_Q] for #[m Q \in C].
+                | Claim #[m \deg C^* = (d-1)d].
+            p
+                | Want
+                me  R:\{P(x,y) = 0\} \xrightarrow\pi \PP^1\CC
+                | compute #[m b].
+                | In other words, if we fix an arbitrary point #[m Q\in C] then there are #[m d(d-1)] lines through #[m Q] which are tangent to #[m C].
+                | Projecting to the #[m x]-coordinate #[m \iff] family of lines through a point at #[m \infty] #[m \iff] #[m \ast] line in #[m (\PP^2)^*].
+                | We have a new question: How many points does this line intersect (up to multiplicity).
+                | By bezout #[m \iff  \deg C^*].
+            p
+                | Proof (Matt emerton) Consider a point on #[m C] in #[m \PP^2] such that no tangent line to the curve at   #[m \infty] passes through it.
+                | Move this point to the origin.
+                | If we write
+                me P(x,y) = f_d + f_{d-1} + \cdots + f_0
+                | then
+                me (f_d, f_{d-1}) = 1
+                | suppose they share a linear factor:
+                me 0 = (f_d)_x x + (f_d)_y y + f_{d-1}
+                | , then this defines a line through the origin. (Because this gives an equation of an asymptote, this is a contradiction).
+                me f_d + f_{d-1} + \cdots + f_0 = 0
+                me d f_d + (d-1) f_{d-1} + \cdots + f_1 = 0
+                me \implies
+                me \begin{cases}  f_d + f_{d-1} + \cdots + f_0 = 0 \\ f_{d-1} + 2f_{d-2} + \cdots + (d-1) f_1 = 0\end{cases}
+                | . Now these have #[m d(d-1)] common solutions.
+                | #[m C^*] has degree #[m d(d-1)] so #[m b = d(d-1)].
+                | Riemann-Hurwitz implies
+                me \chi(R) = 2\deg \pi - d(d-1)
+                me \chi(R) = 2d - d(d-1)
+                | so
+                me g=  \frac{(d-1)(d-2)}{2}
+                | .
+
+    paragraphs
+        title A 3-fold equivalence of categories
+
+        p
+            | Amazing synthesis.
+            ol
+                li
+                    | Analysis: Compact connected riemann surfaces.
+                li
+                    | Algebra: Field extensions #[m K/\CC] where #[m K] is finitely generated of transcendence degree 1 over #[m \CC].
+                li
+                    | Geometry: Complete nonsingular irreducible algebraic curves in #[m \PP^n].
+
+        p
+            | 3) curve #[m \to] 2) field extension. Over #[m C] all rational functions #[m \frac{P(x)}{Q(x)}] #[m \deg P= \deg Q], #[m P,Q \colon C\to \CC \cup \{\infty\}].
+        p
+            | 3) #[m \to] 1) take complex structure induced by #[m \PP^n].
+        p
+            | 1) #[m \to] 2) associated field of meromorphic functions on #[m X].
+        p
+            | 1) #[m \to] 3) Any curve which is holomorphic has an embedding into #[m \PP^n] (Riemann-Roch).
+        p
+            | 2) #[m \to] 1) #[m K/\CC] consider valuation rings #[m R] such that #[m K\supseteq R\supseteq \CC].
+
+        example
+            statement: p
+                | #[m g =0], #[m \PP^1 \CC] #[m \CC(t)], #[m \CC\cup \{\infty\}].
+
+
+        example
+            statement: p
+                | #[m g =1], elliptic curves, #[m f(x,y,z)] smooth plane cubic, #[m f= 0], #[m \CC(\sqrt{f(x)}, x)].
+                me \CC/\Lambda \to \PP^2
+                me z\mapsto (z,\wp(z), \wp'(z))
+                me z\not\in \Lambda
+                | backwards
+                me (x,y) \mapsto \int_{(x_0, y_0)}^{(x,y)} \frac{\diff x}{y}
+
+    paragraphs
+        title Riemann-Hurwitz (generally)
+
+        p
+            | There's nothing that doesn't generalise about the previous proof.
+
+        claim#claim-riemann-hurwitz
+            statement: p
+                | For #[m \pi\colon R\to S] a non-constant morphism of compact Riemann surfaces
+                me \chi(R) = \deg \pi \cdot \chi(S)  - \sum_{x\in S} (\deg(\pi) - \#\pi\inv(x))
+                | .
+
+        corollary
+            statement: p
+                | There are no non-constant morphisms from a sphere to a surface of genus #[m \gt 0].
+            proof: p
+                me f\colon \PP^1 \CC \to S
+                me \chi(\PP^1 \CC) = \deg f \chi(S) - b
+                me 2 = (+)\cdot (-) - b
+                | .
+
+        exercise
+            statement: p
+                me x^n  +y^ n + z^n = 0
+                | is not solvable in non-constant polynomials for #[m n \gt 2].
+
+        exercise
+            statement: p
+                me E = \CC/ \ZZ + \ZZ i
+                | multiplication by #[m i] rotates #[m x \mapsto xi] let #[m x \sim xi].
+                | If we mod out by #[m \sim] to get #[m E/\sim] this is still a Riemann surface and the quotient map
+                me f \colon E \to E / \sim
+                | is nice, compute the branch points  of order 4 and order 2.
+
+        exercise
+            statement: p
+                | #[m X] compact Riemann surface of #[m g\ge 2] then there are at most #[m 84(g-1)] automorphisms of #[m X].
+
+        exercise
+            statement: p
+                | Klein quartic
+                me x^3 y + y^3 z + z^3 x = 0
+                | has 168 automorphisms and is genus 3.
+
+
+section#sec-rs-discrete-groups
+    title Riemann Surfaces and Discrete Groups (Rod)
+
+    introduction
+        p
+            | Welcome to BUGLES (Boston university geometry learning expository seminar), the reason it is called bugles is because bugles are hyperbolic, and today we will see a lot of hyperbolic objects.
+
+        p
+            | Plan
+            ol
+                li
+                    | Uniformization
+                li
+                    | Fuchsian groups
+                li
+                    | Automorphisms of Riemann surfaces
+
+        proposition
+            statement: p
+                me  \Aut(\hat \CC) =  \{ z\mapsto \frac{az+b }{cz+d}\}
+                me \Aut(\CC) = \left\{z \mapsto za+b\right\}
+                me \Aut(\HH) = \{ z\mapsto \frac{az+b }{cz+d},a,b,c,d\in \RR \} = \PSL_2(\RR)
+
+        theorem
+            statement: p
+                | #[m \Sigma] has a universal cover #[m \widetilde \Sigma] with #[m \pi_1 ( \Sigma) = 1].
+                | #[m \widetilde \Sigma \to \Sigma] holomorphic.
+                | #[m \Sigma  = \widetilde \Sigma /G] for #[m G = \pi_1(\Sigma)].
+                | #[m G] acts freely and properly discontinuously.
+
+    subsection
+        title Uniformization
+
+        theorem
+            statement
+                p
+                    | The only simply connected Riemann surfaces are #[m \hat \CC], #[m \CC], #[m \HH].
+
+        theorem
+            statement: p
+                | #[m \Sigma] is a Riemann surface then
+                md
+                    mrow g= 0 : \Sigma \amp\cong \hat \CC
+                    mrow g= 1 : \Sigma \amp\cong \CC/ \Lambda
+                    mrow g\ge2: \Sigma \amp\cong \HH/ K
+                | .
+            proof
+                p
+                    | #[m g = 0] Uniformization.
+                p
+                    | #[m g \ge 1] #[m \hat \CC] can't be a cover by Riemann-Hurwitz.
+                    | #[m g = 1] #[m \pi_1 (\Sigma) = \ZZ \oplus \ZZ] abelian.
+                p
+                    | Claim: no subgroup of #[m \Aut (\HH) ] is isomorphic to #[m \ZZ \oplus \ZZ] acting freely and properly discontinuously.
+                    | So #[m \widetilde\Sigma = \hat \CC] #[m z\mapsto az+b] free id #[m a=1] so #[m z\mapsto z+\lambda_1] #[m z\mapsto z+\lambda_2].
+                p
+                    | #[m g= 2] #[m \pi_1(\Sigma)] is not abelian but #[m z\mapsto z + \lambda_1] is abelian!
+                    me \Sigma = \HH/K,\, K \subseteq \PSL_2(\RR)
+                    | .
+
+        paragraphs
+            title Goal
+            p
+                | Understand #[m \Sigma ] through #[m \widetilde \Sigma] and #[m G].
+
+        paragraphs
+            title Fuchsian groups
+
+            p
+                | #[m g \ge 2].
+                me \Aut (\HH) = \PSL_2(\RR) = \operatorname{Isom}^+ ( \HH, \frac{|\diff z|^2}{\Im Z})
+                | hyperbolic #[m \HH, \mathbf D] and #[m \PSL_2(\RR)] acts transitively on geodesics.
+            definition#def-fuchsian-group
+                title Fuchsian groups
+                statement: p
+                    | A #[term Fuchsian group] is a discrete subgroup of #[m \PSL_2(\RR)].
+
+            remark
+                p
+                    | (proof in book) Even if #[m \Gamma] doesn't act freely the quotient
+                    me \HH \to \HH/\Gamma
+                    | is still a covering map and #[m \HH/\Gamma] is a Riemann surface.
+
+        paragraphs
+            title Reflections on #[m \HH]
+
+            p
+                | Say #[m \mu] is a geodesic in #[m \HH], i.e. a horocycle.
+                // TODO picture
+                | There is #[m M \in \PSL_2(\RR)] with #[m M\mu] the imaginary axis.
+                | Then #[m R = -\bar z] is the reflection  over the imaginary axis.
+                | Now #[m R_\mu = M\inv\circ R \circ M] is a reflection over #[m \mu].
+                me R_\mu = \frac{a\bar z  + b}{ c\bar z + d}\not\in \PSL_2(\RR)
+                | this is a a problem for us.
+
+        paragraphs
+            title Triangle groups
+
+            p
+                | Given #[m n, m, l\in \ZZ \cup \{\infty\}] then there is a hyperbolic triangle with angles #[m \pi/n,\pi/m, \pi/l] if
+                me \frac 1n + \frac 1m + \frac 1l \lt 1
+                | . With area #[m \pi(1 -  \frac 1n - \frac 1m - \frac 1l)].
+
+            p
+                | In the disk model we can start with a wedge of the disk and by adding a choice third geodesic with endpoints on the edge we can adjust the other angles to be what we like.
+                // TODO picture
+                | So we can construct hyperbolic triangles with whatever angles we like.
+                | Then let #[m R_1] be the reflection over 1 edge, #[m R_2] , #[m R_3] similarly.
+                | By reflecting our original triangle #[m T] with these reflections we can tessellate the disk, colouring alternately the triangles obtained using an odd or even number of reflections.
+                // TODO picture pi/3 reflection
+            p
+                | The only remaining problem is that #[m R_i]'s are not in #[m \PSL_2(\RR)].
+                | The solution is to define #[m x_1 = R_3 \circ R_1], #[m x_2 = R_1 \circ R_2], #[m x_3 = R_2 \circ R_3] which are all in #[m \PSL_2(\RR)] now.
+                | Now we need to take the union of two adjacent triangles before as a fundamental domain, some quadrilateral that still tessellates.
+                | So we have formed a Fuchsian group from our triangles.
+            p
+                | A presentation for this group is
+                me \langle x_1, x_2, x_3 | x_1 ^n = x_2 ^ m = x_3 ^l = x_1x_2x_3 = 1\rangle
+                | note #[m n,m,l] can still be #[m \infty].
+
+            definition#def-triangle-groups
+                title Triangle groups
+                statement: p
+                    | Let #[m \Gamma_{n,m,l}] be the #[term triangle group] with signature #[m (1/n, 1/m, 1/l)].
+
+
+            remark
+                p
+                    me \frac 1n + \frac 1m + \frac 1l = 1
+                    me \frac 1n + \frac 1m + \frac 1l \gt 1
+                    | still work on #[m \CC] and #[m \hat \CC] respectively.
+
+
+            example
+                title #[m \PSL_2(\ZZ)]
+                statement: p
+                    | Consider #[m \Gamma_{2,3,\infty}] angles #[m \pi/2, \pi/3, 0].
+                    | We can draw such a triangle in the upper half plane with vertices #[m i, e^{\pi i/3}, \infty].
+                    | So a fundamental domain will be the region obtained by reflecting through the imaginary axis, given by #[m -\frac 12 \le \Re z \le \frac 12], #[m |z| \ge 1].
+                    | We have #[m R_1 = \frac{1}{\bar z}, R_2 = -\bar z +1,R_3 = -\bar z] so #[m x_1 = \frac{-1}{z}, x_2 = \frac{1}{-z+1}, x_3 = z+1].
+                    | Then #[m \Gamma_{2,3,\infty} \cong \PSL_2(\ZZ)].
+                    | Sometimes denoted #[m \Gamma(1)].
+                    // TODO picture
+
+
+            observation: p
+                | If #[m \Gamma_1 \lt \Gamma_2] and #[m T] is a fundamental domain of #[m \Gamma_2] then if #[m \gamma_1, \gamma_2, \ldots, \gamma_n \in \Gamma_2] are representatives of #[m \Gamma_1\backslash \Gamma_2] then
+                me \bigcup \gamma_i (T)
+                | is a fundamental domain for #[m \Gamma_1].
+
+            example
+                title #[m \Gamma(1)]
+                statement: p
+                    me \Gamma(2) = \{\begin{pmatrix} a\amp b \\ c\amp d\end{pmatrix} = \id \pmod 2 \}
+                    | then
+                    me [\Gamma(1) : \Gamma(2)] = 6
+                    | representatives of #[m \Gamma(2) \backslash \Gamma(1)] are
+                    me x_1 = \id,\,x_2 = \frac{-1}{z-1}, x_3 = \frac{z-1}{z},\, x_4 = \frac{z-1}{z},\,x_5 = \frac{-z}{x-1},\,x_6 = \frac{-1}{z}
+                    | . Lets see what these do, for example if #[m z= e^{i\theta}]
+                    me \Re(x_2(z) = \frac{-1}{e^{i\theta} - 1} = \frac{-e^{i\theta} + 1}{2- 2\cos \theta}) = \frac{1-\cos \theta}{ 2- 2\cos \theta} \frac 12
+                    | if we plot this we see we get two copies of a 0,0,0 triangle so this corresponds to #[m \Gamma_{\infty,\infty,\infty}].
+                    me \langle x_1, x_2, x_3 | x_1x_2x_3 = 1\rangle = \langle x_1,x_2\rangle = \pi_1(\PP^1\smallsetminus\{0,1,\infty\})
+                    | .
+
+            proposition
+                statement: p
+                    | #[m S_1 = \HH/ \Gamma_1], #[m S_2 = \HH/\Gamma_2] then
+                    me S_1 \cong S_2 \iff \Gamma_1 = T\circ \Gamma_2 \circ T\inv,\,T\in \PSL_2(\RR)
+                    | .
+                proof
+                    p
+                        | #[m \Leftarrow] Define an #[m \phi\colon S_1 \to S_2] via #[m \phi(\lb z\rb_1) = \lb T(z)\rb_2].
+                    p
+                        | #[m \Rightarrow] Take a lift
+                        me.
+                            \xymatrix{
+                            \HH\ar[r]^{\tilde\phi}\ar[d] &amp; \HH\ar[d] \\
+                            \HH/\Gamma_1\ar[r]_\phi &amp; \HH/\Gamma_2
+                            }
+                        | then #[m T= \tilde \phi].
+
+            proposition
+                statement: p
+                    | #[m \Gamma] a Fuchsian group acts freely
+                    me \Aut(\HH/\Gamma) = N(\Gamma)/\Gamma
+                    | .
+                proof: p
+                    | Previous proposition, set #[m \Gamma_1 = \Gamma_2]
+                    me N(\Gamma) \to \Aut(\HH/\Gamma)
+                    | kernel is #[m \Gamma].
+
+            corollary
+                statement: p
+                    | Let #[m \Sigma] be a Riemann surface with #[m g \ge 2] then
+                    me |\Aut(\Sigma)| \lt \infty
+                    | .
+                proof: p
+                    me.
+                        \xymatrix{
+                        \HH \ar[dr]^{\phi_1} \ar[d]_{\phi_2}\\
+                        S =\HH/\Gamma \ar[r]_f &amp; \HH/N(\Gamma) = S/\Aut(S)
+                        }
+                    | since #[m \phi_1,\phi_2] are holomorphic then so is #[m f].
+                    | So #[m \deg f=  | N(\Gamma) /\Gamma|] and #[m \deg f  \lt \infty].
+
+            p
+                | Say #[m \Sigma], #[m g\ge 2], #[m G\subseteq \Aut(\Sigma)].
+                | Let #[m \bar g] be the genus of #[m \Sigma /G]
+                me 2g - 2 = |G| (2\bar g - 2) + \sum_p (I(p) - 1) = |G|(2\bar g - 2 + \sum_{i=1}^n (1 - \frac{1}{|I(p_i)|}))
+                | where #[m I(p)] is the stabiliser of #[m p] in #[m G] and #[m \{p_i\}] area maximal set of fixed points of #[m G] inequivalent under the action of #[m G].
+
+            exercise
+                statement: p
+                    | #[m \Sigma,\,g\ge 2] then #[m |\Aut(\Sigma)| \le 84(g-1)].
+                    | Hint: cases.
+
+            exercise
+                statement: p
+                    | Consider
+                    me 1 \to \Gamma(n) \to \Gamma(1) \to \PSL_2(\ZZ/n\ZZ) \to 1
+                    | compute genus of #[m \HH/\Gamma(n)].
+
+section#sec-rs-discrete-groups-ii
+    title Riemann Surfaces and Discrete Groups II (Jim)
+
+    subsection
+        title Moduli space of compact Riemann surfaces with genus #[m g]
+
+        p
+            | #[m g =0]. Uniformization tells us that up to isomorphisms all Riemann surfaces of genus #[m 0] are #[m \PP^1] hence the moduli space #[m \mathcal M _0  = \{\text{pt}\}].
+        p
+            | #[m g = 1]. Uniformization tells us that each Riemann surface of genus #[m 1] is a torus and can be written as #[m \CC/ \omega_1\ZZ+ \omega_2\ZZ \to \CC/(\ZZ \oplus \tau \ZZ)], with #[m \tau = \pm \omega_1/\omega_2].
+        proposition
+            title 2.54
+            statement: p
+                me \mathcal M_1 \simeq \HH/ \PSL_2(\ZZ) \simeq \CC
+                | .
+            proof: p
+                | Idea: Existence of
+                me \CC/ \Lambda_{\tau_1} \xrightarrow{\sim} \CC/\Lambda_{\tau_2}
+                | with #[m \bar T (\lb 0 \rb) = \lb 0 \rb] is equivalent to the existence of #[m T \in \Aut(\CC)] (choose #[m T(z) = wz]) such that #[m w(\ZZ\oplus \tau_1 \ZZ) = \ZZ\oplus \tau_2\ZZ].
+                | This in turn is equivalent to the existence of
+                me A,A' \in \GL_2(\ZZ)
+                | s.t. #[m \det (A) = \det(A') = \pm 1] so that
+                me \begin{pmatrix} w\\ w\tau_1 \end{pmatrix} A \begin{pmatrix}1\\ \tau_2\end{pmatrix} = A' \begin{pmatrix} w \\ w\tau_1 \end{pmatrix}
+                me \implies \tau_q = A \psi_2 = \frac{a\tau_2 + b}{c\tau_2 + d}
+                | and #[m A \in \PSL_2(\RR)]. Implies #[m A\in \PSL_2(\ZZ)] as both #[m \tau_1,\tau_2 \in \HH].
+                | Conversely if
+                me \tau_1 = \frac{a\tau_2 + b}{c\tau_2 + b}
+                | isomorphism is induced by #[m T(z) = (c\tau_2 + d) z].
+
+
+        p
+            | #[m g \gt 1] #[m \mathcal M_g] is a complex variety of dimension #[m 3g-3].
+            | Uniformization tells us that describing a Riemann surface amounts to specifying #[m 2g] real #[m 2\times 2] matrices #[m \{\gamma_i\}_{i=1}^{2g}] such that
+            ol
+                li
+                    | #[m \det(\gamma_i) = 1] which implies that #[m \gamma_i] depends on 3 real parameters so we have a total of #[m 6g].
+                li
+                    | #[m \prod_{i=1}^g \lb \gamma_i, \gamma_{g+i}\rb = \begin{pmatrix} 1\amp 0 \\ 0\amp 1\end{pmatrix}] 3 relations, so #[m 6g- 3].
+                    | Since for any #[m \gamma \in \PSL_2(\RR)] #[m \Gamma = \langle \gamma_i \rangle] and #[m \gamma\Gamma \gamma\inv] uniformize isomorphic Riemann surfaces implies #[m 6g-6] real parameters, so #[m 3g-3] complex parameters.
+
+    subsection
+        title Monodromy
+
+        p
+            | Let #[m f\colon S_1 \to S] be a morphism of degree #[m d] ramified over #[m y_1,\ldots, y_n \in S].
+            | For #[m y\in S\smallsetminus \{y_1,\ldots, y_n\}] we have a group homomorphism
+            me M_f\colon \pi_1(S \smallsetminus \{y_1, \ldots, y_n\} )\to \operatorname{Bij} (f\inv (y))
+            me \gamma \mapsto M_f(\gamma) = \sigma_\gamma\inv
+            | . #[m \sigma_\gamma] is defined as follows:
+            me \gamma \in \pi_1(S\smallsetminus \{ y_1,\ldots, y_n\})
+            | lifts to a path #[m \widetilde \gamma] from #[m x\in f\inv(y)] to another #[m x' \in f\inv(y)] set #[m \sigma_\gamma(x) =x'].
+            | If we number the points in #[m f\inv (y)] we may think of #[m M_f(\pi_1)\subseteq \Sigma_d], via some #[m \phi\colon \{1,\ldots, d\}\to f\inv (y)].
+            | #[m \operatorname{Mon}(f)] is the image of #[m M_f(\pi_1)] in #[m \Sigma_d].
+
+        paragraphs
+            title Monodromy and Fuchsian groups
+
+            p
+                | Let
+                me \pi \colon \HH/\Gamma_1 \to \HH/ \Gamma
+                | be the Fuchsian group representation of the map
+                me f\colon S_1 \to S\ni y
+                | . Identifications #[m y = \lb z_0 \rb_\Gamma] for some #[m z_0 \in \HH].
+                me \pi_1 (S\smallsetminus \{y_1,\ldots, y_n\}) \simeq \Gamma
+                me f\inv(y ) = \{ [\beta z_0]_{\Gamma_1}\}
+                | where #[m \beta] runs along a set of representatives of #[m \Gamma_1\backslash \Gamma].
+
+            p
+                me M_f \colon \Gamma \to \operatorname{Bij} (\Gamma_1\backslash \Gamma)
+                me \gamma \mapsto M_f(\gamma)
+                me \implies \gamma \sim \pi_1([z_0,\gamma(z_0)])
+                | where #[m \lb z_0, \gamma(z_0) \rb] is a path in #[m \HH].
+                | Lift this loop to #[m \HH/\Gamma_1] is the path #[m \pi_{\Gamma_1}(\beta \lb z_0, \gamma_0(z_0)\rb)]. which corresponds to #[m \Gamma_1 \beta \gamma],
+                | this implies #[m \sigma_\gamma(\Gamma_1\beta)  = \Gamma_1 \beta\gamma].
+
+            corollary
+                title 2.59
+                statement: p
+                    me M_\pi \colon \Gamma \to \operatorname{Bij} (\Gamma_1 \backslash \Gamma)
+                    | induces an isomorphism
+                    me \frac{\Gamma}{\bigcap_{\beta\in \Gamma_1} \beta\inv \Gamma_1 \beta} \simeq \operatorname{Mon}(\pi)
+            p
+                | characterize morphisms by monodromy.
+                | Let #[m f_i] have degree 2, non conjugate.
+
+            proposition
+                title 2.63
+                statement: p
+                    | For #[m S] a compact Riemann surface and #[m \beta = \{ a_1, \ldots, a_n\} \subset S] for some #[m d \ge 1] there are only finitely many pairs #[m (\tilde S, f)] where #[m \tilde S] is a compact Riemann surface and
+                    me f\colon \tilde S \to S
+                    | is a degree #[m d] morphism with branching  value set #[m \beta].
+                proof: p
+                    | Special case:
+                    | Assume #[m S = \PP^1] and #[m n=3].
+                    me \Gamma = \Gamma(2) = \{ A \in \PSL_2(\ZZ) : A = \id \pmod 2\}
+                    me = \pi_1 (S' \smallsetminus \{0,1,\infty\})
+                    | is generated by #[m \gamma_1, \gamma_2] so any map #[m M_f \colon \Gamma(2) \to \Sigma_d] is determined by  images of #[m \gamma_1, \gamma_2].
+
+
+    subsection
+        title Galois coverings
+
+        definition
+            statement: p
+                | A covering #[m f\colon S_1,\to S_2] is Galois (or regular, or normal) if the covering group
+                me \Aut(S,f) =  \{ h\in \Aut(S_1) : f\circ h= f\} = G
+                | acts transitively on each fibre.
+                | With this notion we can think of #[m S_1 \to S_1/G].
+
+        proposition
+            title 2.65
+            statement: p
+                me f\colon S_1 \to S_2
+                | is Galois if and only if
+                me f^* \colon M(S_2 ) \to M(S_1)
+                | is a Galois extension.
+                | In this case #[m \Aut(S_1, f)  \simeq \Gal{M(S_1)}{M(S_2)}].
+
+
+        example
+            statement: p
+                | Hyperelliptic covers of #[m \PP^1] given by
+                me S = \{ y^2 = \prod_{i=1}^N (x- a_i)\} \to \PP^1
+                me (x,y) \to x
+                | covering group #[m G] is order 2 generated by the involution  #[m J(x,y) = (x,-y)].
+
+        proposition
+            title 2.66
+            statement: p
+                | A covering
+                me f\colon S_1 \to S_2
+                | is normal/Galois  iff
+                me \deg(f)  = |\operatorname{Mon}(f)|
+                |.
+
+    subsection
+        title Normalization of coverings of #[m \PP^1]
+
+        p
+            | Let #[m f\colon S \to \PP^1] be a cover of #[m \deg d \gt 0] with #[m \operatorname{Mon}(f) \le \Sigma_d].
+        p
+            | The normalisation
+            me \tilde f \colon \tilde S \to \PP^1
+            | associated to #[m f] has #[m \operatorname{Mon} (f) \cong \Aut( \tilde S, \tilde g] and #[m \tilde f ^* \colon M(\PP^1 ) \to M(\PP^1) ] is the normalisation of the extension
+            me f^* \colon M(\PP^1 ) \hookrightarrow M(S)
+
+        p
+            | Normalization of extensions #[m K \hookrightarrow L] is a Galois extension of #[m K ] of lowest possible degree containing #[m L].
+
+
+        definition
+            statement: p
+                | Normalization of #[m f\colon S\to \PP^1] #[m \deg d \gt 0 ]
+                | is a Galois covering #[m \tilde f \colon \tilde S \to \PP^1 ] of  lowest possible degree s.t. #[m \exists \pi \colon \tilde S \to S]
+                | with  the diagram commuting.
+
+        corollary
+            title 2.73
+            statement: p
+                me \operatorname{Mon}(f)  \simeq \Aut(\tilde S, \tilde f)
+
+        p
+            | Interpretation in terms of Fuchsian groups:
+
+        proposition
+            statement: p
+                | Let #[m f\colon S_1 \to S] be a covering of Riemann surfaces #[m S_1\smallsetminus f\inv \{ y_1, \ldots, y_n \} \to S \smallsetminus\{ y_1, \ldots, y_n \}].
+                | The unramified cover and #[m \pi \colon \HH/ \Gamma_1 \to \HH/ \Gamma] the Fuchsian group representatives.
+                | The normalisation of #[m f] can be represented as the compactification of
+                me \HH/ \bigcap_{\gamma \in \Gamma} \gamma \inv \Gamma_1 \gamma \to \HH/\Gamma_1 \to \HH/\Gamma
+                | so the covering group is isomorphic to #[m \Gamma/ \bigcap \gamma \inv \Gamma_1 \gamma \simeq \operatorname{Mon}(f)].
+
+        example
+            statement: p
+                | Let #[m F(x,y) = y^2x - (y-1)^3] consider
+                me S_F \to \PP^1
+                me (x,y) \to x
+                | #[m S_F] has genus 0. #[m S_F \to \PP^1] is of degree 3 and ramified at most over #[m 0, \frac{-27}{4}, \infty].
+                | #[m \operatorname{Mon}(x)  \simeq \Sigma_3] so not a normal covering.
+                | Normalization of #[m (S_F, x)] is #[m S_{\tilde F} , \tilde x)] where
+                me \tilde F (x,y) = y^2 ( 1-y)^2 x +  (1-y + y^2)
+                // TODO clean up this crap typing
+
+
+
+
+
+
+
+
+
+section#sec-belyi-thm
+    title Belyi's theorem (Maria)
+
+    introduction
+        theorem
+            statement: p
+                | Let #[m S ] be a compact riemann surface, then the following are equivalent.
+                ol
+                    li
+                        | #[m S] is defined over #[m \overline\QQ] (iff over  a number field)
+                    li
+                        | #[m S] admits a morphism #[m f \colon S \to \PP^1] with at most 3 branching values.
+
+
+        definition#def-belyi-function
+            title Belyi functions
+            statement: p
+                | A meromorphic function with less than 4 branching values is a #[term Belyi function].
+
+
+        remark
+            p
+                ol
+                    li
+                        | Branching values can be taken to be in #[m \{0,1,\infty\}].
+                    li
+                        | If #[m S \ne \PP^1], then #[m f \colon S \to \PP^1] has at least 3 branching values
+
+
+        definition#def-belyi-poly
+            title Belyi polynomials
+            statement: p
+                | Let #[m m,n \in \NN], #[m \lambda = m/(m+n)], define
+                me P_\lambda(x) = P_{m,n}(x) = \frac{(m+1)^{m+n}}{m^mn^n} x^m(1-x)^n
+                | #[term Belyi polynomials].
+
+
+        proposition
+            statement: p
+                | #[m P_\lambda] satisfies
+                ol
+                    li
+                        | #[m P_\lambda] ramifies at exactly #[m 0,1,\lambda, \infty].
+                    li
+                        | #[m P_\lambda(0) = P_\lambda(1) = 0, P_\lambda(\lambda) = 1, P_\lambda(\infty) = \infty].
+
+        example
+            statement: p
+                me S_\lambda : y^2 = x(x-1)(x-\lambda)
+                | with #[m \lambda = m/(m+n)].
+                | From ex. 1.32
+                me x\colon S_\lambda \to \PP^1
+                me (x,y) \mapsto x
+                me \infty \mapsto \infty
+                | ramifies over #[m 0,1,\lambda,\infty].
+                | Then #[m f = P_\lambda \circ x \colon S_\lambda \to \PP^1] ramifies exactly at #[m (0,0), (1,0), (\lambda,0), \infty].
+                | With branching values #[m 0,0,1,\infty] so that #[m f] is a Belyi function.
+
+    subsection
+        title Proof of a) implies b)
+
+        note
+            p
+                | Its enough to show #[m \exists f\colon S\to \PP^1] ramified over #[m \{0,1,\infty, \lambda_1, \ldots, \lambda_n\} \subseteq \QQ \cup \{\infty\}].
+                | Given this we can repeatedly use Belyi polynomials to obtain #[m g\colon S \to \PP^1] ramified over #[m \{0,1, \infty\}].
+
+        p
+            | Write #[m S = S_F]
+            me F(x,y) = p_0(x)y^n + \cdots + p_n(x)
+            | defined over #[m \overline \QQ\lb x,y\rb].
+            | Let #[m B_0 =  \{\mu_1, \ldots, \mu_s\}] be the branching values of #[m x\colon S_F\to \PP^1].
+
+        p
+            | Theorem 1.86 says that the each #[m \mu_i] is #[m \infty], a root of #[m p_0(x)] or a common root of #[m F, F_y] which implies by lemma 1.84 that #[m B_0 \subseteq \overline \QQ \cup\{\infty\}]
+            | . If #[m B_0\subseteq \QQ\cup\{\infty\}] we are done otherwise let #[m m_1(T) \in \QQ\lb T \rb] be the minimal polynomial of #[m \{\mu_1, \ldots, \mu_s\}].
+            | Let #[m \{\beta_1, \ldots, \beta_d\}] be the roots of #[m m_1' (T) ] and #[m p'(T)] their min. poly.
+            | Note : #[m \deg P(t) \lt \deg m'_1(T)]
+
+        p
+            | Note: #[m \operatorname{Branch}(g\circ f) = \operatorname{Branch}(g) \cup g(\operatorname{Branch}(f))] branching values.
+        p
+            | So #[m B_1 \operatorname{Branch}(m_1 \circ x) = m_1(\{\text{roots of }m_1'\}) \cup\{0,\infty\}].
+            me S\xrightarrow x \PP^1 \xrightarrow{m_1} \PP^1
+            | If #[m B_1 \subseteq \QQ \cup \{\infty\}] done.
+            | Otherwise let #[m m_2(T) ] be the minimal polynomial #[m /\QQ] of #[m \{m_1(\beta_1) ,\ldots, m_1(\beta_d) \}], #[m B_2 = \operatorname{Branch}(m_2\circ m_2 \circ x)].
+            | Fact: #[m \deg(m(t)) \lt \deg(m_1(T))].
+
+        p
+            | Repeat inductively until #[m B_k \subseteq \QQ \cup \{\infty\}] which is guaranteed by the decreasing degrees.
+
+    subsection
+        title Algebraic characterization of morphisms
+
+        proposition
+            statement: p
+                | Defining a morphism #[m f \colon S_F\to S_G] is equivalent to giving a pair of rational functions
+                me f=  (R_1, R_2),\,R_i= \frac{P_i}{Q_i},\,    P_i,Q_i\in \CC[x,y],\,Q_i\not\in (F)
+                | such that #[m Q_1^{\deg_x(G)}Q_2^{\deg_y(G)} G(R_1, R_2) = HF] for some #[m H \in \CC\lb x, y\rb].
+
+                | #[m f(R_1, R_2)] is an isomorphism if there exists an inverse morphism #[m h\colon S_G\to S_F].
+
+
+        remark
+            p
+                me.
+                    \xymatrix{
+                    S_f \ar[r]^f \ar[dr]_m &amp; S_G \ar[d]_h \\
+                    &amp; S_D
+                    }
+                | The fact that this diagram commutes can be expressed by polynomial identities.
+
+    subsection
+        title Galois action
+        p
+            | Let #[m \operatorname{Gal}(\CC) = \Gal{\CC}{\QQ}].
+
+        definition
+            statement: p
+                | For #[m \sigma \in \operatorname{Gal}(\CC)], #[m a\in \CC] denote #[m a^\sigma = \sigma(a)],
+                ol
+                    li
+                        | If #[m P = \sum a_{ij} x^iy^j \in \CC\lb x,y\rb] set
+                        me P^\sigma = \sum a^\sigma_{ij} x^iy^j \in \CC\lb x,y\rb
+                        | if #[m R = P/Q] set #[m R^\sigma = P^\sigma / Q^\sigma].
+                    li
+                        | If #[m S \simeq S_F], #[m S^\sigma = S_{F^\sigma}].
+                    li
+                        | If #[m \Psi = (R_1, R_2)] #[m S_F\to S_G] is a morphism, set #[m \Psi^ \sigma = (R_1^\sigma , R_2 ^\sigma) \colon S_{F^\sigma} \to S_{G^\sigma}].
+                    li
+                        | For an equivalence class #[m (S,f) = (S_F, R(x,y))] of ramified cvers of #[m \PP^1] set #[m (S,f)^\sigma = (S^\sigma, f^\sigma) = (S_{F^\sigma}, R^\sigma (x,y))].
+
+        exercise
+            statement: p
+                | Verify this Galois action is well-defined (lemma 3.12).
+
+        p
+            | Recall: #[m S_F] is    constructed from a noncompact Riemann surface #[m S_F^\times \subseteq \CC^2] by adding finitely many points, (theorem 1.86).
+            | If #[m P=  (a,b) \in S_F^\times] then #[m P^\sigma = (a^\sigma, b^\sigma)].
+            | What about the other points?
+
+    subsection
+        title Points and valuations
+
+        definition
+            statement: p
+                | Let #[m \mathcal M] be a function field.
+                | A (discrete) valuation of #[m \mathcal M] is #[m v \colon \mathcal M^* \to \ZZ] s.t.
+                ol
+                    li
+                        | #[m v(\phi\psi) = v(\phi)  + v(\psi)]
+                    li
+                        | #[m v(\phi\pm\psi) \ge \min\{ v(\phi)  , v(\psi)\}]
+                    li
+                        | #[m v(\phi) = 0 ] if #[m \phi \in \CC^*]
+                    li
+                        | #[m v] is nontrivial #[m \exists \phi : v(\phi)\ne 0]
+                | set #[m v(0) = \infty].
+
+
+        p
+            | Facts:
+            me A_v = \{\phi \in \mathcal M : v(\phi) \ge 0 \} \subseteq \mathcal M
+            | is a subring that is a local ring with a maximal ideal
+            me M_v = \{ \phi\in \mathcal M : v(\phi) \gt 0\} = (\phi)
+            | for some #[m \phi] a uniformizer.
+        p
+            | If #[m v(\phi) = 1] #[m v] is normalised.
+
+
+        proposition
+            title 3.15
+            statement: p
+                | Every point #[m P \in S] a compact Riemann surface defines a valuation on #[m \mathcal M(S)] by #[m v_P(\phi) = \ord_P(\phi)].
+            proof: p
+                | Easy exercise.
+
+
+        theorem
+            title 3.23
+            statement: p
+                | For any compact Riemann surface #[m S]
+                me P\in S \mapsto v_P = \ord_P
+                | gives a 1-1 correspondence between points of #[m S] and normalised valuations on #[m \mathcal M(S)].
+            proof
+                p
+                    | Sketch: First prove it for #[m S = \PP^1].
+                p
+                    | Inductively meromorphic functions separate points.
+                p
+                    | Surjectivity study behaviour of valuations in finite extensions of fields and use a nonconstant morphism #[m f\colon S \to \PP^1] to reduce to the case of #[m \PP^1].
+
+        paragraphs
+            title Galois action on points
+
+            definition
+                statement: p
+                    ol
+                        li
+                            | Given a valuation #[m v] on #[m \mathcal M(S)] define a valuation #[m v^\sigma] on #[m \mathcal M(S^\sigma)] by #[m v^\sigma = v\circ \sigma^{-1}] i.e. #[m v^\sigma(\psi^\sigma) = v(\psi)] for all #[m \psi \in \mathcal M(S)].
+                        li
+                            | For #[m P \in S] define #[m P^\sigma \in S^\sigma] as the unique point in #[m S^\sigma] s.t. #[m v_{P^\sigma} = (v_P)^\sigma].
+
+            proposition
+                title 3.25
+                statement: p
+                    ol
+                        li
+                            | For #[m \sigma\in \operatorname{Gal}(\CC)], #[m P\mapsto P^\sigma] is a bijection #[m S\to S^\sigma].
+                        li
+                            | On #[m P \in S_F^\times] this agrees with the previous definition of #[m P^\sigma].
+                        li
+                            | #[m a^\sigma = a] for all #[m a\in \QQ \cup \{\infty\}] for all #[m \sigma \in \operatorname{Gal}(\CC)].
+
+                proof: p
+                    | Sketch
+                    ol
+                        li
+                            | #[m a \mapsto a^{\sigma^{-1}}].
+                        li
+                            | Follows as in proof of 3.22
+                        li
+                            | Obvious for #[m a \in \QQ], for #[m \infty]:
+                            me (v_\infty)^\sigma (x-1) = v_\infty(x- a^{\sigma^{-1}}) = 1 = v_\infty(x-1)
+                            | for all #[m a\in \CC] implies #[m (v_\infty)^{\sigma^{-1}} = v_\infty] implies #[m \infty^\sigma  = \infty].
+
+    subsection
+        title Elementary invariants of the action of #[m \operatorname{Gal}(\CC)].
+
+
+        remark
+            p
+                | The bijection #[m S \leftrightarrow S^\sigma] is not holomorphic.
+                | In general #[m S] and #[m S^\sigma] are not isomorphic.
+
+
+        theorem
+            statement: p
+                | The action of #[m \operatorname{Gal}(\CC)] on pairs #[m (S,f)] satisfies
+                ol
+                    li
+                        me \deg(f^\sigma) = \deg(f)
+                    li
+                        me (f(P))^\sigma = f^\sigma(P^\sigma)
+                    li
+                        me \ord_{P^\sigma}(f^\sigma) = \ord_P(f)
+                    li
+                        | #[m a\in \hat \CC] is a branching value of #[m f] iff #[m a^\sigma] is a branching value of #[m f^\sigma].
+
+                    li
+                        | #[m \operatorname{genus}(S) = \operatorname{genus}(S^\sigma)] i.e. they are homeomorphic.
+
+                    li
+                        | #[m \operatorname{Aut}(S,f) \to \operatorname{Aut}(S^\sigma, f^\sigma)] via #[m h \mapsto h^\sigma] is a group homomorphism.
+                    li
+                        | The monodromy group #[m \operatorname{Mon}(f)] of #[m (S,f)] is isomorphic to #[m \operatorname{Mon}(f^\sigma)] of #[m (S^\sigma , f^\sigma)].
+
+        p
+            | We will use properties 1 and 4 at least.
+
+
+        proposition
+            title Criterion 3.29
+            statement: p
+                | For a compact Riemann surface #[m S] the following are equivalent
+                ol
+                    li
+                        | #[m S] is defined over #[m \overline \QQ].
+                    li
+                        | #[m \{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}] contains only finitely many isomorphism classes of Riemann surfaces.
+            proof
+                p
+                    | 1 implies 2:
+                    | #[m S =S_F], #[m F = K\lb x,y\rb] for #[m K] a number field then
+                    me | \{F^\sigma \}_{\sigma \in \operatorname{Gal}(\CC)} | \le [K : \QQ]
+                p
+                    | 2 implies 1 is section 3.7.
+
+
+        paragraphs
+            title Proof of b implies a in Belyi's theorem (3.61)
+
+            p
+                | Suppose #[m f \colon S\to \PP^1] is a morphism of degree #[m d] with branching values #[m \{0,1,\infty\}].
+                | By theorem 3.28 #[m \forall \sigma \in \operatorname{Gal}(\CC)]
+                me f^\sigma \colon  S^\sigma \to \PP^1
+                | is a morphism of degree #[m d] and branching values are
+                me \{\sigma(0), \sigma(1), \sigma(\infty)\} = \{0,1,\infty\}
+                | .
+                | So #[m \{f^\sigma\}_{\sigma \in\operatorname{Gal}(\CC)}] gives rise to only finitely many monodromy homomorphisms.
+                me F_{f^\sigma}\colon \pi_1(\PP^1 \smallsetminus \{0,1,\infty\}) \to \Sigma_d
+                | the fundamental group is free on two generators so there are only finitely many such maps.
+
+                | Theorem 2.61 implies #[m \{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}] contains only finitely many equivalence classes so by the criterion  #[m S] is defined over #[m \overline\QQ].
+
+    subsection
+        title The field of definition of Belyi functions (3.8)
+
+        proposition
+            statement: p
+                | Belyi functions are defined over #[m \overline \QQ].
+            proof: p
+                | Use the same methods as in 3.7.
+
+
+
+section#sec-dessins
+    title Dessins (Berke)
+
+    introduction: p
+        me G_\QQ \acts (X,D) \leftrightarrow (S,f) \acts G_\QQ
+        | where #[m (X,D)] is a dessin, #[m (S,f)] is a Belyi pair.
+
+    subsection
+        title Dessins
+
+        definition
+            statement: p
+                | A dessin is  a pair #[m (X,D)] where #[m X] is an oriented compact topological surface and #[m D\subset X] is a finite graph:
+                ol
+                    li
+                        | D is connected
+                    li
+                        | D is bicoloured
+                    li
+                        | #[m X \smallsetminus D] is a disjoint union of topological disks.
+
+
+        p
+            | Not all of these are so important (for example 3 implies 1 (but the converse does not hold)).
+            | We can also obtain a bicoloured graph from an uncoloured graph by subdividing all edges and colouring the new vertices black and the others white.
+        p
+            | A single edge in a sphere is, a single edge in a torus is not.
+
+        paragraphs
+            title Permutation representation of a Dessin
+
+            p
+                | Label the edges of  a dessin #[m \{1, \ldots, N\}] then
+                me \sigma_0(i) = \text{subsequent edge in the cycle around the white vertex of }i
+                | as we have a positive orientation on the edges
+                me \sigma_1(i) = \text{subsequent edge in the cycle around the black vertex of }i
+                | .
+                | Then we define
+
+            definition
+                statement: p
+                    | #[m (\sigma_0, \sigma_1)] is the permutation representation pair of #[m (X,D)].
+
+
+            p
+                | Say
+                me \sigma_0 = (1 , \ldots, N_1) (N_1 + 1 , \ldots, N_2)\cdots
+                | a product of disjoint cycles.
+                | Then each of these cycles corresponds to a  white vertex, where the length of the cycle is the degree of the corresponding vertex.
+                | Same for #[m \sigma_1] and black vertices.
+
+
+            p
+                me \{\text{cycles appearing in the decomposition of }\sigma_0\sigma_1\}
+                me \updownarrow
+                me \{\text{faces of }D\}
+            exercise
+                statement: p
+                    | Prove this.
+
+            remark
+                p
+                    | #[m D] connected implies that #[m \langle \sigma_0, \sigma_1 \rangle] is transitive on #[m \Sigma_N].
+                    | As #[m D] is bicoloured the cycles on #[m D] contain an even number of edges.
+            p
+                | A dessin is not a triangulation of #[m X] but
+                me \chi (X) = \#V -  \#E  + \#F
+                | proof later.
+
+            proposition
+                statement: p
+                    me \chi(X) = (\#\text{cycles of }\sigma_0+\#\text{cycles of }\sigma_1) - N + \#\{\text{cycles of }\sigma_0\sigma_1\}
+                    | .
+
+            p
+                me (\sigma_0, \sigma_1) \leadsto (X',D)
+                me \langle \sigma_0, \sigma_1 \rangle \subseteq \Sigma_N
+                | is transitive.
+
+            proposition
+                statement: p
+
+                    | There exists #[m (X,D)] with permutation representation #[m (\sigma_0, \sigma_1)].
+                proof: p
+                    | Write #[m \sigma_0\sigma_1 = \tau_1 \cdots \tau_k], #[m \tau_i] disjoint cycles each of length #[m n_i] with #[m \sum n_i = N].
+                    | Create #[m k] faces bounded by #[m 2n_1, \ldots, 2n_k] vertices, and assign the vertices white and black colours so that the graph is bicoloured.
+                    | As #[m \sigma_0\sigma_1] should jump two each time we get an identification of all edges which we then  glue using #[m \sigma_0].
+
+
+            definition
+                statement: p
+                    | We say that
+                    me (X_1, D_1) \sim (X_2, D_2)
+                    | if there exists an orientation preserving homeomorphism #[m \phi \colon X_1 \to X_2], #[m \phi|_{D_1} \colon D_1 \xrightarrow\sim D_2].
+            theorem
+                statement: p
+                    me \{\text{Dessins}\}/\sim \leftrightarrow \{( \sigma_0, \sigma_1),\,\langle \sigma_0, \sigma_1 \rangle \subseteq \Sigma_N \text{ transitive}\}/\sim
+
+    subsection
+        title Dessins 2 Belyi pairs
+
+        p
+            | Triangle decomposition of #[m (X,D) \leadsto T(D)] a set of triangles that cover #[m D] and intersect along edges or at vertices.
+
+        example
+            statement: p
+                | Edge in the sphere, add an extra vertex #[m \times] not on the edge and get a decomposition into two triangles.
+        p
+            | We will label triangles by #[m T_j^\pm] as there are two for each edge, by orientation some are the same.
+
+        p
+            me T(D) \leadsto f_D \colon X\to \hat\CC
+            | Glue
+            me f_j^? \colon T_j^? \to \overline\HH^?
+            | for #[m ?\in \{+,-\}], where #[m f_j^+  = f_j^-] on the intersection.
+            | Where #[m \partial T_j \xrightarrow\sim \RR \cup\{\infty\}]
+            me \text{black} \mapsto0
+            me \text{white} \mapsto1
+            me \times \mapsto\infty
+            | and we have #[m \operatorname{Branch}(f_D) \subseteq \{0,1,\infty\}].
+            | Now #[m \deg f_D = \#\text{edges of }D], #[m m_v(f_D) = \deg v], #[m f_D^{-1}(\lb 0 , 1 \rb) = D].
+            | Modify #[m X] a little bit and use some lemma to get #[m S_D \simeq_{\text{top}} X] for some Riemann surface with #[m f_D\colon S_D \to \PP^1].
+
+
+        definition
+            statement: p
+                | #[m (S,f)] is a Belyi pair with #[m S] compact Riemann surface and  #[m f] a Belyi function on #[m S].
+                me (S_1,f_1) \sim (S_2, f_2)
+                | if it is an isomorphism of ramified coverings.
+
+        p
+            | So we can now go in both directions.
+            me \{\text{Dessins}\}/\sim
+            me \updownarrow
+            me \{\text{Belyi pairs}\}/\sim
+            me (X,D) \mapsto (S_D, f_D)
+            me (S, D_f) \mapsfrom (S,f)
+
+        p
+            | Now to define the Galois action
+            me G_\QQ\acts \{\text{Dessins}\}\leftrightarrow \{\text{Belyi pairs}\}
+            me.
+                \xymatrix{
+                (X,D)\ar[d] \ar@{-->}[r] &amp; (X,D)^\sigma \\
+                (S_D,f_D)\ar[r] &amp; (S_D^\sigma,f_D^\sigma)^\sigma \ar[u]
+                }
+
+        p
+            | The #[m G_\QQ] action is faithful on dessins of genus #[m g].
+
+        example
+            statement: p
+                | Same example #[m \PP^1] with a single edge, #[m f_D  = z], #[m \deg f_D = \#] edges, #[m m_v(f)=  \deg v].
+
+        exercise
+            statement: p
+                | String.
+
+        exercise
+            statement: p
+                | #[m n] star.
+
+
+section#sec-sandwich
+    title A Sandwich Table of Dessins d'Enfants
+
+
+    p
+        | Alex: So I haven't typed this section as it was a lot of pictures and I haven't got nice scans of them, will try at some point.
+
+    //paragraphs
+        title TODO
+        p
+            | Things to mention
+        p
+            | More examples
+
+        p
+            | What are the simplest embedded graphs?
+            | Trees in the sphere.
+            | Trees are characterised by the fact that they have 1 face.
+            | Only one point above #[m \infty], so the Belyi functions can be given as a polynomial with branch values in #[m 0,1].
+            | This is a #[em Shabat polynomial].
+        p
+            | The simplest examples we can get by just considering the real part, drawing simple waves.
+        example
+            statement: p
+                | Simple waves
+
+        p
+            | What if I do this an upside down U?
+            | Get two stalks.
+            | Can combine such.
+
+        p
+            | Take triple root to sequence of four doubles looks like blah,
+            | specifically #[m x^3(x^2 - 2x + \frac17 (34 - 6\sqrt{21}))^2], this has galois conjugate, now the real picture is less interesting we have only the triple, but many complex, so the conjugate looks like.
+
+            | Shabat/ Chebychev polynomials/ Belyi polynomials
+        li
+            | Interpretation as elements of #[m \pi_1^\et(\PP^1 \smallsetminus\{0,1,\infty\})].
+        li
+            | Examples of the Galois action
+
+
+        li
+            | If we have a faithful #[m G]-set #[m X] what does it mean to know #[m G]?
+            | We have now an injection
+            me G \hookrightarrow \operatorname{Bij}(X)
+            | need to identify the image, which automorphisms are possible?
+            | There surely exist Dessins not in the same orbit?
+            | The action should certainly preserve degree.
+            | We would like to know which Dessins can be taken to each other and which cannot.
+            | We might want a complete list of invariants: a set of quantities all of which were equal iff the two dessins were in the same orbit.
+
+        li
+            | Cartographic/Monodromy groups
+
+        example
+            statement: p
+                | Moinsur matheui,
+
+        li
+            | Passports
+
+
+        li
+            | Leila's flower
+        li
+            | Genus 0, result of Lenstra?
+        li
+            | Colour matters!
+
+        li
+            | Belyi's
+
+section#sec-beyi-abc
+    title Belyi's theorem, effective Mordell and ABC (Angus)
+
+    p
+        | We begin with one of the most famous results in arithmetic geometry.
+
+    theorem
+        title Mordell conjecture/Falting's theorem
+        statement: p
+            | Let #[m C] be an algebraic curve of genus #[m \ge 2] over a number field #[m K].
+            | Then #[m C(K)] is finite.
+
+    p
+        | There are many proofs of this, Falting's being the original and most famous.
+
+    remark
+        p
+            | Falting's proof is not effective.
+            | That is, it cannot predict the number of points or give any bounds.
+
+    p
+        | Today we'll show how this theorem follows from a (much harder conjecture), but how this nonetheless gives new insight into the question of effectiveness.
+        | Specifically we'll show ABC implies Mordell.
+
+    blockquote
+        p
+            q Mordell is as easy as ABC
+            | - Zagier
+
+    conjecture
+        title ABC
+        statement: p
+            | Let #[m A,B,C\in \ZZ] s.t. #[m \gcd(A,B,C)  =1 ] and #[m A+B+C=0], then for all #[m \epsilon \gt 0] there exists a constant #[m k_\epsilon] s.t.
+            me N(A,B,C) \gt k_\epsilon H(A,B,C)^{1-\epsilon}
+            | where
+            me  N(A,B,C) =  \prod_{p|ABC} p
+            me  H(A,B,C) = \max(|A|,|B|,|C|)
+            | .
+    p
+        | This is a remarkably deep statement about the integers.
+        | Something surprising about how one compares the additive and multiplicative structures of the integers.
+
+    p
+        | For our purposes (to connect it to the curves and Mordell) we'd like to remove the dependence on integrality and coprimality, by making it scaling invariant.
+
+    p
+        | We now define
+        me  H(A,B,C) = \prod_{v}\max(|A|_v,|B|_v,|C|_v)
+        me  N(A,B,C) =  \prod_{p\in I} p
+        | for
+        me I = \{p \text{ prime} : \max(|A|_p,|B|_p,|C|_p) \gt \min(|A|_p,|B|_p,|C|_p)\}
+        | .
+
+    exercise
+        title For sanity
+        statement: p
+            me H(\lambda A,\lambda B,\lambda C)  = H(A,B,C)
+            me N(\lambda A,\lambda B,\lambda C)  = N(A,B,C)
+            | for #[m \lambda, A,B,C \in \QQ\units].
+            | Moreover if #[m A,B,C \in \ZZ] and #[m \gcd = 1] then we recover the original definition.
+
+    p
+        | Since we have #[m A+ B+C = 0] and our functions are scaling invariant, they only depend on #[m r=  - A/B].
+        | We'll also reformulate it over an arbitrary number field #[m K].
+    p
+        | Note that to satisfy the hypotheses of the conjecture we require
+        me r \in \PP^1_K \smallsetminus \{0,1,\infty\}
+        | .
+
+    p
+        | We now define
+        me  H(r) = \prod_{v}\max(1,|r|_v)
+        me  N(r) =  \prod_{p\in I} p
+        | for
+        me I = \{p \text{ prime} : \max(v_p(r), v_p(1/r), v_p(r-1)) \gt 0                      \}
+        | .
+
+
+    remark
+        p
+            | In fact this new height is off from the old one by a constant factor, but since ABC allows for a constant factor this won't trouble us.
+
+    paragraphs
+        title Motivation: ABC implies Fermat bound
+
+        p
+            | One can see this simply by assuming a solution
+            me x^n + y^n  =z^n ,\, n \ge3
+            | and setting
+            me (A,B,C)=  (x^n,y^n, z^n)
+            | then
+            me N(A,B,C) = \prod_{p|ABC} p  \le |xyz| \lt \max(|x|^3,|y|^3,|z|^3) = H(A,B,C)^{3/n}
+            | . So setting
+            me \epsilon = 1 - 3/n
+            | for #[m (A,B,C)] s.t. #[m H(A,B,C)] is sufficiently large we get a contradiction to ABC.
+            | Thus ABC gives us a bound on the possible solutions to the Fermat equation, reducing the remainder of the conjecture to a finite computation.
+
+        p
+            | Let us phrase this in the following alternate way:
+            | Let
+            me F_n \colon x^n + y^n + z^n = 0
+            | be the Fermat curve and consider the function
+            me f\colon F_n \to \PP^1
+            me (x:y:z) \mapsto -\left(\frac{x}{y}\right)^n
+            | ramified over #[m 0,1, \infty].
+
+        note
+            p
+                | #[m \deg(f) = n^2]
+            p
+                | Each of #[m 0,1,\infty] has #[m n ] preimages in #[m F_n(\overline \QQ)].
+
+        p
+            | The idea now is that #[m N(A,B, C)] is measuring ramification, while #[m H(A, B,C)] is a height function.
+            | The note above tells us that each of #[m 0, 1, \infty] contributes a factor of #[m O(H(A,B,C)^{n/n^2})] to #[m N(A,B,C)].
+            | So in this formulation, what we used was the existence of a rational function #[m f] such that
+            me \#\{p\in C(\overline \QQ): f(p) \in \{0,1,\infty\}\} \lt \deg (f)
+            |.
+
+        exercise
+            statement: p
+                | If #[m C]  has genus 0 or 1, no such #[m f] can exist (hint: Riemann-Hurwitz).
+
+    paragraphs
+        title ABC implies a bound on Mordell
+
+        p
+            |We begin with a technical proposition:
+
+        proposition
+            statement: p
+                | Let #[m K] be a number field an d #[m C/K] a  curve.
+                | Let #[m f \in K(C)] be a rational function of degree #[m d].
+                | Then for #[m p \in C(K) \smallsetminus f\inv(0)] we have
+                me \log N_0(f(p)) \lt (1- b_f(0)/d) \log H(f(p)) + O(\sqrt{\log H(f(p))} + 1)
+                | with the following notation
+                me N(r)  =N_0(r) N_1(r) N_\infty(r)
+                me N_0(r) = \prod_{\ideal p \supseteq (r)} \norm(\ideal p)
+                me N_1(r) = \prod_{\ideal p \supseteq (1-r)} \norm(\ideal p)
+                me N_\infty(r) = \prod_{\ideal p \supseteq (1/r)} \norm(\ideal p)
+                me b_f(0) = \sum_{f(p) = 0} (e_p - 1)
+                | .
+            proof
+                p
+                    | The genus 0 case follows from the fact that the #[m f] is a rational function (and in fact the error term is #[m O(1)]) (exercise).
+                    | For the general case we need the theory of log heights on curves.
+                    | From this we require the following
+                    ul
+                        li
+                            | For #[m D] a divisor on #[m C] we have  a height function
+                            me h_D(\cdot)
+                            | which is well defined up to  #[m O(1)].
+                        li
+                            | If
+                            me D=  \sum m_k D_k
+                            | is a decomposition into irreducible divisors, then
+                            me h_D(P) = \sum m_k h_{D_k}(P)
+                            |.
+                        li
+                            | For #[m \Delta] a degree 0 divisor
+                            me h_{\Delta} (P) = O(\sqrt{\log H(f(P))} + 1)
+                            | .
+                p
+                    | Let #[m D = \divisor_0(f) = \sum m_k D_k], #[m D' = \sum_{f(P) = 0} (P)] then #[m b_f(0) = \deg D'].
+                    | Then
+                    me \log H(f(P)) = h_D(P) + O(1) = \sum m_k h_{D_k}(P) + O(1)
+                    | since #[m \log H(f(P))] is also a height function relative to #[m D].
+                    | We now turn to #[m N_0(f(P))].
+                    | Any prime occurring in this must also occur in #[m h_{D_k}(P)] for some #[m k] (except for a finite set #[m \{p : p|f \text{ or } p \text{ bad red. for } C\}]).
+                    | Then
+                    me N_0(f(P))  \lt \sum h_{D_k}(P) + O(1) = h_{D'}(P) + O(1)
+                    | .
+                    | Letting
+                    me \Delta = (\deg D) D' - (\deg D') D
+                    | we have
+                    me h_{\Delta} (P) = O(\sqrt{\log H(f(P))} + 1)
+                    | thus
+                    me \log N_0(f(P)) \lt h_{D'} (P) + O(1)
+                    me = \frac{1}{\deg D} (\deg D') h_{D'} (P) + O(1)
+                    me = \frac{1}{\deg D} (\deg D') h_{D} (P) + O(\sqrt{\log H(f(P))} + 1)
+                    me = \frac{1- b_f(0)}{d} \log  H(f(P)) + O(\sqrt{\log H(f(P))} + 1)
+
+        remark
+            p
+                | One can show the above for #[m N_1, N_\infty] instead making the appropriate replacements for #[m f].
+
+        p
+            | Adding the three terms together we get
+            me \log N_0(f(P))N_1(f(P)) N_\infty(f(P))
+            me \lt \left(\left(1- \frac{b_f(0)}{d}\right) +\left(1- \frac{b_f(1)}{d}\right)+\left(1- \frac{b_f(\infty)}{d}\right)\right) \log H(f(P)) + O(\cdots)
+            me \log N(f(P)) \lt \frac 1d \left(\# f\inv(0)+\# f\inv(1)+\# f\inv(\infty) \right) \log H(f(P)) + O(\cdots)
+            me \lt \frac md \log H(f(P))+ O(\cdots)
+            | where
+            me m = \#\{P \in C(\overline \QQ) : f(P) \in \{0,1,\infty\}\}
+            | exponentiating we get
+            me N(f(P)) \lt H(f(P))^{m/d} K
+            | .
+
+        theorem
+            title ABC implies Mordell
+            statement: p
+                | ABC implies Mordell.
+            proof
+                p
+                    | Let #[m C] be a given curve of genus #[m g \ge 2] Belyi's theorem gives a function
+                    me f\colon C \to \PP^1
+                    | ramified over #[m \{0,1,\infty\}].
+                    | By Riemann-Hurwitz #[m m  = d + 2 - 2g], #[m d = \deg (f)] #[m m] as above.
+                    | Thus #[m m \lt d], thus we can pick #[m 0 \lt  \epsilon  \lt 1 - \frac md] and so for sufficiently large #[m H(f(P))] (i.e. all but finitely many) we have a counterexample to ABC.
+
+        remark
+            title Closing remarks
+            p
+                | Belyi's theorem gives an algorithm for determining #[m f \colon C \to \PP^1] i.e. it is effective.
+            p
+                | One can also show ABC implies Siegel's theorem.
+            p
+                | In fact it can be shown that a particular effective form of Mordell (applied to #[m y^2 + y = x^5]) for all number fields implies ABC.
+                | This is related to Szpiro's conjecture.
+
+        p
+            | References:
+            ol
+                li
+                    | Elkies - ABC implies Mordell
+                li
+                    | Serre - Lectures on Mordell-Weil
+
+
+section#sec-dessins-integer-pts-abc
+    title Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)
+
+    subsection
+        title A proof of the ABC theorem (for polynomials)
+
+        p
+            | Last week Angus told us about the incredibly powerful ABC conjecture and its arithmetic consequences (apparently).
+            | This week we will prove this conjecture (for polynomials).
+            | The proof is very similar to some of the things Angus mentioned, but seeing as I wasn't there its new to me...
+            | Following Goldring / Stothers / Parab.
+
+        p
+            | Let #[m K] be algebraically closed of characteristic 0, with #[m f \in K\lb x \rb], we can define the radical as before
+            me \operatorname{rad}(f) = \prod_{p | f} p
+            | over the primes/irreducibles dividing #[m f], this is the maximal squarefree polynomial dividing #[m f].
+            | How do we measure the size of a polynomial?
+            | Let #[m r(f) = \deg \operatorname{rad}(f)], and #[m h(f_1, \ldots, f_n) = \max\{\deg f_i\}].
+            | This is a complicated way of saying
+            me \#\{x \in K : f(x) = 0 \}
+            | , but we do so to emphasise the link with ABC.
+
+
+        p
+            | The result is then
+
+        theorem
+            title Mason-Stothers
+            statement
+                p
+                    | Let
+                    me e,f,g\in K[x],\,e + f = g
+                    | be pairwise coprime and all of height #[m \gt 0].
+                    | Then
+                    me h(e,f,g) \lt r(efg) = r(e) + r(f)  + r(g)
+                    | .
+                p
+                    | We have sharpness if and only if #[m f/g] is a Belyi map for #[m \PP^1 \to \PP^1] with #[m (f/g)(\infty) \in \{0,1,\infty\}].
+                    | Another way of saying this is that if #[m \deg f = \deg g] then their leading coefficients are equal, and hence #[m \deg (e) \lt \deg (f)].
+            proof
+                p
+                    | First of all we note that the statement is symmetric in #[m e,f,g], so we may arrange that #[m h(g) \le h(e,f)] which implies that #[m h(e) = h(f) = h(e,f,g)].
+                    | The second statement is less obviously invariant but note that #[m \phi] is  a Belyi function is equivalent to #[m 1-\phi] and #[m 1/\phi] being Belyi also and this preserves #[m \phi(\infty) \in \{0,1,\infty\}], so rearranging does not change the truth of the second statement either.
+                    | Let #[m \phi = f/g] so #[m \deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)], we will denote this by #[m h] now.
+
+                    | Apply Riemann-Hurwitz (suprise-suprise)
+                    me -2 = -2h + \sum_{x\in \PP^1} e_\phi(x) - 1
+                    | . Let
+                    me R_y = \sum_{x : f(x) = y} e_\phi(x) - 1
+                    | be the ramification above #[m y], we will consider #[m B_0, B_1, B_\infty].
+                    | These ramification numbers will simply be #[m h - \#(\phi\inv(y))].
+                    | Lets begin with #[m R_1], we have #[m f(x)/g(x) = 1] so #[m e(x) = 0] and in fact
+                    me R_1 = h(e) - r(e) = h - r(e)
+                    | .
+                    | For #[m R_0] we have either #[m f(x) = 0] or #[m g(x) = \infty].
+                    | Having #[m g(x) = \infty] means #[m x = \infty] but this cannot really happen as #[m h(f) \ge h(g)].
+                    | So this is really just
+                    me \sum_{x : f(x) = 0} e_\phi(x) - 1 = h  - r(f)
+                    | .
+                    | Finally #[m \phi(x) = \infty] only when #[m g(x) = 0] or #[m x = \infty].
+                    | If #[m h(f) = h(g)] then #[m \phi(\infty) \ne \infty] and we have simply
+                    me R_\infty = h - r(g)
+                    | .
+                    | If #[m h(g) \lt h(f)] then we also have #[m \phi(\infty) = \infty] so we pick up an extra preimage and we get instead
+                    me R_\infty = h - (r(g) + 1)
+                    | .
+                p
+                    | Back up in Riemann-Hurwitz this comes down (magically?) to
+                    me -2 = \cancelto{0}{-2 h + h + h} + h - r(e) -r(f) - r(g) + R - \delta_{h(f) \gt h(g)}
+                    | so
+                    me R = h - r(efg) - 2 + \delta_{h(f) \gt h(g)}
+                    | but of course #[m R \ge 0] so
+                    me h \ge r(efg) + 1
+                    | with equality exactly when
+                    me h = r(efg) + 1 \implies R = 0,\, h(f) \gt h(g)
+                    | . #[m R= 0] is equivalent to being Belyi.
+
+    subsection
+        title Back to number theory
+
+        p
+            | That was all well and good, but this is a number theory seminar, not a function field analogues of number theory seminar, so let's take it back to why we are all here, solving Diophantine equations.
+
+        p
+            | Let's try and find nontrivial integral points on Mordell curves!
+            me E_k\colon y^2 = x^3 + k
+            | .
+
+        example
+            statement: p
+                me 1001^2 = 5009^3 - (5009^3 - 1001^2)
+                | so I found a large point on
+                me y^2 = x^3 - (5009^3 - 1001^2) = x^3 - 125675213728
+                | are you not impressed?
+
+        p
+            | Although this point would look slightly non-trivial if I started with the curve #[m 5009^3] is roughly #[m 125675213728] anyway so you should only be impressed if I find points of height somewhat larger than the coefficients.
+            | We should probably ask that
+            me |x|^3 \gt |k|
+            | by some margin at least.
+
+        p
+            | A nice question is then given #[m k] how big can an integer point #[m (x,y)] on #[m E_k] be?
+            | Bounds are known, e.g.  Via work of Baker we get
+            me \max(|x|, |y|) \lt e^{10^{10}|k|^{1000}}
+            | . Ouch.
+
+        p
+            | If we want to study more realistic bounds we can instead reverse the problem.
+            | Can we minimise #[m x^3 - y^2] for integer #[m x,y], how close can the square of a large integer and the cube of a large integer be?
+            | Euler showed that #[m x^3 - y^2 = 1] has only 1 (interesting) solution, for example.
+        p
+            | Marshall Hall was interested in this, did some nice computations and conjectured:
+
+        conjecture
+            title Mashall Hall's conjecture, 1970
+            statement: p
+                | If
+                me x^3 - y^2 = k
+                | for integers #[m x,y] then
+                me |k| \gt \frac{\sqrt{|x|}}{5}
+                | (or #[m k =0]...).
+
+        p
+            | This is false!
+
+        example
+            title Elkies (who else?)
+            statement: p
+                | If
+                me x= 5853886516781223,\,y = 447884928428402042307918
+                | is a point on
+                me y^2 = x^3 - 1641843
+                | then
+                me \frac{\sqrt{|x|}}{k} = 46.6004943471754
+                | .
+
+        p
+            | This is far larger than the previous best known, but still remains the record as far as I can tell.
+            | It seems Hall's conjecture is unlikely to be true for any fixed constant, but the following of Stark-Trotter is more believable.
+
+        conjecture
+            title Stark-Trotter/Weak Hall
+            statement: p
+                | For any  #[m \epsilon \gt 0] there is some #[m C(\epsilon)] such that for any #[m x,y] integers
+                me |x^3 - y^2| \gt C(\epsilon) x^{\frac12 - \epsilon}
+                | for any #[m x \gt C(\epsilon)].
+
+
+        p
+            | If Hall's/Stark-Trotter is true we get a #[em huge] improvement on Baker
+            me \frac{\sqrt{|x|}}{|k|} \lt 100 \implies x \lt 10^4k^2
+            | and hence
+            me y^2 = x^3 + k \lt 10^{12}k^6 + k
+            | giving polynomial bounds on #[m x,y] in terms of #[m k].
+
+        p
+            | How might one find such triple #[m (x,y,k)] that is extremal?
+            | One approach is to try and come up with a parametrisation of nice triples.
+            | We can search for polynomials #[m X(t),Y(t), K(t)] and then plug in various integer values for #[m t] and hope for the best.
+            | To give ourselves the best chance of succeeding we want #[m K(t)] to be smaller than #[m X(t)^3] and #[m Y(t)^2] for some values of #[m t].
+            | This leads us to ask for #[m K] to be of smallest degree possible.
+            | So how low can we go?
+
+        p
+            | This is the point where we come full circle right, we are searching for
+            me X(t)^3 - Y(t)^2 = K(t)
+            | with degree of #[m K] minimised, so we apply Mason-Stothers to see that, if #[m M] is the degree of the left hand terms we have #[m \deg(X) = 2m] and #[m \deg (Y) = 3m], indeed #[m h] in Mason-Stothers is then #[m 6m]
+            | We also have #[m r(X^3) = r(X) \le 2m] and #[m r(X^2) = r(Y) \le 3m] so together Mason-Stothers gives
+            me 6m \lt 2m + 3m + r(K)
+            | or #[m m \lt r(K)].
+            | So we have lower-bounded the degree of #[m K] in terms of #[m \frac 12 \deg(X)] for example.
+
+        p
+            | We just proved:
+
+        conjecture
+            title Birch B. J., Chowla S., Hall M., Jr., Schinzel A. On the difference #[m x^3 - y^2], 1965.
+            statement
+                p
+                    | Let #[m X, Y] be two coprime polynomials with #[m X^3,Y^2] of equal degree (#[m 6m]) and equal leading coefficient, then
+                    me K = X^3 - Y^2
+                    | is of degree #[m \gt m].
+                p
+                    | (Now the speaker has just given a theorem with an inequality, so in order to appear smart one of you should ask is this bound sharp.)
+                p
+                    | The bound is sharp, this can mean several things in general, originally it was asked that for infinity many #[m m] there is an example where #[m \deg K = m + 1].
+
+        p
+            | The first part was proved initially by Davenport (in the same year, and journal).
+            | The second part had to wait until '81 for Stothers to prove it.
+
+
+        p
+            | Someone else should probably also ask, how is any of this related to Dessins?
+
+        p
+            | To prove sharpness we have to exhibit for each #[m m] triple of polynomials #[m X,Y,K] of degrees #[m 2m,3m,m+1].
+            | Coming up with polynomial families is hard, drawing stupid pictures is easy, can Dessins aid us here?
+
+        p
+            | Lets back-track, when we proved Mason-Stothers we also said that sharpness was equivalent to #[m f/g] being Belyi, so #[m X(t)^3/K(t) = (K(t) + Y(t)^2) / K(t) = Y(t)^2/K(t) + 1] should be a Belyi map of degree #[m 6m] from #[m \PP^1\to \PP^1].
+            | What does its ramification look like?
+            | We should have all preimages of #[m 0] degree 3, preimages of #[m 1] degree 2, and above infinity #[m m + 1] points of degree #[m 1] and the remaining of degree #[m 6m - (m + 1) = 5m - 1].
+
+        p
+            | How can we draw a Dessin like this?
+            | Begin with a tree with all internal vertices degree 3, with #[m 2m] vertices, this will have #[m 2m - 1] edges, and as it is trivalent by the handshake lemma
+            me 3 \#\{\text{internal}\} + \#\{\text{leaves}\} =  4m - 2
+            | and
+            me \#\{\text{internal}\} + \#\{\text{leaves}\} =  2m
+            | giving
+            me 2\#\{\text{internal}\} =  2m - 2
+            me \#\{\text{internal}\} =  m - 1
+            me \#\{\text{leaves}\} =  m + 1
+            | Add loops to the leaves, you now have a clean Dessin as above.
+            | It has #[m 2m- 1 + m + 1 = 3m] edges.
+            | We have a face for every loop of degree 1, and one on the outside of degree #[m m+ 1 +2(2m-1)  = 5m - 1] as each internal edge is traversed twice if you walk around the outside.
+            | So this works!
+
+        example
+            statement: p
+                | For #[m m= 1]
+                me (x^2 + 2)^3 - (x^3 + 3x)^2 = 3x^2 + 8
+                | .
+                | #[m m= 2]
+                me (x^4 - 4x)^3 - (x^6 -6x^3+6)^2  = 8*x^3 - 36
+                | .
+
+
+        example
+            statement: p
+                | For #[m m =5]
+                me X(t) = \frac 19 (t^{10} + 6t^7 +15 t^4 + 12t)
+                me Y(t) = \frac{1}{54} (2t^{15} + 18t^{12} +72 t^9 + 144 t^6 + 135 t^3 + 27)
+                me K(t) = -\frac{1}{108} (3t^{6} + 14t^3 +27)
+                | and we can let #[m t = -3] to get #[m X(-3) = 5234], #[m Y(-3) = -378661] and #[m K(-3) = -17], so we have a point
+                me (5234, 378661) \in E_{17} \colon y^2 = x^3 + 17
+                | letting #[m t = \pm 9] we get
+                me |384242766^3 - 7531969451458^2| = 14668
+                me |390620082^3 - 7720258643465^2| = 14857
+                | both of which have
+                me \frac{\sqrt{|x|}}{k} \approx 1.33
+                | , these get lower as we increase #[m t] though.
+
+        p
+            | We should expect this decrease from this method as if #[m \deg X = 2m] and #[m \deg K = m + 1] then #[m \sqrt{X(t)}/K(t)] grows like #[m t^{m}/t^{m+1} = t\inv].
+
+
+        p
+            | Can we do the same for abc?
+        p
+            | Take the Dessin with a deg 1 vertex at infinity, degree 3 at 0 with an edge surrounding 1, we get a Belyi function
+            me f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^3(x+1)}
+            | plugging in #[m x=a/b] and cross multiplying gives
+            me 64a^3 b + (a^2 - 18ab - 27b^2)^2 = (a+9b)^3(a+b)
+            | which could of course be verified independently, but how would you find this identity without Dessins? Now for #[m a = -32, b= 23] we get
+            me - 2^{21} \cdot 23 +  11^2 =  -1 \cdot 3^2 \cdot 5^6 \cdot 7^3
+            | or
+            me 11^2 + 3^2 \cdot 5^6 \cdot 7^3 = 2^{21} \cdot 23
+            | This is the second highest quality abc triple known with quality
+            me \frac{\log c}{\log R} = 1.62599
+            | (the current winner has quality #[m 1.6299]).
+
+
+
+        paragraphs
+            title References
+
+            p
+                | A semi-random order, maybe starting at the top is nice though.
+                | If you have trouble finding something let me know.
+
+                ol
+                    li
+                        | On Computing Belyi Maps - J. Sijsling, J. Voight
+                    li
+                        | Belyi Functions: Examples, Properties, and Applications - Zvonkin (really nice survey)
+                    li
+                        | On Davenport’s bound for the degree of #[m f^3 - g^2] and Riemann's Existence Theorem - Umberto Zannier
+                    li
+                        | Unifying Themes Suggested by Belyi's Theorem - Wushi Goldring
+                    li
+                        | Polynomial Identities and Hauptmoduln - W. W. Stothers
+                    li
+                        | Elliptic Surfaces and Davenport-Stothers Triples -  Tetsuji Shioda
+                    li
+                        | The abc-theorem, Davenport’s inequality and elliptic surfaces - Tetsuji Shioda
+                    li
+                        | It's As Easy As abc -  Andrew Granville, Thomas J. Tucker
+                    li
+                        | Polynomial and Fermat–Pell families that attain the Davenport–Mason bound - Noam D. Elkies, Mark Watkins (on Watkins webpage)
+                    li
+                        | Halltripels en kindertekeningen - Hans Montanus (in Dutch, but math is universal right?)
+                    li
+                        | Computational Number Theory and Algebraic Geometry Spring 2012, taught by Noam Elkies, notes by Jason Bland
+                    li
+                        | Davenport–Zannier polynomials over #[m \QQ] - Fedor Pakovich, Alexander K. Zvonkin (a nice extension perhaps?)
+                    li
+                        | Minimum Degree of the Difference of Two Polynomials over Q, and Weighted Plane Trees -  Fedor Pakovich,  Alexander K. Zvonkin (as above)
+                    li
+                        | The ABC-conjecture for polynomials - Abhishek Parab
+                    li
+                        | On Marshall Hall's Conjecture and Gaps Between Integer Points on Mordell Elliptic Curves - Ryan D'Mello
+                    li
+                        | Neighboring powers - F. Beukers, C. L. Stewart (a more general problem, but nice history and examples)
+                    li
+                        | Rational Points Near Curves and Small Nonzero #[m | x^3 - y^2|] via Lattice Reduction - Elkies
+                    li
+                        | ABC implies Mordell - Elkies
+                    li
+                        | Dessins d'enfant -  Jeroen Sijsling (master thesis)
+                    li
+                        | Algorithms and differential relations for Belyi functions - Mark van Hoeij, Raimundas Vidunas.
+                    li
+                        | Belyi functions for hyperbolic hypergeometric-to-Heun transformations -  Mark van Hoeij, Raimundas Vidunas (has application to ABC over number fields at the end)
+                    li
+                        | Some remarks on the S-unit equation in function fields  - Umberto Zannier
+                    li
+                        | A note on integral points on elliptic curves - Mark Watkins
+                    li
+                        | On Hall’s conjecture - Andrej Dujella (more recent progress)
+                    li
+                        | Hecke Groups, Dessins d'Enfants and the Archimedean Solids -  Yang-Hui He, and James Read
+                    li
+                        | Belyi functions for Archimedean solids - Nicolas Magot, Alexander Zvonkin (didn't really use this but it's nice!)
+
+
+section#sec-three-short-stories-belyi
+    title Three Short Stories aboute Belyi's theorem (Ricky)
+
+    introduction
+        theorem
+            statement: p
+                | #[m X /\CC] a curve. Then #[m X] is defined over #[m \overline \QQ] iff there exists a Belyi map
+                me \phi \colon X\to \PP^1
+                | such that #[m B(\phi) \subseteq  \{0,1,\infty\}].
+        p
+            | Main reference:
+            | Unifying Themes Suggested by Belyi's Theorem - Wushi Goldring
+
+    subsection
+        title The case of the Rising Degree
+
+        definition#def-belyi-degree
+            statement: p
+                | The #[term Belyi degree] of #[m X/\overline \QQ] (a curve) is the minimal degree of #[m \phi\colon X \to \PP^1] a Belyi map.
+
+        p
+            | Question, how does the Belyi degree of #[m X/\overline \QQ] relate to the arithmetic of #[m X]?
+
+        definition#def-field-of-moduli
+            statement: p
+                | The #[term field of moduli] of #[m X/\overline\QQ] is the intersection over all fields #[m \subseteq \overline \QQ] over which #[m X] is defined.
+                | Similarly for a morphism #[m \phi \colon X \to Y].
+
+        remark
+            p
+                | This is not the same as the field of definition always.
+
+        p
+            | Given #[m X/\overline \QQ] with field of moduli #[m K] we say #[m X] has good (resp. semistable) reduction at #[m \ideal p \subseteq \ints_K] if there exists a model for #[m X] over #[m \ints_{K_{\ideal p}}] s.t. the special fibre is smooth (resp. semistable) reduction.
+
+        p
+            | For #[m p\in \ZZ] we say #[m X] has good/semistable reduction at #[m p] if it dies for all #[m \ideal p | p].
+
+        theorem#thm-zapponi
+            title Zapponi
+            statement: p
+                | If #[m X/\overline \QQ] then the Belyi degree of #[m X] is at least the largest prime #[m p \in \ZZ] such that #[m X] has bad semistable reduction at #[m p].
+
+        remark
+            p
+                ol
+                    li
+                        | The lower bound is not #[q sharp] because  there exist #[m E/K] with good reduction everywhere, but no degree 1 maps #[m \phi \colon E \to \PP^1].
+                    li
+                        | If
+                        me E\colon y^2 = x^3 + x^2 + p
+                        | then #[m E] has bad semistable reduction at #[m p] so the Belyi degree of #[m E] is #[m \ge p].
+
+        theorem#thm-beckmann
+            title Beckmann
+            statement: p
+                | Let #[m \phi \colon X \to \PP^1] be a Belyi map with field of moduli #[m M].
+                | Let #[m G] be the Galois group of the Galois closure of #[m \phi].
+                | Then for all #[m p] such that #[m p \nmid |G|], #[m \tilde \phi \colon \tilde X \to \PP^1] has good reduction at #[m p] and #[m p] is unramified in #[m M].
+
+
+        proof
+            p
+                | Of Zapponi.
+            p
+                | Let #[m \phi\colon X \to \PP^1] be a Belyi map of degree #[m n].
+                | Let #[m K] be the field of moduli of #[m X], #[m M] the field of moduli of #[m \phi] then #[m M/K] is a finite extension.
+                | Take #[m G] as above and let #[m \ideal p \subseteq \ints_K] be a place of bad semistable reduction for #[m X].
+                | Then #[m \wp| \ideal p] for #[m \wp \subseteq \ints_M] is a place of bad semistable reduction for #[m \phi].
+                | By #[xref(ref="thm-beckmann")/] #[m p \mid |G|] for #[m p\in \ZZ] below #[m \ideal p] but #[m G \hookrightarrow S_n] which implies #[m p|n!] so #[m p\le n].
+
+    subsection
+        title Finitists Dream
+
+        p
+            | Recall that if #[m k ] is a perfect field of characteristic #[m p] then
+            me \phi \colon C_1 \to C_2
+            | is said to be tamely ramified at #[m P\in C_1] if #[m p\nmid e_\phi(P)] (wildly ramified if #[m p |e_\phi(P)]).
+
+        theorem
+            title Wild #[m p]-Belyi
+            statement: p
+                | For #[m C] a curve over #[m k] perfect of characteristic #[m p], there exists a #[q wild Belyi map]
+                me \phi \colon C\to \PP^1
+                | such that #[m B(\phi) = \{\infty\}].
+                | I.e. every curve #[m /k] is birational to an étale cover of #[m \aff^1].
+
+        example
+            statement: p
+                me \mathbf G_m \to \aff^1
+                me x \mapsto x^p + \frac 1x
+                | but the tame étale fundamental group of #[m \aff^1] is 0.
+
+        theorem
+            title Tame #[m p]-Belyi (Saidi)
+            statement: p
+                | Let #[m p \gt 2].
+                | For #[m C/\overline \FF_p] there exists #[m \phi\colon C \to \PP^1] tamely ramified everywhere (i.e. possibly unramified) with
+                me B(\phi) \subseteq \{0,1,\infty\}
+                | .
+
+        lemma
+            title Fulton
+            statement: p
+                | Let #[m p \gt 2] then for #[m C/k] (#[m k] algebraically closed of characteristic #[m p]) there exists #[m \psi \colon C\to \PP^1] such that
+                me e_\psi(P) \le 2
+                | .
+
+        proof
+            p
+                | Of Tame #[m p]-Belyi
+            p
+                | Take #[m \psi \colon C\to \PP^1] as in the lemma then
+                me B(\psi) \subseteq \PP^1(\FF_{p^m})
+                | for some #[m m].
+                | Define
+                me f\colon \PP^1\to \PP^1
+                | by
+                me x\mapsto x^{p^m -1}
+                | .
+                | Take #[m \phi = f\circ \psi].
+                | So #[m \pi] is tamely ramified everywhere and #[m B(\phi) \subseteq \{0,1,\infty\}].
+
+        p
+            | Analogue of Fulton's lemma is that there exists
+            me \tau \colon C\to \PP^1
+            | for #[m \characteristic (k) \ne 3] such that #[m e_\tau(P) = 1] or #[m 3].
+
+    subsection
+        title In the Stacks
+
+        observation
+            p
+                | #[m \PP^1 \smallsetminus \{0,1,\infty\}] is the moduli space of genus 0 curves with four (ordered) marked points.
+
+                me (\PP^1, \alpha_1,\alpha_2,\alpha_3,\alpha_4) \mapsto \image(\alpha_4) \text{ when } \alpha_1 \mapsto 0,\alpha_2\mapsto 1, \alpha_3 \mapsto \infty
+                | .
+
+        definition
+            statement: p
+                | Let #[m \mathcal M_{g,n}] be the moduli space of genus #[m g] curves with #[m n] (ordered) marked points (then #[m \mathcal M_{g,\lb n\rb}] is the same for unordered points).
+                | If #[m n] is large enough relative to #[m g] then #[m \mathcal M_{g,n}] will be a scheme (but the unordered version will not).
+
+        example: statement: p: me \mathcal M_{0,4} \simeq \PP^1 \smallsetminus \{0,1,\infty\}
+
+        question
+            title Braungardt
+            p
+                | Is every #[m X/\overline \QQ] (smooth projective variety) birational to a finite étale cover of some #[m \mathcal M_{g,\lb n \rb}]?
+
+        note
+            p
+                | There exists an étale map
+                me \mathcal M_{g,n} \to \mathcal M_{g,[n]}
+                | by forgetting the ordering of the points.
+
+        p
+            | So the dimension 1 case of the conjecture is Belyi's theorem, by
+            me X\smallsetminus \phi\inv (B(\phi)) \to \PP^1 \smallsetminus \{0,1,\infty\} \simeq \mathcal M_{0,4} \to\mathcal M_{0,[4]}
+            | .
+
+        p
+            | In dimension 2 we have #[m \mathcal M_{1,\lb 2 \rb}] and #[m \mathcal M_{0,\lb 5 \rb}], the only 2-d spaces of interest.
+            | We also  have an étale map
+            me \mathcal M_{1,[2]} \xrightarrow\alpha \mathcal M_{0,[5]}
+            | as follows:
+            me \eta = (E; \{q_1,q_2\}) \in \mathcal M_{1,[2]}
+            | with
+            me \alpha(\eta) = (\PP^1; \{r_1,r_2,r_3,r_4,r_5\})
+            | where the #[m r_i] come from constructing a projection #[m \phi] from #[m E] to #[m \PP^1] situated perpendicularly to the line joining #[m q_1,q_2].
+            | This then has 4 ramification points
+            me B(\phi) = \{r_1,r_2,r_3,r_4\}
+            | and #[m r_5 = \phi(q_1) = \phi(q_2)].
+            | So Braungardt for surfaces #[m (X/\overline \QQ)]?
+            | Does there exist #[m \phi \colon X \to \mathcal M_{0,\lb 5 \rb}] which is étale?
+
+        theorem
+            title Braungardt
+            statement: p
+                | For #[m X/\overline \QQ] an abelian surface #[m X] is birational to an étale cover of #[m \mathcal M_{0,\lb 5 \rb}].
+            proof
+                p
+                    | Sketch.
+                p
+                    | For an abelian surface over #[m \overline \QQ] there exists another isogenous to it which is principally polarized.
+                    | Such surfaces come in two flavours
+                    me E_1 \times E_2
+                    | or #[m J(C)] for #[m C] of genus 2.
+                p
+                    | Case 1:
+                p
+                    | Let #[m \phi_i \colon E_i \to \PP^1\smallsetminus \{0,1,\infty\}] be Belyi maps.
+                    | Then we have #[m \alpha \colon A \xrightarrow{\phi_1,\phi_2} \PP^1 \times \PP^1].
+                    | Then #[m \alpha] restricts to a finite unramified cover
+                    me \alpha\inv (S) \xrightarrow \alpha S
+                    | where
+                    me S = (\PP^1 \smallsetminus \{0,1,\infty\} \times \PP^1 \smallsetminus \{0,1,\infty\}) \smallsetminus \Delta
+                    | .
+                    | Note that #[m S \simeq \mathcal M_{0,5}] by
+                    me (a,b ) \mapsto (\PP^1; \{0,1,\infty, a,b\})
+                    | .
+                    | So #[m A] is birational to #[m \alpha\inv (S)] which is an étale cover of #[m \mathcal M_{0,\lb 5 \rb}].
+                p
+                    | Case 2
+                p
+                    | If #[m A = J(C)] then use #[m \phi \colon C \to \PP^1] and a relation between #[m A] and #[m \Sym^2(C)].
+
+// TODO add a ref to the paper doing w
+
+section#sec-dessins-physics
+    title Dessins in Physics (Jim)
+
+    paragraphs
+        title Physics
+
+        p
+            | Let  #[m M]  be a manifold with  a metric #[m g].
+            | We call the pair #[m (M,g)] a #[q spacetime manifold].
+            | Let #[m \mathcal E] be  a #[q space of fields], either #[m \cinf (M)], sections of some #[m E\to M], connections, or similar.
+            me S(\phi) = \int_M \mathcal    L (\phi)
+            | for #[m \phi\in \mathcal E] and #[m \mathcal L] the Lagrangian.
+            | #[q Physically realisable states] are then fields #[m \phi] that minimise #[m S(\phi)].
+            | #[m W] is a superpotential, this is a term in #[m \mathcal L] that satisfies some special symmetries.
+            | E.g. we could also have
+            me S(\phi_1, \phi_2) = \int_M \mathcal L(\phi_1,\phi_2)
+            | the #[m W] might satisfy #[m W(\phi_1, \phi_2) = W(\phi_2, \phi_1)].
+
+        definition#def-gauge-transformations
+            title Gauge transformations
+            statement: p
+                | Let #[m G \acts E \xrightarrow p M] be an action s.t. each fibre #[m E_x = p \inv(x)] is a representation of #[m G].
+                | A #[term gauge] is a section #[m s(x)] of #[m E \to M].
+                | A #[term gauge transformation] is a map #[m g\colon M \to G] s.t.
+                me g(x) s(x)
+                | is another section, call #[m G] the #[term gauge group].
+                | The important gauge transformations are the ones that fix the set of physically realisable states (i.e. fixes the subset of #[m \mathcal E] that minimise #[m S]).
+
+    paragraphs
+        title Quivers and dessins
+
+        p
+            | Let's now study the relationship between quivers and dessins.
+
+        example
+            statement
+                p
+                    | #[m \mathcal N = 4] SYM (supersymmetric Yang-Mills)
+                    | (Gauge symmetries given by some product of #[m \specialunitary (N)])
+                    | .
+        p
+            | A quiver is a directed graph, possibly with self-loops.
+            | Here we think of the nodes as corresponding to factors of the gauge group.
+            | And the arrows as fields, so in a bouquet with 3 petals we have three fields,
+            | and only #[m G = \specialunitary (N)].
+        p
+            | There is also the notion of a periodic quiver (a tiling of the plane).
+            | We can take the triangular lattice and consider its dual, this is a hexagonal tiling with a bicolouring corresponding to the fact we had upwards pointing and downwards pointing triangles.
+            | This is a Dimer model.
+        p
+            | Relating the Dimer model back to physics:
+            | We have hexagonal faces in correspondence with factors of the Gauge group, and edges fields, with vertices terms in #[m W].
+        p
+            | So one distinct face gives one factor in the gauge group so #[m G = \specialunitary (N)].
+            | 3 distinct edges give 3 fields #[m X_1, X_2, X_3].
+            | To recover #[m W] consider the permutation arising from reading the edges around the vertices counterclockwise.
+            | A black vertex #[m (1,2,3)] gives #[m \sigma_B] corresponding to a positive term in #[m W].
+            | A white vertex #[m (1,2,3)] gives #[m \sigma_W] corresponding to a negative term in #[m W].
+            | Then #[m \sigma_\infty = (\sigma_B\sigma_W)\inv = (123)]
+            | #[m \sigma_i] gives a term for each cycle.
+
+            | Each cycle in #[m \sigma_B] gives a product of fields indexed by the cycle, e.g. in this example #[m \sigma_B] gives #[m X_1X_2X_3].
+            | Each cycle in #[m \sigma_W\inv] gives a product of fields indexed by the cycle, e.g. in this example #[m \sigma_W] gives #[m X_1X_3X_2].
+            | Then
+            me W = \trace((\text{sim of }\sigma_B\text{ terms}) - (\text{sim of }\sigma_W\text{ terms}))
+            me = \trace(X_1X_2X_3 - X_1X_3X_2)
+            | .
+        p
+            me \Aut( \{\sigma_B,\sigma_W,\sigma_\infty\}) = \{ \gamma\in S_3: \gamma\sigma_i \gamma\inv = \sigma_i)
+            me = \{1,(123), (132)\}
+            me = \ZZ/3\ZZ
+            |.
+        p
+            | The fundamental domain of the Dimer gives a dessin on the torus with two vertices of degree 3.
+            | This corresponds to the Belyi pair #[m (\Sigma, \beta)] where
+            me \Sigma \colon y^2 = x^3 + 1
+            me \beta \colon \Sigma  \to \PP^1
+            me (x,y) \mapsto \frac{y+1}{2}
+            | .
+            me \Aut(\Sigma, \beta) \simeq \Aut(\{\sigma_B,\sigma_W, \sigma_\infty\})
+            | #[m \Aut(\Sigma, \beta)] is generated by
+            me (x,y) \mapsto (w^3 x,y)
+            | where #[m w^3 = 1].
+
+        example
+            statement: p
+                | Take the quiver with two vertices and two edges in each direction connecting them.
+                | This has 4 fields and two factors of #[m G] (i.e. #[m G = \specialunitary (N) \times \specialunitary (N)]).
+                | The dimer is a square lattice alternately coloured, with #[m \sigma_B = \sigma_W = (1234), \sigma_\infty = (13)(24)].
+                me W = \trace (X_1X_2X_3X_4 - X_1 X_4 X_3 X_2)
+                | . In this case the Belyi pair is
+                me \Sigma \colon y^2= x(x-1)(x-\frac12)
+                me \beta = \frac{x^2}{2x-1}
+                | .
+                me \Aut(\{\sigma_B,\sigma_W, \sigma_\infty\}) = \langle (1234) \rangle \simeq \ZZ/4\ZZ
+                me \phi_\pm \colon (x,y) \mapsto \left(\frac{x}{2x -1},\frac{\pm i}{(2x-1)^2} \right)
+                me \phi_+^2 = \phi_-^2 \colon (x,y) \mapsto (x,-y)
+                me \phi_+^3 = \phi_+\inv = \phi_-
+                me \phi_+^4 = 1
+                | so
+                me \Aut(\Sigma, \beta) \simeq \ZZ/4\ZZ
+                me \beta\inv(0)= \{(0,0)\}
+                me \beta\inv(1)= \{(1,0)\}
+                me \beta\inv(\infty)= \{(\frac 12,0), (\infty,\infty)\}
+                | on the Dimer we have the square lattice so taking a fundamental domain containing  of the vertices we see the torus as a topology.
+
+        example
+            title Final example
+
+            statement
+                p
+                    | Let's jump straight to the Dimer the hexagonal lattice with fundamental domain containing 6 vertices.
+                    | We have 9 fields and three factors in the gauge group #[m G = \specialunitary (N)^2].
+                    me \sigma_B = (147)(258)(369)
+                    me \sigma_W = (123)(456)(789)
+                    me \sigma_\infty = (195)(276)(384)
+                    | so
+                    me W = \trace \sum_{i,j,k} X_{12}^iX_{23}^j X_{31}^k \epsilon_{ijk}
+                    | where
+                    me \epsilon_{ijk} = \begin{cases} \sgn(ijk) \amp\text{if }i,j,k \text{ distinct}\\ 0 \amp\text{otw}\end{cases}
+                    | #[m X_{12}^i] acts on the #[m i]th field by #[m N, \bar N, 1] where #[m N] is the canonical representation, #[m \bar N] the anticanonical and #[m 1] is trivial.
+                    me \Aut(\{\sigma_B,\sigma_W, \sigma_\infty\})  \simeq \ZZ/3\ZZ\times \ZZ/3\ZZ
+                    | now the Belyi pair
+                    me \Sigma = \text{projective closure of } F = \{(x,y) : x^3+ y^3 =1\}
+                    me \beta(x,y) = x^3
+                    me \gamma_1(x,y) = (w_1 x, y)
+                    me \gamma_2(x,y) = (x,w_2  y)
+                    me w_i^3 = 1
+                    | .

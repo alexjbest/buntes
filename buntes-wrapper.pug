@@ -1,0 +1,47 @@
+doctype xml
+
+mathbook
+
+    docinfo
+        latex-preamble
+            package xypic
+            package newpxtext
+            package newpxmath
+            package cancel
+
+
+        include ./macros.pug
+
+        feedback: url https://github.com/alexjbest/buntes/issues
+
+        initialism AFAS
+
+        analytics: google: tracking UA-48250536-1
+
+        rename(element="inlineexercise" lang="en-US") Exercise
+
+        latex-image-preamble.
+            \usepackage{tikz,tkz-graph,tkz-berge}
+
+
+    book#buntes
+        title BUNTES
+        subtitle BU Number Theory Expository Seminar
+
+        frontmatter
+            titlepage
+                author: personname BUNTES Attendees (notes by Alex)
+
+                date: today/
+
+        chapter#chapter-abelian-varieties
+            include ./abelian-varieties.pug
+
+        chapter#chapter-dessins
+            include ./dessins.pug
+
+        chapter#chapter-supersing-isog
+            include ./supersing-isog.pug
+
+        backmatter
+            include ./references.pug

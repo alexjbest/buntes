@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>(of above continued)</p>
+<div class="displaymath">
+\begin{equation*}
+\End(A) \otimes \ZZ_l \hookrightarrow\End(T_l(A))
+\end{equation*}
+</div>
+<p>for \(A\) <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> iff for any finitely generated \(M \subseteq \End(A)\)</p>
+<div class="displaymath">
+\begin{equation*}
+M \otimes \ZZ_l \hookrightarrow \End(T_l(A))
+\end{equation*}
+</div>
+<p>Claim:</p>
+<div class="displaymath">
+\begin{equation*}
+M^{\text{div}} = \{f\in \End(A) : nf\in M \text{ for some }n\ge 1\}
+\end{equation*}
+</div>
+<p>is finitely generated.</p>
+<p>Proof: \(M^\text{div} = (M\otimes \QQ) \cap \End(A)\) \(\deg \colon M \otimes \QQ \to \QQ\) is a polynomial so it is continuous.</p>
+<div class="displaymath">
+\begin{equation*}
+U = \{\phi\in M \otimes \QQ : \deg \phi \lt 1\}
+\end{equation*}
+</div>
+<p>is open in \(M \otimes \QQ\) but \(U \cap M^\text{div} = 0\) so \(M^\text{div} \) is a discrete subgroup of the finite dimensional \(\QQ\)-vector space \(M \otimes \QQ\) so \(M^\text{div}\) is finitely generated. \(M \hookrightarrow M^\text{div}\) so \(M \otimes \ZZ_l \hookrightarrow M^\text{div} \otimes \ZZ_l\) so  we may assume \(M = M^\text{div}\text{.}\)</p>
+<p>Let \(f_1,\ldots, f_r\) be a \(\ZZ\)-basis for \(M\) and suppose that \(\sum a_iT_l(f_i)=0\) for some \(a_i \in \ZZ_l\) not all 0. We can assume not all \(a_i\) are divisible by \(l\text{.}\) Choose \(a_i' \in \ZZ\) s.t. \(a_i'=a_i \pmod{l}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f = \sum a_i' f_i \in \End(A)
+\end{equation*}
+</div>
+<p>we then have</p>
+<div class="displaymath">
+\begin{equation*}
+f = \sum a_i' T_lf_i
+\end{equation*}
+</div>
+<p>is 0 on the first coordinate of \(T_l\text{.}\) So \(A\lb l \rb \subseteq \ker f\) so there exists \(g\) with \(f= lg\) \(f\in M\) implies \(g\in M^\text{div} = M\) so \(g = \sum b_i f_i\) and \(f = \sum lb_i f = \sum a_i f_i\) hence \(l\mid a_i\) for all \(i\) a contradiction. So \(\End(A)\otimes \ZZ_l \hookrightarrow \End(T_l(A))\text{.}\)</p>
+<p>Therefore</p>
+<div class="displaymath">
+\begin{equation*}
+\Hom(A,B) \otimes \ZZ_l \hookrightarrow \Hom(T_l(A), T_l(B))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\rank_\ZZ \Hom(A,B) \le 4 \dim A\dim B\text{.}
+\end{equation*}
+</div></article></body>
+</html>

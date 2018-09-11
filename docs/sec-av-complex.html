@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Abelian varieties over \(\CC\) (Alex)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-av-intro.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-rational-maps-avs.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-av-intro.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-rational-maps-avs.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex" class="active">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-av-complex"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Abelian varieties over \(\CC\) (Alex)</span>
+</h2>
+<a href="sec-av-complex.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-37">The goal of this talk is to understand what <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> look like over \(\CC\text{.}\) The goal for me is to understand what a (principal) polarisation is and why it is important.</p>
+<p id="p-38">First immediate question: why study complex theory at all? The most classical field, algebraically closed, archimidean, characteristic 0.</p>
+<p id="p-39">Recall/rapidly learn the picture for <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, given \(E\) an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> we have for some \(\Lambda\) a rank 2 lattice in \(\CC\)</p>
+<div class="displaymath">
+\begin{align*}
+\CC/\Lambda \amp\xrightarrow{\sim} E(\CC) \subseteq \PP^2(\CC)\\
+z\amp\mapsto (\wp(z) : \wp'(z) : 1)\\
+0\amp\mapsto (0 : 1 : 0)
+\end{align*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+\wp(z) = \frac{1}{z^2} + \sum_{\lambda \in \Lambda\smallsetminus\{0\}} \frac{1}{(z-\lambda)^2} - \frac{1}{\lambda^2}\text{.}
+\end{equation*}
+</div>
+<p>This is a <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic function</a> whose image lands in</p>
+<div class="displaymath">
+\begin{equation*}
+y^2 = 4x^3 - g_2 x - g_3\text{.}
+\end{equation*}
+</div>
+<p>So the \(\CC\) points of an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> are topologically a torus.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Abelian varieties</span>
+</h3>
+<p id="p-40">Naturally one asks: does this generalise? Let \(A\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\CC\text{,}\) what does \(A(\CC)\) look like? Another torus?</p>
+<article class="theorem-like" id="proposition-3"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.1</span>
+</h6>
+<p id="p-41">\(A(\CC)\) is a compact, connected, complex lie group.</p></article><article class="theorem-like" id="proposition-4"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.2</span>
+</h6>
+<p id="p-42">Let \(A\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> of dimension \(g\) over \(\CC\text{.}\) Then we have</p>
+<div class="displaymath">
+\begin{equation*}
+A(\CC) \cong V/\Lambda
+\end{equation*}
+</div>
+<p>where \(V\) is a \(g\) dimensional complex vector space and \(\Lambda\) is a full rank lattice of \(V\) (i.e \(\Lambda\) is a discrete subgroup of \(V\) s.t. \(\RR\otimes \Lambda  = V\)).</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-8" id="proof-8"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-43">Differential geometry gives us a map of complex manifolds, the exponential map</p>
+<div class="displaymath">
+\begin{equation*}
+\exp\colon\Tgt_0(A(\CC)) \to A(\CC)
+\end{equation*}
+</div>
+<p>this is holomorphic. And since \(A(\CC)\) is abelian, this is a homomorphism also. In general this is locally an isomorphism around 0.</p>
+<p id="p-44">Claim: \(\exp\) is injective. There exists a neighborhood \(U\supseteq 0\) s.t. \(\exp(U) \cong U\text{.}\) Consider the image \(\exp(\Tgt_0 A(\CC))\text{.}\) For \(x\in \exp(\Tgt_0 A(\CC))\text{,}\) \(\{U+x\}\) are all open and give a cover. Thus \(\exp(\Tgt_0A(\CC))\) is open. Since \(A(\CC)\) is connected we are thus reduced to showing \(\exp(\Tgt_0 A(\CC))\) is closed also. Since \(\exp\) is a homomorphism, the image is a subgroup. So its complement is the union of its non-trivial cosets, which is open. Thus \(\exp(\Tgt_0A(\CC))\) is closed. Giving \(\exp(\Tgt_0A(\CC)) = A(\CC)\text{,}\) which proves the claim.</p>
+<p id="p-45">\(\exp\) is a local isomorphism, which gives that \(\ker(\exp)\) is discrete, i.e. a lattice. We now have</p>
+<div class="displaymath">
+\begin{equation*}
+A(\CC) \cong \Tgt_0A(\CC)/ \ker(\exp)
+\end{equation*}
+</div>
+<p>so as \(A(\CC)\) is compact we cannot have a kernel which is not full rank, as otherwise the quotient could not be compact.</p></article></div>
+<article class="definition-like" id="def-complex-torus"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.3</span>
+</h6>
+<p id="p-46">We call any such \(V/\Lambda\) a <dfn class="terminology">complex torus</dfn>.</p></article><p id="p-47">From the above isomorphism we can now read off properties of \(A(\CC)\) as a group.</p>
+<article class="theorem-like" id="proposition-5"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.4</span>
+</h6>
+<p id="p-48">\(A(\CC)\) is divisible, and \(A(\CC)\lb n\rb \cong (\ZZ/n\ZZ)^{2g}\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-49">
+\begin{equation*}
+A(\CC)  \cong V/\Lambda \cong (\RR/\ZZ)^{2g}
+\end{equation*}
+</div>
+<p>isomorphisms as groups, thus \(A(\CC)\) is divisible. Further, \((\RR/\ZZ)\lb n \rb = (\frac 1n \ZZ)/\ZZ\text{.}\)</p></article></div>
+<p id="p-50">Question: Given a <a knowl="./knowl/def-complex-torus.html" title="Definition 1.3.3">complex torus</a> \(V/\Lambda\text{,}\) does there exist an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A\) such that \(A(\CC) \cong V/\Lambda\text{?}\)</p>
+<article class="example-like" id="example-2"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.3.5</span>
+</h6>
+<ul id="p-51" class="disc">
+<li id="li-15"><div class="displaymath">
+\begin{equation*}
+\CC/\Lambda \cong E(\CC) \text{ always in dim 1}
+\end{equation*}
+</div></li>
+<li id="li-16"><div class="displaymath">
+\begin{equation*}
+\CC^2/\Lambda^2 \cong (E\times E)(\CC) \text{ sometimes yes in higher dimension}
+\end{equation*}
+</div></li>
+<li id="li-17">
+<div class="displaymath">
+\begin{equation*}
+\CC^2/\langle (i, 0), (i\sqrt p, i), (1, 0), (0, 1)\rangle_\ZZ
+\end{equation*}
+</div>for \(p\) prime??? (I guess not, see Mumford)</li>
+</ul></article><article class="theorem-like" id="theorem-4"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.3.6</span> <span class="title">Chow</span>
+</h6>
+<p id="p-52">If \(X\) is an analytic submanifold of \(\PP^n(\CC)\) then \(X\) is an algebraic subvariety.</p></article><p id="p-53">By this theorem it is enough to analytically imbed \(V/\Lambda \hookrightarrow \PP^m\text{.}\) We can try and do this by mimicing the <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> strategy, find enough functions \(\theta \colon V/\Lambda \to \CC\text{.}\)</p></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Cohomology</span>
+</h3>
+<article class="theorem-like" id="proposition-6"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.7</span>
+</h6>
+<p id="p-54">Let \(X = V/\Lambda\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+H^r (X,\ZZ) \cong \{\text{alternating }r\text{-forms } \Lambda\times\cdots\times\Lambda\to \ZZ\}\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-10" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-55">\(\pi\colon V\to V/\Lambda\) is a universal covering map, so</p>
+<div class="displaymath">
+\begin{equation*}
+\Lambda = \pi^{-1} (0 ) \cong \pi_1(X,0)\text{.}
+\end{equation*}
+</div>
+<p>Because all these spaces are nice</p>
+<div class="displaymath">
+\begin{equation*}
+H^1 (X,\ZZ) \cong \Hom(\pi_1(X), \ZZ) \cong \Hom(\Lambda, \ZZ)\text{.}
+\end{equation*}
+</div>
+<p>To extend to \(r \ne 1\) use the Künneth formula:</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+\bigwedge^r(H^1(X_1\times X_2, \ZZ)) \ar@{=}[r]\ar@{=}[d]^{\text{Künneth}} &amp; H^r(X_1\times X_2 , \ZZ)\ar@{=}[dd]^{\text{Künneth}}\\
+\bigwedge^r(H^1(X_1, \ZZ)\otimes H^1(X_2, \ZZ)) \ar@{=}[d]&amp; \\
+\bigoplus_{p+q=r}(\bigwedge^p(H^1(X_1, \ZZ))\otimes\bigwedge^q(H^1(X_2, \ZZ))) \ar@{=}[r] &amp; \bigoplus_{p+q=r}(H^p(X_1, \ZZ)\otimes H^q(X_2, \ZZ))
+}
+\end{equation*}
+</div>
+<p>Since we know the proposition for \(S^1 = \RR/\ZZ\) by taking products and applying the above we get it for all complex tori \(V/\Lambda\text{.}\)</p></article></div>
+<article class="theorem-like" id="proposition-7"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.8</span>
+</h6>
+<p id="p-56">There is a correspondence</p>
+<div class="displaymath">
+\begin{align*}
+\{\text{Hermitian forms }H \text{ on } V\} \amp\leftrightarrow\{\text{Alternating forms }E\colon V\times V\to\RR,\,E(iu,iv) = E(u,v)\}\\
+H\amp\mapsto \im H\\
+E(iu,v)+ i E(u,v) \amp\mapsfrom E\text{.}
+\end{align*}
+</div></article></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">Line bundles</span>
+</h3>
+<p id="p-57">Now we will consider <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on \(X = V/\Lambda\text{,}\) that is</p>
+<div class="displaymath">
+\begin{equation*}
+L\xrightarrow{\pi} X
+\end{equation*}
+</div>
+<p>such that for any \(x\in X\) there exists \(U\ni x\) with \(\pi^{-1} (U) \cong \CC \times U\text{.}\) We can obtain these from hermitian forms and some auxilliary data as follows.</p>
+<article class="definition-like" id="definition-8"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.9</span>
+</h6>
+<p id="p-58">If \(H\) is a hermitian form on \(V\) such that \(E(\Lambda\times\Lambda) \subseteq \ZZ\) there exists a map</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha \colon \Lambda \to \CC^*  = \{z\in \CC^* : |z| = 1\}
+\end{equation*}
+</div>
+<p>such that</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha(u + v) = e^{i\pi E(u,v)} \alpha(u) \alpha(v)\text{.}
+\end{equation*}
+</div>
+<p id="p-59">Further, there is a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L(H, \alpha)\) on \(X\) which is defined by quotienting \(\CC\times V\) by \(\Lambda\) which acts via</p>
+<div class="displaymath">
+\begin{equation*}
+\phi_u(\lambda, v) = (\alpha(u)e^{\pi H(v,u) + \frac12 \pi H(u,u)}\lambda, v+u)\text{ for } u\in \Lambda\text{,}
+\end{equation*}
+</div>
+<p>we'll denote by \(e_u\) the factor \(\alpha(u)e^{\pi H(v,u) + \frac12 \pi H(u,u)}\) for brevity.</p></article><article class="theorem-like" id="thm-appell-humbert"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.3.10</span> <span class="title">Appell-Humbert</span>
+</h6>
+<p id="p-60">Any <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> on \(X\) is of the form \(L(H,\alpha)\) for some \(H\text{,}\) \(\alpha\) as above. Further</p>
+<div class="displaymath">
+\begin{equation*}
+L(H_1, \alpha_1) \otimes L(H_2, \alpha_2)  = L(H_1+ H_2, \alpha_1\alpha_2)\text{.}
+\end{equation*}
+</div>
+<p>In fact we have the following diagram</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+0 \ar[r] &amp;
+\Hom(\Lambda, \CC) \ar[r]\ar[d] &amp;
+\{\text{data } (H,\alpha)\} \ar[r]\ar[d] &amp;
+\{\text{gp. of Herm. } H \text{ w/ }E(\Lambda\times \Lambda) \subseteq \ZZ\} \ar[r]\ar[d] &amp;
+0 \\
+0 \ar[r] &amp;
+\Pic^0(X) \ar[r] &amp;
+\Pic(X) \ar[r]_c &amp;
+\ker(H^2(X,\ZZ) \to H^2(X,\sheaf O_X)) \ar[r]&amp;
+0
+}
+\end{equation*}
+</div>
+<p>where \(\Pic(X)\) is the group of all <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on \(X\) and \(\Pic^0\) is the subgroup of those which are topologically trivial.</p></article><p id="p-61">We wanted functions \(X\to \CC\text{.}\) Now we can instead consider sections \(s\) of \(L(H,\alpha) \xrightarrow{\pi} X\) i.e. maps \(s\colon X\to L(H,\alpha)\) with \(\pi\circ s = \id\text{.}\) Denote the space of such sections \(H^0(X,L(H,\alpha))\text{.}\)</p>
+<article class="definition-like" id="def-theta-function"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.11</span> <span class="title">Theta functions</span>
+</h6>
+<p id="p-62">The sections of \(L(H, \alpha)\)  correspond to <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">holomorphic functions</a></p>
+<div class="displaymath">
+\begin{equation*}
+\theta \colon V \to \CC
+\end{equation*}
+</div>
+<p>such that \(\theta(z+ u) = e_u \theta(z)\text{,}\) we will call such a \(\theta\) a <dfn class="terminology">theta function</dfn> for \((H,\alpha)\text{.}\)</p></article><p id="p-63">If \(H\) is not positive definite the space of such functions is 0!</p>
+<article class="theorem-like" id="prop-dimension-sections-complex"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.12</span>
+</h6>
+<p id="p-64">If \(H\) is positive definite, then the dimension of \(H^0(X, L(H,\alpha))\) is \(\sqrt{\det E}\) where we really mean the determinant of a matrix for \(E\) with respect to an integral basis.</p></article><article class="theorem-like" id="theorem-6"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.3.13</span> <span class="title">Lefschetz</span>
+</h6>
+<p id="p-65">Given a positive definite \(H\text{,}\) there exists an imbedding \(X \hookrightarrow \PP^m\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-11" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-66">Sketch: Let \(L = L(H,\alpha)\text{,}\) consider \(L(H,\alpha)^{\otimes 3} = L(3H, \alpha^3)\text{,}\) take a basis of \(\theta_0,\ldots, \theta_d\) of \(H^0(X, L^{\otimes 3})\text{.}\)</p>
+<p id="p-67">Claim: \(\Theta\colon z\mapsto (\theta_0(z) :\cdots :\theta_d (z)) \subseteq \PP^d\) is an embedding.</p>
+<p id="p-68">To see that this is well defined, we must give a section of \(L^{\otimes 3}\) not vanishing at \(z\) for all \(z\in X\text{.}\) Let \(\theta \in H^0(X,L)\smallsetminus \{0\}\text{.}\) Then pick \(a,b\) such that the section of \(L^{\otimes 3}\) given by</p>
+<div class="displaymath">
+\begin{equation*}
+\theta(z-a)\theta(z-b) \theta(z+ a+b)
+\end{equation*}
+</div>
+<p>does not vanish. This is possible and thus we have a nonvanishing section of \(L^{\otimes 3}\text{.}\)</p>
+<p id="p-69">For injectivity, show that if the above section has the same values on \(z_1,z_2\) then it is a <a knowl="./knowl/def-theta-function.html" title="Definition 1.3.11: Theta functions">theta function</a> for some sublattice. Almost all sections aren't <a knowl="./knowl/def-theta-function.html" title="Definition 1.3.11: Theta functions">theta functions</a> for a sublattice (this uses <a knowl="./knowl/prop-dimension-sections-complex.html" title="Proposition 1.3.12">Proposition 1.3.12</a>).</p>
+<p id="p-70">Something similar must be done for tangent vectors.</p></article></div>
+<article class="definition-like" id="def-riemann-form"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.14</span> <span class="title">Riemann forms</span>
+</h6>
+<p id="p-71">A <dfn class="terminology">Riemann form</dfn> is \(E\colon \Lambda \times \Lambda \to \ZZ\) alternating such that</p>
+<div class="displaymath">
+\begin{equation*}
+E_\RR \colon V\times V\to \RR
+\end{equation*}
+</div>
+<p>has the property that \(E(iu,iv) = E(u,v)\) and  the corresponding Hermitian form is positive definite.</p></article><article class="definition-like" id="def-polarizable"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.15</span> <span class="title">Polarizable tori</span>
+</h6>
+<p id="p-72">A <a knowl="./knowl/def-complex-torus.html" title="Definition 1.3.3">complex torus</a> \(X = V/\Lambda\) is <dfn class="terminology">polarizable</dfn> if there exists a <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a> \(E\) on \(\Lambda\text{.}\)</p></article><article class="example-like" id="example-3"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.3.16</span> <span class="title">Proposition</span>
+</h6>
+<p id="p-73">Every \(\CC/\Lambda\) where \(\Lambda = \langle 1,\tau\rangle_{\ZZ}\) is <a knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a>.</p>
+<p id="p-74">To see this take</p>
+<div class="displaymath">
+\begin{equation*}
+E(u,v) = \frac{uv}{\im \tau}
+\end{equation*}
+</div>
+<p>as a <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a>.</p></article><p id="p-75">Putting everything together we have obtained an equivalence of categories</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{abelian varieties over } \CC\} \leftrightarrow \{\text{polarizable complex tori}\}\text{.}
+\end{equation*}
+</div></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.4</span> <span class="title">Isogenies</span>
+</h3>
+<article class="definition-like" id="def-isogeny-tori"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.17</span> <span class="title">Isogenies of complex tori</span>
+</h6>
+<p id="p-76">An <dfn class="terminology">isogeny</dfn> of complex tori is a homomorphism \(V/\Lambda \to V'/\Lambda'\) with finite kernel.</p></article><article class="definition-like" id="definition-13"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.18</span> <span class="title">Dual vector spaces</span>
+</h6>
+<p id="p-77">Given \(V\) a complex vector space, let</p>
+<div class="displaymath">
+\begin{equation*}
+V^* = \{f\colon V\to \CC : f(u+v) = f(u)+f(v),\,f(\alpha v) = \bar \alpha f(v) \}
+\end{equation*}
+</div>
+<p>and given \(\Lambda \subset V\) a lattice, let</p>
+<div class="displaymath">
+\begin{equation*}
+\Lambda^* = \{f\in V^* : f(\lambda) \in \ZZ\,\forall \lambda\in \Lambda\}\text{.}
+\end{equation*}
+</div></article><article class="definition-like" id="def-dual-torus"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.19</span> <span class="title">Dual tori</span>
+</h6>
+<p id="p-78">If \(X = V/\Lambda\text{,}\) \(X^\vee = V^*/ \Lambda^*\) is the <dfn class="terminology">dual torus</dfn>.</p></article><article class="theorem-like" id="prop-weil-pair"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.20</span> <span class="title">Existence of Weil pairing</span>
+</h6>
+<div class="displaymath" id="p-79">
+\begin{equation*}
+X\times X^\vee \to \CC
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+X[n] \times X^\vee[n] \to \left(\frac{1}{n^2} \ZZ/\frac{1}{n} \ZZ\right) \cong \ZZ/n\ZZ
+\end{equation*}
+</div>
+<p>this is called the <dfn class="terminology">Weil pairing</dfn>.</p></article><p id="p-80">Can a <a knowl="./knowl/def-complex-torus.html" title="Definition 1.3.3">complex torus</a> be isogenous to its own dual? If \(X\) is <a knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> then</p>
+<div class="displaymath">
+\begin{align*}
+X \amp\to X^\vee\\
+v\amp\mapsto H(v,-)
+\end{align*}
+</div>
+<p>is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>.</p>
+<article class="definition-like" id="def-complex-pol"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.21</span>
+</h6>
+<p id="p-81">A <dfn class="terminology">polarization</dfn> is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(X \to X^\vee\text{.}\)</p></article></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

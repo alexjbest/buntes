@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>The <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> 0 case follows from the fact that the \(f\) is a rational function (and in fact the error term is \(O(1)\)) (exercise). For the general case we need the theory of log heights on curves. From this we require the following</p>
+<ul class="disc">
+<li>For \(D\) a divisor on \(C\) we have  a height function<div class="displaymath">
+\begin{equation*}
+h_D(\cdot)
+\end{equation*}
+</div>which is well defined up to  \(O(1)\text{.}\)</li>
+<li>If<div class="displaymath">
+\begin{equation*}
+D=  \sum m_k D_k
+\end{equation*}
+</div>is a decomposition into irreducible divisors, then<div class="displaymath">
+\begin{equation*}
+h_D(P) = \sum m_k h_{D_k}(P)\text{.}
+\end{equation*}
+</div>
+</li>
+<li>For \(\Delta\) a degree 0 divisor<div class="displaymath">
+\begin{equation*}
+h_{\Delta} (P) = O(\sqrt{\log H(f(P))} + 1)\text{.}
+\end{equation*}
+</div>
+</li>
+</ul>
+<p>Let \(D = \divisor_0(f) = \sum m_k D_k\text{,}\) \(D' = \sum_{f(P) = 0} (P)\) then \(b_f(0) = \deg D'\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\log H(f(P)) = h_D(P) + O(1) = \sum m_k h_{D_k}(P) + O(1)
+\end{equation*}
+</div>
+<p>since \(\log H(f(P))\) is also a height function relative to \(D\text{.}\) We now turn to \(N_0(f(P))\text{.}\) Any prime occurring in this must also occur in \(h_{D_k}(P)\) for some \(k\) (except for a finite set \(\{p : p|f \text{ or } p \text{ bad red. for } C\}\)). Then</p>
+<div class="displaymath">
+\begin{equation*}
+N_0(f(P))  \lt \sum h_{D_k}(P) + O(1) = h_{D'}(P) + O(1)\text{.}
+\end{equation*}
+</div>
+<p>Letting</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta = (\deg D) D' - (\deg D') D
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+h_{\Delta} (P) = O(\sqrt{\log H(f(P))} + 1)
+\end{equation*}
+</div>
+<p>thus</p>
+<div class="displaymath">
+\begin{equation*}
+\log N_0(f(P)) \lt h_{D'} (P) + O(1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \frac{1}{\deg D} (\deg D') h_{D'} (P) + O(1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \frac{1}{\deg D} (\deg D') h_{D} (P) + O(\sqrt{\log H(f(P))} + 1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \frac{1- b_f(0)}{d} \log  H(f(P)) + O(\sqrt{\log H(f(P))} + 1)
+\end{equation*}
+</div></article></body>
+</html>

@@ -1,0 +1,286 @@
+macros.
+
+
+    % really small matrices https://tex.stackexchange.com/questions/109072/smallmatrix-with-vertical-line-as-column-separator-how-to-do-it
+    \newenvironment{smallermatrix}[1]
+    {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny% change to whatever you need
+    \array{#1}}
+    {\endarray}
+
+    \newcommand{\ideal}[1]{\mathfrak{#1}}
+    \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+    \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+    \newcommand{\Lie}{\operatorname{Lie}}
+
+    \newcommand{\diff}{\mathop{}\!\mathrm{d}}
+    \newcommand{\cinf}{C^\infty}
+    % inverse
+    \newcommand{\inv}{^{-1}}
+    \newcommand{\units}{^{\times}}
+
+    \newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+    \newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+    \newcommand{\lb}{[}
+    \newcommand{\rb}{]}
+    \newcommand{\powerseries}[2]{#1[[#2]]}
+
+    % TODO look into this optional command stuff more
+    %\NewDocumentCommand{\partder}{mg}{
+    %\frac{\partial #1}{\partial #2}
+    %  %\bm{#1}\IfValueT{#2}{_{\textnormal{#2}}}%
+    %  }
+
+    \newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+    \providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+    % Tate-Shafarevich group
+    \DeclareMathOperator{\Sha}{III}
+
+
+    % Number sets
+    \newcommand{\NN}{\mathbf{N}}
+    \newcommand{\ZZ}{\mathbf{Z}}
+    \newcommand{\QQ}{\mathbf{Q}}
+    \newcommand{\RR}{\mathbf{R}}
+    \newcommand{\CC}{\mathbf{C}}
+    \newcommand{\HH}{\mathbf{H}}
+    \newcommand{\FF}{\mathbf{F}}
+    \newcommand{\GG}{\mathbf{G}}
+    \newcommand{\ints}{\mathcal{O}}
+    \newcommand{\adeles}{\mathbf{A}}
+
+    \newcommand{\alg}{\mathrm{alg}}
+
+    \newcommand{\subgroup}{\mathrel{\subseteq}}
+
+    % Categories
+    \newcommand{\cat}[1]{\mathcal{#1}}
+    \newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+    \newcommand{\Rings}{\mathrm{Rings}}
+
+    % arakelov
+    \newcommand{\Ar}{\mathrm{Ar}}
+    % de Rahm
+    \newcommand{\dR}{\mathrm{dR}}
+    % etale
+    \newcommand{\et}{\mathrm{\acute{e}t}}
+    % Petersson
+    \newcommand{\Pet}{\mathrm{Pet}}
+
+    %
+    \newcommand{\pinf}{{1/p^\infty}}
+
+    % colim
+    \newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+    % group action
+    \newcommand{\acts}{\circlearrowright}
+    % rightrightrightarrows
+    \newcommand\rightrightrightarrows{%
+        \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+            \textstyle\rightarrow \\[-0.6ex]
+            \textstyle\rightarrow}}
+    }
+
+    % abelianisation
+    \newcommand{\ab}{\mathrm{ab}}
+    % almost
+    \newcommand{\alm}{\mathrm{a}}
+    % analytic
+    \newcommand{\an}{\mathrm{an}}
+    % alternating
+    \newcommand{\alt}{\mathrm{alt}}
+    % cyclotomic
+    \newcommand{\cyc}{\mathrm{cyc}}
+    % identity
+    \newcommand{\id}{\mathrm{id}}
+    % unipotent
+    \newcommand{\un}{\mathrm{un}}
+    % unramified
+    \newcommand{\nr}{\mathrm{nr}}
+    % non-singular
+    \newcommand{\ns}{\mathrm{ns}}
+    % opposite
+    \newcommand{\op}{\mathrm{op}}
+    % pre- (adic)
+    \newcommand{\pre}{\mathrm{pre}}
+    % regular
+    \newcommand{\reg}{\mathrm{reg}}
+    % for spectral seminorm
+    \newcommand{\spec}{\mathrm{spec}}
+    \newcommand{\Set}{\mathrm{Set}}
+    % separable closure
+    \newcommand{\sep}{\mathrm{sep}}
+    % steinberg
+    \newcommand{\St}{\mathrm{St}}
+    % torsion
+    \newcommand{\tors}{\mathrm{tors}}
+    % Transpose TODO improve
+    \newcommand{\transpose}{\mathrm{T}}
+
+
+    % Annihilator
+    \DeclareMathOperator{\Ann}{Ann}
+    % Associated primes
+    \DeclareMathOperator{\Ass}{Ass}
+    % Support
+    \DeclareMathOperator{\Supp}{Supp}
+    % coker
+    \DeclareMathOperator{\coker}{coker}
+    % lowest common multiple
+    \DeclareMathOperator{\lcm}{lcm}
+    % Endomorphisms
+    \DeclareMathOperator{\End}{End}
+    % Diffeomorphisms
+    \DeclareMathOperator{\Diff}{Diff}
+    % Homomorphisms
+    \DeclareMathOperator{\Hom}{Hom}
+    % natural transformations
+    \DeclareMathOperator{\Nat}{Nat}
+    % Sylow
+    \DeclareMathOperator{\Syl}{Syl}
+    % Tangent
+    \DeclareMathOperator{\Tgt}{Tgt}
+    % special rep
+    \DeclareMathOperator{\sprep}{sp}
+    % volume
+    \DeclareMathOperator{\vol}{Vol}
+
+    % divisors
+    \DeclareMathOperator{\divisor}{div}
+    \DeclareMathOperator{\divisors}{Div}
+    \DeclareMathOperator{\Cl}{Cl}
+    \DeclareMathOperator{\Div}{Div}
+    \DeclareMathOperator{\Pic}{Pic}
+    \DeclareMathOperator{\Jac}{Jac}
+    \DeclareMathOperator{\Princ}{Princ}
+    \DeclareMathOperator{\Cycles}{Cycles}
+    % support
+    \DeclareMathOperator{\supp}{supp}
+
+    % ext tor
+    \DeclareMathOperator{\Ext}{Ext}
+    \DeclareMathOperator{\Tor}{Tor}
+
+    % graded piece
+    \DeclareMathOperator{\gr}{gr}
+    % filtrations
+    \DeclareMathOperator{\Fil}{Fil}
+
+
+    % polylogarithms
+    \DeclareMathOperator{\polylog}{\mathcal{L}}
+
+    % discriminant
+    \DeclareMathOperator{\disc}{disc}
+
+    % arith-geom
+    \DeclareMathOperator{\Tan}{Tan}
+    \DeclareMathOperator{\Cotan}{Cotan}
+    \DeclareMathOperator{\Sing}{Sing}
+
+    % selmer
+    \DeclareMathOperator{\Sel}{Sel}
+    % reduction
+    \DeclareMathOperator{\red}{red}
+    % regulator
+    \DeclareMathOperator{\Reg}{Reg}
+    % representations
+    \DeclareMathOperator{\Rep}{Rep}
+
+    % Rank
+    \DeclareMathOperator{\rk}{rk}
+    % TODO unify notation
+    \DeclareMathOperator{\rank}{rank}
+    % image
+    \DeclareMathOperator{\im}{im}
+    \DeclareMathOperator{\image}{im}
+    % coimage
+    \DeclareMathOperator{\coim}{coim}
+    % codimension
+    \DeclareMathOperator{\codim}{codim}
+    % span
+    \DeclareMathOperator{\Span}{span}
+    % Characteristic
+    \DeclareMathOperator{\characteristic}{char}
+    % Orientation
+    \DeclareMathOperator{\orient}{or}
+    % Leading term
+    \DeclareMathOperator{\leadterm}{lt}
+    % sign
+    \DeclareMathOperator{\sgn}{sgn}
+    % stabiliser
+    \DeclareMathOperator{\Stab}{Stab}
+    % trace
+    \DeclareMathOperator{\tr}{tr}
+    % order e.g. p-adic
+    \DeclareMathOperator{\ord}{ord}
+    % adjoint (representation)
+    \DeclareMathOperator{\ad}{ad}
+    \DeclareMathOperator{\Ad}{Ad}
+
+    % spectrum of a ring
+    \DeclareMathOperator{\Spec}{Spec}
+    % formal spec
+    \DeclareMathOperator{\Spf}{Spf}
+    \DeclareMathOperator{\Spv}{Spv}
+    \DeclareMathOperator{\Spa}{Spa}
+    \DeclareMathOperator{\Spm}{Spm}
+    \DeclareMathOperator{\specialisation}{sp}
+    % maxspec
+    \DeclareMathOperator{\Max}{Max}
+    % Galois groups
+    \newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+    \newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+    \newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+    % \DeclareMathOperator{\Gal}{Gal}
+    % induction
+    \DeclareMathOperator{\Ind}{Ind}
+    % restriction
+    \DeclareMathOperator{\Res}{Res}
+
+
+    \DeclareMathOperator{\power}{\mathcal{P}}
+    % affine + projective space
+    % TODO fix
+    \DeclareMathOperator{\aff}{\mathbf{A}}
+    \DeclareMathOperator{\PP}{\mathbf{P}}
+    % Norm and trace
+    \DeclareMathOperator{\norm}{Norm}
+    \DeclareMathOperator{\trace}{Tr}
+    % Frobenius
+    \DeclareMathOperator{\Fr}{Fr}
+    \DeclareMathOperator{\Frob}{Frob}
+    % Neron-severi
+    \DeclareMathOperator{\NS}{NS}
+    % Derivations
+    \DeclareMathOperator{\Der}{Der}
+    % Automorphism groups
+    \DeclareMathOperator{\Aut}{Aut}
+    \DeclareMathOperator{\Out}{Out}
+    \DeclareMathOperator{\Inn}{Inn}
+    % Vector fields
+    \DeclareMathOperator{\vf}{\mathcal{V}}
+    % Krull dimension
+    \DeclareMathOperator{\krulldim}{krulldim}
+    % transcendence degree
+    \DeclareMathOperator{\trdeg}{trdeg}
+    % fraction field
+    \DeclareMathOperator{\Frac}{Frac}
+    % class group
+    \DeclareMathOperator{\cl}{cl}
+    % probability
+    \DeclareMathOperator{\Prob}{Prob}
+
+    % Matrix groups
+    \DeclareMathOperator{\Mat}{Mat}
+    \DeclareMathOperator{\SL}{SL}
+    \DeclareMathOperator{\GL}{GL}
+    \DeclareMathOperator{\PSL}{PSL}
+    \DeclareMathOperator{\PGL}{PGL}
+    \DeclareMathOperator{\specialorthogonal}{SO}
+    \DeclareMathOperator{\Sp}{Sp}
+    \DeclareMathOperator{\orth}{O}
+    \DeclareMathOperator{\unitary}{U}
+    \DeclareMathOperator{\specialunitary}{SU}
+    \DeclareMathOperator{\Sym}{Sym}

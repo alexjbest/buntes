@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>(Sketch)</p>
+<p>Let</p>
+<div class="displaymath">
+\begin{equation*}
+\tau\colon X\times X \to X\times X
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\tau(x,y) = (xy,y)
+\end{equation*}
+</div>
+<p>so \(\tau^{-1} (e,e) = (e,e)\text{.}\) Some exercise in Hartshorne implies \(\im \tau\) has dimension \(2\dim X\text{.}\)</p>
+<p>Reduce to algebraically closed case.</p>
+<p>Let</p>
+<div class="displaymath">
+\begin{equation*}
+\tau^{-1}(\{e\} \times X) =  \{(x,y) : xy = e\} = \Gamma \subseteq X\times X
+\end{equation*}
+</div>
+<p>as \(\tau \) is surjective we get \(p_2 \colon \Gamma \to X\) is also so pick an irreducible \(\Gamma_1 \subseteq \Gamma\) with \(p_2(\Gamma_1) = X\text{.}\) This also implies \(p_1(\Gamma_1) = X\text{.}\)</p>
+<p>Let</p>
+<div class="displaymath">
+\begin{equation*}
+f\colon \Gamma_1 \times X\times X \to X
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f((x,y),z,w) = x((yz)w)
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+f(\Gamma_1 \times\{e\}\times\{e\}) = \{eee\} = \{e\}
+\end{equation*}
+</div>
+<p>so a version of <a knowl="./knowl/thm-rigidity.html" title="Theorem 1.2.11: Rigidity">rigidity 1.2.11</a> gives</p>
+<div class="displaymath">
+\begin{equation*}
+x((yz)w) = zw\ \forall (x,y) \in \Gamma_1,\,z,w\in X
+\end{equation*}
+</div>
+<p>So letting \(w = e\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+x(yz) = z\text{.}
+\end{equation*}
+</div>
+<p>Fix \(y \in X(k)\text{,}\) and then by surjectivity we can find \(x,z \in X(k)\) with \((x,y)\in \Gamma_1 \ni (y,z)\text{.}\) So we get</p>
+<div class="displaymath">
+\begin{equation*}
+x = x(yz) = ze = z
+\end{equation*}
+</div>
+<p>and so \(y\) has both a left and right inverse. We then multiply above by \(y\) to get</p>
+<div class="displaymath">
+\begin{equation*}
+y(zw) = y(x((yz)w)) = (yz)w
+\end{equation*}
+</div>
+<p>so \(X(k)\) is associative.</p></article><span class="incontext"><a href="sec-polarizations-etale.html#proof-47">in-context</a></span>
+</body>
+</html>

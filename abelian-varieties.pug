@@ -1,0 +1,2887 @@
+title Abelian Varieties
+
+introduction
+    p
+        | These are notes for BUNTES Fall 2017, the topic is Abelian varieties, they were last updated #[today/].
+        | We are using Milne's abelian varieties notes primarily, for more details see #[url(href="http://math.bu.edu/people/angusmca/buntes/fall2017.html") the webpage].
+        | These notes are by Alex, feel free to email me at #[email alex.j.best@gmail.com] to report typos/suggest improvements, I'll be forever grateful.
+
+section#sec-av-basics
+    title Basics
+
+    p
+        | This is not BUNTES, if it accidentally appeared let me know...
+
+    definition#def-abelian-variety
+        title Abelian varieties
+        statement: p
+            | An #[term abelian variety] is a projective variety that is also an algebraic group.
+
+    definition#def-semi-abelian-variety
+        title Semi-abelian varieties
+        statement: p
+            | A #[term semi-abelian variety] is an extension of an abelian variety by a torus, i.e. some variety #[m E] that fits into a sequence
+            me 0 \to T \to E \to A \to 0
+            | .
+
+section#sec-av-intro
+    title Introduction (Angus)
+
+    subsection#subsec-abvar-defs
+        title Definitions
+
+        definition#def-buntes-abvar
+            title Abelian varieties
+            statement: p
+                | An #[term abelian variety] is a complete connected algebraic group.
+
+        definition#def-alg-gp
+            title Algebraic groups
+            statement
+                p
+                    | An #[term algebraic group] is an algebraic variety #[m G] along with regular maps #[m m\colon G\times G\to G], #[m e \colon * \to G],  #[m \operatorname{inv}\colon G\to G] such that the following diagrams commute.
+                p
+                    | Identity
+                    me.
+                        \xymatrix{
+                        \ast\times G\ar[dr]_{\sim}\ar[r]^{e\times \id} &amp; G\times G\ar[d]_m &amp;G\times \ast\ar[l]^{\id\times e}\ar[dl]^\sim\\
+                        &amp; G &amp;
+                        }
+
+                p
+                    |Inverse
+                    me.
+                        \xymatrix{
+                        G\ar[d]\ar[r]^{\operatorname{inv}, \id} &amp; G\times G\ar[d]_m &amp;G\ar[l]^{\id, \operatorname{inv}}\ar[d]\\
+                        \ast\ar[r]_e&amp; G &amp;\ast\ar[l]_e
+                        }
+
+                p
+                    | Associativity
+                    me.
+                        \xymatrix{
+                        G \times G \times G \ar[d]_{m\times \id}\ar[r]^{\id\times m} &amp; G\times G\ar[d]_m\\
+                        G\times G\ar[r]_m &amp; G
+                        }
+
+        definition#def-abelian-complete-var
+            title Complete varieties
+            statement: p
+                | A variety #[m X] is #[term complete] if every projection map
+                me X\times Y \to Y
+                | is closed.
+
+        example
+            title Abelian varieties
+            statement: p
+                ul
+                    li Elliptic curves.
+                    li Weil restriction #[m \Res_{K/\QQ} E] of an elliptic curve #[m  E].
+                    li Jacobian varieties of curves.
+
+        p
+            | Plan:
+            ul
+                li Some motivation via elliptic curves.
+                li Gathering some material about #[q completeness].
+                li Prove that abelian varieties are abelian.
+
+    subsection
+        title Elliptic curves (#[m \characteristic(k) \ne 2,3])
+
+        theorem#thm-equivalent-ec
+            statement: p
+                | TFAE for a projective curve #[m E] over #[m k].
+                ol
+                    li#item-cubic-eq #[m E] is given by #[m Y^2Z = X^3 + aXZ^2 + bZ^3], #[m 4a^3 + 27b^2 \ne 0].
+                    li#item-nonsing-pt #[m E] is nonsingular of genus 1 with a distinguished point #[m P_0].
+                    li#item-nonsing-gp #[m E] is nonsingular with an algebraic group structure.
+                    li#item-cmplx (if #[m k \subseteq \CC]) such that #[m E(\CC) = \CC/\Lambda] for some lattice #[m \Lambda \subseteq \CC].
+            proof
+                p
+                    | Strategy: #[xref(ref="item-cubic-eq")/] #[m \iff] #[xref(ref="item-nonsing-pt")/] #[m \iff]#[xref(ref="item-nonsing-gp")/] and #[xref(ref="item-nonsing-pt")/] #[m \implies] #[xref(ref="item-cmplx")/] #[m \implies] #[xref(ref="item-cubic-eq")/].
+                p
+                    | #[xref(ref="item-cubic-eq")/] #[m \implies] #[xref(ref="item-nonsing-pt")/] is done.
+                p
+                    |  #[xref(ref="item-nonsing-pt")/] #[m \implies]#[xref(ref="item-cubic-eq")/]: Riemann-Roch states that #[m l(D) = l(K-D) +  \deg(D) + 1 -g ] so here #[m l(D) = l(K-D) + \deg (D)] further is #[m D\gt 0] then #[m l(K-D) = 0] in which case #[m l(D) = \deg(D)].
+                    | Consider #[m L(nP_0)] for #[m n \gt 0] Riemann-Roch implies that #[m l(nP_0) = n] then it always contains the constants.
+                    me L(P_0) = k
+                    me L(2P_0) = k \oplus kx
+                    me L(3P_0) = k \oplus kx \oplus ky
+                    me \vdots
+                    me L(6P_0) = k \oplus kx \oplus ky \oplus k x^2 \oplus ky^2 \oplus kxy \oplus kx^3/\sim
+                    | so we must have a relation which after manipulation is of the desired form.
+                    | We get an embedding
+                    me E \hookrightarrow \PP^2
+                    me P\mapsto (x(P):y(P): 1) \,(P\ne P_0)
+                    me P_0 \mapsto (0:1 : 0)
+                    | and thus #[m E] is of the desired form.
+
+        definition#def-abelian-elliptic-curve
+            title Elliptic curves
+            statement: p
+                | An #[term elliptic curve] over #[m k] is any/all of #[xref(ref="thm-equivalent-ec") that].
+
+        p
+            | Which of the above characterisations generalise to abelian varieties?
+            ol
+                li No, in general we don't know that the equations look like.
+                li One could possibly replace #[q genus] with a condition on the dimension of cohomology groups.
+                li Yes, this is essentially the definition.
+                li Yes, stay tuned!
+
+    subsection#subsec-complete-vars
+        title Complete varieties
+
+        p
+            | Idea: if #[m X \times Y] had product topology (instead of its Zariski topology) then complete is equivalent to compact.
+
+        p
+            | We'd like to gather a few results about complete varieties we can use to access properties of abelian varieties (like abelianness).
+
+        proposition
+            statement: p
+                | Let #[m V] be a complete variety.
+                | Given any morphism #[m \phi\colon V \to W] #[m \phi (V) ] is closed.
+            proof: p
+                | Let #[m \Gamma_\phi = \{(v, \phi(v))\} \subseteq V\times W] be the graph of #[m \phi].
+                | Its a closed subvariety of #[m V\times W].
+                | Under the projection #[m V\times W \to W], the image of #[m \Gamma_\phi] is #[m \phi(V)] and thus closed.
+
+        corollary
+            statement: p
+                | If #[m V] is complete and connected, any regular function on #[m V] is constant.
+            proof: p
+                | A regular function is a morphism #[m f\colon V \to \aff^1].
+                | By the above #[m f(V) \subseteq \aff^1] is closed, and this is a finite set of points.
+                | But connected implies we just have one point.
+
+        corollary
+            statement: p
+                | Let #[m V ] be a complete connected variety.
+                | Let #[m W] be an affine variety.
+                | Given #[m \phi\colon V\to W], then #[m \phi (V)] is a point.
+            proof: p
+                | We have an embedding #[m W \hookrightarrow \aff^n].
+                | On #[m \aff^n] we have the coordinate functions #[m \aff^n \xrightarrow{x_i} \aff^1].
+                | The composition
+                me V \xrightarrow\phi W \hookrightarrow\aff^n \to \aff^1
+                | be the above is constant.
+                | Thus the coordinates of #[m \phi(V)] are constant, so #[m \phi(V) = \{\text{pt}\}].
+
+        p
+            | A final result of interest that I won't prove today:
+
+        theorem
+            statement: p
+                | Projective varieties are complete.
+
+
+        p
+            | The main goal of this section is to prove the following theorem:
+
+        theorem#thm-rigidity
+            title Rigidity
+            statement: p
+                | Let #[m V,W] be varieties such that #[m V] is complete and  #[m V\times W] is geometrically irreducible.
+                | Let #[m \alpha\colon V\times W \to U] be a morphism such that #[m \exists u_0\in U(k), v_0\in V(k), w_0\in W(k)] with #[m \alpha(V\times\{w_0\}) = \alpha (\{v_0\}\times W ) = \{u_0\}].
+                | Then #[m \alpha (V\times W) = \{u_0\}].
+            proof
+                p
+                    | Since #[m V\times W] is geometrically irreducible, #[m V] must be connected. Denote the projection #[m q\colon V\times W \to W].
+                    | Let #[m U_0 \ni u_0] be an open neighborhood.
+                    | We consider the set
+                    me Z = \{w\in W : \alpha((v,w)) \not\in U_0 \text{ for some } v\in V\} = q(\alpha^{-1}(U\smallsetminus U_0))
+                    | Since #[m q] is closed, #[m Z\subseteq W] is closed.
+                    | Since #[m w_0\in W\smallsetminus Z], #[m W\smallsetminus Z] is a nonempty open subset of #[m W].
+                p
+                    | Consider #[m w \in W\smallsetminus Z].
+                    | Since #[m V\times\{w\} \cong V] it is complete and connected.
+                    | Thus
+                    me \alpha(V\times \{w\}) = \{\text{pt}\} = \alpha((v_0,w)) = \{u_0\}
+                    | which implies that
+                    me \alpha(V\times (W\smallsetminus Z)) = \{u_0\}
+                    | Since #[m V\times (W\smallsetminus Z) \subseteq V\times W] is open and #[m V\times W] is irreducible, it is dense.
+                    | So #[m \alpha(V\times W) = \{u_0\}].
+
+        proposition
+            statement: p
+                | Let #[m A,B] be abelian varieties.
+                | Every morphism #[m \alpha \colon A \to B ] is the composition of a homomorphism and a translation.
+            proof
+                p
+                    | First compose by a translation on #[m B] such that #[m \alpha(0) = 0].
+                    | Consider the map
+                    md
+                        mrow \phi \colon A\times A\amp\to B
+                        mrow (a,a')               \amp\mapsto \alpha(a+a') - \alpha(A) -\alpha(a')
+
+                    | Then
+                    md
+                        mrow \phi(A\times\{0\}) \amp = \alpha(a+ 0) - \alpha(a) - \alpha(0) = 0
+                        mrow \phi(\{0\}\times A) \amp = \alpha(0+ a) - \alpha(0) - \alpha(a) = 0
+                    | . By the #[xref(ref="thm-rigidity") rigidity theorem] #[m \phi(A\times A) = \{0\}] hence #[m \alpha(a + a') = \alpha(a) + \alpha(a')].
+
+        corollary
+            statement: p
+                | Abelian varieties are abelian.
+            proof
+                p
+                    | The inversion map #[m a \mapsto -a] sends #[m 0] to #[m 0], thus is a homomorphism.
+                    | Therefore
+                    me a+ b - a -b = a+b -(a+b) = 0
+                    | and so
+                    me a+b=b+a
+                    | .
+
+
+
+section#sec-av-complex
+    title Abelian varieties over #[m \CC] (Alex)
+    // (or: what does principal polarization mean and why does it matter)
+
+    introduction
+
+        p
+            | The goal of this talk is to understand what abelian varieties look like over #[m \CC].
+            | The goal for me is to understand what a (principal) polarisation is and why it is important.
+
+        p
+            | First immediate question: why study complex theory at all?
+            | The most classical field, algebraically closed, archimidean, characteristic 0.
+
+        p
+            | Recall/rapidly learn the picture for elliptic curves, given #[m E] an elliptic curve we have for some #[m \Lambda] a rank 2 lattice in #[m \CC]
+            md
+                mrow \CC/\Lambda \amp\xrightarrow{\sim} E(\CC) \subseteq \PP^2(\CC)
+                mrow z\amp\mapsto (\wp(z) : \wp'(z) : 1)
+                mrow 0\amp\mapsto (0 : 1 : 0)
+            | where
+            me \wp(z) = \frac{1}{z^2} + \sum_{\lambda \in \Lambda\smallsetminus\{0\}} \frac{1}{(z-\lambda)^2} - \frac{1}{\lambda^2}
+            | . This is a meromorphic function whose image lands in
+            me y^2 = 4x^3 - g_2 x - g_3
+            | .
+            | So the #[m \CC] points of an elliptic curve are topologically a torus.
+
+    subsection
+        title Abelian varieties
+
+        p
+            | Naturally one asks: does this generalise?
+            | Let #[m A] be an abelian variety over #[m \CC], what does #[m A(\CC)] look like?
+            | Another torus?
+
+        proposition
+            statement: p
+                | #[m A(\CC)] is a compact, connected, complex lie group.
+
+        //p
+            | One key ingredient was having these (meromorphic) functions #[m \wp,\wp'] which allowed us to realise the #[m \CC] points of the elliptic curve #[m E] in projective space.
+            | To do the same for abelian varieties we must construct enough meromorphic functions to define such a map.
+            | How do you construct such functions?
+
+
+        proposition
+            statement: p
+                | Let #[m A] be an abelian variety of dimension #[m g] over #[m \CC].
+                | Then we have
+                me A(\CC) \cong V/\Lambda
+                | where #[m V] is a #[m g] dimensional complex vector space and #[m \Lambda] is a full rank lattice of #[m V] (i.e #[m \Lambda] is a discrete subgroup of #[m V] s.t. #[m \RR\otimes \Lambda  = V]).
+            proof
+                p
+                    | Differential geometry gives us a map of complex manifolds, the exponential map
+                    me \exp\colon\Tgt_0(A(\CC)) \to A(\CC)
+                    |  this is holomorphic.
+                    | And since #[m A(\CC)] is abelian, this is a homomorphism also.
+                    | In general this is locally an isomorphism around 0.
+                p
+                    | Claim: #[m \exp] is injective.
+                    | There exists a neighborhood #[m U\supseteq 0] s.t. #[m \exp(U) \cong U].
+                    | Consider the image #[m \exp(\Tgt_0 A(\CC))].
+                    | For #[m x\in \exp(\Tgt_0 A(\CC))], #[m \{U+x\}] are all open and give a cover.
+                    | Thus #[m \exp(\Tgt_0A(\CC))] is open.
+                    | Since #[m A(\CC)] is connected we are thus reduced to showing #[m \exp(\Tgt_0 A(\CC))] is closed also.
+                    | Since #[m \exp] is a homomorphism, the image is a subgroup.
+                    | So its complement is the union of its non-trivial cosets, which is open.
+                    | Thus #[m \exp(\Tgt_0A(\CC))] is closed.
+                    | Giving #[m \exp(\Tgt_0A(\CC)) = A(\CC)], which proves the claim.
+                p
+                    | #[m \exp] is a local isomorphism, which gives that #[m \ker(\exp)] is discrete, i.e. a lattice.
+                    | We now have
+                    me A(\CC) \cong \Tgt_0A(\CC)/ \ker(\exp)
+                    | so as #[m A(\CC)] is compact we cannot have a kernel which is not full rank, as otherwise the quotient could not be compact.
+
+        definition#def-complex-torus
+            statement: p
+                | We call any such #[m V/\Lambda] a #[term complex torus].
+
+        p
+            | From the above isomorphism we can now read off properties of #[m A(\CC)] as a group.
+
+        proposition
+            statement: p
+                | #[m A(\CC)] is divisible, and #[m A(\CC)\lb n\rb \cong (\ZZ/n\ZZ)^{2g}].
+            proof: p
+                me A(\CC)  \cong V/\Lambda \cong (\RR/\ZZ)^{2g}
+                | isomorphisms as groups, thus #[m A(\CC)] is divisible.
+                | Further, #[m (\RR/\ZZ)\lb n \rb = (\frac 1n \ZZ)/\ZZ].
+
+        p Question: Given a complex torus #[m V/\Lambda], does there exist an abelian variety #[m A] such that #[m A(\CC) \cong V/\Lambda]?
+
+        example: statement: p: ul
+            li
+                me \CC/\Lambda \cong E(\CC) \text{ always in dim 1}
+            li
+                me \CC^2/\Lambda^2 \cong (E\times E)(\CC) \text{ sometimes yes in higher dimension}
+            li
+                me \CC^2/\langle (i, 0), (i\sqrt p, i), (1, 0), (0, 1)\rangle_\ZZ
+                | for #[m p] prime??? (I guess not, see Mumford)
+
+        theorem
+            title Chow
+            statement: p
+                | If #[m X] is an analytic submanifold of #[m \PP^n(\CC)] then #[m X] is an algebraic subvariety.
+
+        p
+            | By this theorem it is enough to analytically imbed #[m V/\Lambda \hookrightarrow \PP^m].
+            | We can try and do this by mimicing the elliptic curve strategy, find enough functions #[m \theta \colon V/\Lambda \to \CC].
+
+    subsection
+        title Cohomology
+
+        proposition
+            statement: p
+                | Let #[m X = V/\Lambda]. Then
+                me H^r (X,\ZZ) \cong \{\text{alternating }r\text{-forms } \Lambda\times\cdots\times\Lambda\to \ZZ\}
+                | .
+            proof
+                p
+                    | #[m \pi\colon V\to V/\Lambda] is a universal covering map, so
+                    me \Lambda = \pi^{-1} (0 ) \cong \pi_1(X,0)
+                    | . Because all these spaces are nice
+                    me H^1 (X,\ZZ) \cong \Hom(\pi_1(X), \ZZ) \cong \Hom(\Lambda, \ZZ)
+                    | . To extend to #[m r \ne 1] use the Künneth formula:
+                    me.
+                        \xymatrix{
+                        \bigwedge^r(H^1(X_1\times X_2, \ZZ)) \ar@{=}[r]\ar@{=}[d]^{\text{Künneth}} &amp; H^r(X_1\times X_2 , \ZZ)\ar@{=}[dd]^{\text{Künneth}}\\
+                        \bigwedge^r(H^1(X_1, \ZZ)\otimes H^1(X_2, \ZZ)) \ar@{=}[d]&amp; \\
+                        \bigoplus_{p+q=r}(\bigwedge^p(H^1(X_1, \ZZ))\otimes\bigwedge^q(H^1(X_2, \ZZ))) \ar@{=}[r] &amp; \bigoplus_{p+q=r}(H^p(X_1, \ZZ)\otimes H^q(X_2, \ZZ))
+                        }
+                    | Since we know the proposition for #[m S^1 = \RR/\ZZ] by taking products and applying the above we get it for all complex tori #[m V/\Lambda].
+
+        proposition
+            statement: p
+                | There is a correspondence
+                md
+                    mrow \{\text{Hermitian forms }H \text{ on } V\} \amp\leftrightarrow\{\text{Alternating forms }E\colon V\times V\to\RR,\,E(iu,iv) = E(u,v)\}
+                    mrow H\amp\mapsto \im H
+                    mrow E(iu,v)+ i E(u,v) \amp\mapsfrom E
+                |.
+
+    subsection
+        title Line bundles
+
+        p
+            | Now we will consider line bundles on #[m X = V/\Lambda], that is
+            me L\xrightarrow{\pi} X
+            | such that for any #[m x\in X] there exists #[m U\ni x] with #[m \pi^{-1} (U) \cong \CC \times U].
+            | We can obtain these from hermitian forms and some auxilliary data as follows.
+
+        definition
+            statement
+                p
+                    | If #[m H] is a hermitian form on #[m V] such that #[m E(\Lambda\times\Lambda) \subseteq \ZZ] there exists a map
+                    me \alpha \colon \Lambda \to \CC^*  = \{z\in \CC^* : |z| = 1\}
+                    | such that
+                    me \alpha(u + v) = e^{i\pi E(u,v)} \alpha(u) \alpha(v)
+                    | .
+                p
+                    | Further, there is a line bundle #[m L(H, \alpha)] on #[m X] which is defined by quotienting #[m \CC\times V] by #[m \Lambda] which acts via
+                    me \phi_u(\lambda, v) = (\alpha(u)e^{\pi H(v,u) + \frac12 \pi H(u,u)}\lambda, v+u)\text{ for } u\in \Lambda
+                    | , we'll denote by #[m e_u] the factor #[m \alpha(u)e^{\pi H(v,u) + \frac12 \pi H(u,u)}] for brevity.
+
+        theorem#thm-appell-humbert
+            title Appell-Humbert
+            statement: p
+                | Any line bundle on #[m X] is of the form #[m L(H,\alpha)] for some #[m H], #[m \alpha] as above.
+                | Further
+                me L(H_1, \alpha_1) \otimes L(H_2, \alpha_2)  = L(H_1+ H_2, \alpha_1\alpha_2)
+                | . In fact we have the following diagram
+                me.
+                    \xymatrix{
+                    0 \ar[r] &amp;
+                    \Hom(\Lambda, \CC) \ar[r]\ar[d] &amp;
+                    \{\text{data } (H,\alpha)\} \ar[r]\ar[d] &amp;
+                    \{\text{gp. of Herm. } H \text{ w/ }E(\Lambda\times \Lambda) \subseteq \ZZ\} \ar[r]\ar[d] &amp;
+                    0 \\
+                    0 \ar[r] &amp;
+                    \Pic^0(X) \ar[r] &amp;
+                    \Pic(X) \ar[r]_c &amp;
+                    \ker(H^2(X,\ZZ) \to H^2(X,\sheaf O_X)) \ar[r]&amp;
+                    0
+                    }
+                | where #[m \Pic(X)] is the group of all line bundles on #[m X] and #[m \Pic^0] is the subgroup of those which are topologically trivial.
+
+        p
+            | We wanted functions #[m X\to \CC]. Now we can instead consider sections #[m s] of #[m L(H,\alpha) \xrightarrow{\pi} X] i.e. maps #[m s\colon X\to L(H,\alpha)] with #[m \pi\circ s = \id].
+            | Denote the space of such sections #[m H^0(X,L(H,\alpha))].
+
+        definition#def-theta-function
+            title Theta functions
+            statement: p
+                | The sections of #[m L(H, \alpha)]  correspond to holomorphic functions
+                me \theta \colon V \to \CC
+                | such that #[m \theta(z+ u) = e_u \theta(z)], we will call such a #[m \theta] a #[term theta function] for #[m (H,\alpha)].
+
+        p
+            | If #[m H] is not positive definite the space of such functions is 0!
+
+        proposition#prop-dimension-sections-complex
+            statement: p
+                | If #[m H] is positive definite, then the dimension of #[m H^0(X, L(H,\alpha))] is #[m \sqrt{\det E}] where we really mean the determinant of a matrix for #[m E] with respect to an integral basis.
+
+        theorem
+            title Lefschetz
+            statement: p
+                | Given a positive definite #[m H], there exists an imbedding #[m X \hookrightarrow \PP^m].
+            proof
+                p
+                    | Sketch: Let #[m L = L(H,\alpha)], consider #[m L(H,\alpha)^{\otimes 3} = L(3H, \alpha^3)], take a basis of #[m \theta_0,\ldots, \theta_d] of #[m H^0(X, L^{\otimes 3})].
+                p
+                    | Claim: #[m \Theta\colon z\mapsto (\theta_0(z) :\cdots :\theta_d (z)) \subseteq \PP^d] is an embedding.
+                p
+                    | To see that this is well defined, we must give a section of #[m L^{\otimes 3}] not vanishing at #[m z] for all #[m z\in X].
+                    | Let #[m \theta \in H^0(X,L)\smallsetminus \{0\}]. Then pick #[m a,b] such that the section of #[m L^{\otimes 3}] given by
+                    me \theta(z-a)\theta(z-b) \theta(z+ a+b)
+                    | does not vanish.
+                    | This is possible and thus we have a nonvanishing section of #[m L^{\otimes 3}].
+                p
+                    | For injectivity, show that if the above section has the same values on #[m z_1,z_2] then it is a theta function for some sublattice.
+                    | Almost all sections aren't theta functions for a sublattice (this uses #[xref(ref="prop-dimension-sections-complex")/]).
+                p
+                    | Something similar must be done for tangent vectors.
+
+        definition#def-riemann-form
+            title Riemann forms
+            statement: p
+                | A #[term Riemann form] is #[m E\colon \Lambda \times \Lambda \to \ZZ] alternating such that
+                me E_\RR \colon V\times V\to \RR
+                | has the property that #[m E(iu,iv) = E(u,v)] and  the corresponding Hermitian form is positive definite.
+
+        definition#def-polarizable
+            title Polarizable tori
+            statement: p
+                | A complex torus #[m X = V/\Lambda] is #[term polarizable] if there exists a Riemann form #[m E] on #[m \Lambda].
+
+        example
+            title Proposition
+            statement
+                p
+                    | Every #[m \CC/\Lambda] where #[m \Lambda = \langle 1,\tau\rangle_{\ZZ}] is polarizable.
+                p
+                    | To see this take
+                    me E(u,v) = \frac{uv}{\im \tau}
+                    | as a Riemann form.
+
+        p
+            | Putting everything together we have obtained an equivalence of categories
+            me \{\text{abelian varieties over } \CC\} \leftrightarrow \{\text{polarizable complex tori}\}
+            | .
+
+
+    subsection
+        title Isogenies
+
+        definition#def-isogeny-tori
+            title Isogenies of complex tori
+            statement: p
+                | An #[term isogeny] of complex tori is a homomorphism #[m V/\Lambda \to V'/\Lambda'] with finite kernel.
+
+        definition
+            title Dual vector spaces
+            statement: p
+                | Given #[m V] a complex vector space, let
+                me V^* = \{f\colon V\to \CC : f(u+v) = f(u)+f(v),\,f(\alpha v) = \bar \alpha f(v) \}
+                | and given #[m \Lambda \subset V] a lattice, let
+                me \Lambda^* = \{f\in V^* : f(\lambda) \in \ZZ\,\forall \lambda\in \Lambda\}
+                |.
+
+        definition#def-dual-torus
+            title Dual tori
+            statement: p
+                | If #[m X = V/\Lambda], #[m X^\vee = V^*/ \Lambda^*] is the #[term dual torus].
+
+        proposition#prop-weil-pair
+            title Existence of Weil pairing
+            statement: p
+                me X\times X^\vee \to \CC
+                | so
+                me X[n] \times X^\vee[n] \to \left(\frac{1}{n^2} \ZZ/\frac{1}{n} \ZZ\right) \cong \ZZ/n\ZZ
+                |  this is called the #[term Weil pairing].
+
+        p
+            | Can a complex torus be isogenous to its own dual?
+            | If #[m X] is polarizable then
+            md
+                mrow X \amp\to X^\vee
+                mrow v\amp\mapsto H(v,-)
+            | is an isogeny.
+
+        definition#def-complex-pol
+            statement: p
+                | A #[term polarization] is an isogeny #[m X \to X^\vee].
+
+
+section#sec-rational-maps-avs
+    title Rational Maps into Abelian Varieties (Maria)
+
+    introduction
+        p Note all varieties are irreducible today.
+
+    subsection
+        title Rational maps
+
+        p
+            | #[m V,W] varieties #[m /K].
+            | Consider pairs #[m (U,\phi_U)], where #[m \emptyset \ne  U \subset V] an open subset so #[m U] is dense, and #[m \phi_U \colon U \to W] is a regular map.
+
+        definition#def-rational-map
+            title Rational maps
+            statement: p
+                |  #[m (U,\phi_U)], #[m (U',{\phi_{U'}})] are equivalent if #[m \phi_U] and #[m \phi_{U'}] agree on #[m U \cap U'].
+                |  An equivalence class #[m \phi] of #[m \{(U, \phi_U)\}] is a #[term rational map] #[m \phi \colon V \dashrightarrow W]
+                |  If #[m \phi\colon V \dashrightarrow W] is defined at   #[m v\in V] if #[m v\in U] for some #[m  (U,\phi_U) \in \phi].
+
+        note: p
+            | The set #[m U_1 = \bigcup U] where  #[m \phi] is defined is open and #[m (U_1,\phi_1) \in \phi] where #[m \phi_1 \colon U_1 \to W] restricts to #[m \phi_U] on #[m U].
+
+        example
+            statement: p
+                ol
+                    li
+                        | Let #[m \emptyset \ne W \subseteq V] be open. Then the rational map #[m V\dashrightarrow W] induced by #[m \id \colon W \to W] will not extend to #[m V].
+                        | To avoid this, assume #[m W ] is complete (so #[m W = V]).
+                    li
+                        | #[m C \colon y^2 = x^3], then #[m \alpha\colon \aff^1 \to C], #[m a\mapsto (a^2,a^3)] is a regular map, restricting to an isomorphism  #[m \aff^1 \smallsetminus \{0 \} \to C \smallsetminus \{0\}].
+                        | The inverse of #[m \alpha|_{\aff^1\smallsetminus \{0\}}] represents #[m \beta \colon C \dashrightarrow \aff^1] which does not extend to #[m C].
+                        | This corresponds on function fields to
+                        me K(t) \to K(x,y)
+                        me t\mapsto y/x
+                        | which does not send 
+                        m K[y]_{(t)}
+                        |  to 
+                        m K[x,y]_{(x,y)}
+                        | .
+                    li
+                        | Given a nonsingular surface #[m V,\, P\in V] then #[m \exists \alpha\colon W \to V] regular that induces an isomorphism #[m \alpha\colon W\smallsetminus \alpha^{-1} (P) \to V\smallsetminus P], but #[m \alpha^{-1}(P)] is a projective line.
+                        | The rational map represented by #[m \alpha^{-1}] is not regular on #[m V] (where to send #[m P]?).
+
+        theorem#thm-milne-3-1
+            title Milne 3.1
+            statement: p
+                | A rational map #[m \phi\colon V\dashrightarrow W] from a nonsingular variety #[m V] to a complete variety #[m W] is defined on an open subset  #[m U \subseteq V] whose complement has codimension #[m \ge 2].
+            proof: p
+                | (#[m V] a curve) #[m V] nonsingular curve, #[m \emptyset\ne U\subseteq V] open, #[m \phi\colon U \to W] a regular map.
+                me.
+                    \xymatrix{
+                    &amp; V\\
+                    U\ar[ur]\ar[dr] \ar[r] &amp; U' \subseteq Z \subseteq V\times W \ni (v,w)\ar[d]_q \ar[u]_p \\
+                    &amp; W \ni w
+                    }
+                | #[m U'] is the image of #[m U], #[m Z = \overline{U'}].
+                | #[m W ] is complete, #[m Z] closed implies #[m p(Z) \subseteq V] is closed.
+                | Also, #[m U \subseteq p(Z) \implies p(Z)= V].
+                me U\xrightarrow{\sim} U' \to U
+                | so
+                me U' \xrightarrow{\sim} U
+                me Z \twoheadrightarrow V
+                |  this implies #[m Z \xrightarrow\sim V].
+                | Then #[m q|_Z \colon Z \to W] is the extension of #[m \phi ] to #[m V].
+
+        theorem#thm-milne-3-2
+            title Milne 3.2
+            statement: p
+                | A rational map #[m \phi\colon V\dashrightarrow A] from a nonsingular variety #[m V] to an abelian variety #[m W], extends to all of #[m V].
+            proof: p
+                | #[xref(ref="thm-milne-3-1")/]
+                | #[xref(ref="lem-milne-3-3")/]
+
+        lemma#lem-milne-3-3
+            statement: p
+                | Let #[m \phi\colon V \dashrightarrow G] be a map from a nonsingular variety to a group variety. Then either #[m \phi] is defined on all of #[m V] or the set where #[m \phi] is not defined is closed of pure codimension 1.
+            proof: p
+                | Fix #[m (U, \phi_U) \in \phi] and consider 
+                me \Phi\colon V\times V \dashrightarrow G
+                | represented by 
+                me U\times U\xrightarrow{\phi_U\times\phi_U} G\times G \xrightarrow{\id\times\operatorname{inv}} G\times G \xrightarrow{m} \to G
+                me (x,y) \mapsto \phi_U(x) \phi_U(y)^{-1}
+                | Check #[m \phi] is defined at #[m x] iff #[m \Phi] is defined at #[m (x,x)] (and in this case #[m \Phi(x,x) = e]).
+                | This is equivalent to the map #[m \Phi^*\colon \sheaf O_{G,e} \to K(V\times V)] induced by  #[m \Phi] satisfying   #[m \im(\sheaf O_{G,e}) \subseteq \sheaf O_{V\times V, (x,x)}]
+                | For a nonzero function #[m f] on #[m V\times V], write #[m \divisor(f) = \divisor(f)_0 - \divisor(f)_\infty] which are effective divisors.
+                | Then
+                me \sheaf O_{V\times V, (x,x)} = \{0\} \cup \{f\in K(V\times V) : \divisor(f)_\infty \text{ does not contain }(x,x)\}
+                | . Suppose #[m \phi] is not defined at #[m x], then there exists #[m f\in \im(\sheaf O_{G,e})] s.t. #[m (x,x) \in \divisor(f)_\infty].
+                | Then #[m \Phi] is not defined at any #[m (y,y) \in \Delta \cap  \divisor(f)_\infty = \divisor(f^{-1})_0], which is a pure codimension 1 subset of #[m \Delta] by Milne's AG thm 9.2.
+                | The corresponding subset in #[m V] is of pure codimension 1, and #[m \phi] is not defined there.
+
+        theorem#thm-milne-3-4
+            title Milne 3.4
+            statement: p
+                | Let #[m \alpha \colon V \times W \to A] be a morphism from a product of nonsingular varieties into an abelian variety.
+                | If #[m \alpha (V\times\{w_0\}) = \{a_0 \} =  \alpha(\{v_0 \}\times W)] for some #[m a_0 \in A], #[m v_0\in W], #[m w_0 \in W], then #[m \alpha(V\times W) = \{a_0\}].
+
+        corollary#cor-milne-3-7
+            title Milne 3.7
+            statement: p
+                | Every rational map #[m \alpha \colon G\dashrightarrow A] from a group variety into an abelian variety is the composition of a homomorphism and a translation in #[m A].
+            proof: p
+                | Since group varieties are nonsingular, #[m \alpha\colon G \to A] is a regular map by #[xref(ref="thm-milne-3-2")/]. The rest is as proof of Corollary 1.2.
+
+    subsection
+        title Dominating and birational maps
+
+        definition#def-dominating-maps
+            title Dominating maps
+            statement: p
+                |  #[m \phi\colon V \dashrightarrow W] is #[term dominating] if #[m \im (\phi_U)] is dense in #[m W] for a representative #[m (U,\phi_U)\in \phi].
+
+        p
+            | Exercise: A dominating #[m \phi\colon V\dashrightarrow W] defines a homomorphism #[m K(W) \to K(V)] and any such homomorphism arises from a unique dominating rational map.
+
+        definition#def-birational
+            statement: p
+                | #[m \phi\colon V \dashrightarrow W] is #[term birational] if the corresponding #[m K(W)\to K(V)] is an isomorphism or, equivalently if there exists #[m \psi\colon W\dashrightarrow V ] s.t. #[m \phi\circ \psi] and #[m \psi\circ\phi] are the identity wherever they are defined.
+                | In this case we say #[m V] and #[m W] are #[term birationally equivalent].
+
+        note: p
+            | In general birational equivalence does not imply isomorphic.
+            | E.g. #[m V] a variety #[m \emptyset \ne W\subsetneq V] an open subset, or #[m V= \aff^1, W \colon y^2 =x^3].
+
+        theorem#prop-milne-3-8
+            title Milne 3.8
+            statement: p
+                | If two abelian varieties are birationally equivalent then they are isomorphic as abelian varieties.
+            proof: p
+                | #[m A,B] abelian varieties with #[m \phi \colon A\dashrightarrow B] a birational map with inverse #[m \psi]. Then by #[xref(ref="thm-milne-3-2")/] #[m \phi ,\psi] extend to regular maps   #[m \phi\colon A \to B ], #[m \psi\colon B\to A] and #[m \phi\circ\psi,\psi\circ\phi] are  the identity everywhere.
+                | This implies that #[m \phi] is an isomorphism of  algebraic varieties and after composition with a translation, #[m \phi] is also a group isomorphism.
+
+        proposition#prop-milne-3-9
+            title Milne 3.9
+            statement: p
+                | Any rational map #[m \aff^1 \dashrightarrow A] or #[m \PP^1 \dashrightarrow A], for #[m A] an abelian variety is constant.
+            proof: p
+                |  #[xref(ref="thm-milne-3-2")/] implies #[m \alpha \colon \aff^1 \dashrightarrow A] extends to #[m \alpha \colon \aff^1\to A] and we may assume #[m \alpha(0) = e].
+                | #[m (\aff^1, +)]: #[m \alpha(x+y) = \alpha(x) + \alpha(y)] for all #[m x,y\in \aff^1(K) = K].
+                | #[m (\aff^1\smallsetminus\{0\}, \cdot)]: #[m \alpha(xy) = \alpha(x) + \alpha(y) + c] for all #[m x,y\in K^\times].
+                | These can only hold at the same time if #[m \alpha] is constant.
+                | #[m \PP^1 \dashrightarrow A] is constant, since its constant on affine patches.
+
+        definition#def-unirational
+            statement: p
+                | #[m V/\overline K] is #[term unirational] if there is a dominating map #[m \aff^n \dashrightarrow V], where #[m n = \dim_{\overline K} V].
+                | #[m V/K] is unirational if #[m V/K] is.
+
+        proposition#prop-milne-3-10
+            title Milne 3.10
+            statement: p
+                | Every rational map #[m V\dashrightarrow A] from #[m V] unirational to #[m A] abelian is constant.
+            proof: p
+                | Wlog #[m K = \overline K]. Since #[m V] is unirational we get #[m \beta \colon \PP^1\times\cdots\times\PP^1 \dashrightarrow V\dashrightarrow A], which extends to #[m \beta \colon \PP^1\times\cdots\times\PP^1 \to A].
+                | Then by Milne corollary 1.5, there exist regular maps #[m \beta_i \colon \PP^1 \to A] s.t. #[m \beta(x_1,\ldots, x_n) = \sum \beta_i(x_i)] and by #[xref(ref="prop-milne-3-9")/] each #[m \beta_i] map is constant.
+
+
+section#sec-thm-cube
+    title Theorem of the Cube (Ricky)
+
+    subsection#sec-crash-course-line-bundles
+        title Crash Course in Line Bundles
+
+        p
+            | Consider #[m \RR^2], #[m f\colon \RR \to \RR] , #[m f(x,y) = x^2 + y^2 -1], now #[m S = \{f=0\}\subseteq \RR^2] is a closed submanifold (in fact a circle).
+            | Question: Do all closed submanifolds arise in this way?
+            | Lets switch to #[m \CC] better analogies with AG.
+
+        example
+            statement: p
+                | Let #[m X\in \PP^n(\CC)], the answer here is no!
+                | (Because #[m f\colon X \to \CC^1] is constant!)
+                | Want to define functions locally that give us level sets, but gluing such will give us a global section.
+                | Instead glue in a different way (i.e. into different #[q copies] of #[m \CC]) so that this doesn't happen.
+
+        example
+            statement: p
+                | #[m X\in \PP_\CC^1], #[m \sheaf O_X] the structure sheaf.
+                me X = U_0 \cup U_1 = (\aff^1,t) \cup(\aff^1,s)
+                | on #[m U_0\cap U_1], #[m t = s^{-1}].
+                | What is a global section of #[m \sheaf O_X], a section of #[m U_0] and a section of #[m U_1] that glue. 
+                m \sheaf O_X(U_0) =  k[t], \sheaf O_X(U_1) =  k[s]
+                |  so given #[m f(t), g(s)] these glue to a global section iff #[m f(t) = g(1/t)] so #[m f,g] must be constant.
+
+        definition#def-line-bundle
+            title Line bundles
+            statement: p
+                | A #[term line bundle] on #[m X] is a locally free #[m \sheaf O_X]-module of rank 1, i.e. #[m \exists \{U_i\}] open cover along with isomorphisms #[m \phi_i\colon \sheaf L|_{U_i} \xrightarrow\sim \sheaf O_X |_{U_i}].
+
+        exercise: statement: p
+            | Alternative definition: A line bundle on #[m X] is equivalent to the following data:
+            ul
+                li An open cover of #[m X].
+                li Transition maps #[m \tau_{ij} \in \GL_1(\sheaf O_X(U_i\cap U_j))] satisfying #[m \tau_{ij}\tau_{jk} =\tau_{ik}] and #[m \tau_{ii} = \id].
+
+        example: statement: p
+            | On #[m X = \PP^n_k], we have line bundles #[m \sheaf O(d)] for all #[m d\in \ZZ].
+            | Just have to give cover and transition functions, use usual open cover #[m \{U_i\}] with #[m U_i\cong \aff^n].
+            | Then #[m \tau_{ji}] is given by multiplication by #[m (x_i/x_j)^d].
+
+
+        exercise: statement: p
+            me H^0(X,\sheaf O(d)) ( = \Gamma (X,\sheaf O(d)))
+            m = k
+            | vector space spanned by deg. #[m d] homogenous polynomials  in 
+            m k[x_0,\ldots, x_n]
+            | .
+
+        exercise: statement: p
+            | All line bundles on #[m \PP^n] are isomorphic to some #[m  \sheaf O(d)].
+
+        p
+            | We say a line bundle #[m \sheaf L] on #[m X] is trivial if #[m \sheaf L \cong \sheaf O_X].
+            | Given #[m \sheaf L_1] and #[m \sheaf L_2] on #[m X] (line bundles) we can create a new line bundle #[m \sheaf L = \sheaf L_1 \otimes \sheaf L_2].
+            | So isomorphism classes of line bundles on #[m X] with #[m \otimes] form a group, denoted #[m \Pic(X)] with identity #[m \sheaf O_X] and inverses #[m \sheaf L^{-1} = \Hom(\sheaf L , \sheaf O_X)].
+
+
+
+        example: statement: p
+            | By previous exercise #[m \Pic(\PP_k^n) \cong \ZZ] since #[m \sheaf O_X(d_1) \otimes \sheaf O_X(d_2)  \cong \sheaf O_X(d_1+d_2)].
+
+        fact: p
+            | If #[m  f\colon X \to Y], then given #[m \sheaf L] on #[m Y] we can pullback to a line bundle #[m f^* \sheaf L] on #[m X], definition is complicated.
+            | We also know that #[m f^*] commutes with #[m \otimes] so in fact (as #[m f^*\sheaf O_Y = \sheaf O_X]) we get a homomorphism #[m f^* \colon \Pic(Y) \to \Pic(X)].
+
+    subsection#sec-reln-weil
+        title Relation to (Weil) divisors
+
+        p
+            | Let #[m X] be a normal variety, call #[m Z\subseteq X], a closed subvariety of codimension 1, a #[term prime divisor].
+            | Then a divisor on #[m X] is a formal sum
+            me D = \sum_{Z\subseteq X} n_Z\cdot Z
+            | of prime divisors.
+
+        p
+            | Let #[m K = K(X)] be the function field of #[m X]. Given #[m f\in K^\times] we can define
+            me \divisor (f) = \sum v_Z(f) \cdot Z
+            | .
+
+        p
+            | Given #[m D \in \Div(X)], we can define a line bundle #[m \sheaf L(D)] on #[m X] via
+            me \sheaf L(D)(U) = \{f\in K^\times : (D + \divisor (f))|_U\ge 0 \} \cup \{0\}
+            | where #[m D|_U = \sum_{Z\cap U\ne \emptyset} n_Z\cdot (Z\cap U)].
+
+        proposition: statement: p
+            | The map
+            me \Cl(X) = \Div(X)/\Princ(X) \xrightarrow{\sheaf L(\cdot)} \Pic(X)
+            | is an isomorphism.
+
+    subsection#sec-onto-cubes
+        title Onto cubes
+
+        theorem#thm-cube
+            title Theorem of the cube
+            statement: p
+                | Let #[m U,V,W] be complete varieties. If #[m \sheaf L ] is a line bundle on #[m U\times V\times W] s.t. #[m \sheaf L|_{\{u_0\}\times V\times W},\sheaf L|_{U\times \{v_0\}\times W}, \sheaf L|_{U\times V\times \{w_0\}}] are all trivial then #[m \sheaf L] is trivial.
+
+
+        corollary#cor-5-2
+            title Milne 5.2
+            statement: p
+                | Let #[m A] be an abelian variety. Let #[m p_i\colon A\times A\times A \to A] be the projection onto the #[m i]th coordinate. #[m p_{ij} = p_i+p_j], #[m p_{123} = p_1+p_2+p_3].
+                | Then for any #[m \sheaf L] on #[m A], the line bundle
+                me \sheaf M  = p_{123}^*\sheaf L \otimes p_{12}^*\sheaf L^{-1}\otimes p_{23}^*\sheaf L^{-1}\otimes p_{13}^*\sheaf L^{-1} \otimes p_1^*\sheaf L \otimes p_2^*\sheaf L \otimes p_3^*\sheaf L
+                | is trivial.
+            proof: p
+                | Let  #[m m \colon A\times A \to A] be multiplication (addition?) and #[m p,q] the projections #[m A\times A \to A].
+                | Then the composites of the maps #[m \phi\colon A\times A \to A \times A \times A, \phi(x,y) = (x,y,0)] with #[m p_{123}, p_{12}, p_{23}, p_{13}, p_1, p_2, p_3] are respectively #[m m,m,q, p, p, q, 0].
+                | Hence the restriction of #[m  \sheaf M] to #[m A \times A \times \{0\}] is
+                me m^* \sheaf L \otimes m^* \sheaf L^{-1} \otimes q^* \sheaf L^{-1} \otimes p^*\sheaf L^{-1} \otimes p^*\sheaf L \otimes q^*\sheaf L \otimes \sheaf O_{A\times A}
+                | this is trivial by tensor commuting with pullback.
+                | Similarly #[m \sheaf M] restricts to a trivial bundle on #[m A\times \{0\} \times A] and #[m \{0\}\times A \times A].
+                | So by #[xref(ref="thm-cube") theorem of the cube] #[m \sheaf M] is trivial.
+
+        corollary#cor-5-3
+            title Milne 5.3
+            statement: p
+                | Let #[m f,g, h\colon V \to A] (#[m A] abelian).
+                | Then for any #[m \sheaf L] on #[m A] the bundle
+                me \sheaf M  = (f+g+h)^*\sheaf L \otimes (f+g)^*\sheaf L^{-1}\otimes (f+h)^*\sheaf L^{-1}\otimes (g+h)^*\sheaf L^{-1} \otimes   f^*\sheaf L \otimes   g^*\sheaf L \otimes   h^*\sheaf L
+                | is trivial.
+            proof: p
+                | #[m \sheaf M] is the pullback of the line bundle of #[xref(ref="cor-5-2")/] via the map #[m (f,g,h) \colon V \to A\times A\times A].
+
+        p
+            | On #[m A] we have #[m n_A \colon A\to A] be #[m n_A(a) = a+\cdots + a] (#[m n] times) for #[m n\in \ZZ].
+
+        corollary#cor-5-4
+            title Milne 5.4
+            statement: p
+                | For #[m \sheaf L] on #[m A] we have
+                me n^*_A\sheaf L \cong \sheaf L^{(n^2 + n)/2} \otimes (-1)_A^* \sheaf L^{(n^2 - n)/2}
+                | In particular if #[m (-1)^* \sheaf L = \sheaf L] (symmetric) then #[m n_A^* \sheaf L = \sheaf L^{n^2}].
+                | And if #[m (-1)^* \sheaf L = \sheaf L^{-1}] (antisymmetric) then #[m n_A^* \sheaf L = \sheaf L^{n}].
+            proof: p
+                | Use #[xref(ref="cor-5-3")/] with #[m f= n_A, g = 1_A, h = (-1)_A]. So the line bundle
+                me (n)^*\sheaf L \otimes (n+1)^*\sheaf L^{-1}\otimes (n-1)^*\sheaf L^{-1}\otimes (1-1)^*\sheaf L^{-1} \otimes   n^*\sheaf L \otimes   1^*\sheaf L \otimes   (-1)^*\sheaf L
+                | is trivial i.e.
+                me (n+1)^*\sheaf L =  (n-1)^*\sheaf L^{-1}\otimes n^*\sheaf L^2 \otimes   \sheaf L \otimes   (-1)^*\sheaf L
+                | in statement #[m n = 1] is clear, so use #[m n=1] in the above to get 
+                me 2_A^*\sheaf L \cong \sheaf L^2 \otimes \sheaf L \otimes (-1)^*_A \sheaf L\cong \sheaf L^3 \otimes (-1)_A^*\sheaf  L
+                | . Then induct on #[m n] in above.
+
+        theorem#thm-square
+            title Theorem of the square (Milne 5.5)
+            statement: p
+                | Let #[m \sheaf L] be an invertible sheaf (line bundle) on #[m A]. Let #[m  t_a \colon A\to A] be translation by #[m a\in A(k)]. Then 
+                me t_{a+b}^*\sheaf L \otimes \sheaf L \cong t_a^*\sheaf L \otimes t_b^* \sheaf L
+                | .
+            proof: p
+                | Use #[xref(ref="cor-5-3")/] with #[m f=  \id], #[m g(x)  = a, h(x) = b] to get
+                me t_{a+b}^*\sheaf L \otimes t_{a}^*\sheaf L ^{-1}\otimes t_b^* \sheaf L ^{-1} \otimes \sheaf L
+                | is trivial.
+
+        remark: p
+            | Tensor by #[m \sheaf L^{-2}] in the above equation to get
+            me t_{a+b}^*\sheaf L \otimes\sheaf L^{-1} \cong ( t_{a}^*\sheaf L \otimes \sheaf L^{-1}) \otimes(t_b^* \sheaf L\otimes \sheaf L^{-1})
+            | . This gives a group homomorphism
+            me A(k) \to \Pic(A)
+            | via
+            me a\mapsto t_a^*\sheaf L \otimes \sheaf L^{-1}
+            | for any #[m \sheaf L \in \Pic(A)].
+
+section#sec-adventures-buntes
+    title The Adventures of BUNTES (Sachi)
+
+    subsection
+        title In which we are introduced to an important homomorphism, review some concepts and our story begins
+
+        p
+            | Abelian variety  #[m X], we know this is a complete group variety, our goal is to give an embedding #[m X\to \PP^N] for some #[m N].
+            | This motivates the study of line bundles.
+
+        p
+            | Last time Ricky proved theorem of #[xref(ref="thm-cube") cube] and #[xref(ref="thm-square") square].
+            | For any line bundle  #[m L] on #[m X], there is a group homomorphism #[m \Phi_L\colon X \to \Pic(X)] via #[m x\mapsto T_x^* L\otimes L^{-1}].
+            | Be careful #[m T_x^*] is #[m -x], convention, who knows why.
+
+
+        example: statement: p
+            | Let #[m X =E] an elliptic curve, #[m L = L((0))], #[m x\mapsto (x) - (0)], in this case this is in #[m \Pic^0(E) \cong E \cong \widehat E], 
+        proposition
+            statement: p
+                | This is translation invariant.
+            proof: p
+                | Translate by #[m q\in E]. #[m (x+q) - (q)] take #[m  p] to be the third point on the line with #[m x,q], #[m (x) + (q) + (p) \cong 3(0)] and #[m (x+q) + (p) \cong 2 (0)] subtracting these gives #[m (x) - (x+q) +(q) \cong (0)] or #[m (x) - (0) \cong (x+q) -(q)].
+
+        p
+            | What about the converse of this, what can we say about translation invariant line bundles
+            me K(L) = \{x\in X : T_x^* L \cong L\}
+            | ?
+
+        proposition
+            statement: p
+                | #[m K(L)] is Zariski closed in #[m X].
+            proof: p
+                | Consider #[m m^* L \otimes p_2^*L^{-1}] on #[m X\times X], then
+                me \{x : \text{this is trivial on }\{x\}\times X\}
+                | is closed. #[xref(ref="thm-see-saw") See-saw] implies restriction is pullback
+                me T_x^*L \otimes L^{-1}
+                | so this is #[m K(L)].
+
+
+    subsection
+        title In which Pooh discovers our main theorem
+
+        proposition
+            statement: p
+                | Let #[m X] be an abelian variety and #[m L] a line bundle, #[m L = L(D)] then TFAE:
+                ol
+                    li #[m H(D) = \{x\in X: T_x^*D  = D \}] is finite.
+                    li #[m K(L) = \{x\in X: T_x^*L  \cong L \}] is finite.
+                    li #[m |2D|] is basepoint free and defines a finite morphism #[m X\to \PP^N].
+                    li #[m L] is ample.
+            proof
+                proofcase
+                    title 3. to 4.
+                    p
+                        | Is algebraic geometry.
+                proofcase
+                    title 2. to 1.
+                    p
+                        | Follows as being equal is stronger than being linearly equivalent.
+                proofcase
+                    title 4. to 2.
+                    p
+                        | #[xref(ref="sec-ample-L-finite-KL") Section]
+                proofcase
+                    title 3. to 4.
+                    p
+                        | #[xref(ref="sec-finite-HD-finite-PN") Section ]
+
+    subsection#sec-ample-L-finite-KL
+        title In which Owl proves the ampleness of #[m L] implies finiteness of #[m K(L)]
+
+        p
+            | 4. to 2. Assume #[m L] ample and #[m K(L)] is infinite. Let #[m Y] be the connected component at 0 of #[m K(L)], #[m \dim Y \gt 0]. Show trivial bundle is ample on #[m Y] implies #[m Y] is affine, But #[m Y] is closed and therefore complete so this is a contradiction.
+            | #[m L|_Y] ample #[m \lb-1\rb^* L|_Y] is ample.
+            | #[m L|_Y\otimes \lb -1\rb^*L|_Y] is ample, consider
+            md
+                mrow d\colon \amp Y \to Y\times Y
+                mrow \amp y\mapsto (y,-y)
+            | #[m m\circ d = ] constant, #[m d^*m^* (L) = \sheaf O_Y], LHS is 
+            m L|_Y \otimes [-1]^* L|_Y
+            | .
+
+    subsection#sec-finite-HD-finite-PN
+        title In which Rabbbit sets out on a long journey to prove finiteness of #[m H(D)] implies #[m |2D|] is basepoint free and gives a finite map #[m X \to \PP^N]
+
+        note:  p
+            | #[m |2D|] is always basepoint free.
+        p
+            | Apply the #[xref(ref="thm-square") theorem of the square]: #[m T_{x+y}^*D + D \cong T_x^* D + T_y^*D], let #[m y = -x], #[m 2D \cong T_x^* D + T_{-x}^*D]. (#[m D] effective)
+            | For any #[m y\in X], choose some #[m x] s.t. RHS doesn't contain #[m y].
+            | #[m E = 2D]
+            me \psi_E\colon X \to \PP^N
+            | can we make this finite?
+            | If #[m \psi_E] is not finite then #[m \psi(C) = \text{pt}] for some irreducible curve #[m C] (Zariski's main theorem).
+            | For each divisor in #[m |E|] either it contains #[m C] or fails to intersect #[m C] by changing #[m E] if necessary, assume #[m E \cap C = \emptyset].
+
+        claim
+            statement: p
+                | #[m T_x^*E\cap C= \emptyset] or all of #[m C] for all #[m x\in X].
+            proof
+                p
+                    | Intersection numbers are constant.
+            proof
+                p
+                    | #[m \sheaf O(T_x^*E)|_{\widetilde C}], when #[m x=0] this is trivial so #[m \deg =0]. So #[m \deg = 0] for all line bundles.
+                    | #[m E] effective implies #[m C\cap T_x^* E = \emptyset] for all #[m x] s.t. #[m \cap] is not in #[m C].
+
+        claim
+            statement: p
+                | #[m E] is invariant by translation by #[m x - y] for #[m x,y \in C].
+            proof
+                p
+                    | If #[m e \in E], #[m T_{x-e}^*(E) \cap C \ne \emptyset].
+                    | This is as #[m x] is in it, #[m x-(x-e) =e], because it is nonempty it's all of #[m C].
+                    | So #[m y] is in it.
+                    | So #[m y- (x-e) \in E]. This is also #[m e - (x-y) \in E], so #[m E] is invariant under #[m T^*_{x-y}]
+
+        p
+            | Now assume #[m H(E) = \{x\in X: T_x^*E  = E \}] is finite.
+            | But if #[m \psi_E(C) = \text{pt}] then #[m T_{x-y}^*(E)  = E] for all #[m x,y\in C].
+            | So #[m H] is not finite, a contradiction. So #[m \psi_E] can't collapse a curve so #[m \psi_E] is finite.
+
+    subsection
+        title In which Piglet discovers a corollary
+
+        corollary
+            statement: p
+                | Abelian varieties are projective.
+            proof: p
+                | Let #[m X] be an abelian variety, #[m U \subseteq X] be an open affine set, #[m 0\in U], #[m X\smallsetminus U = D_1 \cup \cdots \cup D_t] irreducible divisors.
+                | Let #[m D = \sum D_i], then claim: #[m H(D) = \{x\in X: T_x^*D  = D \}] is finite.
+                | If #[m H\subseteq U], #[m U] affine, then #[m H] closed subvariety of an abelian variety, hence complete, so its finite.
+                | If #[m x\in H] then #[m -x \in H].
+                | Now claim that if #[m x\in H] then #[m T_x^*] preserves #[m U], if not let #[m u\in U].
+                | Suppose #[m u-x = d] for some #[m d\in D] then #[m u = d+x] which is #[m d] translated by #[m -x] so #[m d+x \in D] so #[m u\in D].
+                | But contradiction, oh no!
+                | So #[m T_x^*] preserves #[m U], for all #[m x\in H], as #[m 0 \in U], for all #[m x\in H] we have #[m 0-x \in U] and  #[m 0+x\in U] so #[m H\subseteq U].
+
+        corollary
+            statement: p
+                | Abelian varieties are divisible. 
+                m X[n]
+                |  is finite for #[m n\ge 1].
+            proof: p
+                m [n]\colon X \to X
+                |  and 
+                m X[n]
+                |  is the kernel of this.
+                | Note that for 
+                m x\in X[n]
+                me [n]\circ T_x = [n]
+                | #[m y\in X], then #[m n(y-x) = ny - nx = ny] so for all #[m L \in \Pic X]
+                me T_x^*([n]^* L ) \cong ([n]^* L)
+                | which implies 
+                me K([n]^* L ) \supseteq X[n]
+                | and we just need to find #[m L] s.t. this is finite.
+                | #[m X] projective implies there exists an ample #[m L].
+                | The #[xref(ref="thm-cube") theorem of the cube] implies 
+                me [n]^*L \cong L^{\frac{n^2 + n}{2}} \otimes L^{\frac{n^2 - n}{2}}
+                | where both terms on the right are ample, hence the left is also.
+
+    subsection
+        title Epilogue: In which we might discuss isogenies
+
+        definition
+            statement: p
+                | #[m f\colon X \to Y] a morphism of varieties, get a field extension #[m k(X)/f^*k(Y)], if #[m \dim X = \dim Y] and #[m f] is surjective. Then this is a finite field extension and #[m \deg f] is #[m d = \lb k(X) : f^*k(Y)\rb] and #[m d = \#f^{-1}(y)] for almost all #[m y].
+
+        definition#def-isogenies-avs
+            statement: p
+                | A homomorphism of abelian varieties #[m f\colon X \to Y] is an #[term isogeny] if #[m f] is surjective with finite kernel.
+
+        corollary
+            statement: p
+                | Degree of #[m \lb n\rb] is #[m n^{2g}], if #[m n] is prime to the characteristic of #[m k], #[m k = \overline k], #[m g = \dim X].
+            proof: p
+                | Let #[m D] be an ample symmetric divisor, e.g.
+                me D = D' + [-1]^* D'
+                | know #[m \lb n \rb^* D \sim n^2 D]
+                me \deg([n]^*(D\cdot\ldots\cdot D)) = ([n]^*D\cdot \ldots\cdot [n]^*D) = (n^2 D\cdot\ldots\cdot n^2 D)= n^{2g} (D\cdot \ldots\cdot D)
+                | .
+
+section#sec-dual-ab
+    title Line Bundles and the Dual Abelian Variety (Angus)
+    subsection
+        title Introduction
+        paragraphs
+            title Meta-goal
+            p Understand line bundles on abelian varieties.
+
+        paragraphs
+            title Setup
+            p #[m A] an abelian variety #[m /k].
+
+        paragraphs
+            title Last time
+            p
+                | For #[m L] a line bundle on #[m A] we get a map
+                md
+                    mrow \phi_L\colon A(K) \amp\to \Pic(A)
+                    mrow a\amp\mapsto t_a^* L\otimes L^{-1}
+                | where
+                me \Pic(A) = \{\text{line bundles on } A\}/\sim
+                | . This a is a group homomorphism (by the #[xref(ref="thm-square") theorem of the square]).
+                | We define
+                me K(L)(k) = \ker(\phi_L) = \{a\in A(k) : t_a^* L \simeq L\}
+                |.
+
+        paragraphs
+            title Today
+            p
+                |We are going to package these into a big map
+                md
+                    mrow \phi\colon \Pic(A)\amp\to \Hom(A(k), \Pic(A))
+                    mrow L \amp\mapsto \phi_L
+                | .
+            proposition
+                statement: p
+                    ol
+                        li #[m \phi] is a group homomorphism
+                        li: me \phi_{t_a^* L}  = \phi_L
+                proof
+                    proofcase
+                        title 1
+                        p
+                            md
+                                mrow \phi_{L\otimes M}(a) \amp = t_a^*(L\otimes M) \otimes(L\otimes M)^{-1}
+                                mrow                      \amp = t_a^*L\otimes L^{-1} t_a^*M\otimes M^{-1}
+                                mrow                      \amp = \phi_L\otimes \phi_M
+                    proofcase
+                        title 2
+                        p
+                            md
+                                mrow \phi_{t_b^*L}(a) \amp = t_a^*(t_b^*L) \otimes(t_b^*L)^{-1}
+                                mrow                    \amp = t_{a+b}^*L \otimes(t_b^*L)^{-1}
+                                mrow                    \amp = t_{a}^*L \otimes t_b^*L \otimes L^{-1} \otimes (t_b^*L)^{-1}
+                                mrow                    \amp = \phi_L(a)
+                            | by  the #[xref(ref="thm-square") theorem of the square]
+
+            definition
+                statement: p
+                    md
+                        mrow \Pic^0(A) \amp = \ker(\phi)
+                        mrow \amp = \{ L \in \Pic(A) : \phi_L = 0\}
+                        mrow \amp = \{ L \in \Pic(A) : t_a^* L\simeq L \ \forall a\in A(k)\}
+                        mrow \amp = \{\text{translation invariant line bundles}\}/\sim
+
+        paragraphs
+            title Goals
+            p
+                | Study #[m \Pic^0(A)], give it an abelian variety structure, solve a moduli problem, demonstrate some duality.
+
+
+    subsection
+        title Aside: alternate description of #[m \Pic^0(A)]
+
+        definition#def-alg-equivalence
+            title Algebraic Equivalence
+            statement: p
+                | Two line bundles #[m L_1,L_2]  on an abelian variety are #[term algebraically equivalent] if there exists a variety #[m Y] with line bundle #[m L] on #[m A\times Y] and points #[m y_1y_2 \in Y] s.t. #[m L|_{A\times\{y_1\}} \simeq L_1, L|_{A\times\{y_2\}} \simeq L_2].
+
+        remark: p This looks like homotopy.
+
+        proposition
+            statement: p: me \Pic^0(A) = \{\text{line bundles which are alg. equiv to } \sheaf O_A\}
+            proof: p #[xref(ref="bib-polishchuck")/].
+
+
+    subsection
+        title See-Saws
+
+        theorem#thm-see-saw
+            title See-saw theorem
+            statement: p
+                | Let #[m X,T] be varieties      #[m X] complete, let #[m L] be a line bundle  on #[m X\times T], let #[m T_1 = \{t\in T : L|_{X\times\{t\}} \text{ is trivial}\}]
+                | then #[m T_1] is closed in #[m T].
+                | Further let #[m p_2\colon X\times T_1 \to T_1], then #[m L|_{X\times T_1} \cong p^*_2 M] for some line bundle #[m M] on #[m T_1].
+
+        remark: p
+            | In fact #[m M = p_{2*}L].
+
+        corollary
+            title that no one states/only Milne
+            statement: p
+                | Let #[ X, T] be as above and let #[m L, M] be line bundles on #[m X\times T] s.t.
+                me L|_{X\times \{t\}} \cong M|_{X\times \{t\}} \forall t\in T
+                me L|_{\{t\}\times X} \cong M|_{\{t\}\times X} \text{ for some } x\in X
+                | then #[m L\cong M].
+
+    subsection
+        title Properties of #[m \Pic^0 A]
+
+        lemma
+            statement: p
+                | #[m L\in \Pic^0(A)] and #[m m,p_1,p_2\colon A\times A \to A]
+                ol
+                    li
+                        me m^* L \cong p_1^* L\otimes p_2^* L
+                    li Given #[m f,g \colon X \to A]
+                        me (f+g)^* L \cong f^* L \otimes g^* L
+
+                    li
+                        me [n]^* L \cong L^{\otimes n}
+                    li
+                        me \phi_L(A(k)) \subseteq \Pic^0(A)
+                        | for #[m L \in \Pic (A)].
+            proof
+                proofcase
+                    title 1
+
+                    p
+                        me (m^*L\otimes (p_1^*l)^{-1} \otimes (p_2^*l)^{-1})|_{A\times\{a\}} = t_a^*L \otimes L^{-1} = \sheaf O_A
+                        me (m^*L\otimes (p_1^*l)^{-1} \otimes (p_2^*l)^{-1})|_{\{a\}\times A} = t_a^*L \otimes L^{-1} = \sheaf O_A
+                        | by #[xref(ref="thm-see-saw") see-saw] whole thing is trivial on #[m A\times A].
+                proofcase
+                    title 2
+                    p
+                        me (f+g)^*L\cong (f\times g)^* m^*L \cong (f\times g)^*(p_1^*L \otimes p_2^*L) \cong f^*L \otimes g^*L
+                proofcase
+                    title 3
+                    p Induction of 3.
+                proofcase
+                    title 4
+                    p
+                        me \phi_{\phi_L(a)} = \phi_{t^*_a L}\otimes L^{-1} = \phi _{t_a^*L}\otimes L^{-1} = \phi_L \otimes \phi_{L^{-1}} = 0
+
+
+        proposition
+            statement: p
+                | If #[m L] is nontrivial in #[m \Pic^0(A)] then #[m H^i(A,L) = 0] #[m \forall i].
+            proof: p
+                | If #[m H^0(A,L) \ne 0], we would have  a nontrivial section #[m s] of #[m L] then #[m \lb -1\rb ^* s] is   a nontrivial section of #[m \lb-1\rb^* L = L^{-1}].
+                | But if both #[m L] and #[m L^{-1}] have  a nontrivial section then #[m L \cong \sheaf O_A].
+                | So since #[m L] is nontrivial #[m H^0(A,L) = 0].
+                | Now assume #[m H^i(A,L) = 0] for all #[m i\lt j].
+                | Consider
+                md
+                    mrow A\xrightarrow{\id \times 0} A\times A \xrightarrow m A
+                    mrow a\mapsto (a,0)\mapsto a
+                | this gives
+                me H^j(A, L) \to H^j(A\times A, m^*L) \to H^j(A,L)
+                | which composes to the identity.
+                me H^j(A\times A, m^*L) =  H^j(A\times A, p_1^*L \otimes p_2^*L) = \bigoplus_{i=0}^j H^i(A,L) \otimes H^{j-i}(A,L)
+                | by Künneth. The RHS is 0 by the inductive hypothesis.
+                | So the identity on #[m H^j(A,L)] factors through 0, hence the group is 0.
+
+        p
+            | We now think of #[m \phi_L] as a map #[m \phi_L \colon A(k) \to \Pic^0(A)] with kernel #[m K(L) (k)].
+
+        theorem
+            statement: p
+                | If #[m K(L)(k)] is finite then #[m \phi_L] is surjective.
+            proof: p
+                | Idea is to study
+                me \Lambda (L) =  m^* L \otimes (p_1^* L)^{-1} \otimes (p_2^* L)^{-1}
+                | .
+
+        p
+            | Given an ample line bundle #[m  L] on #[m A] we now have an isomophism of groups
+            me A(k)/K(L)(k) \cong \Pic^0(A)
+            | the LHS allows us to put an abelian variety structure on #[m \Pic^0(A)].
+
+    subsection
+        title The Dual Abelian Variety
+
+        theorem
+            statement: p
+                | Let #[m A] be an abelian variety and #[m L] an ample line bundle on #[m A], then the quotient scheme #[m A/K(L)] exists and is an abelian variety of the same dimension as #[m A].
+            proof
+                p
+                    | (Sketch) (characteristic 0) Cover #[m A] by affine opens #[m U_i = \Spec R_i] such that for all #[m a \in A] the orbit #[m K(L)a \subseteq U_i] for some #[m i]. We can do this because abelian varieties are projective.
+                    | Then we say #[m U_i / K(L) = \Spec(R^{K(L)}_i)] then glue.
+                    | (details in Mumford, II sec, 6  appendix).
+                    | Since we are in characteristic 0, the quotient scheme is in fact a variety.
+
+        definition#def-dual-abvar
+            title Dual abelian varieties
+            statement: p
+                | The #[term dual abelian variety] is
+                me \hat A = A/K(L)
+                | .
+
+        remark: p
+            ul
+                li
+                    me \hat A(K) = \Pic^0(A)
+                li
+                    | We have an isogeny
+                    me \phi_L\colon A \to \hat A
+                    | .
+
+        theorem#thm-poincare-bundle
+            statement: p
+                | There is a unique line bundle #[m \sheaf P] on #[m A\times \hat A] called the #[term Poincaré bundle] such that
+                ol
+                    li
+                        me \sheaf P|_{A\times \{x\}} \in \Pic^0(A) \text{ for all }x\in \hat A
+                    li
+                        me \sheaf P|_{0\times \hat A} = 0
+
+                    li
+                        | If #[m Z] is a  scheme with a line bundle #[m R] on #[m A\times Z] satisfying 1., 2., there exists a unique
+                        me f\colon Z\to \hat A
+                        | s.t.
+                        me (\id\times f)^* \sheaf P = R
+                        | .
+                | That is #[m (\hat A, \sheaf P)]  represents the functor
+                me Z \mapsto \left\{ L\in \Pic (A\times Z) : \substack{ L|_{A\times \{z\}} \in \Pic^0(A) \forall z\in Z \\L|_{ 0 \times Z } = 0}\right\}/\sim
+                |.
+
+    subsection
+        title Dual morphisms
+
+        p
+            | Let #[m f\colon A\to B] be a homomorphism of abelian varieties.
+            | Let #[m \sheaf P_A,\sheaf P_B] be the Poincaré bundles on  #[m A] and #[m B].
+            | Consider #[m M=    (F\times \id_{\hat B})^* \sheaf P_B] on #[m A\times \hat B], then
+            ol
+                li
+                    me M|_{A\times \{x\}} \in \Pic^0(A)
+                li
+                    me M|_{\{0\} \times \hat B} = 0
+
+            | thus by the universal property we get a unique morphism
+            me \hat f\colon \hat B \to \hat A
+            | satisfying
+            me (\id_A\times \hat f)^* \sheaf P_A = (f\times \id_{\hat B})^*\sheaf P_B
+            | .
+
+        definition#def-dual-morp-abvar
+            title Dual morphisms
+            statement: p
+                | #[m \hat f] as above is called the #[term dual morphism].
+
+        remark: p
+            ul
+                li
+                    me \hat f\colon \hat B = \Pic^0(B) \to \hat A(k) = \Pic^0(A)
+                    me L\mapsto f^*L
+                li
+                    me \hat{\lb n_A\rb} = [n_{\hat A}]
+
+        p
+            | Consider the Poincaré bundle #[m \sheaf P_{\hat A}] on #[m \hat A \times \hat{\hat{A}}], now think of #[m \sheaf P_A] as living on #[m \hat A \times A].
+            | By the universal property of #[m \sheaf P_{\hat A}] get a unique morphism
+            me \operatorname{can}_A\colon A\to\hat{\hat A}
+            | .
+
+        theorem
+            statement: p
+                | #[m \operatorname{can}_A] is an isomorphism.
+
+        lemma
+            statement: p
+                me \phi_{f^*L} = \hat f\circ \phi_L\circ f
+                | .
+
+        proposition
+            statement: p
+                | If #[m f\colon A \to B] is an isogeny, then #[m \hat f\colon \hat B \to \hat A] is an isogeny.
+                | Further if #[m N  = \ker f], then #[m \hat N = \ker \hat f] is the Cartier  dual of #[m N].
+
+        definition#def-princ-pol
+            title Symmetric morphisms, (principal) polarizations
+            statement
+                p
+                    | A morphism #[m f\colon A \to \hat A] is #[term symmetric] if #[m f = \hat f\circ \operatorname{can}_A]
+                p
+                    | A #[term polarization] is a symmetric isogeny #[m f\colon A \to \hat A] s.t. #[m f=  \phi_L] for some ample line bundle #[m L] on #[m A].
+                p
+                    | A #[term principal polarization] is a polarization of degree 1, i.e. an isomorphism.
+
+        remark
+            p
+                | Elliptic curves always admit principal polarization.
+            p
+                | If one wishes to mimic the theory of elliptic curves, one should study principally polarized abelian varieties.
+
+
+section#sec-endomorphisms
+    title Endomorphisms and the Tate module (Berke)
+
+    introduction
+        title Motivation
+        p
+            md
+                mrow f \colon \PP^n\subseteq V_1 \amp\to V_2 \subseteq \PP^m,\,V_i = V(I_i)
+                mrow P\amp \mapsto \cdots
+            me f = \lb f_1 : \cdots : f_m\rb ,\,f_i\in \overline K (V_1)
+            | this feels quite restrictive, an isogeny is even more so, rational, regular, homomorphism, surjective, finite kernel.
+            | It feels like there won't be too many but we have multiplication by #[m n] etc. so we should ask how many are there that will surprise us? I.e. what is
+            me \rank_\ZZ \Hom(A,B) = ?
+
+        p
+            | Notation: #[m A,B,C , A_i,  B_i] are all abelian varieties. #[m l \ne \characteristic k], #[m \sim] is isogeny.
+
+    subsection
+        title Poincaré's complete reducibility theorem
+
+        theorem#thm-poincare-reducibility
+            title Poincaré's complete reducibility theorem
+            statement: p
+                | Let #[m B\subseteq A] then there is #[m C\subseteq A] s.t. #[m B \cap C] is finite and #[m B+C = A].
+                | I.e. #[m B\times C \to A,\,(b,c) \mapsto b+c] is an isogeny.
+            proof
+                p
+                    | Choose #[m \sheaf L] ample on #[m A]
+                    me.
+                        \xymatrix{
+                        B\ar[r]^i \ar[d]_{\phi_{i*\sheaf L}} &amp; A \ar[d]_\sim^{\phi_{\sheaf L}} \\
+                        \hat B &amp; \hat A \ar[l]_{\hat i}
+                        }
+                    | #[m C] is defined to be the connected component of #[m \phi^{-1}_{\sheaf L}(\ker \hat i)] in #[m A]
+                    me \dim C = \dim \ker \hat i \ge \dim \hat A - \dim \hat B = \dim A - \dim B
+                    | .
+                p
+                    | #[m B \cap C] finite, #[m z\in B], #[m z\in B\cap \phi_{\sheaf L^{-1}} (\ker \hat i) = T_z^* \sheaf L \otimes \sheaf L^{-1} |_B] is trivial if and only if #[m z\in K(\sheaf L|_B)].
+                    | So #[m \sheaf L|_B] ample implies #[m K(\sheaf L|_B)] finite and so #[m B\cap C] is finite.
+                    | So #[m B\times C \to A] has finite kernel and
+                    me \dim (B\times C) = \dim B + \dim C \ge \dim A
+                    | and surjective implies its an isogeny.
+
+
+        definition#def-simple-av
+            title Simple abelian varieties
+            statement: p
+                | #[m A] is called #[term simple] if there does not exists #[m B\subseteq A] other than #[m B = 0,A].
+
+        corollary#cor-ab-var-product-simple
+            statement: p
+                me A \sim A_1^{n_1} \times \cdots \times A_k^{n_k}
+                | #[m A_i \not\sim A_j] for #[m i\ne j] and #[m A_i] simple.
+
+        corollary
+            statement: p
+                | #[m \alpha \in \Hom(A,B)] for #[m A,B] simple then #[m \alpha] is an isogeny or #[m 0].
+            proof: p
+                | #[m \alpha(A) \subseteq B] which implies #[m \alpha(A)  = B] or #[m 0].
+                | The connected component of 0 of #[m \ker \alpha] will be an abelian subvariety of #[m A], denote it #[m C]
+                | If #[m C = 0] then #[m \ker \alpha] is finite, if #[m C = A] then #[m \alpha = 0].
+                | So #[m \alpha] is an isogeny or #[m 0].
+
+
+        corollary
+            statement: p
+                | If #[m A,B] are simple and  #[m A\not\sim B] then #[m \Hom(A,B) = 0].
+
+        definition
+            statement: p
+                me \End^0(A) = \End(A) \otimes \QQ
+                | .
+
+        lemma
+            statement: p
+                | If #[m \alpha \colon A\to B] is an isogeny, then there exists #[m \beta \colon B\to A] s.t. #[m \beta \circ \alpha = n_A] for some #[m n \ge 1].
+            proof
+                p
+                    | #[m \alpha] an isogeny implies #[m \ker \alpha] is finite.
+                    | So there exists #[m n] with #[m n \ker \alpha = 0].
+                    | #[m \ker\alpha \subseteq \ker n_A]
+                    me.
+                        \xymatrix{
+                        &amp; A \ar[dl]_\alpha \ar[d]\ar[r]^{n_A} &amp; A \\
+                        B\ar[r]_\sim \ar@/_3.0pc/[urr]_{\exists | \beta} &amp; A/\ker\alpha \ar[d]\ar[ur]_{\circ} &amp;\\
+                        &amp; A/n_A &amp;
+                        }
+                    | so #[m \beta\circ \alpha = n_A], also #[m \alpha \circ \beta = n_B].
+
+        corollary
+            statement: p
+                | #[m A] is simple then #[m \End^0(A)] is a division ring, #[m \alpha^{-1} = \beta \otimes \frac 1n].
+
+        corollary
+            title to Poincaré reducibility theorem
+            statement: p
+                | If
+                me A\sim A_1^{n_1} \times \cdots \times A_k^{n_k}
+                | then
+                me \End^0(A) \simeq \prod \End^0(A_i)^{n_i^2}
+                | .
+            proof: p
+                md
+                    mrow \End(A) \otimes \QQ \amp \simeq \prod_{i,j} \Hom(A_i^{n_i}, A_j^{n_j}) \otimes \QQ
+                    mrow                     \amp \simeq \prod_{i} \End(A_i)^{n_i^2} \otimes \QQ
+                    mrow                     \amp \simeq \prod_{i} \End^0(A_i)^{n_i^2}
+
+
+        theorem
+            title 7.2
+            statement: p
+                | If #[m \dim A = g] then #[m \deg n_A  =n^{2g}].
+
+        corollary
+            statement: p
+                | #[m  \characteristic k \nmid n] implies #[m \ker(n_A) \simeq (\ZZ/n\ZZ)^{2g}].
+            proof: p
+                | If  #[m m | n] then #[m |\ker (m_A)| = m^{2g}], then use structure theorem.
+        p
+            | In particular if we let #[m A\lb l^n\rb = A(k^\sep) \lb l^n\rb], then #[m A\lb l^n\rb \simeq (\ZZ/l^n)^{2g}]
+            | Define
+            me  T_l(A) = \varprojlim_n A[l^n],\, A[l^{n+1}] \xrightarrow{l} A[l]
+
+        proposition
+            statement: p
+                me T_l \simeq (\ZZ_l)^{2g}
+
+        p
+            | #[m \alpha \colon A \to B] induces
+            me T_l\alpha\colon T_l(A) \to T_l(B)
+            me (a_1,a_2, \ldots) \mapsto(\alpha(a_1),\alpha(a_2), \ldots)
+
+        lemma
+            statement: p
+                me \Hom(A,B) \hookrightarrow \Hom(T_l(A), T_l(B))
+            proof: p
+                | Let #[m \alpha \in \Hom(A,B)] and assume #[m T_l \alpha = 0] then 
+                me \ker (\alpha|_{A_i}) \supseteq A_i[l^n] \forall n
+                | for any simple component #[m A_i] of #[m A] so #[m \alpha =0] on each #[m A_i] and hence #[m \alpha = 0] on #[m A].
+
+        corollary
+            statement: p
+                | #[m \Hom(A,B)] is torsion free.
+        p
+            | Recall we are interested in knowing about #[m \rank_\ZZ\Hom(A,B) = ?], can we bound this?
+            | If we could show that
+            me \Hom(A,B) \otimes \ZZ_l \hookrightarrow \Hom(T_l(A),T_l(B))
+            | we could conclude, so:
+        p
+            me.
+                \xymatrix{
+                \Hom(A,B)\otimes \ZZ_l \ar[d]_{\sim} \ar@{^(->}[r]     &amp; \Hom(T_lA,T_lB)\ar[d]_{\sim} \\
+                \prod_{i,j} (\Hom(A_i, B_j) \otimes \ZZ_l) \ar@{^(->}[r] &amp; \prod_{i,j}\Hom(T_lA_i, T_l B_j)
+                % TODO right arrows hooks, fix
+                }
+            | #[m A_i + B_j = 0], #[m A_i\sim B_j] #[m \Hom(A_i, B_j) \hookrightarrow \End(A_i)].
+            | Assume #[m A= B] and #[m A] simple, then #[m \End(A) \otimes \ZZ_l \hookrightarrow \End(T_l(A))].
+
+        definition
+            statement: p
+                | #[m V/k] then #[m f\colon V \to k] is called a (homogenous) polynomial function of degree #[m d] if #[m \forall \{v_1,\cdots, v_m\}\subseteq V] linearly independent.
+                me f(\lambda_1 v_1 + \lambda_2 v_2 +\cdots + \lambda_m v_m)
+                | is given by a homogenous polynomial of degree #[m d] in #[m \lambda_i] i.e.
+                me f(\lambda_1 v_1 + \lambda_2 v_2 +\cdots + \lambda_m v_m) = P(\lambda_1,\ldots, \lambda_m)
+                | for some #[m P\in k\lb X_m\rb] homogenous of degree #[m d].
+
+        p
+            me \deg\colon \End(A) \to \ZZ
+            | #[m \alpha] an isogeny iff #[m \deg \alpha], #[m \alpha] not an isogeny iff #[m 0].
+
+        theorem
+            statement: p
+                | #[m \deg] uniquely extends to a polynomial function of degree #[m 2g] on #[m \End^0(A) \to \QQ].
+
+        proof
+            p (of above continued)
+            p
+                me \End(A) \otimes \ZZ_l \hookrightarrow\End(T_l(A))
+                | for #[m A] simple iff for any finitely generated #[m M \subseteq \End(A)]
+                me M \otimes \ZZ_l \hookrightarrow \End(T_l(A))
+
+            p
+                | Claim:
+                me M^{\text{div}} = \{f\in \End(A) : nf\in M \text{ for some }n\ge 1\}
+                | is finitely generated.
+            p
+                | Proof: #[m M^\text{div} = (M\otimes \QQ) \cap \End(A)]
+                | #[m \deg \colon M \otimes \QQ \to \QQ] is a polynomial so it is continuous.
+                me U = \{\phi\in M \otimes \QQ : \deg \phi \lt 1\}
+                | is open in #[m M \otimes \QQ] but #[m U \cap M^\text{div} = 0] so #[m M^\text{div} ] is a discrete subgroup of the finite dimensional #[m \QQ]-vector space #[m M \otimes \QQ] so #[m M^\text{div}] is finitely generated.
+                | #[m M \hookrightarrow M^\text{div}] so #[m M \otimes \ZZ_l \hookrightarrow M^\text{div} \otimes \ZZ_l] so  we may assume #[m M = M^\text{div}].
+            p
+                | Let #[m f_1,\ldots, f_r] be a #[m \ZZ]-basis for #[m M] and suppose that #[m \sum a_iT_l(f_i)=0] for some #[m a_i \in \ZZ_l] not all 0.
+                | We can assume not all #[m a_i] are divisible by #[m l].
+                | Choose #[m a_i' \in \ZZ] s.t. #[m a_i'=a_i \pmod{l}]
+                me f = \sum a_i' f_i \in \End(A)
+                | we then have
+                me f = \sum a_i' T_lf_i
+                | is 0 on the first coordinate of #[m T_l].
+                | So #[m A\lb l \rb \subseteq \ker f] so there exists #[m g] with #[m f= lg]
+                | #[m f\in M] implies #[m g\in M^\text{div} = M] so #[m g = \sum b_i f_i] and #[m f = \sum lb_i f = \sum a_i f_i] hence #[m l\mid a_i] for all #[m i] a contradiction.
+                | So #[m \End(A)\otimes \ZZ_l \hookrightarrow \End(T_l(A))].
+            p
+                | Therefore
+                me \Hom(A,B) \otimes \ZZ_l \hookrightarrow \Hom(T_l(A), T_l(B))
+                me \rank_\ZZ \Hom(A,B) \le 4 \dim A\dim B
+                | .
+
+section#sec-polarizations-etale
+    title Polarizations and Étale cohomology (Alex)
+    introduction
+        p
+            | Plan: polarizations, a little cohomological warmup and a cool finiteness result. Étale cohomology.
+
+    subsection
+        title Polarizations
+
+        definition#def-polarization
+            title Polarizations
+            statement
+                p
+                    | A #[term polarization] of an abelian variety #[m A/k] is an isogeny
+                    me \lambda \colon A \to \hat A
+                    | such that
+                    me \lambda \simeq_{\overline k} \lambda_{\sheaf{L}} : a\mapsto t_a^*\sheaf L \otimes \sheaf L^{-1}
+                    | for an ample invertible sheaf #[m \sheaf L] on #[m A_{\overline k}].
+                p
+                    | We then have a notion of degree, polarizations of degree 1 (i.e. isomorphisms #[m A\to \hat A]) are called #[term principal polarizations].
+
+        remark: p This is in fact equivalent to the #[xref(ref="def-princ-pol") previous definition], see #[xref(ref="bib-vandergeer-moonen") cor. 11.5].
+
+        p
+            | Natural questions: what does the line bundle #[m \sheaf L] tell us about the polarization? Can we tell principality?
+
+        p
+            | To answer this we must (rapidly) recall (Zariski) sheaf cohomology. But this will help us in the next section too.
+
+        p
+            | A line bundle (or indeed any sheaf) defines for us for any open subset #[m U \hookrightarrow X] an abelian group of sections #[m \sheaf L(U)].
+
+        p
+            | However taking (global) sections doesn't play well with exact sequences!
+
+        example
+            title Classic example
+            statement: p
+                | Let #[m X = \CC^*] and consider
+                me 0 \to \ZZ \hookrightarrow \sheaf O_X \xrightarrow{e^{2\pi i -}} \sheaf O_X^* \to 0
+                | but
+                me 0 \to \ZZ \to \sheaf O_X(X) \to \sheaf O_X^*(X)
+                | is not surjective on the right, for example #[m f(z) = z] is a nowhere vanishing meromorphic function on #[m X] but its not #[m \exp] of anything.
+                | Upshot: maps of sheaves can be surjective (by being so locally) but not globally.
+
+        p
+            | To understand/control this phenomenon we introduce #[m H^1(X, \sheaf F)] fitting into the above and so on.
+
+        p
+            | Explicitly: for a sheaf #[m \sheaf F] we fix an injective resolution
+            me 0\to \sheaf F \to \sheaf I_0 \to \sheaf I_1 \to \cdots
+            | which we then take global sections of to get a chain complex
+            me 0\to \Gamma(X,\sheaf F) \to \Gamma(X,\sheaf I_0) \to \Gamma(X,\sheaf I_1) \to \cdots
+            | and we truncate and take cohomology of this to measure #[q failure of exactness]
+            me H^0(X, \sheaf F) , H^1(X, \sheaf F) , H^2(X, \sheaf F) , \ldots
+            | .
+
+        definition#def-euler-poincare-char
+            title Euler-Poincaré characteristic
+            statement: p
+                | Define the #[term Euler-Poincaré characteristic] of a line bundle #[m \sheaf L] to be
+                me \chi(\sheaf L) = \sum (-1)^i \dim_k H^i(A,\sheaf L)
+                | .
+
+        theorem
+            title Riemann-Roch
+            statement: p
+                | Let #[m A] be an abelian variety of dimension #[m g] then
+                ol
+                    li The degree of #[m \lambda_{\sheaf L}] is #[m \chi(\sheaf L)^2].
+                    li If #[m \sheaf L = \sheaf L(D)] then #[m \chi(\sheaf L) = (D^g)/g!], this is the #[m g]-fold self intersection number of #[m D].
+
+        theorem
+            title Vanishing
+            statement: p
+                | If #[m \#K( \sheaf L)\lt \infty] then there is a unique integer #[m 0\le i(\sheaf L) \le g] with #[m H^i(A, \sheaf L) \ne  0] and #[m H^p(A, \sheaf L) = 0] for all #[m p \ne i].
+                | Moreover #[m i(\sheaf L^{-1}) = g - i(\sheaf L)].
+
+        p
+            | Recall #[xref(ref="sec-ample-L-finite-KL")]: So for ample #[m \sheaf L] we have #[m K(\sheaf L)] finite, so the vanishing theorem applies.
+            | Additionally for very ample #[m \sheaf L] we know #[m H^0(A,\sheaf L) \ne 0] so in this case we get vanishing of higher cohomology.
+
+        theorem
+            title Finiteness
+            statement: p
+                | Let #[m k] be a finite field, and   #[m g,d\ge 1] integers.
+                | Up to isomorphism there are only finitely many abelian varieties #[m A/k] of dimension #[m g] and with a polarization of degree #[m d^2].
+            proof
+                p
+                    | (Super sketch)
+
+                p
+                    | Over a finite field implies there is an ample #[m \sheaf L] with #[m \lambda_{\sheaf L}] a polarization of degree #[m d^2], then using above #[m \chi(\sheaf L^3) = 3^g d] and #[m \sheaf L^3] is very ample hence #[m \dim H^0(A, \sheaf L^3) = 3^g d] so we get an embedding into #[m \PP^{3^g d - 1}].
+                p
+                    | The degree of #[m A] in #[m \PP^{3^g d - 1}] is #[m ((3D)^g) = 3^g d(g!)] . It is determined by its Chow form, which by these formulae has some (large) bounded degree, as we are over a finite field however there are only finitely many such.
+
+    subsection
+        title Étale Cohomology of Abelian Varieties
+
+        p
+            | See #[xref(ref="bib-milne-etale") Milne Étale cohomology] or #[xref(ref="bib-tamme") Tamme].
+        p
+            | Recall for abelian varieties over #[m A/\CC] we considered singular cohomology of the complex points #[m A(\CC)].
+            | Indeed this theory was strongly connected to the lattice #[m \Lambda] defining #[m A(\CC)].
+        p
+            | We saw that in fact #[m \pi_1(A,0) = \pi^{-1} (0) = \Lambda \subseteq V] which was the universal covering space of #[m A(\CC)].
+            //| We have a correspondence
+            //me \{\text{finite index subgroups of }\pi_1\} \leftrightarrow \{\text{finite covers}\}
+            //| .
+            |  We want to emulate this over a general field.
+
+
+        p
+            | We want to allow multiplication by #[m n] to define finite covers for our abelian varieties as they did before.
+        p
+            | Problem: Zariski topology is too coarse: we can't find an open #[m U] set around #[m 0 \in A] such that #[m \lb 2\rb \colon U \to A] is an isomorphism onto its image.
+            | Isogenies are not local isomorphisms for the Zariski topology.
+            //| We had objects like #[m H^2(A,\ZZ)] playing a role.
+            //| If we want a version of this that works in positive characteristic, we need a homotopy/cohomology theory where varieties cover 
+
+        p
+            | How on earth do we #[q allow] maps which are clearly not local isomorphisms to become such?
+            | First what do we mean by local isomorphism?
+            me.
+                \xymatrix{
+                f^{-1}(U)\ar[d] \ar[r]^{\sim} &amp; U\ar@{^(->}[d]^i\\
+                X \ar[r]_f &amp; Y
+                }
+            | . There exists an open subset #[m U] such that the base change #[m X \times_Y U] is isomorphic with #[m \coprod U] of several copies of #[m U] in a compatible way with the map to #[m U].
+        p
+            | So let's cheat, the best isomorphism is the identity map
+            me.
+                \xymatrix{
+                X\ar[d] \ar[r]^{\sim} &amp; X\ar[d]^f\\
+                X \ar[r]_f &amp; Y
+                }
+            | if we define an #[q open set] #[m U] to be a morphism #[m X \to Y] with the properties we want, then all such become local isomorphisms.
+
+        p
+            | By taking our #[em topology] to be given by some maps we decide are decent covering maps we can circumvent these difficulties.
+        p
+            | What is the correct class of morphisms to take here, we feel like our #[m \lb n\rb] maps should count. Taking inspiration from differential geometry perhaps, we are led to the notion of a local diffeomorphism, an étale map.
+
+        definition
+            statement: p
+                | Let #[m X,Y] be nonsingular varieties over #[m k = \overline k].
+                | Then #[m f\colon X\to Y] is étale at a point #[m P\in X] if
+                me \diff f\colon\Tgt_{P}(X) \to \Tgt_{f(P)} (Y)
+                | is an isomorphism.
+
+        proposition
+            statement: p
+                | Let #[m f \colon \aff^m\to \aff^m] then #[m f] is étale at #[m (a_1, \cdots, a_m)] iff
+                me \left(\frac{\partial(X_i \circ f)}{\partial Y_j}|_{(a_k)} \right)
+                | is nonsingular.
+
+        example
+            title A non-étale map
+            statement: p
+                | Consider the map
+                md
+                    mrow \aff^2 \amp\to \aff^2
+                    mrow (x,y) \amp\mapsto (x^3, x^2 + y)
+                | we can see that the image of #[m y= 0] is the nodal cubic (#[m Y^3 = X^2]), which is messed up (singular) at #[m (0,0)].
+                | The jacobian is
+                me \begin{pmatrix} 3x^2 \amp 0 \\ 2x \amp 1\end{pmatrix}
+                | so this matrix is singular exactly when #[m x= 0] (unless characteristic 3).
+                | So the map is not étale at these points.
+
+
+        proposition
+            statement: p
+                | The maps #[m \lb n\rb] are étale on an abelian variety #[m A/k] for all  #[m \characteristic{k} \nmid n]
+            proof
+                p
+                    | Key point #[m \diff (\alpha+ \beta)_0 = (\diff \alpha )_0 + (\diff \beta)_0].
+                    | So the map on tangent spaces is simply multiplication by #[m n].
+
+
+        definition#def-etale
+            title Étale morphisms
+            statement
+                p
+                    | A morphism #[m f\colon X\to Y] of schemes is #[term étale] if it is flat and unramified.
+                p
+                    | Flatness for finite morphisms of varieties is equivalent to each fibre #[m f^{-1}(t)] being of equal cardinality, counting multiplicities.
+
+
+        p
+            | All isogenies are finite and flat.
+
+        definition
+            statement
+                p
+                    | Let #[m \mathrm{FEt}/X] be the category of finite étale maps #[m \pi\colon Y \to X] (i.e. finite étale coverings of #[m X]).
+                p
+                    | Then after picking a basepoint #[m x\in X] we can map
+                    me F\colon \mathrm{FEt}/X\to \mathrm{Set}
+                    me \pi\mapsto \Hom_X(x,Y) \approx\pi^{-1}(x)
+                    | .
+                p
+                    | This is in fact pro-representable, i.e. there exists a system
+                    me \tilde X = (X_i)_{i\in I}
+                    | with
+                    me F(Y) = \Hom(\tilde X ,Y) = \varinjlim_i \Hom(X_i, Y)
+                    | .
+                p
+                    | We then define
+                    me \pi_1(X,x) = \Aut_X(\tilde X) = \varprojlim_i \Aut_X(X_i)
+                    |.
+
+        p
+            | So we need to understand étale covers of abelian varieties. Following #[xref(ref="bib-vandergeer-moonen") van der Geer-Moonen]:
+
+        proposition
+            title surprising proposition
+
+            statement: p
+                | Let #[m X]  be a complete variety over a field #[m k] with #[m e\in X(k)] and #[m m \colon X\times X\to X] s.t. #[m m(e,x) = m(x,e) = x] for all #[m x \in X].
+                | Then #[m (X, m,e)] is an abelian variety.
+            proof
+                p
+                    |(Sketch)
+                p
+                    | Let
+                    me \tau\colon X\times X \to X\times X
+                    me \tau(x,y) = (xy,y)
+                    | so #[m \tau^{-1} (e,e) = (e,e)].
+                    | Some exercise in Hartshorne implies #[m \im \tau] has dimension #[m 2\dim X].
+                p
+                    | Reduce to algebraically closed case.
+                p
+                    | Let
+                    me \tau^{-1}(\{e\} \times X) =  \{(x,y) : xy = e\} = \Gamma \subseteq X\times X
+                    |  as #[m \tau ] is surjective we get #[m p_2 \colon \Gamma \to X] is also so pick an irreducible #[m \Gamma_1 \subseteq \Gamma] with #[m p_2(\Gamma_1) = X].
+                    | This also implies #[m p_1(\Gamma_1) = X].
+                p
+                    | Let
+                    me f\colon \Gamma_1 \times X\times X \to X
+                    me f((x,y),z,w) = x((yz)w)
+                    | then
+                    me f(\Gamma_1 \times\{e\}\times\{e\}) = \{eee\} = \{e\}
+                    | so a version of #[xref(ref="thm-rigidity") rigidity] gives
+                    me x((yz)w) = zw\ \forall (x,y) \in \Gamma_1,\,z,w\in X
+                    | So letting #[m w = e] we get
+                    me x(yz) = z
+                    | . Fix #[m y \in X(k)], and then by surjectivity we can find #[m x,z \in X(k)] with #[m (x,y)\in \Gamma_1 \ni (y,z)].
+                    | So we get
+                    me x = x(yz) = ze = z
+                    | and so #[m y] has both a left and right inverse.
+                    | We then multiply above by #[m y] to get
+                    me y(zw) = y(x((yz)w)) = (yz)w
+                    | so #[m X(k)] is associative.
+
+        theorem
+            title Lang-Serre
+            statement: p
+                | Let #[m X/k] be an abelian variety and #[m Y/k] a variety with #[m e_Y\in Y(k)] s.t. #[m f\colon Y \to X] is an étale covering where #[m f(e_Y) = e_X].
+                | Then #[m Y] can be given the structure of an abelian variety so that #[m f] is a separable isogeny.
+            proof
+                p
+                    | Must construct a group law on #[m Y]:
+                p
+                    | Take the graph of #[m m\colon X\times X \to X]
+                    me \Gamma_X \subseteq X\times X\times X
+                    | and pullback along #[m f\times f\times f] to
+                    me \Gamma'_Y \subseteq Y\times Y\times Y
+                    | fix the connected component #[m \Gamma_Y] containing #[m (e_Y,e_Y,e_Y)].
+                p
+                    | Call the projections from #[m \Gamma_Y] #[m q_I]. Now we must show that #[m q_{12}\colon \Gamma_Y \to Y\times Y] is an isomorphism, then #[m m_Y\colon Y\times Y \to Y] can be defined as #[m q_3 \circ q_{12}^{-1}].
+                    | #[m q_{12}] has sections #[m s_1,s_2] over #[m \{e_Y\}\times Y], #[m Y\times \{e_Y\}] respectively given by #[m s_1(e_Y,y) = (e_Y,y,y)] and #[m s_2(y,e_y,y) = (y,e_y,y)].
+                    | So #[m m_Y] satisfies the conditions of the surprising proposition.
+                    me.
+                        \xymatrix{
+                        \Gamma_Y \ar[r]\ar[d]_{q_{12}} &amp; \Gamma_X\ar[d]^{p_{12}} \\
+                        Y\times Y \ar[r]_{f\times f} &amp; X\times X
+                        }
+                    | the horizontal maps are étale coverings and the rightmost an isomorphism so #[m q_{12}] is an étale covering.
+                    | The projection #[m p_2 \circ q_{12} = q_2 \colon \Gamma_Y\to Y] is smooth proper.
+                    | Fact: all fibres of #[m q_2] are irreducible.
+                    | So #[m Z = q_2^{-1} (e_Y) = q_{12}^{-1}(Y\times \{e_Y\})] is irreducible.
+                    | Moreover #[m q_{12}] restricts to an étale covering #[m Z \to Y = Y\times\{e_Y\}] of  the same degree, but #[m s_2] is a section of this covering, hence it is an isomorphism.
+                    | Hence #[m q_{12}] has degree 1 and is therefore an isomorphism as required.
+
+        p
+            | So we have some control over the finite étale maps, what does the covering space look like?
+            | Last week we saw that for an isogeny #[m \alpha\colon B \to A] we could find #[m \beta \colon A \to B] with #[m \beta\circ\alpha = \lb n\rb\colon A \to A].
+            | This means we can take our universal covering space to be
+            me (A)_{i\in I}
+            | with multiplication by #[m n] maps.
+
+        p
+            | So we find
+            me \pi_1^\et(A,0) =\varprojlim_n \Aut_A(A\xrightarrow{[n]} A)=  \varprojlim_n A[n]
+            | .
+
+        theorem
+            statement: p
+                me H^1_\et(A , \ZZ_l) = \Hom(\pi_1(A,0), \ZZ_l) = \Hom(T_l,\ZZ_l)
+
+        theorem
+            statement: p
+                me H^r(A_\et, \ZZ_l) = \bigwedge^r H^1(A_\et, \ZZ_l)
+            //proof: p
+            //    | We prove the result for all #[m r] simultaneously by viewing #[m H^*] as a cohomology ring under the cup product.
+            //    // TODO where does this come from
+            //    | The group law on #[m A] and functoriality  give us
+            //    me H^r(A,R) \to H^r(A,R) \otimes H^r(A,R)
+            //    | . Under this #[m H^r(A,R)] forms a Hopf algebra.
+
+        p
+            | Note that Milne gives a combined proof of the above two statements, this relies on some theorems on Hopf algebras such as #[xref(ref="bib-borel-hopf") Theoreme 6.1 of Borel, Sur La Cohomologie Des Espaces Fibres Principaux...].
+
+section#sec-weil-pairings
+    title Weil pairings (Maria)
+
+    subsection
+        title Weil pairings on elliptic curves
+        p
+            | Start with elliptic curves, later repeat for abelian varieties.
+            | #[m E/k] an elliptic curve, #[m m\ge 2], if #[m \characteristic(k) = p \gt 0] #[m (m,p) = 1].
+            | The Weil #[m e_m]-pairing #[m e_m \colon E\lb m\rb \times E\lb m \rb \to \mu_m] is defined as follows:
+            | Fix #[m T\in E\lb m \rb] then #[m f\in \overline  k (E)] s.t. #[m \divisor(f) = m(T) - m(0)].
+            | Fix #[m T' \in E] with #[m mT' = T] and #[m g\in \overline k(E)] s.t. #[m \divisor(g) = \lb m \rb^*(T) = \lb m \rb^*(0)= \sum_{R\in E\lb m \rb} (T+R) - (R)].
+            | Check #[m \divisor (f\circ \lb m \rb) = \divisor(g^m)], hence
+            me f\circ [m] = c g^m
+            | so can assume #[m f\circ \lb m \rb = g^m].
+            | For #[m s \in E\lb m \rb], #[m x\in E]:
+            me g(x + s) = f([m]x + [m]s) = f([m]x) = g(x)^m
+            me \frac{g(\cdot + s)^m}{g(\cdot)} \colon E \to \PP^1
+            | is then a constant function, since not surjective.
+            | So we define
+            md
+                mrow e_m\colon E[m]\times E[m] \amp\to \mu_m
+                mrow (s,t)\amp \mapsto \frac{g_t(x+s)}{g_t(x)}
+            | will state many properties later, but for now.
+            | #[m e_m] is compatible:
+            me e_{mm'} (a,a')^{m'} = e_m(m'a, m'a') \ \forall a,a' \in E[mm']
+            | so for any #[m l\ne \characteristic(k)] prime we can combine #[m e_{l^n}]-pairings into an #[m l]-adic Weil pairing on #[m T_l E]
+            me e \colon T_l E\times T_lE \to T_l \mu = \ZZ_l(1)
+
+    subsection
+        title Weil pairings on abelian varieties
+
+        p
+            | Story will be broadly similar to before but we must use the dual, which doesn't appear in the presentation for elliptic curves.
+        p
+            | Let #[m A/k] be an abelian variety #[m k = \overline k].
+            | We construct a Weil #[m e_m]-pairing
+            md
+                mrow e_m \colon A[m]\times A^\vee [m] \amp\to \mu_m
+                mrow (a,a') \amp\mapsto \frac{g\circ t_a(x)}{g(x)} = \frac{g(x+a)}{g(x)}
+            | Fix #[m a\in A\lb m\rb,\,a'\in A^\vee\lb m\rb] say #[m a'] corresponds to #[m \sheaf L] and a divisor #[m D] then #[m \sheaf L^m ] and #[m m_A^* \sheaf L] are trivial so #[m \exists f,g \in k(A)] s.t.
+            me \divisor (f) = m D
+            me \divisor (g) = m_A^* D
+            | again we have
+            me \divisor( f\circ m_A) = \divisor (g^m)
+            me g(x+a)^m = g(x)^m
+
+        proposition
+            statement: p
+                | The Weil #[m e_m]-pairing has the following properties
+                ol
+                    li
+                        | #[m e_m] is bilinear
+                        me e_m(a_1+a_2,a') = e_m(a_1,a')e_m(a_2, a')
+                        me e_m(a,a'_1+a'_2) = e_m(a,a'_1)e_m(a,a'_2)
+                    li
+                        | #[m e_m] is non-degenerate: if #[m e_m(a,a') = 1 \forall a\in A\lb m\rb] then #[m a' = 0] (and likewise for the reverse).
+                    li
+                        | #[m e_m] is Galois-invariant... but we assume #[m \overline k =k] so we ignore this.
+                    li
+                        | #[m e_m] is compatible
+                        me e_{mm'} (a,a')^{m'} = e_m(m'a, m'a') \ \forall a \in A[mm'], a'\in A^\vee [mm']
+                        | #[m (mm',\characteristic k) = 1]
+
+        corollary
+            statement: p
+                | There exists a bilinear non-degenerate (Galois invariant) pairing
+                me e_l = e \colon T_lA \times T_lA^\vee \to T_l\mu
+                me ((a_n), (a'_n)) \mapsto (e_{l^n}(a_,a'_n))
+
+        p
+            | For a homomorphism #[m \lambda \colon A \to A^\vee] we define
+            me e_m^\lambda \colon A[m]\times A [m] \to \mu_m
+            me (a,a') \mapsto e_m(a, \lambda(a'))
+            me e_m \colon T_lA\times T_l A \to T_l \mu
+            me (a,a') \mapsto e_m(a, \lambda(a'))
+            | .
+
+        paragraphs
+            title Notation
+            p If #[m \lambda = \lambda_{\sheaf L} e^{\sheaf L} = e^{\lambda_{\sheaf L}}].
+
+        proposition
+            statement: p
+                | For a homomorphism #[m \alpha \colon A \to B]
+                ol
+                    li
+                        me  e(a,\alpha^\vee(b)) = e(\alpha (a), b) \forall a \in T_lA,\,b\in T_l B
+                    li
+                        me e^{\alpha^\vee \lambda \alpha}(a,a') = e ^\lambda (\alpha(a), \alpha(a'))
+                        | for #[m a,a' \in T_l(A)], #[m \lambda \in \Hom(B,B^\vee)].
+                    li
+                        me e^{\alpha^* \sheaf L} (a,a') = e^{\sheaf L}(\alpha (a),\alpha(a'))
+                        | #[m a,a'\in T_lA] #[m \sheaf L\in \Pic(B)].
+                    li
+                        me \Pic A  \to \Hom( \bigwedge^2 T_lA , T_l\mu)
+                        me \sheaf L \mapsto e^{\sheaf L}
+                        | is a homomorphism (in particular #[m e^{\sheaf L}] is  skew-symmetric).
+            proof: p
+                ol
+                    li
+                        | #[m a = (a_n) \in T_lA] #[m b\in (b_n) \in T_l B^\vee] fix a divisor #[m D ] on #[m B] representing #[m b_n] and #[m g\in k(B)] s.t. #[m \divisor (h) = (l^n_B)^* D].
+                        | Then #[m \alpha^* D] represents #[m \alpha^\vee(b_n)] so:
+                        me \divisor(g\circ \alpha) = \alpha^*\divisor (g) = \alpha^*(l^n_B)^* D = (l_A^n)^* \alpha^* D
+                        | . So
+                        //me  TODO
+                    li
+                        me e^{\alpha^{\vee}\lambda \alpha} (a,a') = e(a, \alpha^\vee\lambda \alpha(a')) = e(\alpha(a),\lambda (\alpha(a'))) = e^\lambda (\alpha(a), \alpha(a'))
+                        | .
+                    li
+                        me \lambda_{\alpha^* \sheaf L} = \alpha^\vee \lambda_{\sheaf L} \alpha
+                    li
+                        | Follows from #[m \lambda_{\sheaf L\otimes \sheaf L'} = \lambda_{\sheaf L} + \lambda_{\sheaf L'}].
+
+
+
+        example
+            title Computation over #[m \CC]
+            statement: p
+                | #[m A/\CC] be an abelian variety
+                me 0\to \ZZ \to \sheaf O_A \xrightarrow{e^{2\pi i (\cdot)}} \sheaf O^\times \to 0
+                | induces
+                me H^1(A(\CC), \ZZ) \to H^1(A(\CC), \sheaf O) \to H^1(A(\CC), \sheaf O^\times) \simeq \Pic A \to H^2(A(\CC), \ZZ)
+                | and
+                me H^1(A(\CC), \sheaf O)/ H^1(A(\CC), \ZZ) \simeq A^\vee(\CC) = \Pic^0(A)
+                | so we get an exact sequence
+                me 0 \to \NS(A) \to H^2 (A(\CC),\ZZ) \to H^2(A(\CC),\sheaf O_A)
+                me \lambda \mapsto E_\lambda
+                | then we can regard #[m E_\lambda] as a skew-symmetric 2-form on #[m H_1(A(\CC), \ZZ)].
+                | Mumford pg. 237 proves
+                me.
+                    \xymatrix{
+                    H_1(A(\CC), \ZZ) \times H_1(A(\CC), \ZZ) \ar[r] \ar[d] &amp; \ZZ\ni m \ar[d] \\
+                    T_l \times T_l \ar[r] &amp; T_l \mu \ni \zeta^m
+                    }
+                | commutes with - sign
+                | so #[m e^\lambda (a,a') = \zeta^{-E(a,a')}]
+
+    subsection
+        title Results about polarizations
+
+        p
+            | #[m  k = \overline k] #[m p = \characteristic (k) \ge 0].
+
+        theorem
+            title 13.4
+            statement: p
+                | Let #[m \alpha\colon A\to B] be an isogeny of degree prime to #[m \characteristic k] and #[m \lambda \in \NS(A)] then #[m \lambda = \alpha^* \lambda '] for #[m \lambda ' \in \NS(B) \iff \forall l |\deg(\alpha)] #[m l] prime there exists a skew-symmetric form #[m f\colon T_lB\times T_lB \to T_l\mu] s.t. #[m e^\lambda(a,a') = f(\alpha(a), \alpha(a'))] for all #[m a,a' \in T_l(A)].
+            proof: p Milne 1986 16.4
+
+        corollary
+            title 13.5
+            statement: p
+                | #[m l \ne \characteristic (k)] #[m \lambda \in \NS(A) ] is divisible by #[m l^n \iff e^\lambda] is divisible by #[m l^n] in #[m \Hom (\bigwedge^2 T_lA, T_l \mu)].
+            proof: p
+                | Apply theorem 13.4 with #[m \alpha = l^n].
+
+        lemma
+            title 13.7
+            statement: p
+                | Let #[m \sheaf P] be the Poincaré sheaf on #[m A\times A^\vee] then 
+                me e^{\sheaf P} ((a,b),(a',b')) = \frac{e(a,b')}{e(a',b)}
+                | for all #[m a,a' \in T_l A], #[m b,b' \in T_l A^\vee].
+            proof: p
+                | Milne 1986 16.7. Use:
+                me (1+ \lambda_{\sheaf L})^* \sheaf P \cong m^* \sheaf L \otimes p^* \sheaf L^{-1} \otimes q^* \sheaf L^{-1}
+
+        proposition#prop-milne-av-13-6
+            title 13.6
+            statement: p
+                | Assume #[m \characteristic k \ne l,2] then a homomorphism #[m \lambda\colon A\to A^\vee] is #[m \lambda = \lambda_{\sheaf L}] for some #[m \sheaf L \in \Pic A] iff #[m e^\lambda] is skew-symmetric.
+            proof
+                proofcase
+                    p Clear.
+                    // TODO directions
+                proofcase
+                    p
+                        | #[m e^\lambda] is skew-symmetric, define #[m \sheaf L = (1 \times \lambda)^* \sheaf P] then  #[m \forall a,a' \in T_l A]
+                        me e(a,\lambda_{\sheaf L} (a') ) = e^{\sheaf L}(a,a') = e^{(1\times \lambda)^* \sheaf P} (a,a') = e^{\sheaf P}((a,\lambda (a)), (a',\lambda(a'))) = \frac{e(a,\lambda (a'))}{ e(a',\lambda(a))}
+                        me = \frac{e^\lambda(a,a')}{ e^\lambda(a',a)} = (e^\lambda(a,a'))^2 = e(a,2\lambda (a'))
+                        | so #[m 2\lambda = \lambda_{\sheaf L}].
+                        | So by corollary 13.5 #[m \lambda_{\sheaf L} = 2\lambda_{\sheaf L'}] for some #[m \sheaf L' \in \Pic A] so #[m \lambda = \lambda_{\sheaf L'}].
+
+        definition
+            statement: p
+                | For a  polarization #[m \lambda \colon A\to A^\vee] define
+                me e^{\lambda} \colon \ker(\lambda)\times \ker(\lambda) \to \mu_m
+                me (a,a')\mapsto e_m(a,\lambda(b))
+                | where #[m m ] kills #[m \ker(\lambda)] and #[m b \in A] s.t.#[m mb = a'].
+
+        p
+            | Check: this is well defined.
+
+        note: p #[m e^\lambda] is skew-symmetric.
+
+        proposition
+            title 13.8
+            statement: p
+                | #[m \alpha\colon A \to B] is an isogeny of degree prime to #[m p], #[m \lambda\colon A\to A^\vee] polarization then #[m \lambda = \alpha^* \lambda', \,\lambda' \colon B\to B^\vee] polarization iff
+                me \ker(\alpha) \subset \ker \lambda
+                me e^{\lambda} \text{ is trivial on } \ker (\alpha)\times \ker(\alpha)
+
+        note: p
+            | If #[m \lambda = \alpha^* \lambda'] then
+            me \deg(\lambda) = \deg (\lambda') \deg(\alpha)^2
+            | .
+
+        corollary
+            title 13.10
+            statement: p
+                | #[m A] an abelian variety, #[m \lambda \colon A \to A^\vee] is a polarization with #[m (\deg (\lambda), p) = 1] then #[m A] is  isogenous to a principally polarized abelian variety.
+            proof: p
+                | Fix #[m l |\deg(\lambda)] prime.
+                | Choose a subgroup #[m N\subseteq \ker \lambda] of order #[m l] let #[m \alpha \colon A\to A/N = B] #[m N] is cyclic and #[m e^\lambda] is skew-symmetric so #[m e^{\lambda}] is trivial on #[m N\times N] so #[m B] has a polarization of degree #[m \deg(\lambda) / l^2] by 13.8.
+
+        corollary
+            title 13.11
+            statement: p
+                | Let #[m \lambda] be a polarization of #[m A] s.t. #[m \ker (\lambda) \subseteq A\lb m \rb] for some #[m (m,p)=1].
+                | If #[m \exists \alpha \colon A \to A] s.t. #[m \alpha(\ker (\lambda)) \subseteq \ker(\lambda)] and #[m \alpha^\vee \lambda \alpha = - \lambda] on #[m A\lb m^2\rb] then #[m A\times A^\vee] is principally polarized.
+
+
+        theorem
+            title 13.12 (Zarhin's trick)
+            statement: p
+                | For any abelian variety #[m A] #[m (A\times A^\vee)^4] is principally polarized.
+            proof: p
+                | Fix #[m \lambda \colon A\to A^\vee] polarization, assume #[m \ker (\lambda) \subseteq A\lb m \rb] #[m (m, p) = 1] there exists #[m a,b,c,d \in \ZZ] s.t. #[m a^2 + b^2 + c^2 + d^2 = m^2  - 1 = -1 \pmod {m^2}] then
+                me \begin{pmatrix} a\amp -b \amp-c\amp -d \\ b\amp a \amp d \amp -c \\ c\amp -d \amp a \amp b \\ d \amp c \amp -b \amp a\end{pmatrix}
+                | works.
+
+
+        corollary
+            title 13.13
+            statement: p
+                | Let #[m k] be a finite field, then for each #[m g \in \ZZ] there exist only finitely many isomorphism classes of abelian varieties of dimension #[m g] over #[m k].
+            proof: p
+                | #[m A/k] an abelian variety of dimension #[m g], so #[m (A\times A^\vee)^4] is an abelian variety of dimension #[m 8g] with a principal polarization so using theorem 11.2 there are finitely many (up to #[m \simeq]) of those.
+                | Also #[m (A\times A^\vee)^4] has finitely many direct factors (theorem 15.3).
+
+section#sec-rosati
+    title The Rosati involution (Alex)
+
+    p
+        | Let #[m A/k] be an abelian variety and #[m f \in \End(A)].
+        | Via pullback we get #[m \hat f \in \End(\hat A)], in the case where #[m A] is polarized i.e. we have an isogeny #[m \phi \colon A\to \hat A] we might wonder what the relation is between #[m \hat f] and #[m f].
+        | E.g. #[m \hat \id = \id] but here we have #[m \hat \phi \id \phi = \lb \deg \phi\rb], this is a little ugly, depends on the degree of our polarization.
+        | If we work with #[m \Hom^0(A,B) = \Hom(A,B) \otimes \QQ] rather than #[m \Hom(A,B)] we have a bona fide inverse #[m \phi\inv] of an isogeny #[m \phi].
+        | So now we can ask precisely, what is the relationship of the endomorphism #[m f^\dagger = \phi^{-1}\circ \hat f \circ \phi\in \End^0(A)] with #[m f]?
+
+    p
+        | What sort of properties does this map #[m f \mapsto f^\dagger] have?
+
+    definition
+        title The Rosati involution
+        statement: p
+            | The map #[m \phi^{-1} \hat{-} \phi =  {-}^\dagger \colon \End^0(A) \to \End^0(A)] is called the #[term Rosati involution].
+
+
+    proposition
+        statement: p
+            | #[m -^\dagger] is #[m \QQ]-linear
+
+    proposition
+        statement: p
+            | #[m -^\dagger] is an anti-homomorphism i.e.
+            me (fg)^\dagger = g^\dagger f^\dagger
+
+    proposition
+        statement: p
+            | Recall the #[m l]-adic Weil pairing for #[m l \ne \characteristic(k)], fix #[m a,a'\in V_lA = T_lA\otimes \QQ], then
+            me e_l^\phi(f a ,a') = e_l^\phi(a, f^\dagger a')
+            | .
+        proof: p
+            me e_l^\phi(f a ,a')  = e_l(fa, \phi a')= e_l(a, \hat f \phi a') = e_l(a, \phi\phi\inv \hat f \phi a') =  e_l^\phi(a, f^\dagger a')
+
+    proposition
+        statement: p
+            | #[m -^\dagger] is an involution, i.e.
+            me {\alpha^\dagger}^{\dagger} = \alpha
+            | .
+        proof: p
+            | We apply the previous proposition and skew-symmetry of a polarization (over some extension)
+            me e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alpha^\dagger}^{\dagger} a, a')
+            | for all #[m a,a'\in V_l A].
+    //me {f^\dagger}^{\dagger} = {\phi^{-1} \hat f\phi}^{\dagger}  = \phi\inv\widehat{\phi\inv  \hat f\phi} \phi = \phi\inv\hat\phi \hat{\hat f} \hat{\phi\inv}\phi = \deg\phi
+
+
+    p
+        | So we have a weird algebra with a weird operation, what can we do? Perhaps inspired by the killing form of a lie algebra:
+
+    p
+        | We can form a bilinear form using the trace
+        me \End^0(A) \times \End^0(A) \to \QQ
+        me (f,g) \mapsto \tr(fg^\dagger)
+        | .
+
+    proposition
+        statement: p
+            | This is positive definite.
+            | In fact
+            me \tr(ff^\dagger) = 2g\frac{(D^{g-1}\cdot f^*(D))}{(D^g)}
+            | for #[m \phi = \phi_{\sheaf L(D)}].
+
+    p
+        | So given a simple abelian variety we have a division algebra  #[m / \QQ] equipped with  a positive definite involution.
+
+    definition#def-albert-alg
+        title Albert algebras?
+        statement: p
+            | A division algebra #[m D] finite over #[m \QQ] with an involution #[m '] such that #[m \tr_{D/\QQ}(xx') > 0\ \forall x\in D^\times] is called an #[term Albert algebra].
+
+
+    p
+        | Such algebras were studied by Albert who proved an important classification theorem.
+
+    theorem
+        title Albert (1934/5)
+        statement: p
+            | Let #[m (D, ')] be an Albert algebra, let #[m K] be the center of #[m D] and #[m K_0] the subfield fixed by #[m ']. Then we have the following classification
+            ol
+                li
+                    | Type I: #[m D = K = K_0] a totally real number field and #[m '] is the identity.
+                li
+                    | Type II: #[m D] is a quaternion algebra over #[m K = K_0] a totally real field, that is split at all infinite places and #[m '] is defined by letting starting with the standard quaternion algebra conjugation for which #[m x + x^* = \tr(x)] and then letting #[m x' = ax^* a^{-1}] for some #[m a \in D] for which #[m a^2 \in K] and is totally negative.
+                li
+                    | Type III: #[m D] is a quaternion algebra over #[m K = K_0] a totally real field, that is ramified at all infinite places and #[m '] is the standard quaternion algebra conjugation as above.
+                li
+                    | Type IV: #[m D] is a division algebra over a CM field #[m K] and #[m K_0] is the maximal totally real subfield. Additionally if #[m v] is a finite place with #[m v = \bar v] we have #[m \operatorname{Inv}_v(D) = 0] and #[m \operatorname{Inv}_v(D) + \operatorname{Inv}_{\bar v}(D) = 0] for all places #[m v].
+
+    p
+        | There is a fascinating table in Mumford, page 200 or something.
+
+    p
+        | As one might hope, changing the polarization does not change the type of the algebra + involution pair.
+
+    p
+        | One might wonder which endomorphisms are invariant under this process?
+        | I.e. what is
+        me \{f \in \End^0(A) : f^\dagger = f\}
+        | . Equivalently, for which #[m f] is the dual given by conjugating by our polarization.
+    p
+        | We can map
+        me \QQ \otimes_\ZZ \NS(X) = \QQ \otimes_\ZZ \Pic X/\Pic^0 X \to \Hom(A, \hat A)
+        me \sheaf M \mapsto \phi_{\sheaf M}
+        | , however we also have an isomorphism
+        me \Hom^0(A, \hat A) \xrightarrow{\sim} \End^0(A)
+        me \phi \mapsto \lambda\inv \phi
+        | for some fixed polarization #[m \lambda], hence we can view #[m \NS(A)\otimes \QQ] inside #[m \End^0(A)].
+
+    proposition
+        statement: p
+            | Assume #[m k] algebraically closed.
+            | The image of
+            me \QQ \otimes_\ZZ \NS(X) \to \End^0(A)
+            | is the fixed subspace
+            me \{f \in \End^0(A) : f^\dagger = f\}
+            | .
+        proof: p
+            | Fix #[m \alpha \in \End^0(A)] and #[m l\ne \characteristic(k)] odd.
+            | Applying #[xref(ref="prop-milne-av-13-6")/] we see that #[m \lambda \alpha = \phi_{\sheaf L}] for some #[m \sheaf L] iff #[m e^{\lambda\alpha}_l] is skew-symmetric, but we also have
+            me e_l^{\lambda\alpha}(a,a')=  e_l^{\lambda}(a,\alpha a') = -e_l^\lambda(\alpha a',a) = -e_l(a', \hat\alpha \lambda a)
+            | for all #[m a,a' \in V_lA] this is the same as requiring #[m \lambda\alpha = \hat \alpha \lambda] i.e. #[m \alpha = \alpha^\dagger].
+            |.
+
+    p
+        | Another cool result we can now prove (in fact this was the reason Weil introduced the notion of a polarization).
+
+    theorem
+        statement: p
+            | The automorphism group of a polarized abelian variety is finite.
+        proof: p
+            | Let #[m \alpha] be an automorphism of #[m (A, \lambda)] i.e. #[m \lambda =\hat \alpha  \lambda \alpha], then #[m \alpha^\dagger \alpha= 1] and so
+            me \alpha \in \End(A)\cap \{\beta \in \End(A) \otimes \RR: \trace(\alpha^\dagger \alpha) = 2g\}
+            | but #[m \End(A)] is discrete inside the compact RHS.
+
+    //p
+        | We have seen that the center of #[m \End^0] is either a totally real field or an imaginary quadratic extension of such.
+        | We call the latter case CM fields.
+        | These have the property that after fixing #[m \overline \QQ\subseteq \CC] and thus determining #[m \sigma \in \absgal{\QQ}] (up to conjugacy) we have #[m \sigma \psi = \psi \sigma] for every embedding #[m \psi\colon K\hookrightarrow \overline \QQ].
+
+    //definition
+        statement: p
+            | Given a CM field #[m K] a CM type 
+
+    //p
+        | Elliptic curves (again)
+
+    //p
+        | Goal of CM theory, first/second main theorem
+
+    //p
+        | For elliptic curves we can have CM by an imaginary quadratic field #[m K]. In this case it was found that abelian extensions of #[m K] could be obtained by adjoining #[m j(E)] (and more?).
+        | How might this generalise?
+        | One extension we can make is to arbitrary CM fields where we must study abelian varieties in place of elliptic curves.
+
+section#sec-avs-over-ffs
+    title Abelian Varieties over finite fields (Ricky)
+
+    p
+        | Set #[m q = p^m], #[m p] prime.
+        | Given #[m X/\FF_q] have  geometric Frobenius #[m \pi_X\colon X \to X] which acts as #[m \id] on #[m |X|] and sends #[m f\to f^q] for #[m f\in \sheaf O_X(U)].
+
+    example: statement: p
+        | #[m X \hookrightarrow \PP^n] then #[m \pi_X(a_0:\cdots :a_n) = (a_0^q : \cdots :a_n^q)].
+
+    p
+        | We also have absolute Frobenius
+        me F\colon X\to X^{(p)}
+        | .
+
+    example: statement: p
+        me X \colon y^2 = x^3 + i / \FF_q
+        me X^{(p)} \colon y^2 = x^3 + i^3 = x^3 - i / \FF_q
+
+    p
+        | We see that #[m X^{(p^m)} = X] and #[m F^m = \pi_X].
+        me.
+            \xymatrix{
+            X \ar[drr] \ar[dr]\ar[ddr] &amp; &amp;\\
+            &amp; X^{(p)} \ar[d]\ar[r] &amp; X\ar[d]\\
+            &amp; \FF_q \ar[r]_p &amp;\FF_q
+            }
+
+    p
+        | If #[m f\colon X \to Y] of #[m \FF_q]-schemes then #[m \pi_Y \circ f = f\circ \pi_X].
+        | Now let #[m X] be an abelian variety over #[m \FF_q].
+        | From above, we have #[m \pi_X] commutes with all elements of #[m \End^0(X) = \End^0(X)\otimes \QQ].
+        | Let #[m f_X] be the characteristic polynomial of #[m T_l(\pi_X) \colon V_l(X) \to V_l(X)] for #[m l \ne p].
+
+    p
+        | An alternative definition is to take #[m f_X\in \ZZ\lb X\rb] monic of degree #[m 2g ], #[m g = \dim X] s.t.
+        me f_X(n) = \deg([n] -\pi_X)
+        | , see 12.8.
+
+    proposition
+        title 16.3
+        statement: p
+            | Assume #[m     X] is elementary, (i.e. its isogenous to #[m A^n] for some #[m A] simple).
+            | Then  #[m  \QQ\lb \pi_X\rb\subseteq \End^0(X)] is a field and #[m f_X] is a power of the minimal polynomial of #[m \pi_X] over #[m \QQ].
+        proof
+            p
+                | Since #[m X] is elementary #[m Z(\End^0(X))] is  a field containing #[m \QQ\lb \pi_X\rb].
+                | Let #[m g] be the minimal polynomial of #[m \pi_X] over #[m \QQ].
+                | Let #[m \alpha] be a root of #[m f].
+                | Then #[m g(\alpha)] is an eigenvalue of #[m g(V_l(\pi_X)) = V_l(g(\pi_X)) = V_l(0) = 0].
+                | Hence #[m g(\alpha) = 0].
+
+    theorem#thm-milne-16-4
+        title 16.4
+        statement: p
+            | Let #[m g= \dim (X)].
+            ol
+                li
+                    | Every root of #[m f_X] #[m \alpha \in \CC] satisfies #[m |\alpha| = q^{1/2}].
+                li
+                    | If #[m \alpha] is  a root of #[m f_X], then #[m \bar \alpha] with the same multiplicity. In particular if #[m \alpha = \pm \sqrt q] then it occurs with even multiplicity.
+
+    p
+        | We need some facts before proving this: Ref 5.20, 5.21
+        ul
+            li
+                | There exists
+                me V\colon X^{(p)} \to X
+                | such that
+                me V\circ F = [p]_X
+                | and
+                me F \circ V = [p]_{X^{(p)}}
+                | . Using #[m \deg F = p^g ]  get #[m \deg V = p^g]
+            li
+                | By induction #[m \lb p^m\rb = V^m \circ F^m].
+
+    p
+        | We also need some facts about #[m F] and #[m V] relative to #[m X^\vee].
+        me F_X^\vee = V_{X^\vee} \colon (X^\vee)^{(p)} \to X^\vee
+        | identifying #[m (X^\vee)^{(p)} = (X^{(p)})^\vee], Ref 7.33, 7.34.
+
+    proof
+        p
+            | Reduce to the case where #[m X] is simple, we have
+            me h\colon X\to X_1 \times X_2 \times \cdots \times X_s
+            | an isogeny with #[m X_i] simple, then #[m h] induces an isomorphism
+            me h\colon V_l(X)\xrightarrow{\sim} \bigoplus_i V_l(X_i)
+            | so #[m f_X = f_{X_1} \cdots f_{X_s}]. Hence we can assume #[m X] is simple.
+        p
+            | Let #[m \lambda \colon X \to X^\vee] be a polarization of #[m X] and #[m \dagger] be the corresponding Rosati involution on #[m \End^0(X)] we will show that #[m \pi_X\pi_X^\dagger = q].
+            me \pi_X \pi_X^\dagger = \pi_X \lambda^{-1} \pi_X^\vee \lambda = \lambda^{-1} \pi_{X^\vee} \pi_X^\vee \lambda = \lambda^{-1} \lb q \rb \lambda = \lb q \rb
+            | To see #[m \pi_{X^\vee} = \pi_X^\vee = q] we use #[m \pi_X = F^m] and #[m \pi_X^\vee = V^m ]. So #[m \pi_{X^\vee} \pi_X^\vee = F^MV^M = p^m = q].
+            | As #[m X] is simple #[m \QQ\lb \pi_X\rb] is a field.
+            | Thus #[m f_X] is a power of #[m g], the minimal polynomial of #[m \pi_X/\QQ].
+            | So the complex roots of #[m f_X] are #[m \iota(\pi_X)]  for every embedding #[m \QQ\lb \pi_X\rb\hookrightarrow \CC].
+            | since #[m \pi_X^\dagger = q/ \pi_X], we see that
+            me \QQ[\pi_X] \subseteq \End^0(X)
+            | is stable under #[m \dagger].
+            | We have two cases for such a #[m K = \QQ\lb \pi_X \rb ]
+            ol
+                li
+                    | #[m K] is  totally real and #[m \dagger = \id].
+                li
+                    | #[m K] is a CM field and #[m \dagger = \overline{\cdot}].
+            | hence we get
+            me \iota(\pi_X\pi_X^\dagger) = \iota(\pi_X) \overline{\iota(\pi_X)} = q
+            | for any #[m \iota\colon K \to \CC].
+        p
+            | If #[m \pm \sqrt q] is  a root  of  #[m f_X] then we are in the case of #[m K] totally real. If #[m \sqrt q] has multiplicity #[m n]. Then #[m -\sqrt q] has multiplicity #[m 2g-n]. Thus #[m f_X(0) = (-1)^n   q^g].
+            | But also #[m f_X(0 ) = \deg(0 - \pi_X) = q^g]. Hence #[m n ] is even.
+
+    paragraphs
+        title Honda-Tate
+        p
+            | The correspondence between isogeny classes of #[m X/\FF_q] and conjugacy classes of #[m q]-Weil numbers is a bijection.
+            | (i.e. algebraic integers #[m \alpha] s.t. #[m |\iota \alpha| = \sqrt q] for all #[m \iota \colon \QQ(\alpha) \hookrightarrow \CC]).
+
+    p
+        | Using relations between a curve #[m C/\FF_q] and its Jacobian #[m J(C) ], one can show:
+
+    theorem
+        title Hasse-Weil-Serre bound
+        statement: p
+            me q + 1 - g\lfloor 2\sqrt q\rfloor \le \#C(\FF_{q}) \le q + 1 + g\lfloor 2\sqrt q\rfloor
+            | where #[m g=  g(C)].
+        proof: p
+            | Hint: Use Lefschetz trace and #[m H^1(C, \QQ_l) \simeq H^1(J(C) , \QQ_l)].
+
+    p
+        | Application: Let #[m J = J_0(103) = J(X_0(103))]. #[m J\sim J_+ \times J_-].
+        me J_{\pm} = \im(w \pm \id)
+        | #[m w] Atkin-Lehner. #[m \dim J = 8] and #[m \dim(J_-) = 6].
+        | In fact #[m \exists f\in  S_2( \Gamma_0(103))] an eigenform s.t. if
+        me f=\sum_{n\ge 1} a_n q^n
+        | then #[m \lb \QQ(a_n)_{n \ge 1}: \QQ\rb =6] and #[m \tr( F_{J_-,p};  T_l(J_-)) = \tr_{K/\QQ}(a_p)]  for #[m l \ne p, p\ne 103]
+        | We can compute #[m \tr_{K/\QQ} ( a_2) = 4].
+        | This implies that #[m J_- \times \FF_2] is not the Jacobian of a curve #[m /\FF_2], if it were, then  if #[m J_- \times \FF_2 = J(C)] then via Lefschetz trace formula
+        me \#C(\FF_2) = 2+1 - 4 = -1
+        | similar thing at 17.
+
+section#sec-tate-thm
+    title Tate's Isogeny Theorem (Sachi)
+
+    subsection
+        title The Theorem
+
+        theorem#thm-tate-isog
+            title Tate
+            statement: p
+                | Let #[m A,B/\FF_q = k], #[m q = p^n], #[m l\ne p] be abelian varieties and #[m G = \Gal{k^s}{k}], then
+                me \Hom_{k}(A,B)\otimes \ZZ_l \to \Hom_G(T_l A, T_lB) = \Hom_{\ZZ_l}(T_lA,T_lB)^G
+                | (where the #[m G] action on #[m \Hom_{\ZZ_l}(T_l A, T_lB)] is #[m (gf)(x) = gf(g^{-1}x)]) is an isomorphism.
+
+        remark
+            p
+                | Tate's theorem is also true for function fields over finite fields (Zarhin) and fields that are finitely generated over their prime field (Faltings), e.g. number fields.
+                | Not true over algebraically closed fields though.
+
+    subsection
+        title Motivation
+        p
+            | Let #[m \pi_A] and #[m \pi_B] be the (relative) Frobenii on #[m V_l(A), V_l(B)]
+            me \Hom_{k}(A,B)\otimes \QQ_l \to \Hom_G(V_l A, V_lB)
+            | #[m P_A,P_B] characteristic polynomials of #[m \pi_A,\pi_B].
+        p
+            | Toy Weil conjectures: #[m P_A, P_B] have #[m \ZZ]-coefficients, don't depend on the choice of #[m l]. Provided that induced action of Frobenii are semisimple, we can find a number #[m r(P_A,P_B)] then Tate implies
+            me r(P_A,P_B) = \dim_{\QQ_l} \Hom_G (V_l(A), V_l(B)) = \rank \Hom_k(A,B)
+
+        corollary
+            statement: p
+                | Let #[m A, B] be abelian varieties over #[m \FF_q] and #[m P_A, P_B] as above
+                ol
+                    li
+                        me \rank \Hom_k(A,B) = r(P_A,P_B)
+                    li: p TFAE
+                        ol
+                            li #[m B] is #[m k]-isogenous to an abelian subvariety of #[m A]
+                            li #[m V_lB] is #[m G]-isomorphic to a #[m G]-subrepresentation of #[m V_lA] for #[m l \ne \characteristic k]
+                            li: me P_B | P_A
+                | we also have similar statements for equivalence, but get a nice statement about counting points over all extensions determining an abelian variety.
+            proof: p
+                me \alpha \colon V_l(B)\hookrightarrow V_l(A)
+                | the surjectivity in Tate's theorem means we can choose #[m u \in \Hom_k(B,A) \otimes \QQ_l].
+                | #[m V_l(u) = \alpha]. Choose #[m u \in \Hom_k(B,A) \otimes \QQ] arbitrarily close to #[m \alpha].
+                | Lower semicontinuity implies if #[m V_l(u)] is close enough to #[m \alpha], can ensure #[m V_l(u)] is injective (#[m \ker (V_l (u)) = 0]) take multiple to get #[m u \in \Hom_k(B,A)].
+                | Since #[m T_l (u)] is injective #[m u ] is an isogeny to an abelian subvariety.
+
+    subsection
+        title Isogeny category
+
+        p
+            | Recall: The isogeny category, #[xref(ref="thm-poincare-reducibility")/], #[xref(ref="cor-ab-var-product-simple")/].
+            | So we have  a category #[m \cat{Isog}] of abelian varieties with
+            me \Hom_{\cat{Isog}}(A,B) = \Hom_\cat{AV}(A,B)\otimes \QQ
+            | . Now if #[m f \colon A \to B] there exists #[m g\colon B \to A] an isogeny and #[m n\in \ZZ_{\ge 1}] s.t. #[m gf = \lb n \rb].
+            | So #[m \frac 1n g] is an inverse for #[m f \in \cat{Isog}] so isogenies are isomorphisms in #[m \cat{Isog}].
+        p
+            | #[m \cat{Isog}] is a semisimple abelian category. The simples are simple abelian varieties.
+            ol
+                li Decomposition up to isogeny into a product of simple abelian varieties is unique.
+                li If #[m A] is simple #[m \End A \otimes \QQ] is a division algebra over #[m \QQ]. Reason: If #[m A] is simple in an abelian category, if #[m \End A \supseteq k] a field implies it's a division algebra.
+
+    subsection
+        title Reductions
+
+        lemma
+            statement: p
+                ol
+                    li
+                        me \ZZ_l \otimes \Hom_\cat{AV} (A,B) \to \Hom_H(T_l, T_lB)
+                        | is an isomorphism if and only if
+                        me \QQ_l \otimes \Hom_\cat{AV} (A,B) \to \Hom_G(V_l A, V_l B)
+                        | is an iso
+                    li
+                        | If for every #[m C],
+                        me \QQ_l \otimes \End_\cat{AV} (C) \to \End_G(V_l C)
+                        | is an isomorphism then the above is an isomorphism for every pair #[m A,B].
+            proof: p
+                ol
+                    li
+                        | The first map is always injective, the cokernel is torsion free, hence free. It's an isomorphism if and only if #[m \QQ_l \otimes \coker = 0]
+                        | As #[m \QQ_l] is flat over #[m \ZZ_l] the second map injective and its cokernel is #[m \QQ_l \otimes] the cokernel of the first map.
+                    li
+                        me C = A\times B
+                        | then
+                        me \End^0(C) = \End^0(A)\oplus \Hom^0(A,B) \oplus \Hom^0(B,A) \oplus \End^0(B)
+                        | and
+                        me \End_G(V_lC) = \End_G(V_lA)\oplus \Hom_G(V_lA,V_lB) \oplus \Hom_G(V_lB,V_lA) \oplus \End_G(V_lB)
+                        | which the injection above preserves, in  particular if the last map is an isomorphism, so are the rest.
+
+        p
+            | One more reduction!
+            me E_l = \End_k(A) \otimes \QQ_l\subseteq \End_{\QQ_l} (V_lA)
+            me F_l = \QQ_l[G] \subseteq \End_{\QQ_l} (V_lA)
+            | automorphisms of #[m V_l(A) ] coming from #[m G].
+
+        note: p
+            | #[m E_l] coming from #[m  k]-rational endomorphisms commute with the Galois action
+            me F_l\subseteq C_{\End_{\QQ_l}(V_l(A))}(E_l)
+            | want equality.
+
+        lemma
+            statement: p
+                ol
+                    li
+                        | The last map of the reduction lemma is an isomorphism if and only if
+                        me C(C(E_l)) = \End_G(V_l(A))
+                    li
+                        | If #[m F_l] is semisimple the map is an isomorphism if and only if
+                        me C(E_l) = F_l
+            proof: p
+                ol
+                    li
+                        | Double centralizer theorem, if #[m E_l] is semisimple then #[m C(C(E_l))= E_l].
+                        | Poincaré reducibility implies
+                        me A\sim \prod A_i^{m_i}
+                        me \End^0(A) = \End^0(\prod A_i^{m_i}) = \prod \Mat_{m_i}(\End^0(A_i))
+                        | a finite dimensional division algebra #[m /\QQ].
+                        | A matrix algebra over a finite dimensional division algebra is semisimple.
+                    li
+                        | If #[m F_l] is semisimple
+                        me C(E_l) = F_l \iff E_l = C(C(E_l))
+                        | so
+                        me E_l = C(F_l) = \End_G(V_l(A))
+                        | .
+
+    subsection
+        title Proof of Tate using finiteness
+
+        p
+            | We introduce a hypothesis: #[m \operatorname{Hyp}(k,A,l)] there exist only finitely many (up to #[m k]-isomorphism) abelian varieties #[m B] s.t. there is a #[m k]-isogeny of #[m l]-power degree from #[m B\to A].
+
+        p
+            | #[m D =C(E_l)] want that #[m C(D) = \End_G(V_l(A))] know #[m C(D) \subseteq E_l \subseteq \End_G(V_l(A))] want #[m C(D) \supseteq \End_G(V_l(A))].
+            | Let #[m \alpha \in \End_G(V_l(A))] show that it commutes with everything in #[m D]. Equivalently let #[m W] be the graph of #[m \alpha]
+            me W = \{(x,\alpha x) \in V_l(A)\times V_l(A)\} \subseteq V_l(A)\times V_l(A)
+            | note #[m g\in G] then #[m g\acts (x,\alpha x) = (gx,g\alpha x ) = (gx, \alpha(gx))].
+            me \alpha\in C(D) \iff \forall x\in V_l(A), d\in D
+            me \alpha d x = d\alpha x \iff (d\oplus d)W \subseteq W \forall d\in D
+            me W\ni (dx, d\alpha x) = (dx, \alpha d x)
+
+        lemma
+            title Technical lemma
+            statement: p
+                | If #[m W\subseteq V_l(A)] is #[m G]-stable subspace then there exists #[m u\in E_l] s.t. #[m u V_l(A) = W].
+            proof
+                p
+                    | For #[m n \in \ZZ_{\ge 0}] let #[m U_n = (W\cap T_l(A)) + l^n T_A] which is a #[m G]-stable lattice in #[m V_l A],
+                    me l^nT_lA \subseteq U_n \subseteq T_l A
+                    | let #[m \mathcal K_n \subseteq A\lb l^n \rb (k^s) = T_l A/ l^n T_l A] be the image of #[m U_n].
+                    | #[m \mathcal K_n] is stable under #[m G]-action on #[m A\lb l^n \rb (k^s)] which implies #[m \mathcal K_n = K_n (k^s)].
+                    | Let #[m \pi_n \colon A \to B_n = A/ K_n], #[m \iota_n \colon B_n \to A] unique isogeny s.t.
+                    me \iota_n \circ \pi_n  =  \lb [l^n]_A
+                    | then #[m T_lB \cong U_n] as #[m \ZZ_l]-modules with #[m G]-action. As #[m T_l(\iota_n) \colon U_n =T_l B  \to T_l A] is the inclusion map.
+                    | Assuming #[m \operatorname{Hyp}(k,A,l)] we can find #[m n = n_1 \lt n_2 \lt \cdots] s.t. we have
+                    me \alpha_i \colon B_n \xrightarrow{\sim} B_{n_i}
+                    me.
+                        \xymatrix{
+                        B_n \ar[r]^{\alpha_i} &amp; B_{n_i} \ar[d]_{\iota_{n_i}}\\
+                        A\ar[u]_{\pi_n} \ar@{-->}_{u_i}[r] &amp; A
+                        }
+                    | #[m u_i = \iota_{n_i} \circ \alpha_i \circ \pi_n] is an endomorphism of #[m A] on Tate modules #[m T_l(u_i)] is induced map
+                    me T_l A \xrightarrow{[l^n]} U_n \xrightarrow{T_l\alpha_i} U_{n_i} \hookrightarrow T_l A
+                    | because #[m \ZZ_l \otimes \End A] is a free #[m \ZZ_l]-module of finite rank compact in #[m l]-adic topology subsequence of #[m u_i \to u] in #[m \ZZ_l \otimes \End A]
+                    me U_{n_1} \supseteq U_{n_2} \supseteq \cdots
+                    | the endomorphism of #[m T_l u] maps #[m T_l A] to #[m \bigcap_{i=1}^\infty U_{n_i} = W\cap T_l A] passing to #[m \QQ_l]-coefficients, note #[m \QQ_l(W\cap T_l A) = \QQ_l(l^n(W\cap T_l A)) = W] so #[m \image(V_l(u)) =W].
+
+        p
+            | Why does the hypothesis hold.
+
+        fact
+            statement: p
+                | There exists a moduli space of #[m d]-polarised abelian varieties of #[m \dim = g] #[m A_{g,d}] which is a stack of finite type #[m /k].
+        p
+            me A_{g,d}( k) = \{(A,\lambda) : A , \lambda \colon A \to A^\vee,\ \deg d \}
+            | Zahrin's trick: #[m A] abelian variety #[m (A\times A^\vee)^4] is principally polarized.
+            | Finiteness of direct factors #[m B\subseteq A] #[m A\simeq B\times C].
+
+        corollary
+            statement: p
+                | If #[m k = \FF_q] exists only finitely many isogeny classes of abelian varieties of #[m \dim g].
+            proof: p
+                | #[m A] is a direct factor #[m (A\times A^\vee)^4 \in A_{8g,1}].
+
+        proof
+            p
+                | of Tate.
+            p
+                | Apply technical lemma to #[m V_l(A\times A)] and #[m W] so
+                me (d\oplus d) W = (d \oplus d) uV_l(A\times A) = u(d\oplus d) V_l(A\times A) \subseteq uV_l(A\times A) = W
+                me \implies C(D) \supseteq \End_G(V_l(A))
+                | .
+
+section#sec-honda-tate
+    title The Honda Tate Theorem (Angus)
+
+    introduction
+        p
+            | #[m q = p^n], #[m A] a simple abelian variety over #[m \FF_q], #[m \pi_A] the frobenius on #[m A], #[m \End^0(A) = \QQ\otimes \End(A)], #[m f_A] is the charpoly of #[m A] (i.e. of #[m \pi_A]).
+
+        fact
+            statement: p
+                ul
+                    li #[m \End^0(A)] is a division ring.
+                    li #[m \QQ\lb \pi\rb] is a field.
+                    li #[m Z(\End^0(A)) = \QQ\lb \pi_A\rb]
+
+
+        lemma
+            title The Weil Conjectures
+            statement: p
+                | The roots of #[m f_A] all have absolute value #[m \sqrt q].
+                | Alternatively, under all embeddings
+                me \iota \colon \QQ\lb \pi_A\rb \hookrightarrow \CC,\,|\iota(\pi_A)| = \sqrt q
+                | .
+
+        definition
+            title #[m q]-Weil numbers
+            statement: p
+                | A #[m q]-#[term Weil number] is an algebraic integer #[m \pi] s.t.
+                me \forall \iota \colon \QQ\lb \pi\rb \hookrightarrow \CC,\,|\iota(\pi)| = \sqrt q
+                | we say that two #[m q]-Weil numbers are conjugate if they have the same minimal polynomial over #[m \QQ], and write #[m \pi \sim \pi'].
+
+        p
+            | From the facts so far we have a map
+            me \{\text{simple AVs}/\FF_q\}\to \{q\text{-Weil numbers}\}
+            me A \mapsto \pi_A
+
+        theorem
+            statement
+                p
+                    | We have a bijection
+                    me \{\text{isogeny classes of simple AVs}/\FF_q\}\xrightarrow{\sim} \{\text{conjugacy classes of }q\text{-Weil numbers}\}
+                    me A \mapsto \pi_A
+                    | .
+
+        p
+            | We need to show this is well-defined, injectivity and surjectivity.
+
+    subsection
+        title Honda-Tate map
+
+        p
+            | Recall:
+
+        corollary
+            statement: p
+                | Let #[m A,B] be abelian varieties over #[m \FF_q] with rational Tate modules #[m V_l A, V_lB] then
+                me A\sim_{\text{isog}} B \iff V_l A \simeq V_l B \forall l \ne p
+                | .
+        corollary
+            statement: p
+                me A\sim_{\text{isog}} B \iff f_A = f_B
+            proof
+                // TODO arrows
+                p
+                    | By above #[m V_l A \simeq V_lB] for all #[m l \ne p] but #[m f_A] (resp. #[m f_B]) is the charpoly of #[m \pi_a] (#[m \pi_B]) on #[m V_l A] (#[m V_l(B)]).
+                p
+                    | The Galois modules #[m V_lA] and #[m V_l B] are semisimple.
+                    | The Brauer-Nesbitt theorem says #[m f_A = f_B \implies V_lA \simeq V_lB ] for #[m l\ne p].
+
+        p
+            | Recalling that #[m f_A] is a power of the minimal polynomial of #[m \pi_A],
+            me A \sim_{\text{isog}} B\implies  f_A =f_B \implies \pi_A \sim \pi_B
+            | . So the Honda-Tate map is well defined.
+        p
+            | This doesn't quite give injectivity because a priori #[m f_A] and #[m f_B] could be powers of the minpolys of #[m \pi_A, \pi_B].
+
+    subsection
+        title Injectivity and Brauer groups
+
+        p
+            | From last time:
+        proposition
+            statement: p
+                | There exists a certain quantity #[m r(f_A, f_B)] such that
+                me r(f_A, f_B) = \rank \Hom(A,B)
+                | .
+
+        corollary
+            statement: p
+                | Let #[m d = \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}], let #[m h_A = \operatorname{minpoly}_\QQ(\pi_A)] then #[m f_A = h_A^d].
+            proof: p
+                | Study the formula for #[m r(f_A, f_A)] Edixhoven-van der Geer-Moonen 16.22.
+
+        p
+            | So the next step is to try and recover #[m \End^0(A)] from #[m \pi].
+
+
+        definition#def-csa
+            title Central simple algebras
+            statement: p
+                | A #[term central simple algebra] #[m B/k] is a #[m k]-algebra #[m B] with no two-sided ideals and #[m Z(B) = k].
+
+        theorem
+            title Artin-Wedderburn
+            statement: p
+                | Any such algebra is isomorphic to #[m M_n(D)] for #[m D] a division ring over #[m k].
+
+        definition#def-brauer-gp
+            title Brauer groups
+            statement: p
+                | The #[term Brauer group] of #[m k] #[m \operatorname{Br}(k)] is the set of central simple algebras under #[m \otimes] module the algebras #[m M_n(k)].
+
+        fact
+            statement: p
+                ul
+                    li If #[m k = \overline k], #[m \operatorname{Br}(k) = 0].
+                    li #[m k] complete nonarchimidean #[m \operatorname{Br}(k) = \QQ/\ZZ]
+                    li #[m \operatorname{Br}(\RR) = \ZZ/2\ZZ]
+
+                | Given a place #[m v] of #[m k] we get a map
+                me \operatorname{Br}(k) \to \operatorname{Br}(k_v)
+                me D \mapsto D\otimes k_v
+                | in fact we get an injection
+                me \operatorname{Br}(k) \hookrightarrow \prod_v \operatorname{Br}(k_v) \simeq \prod_{v\text{ nonarch}} \QQ/\ZZ \times \prod_{v\text{ real}} \ZZ/2\ZZ
+                me D\mapsto (\operatorname{inv}_v(D))_v
+                | these #[m \operatorname{inv}_v(D)] are called the #[term local invariants].
+
+        proposition#prop-elem-av-local-invs
+            statement: p
+                | Let #[m A/\FF_q] be an elementary abelian variety. Let #[m K = \QQ(\pi_A)] then
+                me \operatorname{inv}_v(\End^0(A)) = \begin{cases} \frac{v(\pi_A)}{v(q)} [k_v: \QQ_p], \amp v|p\\ \frac 12,\amp v\text{ real}\\ 0, \amp \text{else}\end{cases}
+            proof: p
+                | Edixhoven-van der Geer-Moonen 16.30.
+
+
+        proposition
+            statement: p
+                | Let #[m d= \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}] then #[m d] is the least common denominator of all the #[m \operatorname{inv}_v(\End^0(A))].
+
+        corollary
+            statement: p
+                me \pi_A\sim \pi_B \iff f_A = f_B
+                | .
+            proof
+                p
+                    | #[m \Leftarrow] done.
+                p
+                    | #[m \Rightarrow] Let #[m D_{\pi_A} , D_{\pi_B}] be the division rings with invariants specified as in #[xref(ref="prop-elem-av-local-invs")/].
+                    | #[m \pi_A\sim \pi_B \implies D_{\pi_A} \simeq D_{\pi_B} \implies f_A = \operatorname{minpoly}(\pi_A) ^d = f_B].
+
+    subsection
+        title Surjectivity and CM theory
+
+        p
+            | We need to sow that for a#[m \pi] a #[m q]-Weil number there exists an abelian variety #[m A/\FF_q] such that #[m \pi_A \sim \pi].
+
+        definition
+            statement: p
+                | Such a #[m q]-Weil number #[m \pi] is called effective.
+
+        proposition
+            statement: p
+                | A #[m q]-Weil number #[m \pi] is effective if and only if #[m \pi^N] is effective for some #[m N\in \ZZ_{\ge 1}].
+            proof
+                // TODO
+                p
+                    | #[m \Rightarrow] clear.
+                p
+                    | #[m \Leftarrow] By assumption we have #[m A'/k] a simple abelian variety s.t. #[m \pi_{A'} \sim  \pi^N] for #[m k] a degree #[m N] extension of #[m \FF_q].
+                    | Let
+                    me  A = \Res_{k/\FF_q}(A')
+                    | on the rational Tate modules we have
+                    me V_l A = \Ind_{G_k}^{G_{\FF_q}} (V_lA')
+                    | where
+                    me G_k = \Gal{\overline{\FF_q}}{k}
+                    me G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
+                    | since #[m G_k], #[m G_{\FF_q}] are abelian, by studying the induced action, one can see
+                    me \Ind_{G_k}^{G_{\FF_q}} (\pi_{A'}) = \pi_A^N
+                    | in particular #[m f_A(T) = f_{A'}(T^N)].
+                    | Choosing a simple factor #[m A_i] one gets #[m \pi_{A_i} \sim \pi].
+        p
+            | So it is sufficient to show #[m \pi^N] is effective.
+
+        p
+            | Strategy for proving surjectivity
+            ol
+                li Construct a division algebra #[m D_\pi].
+                li Choose a CM field #[m L] splitting #[m D_\pi].
+                li Find an abelian variety #[m A/\CC] of type #[m (L, \Phi)].
+                li In fact #[m A] is defined over  a number field #[m K] and has good reduction at #[m v|p].
+                li Apply the Shimura-Taniyama formula to relate #[m \pi_A] to #[m \Phi].
+                li Choose #[m \Phi] wisely (in retrospect in 3) to relate #[m \pi] to #[m \pi_A].
+                li Show #[m \pi_A^N = \pi^{N'}].
+
+        p
+            | #[m D_\pi] is given by the invariants described by #[m \pi] (and #[m K = \QQ(\pi)]).
+        proposition
+            statement: p
+                | There exists a CM field #[m L/\QQ(\pi)] such that #[m L] splits #[m D_\pi] and further
+                me [L:\QQ(\pi) ] = [ D_\pi: \QQ(\pi)]^{1/2}
+            proof: p
+                | Two cases:
+                ol
+                    li
+                        | #[m \QQ(\pi)] is totally real, in which case #[m \QQ(\pi) = \QQ] or #[m \QQ(\sqrt{p})].
+                    li
+                        | #[m \QQ(\pi)] is a CM field with totally real subfield #[m \QQ(\pi + q/\pi)].
+                | In the case
+                ol
+                    li
+                        | Choose #[m L = \QQ(\pi)(\sqrt{-p})].
+                    li
+                        | Let #[m d= \lb D_\pi: \QQ(\pi)\rb^{1/2}].
+
+                        | This #[m L] splits #[m D_\pi].
+
+        p
+            | For a CM field #[m L] all the embeddings
+            me \iota\colon L \hookrightarrow \CC
+            | come in complex conjugate pairs, choosing an embedding for each pair defines a subset #[m \Phi\subseteq \Hom(L, \CC)] such that
+            me \Phi \cup \overline \Phi = \Hom(L,\CC)
+            me \Phi \cap \overline \Phi = \emptyset
+            | such a choice of #[m \Phi ] is called a CM type.
+
+        p
+            | Let #[m A/\CC] be an abelian variety with CM by #[m L] i.e.
+            me L\hookrightarrow \End^0(A)
+            | then
+            me \CC\otimes L = \prod_\iota \CC
+            | acts on the tangent space at the origin #[m \Lie(A)].
+
+        proposition
+            statement: p
+                | The action of #[m \CC\otimes L] factors through the quotient #[m \prod_{\iota\in \Phi} \CC] for some CM type #[m \Phi].
+                | We then say #[m A/\CC] is of type #[m (L,\Phi)].
+
+        theorem
+            statement: p
+                | For any CM type #[m (L,\Phi)] there exists an abelian variety #[m A/\CC] of type #[m (L, \Phi)].
+            proof: p
+                | Found in Shimura-Taniyama.
+
+
+        p
+            | The fact that #[m A] is in fact defined over  a number field #[m K] is also in Shimura-Taniyama.
+
+        theorem
+            statement: p
+                | Let #[m A/K] be an abelian variety which admits CM.
+                | Then #[m A/K] admits potentially good reduction at all places #[m v] of #[m K].
+            proof: p
+                | Highly nontrivial, Neron models, Chevalley decomposition, Neron-Ogg-Shafarevich criterion, result of Grothendieck on potentially stable reduction.
+
+        p
+            | After passing to a finite extension we will assume #[m A/K] has good reduction at places #[m v|p].
+            | So we have a reduction #[m A_{\FF_{q'}}/\FF_{q'}].
+            | For a place #[m w|p] of #[m L] let
+            me \Sigma_w = \Hom(L_w, \CC_p)
+            me \Phi_w = \Phi \cap \Sigma_w
+            | .
+
+        theorem
+            title Shimura-Taniyama formula
+            statement: p
+                | For all places #[m w|p] of #[m L],
+                me \frac{w(\pi_{A_{\FF_{q'}}})}{w(q')} = \frac{\#\Phi_w}{\#\Sigma_w}
+            proof: p
+                | Tate has a proof using CM theory of #[m p]-divisible groups.
+
+        p
+            | Recall we fixed #[m \pi] and from this we deterministically formed #[m \QQ(\pi), D_{\pi}, L] however we have no restriction on our choice of #[m \Phi].
+
+        lemma
+            statement: p
+                | We can choose #[m \Phi] such that for all places #[m w|p] of #[m L],
+                me \frac{w(\pi)}{w(q)} = \frac{\#\Phi_w}{\#\Sigma_w}
+            proof: p
+                | Let #[m v = w|_{\QQ(\pi)}] be the place of #[m \QQ(\pi)] below #[m w].
+                | Let
+                me n_w = \frac{w(\pi)}{w(q)}\#\Sigma_w = \frac{w(\pi)}{w(q)}[L_w :\QQ_p]
+                me  = \frac{w(\pi)}{w(q)}[L_w :\QQ(\pi)_v ][ \QQ(\pi)_v:\QQ_p]
+                | by recalling the formula for the local invariants of #[m D_\pi] we get
+                me n_w = \operatorname{inv}_w(D_\pi\otimes_{\QQ(\pi)} L)
+                | . But #[m L] splits #[m D_\pi] so #[m n_w \in \ZZ], further
+                me n_w + n_{\overline w} = \left( \frac{w(\pi)}{w(q)}  + \frac{\overline w(\pi)}{\overline w(q)} \right) \#\Sigma_w
+                me = \left( \frac{w(\pi\overline \pi)}{w(q)} \right) \#\Sigma_w = \#\Sigma_w
+                | check the CM type #[m \Phi = \bigcup_w \Phi_w] where for each #[m w] #[m \# \Phi_w = n_w].
+                | Then the formula follows.
+        p
+            | Combining the previous result with the Shimura-Taniyama formula we get that for all places #[m w|p]
+            me \frac{w(\pi_{A_{\FF_{q'}}})}{w(q')} = \frac{w(\pi)}{w(q)}
+            | .
+            | Taking the correct power,
+            me w\left( \frac {\pi^m_{A_{\FF_{q'}}}}{\pi^{m'}}\right) = 0 \forall w|p
+            me \pi,\pi_{A_{\FF_{q'}}}|q^{m'}
+            me \implies w(\cdots) = 0 \forall w \nmid p
+            | since #[m |\pi^{m'}|_w = |\pi_{A_{\FF_{q'}}}^m|_w = (q^{m'})^{1/2} \forall \text{ infinite places}]
+            me \pi_{A_{\FF_{q'}}}/ \pi_A^{m'}
+            | is a root of unity
+            | #[m \pi^N_{A_{\FF_{q'}}} = \pi^{N'}].
+

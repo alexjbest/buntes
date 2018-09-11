@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AFAS Rational Maps into Abelian Varieties (Maria)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-av-complex.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-thm-cube.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-av-complex.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-thm-cube.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs" class="active">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-rational-maps-avs"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Rational Maps into Abelian Varieties (Maria)</span>
+</h2>
+<a href="sec-rational-maps-avs.html" class="permalink">¶</a><section class="introduction" id="introduction-3"><p id="p-82">Note all varieties are irreducible today.</p></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Rational maps</span>
+</h3>
+<p id="p-83">\(V,W\) varieties \(/K\text{.}\) Consider pairs \((U,\phi_U)\text{,}\) where \(\emptyset \ne  U \subset V\) an open subset so \(U\) is dense, and \(\phi_U \colon U \to W\) is a regular map.</p>
+<article class="definition-like" id="def-rational-map"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.4.1</span> <span class="title">Rational maps</span>
+</h6>
+<p id="p-84">\((U,\phi_U)\text{,}\) \((U',{\phi_{U'}})\) are equivalent if \(\phi_U\) and \(\phi_{U'}\) agree on \(U \cap U'\text{.}\) An equivalence class \(\phi\) of \(\{(U, \phi_U)\}\) is a <dfn class="terminology">rational map</dfn> \(\phi \colon V \dashrightarrow W\) If \(\phi\colon V \dashrightarrow W\) is defined at   \(v\in V\) if \(v\in U\) for some \((U,\phi_U) \in \phi\text{.}\)</p></article><article class="remark-like" id="note-1"><h6 class="heading">
+<span class="type">Note</span> <span class="codenumber">1.4.2</span>
+</h6>
+<p id="p-85">The set \(U_1 = \bigcup U\) where  \(\phi\) is defined is open and \((U_1,\phi_1) \in \phi\) where \(\phi_1 \colon U_1 \to W\) restricts to \(\phi_U\) on \(U\text{.}\)</p></article><article class="example-like" id="example-4"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.4.3</span>
+</h6>
+<ol id="p-86" class="decimal">
+<li id="li-18">Let \(\emptyset \ne W \subseteq V\) be open. Then the <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational map</a> \(V\dashrightarrow W\) induced by \(\id \colon W \to W\) will not extend to \(V\text{.}\) To avoid this, assume \(W \) is <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> (so \(W = V\)).</li>
+<li id="li-19">\(C \colon y^2 = x^3\text{,}\) then \(\alpha\colon \aff^1 \to C\text{,}\) \(a\mapsto (a^2,a^3)\) is a regular map, restricting to an isomorphism  \(\aff^1 \smallsetminus \{0 \} \to C \smallsetminus \{0\}\text{.}\) The inverse of \(\alpha|_{\aff^1\smallsetminus \{0\}}\) represents \(\beta \colon C \dashrightarrow \aff^1\) which does not extend to \(C\text{.}\) This corresponds on function fields to<div class="displaymath">
+\begin{equation*}
+K(t) \to K(x,y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+t\mapsto y/x
+\end{equation*}
+</div>which does not send \(K[y]_{(t)}\) to \(K[x,y]_{(x,y)}\text{.}\)</li>
+<li id="li-20">Given a nonsingular surface \(V,\, P\in V\) then \(\exists \alpha\colon W \to V\) regular that induces an isomorphism \(\alpha\colon W\smallsetminus \alpha^{-1} (P) \to V\smallsetminus P\text{,}\) but \(\alpha^{-1}(P)\) is a projective line. The <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational map</a> represented by \(\alpha^{-1}\) is not regular on \(V\) (where to send \(P\text{?}\)).</li>
+</ol></article><article class="theorem-like" id="thm-milne-3-1"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.4.4</span> <span class="title">Milne 3.1</span>
+</h6>
+<p id="p-87">A <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational map</a> \(\phi\colon V\dashrightarrow W\) from a nonsingular variety \(V\) to a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> variety \(W\) is defined on an open subset  \(U \subseteq V\) whose complement has codimension \(\ge 2\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-12" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-88">(\(V\) a curve) \(V\) nonsingular curve, \(\emptyset\ne U\subseteq V\) open, \(\phi\colon U \to W\) a regular map.</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+&amp; V\\
+U\ar[ur]\ar[dr] \ar[r] &amp; U' \subseteq Z \subseteq V\times W \ni (v,w)\ar[d]_q \ar[u]_p \\
+&amp; W \ni w
+}
+\end{equation*}
+</div>
+<p>\(U'\) is the image of \(U\text{,}\) \(Z = \overline{U'}\text{.}\) \(W \) is <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a>, \(Z\) closed implies \(p(Z) \subseteq V\) is closed. Also, \(U \subseteq p(Z) \implies p(Z)= V\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+U\xrightarrow{\sim} U' \to U
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+U' \xrightarrow{\sim} U
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Z \twoheadrightarrow V
+\end{equation*}
+</div>
+<p>this implies \(Z \xrightarrow\sim V\text{.}\) Then \(q|_Z \colon Z \to W\) is the extension of \(\phi \) to \(V\text{.}\)</p></article></div>
+<article class="theorem-like" id="thm-milne-3-2"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.4.5</span> <span class="title">Milne 3.2</span>
+</h6>
+<p id="p-89">A <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational map</a> \(\phi\colon V\dashrightarrow A\) from a nonsingular variety \(V\) to an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(W\text{,}\) extends to all of \(V\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-13" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-90"><a knowl="./knowl/thm-milne-3-1.html" title="Theorem 1.4.4: Milne 3.1">Theorem 1.4.4</a> <a knowl="./knowl/lem-milne-3-3.html" title="Lemma 1.4.6">Lemma 1.4.6</a></p></article></div>
+<article class="theorem-like" id="lem-milne-3-3"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">1.4.6</span>
+</h6>
+<p id="p-91">Let \(\phi\colon V \dashrightarrow G\) be a map from a nonsingular variety to a group variety. Then either \(\phi\) is defined on all of \(V\) or the set where \(\phi\) is not defined is closed of pure codimension 1.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-14" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-92">Fix \((U, \phi_U) \in \phi\) and consider</p>
+<div class="displaymath">
+\begin{equation*}
+\Phi\colon V\times V \dashrightarrow G
+\end{equation*}
+</div>
+<p>represented by</p>
+<div class="displaymath">
+\begin{equation*}
+U\times U\xrightarrow{\phi_U\times\phi_U} G\times G \xrightarrow{\id\times\operatorname{inv}} G\times G \xrightarrow{m} \to G
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(x,y) \mapsto \phi_U(x) \phi_U(y)^{-1}
+\end{equation*}
+</div>
+<p>Check \(\phi\) is defined at \(x\) iff \(\Phi\) is defined at \((x,x)\) (and in this case \(\Phi(x,x) = e\)). This is equivalent to the map \(\Phi^*\colon \sheaf O_{G,e} \to K(V\times V)\) induced by  \(\Phi\) satisfying   \(\im(\sheaf O_{G,e}) \subseteq \sheaf O_{V\times V, (x,x)}\) For a nonzero function \(f\) on \(V\times V\text{,}\) write \(\divisor(f) = \divisor(f)_0 - \divisor(f)_\infty\) which are effective divisors. Then</p>
+<div class="displaymath">
+\begin{equation*}
+\sheaf O_{V\times V, (x,x)} = \{0\} \cup \{f\in K(V\times V) : \divisor(f)_\infty \text{ does not contain }(x,x)\}\text{.}
+\end{equation*}
+</div>
+<p>Suppose \(\phi\) is not defined at \(x\text{,}\) then there exists \(f\in \im(\sheaf O_{G,e})\) s.t. \((x,x) \in \divisor(f)_\infty\text{.}\) Then \(\Phi\) is not defined at any \((y,y) \in \Delta \cap  \divisor(f)_\infty = \divisor(f^{-1})_0\text{,}\) which is a pure codimension 1 subset of \(\Delta\) by Milne's AG thm 9.2. The corresponding subset in \(V\) is of pure codimension 1, and \(\phi\) is not defined there.</p></article></div>
+<article class="theorem-like" id="thm-milne-3-4"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.4.7</span> <span class="title">Milne 3.4</span>
+</h6>
+<p id="p-93">Let \(\alpha \colon V \times W \to A\) be a morphism from a product of nonsingular varieties into an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>. If \(\alpha (V\times\{w_0\}) = \{a_0 \} =  \alpha(\{v_0 \}\times W)\) for some \(a_0 \in A\text{,}\) \(v_0\in W\text{,}\) \(w_0 \in W\text{,}\) then \(\alpha(V\times W) = \{a_0\}\text{.}\)</p></article><article class="theorem-like" id="cor-milne-3-7"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">1.4.8</span> <span class="title">Milne 3.7</span>
+</h6>
+<p id="p-94">Every <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational map</a> \(\alpha \colon G\dashrightarrow A\) from a group variety into an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> is the composition of a homomorphism and a translation in \(A\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-15" id="proof-15"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-15" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-95">Since group varieties are nonsingular, \(\alpha\colon G \to A\) is a regular map by <a knowl="./knowl/thm-milne-3-2.html" title="Theorem 1.4.5: Milne 3.2">Theorem 1.4.5</a>. The rest is as proof of Corollary 1.2.</p></article></div></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Dominating and birational maps</span>
+</h3>
+<article class="definition-like" id="def-dominating-maps"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.4.9</span> <span class="title">Dominating maps</span>
+</h6>
+<p id="p-96">\(\phi\colon V \dashrightarrow W\) is <dfn class="terminology">dominating</dfn> if \(\im (\phi_U)\) is dense in \(W\) for a representative \((U,\phi_U)\in \phi\text{.}\)</p></article><p id="p-97">Exercise: A <a knowl="./knowl/def-dominating-maps.html" title="Definition 1.4.9: Dominating maps">dominating</a> \(\phi\colon V\dashrightarrow W\) defines a homomorphism \(K(W) \to K(V)\) and any such homomorphism arises from a unique <a knowl="./knowl/def-dominating-maps.html" title="Definition 1.4.9: Dominating maps">dominating</a> <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational map</a>.</p>
+<article class="definition-like" id="def-birational"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.4.10</span>
+</h6>
+<p id="p-98">\(\phi\colon V \dashrightarrow W\) is <dfn class="terminology">birational</dfn> if the corresponding \(K(W)\to K(V)\) is an isomorphism or, equivalently if there exists \(\psi\colon W\dashrightarrow V \) s.t. \(\phi\circ \psi\) and \(\psi\circ\phi\) are the identity wherever they are defined. In this case we say \(V\) and \(W\) are <dfn class="terminology">birationally equivalent</dfn>.</p></article><article class="remark-like" id="note-2"><h6 class="heading">
+<span class="type">Note</span> <span class="codenumber">1.4.11</span>
+</h6>
+<p id="p-99">In general <a knowl="./knowl/def-birational.html" title="Definition 1.4.10">birational</a> equivalence does not imply isomorphic. E.g. \(V\) a variety \(\emptyset \ne W\subsetneq V\) an open subset, or \(V= \aff^1, W \colon y^2 =x^3\text{.}\)</p></article><article class="theorem-like" id="prop-milne-3-8"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.4.12</span> <span class="title">Milne 3.8</span>
+</h6>
+<p id="p-100">If two <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> are <a knowl="./knowl/def-birational.html" title="Definition 1.4.10">birationally equivalent</a> then they are isomorphic as <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-16" id="proof-16"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-16" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-101">\(A,B\) <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> with \(\phi \colon A\dashrightarrow B\) a <a knowl="./knowl/def-birational.html" title="Definition 1.4.10">birational</a> map with inverse \(\psi\text{.}\) Then by <a knowl="./knowl/thm-milne-3-2.html" title="Theorem 1.4.5: Milne 3.2">Theorem 1.4.5</a> \(\phi ,\psi\) extend to regular maps   \(\phi\colon A \to B \text{,}\) \(\psi\colon B\to A\) and \(\phi\circ\psi,\psi\circ\phi\) are  the identity everywhere. This implies that \(\phi\) is an isomorphism of  algebraic varieties and after composition with a translation, \(\phi\) is also a group isomorphism.</p></article></div>
+<article class="theorem-like" id="prop-milne-3-9"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.4.13</span> <span class="title">Milne 3.9</span>
+</h6>
+<p id="p-102">Any <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational map</a> \(\aff^1 \dashrightarrow A\) or \(\PP^1 \dashrightarrow A\text{,}\) for \(A\) an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> is constant.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-17" id="proof-17"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-17" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-103"><a knowl="./knowl/thm-milne-3-2.html" title="Theorem 1.4.5: Milne 3.2">Theorem 1.4.5</a> implies \(\alpha \colon \aff^1 \dashrightarrow A\) extends to \(\alpha \colon \aff^1\to A\) and we may assume \(\alpha(0) = e\text{.}\) \((\aff^1, +)\text{:}\) \(\alpha(x+y) = \alpha(x) + \alpha(y)\) for all \(x,y\in \aff^1(K) = K\text{.}\) \((\aff^1\smallsetminus\{0\}, \cdot)\text{:}\) \(\alpha(xy) = \alpha(x) + \alpha(y) + c\) for all \(x,y\in K^\times\text{.}\) These can only hold at the same time if \(\alpha\) is constant. \(\PP^1 \dashrightarrow A\) is constant, since its constant on affine patches.</p></article></div>
+<article class="definition-like" id="def-unirational"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.4.14</span>
+</h6>
+<p id="p-104">\(V/\overline K\) is <dfn class="terminology">unirational</dfn> if there is a <a knowl="./knowl/def-dominating-maps.html" title="Definition 1.4.9: Dominating maps">dominating</a> map \(\aff^n \dashrightarrow V\text{,}\) where \(n = \dim_{\overline K} V\text{.}\) \(V/K\) is <a knowl="./knowl/def-unirational.html" title="Definition 1.4.14">unirational</a> if \(V/K\) is.</p></article><article class="theorem-like" id="prop-milne-3-10"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.4.15</span> <span class="title">Milne 3.10</span>
+</h6>
+<p id="p-105">Every <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational map</a> \(V\dashrightarrow A\) from \(V\) <a knowl="./knowl/def-unirational.html" title="Definition 1.4.14">unirational</a> to \(A\) abelian is constant.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-18" id="proof-18"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-18" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-106">Wlog \(K = \overline K\text{.}\) Since \(V\) is <a knowl="./knowl/def-unirational.html" title="Definition 1.4.14">unirational</a> we get \(\beta \colon \PP^1\times\cdots\times\PP^1 \dashrightarrow V\dashrightarrow A\text{,}\) which extends to \(\beta \colon \PP^1\times\cdots\times\PP^1 \to A\text{.}\) Then by Milne corollary 1.5, there exist regular maps \(\beta_i \colon \PP^1 \to A\) s.t. \(\beta(x_1,\ldots, x_n) = \sum \beta_i(x_i)\) and by <a knowl="./knowl/prop-milne-3-9.html" title="Proposition 1.4.13: Milne 3.9">Proposition 1.4.13</a> each \(\beta_i\) map is constant.</p></article></div></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>
