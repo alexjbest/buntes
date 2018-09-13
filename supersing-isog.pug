@@ -173,7 +173,7 @@ section#sec-supersing-isog-graphs
                 | By the last note #[m G_l(k)] consists of ordinary and supersingular components.
 
         paragraphs
-            title Supersingular isogney graphs
+            title Supersingular isogeny graphs
 
             p
                 | Since every supersingular #[m j]-invariant lives in #[m \FF_{p^2}] if #[m E] is supersingular all roots of #[m \phi_l(j(E), y)] live in #[m \FF_{p^2}].
@@ -191,11 +191,12 @@ section#sec-supersing-isog-graphs
             definition#def-supersing-isog-ramanujan
                 title Ramanujan graphs
                 statement: p
-                    | A #[m d]-regular graph is a #[term Ramanujan graph] if #[m \lambda_2 \le \sqrt{d+1}] where #[m \lambda_2] is the second largest eigenvalue of its adjaceny matrix.
+                    | A #[m d]-regular graph is a #[term Ramanujan graph] if #[m \lambda_2 \le \sqrt{d-1}] where #[m \lambda_2] is the second largest eigenvalue of its adjaceny matrix.
+                    | (The largest one is always #[m d], by #[m d]-regularity.)
 
 
         paragraphs
-            title Ordinary isogney graphs
+            title Ordinary isogeny graphs
 
             p
                 | Let #[m E/\FF_q] be an ordinary elliptic curve, then #[m \End(E) \simeq \ints] is an order in an imaginary quadratic field #[m K] with #[m \ZZ\lb \pi \rb \subseteq \ints \subseteq \ints_K] where #[m \pi] is Frobenius and
@@ -492,3 +493,197 @@ section#sec-supersing-isog-graphs
                                 | If any of these paths get to #[m V_d], return ordinary.
                             li
                                 | Otherwise supersingular.
+
+section#sec-supersing-isog-crypto
+    title Supersingular isogeny graph cryptography (Asra)
+
+
+    introduction
+        p
+            | Supersingular isogeny graph crypto is a candidate for post-quantum crypto, not based on factoring etc.
+
+        p
+            | Recall last time we defined Ramanujan graphs, graphs with very good connectivity properties, a type of expander.
+
+        proposition
+            statement: p
+                | If #[m G] is Ramanujan, #[m x\in V, S\subseteq V]. For a sufficiently large path the probability that the path ends in #[m S] is at least #[m |S|/2|G|].
+        p
+            | Upshot supersingular isogeny graphs are #[m (l +1)]-regular, undirected, Ramanujan, connected.
+
+        p
+            | Some of our algorithms are only dependent on having a graph with this property, not so much the interpretation in terms of isogenies.
+        p
+            | Supersingular isogeny graphs first appeared in crypto as potential hash functions.
+
+    subsection
+        title Hash functions
+
+        p
+            | (2010) (Charles, Goren, Lauter) proposed a cryptographically secure hash function based on the hardness of computing paths in a supersingular isogeny graphs.
+
+        definition#def-hash-function
+            title Hash functions
+            statement: p
+                | A #[term hash function] is a deterministic function #[m h\colon \{0,1\}^* \to \{0,1\}^n].
+
+        definition#def-collision-resistance
+            title Collision resistance
+            statement: p
+                | A hash function #[m h] is #[term collision resistant] if its hard to find #[m x_1,x_2] with #[m x_1\ne x_2 ] s.t. #[m h(x_1) = h(x_2)].
+
+
+        definition#def-preimage-resistance
+            title Preimage resistance
+            statement: p
+                | A hash function #[m h] is #[term preimage resistant] if given #[m y\in \{0,1\}^n] its hard to find #[m x] s.t. #[m h(x) = y].
+
+        p
+            | Cool example, private set intersection, say two groups, Starbucks and BU want to find a list of common customers (students who bought something at Starbucks) but don't want to reveal anything to each other about the students or customers not in the intersection.
+            | Compute hashes of the names of customers and share the hashes, can compute the size of, and the intersection itself.
+
+    subsection
+        title Supersingular isogeny hash functions
+
+        paragraphs
+            title Parameters
+            p
+                | #[m G_l(\FF_{p^2})], #[m p \equiv 1 \pmod{12}], #[m l] to be small, fix an ordering on the edges, fix an initial vertex #[m j_0] and an incoming edge.
+
+        paragraphs
+            title Protocol
+
+            p
+                | #[m m \in \{0,1\}^*] write this as an #[m l]-bit string, #[m m \in \{0,1,\ldots, l-1\}^*], walk the graph based on #[m m] without backtracking.
+            p
+                | Map the final #[m j] invariant to  #[m \{0,1\}^{n\approx \log p}].
+
+        paragraphs
+            title Properties
+
+            p
+                | Difficult means exponential in the size of the input normally.
+
+            proposition
+                statement: p
+                    ol
+                        li
+                            | Preimage resistant iff when given #[m j] it is difficult to compute a positive integer #[m e] and an isogeny #[m \phi\colon E_{j_0} \to E_j] with degree #[m l^e].
+                        li
+                            | Collision resistant iff when given #[m j] it is difficult to compute #[m e] and  #[m \phi \colon E_{j_0} \to E_{j_0}] with degree #[m l^e].
+
+    subsection
+        title Diffie-Hellman Key Exchange (1976)
+
+        p
+            | Choose #[m p,\, \ZZ/p, g] then Alice computes #[m g^a] send to Bob, he computes #[m g^b] and sends it back, they both compute #[m g^{ab}], which is their shared secret.
+        p
+            | The security is based on the hardness of computing #[m g^{ab}] given #[m g^a,g^b].
+
+    subsection
+        title Supersingular isogeny Diffie-Hellman (SIDH)
+
+        paragraphs
+            title Parameters
+            p
+                | Supersingular elliptic curve of smooth order: fix #[m p] to be big enough #[m p = l_A^{e_A} l_B^{e_B} f  \pm 1].
+                | #[m l_A,l_B] small primes, #[m f] is a number chosen such that #[m p] is big.
+                | Construct a supersingular elliptic curve #[m E] such that #[m \# E(\FF_{p^2}) = (l_A^{e_A}l_B^{e_B} f)^2], using Broker's algorithm.
+            p
+                | Construct bases #[m (P_A, Q_A)] for #[m E\lb l_A^{e_A}], #[m (P_B, Q_B)] for #[m E\lb l_B^{e_B}].
+
+        paragraphs
+            title Protocol
+
+            p
+                | Alice takes #[m m_A,n_A \in \ZZ/l_A^{e_A}]
+            p
+                | Bob takes #[m m_B,n_B \in \ZZ/l_B^{e_B}]
+            p
+                | Alice finds #[m R_A = m_AP_A + n_AQ_A]
+            p
+                | Bob finds #[m R_B = m_BP_B + n_BQ_B]
+            p
+                | Alice finds #[m \phi_A \colon E \to E/\langle R_A\rangle = E_A]
+            p
+                | Bob finds #[m \phi_B \colon E \to E/\langle R_B\rangle = E_B]
+            p
+                | They send each other #[m E_i, \phi_i(P_i),\phi_i(Q_i)].
+            p
+                | Both compute #[m \phi'_A\colon E_B \to E_B/\langle m_A\phi_B(P_A) + n_A\phi_B(Q_A)\rangle] or analogous.
+            p
+                | Shared secret is #[m j(E_{AB})].
+
+        paragraphs
+            title Hardness
+
+            p
+                ol
+                    li
+                        | (Decisional supersingular isogeny problem) Given #[m E, (P_A,Q_A)] a basis for #[m l_A^{e_A}] torsion, let #[m E_A] be another curve, is #[m E_A] #[m l_A^{e_A}] isogenous to #[m E]?
+
+                    li
+                        | (Computational supersingular isogeny problem) Let #[m \phi_A \colon E \to E_A] be an isogeny with a kernel of the form #[m \langle m_AP_A + n_AQ_A \rangle].
+                        | Given #[m E_A] and #[m \phi_A(P_B)] #[m \phi_A(Q_B)], find #[m R_A].
+
+
+                        | #[m p^{1/4}] classical, #[m p^{1/6}] quantum.
+                    li
+                        | Given #[m E_A, E_B, \phi_A(P_B), \phi_A(Q_B), \phi_B(P_A), \phi_B(Q_A)] find #[m j]-invariant of #[m E_{AB}].
+
+    subsection
+        title Supersingular isogeny public key
+
+        p
+            | Classically DH key-exchange #[m \leadsto] ElGamal encryption.
+
+        p
+            ol
+                li
+                    p Key generation.
+                    p
+                        | Alice: secret #[m \phi_A \colon E \to E_A], public #[m E_A] and #[m \phi_A(P_B), \phi_A(Q_B)].
+                li
+                    p Encryption.
+                    p
+                        | Bob: choose #[m \phi_B \colon E \to E_B], compute #[m j(E_{AB})].
+                    p
+                        | Send Alice #[m c = (E_B, \phi_B(P_A), \phi_B(Q_A), m\oplus j(E_{AB}))]
+                li
+                    p Decryption.
+                    p
+                        | Alice use #[m (E_B, \phi_B(P_A), \phi_B(Q_A))] to compute #[m j(E_{AB})].
+                        | Computes #[m (m\oplus j(E_{AB})) \oplus j(E_{AB}) = m].
+        p
+            | #[m E(\FF_{p^2})], #[m p = l_A^{e_A} l_B^{e_B} f \pm 1], for #[m 128]-bit security use a #[m 512]-bit key.
+
+    subsection
+        title Algorithmic aspects
+
+        p
+            ol
+                li
+                    | (Choosing #[m f]) Prime number theorem for arithmetic progressions gives you a bound on the density of primes of the form #[m l_A^{e_A} l_B^{e_B} f \pm 1]
+                li
+                    | Choosing a s.s. e.c. with the right group order, Broker's algorithm.
+                li: p
+                    | Finding a basis for #[m E\lb l_A^{e_A}\rb].
+                    ol
+                        li
+                            | Find a random point in #[m E(\FF_{p^2})] say #[m P].
+                        li
+                            | Check the order of #[m (l_B^{e_B} f)^2 \cdot P].
+                            | If its #[m l_A^{e_A}] set #[m P_A = P].
+                            | Otherwise repeat from 1.
+                        li
+                            | Do the same with #[m Q_A = Q].
+                        li
+                            | Check independence by seeing if #[m e(P_A,Q_A) ] has the right order, so that it is in #[m E\lb l_A^{e_A} \rb] torsion.
+                li
+                    | Computing the kernels generated by #[m R_A = m_A P_A + n_A Q_A], #[m m_A, n_A \in \ZZ/l_A^{e_A} \ZZ].
+                    | Analogue of double and add.
+                    | Set #[m R_A = P_A + \lb m_A\inv n_A\rb Q_A].
+                    | Use differential addition (when you compute #[m A+B] with side info #[m A-B]) and a Montgomery ladder
+                li
+                    | (Computing smooth degree isogenies) Decompose the #[m l_A^{e_A}] isogeny into #[m e_A] different #[m l_A]-isogenies, #[m \phi_i\colon E_i \to E_{i+1}] the kernel of #[m \phi_i] is #[m \langle l_A^{e_A - i - 1} R_A\rangle].
+                    | Velu's formula runs in #[m O(l)] for #[m l]-isogeny.

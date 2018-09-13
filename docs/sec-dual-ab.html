@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Line Bundles and the Dual Abelian Variety (Angus)</title>
+<title>BUNTES Line Bundles and the Dual Abelian Variety (Angus)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,15 +290,19 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-dual-ab"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Line Bundles and the Dual Abelian Variety (Angus)</span>
 </h2>
-<a href="sec-dual-ab.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><h6 class="heading">Introduction<span></span>
-</h6>
+<a href="sec-dual-ab.html" class="permalink">¶</a><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.1</span> <span class="title">Introduction</span>
+</h3>
 <article class="paragraphs" id="paragraphs-1"><h5 class="heading"><span class="title">Meta-goal</span></h5>
 <p id="p-163">Understand <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>.</p></article><article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Setup</span></h5>
 <p id="p-164">\(A\) an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(/k\text{.}\)</p></article><article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Last time</span></h5>
@@ -366,8 +370,8 @@ L \amp\mapsto \phi_L\text{.}
 \amp = \{\text{translation invariant line bundles}\}/\sim
 \end{align*}
 </div></article></article><article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Goals</span></h5>
-<p id="p-171">Study \(\Pic^0(A)\text{,}\) give it an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> structure, solve a moduli problem, demonstrate some duality.</p></article></section><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.7.1</span> <span class="title">Aside: alternate description of \(\Pic^0(A)\)</span>
+<p id="p-171">Study \(\Pic^0(A)\text{,}\) give it an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> structure, solve a moduli problem, demonstrate some duality.</p></article></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">Aside: alternate description of \(\Pic^0(A)\)</span>
 </h3>
 <article class="definition-like" id="def-alg-equivalence"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.7.3</span> <span class="title">Algebraic Equivalence</span>
@@ -382,8 +386,8 @@ L \amp\mapsto \phi_L\text{.}
 \begin{equation*}
 \Pic^0(A) = \{\text{line bundles which are alg. equiv to } \sheaf O_A\}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-33" id="proof-33"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-33" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-175"><a knowl="./knowl/bib-polishchuck.html" title="Bibliographic Entry 47: Abelian varieties, theta functions and the Fourier transform">[47]</a>.</p></article></div></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">See-Saws</span>
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-33" id="proof-33"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-33" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-175"><a knowl="./knowl/bib-polishchuck.html" title="Bibliographic Entry 47: Abelian varieties, theta functions and the Fourier transform">[47]</a>.</p></article></div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.3</span> <span class="title">See-Saws</span>
 </h3>
 <article class="theorem-like" id="thm-see-saw"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.7.6</span> <span class="title">See-saw theorem</span>
@@ -405,8 +409,8 @@ L|_{X\times \{t\}} \cong M|_{X\times \{t\}} \forall t\in T
 L|_{\{t\}\times X} \cong M|_{\{t\}\times X} \text{ for some } x\in X
 \end{equation*}
 </div>
-<p>then \(L\cong M\text{.}\)</p></article></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.7.3</span> <span class="title">Properties of \(\Pic^0 A\)</span>
+<p>then \(L\cong M\text{.}\)</p></article></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.4</span> <span class="title">Properties of \(\Pic^0 A\)</span>
 </h3>
 <article class="theorem-like" id="lemma-2"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">1.7.9</span>
@@ -497,8 +501,8 @@ H^j(A\times A, m^*L) =  H^j(A\times A, p_1^*L \otimes p_2^*L) = \bigoplus_{i=0}^
 A(k)/K(L)(k) \cong \Pic^0(A)
 \end{equation*}
 </div>
-<p>the LHS allows us to put an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> structure on \(\Pic^0(A)\text{.}\)</p></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.7.4</span> <span class="title">The Dual Abelian Variety</span>
+<p>the LHS allows us to put an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> structure on \(\Pic^0(A)\text{.}\)</p></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.5</span> <span class="title">The Dual Abelian Variety</span>
 </h3>
 <article class="theorem-like" id="theorem-15"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.7.12</span>
@@ -558,8 +562,8 @@ f\colon Z\to \hat A
 \begin{equation*}
 Z \mapsto \left\{ L\in \Pic (A\times Z) : \substack{ L|_{A\times \{z\}} \in \Pic^0(A) \forall z\in Z \\L|_{ 0 \times Z } = 0}\right\}/\sim\text{.}
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.7.5</span> <span class="title">Dual morphisms</span>
+</div></article></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.6</span> <span class="title">Dual morphisms</span>
 </h3>
 <p id="p-195">Let \(f\colon A\to B\) be a homomorphism of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Let \(\sheaf P_A,\sheaf P_B\) be the <a knowl="./knowl/thm-poincare-bundle.html" title="Theorem 1.7.15">Poincaré bundles</a> on  \(A\) and \(B\text{.}\) Consider \(M=    (F\times \id_{\hat B})^* \sheaf P_B\) on \(A\times \hat B\text{,}\) then</p>
 <ol class="decimal">

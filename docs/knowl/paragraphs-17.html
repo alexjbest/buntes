@@ -11,146 +11,94 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Motivation: ABC implies Fermat bound</span></h5>
-<p>One can see this simply by assuming a solution</p>
+<article class="paragraphs"><h5 class="heading"><span class="title">Permutation representation of a Dessin</span></h5>
+<p>Label the edges of  a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> \(\{1, \ldots, N\}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-x^n + y^n  =z^n ,\, n \ge3
+\sigma_0(i) = \text{subsequent edge in the cycle around the white vertex of }i
 \end{equation*}
 </div>
-<p>and setting</p>
+<p>as we have a positive orientation on the edges</p>
 <div class="displaymath">
 \begin{equation*}
-(A,B,C)=  (x^n,y^n, z^n)
+\sigma_1(i) = \text{subsequent edge in the cycle around the black vertex of }i\text{.}
 \end{equation*}
 </div>
-<p>then</p>
-<div class="displaymath">
-\begin{equation*}
-N(A,B,C) = \prod_{p|ABC} p  \le |xyz| \lt \max(|x|^3,|y|^3,|z|^3) = H(A,B,C)^{3/n}\text{.}
-\end{equation*}
-</div>
-<p>So setting</p>
-<div class="displaymath">
-\begin{equation*}
-\epsilon = 1 - 3/n
-\end{equation*}
-</div>
-<p>for \((A,B,C)\) s.t. \(H(A,B,C)\) is sufficiently large we get a contradiction to ABC. Thus ABC gives us a bound on the possible solutions to the Fermat equation, reducing the remainder of the conjecture to a finite computation.</p>
-<p>Let us phrase this in the following alternate way: Let</p>
-<div class="displaymath">
-\begin{equation*}
-F_n \colon x^n + y^n + z^n = 0
-\end{equation*}
-</div>
-<p>be the Fermat curve and consider the function</p>
-<div class="displaymath">
-\begin{equation*}
-f\colon F_n \to \PP^1
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-(x:y:z) \mapsto -\left(\frac{x}{y}\right)^n
-\end{equation*}
-</div>
-<p>ramified over \(0,1, \infty\text{.}\)</p>
-<article class="remark-like"><h6 class="heading">
-<span class="type">Note</span> <span class="codenumber">2.9.6</span>
+<p>Then we define</p>
+<article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.7.2</span>
 </h6>
-<p>\(\deg(f) = n^2\)</p>
-<p>Each of \(0,1,\infty\) has \(n \) preimages in \(F_n(\overline \QQ)\text{.}\)</p></article><p>The idea now is that \(N(A,B, C)\) is measuring ramification, while \(H(A, B,C)\) is a height function. The note above tells us that each of \(0, 1, \infty\) contributes a factor of \(O(H(A,B,C)^{n/n^2})\) to \(N(A,B,C)\text{.}\) So in this formulation, what we used was the existence of a rational function \(f\) such that</p>
+<p>\((\sigma_0, \sigma_1)\) is the permutation representation pair of \((X,D)\text{.}\)</p></article><p>Say</p>
 <div class="displaymath">
 \begin{equation*}
-\#\{p\in C(\overline \QQ): f(p) \in \{0,1,\infty\}\} \lt \deg (f)\text{.}
+\sigma_0 = (1 , \ldots, N_1) (N_1 + 1 , \ldots, N_2)\cdots
 \end{equation*}
 </div>
-<article class="exercise-like"><a knowl="./knowl/exercise-21-hidden.html" title="Exercise 2.9.7"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.9.7</span>
-</h6></a></article><article class="paragraphs"><h5 class="heading"><span class="title">ABC implies a bound on Mordell</span></h5>
-<p>We begin with a technical proposition:</p>
+<p>a product of disjoint cycles. Then each of these cycles corresponds to a  white vertex, where the length of the cycle is the degree of the corresponding vertex. Same for \(\sigma_1\) and black vertices.</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{cycles appearing in the decomposition of }\sigma_0\sigma_1\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\updownarrow
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\{\text{faces of }D\}
+\end{equation*}
+</div>
+<article class="exercise-like"><a knowl="./knowl/exercise-17-hidden.html" title="Exercise 2.7.3"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.7.3</span>
+</h6></a></article><article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.7.4</span>
+</h6>
+<p>\(D\) connected implies that \(\langle \sigma_0, \sigma_1 \rangle\) is transitive on \(\Sigma_N\text{.}\) As \(D\) is bicoloured the cycles on \(D\) contain an even number of edges.</p></article><p>A <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> is not a triangulation of \(X\) but</p>
+<div class="displaymath">
+\begin{equation*}
+\chi (X) = \#V -  \#E  + \#F
+\end{equation*}
+</div>
+<p>proof later.</p>
 <article class="theorem-like"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.9.8</span>
+<span class="type">Proposition</span> <span class="codenumber">2.7.5</span>
 </h6>
-<p>Let \(K\) be a number field an d \(C/K\) a  curve. Let \(f \in K(C)\) be a rational function of degree \(d\text{.}\) Then for \(p \in C(K) \smallsetminus f\inv(0)\) we have</p>
 <div class="displaymath">
 \begin{equation*}
-\log N_0(f(p)) \lt (1- b_f(0)/d) \log H(f(p)) + O(\sqrt{\log H(f(p))} + 1)
+\chi(X) = (\#\text{cycles of }\sigma_0+\#\text{cycles of }\sigma_1) - N + \#\{\text{cycles of }\sigma_0\sigma_1\}\text{.}
 \end{equation*}
-</div>
-<p>with the following notation</p>
-<div class="displaymath">
+</div></article><div class="displaymath">
 \begin{equation*}
-N(r)  =N_0(r) N_1(r) N_\infty(r)
+(\sigma_0, \sigma_1) \leadsto (X',D)
 \end{equation*}
 </div>
 <div class="displaymath">
 \begin{equation*}
-N_0(r) = \prod_{\ideal p \supseteq (r)} \norm(\ideal p)
+\langle \sigma_0, \sigma_1 \rangle \subseteq \Sigma_N
 \end{equation*}
 </div>
-<div class="displaymath">
-\begin{equation*}
-N_1(r) = \prod_{\ideal p \supseteq (1-r)} \norm(\ideal p)
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-N_\infty(r) = \prod_{\ideal p \supseteq (1/r)} \norm(\ideal p)
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-b_f(0) = \sum_{f(p) = 0} (e_p - 1)\text{.}
-\end{equation*}
-</div></article><article class="hiddenproof"><a knowl="./knowl/proof-98-hidden.html" title="Proof 2.9.8.1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><article class="remark-like"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">2.9.9</span>
-</h6>
-<p>One can show the above for \(N_1, N_\infty\) instead making the appropriate replacements for \(f\text{.}\)</p></article><p>Adding the three terms together we get</p>
-<div class="displaymath">
-\begin{equation*}
-\log N_0(f(P))N_1(f(P)) N_\infty(f(P))
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-\lt \left(\left(1- \frac{b_f(0)}{d}\right) +\left(1- \frac{b_f(1)}{d}\right)+\left(1- \frac{b_f(\infty)}{d}\right)\right) \log H(f(P)) + O(\cdots)
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-\log N(f(P)) \lt \frac 1d \left(\# f\inv(0)+\# f\inv(1)+\# f\inv(\infty) \right) \log H(f(P)) + O(\cdots)
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-\lt \frac md \log H(f(P))+ O(\cdots)
-\end{equation*}
-</div>
-<p>where</p>
-<div class="displaymath">
-\begin{equation*}
-m = \#\{P \in C(\overline \QQ) : f(P) \in \{0,1,\infty\}\}
-\end{equation*}
-</div>
-<p>exponentiating we get</p>
-<div class="displaymath">
-\begin{equation*}
-N(f(P)) \lt H(f(P))^{m/d} K\text{.}
-\end{equation*}
-</div>
+<p>is transitive.</p>
 <article class="theorem-like"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">2.9.10</span> <span class="title">ABC implies Mordell</span>
+<span class="type">Proposition</span> <span class="codenumber">2.7.6</span>
 </h6>
-<p>ABC implies Mordell.</p></article><article class="hiddenproof"><a knowl="./knowl/proof-99-hidden.html" title="Proof 2.9.10.1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><article class="remark-like"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">2.9.11</span> <span class="title">Closing remarks</span>
+<p>There exists \((X,D)\) with permutation representation \((\sigma_0, \sigma_1)\text{.}\)</p></article><article class="hiddenproof"><a knowl="./knowl/proof-97-hidden.html" title="Proof 2.7.6.1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.7.7</span>
 </h6>
-<p>Belyi's theorem gives an algorithm for determining \(f \colon C \to \PP^1\) i.e. it is effective.</p>
-<p>One can also show ABC implies Siegel's theorem.</p>
-<p>In fact it can be shown that a particular effective form of Mordell (applied to \(y^2 + y = x^5\)) for all number fields implies ABC. This is related to Szpiro's conjecture.</p></article><p>References:</p>
-<ol class="decimal">
-<li>Elkies - ABC implies Mordell</li>
-<li>Serre - Lectures on Mordell-Weil</li>
-</ol></article></article><span class="incontext"><a href="sec-beyi-abc.html#paragraphs-17">in-context</a></span>
+<p>We say that</p>
+<div class="displaymath">
+\begin{equation*}
+(X_1, D_1) \sim (X_2, D_2)
+\end{equation*}
+</div>
+<p>if there exists an orientation preserving homeomorphism \(\phi \colon X_1 \to X_2\text{,}\) \(\phi|_{D_1} \colon D_1 \xrightarrow\sim D_2\text{.}\)</p></article><article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.7.8</span>
+</h6>
+<div class="displaymath">
+\begin{equation*}
+\{\text{Dessins}\}/\sim \leftrightarrow \{( \sigma_0, \sigma_1),\,\langle \sigma_0, \sigma_1 \rangle \subseteq \Sigma_N \text{ transitive}\}/\sim
+\end{equation*}
+</div></article></article><span class="incontext"><a href="sec-dessins.html#paragraphs-17">in-context</a></span>
 </body>
 </html>

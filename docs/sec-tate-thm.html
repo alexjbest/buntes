@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Tate's Isogeny Theorem (Sachi)</title>
+<title>BUNTES Tate's Isogeny Theorem (Sachi)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,14 +290,17 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-tate-thm"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.13</span> <span class="title">Tate's Isogeny Theorem (Sachi)</span>
 </h2>
-<a href="sec-tate-thm.html" class="permalink">¶</a><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
+<a href="sec-tate-thm.html" class="permalink">¶</a><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.13.1</span> <span class="title">The Theorem</span>
 </h3>
 <article class="theorem-like" id="thm-tate-isog"><h6 class="heading">
@@ -312,7 +315,7 @@ MathJax.Hub.Config({
 <p>(where the \(G\) action on \(\Hom_{\ZZ_l}(T_l A, T_lB)\) is \((gf)(x) = gf(g^{-1}x)\)) is an isomorphism.</p></article><article class="remark-like" id="remark-8"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">1.13.2</span>
 </h6>
-<p id="p-377">Tate's theorem is also true for function fields over finite fields (Zarhin) and fields that are finitely generated over their prime field (Faltings), e.g. number fields. Not true over algebraically closed fields though.</p></article></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
+<p id="p-377">Tate's theorem is also true for function fields over finite fields (Zarhin) and fields that are finitely generated over their prime field (Faltings), e.g. number fields. Not true over algebraically closed fields though.</p></article></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.13.2</span> <span class="title">Motivation</span>
 </h3>
 <p id="p-378">Let \(\pi_A\) and \(\pi_B\) be the (relative) Frobenii on \(V_l(A), V_l(B)\)</p>
@@ -356,7 +359,7 @@ P_B | P_A
 \alpha \colon V_l(B)\hookrightarrow V_l(A)
 \end{equation*}
 </div>
-<p>the surjectivity in Tate's theorem means we can choose \(u \in \Hom_k(B,A) \otimes \QQ_l\text{.}\) \(V_l(u) = \alpha\text{.}\) Choose \(u \in \Hom_k(B,A) \otimes \QQ\) arbitrarily close to \(\alpha\text{.}\) Lower semicontinuity implies if \(V_l(u)\) is close enough to \(\alpha\text{,}\) can ensure \(V_l(u)\) is injective (\(\ker (V_l (u)) = 0\)) take multiple to get \(u \in \Hom_k(B,A)\text{.}\) Since \(T_l (u)\) is injective \(u \) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> to an abelian subvariety.</p></article></div></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type">
+<p>the surjectivity in Tate's theorem means we can choose \(u \in \Hom_k(B,A) \otimes \QQ_l\text{.}\) \(V_l(u) = \alpha\text{.}\) Choose \(u \in \Hom_k(B,A) \otimes \QQ\) arbitrarily close to \(\alpha\text{.}\) Lower semicontinuity implies if \(V_l(u)\) is close enough to \(\alpha\text{,}\) can ensure \(V_l(u)\) is injective (\(\ker (V_l (u)) = 0\)) take multiple to get \(u \in \Hom_k(B,A)\text{.}\) Since \(T_l (u)\) is injective \(u \) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> to an abelian subvariety.</p></article></div></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.13.3</span> <span class="title">Isogeny category</span>
 </h3>
 <p id="p-383">Recall: The <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> category, <a knowl="./knowl/thm-poincare-reducibility.html" title="Theorem 1.8.1: Poincaré's complete reducibility theorem">Theorem 1.8.1</a>, <a knowl="./knowl/cor-ab-var-product-simple.html" title="Corollary 1.8.3">Corollary 1.8.3</a>. So we have  a category \(\cat{Isog}\) of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> with</p>
@@ -370,7 +373,7 @@ P_B | P_A
 <ol class="decimal">
 <li id="li-71">Decomposition up to <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> into a product of <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> is unique.</li>
 <li id="li-72">If \(A\) is <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> \(\End A \otimes \QQ\) is a division algebra over \(\QQ\text{.}\) Reason: If \(A\) is <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> in an abelian category, if \(\End A \supseteq k\) a field implies it's a division algebra.</li>
-</ol></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
+</ol></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.13.4</span> <span class="title">Reductions</span>
 </h3>
 <article class="theorem-like" id="lemma-7"><h6 class="heading">
@@ -467,7 +470,7 @@ E_l = C(F_l) = \End_G(V_l(A))\text{.}
 \end{equation*}
 </div>
 </li>
-</ol></article></div></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+</ol></article></div></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.13.5</span> <span class="title">Proof of Tate using finiteness</span>
 </h3>
 <p id="p-391">We introduce a hypothesis: \(\operatorname{Hyp}(k,A,l)\) there exist only finitely many (up to \(k\)-isomorphism) <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> \(B\) s.t. there is a \(k\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> of \(l\)-power degree from \(B\to A\text{.}\)</p>

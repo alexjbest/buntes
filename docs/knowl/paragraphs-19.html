@@ -11,35 +11,90 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">References</span></h5>
-<p>A semi-random order, maybe starting at the top is nice though. If you have trouble finding something let me know.</p>
+<article class="paragraphs"><h5 class="heading"><span class="title">ABC implies a bound on Mordell</span></h5>
+<p>We begin with a technical proposition:</p>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.9.8</span>
+</h6>
+<p>Let \(K\) be a number field an d \(C/K\) a  curve. Let \(f \in K(C)\) be a rational function of degree \(d\text{.}\) Then for \(p \in C(K) \smallsetminus f\inv(0)\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\log N_0(f(p)) \lt (1- b_f(0)/d) \log H(f(p)) + O(\sqrt{\log H(f(p))} + 1)
+\end{equation*}
+</div>
+<p>with the following notation</p>
+<div class="displaymath">
+\begin{equation*}
+N(r)  =N_0(r) N_1(r) N_\infty(r)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+N_0(r) = \prod_{\ideal p \supseteq (r)} \norm(\ideal p)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+N_1(r) = \prod_{\ideal p \supseteq (1-r)} \norm(\ideal p)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+N_\infty(r) = \prod_{\ideal p \supseteq (1/r)} \norm(\ideal p)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+b_f(0) = \sum_{f(p) = 0} (e_p - 1)\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="./knowl/proof-98-hidden.html" title="Proof 2.9.8.1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.9.9</span>
+</h6>
+<p>One can show the above for \(N_1, N_\infty\) instead making the appropriate replacements for \(f\text{.}\)</p></article><p>Adding the three terms together we get</p>
+<div class="displaymath">
+\begin{equation*}
+\log N_0(f(P))N_1(f(P)) N_\infty(f(P))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\lt \left(\left(1- \frac{b_f(0)}{d}\right) +\left(1- \frac{b_f(1)}{d}\right)+\left(1- \frac{b_f(\infty)}{d}\right)\right) \log H(f(P)) + O(\cdots)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\log N(f(P)) \lt \frac 1d \left(\# f\inv(0)+\# f\inv(1)+\# f\inv(\infty) \right) \log H(f(P)) + O(\cdots)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\lt \frac md \log H(f(P))+ O(\cdots)
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+m = \#\{P \in C(\overline \QQ) : f(P) \in \{0,1,\infty\}\}
+\end{equation*}
+</div>
+<p>exponentiating we get</p>
+<div class="displaymath">
+\begin{equation*}
+N(f(P)) \lt H(f(P))^{m/d} K\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.9.10</span> <span class="title">ABC implies Mordell</span>
+</h6>
+<p>ABC implies Mordell.</p></article><article class="hiddenproof"><a knowl="./knowl/proof-99-hidden.html" title="Proof 2.9.10.1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.9.11</span> <span class="title">Closing remarks</span>
+</h6>
+<p>Belyi's theorem gives an algorithm for determining \(f \colon C \to \PP^1\) i.e. it is effective.</p>
+<p>One can also show ABC implies Siegel's theorem.</p>
+<p>In fact it can be shown that a particular effective form of Mordell (applied to \(y^2 + y = x^5\)) for all number fields implies ABC. This is related to Szpiro's conjecture.</p></article><p>References:</p>
 <ol class="decimal">
-<li>On Computing Belyi Maps - J. Sijsling, J. Voight</li>
-<li>Belyi Functions: Examples, Properties, and Applications - Zvonkin (really nice survey)</li>
-<li>On Davenport’s bound for the degree of \(f^3 - g^2\) and Riemann's Existence Theorem - Umberto Zannier</li>
-<li>Unifying Themes Suggested by Belyi's Theorem - Wushi Goldring</li>
-<li>Polynomial Identities and Hauptmoduln - W. W. Stothers</li>
-<li>Elliptic Surfaces and Davenport-Stothers Triples -  Tetsuji Shioda</li>
-<li>The abc-theorem, Davenport’s inequality and elliptic surfaces - Tetsuji Shioda</li>
-<li>It's As Easy As abc -  Andrew Granville, Thomas J. Tucker</li>
-<li>Polynomial and Fermat–Pell families that attain the Davenport–Mason bound - Noam D. Elkies, Mark Watkins (on Watkins webpage)</li>
-<li>Halltripels en kindertekeningen - Hans Montanus (in Dutch, but math is universal right?)</li>
-<li>Computational Number Theory and Algebraic Geometry Spring 2012, taught by Noam Elkies, notes by Jason Bland</li>
-<li>Davenport–Zannier polynomials over \(\QQ\) - Fedor Pakovich, Alexander K. Zvonkin (a nice extension perhaps?)</li>
-<li>Minimum Degree of the Difference of Two Polynomials over Q, and Weighted Plane Trees -  Fedor Pakovich,  Alexander K. Zvonkin (as above)</li>
-<li>The ABC-conjecture for polynomials - Abhishek Parab</li>
-<li>On Marshall Hall's Conjecture and Gaps Between Integer Points on Mordell <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">Elliptic Curves</a> - Ryan D'Mello</li>
-<li>Neighboring powers - F. Beukers, C. L. Stewart (a more general problem, but nice history and examples)</li>
-<li>Rational Points Near Curves and Small Nonzero \(| x^3 - y^2|\) via Lattice Reduction - Elkies</li>
-<li>ABC implies Mordell - Elkies</li>
-<li>Dessins d'enfant -  Jeroen Sijsling (master thesis)</li>
-<li>Algorithms and differential relations for <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi functions</a> - Mark van Hoeij, Raimundas Vidunas.</li>
-<li>Belyi functions for hyperbolic hypergeometric-to-Heun transformations -  Mark van Hoeij, Raimundas Vidunas (has application to ABC over number fields at the end)</li>
-<li>Some remarks on the S-unit equation in function fields  - Umberto Zannier</li>
-<li>A note on integral points on <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> - Mark Watkins</li>
-<li>On Hall’s conjecture - Andrej Dujella (more recent progress)</li>
-<li>Hecke Groups, <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a> d'Enfants and the Archimedean Solids -  Yang-Hui He, and James Read</li>
-<li>Belyi functions for Archimedean solids - Nicolas Magot, Alexander Zvonkin (didn't really use this but it's nice!)</li>
-</ol></article><span class="incontext"><a href="sec-dessins-integer-pts-abc.html#paragraphs-19">in-context</a></span>
+<li>Elkies - ABC implies Mordell</li>
+<li>Serre - Lectures on Mordell-Weil</li>
+</ol></article><span class="incontext"><a href="sec-beyi-abc.html#paragraphs-19">in-context</a></span>
 </body>
 </html>

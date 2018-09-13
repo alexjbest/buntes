@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Supersingular isogeny graph cryptography (Asra)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-supersing-isog-graphs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-supersing-isog.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-supersing-isog-graphs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-supersing-isog.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto" class="active">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-supersing-isog-crypto"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Supersingular isogeny graph cryptography (Asra)</span>
+</h2>
+<a href="sec-supersing-isog-crypto.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-822">Supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graph crypto is a candidate for post-quantum crypto, not based on factoring etc.</p>
+<p id="p-823">Recall last time we defined <a knowl="./knowl/def-supersing-isog-ramanujan.html" title="Definition 3.1.13: Ramanujan graphs">Ramanujan graphs</a>, graphs with very good connectivity properties, a type of expander.</p>
+<article class="theorem-like" id="proposition-60"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">3.2.1</span>
+</h6>
+<p id="p-824">If \(G\) is Ramanujan, \(x\in V, S\subseteq V\text{.}\) For a sufficiently large path the probability that the path ends in \(S\) is at least \(|S|/2|G|\text{.}\)</p></article><p id="p-825">Upshot supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graphs are \((l +1)\)-regular, undirected, Ramanujan, connected.</p>
+<p id="p-826">Some of our algorithms are only dependent on having a graph with this property, not so much the interpretation in terms of <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>.</p>
+<p id="p-827">Supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graphs first appeared in crypto as potential <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash functions</a>.</p></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Hash functions</span>
+</h3>
+<p id="p-828">(2010) (Charles, Goren, Lauter) proposed a cryptographically secure <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> based on the hardness of computing paths in a supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graphs.</p>
+<article class="definition-like" id="def-hash-function"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.2.2</span> <span class="title">Hash functions</span>
+</h6>
+<p id="p-829">A <dfn class="terminology">hash function</dfn> is a deterministic function \(h\colon \{0,1\}^* \to \{0,1\}^n\text{.}\)</p></article><article class="definition-like" id="def-collision-resistance"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.2.3</span> <span class="title">Collision resistance</span>
+</h6>
+<p id="p-830">A <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> \(h\) is <dfn class="terminology">collision resistant</dfn> if its hard to find \(x_1,x_2\) with \(x_1\ne x_2 \) s.t. \(h(x_1) = h(x_2)\text{.}\)</p></article><article class="definition-like" id="def-preimage-resistance"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.2.4</span> <span class="title">Preimage resistance</span>
+</h6>
+<p id="p-831">A <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> \(h\) is <dfn class="terminology">preimage resistant</dfn> if given \(y\in \{0,1\}^n\) its hard to find \(x\) s.t. \(h(x) = y\text{.}\)</p></article><p id="p-832">Cool example, private set intersection, say two groups, Starbucks and BU want to find a list of common customers (students who bought something at Starbucks) but don't want to reveal anything to each other about the students or customers not in the intersection. Compute hashes of the names of customers and share the hashes, can compute the size of, and the intersection itself.</p></section><section class="subsection" id="subsection-69"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Supersingular isogeny hash functions</span>
+</h3>
+<article class="paragraphs" id="paragraphs-31"><h5 class="heading"><span class="title">Parameters</span></h5>
+<p id="p-833">\(G_l(\FF_{p^2})\text{,}\) \(p \equiv 1 \pmod{12}\text{,}\) \(l\) to be small, fix an ordering on the edges, fix an initial vertex \(j_0\) and an incoming edge.</p></article><article class="paragraphs" id="paragraphs-32"><h5 class="heading"><span class="title">Protocol</span></h5>
+<p id="p-834">\(m \in \{0,1\}^*\) write this as an \(l\)-bit string, \(m \in \{0,1,\ldots, l-1\}^*\text{,}\) walk the graph based on \(m\) without backtracking.</p>
+<p id="p-835">Map the final \(j\) invariant to  \(\{0,1\}^{n\approx \log p}\text{.}\)</p></article><article class="paragraphs" id="paragraphs-33"><h5 class="heading"><span class="title">Properties</span></h5>
+<p id="p-836">Difficult means exponential in the size of the input normally.</p>
+<article class="theorem-like" id="proposition-61"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">3.2.5</span>
+</h6>
+<ol id="p-837" class="decimal">
+<li id="li-211">Preimage resistant iff when given \(j\) it is difficult to compute a positive integer \(e\) and an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi\colon E_{j_0} \to E_j\) with degree \(l^e\text{.}\)</li>
+<li id="li-212">Collision resistant iff when given \(j\) it is difficult to compute \(e\) and  \(\phi \colon E_{j_0} \to E_{j_0}\) with degree \(l^e\text{.}\)</li>
+</ol></article></article></section><section class="subsection" id="subsection-70"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Diffie-Hellman Key Exchange (1976)</span>
+</h3>
+<p id="p-838">Choose \(p,\, \ZZ/p, g\) then Alice computes \(g^a\) send to Bob, he computes \(g^b\) and sends it back, they both compute \(g^{ab}\text{,}\) which is their shared secret.</p>
+<p id="p-839">The security is based on the hardness of computing \(g^{ab}\) given \(g^a,g^b\text{.}\)</p></section><section class="subsection" id="subsection-71"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.4</span> <span class="title">Supersingular isogeny Diffie-Hellman (SIDH)</span>
+</h3>
+<article class="paragraphs" id="paragraphs-34"><h5 class="heading"><span class="title">Parameters</span></h5>
+<p id="p-840">Supersingular <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> of smooth order: fix \(p\) to be big enough \(p = l_A^{e_A} l_B^{e_B} f  \pm 1\text{.}\) \(l_A,l_B\) small primes, \(f\) is a number chosen such that \(p\) is big. Construct a supersingular <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E\) such that \(\# E(\FF_{p^2}) = (l_A^{e_A}l_B^{e_B} f)^2\text{,}\) using Broker's algorithm.</p>
+<p id="p-841">Construct bases \((P_A, Q_A)\) for \(E\lb l_A^{e_A}\text{,}\) \((P_B, Q_B)\) for \(E\lb l_B^{e_B}\text{.}\)</p></article><article class="paragraphs" id="paragraphs-35"><h5 class="heading"><span class="title">Protocol</span></h5>
+<p id="p-842">Alice takes \(m_A,n_A \in \ZZ/l_A^{e_A}\)</p>
+<p id="p-843">Bob takes \(m_B,n_B \in \ZZ/l_B^{e_B}\)</p>
+<p id="p-844">Alice finds \(R_A = m_AP_A + n_AQ_A\)</p>
+<p id="p-845">Bob finds \(R_B = m_BP_B + n_BQ_B\)</p>
+<p id="p-846">Alice finds \(\phi_A \colon E \to E/\langle R_A\rangle = E_A\)</p>
+<p id="p-847">Bob finds \(\phi_B \colon E \to E/\langle R_B\rangle = E_B\)</p>
+<p id="p-848">They send each other \(E_i, \phi_i(P_i),\phi_i(Q_i)\text{.}\)</p>
+<p id="p-849">Both compute \(\phi'_A\colon E_B \to E_B/\langle m_A\phi_B(P_A) + n_A\phi_B(Q_A)\rangle\) or analogous.</p>
+<p id="p-850">Shared secret is \(j(E_{AB})\text{.}\)</p></article><article class="paragraphs" id="paragraphs-36"><h5 class="heading"><span class="title">Hardness</span></h5>
+<ol id="p-851" class="decimal">
+<li id="li-213">(Decisional supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> problem) Given \(E, (P_A,Q_A)\) a basis for \(l_A^{e_A}\) torsion, let \(E_A\) be another curve, is \(E_A\) \(l_A^{e_A}\) isogenous to \(E\text{?}\)</li>
+<li id="li-214">(Computational supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> problem) Let \(\phi_A \colon E \to E_A\) be an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> with a kernel of the form \(\langle m_AP_A + n_AQ_A \rangle\text{.}\) Given \(E_A\) and \(\phi_A(P_B)\) \(\phi_A(Q_B)\text{,}\) find \(R_A\text{.}\) \(p^{1/4}\) classical, \(p^{1/6}\) quantum.</li>
+<li id="li-215">Given \(E_A, E_B, \phi_A(P_B), \phi_A(Q_B), \phi_B(P_A), \phi_B(Q_A)\) find \(j\)-invariant of \(E_{AB}\text{.}\)</li>
+</ol></article></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.5</span> <span class="title">Supersingular isogeny public key</span>
+</h3>
+<p id="p-852">Classically DH key-exchange \(\leadsto\) ElGamal encryption.</p>
+<ol id="p-853" class="decimal">
+<li id="li-216">
+<p id="p-854">Key generation.</p>
+<p id="p-855">Alice: secret \(\phi_A \colon E \to E_A\text{,}\) public \(E_A\) and \(\phi_A(P_B), \phi_A(Q_B)\text{.}\)</p>
+</li>
+<li id="li-217">
+<p id="p-856">Encryption.</p>
+<p id="p-857">Bob: choose \(\phi_B \colon E \to E_B\text{,}\) compute \(j(E_{AB})\text{.}\)</p>
+<p id="p-858">Send Alice \(c = (E_B, \phi_B(P_A), \phi_B(Q_A), m\oplus j(E_{AB}))\)</p>
+</li>
+<li id="li-218">
+<p id="p-859">Decryption.</p>
+<p id="p-860">Alice use \((E_B, \phi_B(P_A), \phi_B(Q_A))\) to compute \(j(E_{AB})\text{.}\) Computes \((m\oplus j(E_{AB})) \oplus j(E_{AB}) = m\text{.}\)</p>
+</li>
+</ol>
+<p id="p-861">\(E(\FF_{p^2})\text{,}\) \(p = l_A^{e_A} l_B^{e_B} f \pm 1\text{,}\) for \(128\)-bit security use a \(512\)-bit key.</p></section><section class="subsection" id="subsection-73"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.6</span> <span class="title">Algorithmic aspects</span>
+</h3>
+<ol id="p-862" class="decimal">
+<li id="li-219">(Choosing \(f\)) Prime number theorem for arithmetic progressions gives you a bound on the density of primes of the form \(l_A^{e_A} l_B^{e_B} f \pm 1\)</li>
+<li id="li-220">Choosing a s.s. e.c. with the right group order, Broker's algorithm.</li>
+<li id="li-221">
+<p id="p-863">Finding a basis for \(E\lb l_A^{e_A}\rb\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-222">Find a random point in \(E(\FF_{p^2})\) say \(P\text{.}\)</li>
+<li id="li-223">Check the order of \((l_B^{e_B} f)^2 \cdot P\text{.}\) If its \(l_A^{e_A}\) set \(P_A = P\text{.}\) Otherwise repeat from 1.</li>
+<li id="li-224">Do the same with \(Q_A = Q\text{.}\)</li>
+<li id="li-225">Check independence by seeing if \(e(P_A,Q_A) \)</li>
+</ol>
+</li>
+<li id="li-226">Computing the kernels generated by \(R_A = m_A P_A + n_A Q_A\text{,}\) \(m_A, n_A \in \ZZ/l_A^{e_A} \ZZ\text{.}\) Analogue of double and add. Set \(R_A = P_A + \lb m_A\inv n_A\rb Q_A\text{.}\) Use differential addition (when you compute \(A+B\) with side info \(A-B\)) and a Montgomery ladder</li>
+<li id="li-227">(Computing smooth degree <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>) Decompose the \(l_A^{e_A}\) <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> into \(e_A\) different \(l_A\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>, \(\phi_i\colon E_i \to E_{i+1}\) the kernel of \(\phi_i\) is \(\langle l_A^{e_A - i - 1} R_A\rangle\text{.}\) Velu's formula runs in \(O(l)\) for \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>.</li>
+</ol></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Riemann Surfaces and Discrete Groups (Rod)</title>
+<title>BUNTES Riemann Surfaces and Discrete Groups (Rod)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,14 +290,17 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-rs-discrete-groups"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Riemann Surfaces and Discrete Groups (Rod)</span>
 </h2>
-<a href="sec-rs-discrete-groups.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><p id="p-539">Welcome to BUGLES (Boston university geometry learning expository seminar), the reason it is called bugles is because bugles are hyperbolic, and today we will see a lot of hyperbolic objects.</p>
+<a href="sec-rs-discrete-groups.html" class="permalink">¶</a><section class="introduction" id="introduction-8"><p id="p-539">Welcome to BUGLES (Boston university geometry learning expository seminar), the reason it is called bugles is because bugles are hyperbolic, and today we will see a lot of hyperbolic objects.</p>
 <p id="p-540">Plan</p>
 <ol class="decimal">
 <li id="li-106">Uniformization</li>
@@ -325,7 +328,7 @@ MathJax.Hub.Config({
 </div></article><article class="theorem-like" id="theorem-45"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.4.2</span>
 </h6>
-<p id="p-542">\(\Sigma\) has a universal cover \(\widetilde \Sigma\) with \(\pi_1 ( \Sigma) = 1\text{.}\) \(\widetilde \Sigma \to \Sigma\) holomorphic. \(\Sigma  = \widetilde \Sigma /G\) for \(G = \pi_1(\Sigma)\text{.}\) \(G\) acts freely and properly discontinuously.</p></article></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
+<p id="p-542">\(\Sigma\) has a universal cover \(\widetilde \Sigma\) with \(\pi_1 ( \Sigma) = 1\text{.}\) \(\widetilde \Sigma \to \Sigma\) holomorphic. \(\Sigma  = \widetilde \Sigma /G\) for \(G = \pi_1(\Sigma)\text{.}\) \(G\) acts freely and properly discontinuously.</p></article></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Uniformization</span>
 </h3>
 <article class="theorem-like" id="theorem-46"><h6 class="heading">
@@ -350,8 +353,8 @@ g\ge2: \Sigma \amp\cong \HH/ K\text{.}
 \Sigma = \HH/K,\, K \subseteq \PSL_2(\RR)\text{.}
 \end{equation*}
 </div></article></div>
-<article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Goal</span></h5>
-<p id="p-549">Understand \(\Sigma \) through \(\widetilde \Sigma\) and \(G\text{.}\)</p></article><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Fuchsian groups</span></h5>
+<article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Goal</span></h5>
+<p id="p-549">Understand \(\Sigma \) through \(\widetilde \Sigma\) and \(G\text{.}\)</p></article><article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">Fuchsian groups</span></h5>
 <p id="p-550">\(g \ge 2\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -371,14 +374,14 @@ g\ge2: \Sigma \amp\cong \HH/ K\text{.}
 \HH \to \HH/\Gamma
 \end{equation*}
 </div>
-<p>is still a covering map and \(\HH/\Gamma\) is a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>.</p></article></article><article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">Reflections on \(\HH\)</span></h5>
+<p>is still a covering map and \(\HH/\Gamma\) is a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>.</p></article></article><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Reflections on \(\HH\)</span></h5>
 <p id="p-553">Say \(\mu\) is a geodesic in \(\HH\text{,}\) i.e. a horocycle.There is \(M \in \PSL_2(\RR)\) with \(M\mu\) the imaginary axis. Then \(R = -\bar z\) is the reflection  over the imaginary axis. Now \(R_\mu = M\inv\circ R \circ M\) is a reflection over \(\mu\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 R_\mu = \frac{a\bar z  + b}{ c\bar z + d}\not\in \PSL_2(\RR)
 \end{equation*}
 </div>
-<p>this is a a problem for us.</p></article><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Triangle groups</span></h5>
+<p>this is a a problem for us.</p></article><article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Triangle groups</span></h5>
 <p id="p-554">Given \(n, m, l\in \ZZ \cup \{\infty\}\) then there is a hyperbolic triangle with angles \(\pi/n,\pi/m, \pi/l\) if</p>
 <div class="displaymath">
 \begin{equation*}

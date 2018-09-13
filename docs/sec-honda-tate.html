@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS The Honda Tate Theorem (Angus)</title>
+<title>BUNTES The Honda Tate Theorem (Angus)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,14 +290,17 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-honda-tate"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.14</span> <span class="title">The Honda Tate Theorem (Angus)</span>
 </h2>
-<a href="sec-honda-tate.html" class="permalink">¶</a><section class="introduction" id="introduction-7"><p id="p-402">\(q = p^n\text{,}\) \(A\) a <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\FF_q\text{,}\) \(\pi_A\) the frobenius on \(A\text{,}\) \(\End^0(A) = \QQ\otimes \End(A)\text{,}\) \(f_A\) is the charpoly of \(A\) (i.e. of \(\pi_A\)).</p>
+<a href="sec-honda-tate.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-402">\(q = p^n\text{,}\) \(A\) a <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\FF_q\text{,}\) \(\pi_A\) the frobenius on \(A\text{,}\) \(\End^0(A) = \QQ\otimes \End(A)\text{,}\) \(f_A\) is the charpoly of \(A\) (i.e. of \(\pi_A\)).</p>
 <article class="theorem-like" id="fact-3"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">1.14.1</span>
 </h6>
@@ -346,7 +349,7 @@ A \mapsto \pi_A
 \begin{equation*}
 A \mapsto \pi_A\text{.}
 \end{equation*}
-</div></article><p id="p-408">We need to show this is well-defined, injectivity and surjectivity.</p></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+</div></article><p id="p-408">We need to show this is well-defined, injectivity and surjectivity.</p></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.14.1</span> <span class="title">Honda-Tate map</span>
 </h3>
 <p id="p-409">Recall:</p>
@@ -374,7 +377,7 @@ A \sim_{\text{isog}} B\implies  f_A =f_B \implies \pi_A \sim \pi_B\text{.}
 \end{equation*}
 </div>
 <p>So the Honda-Tate map is well defined.</p>
-<p id="p-415">This doesn't quite give injectivity because a priori \(f_A\) and \(f_B\) could be powers of the minpolys of \(\pi_A, \pi_B\text{.}\)</p></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<p id="p-415">This doesn't quite give injectivity because a priori \(f_A\) and \(f_B\) could be powers of the minpolys of \(\pi_A, \pi_B\text{.}\)</p></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.14.2</span> <span class="title">Injectivity and Brauer groups</span>
 </h3>
 <p id="p-416">From last time:</p>
@@ -391,8 +394,8 @@ r(f_A, f_B) = \rank \Hom(A,B)\text{.}
 </h6>
 <p id="p-418">Let \(d = \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}\text{,}\) let \(h_A = \operatorname{minpoly}_\QQ(\pi_A)\) then \(f_A = h_A^d\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-71" id="proof-71"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-71" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-419">Study the formula for \(r(f_A, f_A)\) Edixhoven-van der Geer-Moonen 16.22.</p></article></div>
 <p id="p-420">So the next step is to try and recover \(\End^0(A)\) from \(\pi\text{.}\)</p>
-<article class="definition-like" id="definition-40"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.14.9</span>
+<article class="definition-like" id="def-csa"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.14.9</span> <span class="title">Central simple algebras</span>
 </h6>
 <p id="p-421">A <dfn class="terminology">central <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> algebra</dfn> \(B/k\) is a \(k\)-algebra \(B\) with no two-sided ideals and \(Z(B) = k\text{.}\)</p></article><article class="theorem-like" id="theorem-35"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.14.10</span> <span class="title">Artin-Wedderburn</span>
@@ -400,7 +403,7 @@ r(f_A, f_B) = \rank \Hom(A,B)\text{.}
 <p id="p-422">Any such algebra is isomorphic to \(M_n(D)\) for \(D\) a division ring over \(k\text{.}\)</p></article><article class="definition-like" id="def-brauer-gp"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.14.11</span> <span class="title">Brauer groups</span>
 </h6>
-<p id="p-423">The <dfn class="terminology">Brauer group</dfn> of \(k\) \(\operatorname{Br}(k)\) is the set of <a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">central simple algebras</a> under \(\otimes\) module the algebras \(M_n(k)\text{.}\)</p></article><article class="theorem-like" id="fact-4"><h6 class="heading">
+<p id="p-423">The <dfn class="terminology">Brauer group</dfn> of \(k\) \(\operatorname{Br}(k)\) is the set of <a knowl="./knowl/def-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebras</a> under \(\otimes\) module the algebras \(M_n(k)\text{.}\)</p></article><article class="theorem-like" id="fact-4"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">1.14.12</span>
 </h6>
 <ul id="p-424" class="disc">
@@ -450,7 +453,7 @@ D\mapsto (\operatorname{inv}_v(D))_v
 \pi_A\sim \pi_B \iff f_A = f_B\text{.}
 \end{equation*}
 </div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-73" id="proof-73"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-73" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-429">\(\Leftarrow\) done.</p>
-<p id="p-430">\(\Rightarrow\) Let \(D_{\pi_A} , D_{\pi_B}\) be the division rings with invariants specified as in <a knowl="./knowl/prop-elem-av-local-invs.html" title="Proposition 1.14.13">Proposition 1.14.13</a>. \(\pi_A\sim \pi_B \implies D_{\pi_A} \simeq D_{\pi_B} \implies f_A = \operatorname{minpoly}(\pi_A) ^d = f_B\text{.}\)</p></article></div></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<p id="p-430">\(\Rightarrow\) Let \(D_{\pi_A} , D_{\pi_B}\) be the division rings with invariants specified as in <a knowl="./knowl/prop-elem-av-local-invs.html" title="Proposition 1.14.13">Proposition 1.14.13</a>. \(\pi_A\sim \pi_B \implies D_{\pi_A} \simeq D_{\pi_B} \implies f_A = \operatorname{minpoly}(\pi_A) ^d = f_B\text{.}\)</p></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.14.3</span> <span class="title">Surjectivity and CM theory</span>
 </h3>
 <p id="p-431">We need to sow that for a\(\pi\) a \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\FF_q\) such that \(\pi_A \sim \pi\text{.}\)</p>

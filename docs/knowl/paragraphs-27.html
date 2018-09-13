@@ -11,20 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Horizontal isogenies</span></h5>
-<p>\(E/k\) with CM by \(\ints \subseteq K\) imaginary quadratic. Let \(\ideal a\) be an invertible ideal.</p>
+<article class="paragraphs"><h5 class="heading"><span class="title">Ordinary isogeny graphs</span></h5>
+<p>Let \(E/\FF_q\) be an ordinary <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>, then \(\End(E) \simeq \ints\) is an order in an imaginary quadratic field \(K\) with \(\ZZ\lb \pi \rb \subseteq \ints \subseteq \ints_K\) where \(\pi\) is Frobenius and</p>
 <div class="displaymath">
 \begin{equation*}
-E\lb \ideal a \rb = \{ P \in E(\overline k) : \alpha (P)  = 0\, \forall \alpha \in \ideal a\}
+K = \QQ(\sqrt{(\trace \pi)^2 - 4q})
 \end{equation*}
 </div>
-<p>this is a finite group so it is the kernel of a separable <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi_{\ideal a }\text{.}\) If \(p \nmid N(\ideal a)\) then \(\deg(\phi_{\ideal a}) = N(\ideal a)\) with \(\ideal a\) invertible implying \(\phi_{\ideal a} \) is horizontal.</p>
-<p>Each horizontal \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi\) arises from some invertible ideal \(\ideal a\) of norm \(l\text{.}\)</p>
-<p>If \(l | \lb \ints_K : \ints \rb \) no such ideals exist, otherwise the number of invertible ideals of norm \(l\) is</p>
-<div class="displaymath">
-\begin{equation*}
-1+ \left(\frac {\disc(K)}{l}\right) = \begin{cases}0\amp\text{ if }l \text{ inert }\\ 1\amp\text{ if }l \text{ ramified }\\ 2\amp\text{ if }l \text{ splits}\end{cases}
-\end{equation*}
-</div></article><span class="incontext"><a href="sec-supersing-isog-graphs.html#paragraphs-27">in-context</a></span>
+<p>by Tate, isogenous <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> have the same \(\trace \pi\text{.}\)</p>
+<p>We can separate the vertices in the component \(V\) of \(G_l(k)\) containing \(j(E)\) into levels \(V_0, \ldots, V_d\) so that \(j(E') \in V_i\) if \(i = v_l(\lb \ints_K : \ints'\rb)\text{.}\) We'll see that \(\bigcup_{i=0}^d V_i\) is connected.</p>
+<p>Let \(\phi\colon E\to E'\) be an \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> between two <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> with CM by \(\ints = \ZZ+\tau\ZZ\text{,}\) \(\ints ' = \ZZ+\tau'\ZZ\text{.}\) Then \(\hat\phi \tau' \phi \in \End(E) \implies l\tau ' \in \ints\text{.}\) Similarly \(l\tau \in \ints'\text{.}\) There are 3 cases</p>
+<ol class="decimal">
+<li>\(\ints = \ints'\) (\(\phi\) is horizontal).</li>
+<li>\(\lb\ints : \ints' \rb = l\) (\(\phi\) is descending).</li>
+<li>\(\lb\ints' : \ints \rb = l\) (\(\phi\) is ascending).</li>
+</ol>
+<p>In the last two cases we say \(\phi\) is critical.</p></article><span class="incontext"><a href="sec-supersing-isog-graphs.html#paragraphs-27">in-context</a></span>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Polarizations and Étale cohomology (Alex)</title>
+<title>BUNTES Polarizations and Étale cohomology (Alex)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,14 +290,17 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-polarizations-etale"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Polarizations and Étale cohomology (Alex)</span>
 </h2>
-<a href="sec-polarizations-etale.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-243">Plan: <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a>, a little cohomological warmup and a cool finiteness result. <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">Étale</a> cohomology.</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
+<a href="sec-polarizations-etale.html" class="permalink">¶</a><section class="introduction" id="introduction-5"><p id="p-243">Plan: <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a>, a little cohomological warmup and a cool finiteness result. <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">Étale</a> cohomology.</p></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.1</span> <span class="title">Polarizations</span>
 </h3>
 <article class="definition-like" id="def-polarization"><h6 class="heading">
@@ -381,7 +384,7 @@ H^0(X, \sheaf F) , H^1(X, \sheaf F) , H^2(X, \sheaf F) , \ldots\text{.}
 </h6>
 <p id="p-258">Let \(k\) be a finite field, and   \(g,d\ge 1\) integers. Up to isomorphism there are only finitely many <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> \(A/k\) of dimension \(g\) and with a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of degree \(d^2\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-45" id="proof-45"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-45" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-259">(Super sketch)</p>
 <p id="p-260">Over a finite field implies there is an ample \(\sheaf L\) with \(\lambda_{\sheaf L}\) a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of degree \(d^2\text{,}\) then using above \(\chi(\sheaf L^3) = 3^g d\) and \(\sheaf L^3\) is very ample hence \(\dim H^0(A, \sheaf L^3) = 3^g d\) so we get an embedding into \(\PP^{3^g d - 1}\text{.}\)</p>
-<p id="p-261">The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is determined by its Chow form, which by these formulae has some (large) bounded degree, as we are over a finite field however there are only finitely many such.</p></article></div></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
+<p id="p-261">The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is determined by its Chow form, which by these formulae has some (large) bounded degree, as we are over a finite field however there are only finitely many such.</p></article></div></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Étale Cohomology of Abelian Varieties</span>
 </h3>
 <p id="p-262">See <a knowl="./knowl/bib-milne-etale.html" title="Bibliographic Entry 43: Etale cohomology">[43]</a> or <a knowl="./knowl/bib-tamme.html" title="Bibliographic Entry 55: Introduction to étale cohomology">[55]</a>.</p>

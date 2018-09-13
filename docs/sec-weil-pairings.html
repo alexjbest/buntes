@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Weil pairings (Maria)</title>
+<title>BUNTES Weil pairings (Maria)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,14 +290,17 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-weil-pairings"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.10</span> <span class="title">Weil pairings (Maria)</span>
 </h2>
-<a href="sec-weil-pairings.html" class="permalink">¶</a><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
+<a href="sec-weil-pairings.html" class="permalink">¶</a><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.10.1</span> <span class="title">Weil pairings on elliptic curves</span>
 </h3>
 <p id="p-299">Start with <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, later repeat for <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. \(E/k\) an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>, \(m\ge 2\text{,}\) if \(\characteristic(k) = p \gt 0\) \((m,p) = 1\text{.}\) The Weil \(e_m\)-pairing \(e_m \colon E\lb m\rb \times E\lb m \rb \to \mu_m\) is defined as follows: Fix \(T\in E\lb m \rb\) then \(f\in \overline  k (E)\) s.t. \(\divisor(f) = m(T) - m(0)\text{.}\) Fix \(T' \in E\) with \(mT' = T\) and \(g\in \overline k(E)\) s.t. \(\divisor(g) = \lb m \rb^*(T) = \lb m \rb^*(0)= \sum_{R\in E\lb m \rb} (T+R) - (R)\text{.}\) Check \(\divisor (f\circ \lb m \rb) = \divisor(g^m)\text{,}\) hence</p>
@@ -335,7 +338,7 @@ e_{mm'} (a,a')^{m'} = e_m(m'a, m'a') \ \forall a,a' \in E[mm']
 \begin{equation*}
 e \colon T_l E\times T_lE \to T_l \mu = \ZZ_l(1)
 \end{equation*}
-</div></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
+</div></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.10.2</span> <span class="title">Weil pairings on abelian varieties</span>
 </h3>
 <p id="p-300">Story will be broadly similar to before but we must use the dual, which doesn't appear in the presentation for <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>.</p>
@@ -425,7 +428,8 @@ e_m \colon T_lA\times T_l A \to T_l \mu
 (a,a') \mapsto e_m(a, \lambda(a'))\text{.}
 \end{equation*}
 </div>
-<article class="theorem-like" id="proposition-25"><h6 class="heading">
+<article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">Notation</span></h5>
+<p id="p-305">If \(\lambda = \lambda_{\sheaf L} e^{\sheaf L} = e^{\lambda_{\sheaf L}}\text{.}\)</p></article><article class="theorem-like" id="proposition-25"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.10.3</span>
 </h6>
 <p id="p-306">For a homomorphism \(\alpha \colon A \to B\)</p>
@@ -517,7 +521,7 @@ T_l \times T_l \ar[r] &amp; T_l \mu \ni \zeta^m
 }
 \end{equation*}
 </div>
-<p>commutes with - sign so \(e^\lambda (a,a') = \zeta^{-E(a,a')}\)</p></article></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+<p>commutes with - sign so \(e^\lambda (a,a') = \zeta^{-E(a,a')}\)</p></article></section><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.10.3</span> <span class="title">Results about polarizations</span>
 </h3>
 <p id="p-309">\(k = \overline k\) \(p = \characteristic (k) \ge 0\text{.}\)</p>

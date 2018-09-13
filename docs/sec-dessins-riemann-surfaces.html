@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Riemann Surfaces I (Ricky)</title>
+<title>BUNTES Riemann Surfaces I (Ricky)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,14 +290,17 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-dessins-riemann-surfaces"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Riemann Surfaces I (Ricky)</span>
 </h2>
-<a href="sec-dessins-riemann-surfaces.html" class="permalink">¶</a><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<a href="sec-dessins-riemann-surfaces.html" class="permalink">¶</a><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Definitions</span>
 </h3>
 <article class="definition-like" id="def-top-riem-surface"><h6 class="heading">
@@ -315,7 +318,7 @@ MathJax.Hub.Config({
 X= \bigcup_{i\in I} U_i\text{.}
 \end{equation*}
 </div>
-<p>We call \(X\) a <dfn class="terminology">Riemann surface</dfn> if the transition functions \(\phi_i\circ \phi_j^{-1}\) are holomorphic.</p></article></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
+<p>We call \(X\) a <dfn class="terminology">Riemann surface</dfn> if the transition functions \(\phi_i\circ \phi_j^{-1}\) are holomorphic.</p></article></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Examples</span>
 </h3>
 <article class="example-like" id="example-16"><h6 class="heading">
@@ -374,7 +377,7 @@ U_1 =\{[z_0,z_1] : z_1 \ne 0\}\to \CC
 </div></article><article class="example-like" id="example-19"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.2.5</span>
 </h6>
-<p id="p-485">Let \(\Lambda = \ZZ \oplus \ZZ i \subseteq \CC\) then \(X = \CC/\Lambda\) is a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>.</p></article></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
+<p id="p-485">Let \(\Lambda = \ZZ \oplus \ZZ i \subseteq \CC\) then \(X = \CC/\Lambda\) is a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>.</p></article></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Morphisms</span>
 </h3>
 <article class="definition-like" id="def-morph-riem-surf"><h6 class="heading">
@@ -425,7 +428,7 @@ f(z) - \sum_{i=1}^n \sum_{j=1}^{j_i} \frac{\lambda_{j,i}}{(z-a_i)^j}
 <span class="type">Remark</span> <span class="codenumber">2.2.10</span>
 </h6>
 <p id="p-495">\(\CC \not\simeq \mathbf D\) by Liouville.</p>
-<p id="p-496">If \(S, S'\) are connected compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>, then any nonconstant morphism \(f\colon S \to S'\) is surjective. (Nonconstant holomorphic maps are open)</p></article></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
+<p id="p-496">If \(S, S'\) are connected compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>, then any nonconstant morphism \(f\colon S \to S'\) is surjective. (Nonconstant holomorphic maps are open)</p></article></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.4</span> <span class="title">Ramification</span>
 </h3>
 <article class="definition-like" id="def-riem-order-vanish"><h6 class="heading">
@@ -463,7 +466,7 @@ f\circ \phi\inv_a(z) = a^2 + 2az + z^2
 \begin{equation*}
 \ord_a(f) =\begin{cases} 0,\amp \text{ if } a\ne 0\\ 2,\amp\text{ if } a= 0\end{cases}\text{.}
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.5</span> <span class="title">Genus</span>
 </h3>
 <article class="theorem-like" id="theorem-43"><h6 class="heading">

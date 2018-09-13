@@ -25,12 +25,10 @@
 \usepackage{xcolor}
 %% Colored boxes, and much more, though mostly styling
 %% skins library provides "enhanced" skin, employing tikzpicture
-%% vignette library provides fancy shaded frames
 %% boxes may be configured as "breakable" or "unbreakable"
 %% "raster" controls grids of boxes, aka side-by-side
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
-\tcbuselibrary{vignette}
 \tcbuselibrary{breakable}
 \tcbuselibrary{raster}
 %% xparse allows the construction of more robust commands,
@@ -296,8 +294,6 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 %% Lists of references in their own section, maximum depth 1
 \newlist{referencelist}{description}{4}
 \setlist[referencelist]{leftmargin=!,labelwidth=!,labelsep=0ex,itemsep=1.0ex,topsep=1.0ex,partopsep=0pt,parsep=0pt}
-%% Package for tables spanning several pages
-\usepackage{longtable}
 %% hyperref driver does not need to be specified, it will be detected
 \usepackage{hyperref}
 %% configure hyperref's  \url  to match listings' inline verbatim
@@ -551,7 +547,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 {\Huge BUNTES}\\[\baselineskip]
 {\LARGE BU Number Theory Expository Seminar}\\[3\baselineskip]
 {\Large BUNTES Attendees (notes by Alex)}\\[3\baselineskip]
-{\Large September 11, 2018}\\}
+{\Large September 13, 2018}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -575,7 +571,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 %
 \chapter[{Abelian Varieties}]{Abelian Varieties}\label{chapter-abelian-varieties}
 \hypertarget{p-1}{}%
-These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated September 11, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated September 13, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 %
 %
 \typeout{************************************************}
@@ -1552,7 +1548,9 @@ Abelian variety  \(X\), we know this is a \hyperref[def-abelian-complete-var]{co
 Last time Ricky proved theorem of \hyperref[thm-cube]{cube~\ref{thm-cube}} and \hyperref[thm-square]{square~\ref{thm-square}}. For any \hyperref[def-line-bundle]{line bundle}  \(L\) on \(X\), there is a group homomorphism \(\Phi_L\colon X \to \Pic(X)\) via \(x\mapsto T_x^* L\otimes L^{-1}\). Be careful \(T_x^*\) is \(-x\), convention, who knows why.%
 \begin{example}{}{example-9}%
 \hypertarget{p-135}{}%
-Let \(X =E\) an \hyperref[def-supersing-isog-ec]{elliptic curve}, \(L = L((0))\), \(x\mapsto (x) - (0)\), in this case this is in \(\Pic^0(E) \cong E \cong \widehat E\), \begin{proposition}{}{}{proposition-13}%
+Let \(X =E\) an \hyperref[def-supersing-isog-ec]{elliptic curve}, \(L = L((0))\), \(x\mapsto (x) - (0)\), in this case this is in \(\Pic^0(E) \cong E \cong \widehat E\),%
+\end{example}
+\begin{proposition}{}{}{proposition-13}%
 \hypertarget{p-136}{}%
 This is translation invariant.%
 \end{proposition}
@@ -1560,8 +1558,6 @@ This is translation invariant.%
 \hypertarget{p-137}{}%
 Translate by \(q\in E\). \((x+q) - (q)\) take \(p\) to be the third point on the line with \(x,q\), \((x) + (q) + (p) \cong 3(0)\) and \((x+q) + (p) \cong 2 (0)\) subtracting these gives \((x) - (x+q) +(q) \cong (0)\) or \((x) - (0) \cong (x+q) -(q)\).%
 \end{proof}
-%
-\end{example}
 \hypertarget{p-138}{}%
 What about the converse of this, what can we say about translation invariant \hyperref[def-line-bundle]{line bundles}%
 \begin{equation*}
@@ -1745,7 +1741,13 @@ know \(\lb n \rb^* D \sim n^2 D\)%
 \typeout{************************************************}
 %
 \section[{Line Bundles and the Dual Abelian Variety (Angus)}]{Line Bundles and the Dual Abelian Variety (Angus)}\label{sec-dual-ab}
-\subsection*{Introduction}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.7.1 Introduction}
+\typeout{************************************************}
+%
+\subsection[{Introduction}]{Introduction}\label{subsection-19}
 %
 %
 \typeout{************************************************}
@@ -1856,10 +1858,10 @@ Study \(\Pic^0(A)\), give it an \hyperref[def-buntes-abvar]{abelian variety} str
 %
 %
 \typeout{************************************************}
-\typeout{Subsection 1.7.1 Aside: alternate description of \(\Pic^0(A)\)}
+\typeout{Subsection 1.7.2 Aside: alternate description of \(\Pic^0(A)\)}
 \typeout{************************************************}
 %
-\subsection[{Aside: alternate description of \(\Pic^0(A)\)}]{Aside: alternate description of \(\Pic^0(A)\)}\label{subsection-19}
+\subsection[{Aside: alternate description of \(\Pic^0(A)\)}]{Aside: alternate description of \(\Pic^0(A)\)}\label{subsection-20}
 \begin{definition}{Algebraic Equivalence.}{def-alg-equivalence}%
 \hypertarget{p-172}{}%
 Two \hyperref[def-line-bundle]{line bundles} \(L_1,L_2\)  on an \hyperref[def-buntes-abvar]{abelian variety} are \terminology{algebraically equivalent} if there exists a variety \(Y\) with \hyperref[def-line-bundle]{line bundle} \(L\) on \(A\times Y\) and points \(y_1y_2 \in Y\) s.t. \(L|_{A\times\{y_1\}} \simeq L_1, L|_{A\times\{y_2\}} \simeq L_2\).%
@@ -1883,10 +1885,10 @@ This looks like homotopy.%
 %
 %
 \typeout{************************************************}
-\typeout{Subsection 1.7.2 See-Saws}
+\typeout{Subsection 1.7.3 See-Saws}
 \typeout{************************************************}
 %
-\subsection[{See-Saws}]{See-Saws}\label{subsection-20}
+\subsection[{See-Saws}]{See-Saws}\label{subsection-21}
 \begin{theorem}{See-saw theorem.}{}{thm-see-saw}%
 \hypertarget{p-176}{}%
 Let \(X,T\) be varieties      \(X\) \hyperref[def-abelian-complete-var]{complete}, let \(L\) be a \hyperref[def-line-bundle]{line bundle}  on \(X\times T\), let \(T_1 = \{t\in T : L|_{X\times\{t\}} \text{ is trivial}\}\) then \(T_1\) is closed in \(T\). Further let \(p_2\colon X\times T_1 \to T_1\), then \(L|_{X\times T_1} \cong p^*_2 M\) for some \hyperref[def-line-bundle]{line bundle} \(M\) on \(T_1\).%
@@ -1910,10 +1912,10 @@ then \(L\cong M\).%
 %
 %
 \typeout{************************************************}
-\typeout{Subsection 1.7.3 Properties of \(\Pic^0 A\)}
+\typeout{Subsection 1.7.4 Properties of \(\Pic^0 A\)}
 \typeout{************************************************}
 %
-\subsection[{Properties of \(\Pic^0 A\)}]{Properties of \(\Pic^0 A\)}\label{subsection-21}
+\subsection[{Properties of \(\Pic^0 A\)}]{Properties of \(\Pic^0 A\)}\label{subsection-22}
 \begin{lemma}{}{}{lemma-2}%
 \hypertarget{p-179}{}%
 \(L\in \Pic^0(A)\) and \(m,p_1,p_2\colon A\times A \to A\)\leavevmode%
@@ -2014,10 +2016,10 @@ the LHS allows us to put an \hyperref[def-buntes-abvar]{abelian variety} structu
 %
 %
 \typeout{************************************************}
-\typeout{Subsection 1.7.4 The Dual Abelian Variety}
+\typeout{Subsection 1.7.5 The Dual Abelian Variety}
 \typeout{************************************************}
 %
-\subsection[{The Dual Abelian Variety}]{The Dual Abelian Variety}\label{subsection-22}
+\subsection[{The Dual Abelian Variety}]{The Dual Abelian Variety}\label{subsection-23}
 \begin{theorem}{}{}{theorem-15}%
 \hypertarget{p-190}{}%
 Let \(A\) be an \hyperref[def-buntes-abvar]{abelian variety} and \(L\) an ample \hyperref[def-line-bundle]{line bundle} on \(A\), then the quotient scheme \(A/K(L)\) exists and is an \hyperref[def-buntes-abvar]{abelian variety} of the same dimension as \(A\).%
@@ -2084,10 +2086,10 @@ Z \mapsto \left\{ L\in \Pic (A\times Z) : \substack{ L|_{A\times \{z\}} \in \Pic
 %
 %
 \typeout{************************************************}
-\typeout{Subsection 1.7.5 Dual morphisms}
+\typeout{Subsection 1.7.6 Dual morphisms}
 \typeout{************************************************}
 %
-\subsection[{Dual morphisms}]{Dual morphisms}\label{subsection-23}
+\subsection[{Dual morphisms}]{Dual morphisms}\label{subsection-24}
 \hypertarget{p-195}{}%
 Let \(f\colon A\to B\) be a homomorphism of \hyperref[def-buntes-abvar]{abelian varieties}. Let \(\sheaf P_A,\sheaf P_B\) be the \hyperref[thm-poincare-bundle]{Poincaré bundles} on  \(A\) and \(B\). Consider \(M=    (F\times \id_{\hat B})^* \sheaf P_B\) on \(A\times \hat B\), then\leavevmode%
 \begin{enumerate}
@@ -2197,15 +2199,17 @@ this feels quite restrictive, an \hyperref[def-supersing-isog-isog]{isogeny} is 
 \begin{equation*}
 \rank_\ZZ \Hom(A,B) = ?
 \end{equation*}
-\label{notation-1}
 %
+\par
+\hypertarget{p-208}{}%
+Notation: \(A,B,C , A_i,  B_i\) are all \hyperref[def-buntes-abvar]{abelian varieties}. \(l \ne \characteristic k\), \(\sim\) is \hyperref[def-supersing-isog-isog]{isogeny}.%
 %
 %
 \typeout{************************************************}
 \typeout{Subsection 1.8.1 Poincaré's complete reducibility theorem}
 \typeout{************************************************}
 %
-\subsection[{Poincaré's complete reducibility theorem}]{Poincaré's complete reducibility theorem}\label{subsection-24}
+\subsection[{Poincaré's complete reducibility theorem}]{Poincaré's complete reducibility theorem}\label{subsection-25}
 \begin{theorem}{Poincaré's complete reducibility theorem.}{}{thm-poincare-reducibility}%
 \hypertarget{p-209}{}%
 Let \(B\subseteq A\) then there is \(C\subseteq A\) s.t. \(B \cap C\) is finite and \(B+C = A\). I.e. \(B\times C \to A,\,(b,c) \mapsto b+c\) is an \hyperref[def-supersing-isog-isog]{isogeny}.%
@@ -2467,7 +2471,7 @@ Plan: \hyperref[def-polarization]{polarizations}, a little cohomological warmup 
 \typeout{Subsection 1.9.1 Polarizations}
 \typeout{************************************************}
 %
-\subsection[{Polarizations}]{Polarizations}\label{subsection-25}
+\subsection[{Polarizations}]{Polarizations}\label{subsection-26}
 \begin{definition}{Polarizations.}{def-polarization}%
 \hypertarget{p-244}{}%
 A \terminology{polarization} of an \hyperref[def-buntes-abvar]{abelian variety} \(A/k\) is an \hyperref[def-supersing-isog-isog]{isogeny}%
@@ -2570,7 +2574,7 @@ The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is d
 \typeout{Subsection 1.9.2 Étale Cohomology of Abelian Varieties}
 \typeout{************************************************}
 %
-\subsection[{Étale Cohomology of Abelian Varieties}]{Étale Cohomology of Abelian Varieties}\label{subsection-26}
+\subsection[{Étale Cohomology of Abelian Varieties}]{Étale Cohomology of Abelian Varieties}\label{subsection-27}
 \hypertarget{p-262}{}%
 See \hyperlink{bib-milne-etale}{[43]} or \hyperlink{bib-tamme}{[55]}.%
 \par
@@ -2825,7 +2829,7 @@ Note that Milne gives a combined proof of the above two statements, this relies 
 \typeout{Subsection 1.10.1 Weil pairings on elliptic curves}
 \typeout{************************************************}
 %
-\subsection[{Weil pairings on elliptic curves}]{Weil pairings on elliptic curves}\label{subsection-27}
+\subsection[{Weil pairings on elliptic curves}]{Weil pairings on elliptic curves}\label{subsection-28}
 \hypertarget{p-299}{}%
 Start with \hyperref[def-supersing-isog-ec]{elliptic curves}, later repeat for \hyperref[def-buntes-abvar]{abelian varieties}. \(E/k\) an \hyperref[def-supersing-isog-ec]{elliptic curve}, \(m\ge 2\), if \(\characteristic(k) = p \gt 0\) \((m,p) = 1\). The Weil \(e_m\)-pairing \(e_m \colon E\lb m\rb \times E\lb m \rb \to \mu_m\) is defined as follows: Fix \(T\in E\lb m \rb\) then \(f\in \overline  k (E)\) s.t. \(\divisor(f) = m(T) - m(0)\). Fix \(T' \in E\) with \(mT' = T\) and \(g\in \overline k(E)\) s.t. \(\divisor(g) = \lb m \rb^*(T) = \lb m \rb^*(0)= \sum_{R\in E\lb m \rb} (T+R) - (R)\). Check \(\divisor (f\circ \lb m \rb) = \divisor(g^m)\), hence%
 \begin{equation*}
@@ -2859,7 +2863,7 @@ e \colon T_l E\times T_lE \to T_l \mu = \ZZ_l(1)
 \typeout{Subsection 1.10.2 Weil pairings on abelian varieties}
 \typeout{************************************************}
 %
-\subsection[{Weil pairings on abelian varieties}]{Weil pairings on abelian varieties}\label{subsection-28}
+\subsection[{Weil pairings on abelian varieties}]{Weil pairings on abelian varieties}\label{subsection-29}
 \hypertarget{p-300}{}%
 Story will be broadly similar to before but we must use the dual, which doesn't appear in the presentation for \hyperref[def-supersing-isog-ec]{elliptic curves}.%
 \par
@@ -2939,7 +2943,15 @@ e_m \colon T_lA\times T_l A \to T_l \mu
 (a,a') \mapsto e_m(a, \lambda(a'))\text{.}
 \end{equation*}
 %
-\label{notation-2}
+%
+%
+\typeout{************************************************}
+\typeout{Paragraphs  Notation}
+\typeout{************************************************}
+%
+\paragraph[{Notation}]{Notation}\hypertarget{paragraphs-6}{}
+\hypertarget{p-305}{}%
+If \(\lambda = \lambda_{\sheaf L} e^{\sheaf L} = e^{\lambda_{\sheaf L}}\).%
 \begin{proposition}{}{}{proposition-25}%
 \hypertarget{p-306}{}%
 For a homomorphism \(\alpha \colon A \to B\)\leavevmode%
@@ -3031,7 +3043,7 @@ commutes with - sign so \(e^\lambda (a,a') = \zeta^{-E(a,a')}\)%
 \typeout{Subsection 1.10.3 Results about polarizations}
 \typeout{************************************************}
 %
-\subsection[{Results about polarizations}]{Results about polarizations}\label{subsection-29}
+\subsection[{Results about polarizations}]{Results about polarizations}\label{subsection-30}
 \hypertarget{p-309}{}%
 \(k = \overline k\) \(p = \characteristic (k) \ge 0\).%
 \begin{theorem}{13.4.}{}{theorem-27}%
@@ -3455,7 +3467,7 @@ If \(\pm \sqrt q\) is  a root  of  \(f_X\) then we are in the case of \(K\) tota
 \typeout{Paragraphs  Honda-Tate}
 \typeout{************************************************}
 %
-\paragraph[{Honda-Tate}]{Honda-Tate}\hypertarget{paragraphs-6}{}
+\paragraph[{Honda-Tate}]{Honda-Tate}\hypertarget{paragraphs-7}{}
 \hypertarget{p-371}{}%
 The correspondence between \hyperref[def-supersing-isog-isog]{isogeny} classes of \(X/\FF_q\) and conjugacy classes of \(q\)-\hyperref[sec-honda-tate]{Weil numbers} is a bijection. (i.e. algebraic integers \(\alpha\) s.t. \(|\iota \alpha| = \sqrt q\) for all \(\iota \colon \QQ(\alpha) \hookrightarrow \CC\)).%
 \par
@@ -3500,7 +3512,7 @@ similar thing at 17.%
 \typeout{Subsection 1.13.1 The Theorem}
 \typeout{************************************************}
 %
-\subsection[{The Theorem}]{The Theorem}\label{subsection-30}
+\subsection[{The Theorem}]{The Theorem}\label{subsection-31}
 \begin{theorem}{Tate.}{}{thm-tate-isog}%
 \hypertarget{p-376}{}%
 Let \(A,B/\FF_q = k\), \(q = p^n\), \(l\ne p\) be \hyperref[def-buntes-abvar]{abelian varieties} and \(G = \Gal{k^s}{k}\), then%
@@ -3519,7 +3531,7 @@ Tate's theorem is also true for function fields over finite fields (Zarhin) and 
 \typeout{Subsection 1.13.2 Motivation}
 \typeout{************************************************}
 %
-\subsection[{Motivation}]{Motivation}\label{subsection-31}
+\subsection[{Motivation}]{Motivation}\label{subsection-32}
 \hypertarget{p-378}{}%
 Let \(\pi_A\) and \(\pi_B\) be the (relative) Frobenii on \(V_l(A), V_l(B)\)%
 \begin{equation*}
@@ -3571,7 +3583,7 @@ the surjectivity in Tate's theorem means we can choose \(u \in \Hom_k(B,A) \otim
 \typeout{Subsection 1.13.3 Isogeny category}
 \typeout{************************************************}
 %
-\subsection[{Isogeny category}]{Isogeny category}\label{subsection-32}
+\subsection[{Isogeny category}]{Isogeny category}\label{subsection-33}
 \hypertarget{p-383}{}%
 Recall: The \hyperref[def-supersing-isog-isog]{isogeny} category, \hyperref[thm-poincare-reducibility]{Theorem~\ref{thm-poincare-reducibility}}, \hyperref[cor-ab-var-product-simple]{Corollary~\ref{cor-ab-var-product-simple}}. So we have  a category \(\cat{Isog}\) of \hyperref[def-buntes-abvar]{abelian varieties} with%
 \begin{equation*}
@@ -3592,7 +3604,7 @@ Now if \(f \colon A \to B\) there exists \(g\colon B \to A\) an \hyperref[def-su
 \typeout{Subsection 1.13.4 Reductions}
 \typeout{************************************************}
 %
-\subsection[{Reductions}]{Reductions}\label{subsection-33}
+\subsection[{Reductions}]{Reductions}\label{subsection-34}
 \begin{lemma}{}{}{lemma-7}%
 \hypertarget{p-385}{}%
 \leavevmode%
@@ -3701,7 +3713,7 @@ E_l = C(F_l) = \End_G(V_l(A))\text{.}\qedhere
 \typeout{Subsection 1.13.5 Proof of Tate using finiteness}
 \typeout{************************************************}
 %
-\subsection[{Proof of Tate using finiteness}]{Proof of Tate using finiteness}\label{subsection-34}
+\subsection[{Proof of Tate using finiteness}]{Proof of Tate using finiteness}\label{subsection-35}
 \hypertarget{p-391}{}%
 We introduce a hypothesis: \(\operatorname{Hyp}(k,A,l)\) there exist only finitely many (up to \(k\)-isomorphism) \hyperref[def-buntes-abvar]{abelian varieties} \(B\) s.t. there is a \(k\)-\hyperref[def-supersing-isog-isog]{isogeny} of \(l\)-power degree from \(B\to A\).%
 \par
@@ -3858,7 +3870,7 @@ We need to show this is well-defined, injectivity and surjectivity.%
 \typeout{Subsection 1.14.1 Honda-Tate map}
 \typeout{************************************************}
 %
-\subsection[{Honda-Tate map}]{Honda-Tate map}\label{subsection-35}
+\subsection[{Honda-Tate map}]{Honda-Tate map}\label{subsection-36}
 \hypertarget{p-409}{}%
 Recall:%
 \begin{corollary}{}{}{corollary-26}%
@@ -3899,7 +3911,7 @@ This doesn't quite give injectivity because a priori \(f_A\) and \(f_B\) could b
 \typeout{Subsection 1.14.2 Injectivity and Brauer groups}
 \typeout{************************************************}
 %
-\subsection[{Injectivity and Brauer groups}]{Injectivity and Brauer groups}\label{subsection-36}
+\subsection[{Injectivity and Brauer groups}]{Injectivity and Brauer groups}\label{subsection-37}
 \hypertarget{p-416}{}%
 From last time:%
 \begin{proposition}{}{}{proposition-35}%
@@ -3920,7 +3932,7 @@ Study the formula for \(r(f_A, f_A)\) Edixhoven-van der Geer-Moonen 16.22.%
 \end{proof}
 \hypertarget{p-420}{}%
 So the next step is to try and recover \(\End^0(A)\) from \(\pi\).%
-\begin{definition}{}{definition-40}%
+\begin{definition}{Central simple algebras.}{def-csa}%
 \hypertarget{p-421}{}%
 A \terminology{central \hyperref[def-simple-av]{simple} algebra} \(B/k\) is a \(k\)-algebra \(B\) with no two-sided ideals and \(Z(B) = k\).%
 \end{definition}
@@ -3930,7 +3942,7 @@ Any such algebra is isomorphic to \(M_n(D)\) for \(D\) a division ring over \(k\
 \end{theorem}
 \begin{definition}{Brauer groups.}{def-brauer-gp}%
 \hypertarget{p-423}{}%
-The \terminology{Brauer group} of \(k\) \(\operatorname{Br}(k)\) is the set of \hyperref[sec-honda-tate]{central \hyperref[def-simple-av]{simple} algebras} under \(\otimes\) module the algebras \(M_n(k)\).%
+The \terminology{Brauer group} of \(k\) \(\operatorname{Br}(k)\) is the set of \hyperref[def-csa]{central \hyperref[def-simple-av]{simple} algebras} under \(\otimes\) module the algebras \(M_n(k)\).%
 \end{definition}
 \begin{fact}{}{}{fact-4}%
 \hypertarget{p-424}{}%
@@ -3995,7 +4007,7 @@ Let \(d= \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}\) then \(d\) is the least common d
 \typeout{Subsection 1.14.3 Surjectivity and CM theory}
 \typeout{************************************************}
 %
-\subsection[{Surjectivity and CM theory}]{Surjectivity and CM theory}\label{subsection-37}
+\subsection[{Surjectivity and CM theory}]{Surjectivity and CM theory}\label{subsection-38}
 \hypertarget{p-431}{}%
 We need to sow that for a\(\pi\) a \(q\)-\hyperref[sec-honda-tate]{Weil number} there exists an \hyperref[def-buntes-abvar]{abelian variety} \(A/\FF_q\) such that \(\pi_A \sim \pi\).%
 \begin{definition}{}{definition-42}%
@@ -4206,7 +4218,7 @@ is a root of unity \(\pi^N_{A_{\FF_{q'}}} = \pi^{N'}\).%
 %
 \chapter[{Dessins d'Enfants}]{Dessins d'Enfants}\label{chapter-dessins}
 \hypertarget{p-456}{}%
-These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated September 11, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated September 13, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 %
 %
 \typeout{************************************************}
@@ -4220,7 +4232,7 @@ These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfan
 \typeout{Subsection 2.1.1 Belyi morphisms}
 \typeout{************************************************}
 %
-\subsection[{Belyi morphisms}]{Belyi morphisms}\label{subsection-38}
+\subsection[{Belyi morphisms}]{Belyi morphisms}\label{subsection-39}
 \hypertarget{p-457}{}%
 Let \(X\) be an algebraic curve over \(\CC\) (i.e. a compact \hyperref[def-top-riem-surface]{Riemann surface}) when is \(X\) defined over \(\overline \QQ\)?%
 \begin{theorem}{Belyi.}{}{theorem-39}%
@@ -4259,7 +4271,7 @@ If \(\alpha \colon X\to \PP^1 \CC\) is Belyi, then \(\beta = 4\alpha(1-\alpha)\)
 \typeout{Subsection 2.1.2 Dessin d'Enfants}
 \typeout{************************************************}
 %
-\subsection[{Dessin d'Enfants}]{Dessin d'Enfants}\label{subsection-39}
+\subsection[{Dessin d'Enfants}]{Dessin d'Enfants}\label{subsection-40}
 \begin{definition}{}{def-dessin-denfant}%
 \hypertarget{p-465}{}%
 A \terminology{dessin d'Enfant} (or Grothendieck \hyperref[def-dessin-denfant]{Dessin} or just \terminology{Dessin}) is a triple \((X_0,X_1,X_2)\) where \(X_2\) is a compact \hyperref[def-top-riem-surface]{Riemann surface}, \(X_1\) is a graph, \(X_0 \subset X_1\) is a finite set of points, where \(X_2 \smallsetminus X_1\) is a collection of open cells. \(X_1 \smallsetminus X_0\) is a disjoint union of line segments%
@@ -4278,7 +4290,7 @@ A \terminology{clean \hyperref[def-dessin-denfant]{dessin}} is a \hyperref[def-d
 \typeout{Subsection 2.1.3 The Grothendieck correspondence}
 \typeout{************************************************}
 %
-\subsection[{The Grothendieck correspondence}]{The Grothendieck correspondence}\label{subsection-40}
+\subsection[{The Grothendieck correspondence}]{The Grothendieck correspondence}\label{subsection-41}
 \hypertarget{p-468}{}%
 Given a \hyperref[def-belyi-morphism]{Belyi morphism} \(\beta\colon X \to \PP^1 \CC\) the graph \(\beta^{-1}(\lb 0,1\rb)\) defines a \hyperref[def-dessin-denfant]{dessin}.%
 \begin{theorem}{}{}{theorem-40}%
@@ -4322,7 +4334,7 @@ x\mapsto x^3 + 1
 \typeout{Subsection 2.1.4 Covering spaces and Galois groups}
 \typeout{************************************************}
 %
-\subsection[{Covering spaces and Galois groups}]{Covering spaces and Galois groups}\label{subsection-41}
+\subsection[{Covering spaces and Galois groups}]{Covering spaces and Galois groups}\label{subsection-42}
 \hypertarget{p-472}{}%
 A \hyperref[def-belyi-morphism]{Belyi morphism} defines a covering map.%
 \begin{equation*}
@@ -4374,7 +4386,7 @@ We have a faithful action of \(\absgal{\QQ}\) on the set of \hyperref[def-dessin
 \typeout{Subsection 2.1.5 Exercises}
 \typeout{************************************************}
 %
-\subsection[{Exercises}]{Exercises}\label{subsection-42}
+\subsection[{Exercises}]{Exercises}\label{subsection-43}
 \begin{inlineexercise}{}{exercise-4}%
 \hypertarget{p-478}{}%
 Compute the \hyperref[def-dessin-denfant]{Dessins} for the following \hyperref[def-belyi-morphism]{Belyi morphisms}\leavevmode%
@@ -4418,7 +4430,7 @@ Prove that a \hyperref[def-belyi-morphism]{Belyi morphism} corresponding to a tr
 \typeout{Subsection 2.2.1 Definitions}
 \typeout{************************************************}
 %
-\subsection[{Definitions}]{Definitions}\label{subsection-43}
+\subsection[{Definitions}]{Definitions}\label{subsection-44}
 \begin{definition}{}{def-top-riem-surface}%
 \hypertarget{p-481}{}%
 A \terminology{topological surface} is a Hausdorff space \(X\) wich has a collection of charts%
@@ -4437,7 +4449,7 @@ We call \(X\) a \terminology{Riemann surface} if the transition functions \(\phi
 \typeout{Subsection 2.2.2 Examples}
 \typeout{************************************************}
 %
-\subsection[{Examples}]{Examples}\label{subsection-44}
+\subsection[{Examples}]{Examples}\label{subsection-45}
 \begin{example}{}{example-16}%
 \hypertarget{p-482}{}%
 Open subsets of \(\CC\), e.g.%
@@ -4496,7 +4508,7 @@ Let \(\Lambda = \ZZ \oplus \ZZ i \subseteq \CC\) then \(X = \CC/\Lambda\) is a \
 \typeout{Subsection 2.2.3 Morphisms}
 \typeout{************************************************}
 %
-\subsection[{Morphisms}]{Morphisms}\label{subsection-45}
+\subsection[{Morphisms}]{Morphisms}\label{subsection-46}
 \begin{definition}{(Holo/Mero)-morphisms of Riemann surfaces.}{def-morph-riem-surf}%
 \hypertarget{p-486}{}%
 A \terminology{morphism of \hyperref[def-top-riem-surface]{Riemann surfaces}} is a continuous map%
@@ -4560,7 +4572,7 @@ If \(S, S'\) are connected compact \hyperref[def-top-riem-surface]{Riemann surfa
 \typeout{Subsection 2.2.4 Ramification}
 \typeout{************************************************}
 %
-\subsection[{Ramification}]{Ramification}\label{subsection-46}
+\subsection[{Ramification}]{Ramification}\label{subsection-47}
 \begin{definition}{Orders of vanishing.}{def-riem-order-vanish}%
 \hypertarget{p-497}{}%
 The \terminology{order of vanishing} at \(P\in S\) of a \hyperref[def-morph-riem-surf]{holomorphic function} on \(S\) is defined as follows: For \(\phi\) a  chart centered at \(P\) write%
@@ -4601,7 +4613,7 @@ hence%
 \typeout{Subsection 2.2.5 Genus}
 \typeout{************************************************}
 %
-\subsection[{Genus}]{Genus}\label{subsection-47}
+\subsection[{Genus}]{Genus}\label{subsection-48}
 \begin{theorem}{Rado.}{}{theorem-43}%
 \hypertarget{p-501}{}%
 Any orientable compact surface can be triangulated.%
@@ -4809,7 +4821,7 @@ g=  \frac{(d-1)(d-2)}{2}\text{.}
 \typeout{Paragraphs  A 3-fold equivalence of categories}
 \typeout{************************************************}
 %
-\paragraph[{A 3-fold equivalence of categories}]{A 3-fold equivalence of categories}\hypertarget{paragraphs-7}{}
+\paragraph[{A 3-fold equivalence of categories}]{A 3-fold equivalence of categories}\hypertarget{paragraphs-8}{}
 \hypertarget{p-523}{}%
 Amazing synthesis.\leavevmode%
 \begin{enumerate}
@@ -4863,7 +4875,7 @@ backwards%
 \typeout{Paragraphs  Riemann-Hurwitz (generally)}
 \typeout{************************************************}
 %
-\paragraph[{Riemann-Hurwitz (generally)}]{Riemann-Hurwitz (generally)}\hypertarget{paragraphs-8}{}
+\paragraph[{Riemann-Hurwitz (generally)}]{Riemann-Hurwitz (generally)}\hypertarget{paragraphs-9}{}
 \hypertarget{p-531}{}%
 There's nothing that doesn't generalise about the previous proof.%
 \begin{claim}{}{}{claim-riemann-hurwitz}%
@@ -4970,7 +4982,7 @@ Plan\leavevmode%
 \typeout{Subsection 2.4.1 Uniformization}
 \typeout{************************************************}
 %
-\subsection[{Uniformization}]{Uniformization}\label{subsection-48}
+\subsection[{Uniformization}]{Uniformization}\label{subsection-49}
 \begin{theorem}{}{}{theorem-46}%
 \hypertarget{p-543}{}%
 The only simply connected \hyperref[def-top-riem-surface]{Riemann surfaces} are \(\hat \CC\), \(\CC\), \(\HH\).%
@@ -5008,7 +5020,7 @@ Claim: no subgroup of \(\Aut (\HH) \) is isomorphic to \(\ZZ \oplus \ZZ\) acting
 \typeout{Paragraphs  Goal}
 \typeout{************************************************}
 %
-\paragraph[{Goal}]{Goal}\hypertarget{paragraphs-9}{}
+\paragraph[{Goal}]{Goal}\hypertarget{paragraphs-10}{}
 \hypertarget{p-549}{}%
 Understand \(\Sigma \) through \(\widetilde \Sigma\) and \(G\).%
 %
@@ -5017,7 +5029,7 @@ Understand \(\Sigma \) through \(\widetilde \Sigma\) and \(G\).%
 \typeout{Paragraphs  Fuchsian groups}
 \typeout{************************************************}
 %
-\paragraph[{Fuchsian groups}]{Fuchsian groups}\hypertarget{paragraphs-10}{}
+\paragraph[{Fuchsian groups}]{Fuchsian groups}\hypertarget{paragraphs-11}{}
 \hypertarget{p-550}{}%
 \(g \ge 2\).%
 \begin{equation*}
@@ -5042,7 +5054,7 @@ is still a covering map and \(\HH/\Gamma\) is a \hyperref[def-top-riem-surface]{
 \typeout{Paragraphs  Reflections on \(\HH\)}
 \typeout{************************************************}
 %
-\paragraph[{Reflections on \(\HH\)}]{Reflections on \(\HH\)}\hypertarget{paragraphs-11}{}
+\paragraph[{Reflections on \(\HH\)}]{Reflections on \(\HH\)}\hypertarget{paragraphs-12}{}
 \hypertarget{p-553}{}%
 Say \(\mu\) is a geodesic in \(\HH\), i.e. a horocycle.There is \(M \in \PSL_2(\RR)\) with \(M\mu\) the imaginary axis. Then \(R = -\bar z\) is the reflection  over the imaginary axis. Now \(R_\mu = M\inv\circ R \circ M\) is a reflection over \(\mu\).%
 \begin{equation*}
@@ -5055,7 +5067,7 @@ this is a a problem for us.%
 \typeout{Paragraphs  Triangle groups}
 \typeout{************************************************}
 %
-\paragraph[{Triangle groups}]{Triangle groups}\hypertarget{paragraphs-12}{}
+\paragraph[{Triangle groups}]{Triangle groups}\hypertarget{paragraphs-13}{}
 \hypertarget{p-554}{}%
 Given \(n, m, l\in \ZZ \cup \{\infty\}\) then there is a hyperbolic triangle with angles \(\pi/n,\pi/m, \pi/l\) if%
 \begin{equation*}
@@ -5215,7 +5227,7 @@ compute \hyperref[fact-existance-genus]{genus} of \(\HH/\Gamma(n)\).%
 \typeout{Subsection 2.5.1 Moduli space of compact Riemann surfaces with genus \(g\)}
 \typeout{************************************************}
 %
-\subsection[{Moduli space of compact Riemann surfaces with genus \(g\)}]{Moduli space of compact Riemann surfaces with genus \(g\)}\label{subsection-49}
+\subsection[{Moduli space of compact Riemann surfaces with genus \(g\)}]{Moduli space of compact Riemann surfaces with genus \(g\)}\label{subsection-50}
 \hypertarget{p-573}{}%
 \(g =0\). Uniformization tells us that up to isomorphisms all \hyperref[def-top-riem-surface]{Riemann surfaces} of \hyperref[fact-existance-genus]{genus} \(0\) are \(\PP^1\) hence the moduli space \(\mathcal M _0  = \{\text{pt}\}\).%
 \par
@@ -5266,7 +5278,7 @@ isomorphism is induced by \(T(z) = (c\tau_2 + d) z\).%
 \typeout{Subsection 2.5.2 Monodromy}
 \typeout{************************************************}
 %
-\subsection[{Monodromy}]{Monodromy}\label{subsection-50}
+\subsection[{Monodromy}]{Monodromy}\label{subsection-51}
 \hypertarget{p-578}{}%
 Let \(f\colon S_1 \to S\) be a morphism of degree \(d\) \hyperref[def-dess-ramified]{ramified} over \(y_1,\ldots, y_n \in S\). For \(y\in S\smallsetminus \{y_1,\ldots, y_n\}\) we have a group homomorphism%
 \begin{equation*}
@@ -5287,7 +5299,7 @@ lifts to a path \(\widetilde \gamma\) from \(x\in f\inv(y)\) to another \(x' \in
 \typeout{Paragraphs  Monodromy and Fuchsian groups}
 \typeout{************************************************}
 %
-\paragraph[{Monodromy and Fuchsian groups}]{Monodromy and Fuchsian groups}\hypertarget{paragraphs-13}{}
+\paragraph[{Monodromy and Fuchsian groups}]{Monodromy and Fuchsian groups}\hypertarget{paragraphs-14}{}
 \hypertarget{p-579}{}%
 Let%
 \begin{equation*}
@@ -5361,7 +5373,7 @@ is generated by \(\gamma_1, \gamma_2\) so any map \(M_f \colon \Gamma(2) \to \Si
 \typeout{Subsection 2.5.3 Galois coverings}
 \typeout{************************************************}
 %
-\subsection[{Galois coverings}]{Galois coverings}\label{subsection-51}
+\subsection[{Galois coverings}]{Galois coverings}\label{subsection-52}
 \begin{definition}{}{definition-53}%
 \hypertarget{p-585}{}%
 A covering \(f\colon S_1,\to S_2\) is Galois (or regular, or normal) if the covering group%
@@ -5412,7 +5424,7 @@ is normal/Galois  iff%
 \typeout{Subsection 2.5.4 Normalization of coverings of \(\PP^1\)}
 \typeout{************************************************}
 %
-\subsection[{Normalization of coverings of \(\PP^1\)}]{Normalization of coverings of \(\PP^1\)}\label{subsection-52}
+\subsection[{Normalization of coverings of \(\PP^1\)}]{Normalization of coverings of \(\PP^1\)}\label{subsection-53}
 \hypertarget{p-589}{}%
 Let \(f\colon S \to \PP^1\) be a cover of \(\deg d \gt 0\) with \(\operatorname{Mon}(f) \le \Sigma_d\).%
 \par
@@ -5539,7 +5551,7 @@ ramifies over \(0,1,\lambda,\infty\). Then \(f = P_\lambda \circ x \colon S_\lam
 \typeout{Subsection 2.6.1 Proof of a) implies b)}
 \typeout{************************************************}
 %
-\subsection[{Proof of a) implies b)}]{Proof of a) implies b)}\label{subsection-53}
+\subsection[{Proof of a) implies b)}]{Proof of a) implies b)}\label{subsection-54}
 \begin{note}{}{note-7}%
 \hypertarget{p-603}{}%
 Its enough to show \(\exists f\colon S\to \PP^1\) \hyperref[def-dess-ramified]{ramified} over \(\{0,1,\infty, \lambda_1, \ldots, \lambda_n\} \subseteq \QQ \cup \{\infty\}\). Given this we can repeatedly use \hyperref[def-belyi-poly]{Belyi polynomials} to obtain \(g\colon S \to \PP^1\) \hyperref[def-dess-ramified]{ramified} over \(\{0,1, \infty\}\).%
@@ -5572,7 +5584,7 @@ Repeat inductively until \(B_k \subseteq \QQ \cup \{\infty\}\) which is guarante
 \typeout{Subsection 2.6.2 Algebraic characterization of morphisms}
 \typeout{************************************************}
 %
-\subsection[{Algebraic characterization of morphisms}]{Algebraic characterization of morphisms}\label{subsection-54}
+\subsection[{Algebraic characterization of morphisms}]{Algebraic characterization of morphisms}\label{subsection-55}
 \begin{proposition}{}{}{proposition-51}%
 \hypertarget{p-609}{}%
 Defining a morphism \(f \colon S_F\to S_G\) is equivalent to giving a pair of rational functions%
@@ -5598,7 +5610,7 @@ The fact that this diagram commutes can be expressed by polynomial identities.%
 \typeout{Subsection 2.6.3 Galois action}
 \typeout{************************************************}
 %
-\subsection[{Galois action}]{Galois action}\label{subsection-55}
+\subsection[{Galois action}]{Galois action}\label{subsection-56}
 \hypertarget{p-611}{}%
 Let \(\operatorname{Gal}(\CC) = \Gal{\CC}{\QQ}\).%
 \begin{definition}{}{definition-57}%
@@ -5628,7 +5640,7 @@ Recall: \(S_F\) is    constructed from a noncompact \hyperref[def-top-riem-surfa
 \typeout{Subsection 2.6.4 Points and valuations}
 \typeout{************************************************}
 %
-\subsection[{Points and valuations}]{Points and valuations}\label{subsection-56}
+\subsection[{Points and valuations}]{Points and valuations}\label{subsection-57}
 \begin{definition}{}{definition-58}%
 \hypertarget{p-615}{}%
 Let \(\mathcal M\) be a function field. A (discrete) valuation of \(\mathcal M\) is \(v \colon \mathcal M^* \to \ZZ\) s.t.\leavevmode%
@@ -5685,7 +5697,7 @@ Surjectivity study behaviour of valuations in finite extensions of fields and us
 \typeout{Paragraphs  Galois action on points}
 \typeout{************************************************}
 %
-\paragraph[{Galois action on points}]{Galois action on points}\hypertarget{paragraphs-14}{}
+\paragraph[{Galois action on points}]{Galois action on points}\hypertarget{paragraphs-15}{}
 \begin{definition}{}{definition-59}%
 \hypertarget{p-624}{}%
 \leavevmode%
@@ -5725,7 +5737,7 @@ for all \(a\in \CC\) implies \((v_\infty)^{\sigma^{-1}} = v_\infty\) implies \(\
 \typeout{Subsection 2.6.5 Elementary invariants of the action of \(\operatorname{Gal}(\CC)\).}
 \typeout{************************************************}
 %
-\subsection[{Elementary invariants of the action of \(\operatorname{Gal}(\CC)\).}]{Elementary invariants of the action of \(\operatorname{Gal}(\CC)\).}\label{subsection-57}
+\subsection[{Elementary invariants of the action of \(\operatorname{Gal}(\CC)\).}]{Elementary invariants of the action of \(\operatorname{Gal}(\CC)\).}\label{subsection-58}
 \begin{remark}{}{remark-14}%
 \hypertarget{p-627}{}%
 The bijection \(S \leftrightarrow S^\sigma\) is not holomorphic. In general \(S\) and \(S^\sigma\) are not isomorphic.%
@@ -5784,7 +5796,7 @@ For a compact \hyperref[def-top-riem-surface]{Riemann surface} \(S\) the followi
 \typeout{Paragraphs  Proof of b implies a in Belyi's theorem (3.61)}
 \typeout{************************************************}
 %
-\paragraph[{Proof of b implies a in Belyi's theorem (3.61)}]{Proof of b implies a in Belyi's theorem (3.61)}\hypertarget{paragraphs-15}{}
+\paragraph[{Proof of b implies a in Belyi's theorem (3.61)}]{Proof of b implies a in Belyi's theorem (3.61)}\hypertarget{paragraphs-16}{}
 \hypertarget{p-633}{}%
 Suppose \(f \colon S\to \PP^1\) is a morphism of degree \(d\) with branching values \(\{0,1,\infty\}\). By theorem 3.28 \(\forall \sigma \in \operatorname{Gal}(\CC)\)%
 \begin{equation*}
@@ -5805,7 +5817,7 @@ the fundamental group is free on two generators so there are only finitely many 
 \typeout{Subsection 2.6.6 The field of definition of Belyi functions (3.8)}
 \typeout{************************************************}
 %
-\subsection[{The field of definition of Belyi functions (3.8)}]{The field of definition of Belyi functions (3.8)}\label{subsection-58}
+\subsection[{The field of definition of Belyi functions (3.8)}]{The field of definition of Belyi functions (3.8)}\label{subsection-59}
 \begin{proposition}{}{}{proposition-55}%
 \hypertarget{p-634}{}%
 Belyi functions are defined over \(\overline \QQ\).%
@@ -5833,7 +5845,7 @@ where \((X,D)\) is a \hyperref[def-dessin-denfant]{dessin}, \((S,f)\) is a Belyi
 \typeout{Subsection 2.7.1 Dessins}
 \typeout{************************************************}
 %
-\subsection[{Dessins}]{Dessins}\label{subsection-59}
+\subsection[{Dessins}]{Dessins}\label{subsection-60}
 \begin{definition}{}{definition-60}%
 \hypertarget{p-637}{}%
 A \hyperref[def-dessin-denfant]{dessin} is  a pair \((X,D)\) where \(X\) is an oriented compact \hyperref[def-top-riem-surface]{topological surface} and \(D\subset X\) is a finite graph:\leavevmode%
@@ -5855,7 +5867,7 @@ A single edge in a sphere is, a single edge in a torus is not.%
 \typeout{Paragraphs  Permutation representation of a Dessin}
 \typeout{************************************************}
 %
-\paragraph[{Permutation representation of a Dessin}]{Permutation representation of a Dessin}\hypertarget{paragraphs-16}{}
+\paragraph[{Permutation representation of a Dessin}]{Permutation representation of a Dessin}\hypertarget{paragraphs-17}{}
 \hypertarget{p-640}{}%
 Label the edges of  a \hyperref[def-dessin-denfant]{dessin} \(\{1, \ldots, N\}\) then%
 \begin{equation*}
@@ -5950,10 +5962,10 @@ if there exists an orientation preserving homeomorphism \(\phi \colon X_1 \to X_
 %
 %
 \typeout{************************************************}
-\typeout{Subsection 2.7.1.1 Dessins 2 Belyi pairs}
+\typeout{Subsection 2.7.2 Dessins 2 Belyi pairs}
 \typeout{************************************************}
 %
-\subsubsection[{Dessins 2 Belyi pairs}]{Dessins 2 Belyi pairs}\label{subsection-60}
+\subsection[{Dessins 2 Belyi pairs}]{Dessins 2 Belyi pairs}\label{subsection-61}
 \hypertarget{p-653}{}%
 Triangle decomposition of \((X,D) \leadsto T(D)\) a set of triangles that cover \(D\) and intersect along edges or at vertices.%
 \begin{example}{}{example-31}%
@@ -6160,7 +6172,7 @@ In fact this new height is off from the old one by a constant factor, but since 
 \typeout{Paragraphs  Motivation: ABC implies Fermat bound}
 \typeout{************************************************}
 %
-\paragraph[{Motivation: ABC implies Fermat bound}]{Motivation: ABC implies Fermat bound}\hypertarget{paragraphs-17}{}
+\paragraph[{Motivation: ABC implies Fermat bound}]{Motivation: ABC implies Fermat bound}\hypertarget{paragraphs-18}{}
 \hypertarget{p-680}{}%
 One can see this simply by assuming a solution%
 \begin{equation*}
@@ -6217,7 +6229,7 @@ If \(C\)  has \hyperref[fact-existance-genus]{genus} 0 or 1, no such \(f\) can e
 \typeout{Paragraphs  ABC implies a bound on Mordell}
 \typeout{************************************************}
 %
-\paragraph[{ABC implies a bound on Mordell}]{ABC implies a bound on Mordell}\hypertarget{paragraphs-18}{}
+\paragraph[{ABC implies a bound on Mordell}]{ABC implies a bound on Mordell}\hypertarget{paragraphs-19}{}
 \hypertarget{p-686}{}%
 We begin with a technical proposition:%
 \begin{proposition}{}{}{proposition-58}%
@@ -6381,7 +6393,7 @@ References:\leavevmode%
 \typeout{Subsection 2.10.1 A proof of the ABC theorem (for polynomials)}
 \typeout{************************************************}
 %
-\subsection[{A proof of the ABC theorem (for polynomials)}]{A proof of the ABC theorem (for polynomials)}\label{subsection-61}
+\subsection[{A proof of the ABC theorem (for polynomials)}]{A proof of the ABC theorem (for polynomials)}\label{subsection-62}
 \hypertarget{p-698}{}%
 Last week Angus told us about the incredibly powerful ABC conjecture and its arithmetic consequences (apparently). This week we will prove this conjecture (for polynomials). The proof is very similar to some of the things Angus mentioned, but seeing as I wasn't there its new to me... Following Goldring / Stothers / Parab.%
 \par
@@ -6466,7 +6478,7 @@ h = r(efg) + 1 \implies R = 0,\, h(f) \gt h(g)\text{.}
 \typeout{Subsection 2.10.2 Back to number theory}
 \typeout{************************************************}
 %
-\subsection[{Back to number theory}]{Back to number theory}\label{subsection-62}
+\subsection[{Back to number theory}]{Back to number theory}\label{subsection-63}
 \hypertarget{p-705}{}%
 That was all well and good, but this is a number theory seminar, not a function field analogues of number theory seminar, so let's take it back to why we are all here, solving Diophantine equations.%
 \par
@@ -6700,7 +6712,7 @@ This is the second highest quality abc triple known with quality%
 \typeout{Paragraphs  References}
 \typeout{************************************************}
 %
-\paragraph[{References}]{References}\hypertarget{paragraphs-19}{}
+\paragraph[{References}]{References}\hypertarget{paragraphs-20}{}
 \hypertarget{p-734}{}%
 A semi-random order, maybe starting at the top is nice though. If you have trouble finding something let me know.\leavevmode%
 \begin{enumerate}
@@ -6755,7 +6767,7 @@ Main reference: Unifying Themes Suggested by Belyi's Theorem - Wushi Goldring%
 \typeout{Subsection 2.11.1 The case of the Rising Degree}
 \typeout{************************************************}
 %
-\subsection[{The case of the Rising Degree}]{The case of the Rising Degree}\label{subsection-63}
+\subsection[{The case of the Rising Degree}]{The case of the Rising Degree}\label{subsection-64}
 \begin{definition}{}{def-belyi-degree}%
 \hypertarget{p-737}{}%
 The \terminology{Belyi degree} of \(X/\overline \QQ\) (a curve) is the minimal degree of \(\phi\colon X \to \PP^1\) a Belyi map.%
@@ -6809,7 +6821,7 @@ Let \(\phi\colon X \to \PP^1\) be a Belyi map of degree \(n\). Let \(K\) be the 
 \typeout{Subsection 2.11.2 Finitists Dream}
 \typeout{************************************************}
 %
-\subsection[{Finitists Dream}]{Finitists Dream}\label{subsection-64}
+\subsection[{Finitists Dream}]{Finitists Dream}\label{subsection-65}
 \hypertarget{p-748}{}%
 Recall that if \(k \) is a perfect field of characteristic \(p\) then%
 \begin{equation*}
@@ -6883,7 +6895,7 @@ for \(\characteristic (k) \ne 3\) such that \(e_\tau(P) = 1\) or \(3\).%
 \typeout{Subsection 2.11.3 In the Stacks}
 \typeout{************************************************}
 %
-\subsection[{In the Stacks}]{In the Stacks}\label{subsection-65}
+\subsection[{In the Stacks}]{In the Stacks}\label{subsection-66}
 \begin{observation}{}{observation-2}%
 \hypertarget{p-756}{}%
 \(\PP^1 \smallsetminus \{0,1,\infty\}\) is the moduli space of \hyperref[fact-existance-genus]{genus} 0 curves with four (ordered) marked points.%
@@ -6993,7 +7005,7 @@ If \(A = J(C)\) then use \(\phi \colon C \to \PP^1\) and a relation between \(A\
 \typeout{Paragraphs  Physics}
 \typeout{************************************************}
 %
-\paragraph[{Physics}]{Physics}\hypertarget{paragraphs-20}{}
+\paragraph[{Physics}]{Physics}\hypertarget{paragraphs-21}{}
 \hypertarget{p-770}{}%
 Let  \(M\)  be a manifold with  a metric \(g\). We call the pair \((M,g)\) a ``spacetime manifold''. Let \(\mathcal E\) be  a ``space of fields'', either \(\cinf (M)\), sections of some \(E\to M\), connections, or similar.%
 \begin{equation*}
@@ -7018,7 +7030,7 @@ is another section, call \(G\) the \terminology{gauge group}. The important \hyp
 \typeout{Paragraphs  Quivers and dessins}
 \typeout{************************************************}
 %
-\paragraph[{Quivers and dessins}]{Quivers and dessins}\hypertarget{paragraphs-21}{}
+\paragraph[{Quivers and dessins}]{Quivers and dessins}\hypertarget{paragraphs-22}{}
 \hypertarget{p-772}{}%
 Let's now study the relationship between quivers and \hyperref[def-dessin-denfant]{dessins}.%
 \begin{example}{}{example-39}%
@@ -7296,7 +7308,7 @@ In Maria's notes.%
 \typeout{Paragraphs  The modular equation}
 \typeout{************************************************}
 %
-\paragraph[{The modular equation}]{The modular equation}\hypertarget{paragraphs-22}{}
+\paragraph[{The modular equation}]{The modular equation}\hypertarget{paragraphs-23}{}
 \hypertarget{p-794}{}%
 Let \(j(\tau)\) be the modular \(j\)-function. For each prime \(l\) the minimal polynomial \(\phi_l\) of \(j(l\tau)\) over \(\CC (j(\tau))\) is the modular polynomial%
 \begin{equation*}
@@ -7331,7 +7343,7 @@ m_l(j,j') = m_l(j',j)\text{.}
 \typeout{Paragraphs  The endomorphism ring}
 \typeout{************************************************}
 %
-\paragraph[{The endomorphism ring}]{The endomorphism ring}\hypertarget{paragraphs-23}{}
+\paragraph[{The endomorphism ring}]{The endomorphism ring}\hypertarget{paragraphs-24}{}
 \begin{definition}{Endomorphisms of elliptic curves.}{def-supersing-isog-endo}%
 \hypertarget{p-796}{}%
 An \terminology{endomorphism} of an \hyperref[def-supersing-isog-ec]{elliptic curve} \(E\) is either the zero map or an \hyperref[def-supersing-isog-isog]{isogeny} from \(E\) to itself. They form a ring \(\End(E)\).%
@@ -7358,7 +7370,7 @@ If \(E,E'\) are isogenous \hyperref[def-supersing-isog-ec]{elliptic curves} then
 \typeout{Paragraphs  Isogeny graphs of elliptic curves}
 \typeout{************************************************}
 %
-\paragraph[{Isogeny graphs of elliptic curves}]{Isogeny graphs of elliptic curves}\hypertarget{paragraphs-24}{}
+\paragraph[{Isogeny graphs of elliptic curves}]{Isogeny graphs of elliptic curves}\hypertarget{paragraphs-25}{}
 \hypertarget{p-800}{}%
 Let \(k = \FF_q\) with \(\characteristic(k) = p\) and \(l \ne p \) be prime.%
 \begin{definition}{Isogeny graphs.}{def-supersing-isog-graph}%
@@ -7374,10 +7386,10 @@ Since \(m_l(j,j') =  m(j',j)\) whenever \(j,j' \ne  0,1728\) the subgraph of \(G
 %
 %
 \typeout{************************************************}
-\typeout{Paragraphs  Supersingular isogney graphs}
+\typeout{Paragraphs  Supersingular isogeny graphs}
 \typeout{************************************************}
 %
-\paragraph[{Supersingular isogney graphs}]{Supersingular isogney graphs}\hypertarget{paragraphs-25}{}
+\paragraph[{Supersingular isogeny graphs}]{Supersingular isogeny graphs}\hypertarget{paragraphs-26}{}
 \hypertarget{p-803}{}%
 Since every supersingular \(j\)-invariant lives in \(\FF_{p^2}\) if \(E\) is supersingular all roots of \(\phi_l(j(E), y)\) live in \(\FF_{p^2}\). every vertex in a supersingular component has out-degree \(l+1\).%
 \par
@@ -7392,15 +7404,15 @@ The supersingular component of \(G_l(\FF_{p^2})\) is a \hyperref[def-supersing-i
 \end{theorem}
 \begin{definition}{Ramanujan graphs.}{def-supersing-isog-ramanujan}%
 \hypertarget{p-807}{}%
-A \(d\)-regular graph is a \terminology{Ramanujan graph} if \(\lambda_2 \le \sqrt{d+1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjaceny matrix.%
+A \(d\)-regular graph is a \terminology{Ramanujan graph} if \(\lambda_2 \le \sqrt{d-1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjaceny matrix. (The largest one is always \(d\), by \(d\)-regularity.)%
 \end{definition}
 %
 %
 \typeout{************************************************}
-\typeout{Paragraphs  Ordinary isogney graphs}
+\typeout{Paragraphs  Ordinary isogeny graphs}
 \typeout{************************************************}
 %
-\paragraph[{Ordinary isogney graphs}]{Ordinary isogney graphs}\hypertarget{paragraphs-26}{}
+\paragraph[{Ordinary isogeny graphs}]{Ordinary isogeny graphs}\hypertarget{paragraphs-27}{}
 \hypertarget{p-808}{}%
 Let \(E/\FF_q\) be an ordinary \hyperref[def-supersing-isog-ec]{elliptic curve}, then \(\End(E) \simeq \ints\) is an order in an imaginary quadratic field \(K\) with \(\ZZ\lb \pi \rb \subseteq \ints \subseteq \ints_K\) where \(\pi\) is Frobenius and%
 \begin{equation*}
@@ -7425,7 +7437,7 @@ In the last two cases we say \(\phi\) is critical.%
 \typeout{Paragraphs  Horizontal isogenies}
 \typeout{************************************************}
 %
-\paragraph[{Horizontal isogenies}]{Horizontal isogenies}\hypertarget{paragraphs-27}{}
+\paragraph[{Horizontal isogenies}]{Horizontal isogenies}\hypertarget{paragraphs-28}{}
 \hypertarget{p-811}{}%
 \(E/k\) with CM by \(\ints \subseteq K\) imaginary quadratic. Let \(\ideal a\) be an invertible ideal.%
 \begin{equation*}
@@ -7448,7 +7460,7 @@ If \(l | \lb \ints_K : \ints \rb \) no such ideals exist, otherwise the number o
 \typeout{Paragraphs  Vertical isogenies}
 \typeout{************************************************}
 %
-\paragraph[{Vertical isogenies}]{Vertical isogenies}\hypertarget{paragraphs-28}{}
+\paragraph[{Vertical isogenies}]{Vertical isogenies}\hypertarget{paragraphs-29}{}
 \hypertarget{p-814}{}%
 Let \(\ints\) be an order in an imaginary quadratic field \(K \) of discriminant \(D \lt -4\) and let \(\ints' = \ZZ+l\ints\).%
 \begin{lemma}{}{}{lemma-17}%
@@ -7678,7 +7690,7 @@ then \(\#V_0\) is the order \(\lb l \rb\) in \(\Cl (\ints_0)\) else \(\#V_0 = 1\
 \typeout{Paragraphs  Application: Identifying supersingular elliptic curves}
 \typeout{************************************************}
 %
-\paragraph[{Application: Identifying supersingular elliptic curves}]{Application: Identifying supersingular elliptic curves}\hypertarget{paragraphs-29}{}
+\paragraph[{Application: Identifying supersingular elliptic curves}]{Application: Identifying supersingular elliptic curves}\hypertarget{paragraphs-30}{}
 \begin{algorithm}{Sutherland.}{}{algorithm-1}%
 \hypertarget{p-819}{}%
 Input: \hyperref[def-supersing-isog-ec]{Elliptic curve} \(E/k\), \(\characteristic k = p\).%
@@ -7697,6 +7709,239 @@ Output: Ordinary or supersingular.%
 \end{enumerate}
 %
 \end{algorithm}
+%
+%
+\typeout{************************************************}
+\typeout{Section 3.2 Supersingular isogeny graph cryptography (Asra)}
+\typeout{************************************************}
+%
+\section[{Supersingular isogeny graph cryptography (Asra)}]{Supersingular isogeny graph cryptography (Asra)}\label{sec-supersing-isog-crypto}
+\hypertarget{p-822}{}%
+Supersingular \hyperref[def-supersing-isog-isog]{isogeny} graph crypto is a candidate for post-quantum crypto, not based on factoring etc.%
+\par
+\hypertarget{p-823}{}%
+Recall last time we defined \hyperref[def-supersing-isog-ramanujan]{Ramanujan graphs}, graphs with very good connectivity properties, a type of expander.%
+\begin{proposition}{}{}{proposition-60}%
+\hypertarget{p-824}{}%
+If \(G\) is Ramanujan, \(x\in V, S\subseteq V\). For a sufficiently large path the probability that the path ends in \(S\) is at least \(|S|/2|G|\).%
+\end{proposition}
+\hypertarget{p-825}{}%
+Upshot supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs are \((l +1)\)-regular, undirected, Ramanujan, connected.%
+\par
+\hypertarget{p-826}{}%
+Some of our algorithms are only dependent on having a graph with this property, not so much the interpretation in terms of \hyperref[def-supersing-isog-isog]{isogenies}.%
+\par
+\hypertarget{p-827}{}%
+Supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs first appeared in crypto as potential \hyperref[def-hash-function]{hash functions}.%
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 3.2.1 Hash functions}
+\typeout{************************************************}
+%
+\subsection[{Hash functions}]{Hash functions}\label{subsection-68}
+\hypertarget{p-828}{}%
+(2010) (Charles, Goren, Lauter) proposed a cryptographically secure \hyperref[def-hash-function]{hash function} based on the hardness of computing paths in a supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs.%
+\begin{definition}{Hash functions.}{def-hash-function}%
+\hypertarget{p-829}{}%
+A \terminology{hash function} is a deterministic function \(h\colon \{0,1\}^* \to \{0,1\}^n\).%
+\end{definition}
+\begin{definition}{Collision resistance.}{def-collision-resistance}%
+\hypertarget{p-830}{}%
+A \hyperref[def-hash-function]{hash function} \(h\) is \terminology{collision resistant} if its hard to find \(x_1,x_2\) with \(x_1\ne x_2 \) s.t. \(h(x_1) = h(x_2)\).%
+\end{definition}
+\begin{definition}{Preimage resistance.}{def-preimage-resistance}%
+\hypertarget{p-831}{}%
+A \hyperref[def-hash-function]{hash function} \(h\) is \terminology{preimage resistant} if given \(y\in \{0,1\}^n\) its hard to find \(x\) s.t. \(h(x) = y\).%
+\end{definition}
+\hypertarget{p-832}{}%
+Cool example, private set intersection, say two groups, Starbucks and BU want to find a list of common customers (students who bought something at Starbucks) but don't want to reveal anything to each other about the students or customers not in the intersection. Compute hashes of the names of customers and share the hashes, can compute the size of, and the intersection itself.%
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 3.2.2 Supersingular isogeny hash functions}
+\typeout{************************************************}
+%
+\subsection[{Supersingular isogeny hash functions}]{Supersingular isogeny hash functions}\label{subsection-69}
+%
+%
+\typeout{************************************************}
+\typeout{Paragraphs  Parameters}
+\typeout{************************************************}
+%
+\paragraph[{Parameters}]{Parameters}\hypertarget{paragraphs-31}{}
+\hypertarget{p-833}{}%
+\(G_l(\FF_{p^2})\), \(p \equiv 1 \pmod{12}\), \(l\) to be small, fix an ordering on the edges, fix an initial vertex \(j_0\) and an incoming edge.%
+%
+%
+\typeout{************************************************}
+\typeout{Paragraphs  Protocol}
+\typeout{************************************************}
+%
+\paragraph[{Protocol}]{Protocol}\hypertarget{paragraphs-32}{}
+\hypertarget{p-834}{}%
+\(m \in \{0,1\}^*\) write this as an \(l\)-bit string, \(m \in \{0,1,\ldots, l-1\}^*\), walk the graph based on \(m\) without backtracking.%
+\par
+\hypertarget{p-835}{}%
+Map the final \(j\) invariant to  \(\{0,1\}^{n\approx \log p}\).%
+%
+%
+\typeout{************************************************}
+\typeout{Paragraphs  Properties}
+\typeout{************************************************}
+%
+\paragraph[{Properties}]{Properties}\hypertarget{paragraphs-33}{}
+\hypertarget{p-836}{}%
+Difficult means exponential in the size of the input normally.%
+\begin{proposition}{}{}{proposition-61}%
+\hypertarget{p-837}{}%
+\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-211}{}Preimage resistant iff when given \(j\) it is difficult to compute a positive integer \(e\) and an \hyperref[def-supersing-isog-isog]{isogeny} \(\phi\colon E_{j_0} \to E_j\) with degree \(l^e\).%
+\item\hypertarget{li-212}{}Collision resistant iff when given \(j\) it is difficult to compute \(e\) and  \(\phi \colon E_{j_0} \to E_{j_0}\) with degree \(l^e\).%
+\end{enumerate}
+%
+\end{proposition}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 3.2.3 Diffie-Hellman Key Exchange (1976)}
+\typeout{************************************************}
+%
+\subsection[{Diffie-Hellman Key Exchange (1976)}]{Diffie-Hellman Key Exchange (1976)}\label{subsection-70}
+\hypertarget{p-838}{}%
+Choose \(p,\, \ZZ/p, g\) then Alice computes \(g^a\) send to Bob, he computes \(g^b\) and sends it back, they both compute \(g^{ab}\), which is their shared secret.%
+\par
+\hypertarget{p-839}{}%
+The security is based on the hardness of computing \(g^{ab}\) given \(g^a,g^b\).%
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 3.2.4 Supersingular isogeny Diffie-Hellman (SIDH)}
+\typeout{************************************************}
+%
+\subsection[{Supersingular isogeny Diffie-Hellman (SIDH)}]{Supersingular isogeny Diffie-Hellman (SIDH)}\label{subsection-71}
+%
+%
+\typeout{************************************************}
+\typeout{Paragraphs  Parameters}
+\typeout{************************************************}
+%
+\paragraph[{Parameters}]{Parameters}\hypertarget{paragraphs-34}{}
+\hypertarget{p-840}{}%
+Supersingular \hyperref[def-supersing-isog-ec]{elliptic curve} of smooth order: fix \(p\) to be big enough \(p = l_A^{e_A} l_B^{e_B} f  \pm 1\). \(l_A,l_B\) small primes, \(f\) is a number chosen such that \(p\) is big. Construct a supersingular \hyperref[def-supersing-isog-ec]{elliptic curve} \(E\) such that \(\# E(\FF_{p^2}) = (l_A^{e_A}l_B^{e_B} f)^2\), using Broker's algorithm.%
+\par
+\hypertarget{p-841}{}%
+Construct bases \((P_A, Q_A)\) for \(E\lb l_A^{e_A}\), \((P_B, Q_B)\) for \(E\lb l_B^{e_B}\).%
+%
+%
+\typeout{************************************************}
+\typeout{Paragraphs  Protocol}
+\typeout{************************************************}
+%
+\paragraph[{Protocol}]{Protocol}\hypertarget{paragraphs-35}{}
+\hypertarget{p-842}{}%
+Alice takes \(m_A,n_A \in \ZZ/l_A^{e_A}\)%
+\par
+\hypertarget{p-843}{}%
+Bob takes \(m_B,n_B \in \ZZ/l_B^{e_B}\)%
+\par
+\hypertarget{p-844}{}%
+Alice finds \(R_A = m_AP_A + n_AQ_A\)%
+\par
+\hypertarget{p-845}{}%
+Bob finds \(R_B = m_BP_B + n_BQ_B\)%
+\par
+\hypertarget{p-846}{}%
+Alice finds \(\phi_A \colon E \to E/\langle R_A\rangle = E_A\)%
+\par
+\hypertarget{p-847}{}%
+Bob finds \(\phi_B \colon E \to E/\langle R_B\rangle = E_B\)%
+\par
+\hypertarget{p-848}{}%
+They send each other \(E_i, \phi_i(P_i),\phi_i(Q_i)\).%
+\par
+\hypertarget{p-849}{}%
+Both compute \(\phi'_A\colon E_B \to E_B/\langle m_A\phi_B(P_A) + n_A\phi_B(Q_A)\rangle\) or analogous.%
+\par
+\hypertarget{p-850}{}%
+Shared secret is \(j(E_{AB})\).%
+%
+%
+\typeout{************************************************}
+\typeout{Paragraphs  Hardness}
+\typeout{************************************************}
+%
+\paragraph[{Hardness}]{Hardness}\hypertarget{paragraphs-36}{}
+\hypertarget{p-851}{}%
+\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-213}{}(Decisional supersingular \hyperref[def-supersing-isog-isog]{isogeny} problem) Given \(E, (P_A,Q_A)\) a basis for \(l_A^{e_A}\) torsion, let \(E_A\) be another curve, is \(E_A\) \(l_A^{e_A}\) isogenous to \(E\)?%
+\item\hypertarget{li-214}{}(Computational supersingular \hyperref[def-supersing-isog-isog]{isogeny} problem) Let \(\phi_A \colon E \to E_A\) be an \hyperref[def-supersing-isog-isog]{isogeny} with a kernel of the form \(\langle m_AP_A + n_AQ_A \rangle\). Given \(E_A\) and \(\phi_A(P_B)\) \(\phi_A(Q_B)\), find \(R_A\). \(p^{1/4}\) classical, \(p^{1/6}\) quantum.%
+\item\hypertarget{li-215}{}Given \(E_A, E_B, \phi_A(P_B), \phi_A(Q_B), \phi_B(P_A), \phi_B(Q_A)\) find \(j\)-invariant of \(E_{AB}\).%
+\end{enumerate}
+%
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 3.2.5 Supersingular isogeny public key}
+\typeout{************************************************}
+%
+\subsection[{Supersingular isogeny public key}]{Supersingular isogeny public key}\label{subsection-72}
+\hypertarget{p-852}{}%
+Classically DH key-exchange \(\leadsto\) ElGamal encryption.%
+\par
+\hypertarget{p-853}{}%
+\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-216}{}\hypertarget{p-854}{}%
+Key generation.%
+\par
+\hypertarget{p-855}{}%
+Alice: secret \(\phi_A \colon E \to E_A\), public \(E_A\) and \(\phi_A(P_B), \phi_A(Q_B)\).%
+\item\hypertarget{li-217}{}\hypertarget{p-856}{}%
+Encryption.%
+\par
+\hypertarget{p-857}{}%
+Bob: choose \(\phi_B \colon E \to E_B\), compute \(j(E_{AB})\).%
+\par
+\hypertarget{p-858}{}%
+Send Alice \(c = (E_B, \phi_B(P_A), \phi_B(Q_A), m\oplus j(E_{AB}))\)%
+\item\hypertarget{li-218}{}\hypertarget{p-859}{}%
+Decryption.%
+\par
+\hypertarget{p-860}{}%
+Alice use \((E_B, \phi_B(P_A), \phi_B(Q_A))\) to compute \(j(E_{AB})\). Computes \((m\oplus j(E_{AB})) \oplus j(E_{AB}) = m\).%
+\end{enumerate}
+%
+\par
+\hypertarget{p-861}{}%
+\(E(\FF_{p^2})\), \(p = l_A^{e_A} l_B^{e_B} f \pm 1\), for \(128\)-bit security use a \(512\)-bit key.%
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 3.2.6 Algorithmic aspects}
+\typeout{************************************************}
+%
+\subsection[{Algorithmic aspects}]{Algorithmic aspects}\label{subsection-73}
+\hypertarget{p-862}{}%
+\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-219}{}(Choosing \(f\)) Prime number theorem for arithmetic progressions gives you a bound on the density of primes of the form \(l_A^{e_A} l_B^{e_B} f \pm 1\)%
+\item\hypertarget{li-220}{}Choosing a s.s. e.c. with the right group order, Broker's algorithm.%
+\item\hypertarget{li-221}{}\hypertarget{p-863}{}%
+Finding a basis for \(E\lb l_A^{e_A}\rb\).%
+\begin{enumerate}
+\item\hypertarget{li-222}{}Find a random point in \(E(\FF_{p^2})\) say \(P\).%
+\item\hypertarget{li-223}{}Check the order of \((l_B^{e_B} f)^2 \cdot P\). If its \(l_A^{e_A}\) set \(P_A = P\). Otherwise repeat from 1.%
+\item\hypertarget{li-224}{}Do the same with \(Q_A = Q\).%
+\item\hypertarget{li-225}{}Check independence by seeing if \(e(P_A,Q_A) \)%
+\end{enumerate}
+%
+\item\hypertarget{li-226}{}Computing the kernels generated by \(R_A = m_A P_A + n_A Q_A\), \(m_A, n_A \in \ZZ/l_A^{e_A} \ZZ\). Analogue of double and add. Set \(R_A = P_A + \lb m_A\inv n_A\rb Q_A\). Use differential addition (when you compute \(A+B\) with side info \(A-B\)) and a Montgomery ladder%
+\item\hypertarget{li-227}{}(Computing smooth degree \hyperref[def-supersing-isog-isog]{isogenies}) Decompose the \(l_A^{e_A}\) \hyperref[def-supersing-isog-isog]{isogeny} into \(e_A\) different \(l_A\)-\hyperref[def-supersing-isog-isog]{isogenies}, \(\phi_i\colon E_i \to E_{i+1}\) the kernel of \(\phi_i\) is \(\langle l_A^{e_A - i - 1} R_A\rangle\). Velu's formula runs in \(O(l)\) for \(l\)-\hyperref[def-supersing-isog-isog]{isogeny}.%
+\end{enumerate}
+%
 %
 \backmatter
 %

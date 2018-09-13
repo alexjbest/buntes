@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Isogeny graphs: background and motivation (Maria Ines)</title>
+<title>BUNTES Isogeny graphs: background and motivation (Maria Ines)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -256,11 +256,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-supersing-isog.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-supersing-isog.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-supersing-isog.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-supersing-isog.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-supersing-isog-crypto.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-supersing-isog.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-supersing-isog.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-supersing-isog.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-supersing-isog.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-supersing-isog-crypto.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -298,7 +298,10 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs" class="active">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs" class="active">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
@@ -362,7 +365,7 @@ E\lb n \rb = \left\{ P \in E(\overline k) : nP = \infty\right\}
 <span class="type">Lemma</span> <span class="codenumber">3.1.6</span>
 </h6>
 <p id="p-792">Let \(E/k\) be an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> with \(j(E) \not\in\{0,1728\}\) and let \(l\ne p\) be prime, up to isomorphism the number of \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> from \(E\) defined over \(k\) is 0,1,2 or \(l+1\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-104" id="proof-104"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-104" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-793">In Maria's notes.</p></article></div>
-<article class="paragraphs" id="paragraphs-22"><h5 class="heading"><span class="title">The modular equation</span></h5>
+<article class="paragraphs" id="paragraphs-23"><h5 class="heading"><span class="title">The modular equation</span></h5>
 <p id="p-794">Let \(j(\tau)\) be the modular \(j\)-function. For each prime \(l\) the minimal polynomial \(\phi_l\) of \(j(l\tau)\) over \(\CC (j(\tau))\) is the modular polynomial</p>
 <div class="displaymath">
 \begin{equation*}
@@ -389,7 +392,7 @@ m_l(j,j') = m_l(j',j)\text{.}
 \end{equation*}
 </div>
 </li>
-</ol></article></article><article class="paragraphs" id="paragraphs-23"><h5 class="heading"><span class="title">The endomorphism ring</span></h5>
+</ol></article></article><article class="paragraphs" id="paragraphs-24"><h5 class="heading"><span class="title">The endomorphism ring</span></h5>
 <article class="definition-like" id="def-supersing-isog-endo"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.1.8</span> <span class="title">Endomorphisms of elliptic curves</span>
 </h6>
@@ -405,7 +408,7 @@ m_l(j,j') = m_l(j',j)\text{.}
 </ol></article><article class="remark-like" id="note-10"><h6 class="heading">
 <span class="type">Note</span> <span class="codenumber">3.1.10</span>
 </h6>
-<p id="p-799">If \(E,E'\) are isogenous <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> then \(\End(E) \otimes_\ZZ \QQ \simeq \End(E')\otimes_\ZZ \QQ\text{.}\) So supersingularity is preserved by <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>.</p></article></article><article class="paragraphs" id="paragraphs-24"><h5 class="heading"><span class="title">Isogeny graphs of elliptic curves</span></h5>
+<p id="p-799">If \(E,E'\) are isogenous <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> then \(\End(E) \otimes_\ZZ \QQ \simeq \End(E')\otimes_\ZZ \QQ\text{.}\) So supersingularity is preserved by <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>.</p></article></article><article class="paragraphs" id="paragraphs-25"><h5 class="heading"><span class="title">Isogeny graphs of elliptic curves</span></h5>
 <p id="p-800">Let \(k = \FF_q\) with \(\characteristic(k) = p\) and \(l \ne p \) be prime.</p>
 <article class="definition-like" id="def-supersing-isog-graph"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.1.11</span> <span class="title">Isogeny graphs</span>
@@ -416,7 +419,7 @@ m_l(j,j') = m_l(j',j)\text{.}
 m_j(l,l') = \ord_{t=j} \phi_l(j,t)
 \end{equation*}
 </div>
-<p>vertices are \(\overline k\) isomorphism classes of  <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> \(/k\text{,}\) edges are isomorphism classes of \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> defined over \(k\text{.}\)</p></article><p id="p-802">Since \(m_l(j,j') =  m(j',j)\) whenever \(j,j' \ne  0,1728\) the subgraph of \(G_l(k)\) supported on \(k\smallsetminus \{0,1728\}\) can be thought of as undirected. By the last note \(G_l(k)\) consists of ordinary and supersingular components.</p></article><article class="paragraphs" id="paragraphs-25"><h5 class="heading"><span class="title">Supersingular isogney graphs</span></h5>
+<p>vertices are \(\overline k\) isomorphism classes of  <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> \(/k\text{,}\) edges are isomorphism classes of \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> defined over \(k\text{.}\)</p></article><p id="p-802">Since \(m_l(j,j') =  m(j',j)\) whenever \(j,j' \ne  0,1728\) the subgraph of \(G_l(k)\) supported on \(k\smallsetminus \{0,1728\}\) can be thought of as undirected. By the last note \(G_l(k)\) consists of ordinary and supersingular components.</p></article><article class="paragraphs" id="paragraphs-26"><h5 class="heading"><span class="title">Supersingular isogeny graphs</span></h5>
 <p id="p-803">Since every supersingular \(j\)-invariant lives in \(\FF_{p^2}\) if \(E\) is supersingular all roots of \(\phi_l(j(E), y)\) live in \(\FF_{p^2}\text{.}\) every vertex in a supersingular component has out-degree \(l+1\text{.}\)</p>
 <p id="p-804">Moreover by a result of Kohel \(G_l(\FF_{p^2})\) has only one supersingular component.</p>
 <p id="p-805">By the above if \(p \equiv 1 \pmod {12}\) then the supersingular component of \(G_l(\FF_{p^2})\) is an undirected \((l+1)\)-regular graph with around \(p/12\) vertices.</p>
@@ -426,7 +429,7 @@ m_j(l,l') = \ord_{t=j} \phi_l(j,t)
 <p id="p-806">The supersingular component of \(G_l(\FF_{p^2})\) is a <a knowl="./knowl/def-supersing-isog-ramanujan.html" title="Definition 3.1.13: Ramanujan graphs">Ramanujan graph</a>.</p></article><article class="definition-like" id="def-supersing-isog-ramanujan"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.1.13</span> <span class="title">Ramanujan graphs</span>
 </h6>
-<p id="p-807">A \(d\)-regular graph is a <dfn class="terminology">Ramanujan graph</dfn> if \(\lambda_2 \le \sqrt{d+1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjaceny matrix.</p></article></article><article class="paragraphs" id="paragraphs-26"><h5 class="heading"><span class="title">Ordinary isogney graphs</span></h5>
+<p id="p-807">A \(d\)-regular graph is a <dfn class="terminology">Ramanujan graph</dfn> if \(\lambda_2 \le \sqrt{d-1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjaceny matrix. (The largest one is always \(d\text{,}\) by \(d\)-regularity.)</p></article></article><article class="paragraphs" id="paragraphs-27"><h5 class="heading"><span class="title">Ordinary isogeny graphs</span></h5>
 <p id="p-808">Let \(E/\FF_q\) be an ordinary <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>, then \(\End(E) \simeq \ints\) is an order in an imaginary quadratic field \(K\) with \(\ZZ\lb \pi \rb \subseteq \ints \subseteq \ints_K\) where \(\pi\) is Frobenius and</p>
 <div class="displaymath">
 \begin{equation*}
@@ -441,7 +444,7 @@ K = \QQ(\sqrt{(\trace \pi)^2 - 4q})
 <li id="li-196">\(\lb\ints : \ints' \rb = l\) (\(\phi\) is descending).</li>
 <li id="li-197">\(\lb\ints' : \ints \rb = l\) (\(\phi\) is ascending).</li>
 </ol>
-<p>In the last two cases we say \(\phi\) is critical.</p></article><article class="paragraphs" id="paragraphs-27"><h5 class="heading"><span class="title">Horizontal isogenies</span></h5>
+<p>In the last two cases we say \(\phi\) is critical.</p></article><article class="paragraphs" id="paragraphs-28"><h5 class="heading"><span class="title">Horizontal isogenies</span></h5>
 <p id="p-811">\(E/k\) with CM by \(\ints \subseteq K\) imaginary quadratic. Let \(\ideal a\) be an invertible ideal.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -455,7 +458,7 @@ E\lb \ideal a \rb = \{ P \in E(\overline k) : \alpha (P)  = 0\, \forall \alpha \
 \begin{equation*}
 1+ \left(\frac {\disc(K)}{l}\right) = \begin{cases}0\amp\text{ if }l \text{ inert }\\ 1\amp\text{ if }l \text{ ramified }\\ 2\amp\text{ if }l \text{ splits}\end{cases}
 \end{equation*}
-</div></article><article class="paragraphs" id="paragraphs-28"><h5 class="heading"><span class="title">Vertical isogenies</span></h5>
+</div></article><article class="paragraphs" id="paragraphs-29"><h5 class="heading"><span class="title">Vertical isogenies</span></h5>
 <p id="p-814">Let \(\ints\) be an order in an imaginary quadratic field \(K \) of discriminant \(D \lt -4\) and let \(\ints' = \ZZ+l\ints\text{.}\)</p>
 <article class="theorem-like" id="lemma-17"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">3.1.14</span>
@@ -500,7 +503,7 @@ show(H)
 </div>then \(\#V_0\) is the order \(\lb l \rb\) in \(\Cl (\ints_0)\) else \(\#V_0 = 1\text{.}\)</li>
 <li id="li-204">The depth of \(V\) is \(d = v_l (\lb \ints_K : \ZZ\lb\pi \rb\rb)\) where \(\pi\) is the Frobenius morphism on any \(E\) with \(j(E) \in V\text{.}\)</li>
 <li id="li-205">\(l \nmid \lb \ints_K : \ints_0 \rb\text{,}\) \(\lb \ints_i : \ints_{i+1}\rb = l\) for \(0\le i \lt d\text{.}\)</li>
-</ol></article></article><article class="paragraphs" id="paragraphs-29"><h5 class="heading"><span class="title">Application: Identifying supersingular elliptic curves</span></h5>
+</ol></article></article><article class="paragraphs" id="paragraphs-30"><h5 class="heading"><span class="title">Application: Identifying supersingular elliptic curves</span></h5>
 <article class="theorem-like" id="algorithm-1"><h6 class="heading">
 <span class="type">Algorithm</span> <span class="codenumber">3.1.18</span> <span class="title">Sutherland</span>
 </h6>

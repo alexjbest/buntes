@@ -11,25 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Proof of b implies a in Belyi's theorem (3.61)</span></h5>
-<p>Suppose \(f \colon S\to \PP^1\) is a morphism of degree \(d\) with branching values \(\{0,1,\infty\}\text{.}\) By theorem 3.28 \(\forall \sigma \in \operatorname{Gal}(\CC)\)</p>
-<div class="displaymath">
-\begin{equation*}
-f^\sigma \colon  S^\sigma \to \PP^1
-\end{equation*}
-</div>
-<p>is a morphism of degree \(d\) and branching values are</p>
-<div class="displaymath">
-\begin{equation*}
-\{\sigma(0), \sigma(1), \sigma(\infty)\} = \{0,1,\infty\}\text{.}
-\end{equation*}
-</div>
-<p>So \(\{f^\sigma\}_{\sigma \in\operatorname{Gal}(\CC)}\) gives rise to only finitely many monodromy homomorphisms.</p>
-<div class="displaymath">
-\begin{equation*}
-F_{f^\sigma}\colon \pi_1(\PP^1 \smallsetminus \{0,1,\infty\}) \to \Sigma_d
-\end{equation*}
-</div>
-<p>the fundamental group is free on two generators so there are only finitely many such maps. Theorem 2.61 implies \(\{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}\) contains only finitely many equivalence classes so by the criterion  \(S\) is defined over \(\overline\QQ\text{.}\)</p></article><span class="incontext"><a href="sec-belyi-thm.html#paragraphs-15">in-context</a></span>
+<article class="paragraphs"><h5 class="heading"><span class="title">Galois action on points</span></h5>
+<article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.6.15</span>
+</h6>
+<ol class="decimal">
+<li>Given a valuation \(v\) on \(\mathcal M(S)\) define a valuation \(v^\sigma\) on \(\mathcal M(S^\sigma)\) by \(v^\sigma = v\circ \sigma^{-1}\) i.e. \(v^\sigma(\psi^\sigma) = v(\psi)\) for all \(\psi \in \mathcal M(S)\text{.}\)</li>
+<li>For \(P \in S\) define \(P^\sigma \in S^\sigma\) as the unique point in \(S^\sigma\) s.t. \(v_{P^\sigma} = (v_P)^\sigma\text{.}\)</li>
+</ol></article><article class="theorem-like"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.6.16</span> <span class="title">3.25</span>
+</h6>
+<ol class="decimal">
+<li>For \(\sigma\in \operatorname{Gal}(\CC)\text{,}\) \(P\mapsto P^\sigma\) is a bijection \(S\to S^\sigma\text{.}\)</li>
+<li>On \(P \in S_F^\times\) this agrees with the previous definition of \(P^\sigma\text{.}\)</li>
+<li>\(a^\sigma = a\) for all \(a\in \QQ \cup \{\infty\}\) for all \(\sigma \in \operatorname{Gal}(\CC)\text{.}\)</li>
+</ol></article><article class="hiddenproof"><a knowl="./knowl/proof-94-hidden.html" title="Proof 2.6.16.1"><h6 class="heading"><span class="type">Proof</span></h6></a></article></article><span class="incontext"><a href="sec-belyi-thm.html#paragraphs-15">in-context</a></span>
 </body>
 </html>

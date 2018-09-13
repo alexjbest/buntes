@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Riemann Surfaces and Discrete Groups II (Jim)</title>
+<title>BUNTES Riemann Surfaces and Discrete Groups II (Jim)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,14 +290,17 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-rs-discrete-groups-ii"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Riemann Surfaces and Discrete Groups II (Jim)</span>
 </h2>
-<a href="sec-rs-discrete-groups-ii.html" class="permalink">¶</a><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
+<a href="sec-rs-discrete-groups-ii.html" class="permalink">¶</a><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Moduli space of compact Riemann surfaces with genus \(g\)</span>
 </h3>
 <p id="p-573">\(g =0\text{.}\) Uniformization tells us that up to isomorphisms all <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> \(0\) are \(\PP^1\) hence the moduli space \(\mathcal M _0  = \{\text{pt}\}\text{.}\)</p>
@@ -343,7 +346,7 @@ A,A' \in \GL_2(\ZZ)
 <ol class="decimal">
 <li id="li-109">\(\det(\gamma_i) = 1\) which implies that \(\gamma_i\) depends on 3 real parameters so we have a total of \(6g\text{.}\)</li>
 <li id="li-110">\(\prod_{i=1}^g \lb \gamma_i, \gamma_{g+i}\rb = \begin{pmatrix} 1\amp 0 \\ 0\amp 1\end{pmatrix}\) 3 relations, so \(6g- 3\text{.}\) Since for any \(\gamma \in \PSL_2(\RR)\) \(\Gamma = \langle \gamma_i \rangle\) and \(\gamma\Gamma \gamma\inv\) uniformize isomorphic <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> implies \(6g-6\) real parameters, so \(3g-3\) complex parameters.</li>
-</ol></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
+</ol></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.2</span> <span class="title">Monodromy</span>
 </h3>
 <p id="p-578">Let \(f\colon S_1 \to S\) be a morphism of degree \(d\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> over \(y_1,\ldots, y_n \in S\text{.}\) For \(y\in S\smallsetminus \{y_1,\ldots, y_n\}\) we have a group homomorphism</p>
@@ -364,7 +367,7 @@ M_f\colon \pi_1(S \smallsetminus \{y_1, \ldots, y_n\} )\to \operatorname{Bij} (f
 \end{equation*}
 </div>
 <p>lifts to a path \(\widetilde \gamma\) from \(x\in f\inv(y)\) to another \(x' \in f\inv(y)\) set \(\sigma_\gamma(x) =x'\text{.}\) If we number the points in \(f\inv (y)\) we may think of \(M_f(\pi_1)\subseteq \Sigma_d\text{,}\) via some \(\phi\colon \{1,\ldots, d\}\to f\inv (y)\text{.}\) \(\operatorname{Mon}(f)\) is the image of \(M_f(\pi_1)\) in \(\Sigma_d\text{.}\)</p>
-<article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Monodromy and Fuchsian groups</span></h5>
+<article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Monodromy and Fuchsian groups</span></h5>
 <p id="p-579">Let</p>
 <div class="displaymath">
 \begin{equation*}
@@ -439,7 +442,7 @@ f\colon \tilde S \to S
 = \pi_1 (S' \smallsetminus \{0,1,\infty\})
 \end{equation*}
 </div>
-<p>is generated by \(\gamma_1, \gamma_2\) so any map \(M_f \colon \Gamma(2) \to \Sigma_d\) is determined by  images of \(\gamma_1, \gamma_2\text{.}\)</p></article></div></article></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<p>is generated by \(\gamma_1, \gamma_2\) so any map \(M_f \colon \Gamma(2) \to \Sigma_d\) is determined by  images of \(\gamma_1, \gamma_2\text{.}\)</p></article></div></article></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.3</span> <span class="title">Galois coverings</span>
 </h3>
 <article class="definition-like" id="definition-53"><h6 class="heading">
@@ -493,7 +496,7 @@ f\colon S_1 \to S_2
 \begin{equation*}
 \deg(f)  = |\operatorname{Mon}(f)|\text{.}
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.4</span> <span class="title">Normalization of coverings of \(\PP^1\)</span>
 </h3>
 <p id="p-589">Let \(f\colon S \to \PP^1\) be a cover of \(\deg d \gt 0\) with \(\operatorname{Mon}(f) \le \Sigma_d\text{.}\)</p>

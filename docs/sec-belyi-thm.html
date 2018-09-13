@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AFAS Belyi's theorem (Maria)</title>
+<title>BUNTES Belyi's theorem (Maria)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -290,14 +290,17 @@ MathJax.Hub.Config({
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
 <h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul><li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li></ul>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+</ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-belyi-thm"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Belyi's theorem (Maria)</span>
 </h2>
-<a href="sec-belyi-thm.html" class="permalink">¶</a><section class="introduction" id="introduction-10"><article class="theorem-like" id="theorem-48"><h6 class="heading">
+<a href="sec-belyi-thm.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><article class="theorem-like" id="theorem-48"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.6.1</span>
 </h6>
 <p id="p-597">Let \(S \) be a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">riemann surface</a>, then the following are equivalent.</p>
@@ -353,7 +356,7 @@ x\colon S_\lambda \to \PP^1
 \infty \mapsto \infty
 \end{equation*}
 </div>
-<p>ramifies over \(0,1,\lambda,\infty\text{.}\) Then \(f = P_\lambda \circ x \colon S_\lambda \to \PP^1\) ramifies exactly at \((0,0), (1,0), (\lambda,0), \infty\text{.}\) With branching values \(0,0,1,\infty\) so that \(f\) is a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a>.</p></article></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<p>ramifies over \(0,1,\lambda,\infty\text{.}\) Then \(f = P_\lambda \circ x \colon S_\lambda \to \PP^1\) ramifies exactly at \((0,0), (1,0), (\lambda,0), \infty\text{.}\) With branching values \(0,0,1,\infty\) so that \(f\) is a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a>.</p></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Proof of a) implies b)</span>
 </h3>
 <article class="remark-like" id="note-7"><h6 class="heading">
@@ -375,7 +378,7 @@ S\xrightarrow x \PP^1 \xrightarrow{m_1} \PP^1
 \end{equation*}
 </div>
 <p>If \(B_1 \subseteq \QQ \cup \{\infty\}\) done. Otherwise let \(m_2(T) \) be the minimal polynomial \(/\QQ\) of \(\{m_1(\beta_1) ,\ldots, m_1(\beta_d) \}\text{,}\) \(B_2 = \operatorname{Branch}(m_2\circ m_2 \circ x)\text{.}\) Fact: \(\deg(m(t)) \lt \deg(m_1(T))\text{.}\)</p>
-<p id="p-608">Repeat inductively until \(B_k \subseteq \QQ \cup \{\infty\}\) which is guaranteed by the decreasing degrees.</p></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<p id="p-608">Repeat inductively until \(B_k \subseteq \QQ \cup \{\infty\}\) which is guaranteed by the decreasing degrees.</p></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Algebraic characterization of morphisms</span>
 </h3>
 <article class="theorem-like" id="proposition-51"><h6 class="heading">
@@ -398,7 +401,7 @@ S_f \ar[r]^f \ar[dr]_m &amp; S_G \ar[d]_h \\
 }
 \end{equation*}
 </div>
-<p>The fact that this diagram commutes can be expressed by polynomial identities.</p></article></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<p>The fact that this diagram commutes can be expressed by polynomial identities.</p></article></section><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Galois action</span>
 </h3>
 <p id="p-611">Let \(\operatorname{Gal}(\CC) = \Gal{\CC}{\QQ}\text{.}\)</p>
@@ -418,7 +421,7 @@ P^\sigma = \sum a^\sigma_{ij} x^iy^j \in \CC\lb x,y\rb
 </ol></article><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-16" id="exercise-16"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.6.11</span>
 </h6></a></article><div id="hk-exercise-16" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-613">Verify this Galois action is well-defined (lemma 3.12).</p></article></div>
-<p id="p-614">Recall: \(S_F\) is    constructed from a noncompact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> \(S_F^\times \subseteq \CC^2\) by adding finitely many points, (theorem 1.86). If \(P=  (a,b) \in S_F^\times\) then \(P^\sigma = (a^\sigma, b^\sigma)\text{.}\) What about the other points?</p></section><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
+<p id="p-614">Recall: \(S_F\) is    constructed from a noncompact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> \(S_F^\times \subseteq \CC^2\) by adding finitely many points, (theorem 1.86). If \(P=  (a,b) \in S_F^\times\) then \(P^\sigma = (a^\sigma, b^\sigma)\text{.}\) What about the other points?</p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.4</span> <span class="title">Points and valuations</span>
 </h3>
 <article class="definition-like" id="definition-58"><h6 class="heading">
@@ -461,7 +464,7 @@ P\in S \mapsto v_P = \ord_P
 <p>gives a 1-1 correspondence between points of \(S\) and normalised valuations on \(\mathcal M(S)\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-93" id="proof-93"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-93" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-621">Sketch: First prove it for \(S = \PP^1\text{.}\)</p>
 <p id="p-622">Inductively <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> separate points.</p>
 <p id="p-623">Surjectivity study behaviour of valuations in finite extensions of fields and use a nonconstant morphism \(f\colon S \to \PP^1\) to reduce to the case of \(\PP^1\text{.}\)</p></article></div>
-<article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Galois action on points</span></h5>
+<article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Galois action on points</span></h5>
 <article class="definition-like" id="definition-59"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.6.15</span>
 </h6>
@@ -484,7 +487,7 @@ P\in S \mapsto v_P = \ord_P
 (v_\infty)^\sigma (x-1) = v_\infty(x- a^{\sigma^{-1}}) = 1 = v_\infty(x-1)
 \end{equation*}
 </div>for all \(a\in \CC\) implies \((v_\infty)^{\sigma^{-1}} = v_\infty\) implies \(\infty^\sigma  = \infty\text{.}\)</li>
-</ol></article></div></article></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
+</ol></article></div></article></section><section class="subsection" id="subsection-58"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.5</span> <span class="title">Elementary invariants of the action of \(\operatorname{Gal}(\CC)\text{.}\)</span>
 </h3>
 <article class="remark-like" id="remark-14"><h6 class="heading">
@@ -529,7 +532,7 @@ P\in S \mapsto v_P = \ord_P
 \end{equation*}
 </div>
 <p id="p-632">2 implies 1 is section 3.7.</p></article></div>
-<article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Proof of b implies a in Belyi's theorem (3.61)</span></h5>
+<article class="paragraphs" id="paragraphs-16"><h5 class="heading"><span class="title">Proof of b implies a in Belyi's theorem (3.61)</span></h5>
 <p id="p-633">Suppose \(f \colon S\to \PP^1\) is a morphism of degree \(d\) with branching values \(\{0,1,\infty\}\text{.}\) By theorem 3.28 \(\forall \sigma \in \operatorname{Gal}(\CC)\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -548,7 +551,7 @@ f^\sigma \colon  S^\sigma \to \PP^1
 F_{f^\sigma}\colon \pi_1(\PP^1 \smallsetminus \{0,1,\infty\}) \to \Sigma_d
 \end{equation*}
 </div>
-<p>the fundamental group is free on two generators so there are only finitely many such maps. Theorem 2.61 implies \(\{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}\) contains only finitely many equivalence classes so by the criterion  \(S\) is defined over \(\overline\QQ\text{.}\)</p></article></section><section class="subsection" id="subsection-58"><h3 class="heading hide-type">
+<p>the fundamental group is free on two generators so there are only finitely many such maps. Theorem 2.61 implies \(\{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}\) contains only finitely many equivalence classes so by the criterion  \(S\) is defined over \(\overline\QQ\text{.}\)</p></article></section><section class="subsection" id="subsection-59"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.6</span> <span class="title">The field of definition of Belyi functions (3.8)</span>
 </h3>
 <article class="theorem-like" id="proposition-55"><h6 class="heading">
