@@ -1565,7 +1565,7 @@ section#sec-polarizations-etale
                 p
                     | We then have a notion of degree, polarizations of degree 1 (i.e. isomorphisms #[m A\to \hat A]) are called #[term principal polarizations].
 
-        remark: p This is in fact equivalent to the #[xref(ref="def-princ-pol") previous definition], see #[xref(ref="bib-vandergeer-moonen") cor. 11.5].
+        remark: p This is in fact equivalent to the #[xref(ref="def-princ-pol") previous definition], see #[xref(ref="bib-vandergeer-moonen",detail="cor. 11.5")/].
 
         p
             | Natural questions: what does the line bundle #[m \sheaf L] tell us about the polarization? Can we tell principality?
@@ -1644,7 +1644,7 @@ section#sec-polarizations-etale
         title Étale Cohomology of Abelian Varieties
 
         p
-            | See #[xref(ref="bib-milne-etale") Milne Étale cohomology] or #[xref(ref="bib-tamme") Tamme].
+            | See #[xref(ref="bib-milne-etale")/] or #[xref(ref="bib-tamme")/].
         p
             | Recall for abelian varieties over #[m A/\CC] we considered singular cohomology of the complex points #[m A(\CC)].
             | Indeed this theory was strongly connected to the lattice #[m \Lambda] defining #[m A(\CC)].
@@ -1756,7 +1756,7 @@ section#sec-polarizations-etale
                     |.
 
         p
-            | So we need to understand étale covers of abelian varieties. Following #[xref(ref="bib-vandergeer-moonen") van der Geer-Moonen]:
+            | So we need to understand étale covers of abelian varieties. Following #[xref(ref="bib-vandergeer-moonen")/]:
 
         proposition
             title surprising proposition
@@ -1855,7 +1855,7 @@ section#sec-polarizations-etale
             //    | . Under this #[m H^r(A,R)] forms a Hopf algebra.
 
         p
-            | Note that Milne gives a combined proof of the above two statements, this relies on some theorems on Hopf algebras such as #[xref(ref="bib-borel-hopf") Theoreme 6.1 of Borel, Sur La Cohomologie Des Espaces Fibres Principaux...].
+            | Note that Milne gives a combined proof of the above two statements, this relies on some theorems on Hopf algebras such as #[xref(ref="bib-borel-hopf",detail="Theoreme 6.1")].
 
 section#sec-weil-pairings
     title Weil pairings (Maria)
@@ -2694,7 +2694,7 @@ section#sec-honda-tate
         definition#def-brauer-gp
             title Brauer groups
             statement: p
-                | The #[term Brauer group] of #[m k] #[m \operatorname{Br}(k)] is the set of central simple algebras under #[m \otimes] module the algebras #[m M_n(k)].
+                | The #[term Brauer group] of #[m k] #[m \operatorname{Br}(k)] is the set of central simple algebras under #[m \otimes] modulo the algebras #[m M_n(k)].
 
         fact
             statement: p
@@ -2738,7 +2738,7 @@ section#sec-honda-tate
         title Surjectivity and CM theory
 
         p
-            | We need to sow that for a#[m \pi] a #[m q]-Weil number there exists an abelian variety #[m A/\FF_q] such that #[m \pi_A \sim \pi].
+            | We need to show that for #[m \pi] a #[m q]-Weil number there exists an abelian variety #[m A/\FF_q] such that #[m \pi_A \sim \pi].
 
         definition
             statement: p
@@ -2800,13 +2800,15 @@ section#sec-honda-tate
 
                         | This #[m L] splits #[m D_\pi].
 
-        p
-            | For a CM field #[m L] all the embeddings
-            me \iota\colon L \hookrightarrow \CC
-            | come in complex conjugate pairs, choosing an embedding for each pair defines a subset #[m \Phi\subseteq \Hom(L, \CC)] such that
-            me \Phi \cup \overline \Phi = \Hom(L,\CC)
-            me \Phi \cap \overline \Phi = \emptyset
-            | such a choice of #[m \Phi ] is called a CM type.
+        definition#def-cm-type
+            title CM types
+            statement: p
+                | For a CM field #[m L] all the embeddings
+                me \iota\colon L \hookrightarrow \CC
+                | come in complex conjugate pairs, choosing an embedding for each pair defines a subset #[m \Phi\subseteq \Hom(L, \CC)] such that
+                me \Phi \cup \overline \Phi = \Hom(L,\CC)
+                me \Phi \cap \overline \Phi = \emptyset
+                | such a choice of #[m \Phi ] is called a #[term CM type].
 
         p
             | Let #[m A/\CC] be an abelian variety with CM by #[m L] i.e.

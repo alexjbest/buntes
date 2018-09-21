@@ -293,6 +293,7 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -431,7 +432,7 @@ y^2 = x^3 - (5009^3 - 1001^2) = x^3 - 125675213728
 \end{equation*}
 </div>
 <p>Ouch.</p>
-<p id="p-710">If we want to study more realistic bounds we can instead reverse the problem. Can we minimise \(x^3 - y^2\) for integer \(x,y\text{,}\) how close can the square of a large integer and the cube of a large integer be? Euler showed that \(x^3 - y^2 = 1\) has only 1 (interesting) solution, for example.</p>
+<p id="p-710">If we want to study more realistic bounds we can instead reverse the problem. Can we minimise \(x^3 - y^2\) for integer \(x,y\text{,}\) how close can the square of a large integer and the cube of a large integer be? Euler showed that \(|x^3 - y^2| = 1\) has only 1 (interesting) solution, for example.</p>
 <p id="p-711">Marshall Hall was interested in this, did some nice computations and conjectured:</p>
 <article class="theorem-like" id="conjecture-2"><h6 class="heading">
 <span class="type">Conjecture</span> <span class="codenumber">2.10.3</span> <span class="title">Mashall Hall's conjecture, 1970</span>
@@ -517,7 +518,7 @@ K = X^3 - Y^2
 \end{equation*}
 </div>
 <p>is of degree \(\gt m\text{.}\)</p>
-<p id="p-722">(Now the speaker has just given a theorem with an inequality, so in order to appear smart one of you should ask is this bound sharp.)</p>
+<p id="p-722">(Now the speaker has just given a theorem with an inequality, so in <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> to appear smart one of you should ask is this bound sharp.)</p>
 <p id="p-723">The bound is sharp, this can mean several things in general, originally it was asked that for infinity many \(m\) there is an example where \(\deg K = m + 1\text{.}\)</p></article><p id="p-724">The first part was proved initially by Davenport (in the same year, and journal). The second part had to wait until '81 for Stothers to prove it.</p>
 <p id="p-725">Someone else should probably also ask, how is any of this related to Dessins?</p>
 <p id="p-726">To prove sharpness we have to exhibit for each \(m\) triple of polynomials \(X,Y,K\) of degrees \(2m,3m,m+1\text{.}\) Coming up with polynomial families is hard, drawing stupid pictures is easy, can <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a> aid us here?</p>
@@ -641,7 +642,7 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 </div>
 <p>(the current winner has quality \(1.6299\)).</p>
 <article class="paragraphs" id="paragraphs-20"><h5 class="heading"><span class="title">References</span></h5>
-<p id="p-734">A semi-random order, maybe starting at the top is nice though. If you have trouble finding something let me know.</p>
+<p id="p-734">A semi-random <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>, maybe starting at the top is nice though. If you have trouble finding something let me know.</p>
 <ol class="decimal">
 <li id="li-150">On Computing Belyi Maps - J. Sijsling, J. Voight</li>
 <li id="li-151">Belyi Functions: Examples, Properties, and Applications - Zvonkin (really nice survey)</li>

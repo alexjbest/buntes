@@ -6,6 +6,9 @@ introduction#sec-supersing-isog-intro
         | Supersingular isogeny graphs and Quaternion Algebras.
 
     p
+        | #[url(href="http://math.bu.edu/people/midff/buntes/fall2018.html")/].
+
+    p
         | Outline:
         ol
             li
@@ -19,11 +22,7 @@ introduction#sec-supersing-isog-intro
                 me \left\{ \text{maximal orders }\ints \subseteq B_{p,\infty}\right\}/\sim \leftrightarrow \left\{ j \text{ s.s. }\in \FF_{p^2}\right\}/\Gal{\FF_{p^2}}{\FF_p}
                 |.
     p
-        | References:
-        ol
-            li
-                | Sutherland, Andrew. "Isogeny volcanoes." The Open Book Series 1, no. 1 (2013): 507-530. #[url(href="https://msp.org/obs/2013/1-1/obs-v1-n1-p25-s.pdf")/].
-
+        | References: #[xref(ref="bib-sutherland,bib-voight-quat,bib-velu")/]
 
 section#sec-supersing-isog-graphs
     title Isogeny graphs: background and motivation (Maria Ines)
@@ -191,7 +190,7 @@ section#sec-supersing-isog-graphs
             definition#def-supersing-isog-ramanujan
                 title Ramanujan graphs
                 statement: p
-                    | A #[m d]-regular graph is a #[term Ramanujan graph] if #[m \lambda_2 \le \sqrt{d-1}] where #[m \lambda_2] is the second largest eigenvalue of its adjaceny matrix.
+                    | A connected #[m d]-regular graph is a #[term Ramanujan graph] if #[m \lambda_2 \le \sqrt{d-1}] where #[m \lambda_2] is the second largest eigenvalue of its adjaceny matrix.
                     | (The largest one is always #[m d], by #[m d]-regularity.)
 
 
@@ -438,6 +437,7 @@ section#sec-supersing-isog-graphs
                 | The Sage code used to make this picture was:
 
             sage: input.
+                <![CDATA[
                 N = 3 # number of flows
                 p = 3
                 d = 2
@@ -448,6 +448,7 @@ section#sec-supersing-isog-graphs
                 H.add_cycle([len(F.vertices())*i for i in range(N)])
                 show(H)
                 #latex(H) # for the code
+                ]]>
 
             theorem
                 title Kohel
@@ -507,9 +508,9 @@ section#sec-supersing-isog-crypto
 
         proposition
             statement: p
-                | If #[m G] is Ramanujan, #[m x\in V, S\subseteq V]. For a sufficiently large path the probability that the path ends in #[m S] is at least #[m |S|/2|G|].
+                | If #[m G] is a Ramanujan graph, #[m x\in V, S\subseteq V]. For a sufficiently large path beginning at #[m x], the probability that the path ends in #[m S] is at least #[m |S|/2|V|].
         p
-            | Upshot supersingular isogeny graphs are #[m (l +1)]-regular, undirected, Ramanujan, connected.
+            | Upshot: supersingular isogeny graphs are #[m (l +1)]-regular, undirected, Ramanujan, connected (technically, Ramanujan means connected already, but its worth emphasising).
 
         p
             | Some of our algorithms are only dependent on having a graph with this property, not so much the interpretation in terms of isogenies.
@@ -686,4 +687,387 @@ section#sec-supersing-isog-crypto
                     | Use differential addition (when you compute #[m A+B] with side info #[m A-B]) and a Montgomery ladder
                 li
                     | (Computing smooth degree isogenies) Decompose the #[m l_A^{e_A}] isogeny into #[m e_A] different #[m l_A]-isogenies, #[m \phi_i\colon E_i \to E_{i+1}] the kernel of #[m \phi_i] is #[m \langle l_A^{e_A - i - 1} R_A\rangle].
-                    | Velu's formula runs in #[m O(l)] for #[m l]-isogeny.
+                    | Vélu's formula runs in #[m O(l)] for #[m l]-isogeny.
+
+section#sec-quaternion-algebras
+    title Quaternion Algebras (Alex)
+
+    introduction
+        p
+            | Q: Why study quaternion algebras?
+        p
+            | A: They arise as the endomorphism algebras of #[em supersingular] elliptic curves #[m /\FF_{p^2}].
+
+        p
+            | I don't want to spoiler next week at all, but I cannot talk about quaternion algebras without a little bit of motivation first!
+
+        example
+            title What are we doing again?
+            statement
+                p
+                    | Lets take
+                    me K = \FF_9 = \FF_3[\alpha] = \FF_3[x]/(x^2- x - 1)
+                    | and
+                    me E/K\colon y^2 = x^3 + \alpha x = f(x)
+                    | , simple eh?
+                    | It's supersingular as the #[m j]-invariant is 0 (and are in characteristic 3).
+                    | Alternatively, count points or even compute the Hasse invariant, the coefficient of #[m p -1 = 2] in #[m f(x)^{(p-1)/2 = 1}], yep, it's 0.
+                p
+                    | We therefore have #[m \#E(K) = 9 + 1 = 10] so we have a #[m 2]-torsion point (#[m P = (0,0)]) and any other point we can use to generate (will be #[m 5] or #[m 10] torsion).
+                    | Let #[m x = 1] so #[m y^2 = 1 + \alpha = \alpha^2] so #[m y = \pm\alpha], say #[m Q = (1,\alpha)].
+                p
+                    | We have one endomorphism, #[m p]-power frobenius #[m x\mapsto x^3], #[m y\mapsto y^3].
+                    | How to find another one?
+                p
+                    | Lets compute an isogenous curve and see what happens!
+                    | We will compute #[m \psi\colon  E \to E/\langle P \rangle = E'].
+                    | In general the formulae are  a little annoying #[xref(ref="bib-velu")/], when you have a 2-torsion point at #[m (0,0)], not as bad:
+                    me \psi = \left(x + \frac{f'(0)}{x}, y - \frac{yf'(0)}{x^2} \right)
+                    me f'(0) = \alpha
+                    | so
+                    me \psi= \left(\frac{x^2 + \alpha}{x}, y\frac{x^2 - \alpha}{x^2} \right)
+                    | (aside: if #[m g/h = (x^2+\alpha)/x] then #[m (g/h)' = (g' h - g h')/h^2 = (2x^2 - (x^2 + \alpha))/x^2 = (x^2 - \alpha)/x^2], sanity check/fast computation?).
+                    | The curve is then
+                    me E'\colon y^2 = x^3 + 0x^2 + (\alpha - 5\alpha)x +0 = x^3  - \alpha x
+                    //| Use Velu's formulae, #[m b_1,b_0] are coefficients of our original equation:
+                    //me E'\colon y^2 = x^3 + (-(4a + 2b_1))x^2 + (b_1^2 - 4b_0)x = x^3  - \alpha x
+                    //| the isogeny itself is
+                    //me \left( \frac{x^3  + \alpha x}{x}, \frac{(x^2 - \alpha )y}{x^2}\right)
+                    //| .
+                    | . I think really here we're just recovering those classic formulae for 2-isogenies between curves with a rational 2 torsion point at #[m (0,0)] (used in 2-descent).
+                    md
+                        mrow C\amp\colon y^2 = x(x^2+ax+b)
+                        mrow D\amp\colon v^2 = u(u^2+a_1u+b_1)
+                        mrow \phi\amp\colon C\to D
+                        mrow (x,y) \amp\mapsto ((y/x)^2 , y-by/x^2)
+                        mrow \hat\phi\amp\colon D\to C
+                        mrow (u,v) \amp\mapsto \left(\frac14\left(\frac vu\right)^2 ,\frac18( v-b_1 v/u^2)\right)
+                p
+                    | So far so good, our curve doesn't look exactly the same, but it's #[m j]-invariant is, so we are still in business.
+                    | Is
+                    me E \simeq E'\text{?}
+                    | If we substitute #[m x= \alpha^2 x], #[m y = \alpha ^3 y] into #[m E'] we get
+                    me \alpha^6 y^2 = \alpha^6 x^3 - \alpha^3 x
+                    me y^2 = x^3 - \alpha^{-3} x = x^3 +\alpha x
+                    | , call this map #[m \iota].
+                    | Excellent, so to get #[m \psi' \colon E\to E] we compose #[m \iota\circ \psi].
+                    me \iota \circ\left( \frac{x^2  + \alpha}{x}, \frac{(x^2 - \alpha )y}{x^2}\right)  = \left( \alpha^2\frac{x^2  + \alpha}{x}, \alpha^3\frac{(x^2 - \alpha )y}{x^2}\right)
+                    me                                                                                 = \left( (\alpha+  1)\frac{x^2  + \alpha}{x}, ( -\alpha  + 1)\frac{(x^2 - \alpha )y}{x^2}\right)
+                    | .
+                p
+                    | What happens to our other point #[m Q]?
+                    | #[m \psi'(Q) = (\alpha^2(1+\alpha), \alpha^4(1-\alpha)) =(-1, \alpha - 1)]
+                    md
+                        mrow (0 : 0 : 1) \mapsto (0 : 1 : 0),\, (0 : 1 : 0) \mapsto (0 : 1 : 0),\, (1 : \alpha : 1) \mapsto (-1 : \alpha -1 : 1),
+                        mrow (1 : -\alpha : 1) \mapsto (-1 : -\alpha + 1 : 1),\, (-1 : \alpha -1 : 1) \mapsto (1 : -\alpha : 1),
+                        mrow (-1 : -\alpha + 1 : 1) \mapsto (1 : \alpha : 1),\, (\alpha : \alpha + 1 : 1) \mapsto (-1 : -\alpha + 1 : 1),
+                        mrow (\alpha : -\alpha -1 : 1) \mapsto (-1 : \alpha -1 : 1),\, (-\alpha : 1 : 1) \mapsto (1 : \alpha : 1),\, (-\alpha : -1 : 1) \mapsto (1 : -\alpha : 1)
+                    | A word of caution: If you are very awake you may check and be led to believe that this is just the multiplication by #[m -2] isogeny on #[m E], its action on #[m E(\FF_9)] points is the same!!!!!
+                    | It's not the same isogeny though so you can relax.
+                    | Now we have an endomorphism ring with two elements, what are the relations between themselves, and each other?
+                p
+                    | As we quotiented by a rational #[m 2]-torsion point we have computed a factor of #[m \pi - 1], the other factor comes from quotienting by #[m 5]-torsion.
+                    | In fact we find.
+                    | The frobenius has characteristic polynomial #[m t^2 + 9 = (t + 3i)(t-3i)] #[m \pi] looks like #[m 3i].
+                    | #[m \psi] has characteristic polynomial #[m t^2 - 2t + 2 = (t+1)^2 + 1], so #[m \psi + 1] looks like #[m \pm i].
+                    | #[m ?? \cdot \psi = \pi - 1]  #[m ?? \cdot (i - 1) = 3i - 1], so #[m ?? = 2 - i = 2 - (\psi + 1) = 1 - \psi].
+                p
+                    | So what if we quotient by non-rational 2-torsion?
+                    | Pass to the quadratic extension #[m \FF_{3^4}], which we get from adjoining the other roots of #[m 0 = x^3 + \alpha x] i.e. #[m \pm \sqrt{-\alpha}].
+                    | Denote this extension #[m \FF_3 \lb \beta \rb],  #[m (\beta^2 - 1)^2 = -\alpha].
+                    | We can use Vélu again, it's degree two still but a bit more ugh, you might need a computer from now on, actually I've been using one all along.
+                    me \phi = \left( \frac{\left(\alpha + 1\right) x^{2} + \left(- \beta^{3}  -  \beta - 1\right) x}{x -   (\beta^{2} - 1)},y \frac{\left(-\alpha + 1\right) x^{2} + \left(\beta^{3}  -  \beta^{2} + \beta - 1\right) x -  1}{(x -  ( \beta^{2} - 1))^2} \right)
+                    | doing a computation it looks like #[m \phi] satisfies #[m \phi^2 -\phi + 2].
+                p
+                    | What are the relations between these? Hopefully they generate the endomorphism ring by now but without relations we are screwed!
+                    | Do they commute?
+                    | Computing #[m \tau = \phi \psi  - \psi \phi] is relevant, if 0, commutative, otherwise not!
+                    | Note that if they are algebraically dependant they must commute!
+                    | In our example we can compute #[m \tau^2 + 3 = 0]
+                    //me \tau (\psi +1) = (\phi \psi - \psi \phi) (\psi + 1)  = \phi \psi^2 + \phi \psi - \psi \phi\psi - \psi \phi= \phi (2\psi -2) + \phi \psi - \psi \phi\psi - \psi \phi
+                    //me (\psi+1)\tau  = (\psi + 1)(\phi \psi - \psi \phi)  = \psi \phi \psi + \phi\psi - \psi^2 \phi - \psi \phi  = \psi \phi \psi + \phi\psi - (2\psi - 2) \phi - \psi \phi
+                    //| sum
+                    //me 2\phi \psi -2 \phi + \phi \psi - \psi \phi+  \phi\psi - 2\psi\phi + 2\phi - \psi \phi
+                    //me 4\phi \psi - 4\psi\phi  = 4\tau
+
+
+        exercise
+            statement: p
+                | Finish this example, compute the endomorphism ring as a recognisable quaternion order.
+
+        p
+            | Aside: I now believe Asra when she says not to use Vélu's formulae for large degree!
+        p
+            | Aside 2: Frobenius can be weird for supersingular curves, e.g. for
+            me y^2 = x^{3} + x/\FF_9
+            | we have #[m \pi = -3]. Or
+            me y^2 = x^{3} + 1/\FF_{25}
+            | we have #[m \pi = -5]
+
+        exercise
+            title Good for long walks on the beach
+            statement: p
+                | Show by hand that #[m y^2 + y = x^3/\FF_4] is supersingular and that frobenius is just the multiplication by #[m -2] map.
+
+        exercise
+            statement: p
+                | PODASIP: this happens for all #[m p^2]?
+
+    subsection
+        title Quaternion Algebras
+
+        introduction
+            p
+                | Pretty much all of this material was ripped with the utmost love and affection from #[xref(ref="bib-voight-quat")/], check it out.
+            proposition
+                statement: p
+                    | The theory of Quaternion algebras is very rich.
+                proof: p
+                    | The above book is 800 pages long.
+            p
+                | So now we have gone out into nature and observed a beautiful new species of algebra, time to catch it, pin it to a wall, dissect it to study it in detail.
+                | It might not look as pretty any more but it's the way the science is done.
+
+            example
+                title Hamilton's quaternions
+                statement: p
+                    | Hamilton's quaternions #[m \HH] were the first quaternion algebra to be discovered (citation needed).
+                    | The structure is like two copies of #[m \CC] tensored together in some non-commuting way over #[m \RR].
+                    | We have a real algebra with two generators #[m i,j] s.t. #[m i^2 = j^2  = (ij)^2 = -1] we let #[m k = ij] for aesthetic reasons (note that these relations imply noncommutativity!).
+                    | Like this we get a division algebra.
+
+            p
+                | Quaternion algebras are a generalisation of this to other fields.
+
+            definition#def-quaternion-algebra
+                title Quaternion algebras
+                statement
+                    p
+                        | Let #[m F] be a field (not characteristic 2), a quaternion algebra over #[m F] is an algebra #[m B] over #[m F] for which there exist #[m a,b\in F^\times] such that there is a basis
+                        me 1,i,j,k \in B
+                        | such that
+                        me i^2 = a,j^2=b,k=ij=-ji
+                        | , it is automatic that #[m k^2 = -ab] from this.
+                    p
+                        | We denote this particular quaternion algebra by #[m \legendre{a,b}{F}]
+
+            example
+                statement: p
+                    me  \HH = \legendre{-1,-1}{\RR}
+                    | .
+
+            example
+                statement: p
+                    | What is
+                    me \legendre{1,1}{F} \left( = \legendre{1,-1}{F}\right)
+                    | ? We have another way to come up with #[m 4]-dimensional non-commutative algebras over fields, matrices!
+                    | Let
+                    me i=  \begin{pmatrix} 1\amp0\\0\amp -1\end{pmatrix}
+                    me j =\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix}
+                    | so
+                    me k = ij = \begin{pmatrix} 0\amp1\\-1\amp 0\end{pmatrix} = -ji
+                    | as required.
+
+            p
+                | Call this example #[em split], in analogy with quadratic theory,  If #[m x^2 - N] has a solution mod #[m p] then #[m \legendre{N}{p} = 1 = \legendre{1}{p}].
+
+            p
+                | Note that if #[m a] or #[m b \in (F^\times)^2] then we can divide the corresponding basis element by #[m \sqrt{a}] or whatever and find that #[m \legendre{a,b}{F} = \legendre{1,b}{F}].
+                | This shows:
+
+            proposition
+                statement: p
+                    | After passing to the algebraic closure (or even the quadratic closure!) every quaternion algebra is split.
+
+            p
+                | This is helpful as it allows us to work with non-split quaternion algebras as matrix algebras over a quadratic extension.
+
+            example
+                statement: p
+                    | #[m \HH/\RR] can be seen as #[m \Mat_{2\times 2}(\RR(i)) = \Mat_{2\times 2}(\CC)], explicitly
+                    me i=  i\begin{pmatrix} 1\amp0\\0\amp -1\end{pmatrix} = \begin{pmatrix} i\amp0\\0\amp -i\end{pmatrix}
+                    me j = i\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix} = \begin{pmatrix} 0\amp i\\i\amp 0\end{pmatrix}
+                    | please excuse the unfortunate notational clash here, I hope you agree it's somewhat unavoidable.
+
+            p
+                | Here is a nice lemma I probably used implicitly already somewhere!
+
+            lemma
+                statement: p
+                    | An #[m F]-algebra #[m B] with #[m F]-algebra generators #[m i,j] satisfying #[m i^2,j^2\in F^\times], #[m ij = -ji] is automatically a quaternion algebra (i.e. dimension 4).
+                proof: p
+                    | Show linear independence of #[m 1,i,j,ij] (exercise).
+
+            definition#def-quat-alg-conj-trace-norm
+                title Conjugate, trace and norm
+                statement
+                    p
+                        | Given a quaternion algebra #[m B/F] there is a unique anti-involution #[m  \overline \cdot \colon B \to B], called #[term conjugation].
+                    p
+                        | With basis #[m 1,i,j,ij\in \legendre{a,b}{F}] as above it is given as
+                        me \overline {x + yi + zj + w ij} = x - yi - zj - w ij,\,x,y,z,w\in F
+                        | .
+                    p
+                        | As normal (heh) we define the (reduced) norm and trace
+                        me \norm \alpha =  \alpha + \overline \alpha,\,\forall \alpha \in B
+                        me \norm(x + yi + zj + w ij) = x^2 - ay^2 - b z^2 + ab w^2
+                        | and
+                        me \trace \alpha =  \alpha + \overline \alpha,\,\forall \alpha \in B
+                        me  \trace (x + yi + zj + w ij) = 2x
+                        | .
+
+
+        subsubsection
+            title Orders
+            p
+                | In our example, while the endomorphism algebra #[m \End(E)\otimes \QQ] was of interest, the endomorphism ring #[m \End(E)] was the more fundamental object.
+                | What is this? A quaternion ring?
+
+            definition#def-order-quaternion
+                title Orders in quaternion algebras
+                statement: p
+                    | Let #[m B/\QQ] be a quaternion algebra, an #[term order] in #[m B] is a full rank sub-#[m \ZZ]-module that is also a subring.
+
+            example#ex-lipshitz-order
+                title The Lipschitz order
+                statement: p
+                    | #[m B = \legendre{-1,-1}{\QQ}] (Hamilton quaternions with #[m \QQ]-coefficients) then we have an order
+                    me \ZZ + \ZZ i + \ZZ j + \ZZ ij
+                    | the #[term Lipschitz order].
+
+            definition#def-maximal-order
+                title Maximality
+                statement: p
+                    | Orders are ordered (heh) with respect to inclusion, thus we get notions of maximality of orders etc.
+
+            p
+                | Is the Lipschitz order maximal? NO!
+                | Whats going on? #[m \ZZ\lb i\rb] is maximal in #[m \QQ(i)] after all.
+                | Consider
+                me i + j + k,\,(i+j + k)^2 = i^2 + j^2 + k^2 + \cancelto{0}{ij + ji} + \cancelto{0}{ik + ki} + \cancelto{0}{jk + kj} = -3
+                | so we have a #[m \ZZ\lb \sqrt{-3}\rb] lurking inside #[m \legendre{-1,-1}{\QQ}], quaternion algebras are not everything they appear to be at first sight!
+                | #[m \ZZ\lb \sqrt{-3}\rb] is non-maximal and we must add #[m \sqrt{-3}/2] to make it so.
+                | Lets add this in the quaternion setting:
+            example#ex-hurwitz-order
+                title The Hurwitz order
+                p
+                    | Let #[m B = \legendre{-1,-1}{\QQ}], then
+                    me \ZZ+  \ZZ i + \ZZ j + \ZZ \left(\frac{i + j + k}{2}\right)
+                    | is an index two suborder of the Lipschitz order, called the #[term Hurwitz order], this #[em is] maximal.
+            p
+                | Warning, just because #[m \sqrt{-3} \in \legendre{-1,-1}{\QQ}] we do not have #[m \legendre{-1,-3}{\QQ} = \legendre{-1,-1}{\QQ}]!
+            example
+                title /Exercise
+                statement: p
+                    | Show that the elliptic curve from the exercise earlier
+                    me y^2 + y = x^3/\overline{\FF_2}
+                    | has endomorphism algebra the Hurwitz order.
+
+            p
+                | Warning, there is no such thing as #[em the] maximal order of a quaternion algebra!
+                | Rather there are multiple maximal orders due to non-commutativity, e.g. if #[m \ints] is a maximal order then so is
+                me \alpha \ints \alpha\inv \ne \ints
+                | .
+            p
+                | Normally when we have unique maximal things with a certain property, its because we can always take spans/unions and they still have that property.
+            p
+                | This is no longer true here, the sum of two elements with integral trace and norm need not remain so, nor the product.
+
+            p
+                | We can define discriminants of orders which like normal give a hint as to their maximality
+                me \ints = \ZZ + \ZZ i + \ZZ j + \ZZ ij \subseteq \legendre{a,b}{\QQ}
+                me \disc \ints  = d(1,i,j,ij) = \left| \det\begin{pmatrix} 2 \amp 0 \amp 0\amp 0 \\ 0 \amp 2a \amp 0 \amp 0 \\ 0 \amp 0 \amp 2b \amp 0 \\ 0 \amp 0 \amp 0 \amp -2ab\end{pmatrix}\right| = (4ab)^2
+            exercise
+                statement: p
+                    | Find the discriminant of the Lipschitz order.
+
+        subsubsection
+            title Local theory
+            theorem
+                statement
+                    p
+                        | Over a local field #[m F \ne \CC] there is a unique division quaternion algebra #[m B/F] up to #[m F]-isomorphism.
+                    p
+                        | If #[m F = \QQ_p], #[m p\ne 2] then this is
+                        me \legendre{e,p}{\QQ_p}
+                        | for #[m e] any quadratic non-residue mod #[m p].
+                    p
+                        | This is saying that any quadratic extension of #[m F] embeds into #[m B]!
+
+            definition#def-split-ram-quaternion-algs
+                title Split and ramified quaternion algebras
+                statement
+                    p
+                        | Let #[m B/\QQ_v] be a quaternion algebra, we say that #[m B] is
+                        me.
+                            \begin{cases}
+                            \text{split} \amp \text{if } B\cong M_2(\QQ_v)  = \legendre{1,-1}{\QQ_v}\\
+                            \text{ramified} \amp \text{otherwise}
+                            \end{cases}
+                    p
+                        | Correspondingly we say that #[m B/\QQ] is split/ramified at a place #[m v] if the corresponding #[m B\otimes \QQ_v] has that property.
+
+            p
+                | The terminology definite for quaternion algebras ramified at infinity is also used (i.e. for which #[m B\otimes \RR = \HH]).
+
+            theorem
+                title Albert-Brauer-Hasse-Noether
+                statement: p
+                    | Let #[m B/F] be a quaternion algebra  over  a  number field #[m F] (or any central simple algebra), if #[m B] splits at every place #[m v] of #[m F] then #[m B] is a matrix algebra #[m M_d (F)].
+
+            p
+                | In fact:
+
+            theorem
+                statement: p
+                    | Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.
+
+            p
+                | Warning: Quaternion algebras may not be ramified where you think they are?
+            p
+                | Knowing the ramification of a quaternion algebra #[m \QQ] is enough to identify it uniquely, in fact we have the following theorem
+
+            theorem
+                title Main Theorem #[xref(ref="bib-voight-quat",detail="14.1.3")/]
+                statement: p
+                    | There is a sequence of bijections
+                    md
+                        mrow \left\{ \text{quaternion algebras }B/\QQ \right\}/\text{isom.}
+                        mrow S \mapsto \text{unique }B \text{ ramified at exactly }S\amp\updownarrow D\mapsto \{p : B \text{ is ramifies at } p\}
+                        mrow \left\{ S \subseteq \text{places of }\QQ,\,2|\#S \right\}
+                        mrow D \mapsto \{p|D\} \cup \{\infty\} \text{ if }2\nmid \omega(D)\amp\updownarrow S \mapsto \prod_{p\in S,p\ne \infty} p
+                        mrow \left\{ D\in \ZZ_{\gt 0 }\text{ squarefree}\right\}
+
+            p
+                | Sometimes however we want generators and relations not just ramification information:
+                | (As we will only care about discriminant #[m p] quaternion algebras) In our setting the relevant theorem is:
+
+            theorem
+                title Pizer
+                statement: p
+                    | Let #[m \QQ_{p,\infty}] be the unique quaternion algebra ramified at #[m p,\infty], let #[m q \equiv 3 \pmod 4] be such that #[m \legendre pq = -1], then
+                    me.
+                        \QQ_{p,\infty} \cong
+                        \begin{cases}
+                        \legendre{-1,-1}{\QQ} \amp \text{ if }p\equiv 2\pmod 4,\\
+                        \legendre{-1,-p}{\QQ} \amp \text{ if }p\equiv 3\pmod 4,\\
+                        \legendre{-2,-p}{\QQ} \amp \text{ if }p\equiv 1\pmod 8,\\
+                        \legendre{-p,-q}{\QQ} \amp \text{ if }p\equiv 5\pmod 8.
+                        \end{cases}
+            p
+                | Ibukiyama has given a nice description of a maximal order in such.
+
+
+            p
+                | Here are some nice references:
+                ol
+                    li Computational Problems in Supersingular Elliptic Curve Isogenies - Steven D. Galbraith and Frederik Vercauteren #[url(href="https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf")/]
+                    li Computing Isogenies Between Abelian Varieties - David Lubicz Damien Robert #[url(href="https://perso.univ-rennes1.fr/david.lubicz/articles/isogenies.pdf")/]
+                    li Toric forms of elliptic curves and their arithmetic - Wouter Castryck and Frederik Vercauteren #[url(href="https://homes.esat.kuleuven.be/~fvercaut/papers/ec_forms.pdf")/]
+                    li Isogenies of Elliptic Curves: A Computational Approach - Daniel Shumow #[url(href="https://www.sagemath.org/files/thesis/shumow-thesis-2009.pdf")/]
+                    li Hard and Easy Problems for Supersingular Isogeny Graphs - Christophe Petit and Kristin Lauter #[url(href="https://eprint.iacr.org/2017/962.pdf")/]
+                    li Perspectives on the Albert-Brauer-Hasse-Noether Theorem for Quaternion Algebras -  Thomas R. Shemanske #[url(href="https://www.math.dartmouth.edu/~trs/expository-papers/tex/ABHN.pdf")/]
+                    li COMPUTING ISOGENIES BETWEEN SUPERSINGULAR ELLIPTIC CURVES OVER Fp CHRISTINA DELFS AND STEVEN D. GALBRAITH #[url(href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.740.6509&rep=rep1&type=pdf")/]
+
+
+

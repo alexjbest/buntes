@@ -547,7 +547,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 {\Huge BUNTES}\\[\baselineskip]
 {\LARGE BU Number Theory Expository Seminar}\\[3\baselineskip]
 {\Large BUNTES Attendees (notes by Alex)}\\[3\baselineskip]
-{\Large September 13, 2018}\\}
+{\Large September 21, 2018}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -571,7 +571,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 %
 \chapter[{Abelian Varieties}]{Abelian Varieties}\label{chapter-abelian-varieties}
 \hypertarget{p-1}{}%
-These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated September 13, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated September 21, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 %
 %
 \typeout{************************************************}
@@ -2489,7 +2489,7 @@ We then have a notion of degree, \hyperref[def-polarization]{polarizations} of d
 \end{definition}
 \begin{remark}{}{remark-7}%
 \hypertarget{p-246}{}%
-This is in fact equivalent to the \hyperref[def-princ-pol]{previous definition~\ref{def-princ-pol}}, see \hyperlink{bib-vandergeer-moonen}{[58]}.%
+This is in fact equivalent to the \hyperref[def-princ-pol]{previous definition~\ref{def-princ-pol}}, see \hyperlink{bib-vandergeer-moonen}{[60,~cor. 11.5]}.%
 \end{remark}
 \hypertarget{p-247}{}%
 Natural questions: what does the \hyperref[def-line-bundle]{line bundle} \(\sheaf L\) tell us about the polarization? Can we tell principality?%
@@ -2576,7 +2576,7 @@ The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is d
 %
 \subsection[{Étale Cohomology of Abelian Varieties}]{Étale Cohomology of Abelian Varieties}\label{subsection-27}
 \hypertarget{p-262}{}%
-See \hyperlink{bib-milne-etale}{[43]} or \hyperlink{bib-tamme}{[55]}.%
+See \hyperlink{bib-milne-etale}{[43]} or \hyperlink{bib-tamme}{[57]}.%
 \par
 \hypertarget{p-263}{}%
 Recall for \hyperref[def-buntes-abvar]{abelian varieties} over \(A/\CC\) we considered singular cohomology of the complex points \(A(\CC)\). Indeed this theory was strongly connected to the lattice \(\Lambda\) defining \(A(\CC)\).%
@@ -2695,7 +2695,7 @@ We then define%
 %
 \end{definition}
 \hypertarget{p-283}{}%
-So we need to understand \hyperref[def-etale]{étale} covers of \hyperref[def-buntes-abvar]{abelian varieties}. Following \hyperlink{bib-vandergeer-moonen}{[58]}:%
+So we need to understand \hyperref[def-etale]{étale} covers of \hyperref[def-buntes-abvar]{abelian varieties}. Following \hyperlink{bib-vandergeer-moonen}{[60]}:%
 \begin{proposition}{surprising proposition.}{}{proposition-23}%
 \hypertarget{p-284}{}%
 Let \(X\)  be a \hyperref[def-abelian-complete-var]{complete} variety over a field \(k\) with \(e\in X(k)\) and \(m \colon X\times X\to X\) s.t. \(m(e,x) = m(x,e) = x\) for all \(x \in X\). Then \((X, m,e)\) is an \hyperref[def-buntes-abvar]{abelian variety}.%
@@ -2815,7 +2815,7 @@ H^r(A_\et, \ZZ_l) = \bigwedge^r H^1(A_\et, \ZZ_l)
 %
 \end{theorem}
 \hypertarget{p-298}{}%
-Note that Milne gives a combined proof of the above two statements, this relies on some theorems on Hopf algebras such as \hyperlink{bib-borel-hopf}{[15]}.%
+Note that Milne gives a combined proof of the above two statements, this relies on some theorems on Hopf algebras such as \hyperlink{bib-borel-hopf}{[15,~Theoreme 6.1]}.%
 %
 %
 \typeout{************************************************}
@@ -3141,7 +3141,7 @@ If \(\lambda = \alpha^* \lambda'\) then%
 \end{corollary}
 \begin{proof}\hypertarget{proof-54}{}
 \hypertarget{p-325}{}%
-Fix \(l |\deg(\lambda)\) prime. Choose a subgroup \(N\subseteq \ker \lambda\) of order \(l\) let \(\alpha \colon A\to A/N = B\) \(N\) is cyclic and \(e^\lambda\) is skew-\hyperref[def-princ-pol]{symmetric} so \(e^{\lambda}\) is trivial on \(N\times N\) so \(B\) has a \hyperref[def-polarization]{polarization} of degree \(\deg(\lambda) / l^2\) by 13.8.%
+Fix \(l |\deg(\lambda)\) prime. Choose a subgroup \(N\subseteq \ker \lambda\) of \hyperref[def-order-quaternion]{order} \(l\) let \(\alpha \colon A\to A/N = B\) \(N\) is cyclic and \(e^\lambda\) is skew-\hyperref[def-princ-pol]{symmetric} so \(e^{\lambda}\) is trivial on \(N\times N\) so \(B\) has a \hyperref[def-polarization]{polarization} of degree \(\deg(\lambda) / l^2\) by 13.8.%
 \end{proof}
 \begin{corollary}{13.11.}{}{corollary-22}%
 \hypertarget{p-326}{}%
@@ -3261,8 +3261,8 @@ Such algebras were studied by Albert who proved an important classification theo
 Let \((D, ')\) be an \hyperref[def-albert-alg]{Albert algebra}, let \(K\) be the center of \(D\) and \(K_0\) the subfield fixed by \('\). Then we have the following classification\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-56}{}Type I: \(D = K = K_0\) a totally real number field and \('\) is the identity.%
-\item\hypertarget{li-57}{}Type II: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is split at all infinite places and \('\) is defined by letting starting with the standard quaternion algebra conjugation for which \(x + x^* = \tr(x)\) and then letting \(x' = ax^* a^{-1}\) for some \(a \in D\) for which \(a^2 \in K\) and is totally negative.%
-\item\hypertarget{li-58}{}Type III: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is \hyperref[def-dess-ramified]{ramified} at all infinite places and \('\) is the standard quaternion algebra conjugation as above.%
+\item\hypertarget{li-57}{}Type II: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is split at all infinite places and \('\) is defined by letting starting with the standard quaternion algebra \hyperref[def-quat-alg-conj-trace-norm]{conjugation} for which \(x + x^* = \tr(x)\) and then letting \(x' = ax^* a^{-1}\) for some \(a \in D\) for which \(a^2 \in K\) and is totally negative.%
+\item\hypertarget{li-58}{}Type III: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is \hyperref[def-dess-ramified]{ramified} at all infinite places and \('\) is the standard quaternion algebra \hyperref[def-quat-alg-conj-trace-norm]{conjugation} as above.%
 \item\hypertarget{li-59}{}Type IV: \(D\) is a division algebra over a CM field \(K\) and \(K_0\) is the maximal totally real subfield. Additionally if \(v\) is a finite place with \(v = \bar v\) we have \(\operatorname{Inv}_v(D) = 0\) and \(\operatorname{Inv}_v(D) + \operatorname{Inv}_{\bar v}(D) = 0\) for all places \(v\).%
 \end{enumerate}
 %
@@ -3942,7 +3942,7 @@ Any such algebra is isomorphic to \(M_n(D)\) for \(D\) a division ring over \(k\
 \end{theorem}
 \begin{definition}{Brauer groups.}{def-brauer-gp}%
 \hypertarget{p-423}{}%
-The \terminology{Brauer group} of \(k\) \(\operatorname{Br}(k)\) is the set of \hyperref[def-csa]{central \hyperref[def-simple-av]{simple} algebras} under \(\otimes\) module the algebras \(M_n(k)\).%
+The \terminology{Brauer group} of \(k\) \(\operatorname{Br}(k)\) is the set of \hyperref[def-csa]{central \hyperref[def-simple-av]{simple} algebras} under \(\otimes\) modulo the algebras \(M_n(k)\).%
 \end{definition}
 \begin{fact}{}{}{fact-4}%
 \hypertarget{p-424}{}%
@@ -4009,7 +4009,7 @@ Let \(d= \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}\) then \(d\) is the least common d
 %
 \subsection[{Surjectivity and CM theory}]{Surjectivity and CM theory}\label{subsection-38}
 \hypertarget{p-431}{}%
-We need to sow that for a\(\pi\) a \(q\)-\hyperref[sec-honda-tate]{Weil number} there exists an \hyperref[def-buntes-abvar]{abelian variety} \(A/\FF_q\) such that \(\pi_A \sim \pi\).%
+We need to show that for \(\pi\) a \(q\)-\hyperref[sec-honda-tate]{Weil number} there exists an \hyperref[def-buntes-abvar]{abelian variety} \(A/\FF_q\) such that \(\pi_A \sim \pi\).%
 \begin{definition}{}{definition-42}%
 \hypertarget{p-432}{}%
 Such a \(q\)-\hyperref[sec-honda-tate]{Weil number} \(\pi\) is called effective.%
@@ -4085,6 +4085,7 @@ In the case\leavevmode%
 \end{enumerate}
 %
 \end{proof}
+\begin{definition}{CM types.}{def-cm-type}%
 \hypertarget{p-441}{}%
 For a CM field \(L\) all the embeddings%
 \begin{equation*}
@@ -4098,8 +4099,8 @@ come in complex conjugate pairs, choosing an embedding for each pair defines a s
 \begin{equation*}
 \Phi \cap \overline \Phi = \emptyset
 \end{equation*}
-such a choice of \(\Phi \) is called a CM type.%
-\par
+such a choice of \(\Phi \) is called a \terminology{CM type}.%
+\end{definition}
 \hypertarget{p-442}{}%
 Let \(A/\CC\) be an \hyperref[def-buntes-abvar]{abelian variety} with CM by \(L\) i.e.%
 \begin{equation*}
@@ -4112,11 +4113,11 @@ then%
 acts on the tangent space at the origin \(\Lie(A)\).%
 \begin{proposition}{}{}{proposition-40}%
 \hypertarget{p-443}{}%
-The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some CM type \(\Phi\). We then say \(A/\CC\) is of type \((L,\Phi)\).%
+The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some \hyperref[def-cm-type]{CM type} \(\Phi\). We then say \(A/\CC\) is of type \((L,\Phi)\).%
 \end{proposition}
 \begin{theorem}{}{}{theorem-36}%
 \hypertarget{p-444}{}%
-For any CM type \((L,\Phi)\) there exists an \hyperref[def-buntes-abvar]{abelian variety} \(A/\CC\) of type \((L, \Phi)\).%
+For any \hyperref[def-cm-type]{CM type} \((L,\Phi)\) there exists an \hyperref[def-buntes-abvar]{abelian variety} \(A/\CC\) of type \((L, \Phi)\).%
 \end{theorem}
 \begin{proof}\hypertarget{proof-76}{}
 \hypertarget{p-445}{}%
@@ -4186,7 +4187,7 @@ n_w + n_{\overline w} = \left( \frac{w(\pi)}{w(q)}  + \frac{\overline w(\pi)}{\o
 \begin{equation*}
 = \left( \frac{w(\pi\overline \pi)}{w(q)} \right) \#\Sigma_w = \#\Sigma_w
 \end{equation*}
-check the CM type \(\Phi = \bigcup_w \Phi_w\) where for each \(w\) \(\# \Phi_w = n_w\). Then the formula follows.%
+check the \hyperref[def-cm-type]{CM type} \(\Phi = \bigcup_w \Phi_w\) where for each \(w\) \(\# \Phi_w = n_w\). Then the formula follows.%
 \end{proof}
 \hypertarget{p-455}{}%
 Combining the previous result with the Shimura-Taniyama formula we get that for all places \(w|p\)%
@@ -4218,7 +4219,7 @@ is a root of unity \(\pi^N_{A_{\FF_{q'}}} = \pi^{N'}\).%
 %
 \chapter[{Dessins d'Enfants}]{Dessins d'Enfants}\label{chapter-dessins}
 \hypertarget{p-456}{}%
-These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated September 13, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated September 21, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 %
 %
 \typeout{************************************************}
@@ -4924,7 +4925,7 @@ multiplication by \(i\) rotates \(x \mapsto xi\) let \(x \sim xi\). If we mod ou
 \begin{equation*}
 f \colon E \to E / \sim
 \end{equation*}
-is nice, compute the \hyperref[def-branch-point]{branch points}  of order 4 and order 2.%
+is nice, compute the \hyperref[def-branch-point]{branch points}  of \hyperref[def-order-quaternion]{order} 4 and \hyperref[def-order-quaternion]{order} 2.%
 \end{inlineexercise}
 \begin{inlineexercise}{}{exercise-12}%
 \hypertarget{p-537}{}%
@@ -5374,7 +5375,7 @@ is generated by \(\gamma_1, \gamma_2\) so any map \(M_f \colon \Gamma(2) \to \Si
 \typeout{************************************************}
 %
 \subsection[{Galois coverings}]{Galois coverings}\label{subsection-52}
-\begin{definition}{}{definition-53}%
+\begin{definition}{}{definition-54}%
 \hypertarget{p-585}{}%
 A covering \(f\colon S_1,\to S_2\) is Galois (or regular, or normal) if the covering group%
 \begin{equation*}
@@ -5404,7 +5405,7 @@ S = \{ y^2 = \prod_{i=1}^N (x- a_i)\} \to \PP^1
 \begin{equation*}
 (x,y) \to x
 \end{equation*}
-covering group \(G\) is order 2 generated by the involution  \(J(x,y) = (x,-y)\).%
+covering group \(G\) is \hyperref[def-order-quaternion]{order} 2 generated by the involution  \(J(x,y) = (x,-y)\).%
 \end{example}
 \begin{proposition}{2.66.}{}{proposition-48}%
 \hypertarget{p-588}{}%
@@ -5441,7 +5442,7 @@ f^* \colon M(\PP^1 ) \hookrightarrow M(S)
 \par
 \hypertarget{p-591}{}%
 Normalization of extensions \(K \hookrightarrow L\) is a Galois extension of \(K \) of lowest possible degree containing \(L\).%
-\begin{definition}{}{definition-54}%
+\begin{definition}{}{definition-55}%
 \hypertarget{p-592}{}%
 Normalization of \(f\colon S\to \PP^1\) \(\deg d \gt 0 \) is a Galois covering \(\tilde f \colon \tilde S \to \PP^1 \) of  lowest possible degree s.t. \(\exists \pi \colon \tilde S \to S\) with  the diagram commuting.%
 \end{definition}
@@ -5613,7 +5614,7 @@ The fact that this diagram commutes can be expressed by polynomial identities.%
 \subsection[{Galois action}]{Galois action}\label{subsection-56}
 \hypertarget{p-611}{}%
 Let \(\operatorname{Gal}(\CC) = \Gal{\CC}{\QQ}\).%
-\begin{definition}{}{definition-57}%
+\begin{definition}{}{definition-58}%
 \hypertarget{p-612}{}%
 For \(\sigma \in \operatorname{Gal}(\CC)\), \(a\in \CC\) denote \(a^\sigma = \sigma(a)\),\leavevmode%
 \begin{enumerate}
@@ -5641,7 +5642,7 @@ Recall: \(S_F\) is    constructed from a noncompact \hyperref[def-top-riem-surfa
 \typeout{************************************************}
 %
 \subsection[{Points and valuations}]{Points and valuations}\label{subsection-57}
-\begin{definition}{}{definition-58}%
+\begin{definition}{}{definition-59}%
 \hypertarget{p-615}{}%
 Let \(\mathcal M\) be a function field. A (discrete) valuation of \(\mathcal M\) is \(v \colon \mathcal M^* \to \ZZ\) s.t.\leavevmode%
 \begin{enumerate}
@@ -5698,7 +5699,7 @@ Surjectivity study behaviour of valuations in finite extensions of fields and us
 \typeout{************************************************}
 %
 \paragraph[{Galois action on points}]{Galois action on points}\hypertarget{paragraphs-15}{}
-\begin{definition}{}{definition-59}%
+\begin{definition}{}{definition-60}%
 \hypertarget{p-624}{}%
 \leavevmode%
 \begin{enumerate}
@@ -5846,7 +5847,7 @@ where \((X,D)\) is a \hyperref[def-dessin-denfant]{dessin}, \((S,f)\) is a Belyi
 \typeout{************************************************}
 %
 \subsection[{Dessins}]{Dessins}\label{subsection-60}
-\begin{definition}{}{definition-60}%
+\begin{definition}{}{definition-61}%
 \hypertarget{p-637}{}%
 A \hyperref[def-dessin-denfant]{dessin} is  a pair \((X,D)\) where \(X\) is an oriented compact \hyperref[def-top-riem-surface]{topological surface} and \(D\subset X\) is a finite graph:\leavevmode%
 \begin{enumerate}
@@ -5878,7 +5879,7 @@ as we have a positive orientation on the edges%
 \sigma_1(i) = \text{subsequent edge in the cycle around the black vertex of }i\text{.}
 \end{equation*}
 Then we define%
-\begin{definition}{}{definition-61}%
+\begin{definition}{}{definition-62}%
 \hypertarget{p-641}{}%
 \((\sigma_0, \sigma_1)\) is the permutation representation pair of \((X,D)\).%
 \end{definition}
@@ -5943,7 +5944,7 @@ There exists \((X,D)\) with permutation representation \((\sigma_0, \sigma_1)\).
 \hypertarget{p-650}{}%
 Write \(\sigma_0\sigma_1 = \tau_1 \cdots \tau_k\), \(\tau_i\) disjoint cycles each of length \(n_i\) with \(\sum n_i = N\). Create \(k\) faces bounded by \(2n_1, \ldots, 2n_k\) vertices, and assign the vertices white and black colours so that the graph is bicoloured. As \(\sigma_0\sigma_1\) should jump two each time we get an identification of all edges which we then  glue using \(\sigma_0\).%
 \end{proof}
-\begin{definition}{}{definition-62}%
+\begin{definition}{}{definition-63}%
 \hypertarget{p-651}{}%
 We say that%
 \begin{equation*}
@@ -5997,7 +5998,7 @@ for \(?\in \{+,-\}\), where \(f_j^+  = f_j^-\) on the intersection. Where \(\par
 \times \mapsto\infty
 \end{equation*}
 and we have \(\operatorname{Branch}(f_D) \subseteq \{0,1,\infty\}\). Now \(\deg f_D = \#\text{edges of }D\), \(m_v(f_D) = \deg v\), \(f_D^{-1}(\lb 0 , 1 \rb) = D\). Modify \(X\) a little bit and use some lemma to get \(S_D \simeq_{\text{top}} X\) for some \hyperref[def-top-riem-surface]{Riemann surface} with \(f_D\colon S_D \to \PP^1\).%
-\begin{definition}{}{definition-63}%
+\begin{definition}{}{definition-64}%
 \hypertarget{p-657}{}%
 \((S,f)\) is a Belyi pair with \(S\) compact \hyperref[def-top-riem-surface]{Riemann surface} and  \(f\) a \hyperref[def-belyi-function]{Belyi function} on \(S\).%
 \begin{equation*}
@@ -6515,7 +6516,7 @@ A nice question is then given \(k\) how big can an integer point \((x,y)\) on \(
 Ouch.%
 \par
 \hypertarget{p-710}{}%
-If we want to study more realistic bounds we can instead reverse the problem. Can we minimise \(x^3 - y^2\) for integer \(x,y\), how close can the square of a large integer and the cube of a large integer be? Euler showed that \(x^3 - y^2 = 1\) has only 1 (interesting) solution, for example.%
+If we want to study more realistic bounds we can instead reverse the problem. Can we minimise \(x^3 - y^2\) for integer \(x,y\), how close can the square of a large integer and the cube of a large integer be? Euler showed that \(|x^3 - y^2| = 1\) has only 1 (interesting) solution, for example.%
 \par
 \hypertarget{p-711}{}%
 Marshall Hall was interested in this, did some nice computations and conjectured:%
@@ -6595,7 +6596,7 @@ K = X^3 - Y^2
 is of degree \(\gt m\).%
 \par
 \hypertarget{p-722}{}%
-(Now the speaker has just given a theorem with an inequality, so in order to appear smart one of you should ask is this bound sharp.)%
+(Now the speaker has just given a theorem with an inequality, so in \hyperref[def-order-quaternion]{order} to appear smart one of you should ask is this bound sharp.)%
 \par
 \hypertarget{p-723}{}%
 The bound is sharp, this can mean several things in general, originally it was asked that for infinity many \(m\) there is an example where \(\deg K = m + 1\).%
@@ -6714,7 +6715,7 @@ This is the second highest quality abc triple known with quality%
 %
 \paragraph[{References}]{References}\hypertarget{paragraphs-20}{}
 \hypertarget{p-734}{}%
-A semi-random order, maybe starting at the top is nice though. If you have trouble finding something let me know.\leavevmode%
+A semi-random \hyperref[def-order-quaternion]{order}, maybe starting at the top is nice though. If you have trouble finding something let me know.\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-150}{}On Computing Belyi Maps - J. Sijsling, J. Voight%
 \item\hypertarget{li-151}{}Belyi Functions: Examples, Properties, and Applications - Zvonkin (really nice survey)%
@@ -6904,7 +6905,7 @@ for \(\characteristic (k) \ne 3\) such that \(e_\tau(P) = 1\) or \(3\).%
 \end{equation*}
 %
 \end{observation}
-\begin{definition}{}{definition-66}%
+\begin{definition}{}{definition-67}%
 \hypertarget{p-757}{}%
 Let \(\mathcal M_{g,n}\) be the moduli space of \hyperref[fact-existance-genus]{genus} \(g\) curves with \(n\) (ordered) marked points (then \(\mathcal M_{g,\lb n\rb}\) is the same for unordered points). If \(n\) is large enough relative to \(g\) then \(\mathcal M_{g,n}\) will be a scheme (but the unordered version will not).%
 \end{definition}
@@ -7205,6 +7206,9 @@ w_i^3 = 1\text{.}
 These are notes for BUNTES Fall 2018, the topic is Supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs and Quaternion Algebras.%
 \par
 \hypertarget{p-783}{}%
+\url{http://math.bu.edu/people/midff/buntes/fall2018.html}.%
+\par
+\hypertarget{p-784}{}%
 Outline:\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-178}{}Background, \hyperref[def-supersing-isog-isog]{isogeny} graphs, applications.%
@@ -7218,12 +7222,8 @@ Outline:\leavevmode%
 \end{enumerate}
 %
 \par
-\hypertarget{p-784}{}%
-References:\leavevmode%
-\begin{enumerate}
-\item\hypertarget{li-182}{}Sutherland, Andrew. "Isogeny volcanoes." The Open Book Series 1, no. 1 (2013): 507-530. \url{https://msp.org/obs/2013/1-1/obs-v1-n1-p25-s.pdf}.%
-\end{enumerate}
-%
+\hypertarget{p-785}{}%
+References: [\hyperlink{bib-sutherland}{56}, \hyperlink{bib-voight-quat}{62}, \hyperlink{bib-velu}{61}]%
 %
 %
 \typeout{************************************************}
@@ -7238,20 +7238,20 @@ References:\leavevmode%
 \typeout{************************************************}
 %
 \subsection[{Background}]{Background}\label{subsec-supersing-isog-background}
-\hypertarget{p-785}{}%
+\hypertarget{p-786}{}%
 Let \(k = \FF_q\), \(\characteristic (k) = p \ne 2,3\).%
 \begin{definition}{Elliptic curves.}{def-supersing-isog-ec}%
-\hypertarget{p-786}{}%
+\hypertarget{p-787}{}%
 An \terminology{elliptic curve} \(E/k\) is a smooth projective curve of \hyperref[fact-existance-genus]{genus} 1 together with a point \(\infty \in E(k)\).%
 \end{definition}
-\hypertarget{p-787}{}%
+\hypertarget{p-788}{}%
 We can always write such a curve using a Weierstrass equation%
 \begin{equation*}
 E\colon y^2=  x^3  + ax  +b,\,a,b    \in k
 \end{equation*}
 \(E\) is really the projective closure of this affine equation.%
 \begin{definition}{\(j\)-invariants.}{def-supersing-isog-j-inv}%
-\hypertarget{p-788}{}%
+\hypertarget{p-789}{}%
 The \(j\)-invariant of an \hyperref[def-supersing-isog-ec]{elliptic curve} \(E\) is%
 \begin{equation*}
 j(E) = j(a,b) = 1728 \frac{4a^3}{4a^3 + 27b^2}
@@ -7259,11 +7259,11 @@ j(E) = j(a,b) = 1728 \frac{4a^3}{4a^3 + 27b^2}
 doesn't depend on the choice of Weierstrass equation.%
 \end{definition}
 \begin{fact}{}{}{fact-7}%
-\hypertarget{p-789}{}%
+\hypertarget{p-790}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-183}{}\(E,E'\) are isomorphic over \(\overline k \iff j(E)  = j(E')\).%
-\item\hypertarget{li-184}{}There is a 1-1 correspondence%
+\item\hypertarget{li-182}{}\(E,E'\) are isomorphic over \(\overline k \iff j(E)  = j(E')\).%
+\item\hypertarget{li-183}{}There is a 1-1 correspondence%
 \begin{equation*}
 k \leftrightarrow \overline k \text{-isomorphism classes of EC's }/k\text{.}
 \end{equation*}
@@ -7272,21 +7272,21 @@ k \leftrightarrow \overline k \text{-isomorphism classes of EC's }/k\text{.}
 %
 \end{fact}
 \begin{definition}{Isogenies.}{def-supersing-isog-isog}%
-\hypertarget{p-790}{}%
+\hypertarget{p-791}{}%
 Let \(E,E'/k\) be \hyperref[def-supersing-isog-ec]{elliptic curves}. An \terminology{isogeny}, \(\phi \colon E\to E'\) is a non-constant morphism of pointed curves. The degree \(\deg \phi \) is the degree as a morphism. \(E,E'\) are said to be \(n\)-isogenous if there exists \(\phi\colon E\to E'\) of degree \(n\). \(j,j'\in k\) are \(n\)-isogenous if the corresponding \hyperref[def-supersing-isog-ec]{elliptic curves} are.%
 \end{definition}
 \begin{fact}{}{}{fact-8}%
-\hypertarget{p-791}{}%
+\hypertarget{p-792}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-185}{}If \(p \nmid n = \deg \phi\) then the kernel of \(\phi\) has size \(n\) (\(\phi\) is separable).%
-\item\hypertarget{li-186}{}every finite subgoup of \(E(\overline k )\) is the kernel of a separable \hyperref[def-supersing-isog-isog]{isogeny} from \(E\), unique up to isomorphism.%
-\item\hypertarget{li-187}{}Every \(n\)-\hyperref[def-supersing-isog-isog]{isogeny} \(\phi\colon E \to E'\) has  a dual \hyperref[def-supersing-isog-isog]{isogeny} \(\hat \phi \colon E' \to E\) such that%
+\item\hypertarget{li-184}{}If \(p \nmid n = \deg \phi\) then the kernel of \(\phi\) has size \(n\) (\(\phi\) is separable).%
+\item\hypertarget{li-185}{}every finite subgoup of \(E(\overline k )\) is the kernel of a separable \hyperref[def-supersing-isog-isog]{isogeny} from \(E\), unique up to isomorphism.%
+\item\hypertarget{li-186}{}Every \(n\)-\hyperref[def-supersing-isog-isog]{isogeny} \(\phi\colon E \to E'\) has  a dual \hyperref[def-supersing-isog-isog]{isogeny} \(\hat \phi \colon E' \to E\) such that%
 \begin{equation*}
 \phi\circ \hat\phi = \hat\phi \circ \phi = \lb n \rb\text{,}
 \end{equation*}
 the multiplication-by-\(n \) map.%
-\item\hypertarget{li-188}{}The \(n\)-torsion subgroup%
+\item\hypertarget{li-187}{}The \(n\)-torsion subgroup%
 \begin{equation*}
 E\lb n \rb = \left\{ P \in E(\overline k) : nP = \infty\right\}
 \end{equation*}
@@ -7295,11 +7295,11 @@ is isomorphic to \((\ZZ/n)^2\) if \(p\nmid n\).%
 %
 \end{fact}
 \begin{lemma}{}{}{lemma-16}%
-\hypertarget{p-792}{}%
+\hypertarget{p-793}{}%
 Let \(E/k\) be an \hyperref[def-supersing-isog-ec]{elliptic curve} with \(j(E) \not\in\{0,1728\}\) and let \(l\ne p\) be prime, up to isomorphism the number of \(l\)-\hyperref[def-supersing-isog-isog]{isogenies} from \(E\) defined over \(k\) is 0,1,2 or \(l+1\).%
 \end{lemma}
 \begin{proof}\hypertarget{proof-104}{}
-\hypertarget{p-793}{}%
+\hypertarget{p-794}{}%
 In Maria's notes.%
 \end{proof}
 %
@@ -7309,18 +7309,18 @@ In Maria's notes.%
 \typeout{************************************************}
 %
 \paragraph[{The modular equation}]{The modular equation}\hypertarget{paragraphs-23}{}
-\hypertarget{p-794}{}%
+\hypertarget{p-795}{}%
 Let \(j(\tau)\) be the modular \(j\)-function. For each prime \(l\) the minimal polynomial \(\phi_l\) of \(j(l\tau)\) over \(\CC (j(\tau))\) is the modular polynomial%
 \begin{equation*}
 \phi_l \in \ZZ[j(\tau)][y] \simeq \ZZ[x,y]\text{.}
 \end{equation*}
 %
 \begin{fact}{}{}{fact-9}%
-\hypertarget{p-795}{}%
+\hypertarget{p-796}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-189}{}\(\phi_l\) is \hyperref[def-princ-pol]{symmetric} in \(x,y\) and has a degree \(l+1\) in both variables.%
-\item\hypertarget{li-190}{}The modular equation%
+\item\hypertarget{li-188}{}\(\phi_l\) is \hyperref[def-princ-pol]{symmetric} in \(x,y\) and has a degree \(l+1\) in both variables.%
+\item\hypertarget{li-189}{}The modular equation%
 \begin{equation*}
 \phi_l (x,y) = 0
 \end{equation*}
@@ -7329,7 +7329,7 @@ is a canonical model for%
 Y_0(l) = \Gamma_0(l) \backslash \HH
 \end{equation*}
 it parameterises pairs of \hyperref[def-supersing-isog-ec]{elliptic curves} related by an \(l\)-\hyperref[def-supersing-isog-isog]{isogeny}. This moduli interpretation is still valid when we use any field \(F\) with \(\characteristic(F) \ne l\).%
-\item\hypertarget{li-191}{}Let \(m_l(j,j') = \ord_{t = j'} \phi_l(j,t)\), whenever \(j,j' \ne 0,1728\),%
+\item\hypertarget{li-190}{}Let \(m_l(j,j') = \ord_{t = j'} \phi_l(j,t)\), whenever \(j,j' \ne 0,1728\),%
 \begin{equation*}
 m_l(j,j') = m_l(j',j)\text{.}
 \end{equation*}
@@ -7345,23 +7345,23 @@ m_l(j,j') = m_l(j',j)\text{.}
 %
 \paragraph[{The endomorphism ring}]{The endomorphism ring}\hypertarget{paragraphs-24}{}
 \begin{definition}{Endomorphisms of elliptic curves.}{def-supersing-isog-endo}%
-\hypertarget{p-796}{}%
+\hypertarget{p-797}{}%
 An \terminology{endomorphism} of an \hyperref[def-supersing-isog-ec]{elliptic curve} \(E\) is either the zero map or an \hyperref[def-supersing-isog-isog]{isogeny} from \(E\) to itself. They form a ring \(\End(E)\).%
 \end{definition}
-\hypertarget{p-797}{}%
-For \(n \in ZZ\) we ahve \(\lb n \rb \in \End(E)\) so \(\ZZ \subseteq \End(E)\) over a finite field \(k\), \(\End(E)\) is always larger than \(\ZZ\). It is either an order in an imaginary quadratic field, in which case we say \(E\) is ordinary. Or an order in an quaternion algebra, in which case we say \(E\) is supersingular. We say \(E\) has complex multiplication by \(\ints\).%
-\begin{proposition}{}{}{proposition-59}%
 \hypertarget{p-798}{}%
+For \(n \in ZZ\) we ahve \(\lb n \rb \in \End(E)\) so \(\ZZ \subseteq \End(E)\) over a finite field \(k\), \(\End(E)\) is always larger than \(\ZZ\). It is either an \hyperref[def-order-quaternion]{order} in an imaginary quadratic field, in which case we say \(E\) is ordinary. Or an \hyperref[def-order-quaternion]{order} in an quaternion algebra, in which case we say \(E\) is supersingular. We say \(E\) has complex multiplication by \(\ints\).%
+\begin{proposition}{}{}{proposition-59}%
+\hypertarget{p-799}{}%
 Let \(E/k = \FF_{p^n}\) be an \hyperref[def-supersing-isog-ec]{elliptic curve}, TFAE\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-192}{}\(E\) is supersingular.%
-\item\hypertarget{li-193}{}\(E\lb p\rb\) is trivial.%
-\item\hypertarget{li-194}{}The map \(\lb p\rb \colon E\to E\) is purely inseparable and \(j(E) \in \FF_{p^2}\).%
+\item\hypertarget{li-191}{}\(E\) is supersingular.%
+\item\hypertarget{li-192}{}\(E\lb p\rb\) is trivial.%
+\item\hypertarget{li-193}{}The map \(\lb p\rb \colon E\to E\) is purely inseparable and \(j(E) \in \FF_{p^2}\).%
 \end{enumerate}
 %
 \end{proposition}
 \begin{note}{}{note-10}%
-\hypertarget{p-799}{}%
+\hypertarget{p-800}{}%
 If \(E,E'\) are isogenous \hyperref[def-supersing-isog-ec]{elliptic curves} then \(\End(E) \otimes_\ZZ \QQ \simeq \End(E')\otimes_\ZZ \QQ\). So supersingularity is preserved by \hyperref[def-supersing-isog-isog]{isogenies}.%
 \end{note}
 %
@@ -7371,17 +7371,17 @@ If \(E,E'\) are isogenous \hyperref[def-supersing-isog-ec]{elliptic curves} then
 \typeout{************************************************}
 %
 \paragraph[{Isogeny graphs of elliptic curves}]{Isogeny graphs of elliptic curves}\hypertarget{paragraphs-25}{}
-\hypertarget{p-800}{}%
+\hypertarget{p-801}{}%
 Let \(k = \FF_q\) with \(\characteristic(k) = p\) and \(l \ne p \) be prime.%
 \begin{definition}{Isogeny graphs.}{def-supersing-isog-graph}%
-\hypertarget{p-801}{}%
+\hypertarget{p-802}{}%
 The \(l\)-\hyperref[def-supersing-isog-isog]{isogeny} graph \(G_l(k)\) is the directed graph with vertex set \(k\) and edges \((j,j')\) present with \hyperref[def-riem-order-vanish]{multiplicity}%
 \begin{equation*}
 m_j(l,l') = \ord_{t=j} \phi_l(j,t)
 \end{equation*}
 vertices are \(\overline k\) isomorphism classes of  \hyperref[def-supersing-isog-ec]{elliptic curves} \(/k\), edges are isomorphism classes of \(l\)-\hyperref[def-supersing-isog-isog]{isogenies} defined over \(k\).%
 \end{definition}
-\hypertarget{p-802}{}%
+\hypertarget{p-803}{}%
 Since \(m_l(j,j') =  m(j',j)\) whenever \(j,j' \ne  0,1728\) the subgraph of \(G_l(k)\) supported on \(k\smallsetminus \{0,1728\}\) can be thought of as undirected. By the last note \(G_l(k)\) consists of ordinary and supersingular components.%
 %
 %
@@ -7390,21 +7390,21 @@ Since \(m_l(j,j') =  m(j',j)\) whenever \(j,j' \ne  0,1728\) the subgraph of \(G
 \typeout{************************************************}
 %
 \paragraph[{Supersingular isogeny graphs}]{Supersingular isogeny graphs}\hypertarget{paragraphs-26}{}
-\hypertarget{p-803}{}%
+\hypertarget{p-804}{}%
 Since every supersingular \(j\)-invariant lives in \(\FF_{p^2}\) if \(E\) is supersingular all roots of \(\phi_l(j(E), y)\) live in \(\FF_{p^2}\). every vertex in a supersingular component has out-degree \(l+1\).%
 \par
-\hypertarget{p-804}{}%
+\hypertarget{p-805}{}%
 Moreover by a result of Kohel \(G_l(\FF_{p^2})\) has only one supersingular component.%
 \par
-\hypertarget{p-805}{}%
+\hypertarget{p-806}{}%
 By the above if \(p \equiv 1 \pmod {12}\) then the supersingular component of \(G_l(\FF_{p^2})\) is an undirected \((l+1)\)-regular graph with around \(p/12\) vertices.%
 \begin{theorem}{Pizer.}{}{theorem-61}%
-\hypertarget{p-806}{}%
+\hypertarget{p-807}{}%
 The supersingular component of \(G_l(\FF_{p^2})\) is a \hyperref[def-supersing-isog-ramanujan]{Ramanujan graph}.%
 \end{theorem}
 \begin{definition}{Ramanujan graphs.}{def-supersing-isog-ramanujan}%
-\hypertarget{p-807}{}%
-A \(d\)-regular graph is a \terminology{Ramanujan graph} if \(\lambda_2 \le \sqrt{d-1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjaceny matrix. (The largest one is always \(d\), by \(d\)-regularity.)%
+\hypertarget{p-808}{}%
+A connected \(d\)-regular graph is a \terminology{Ramanujan graph} if \(\lambda_2 \le \sqrt{d-1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjaceny matrix. (The largest one is always \(d\), by \(d\)-regularity.)%
 \end{definition}
 %
 %
@@ -7413,22 +7413,22 @@ A \(d\)-regular graph is a \terminology{Ramanujan graph} if \(\lambda_2 \le \sqr
 \typeout{************************************************}
 %
 \paragraph[{Ordinary isogeny graphs}]{Ordinary isogeny graphs}\hypertarget{paragraphs-27}{}
-\hypertarget{p-808}{}%
-Let \(E/\FF_q\) be an ordinary \hyperref[def-supersing-isog-ec]{elliptic curve}, then \(\End(E) \simeq \ints\) is an order in an imaginary quadratic field \(K\) with \(\ZZ\lb \pi \rb \subseteq \ints \subseteq \ints_K\) where \(\pi\) is Frobenius and%
+\hypertarget{p-809}{}%
+Let \(E/\FF_q\) be an ordinary \hyperref[def-supersing-isog-ec]{elliptic curve}, then \(\End(E) \simeq \ints\) is an \hyperref[def-order-quaternion]{order} in an imaginary quadratic field \(K\) with \(\ZZ\lb \pi \rb \subseteq \ints \subseteq \ints_K\) where \(\pi\) is Frobenius and%
 \begin{equation*}
 K = \QQ(\sqrt{(\trace \pi)^2 - 4q})
 \end{equation*}
 by Tate, isogenous \hyperref[def-supersing-isog-ec]{elliptic curves} have the same \(\trace \pi\).%
 \par
-\hypertarget{p-809}{}%
+\hypertarget{p-810}{}%
 We can separate the vertices in the component \(V\) of \(G_l(k)\) containing \(j(E)\) into levels \(V_0, \ldots, V_d\) so that \(j(E') \in V_i\) if \(i = v_l(\lb \ints_K : \ints'\rb)\). We'll see that \(\bigcup_{i=0}^d V_i\) is connected.%
 \par
-\hypertarget{p-810}{}%
+\hypertarget{p-811}{}%
 Let \(\phi\colon E\to E'\) be an \(l\)-\hyperref[def-supersing-isog-isog]{isogeny} between two \hyperref[def-supersing-isog-ec]{elliptic curves} with CM by \(\ints = \ZZ+\tau\ZZ\), \(\ints ' = \ZZ+\tau'\ZZ\). Then \(\hat\phi \tau' \phi \in \End(E) \implies l\tau ' \in \ints\). Similarly \(l\tau \in \ints'\). There are 3 cases\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-195}{}\(\ints = \ints'\) (\(\phi\) is horizontal).%
-\item\hypertarget{li-196}{}\(\lb\ints : \ints' \rb = l\) (\(\phi\) is descending).%
-\item\hypertarget{li-197}{}\(\lb\ints' : \ints \rb = l\) (\(\phi\) is ascending).%
+\item\hypertarget{li-194}{}\(\ints = \ints'\) (\(\phi\) is horizontal).%
+\item\hypertarget{li-195}{}\(\lb\ints : \ints' \rb = l\) (\(\phi\) is descending).%
+\item\hypertarget{li-196}{}\(\lb\ints' : \ints \rb = l\) (\(\phi\) is ascending).%
 \end{enumerate}
 In the last two cases we say \(\phi\) is critical.%
 %
@@ -7438,17 +7438,17 @@ In the last two cases we say \(\phi\) is critical.%
 \typeout{************************************************}
 %
 \paragraph[{Horizontal isogenies}]{Horizontal isogenies}\hypertarget{paragraphs-28}{}
-\hypertarget{p-811}{}%
+\hypertarget{p-812}{}%
 \(E/k\) with CM by \(\ints \subseteq K\) imaginary quadratic. Let \(\ideal a\) be an invertible ideal.%
 \begin{equation*}
 E\lb \ideal a \rb = \{ P \in E(\overline k) : \alpha (P)  = 0\, \forall \alpha \in \ideal a\}
 \end{equation*}
 this is a finite group so it is the kernel of a separable \hyperref[def-supersing-isog-isog]{isogeny} \(\phi_{\ideal a }\). If \(p \nmid N(\ideal a)\) then \(\deg(\phi_{\ideal a}) = N(\ideal a)\) with \(\ideal a\) invertible implying \(\phi_{\ideal a} \) is horizontal.%
 \par
-\hypertarget{p-812}{}%
+\hypertarget{p-813}{}%
 Each horizontal \(l\)-\hyperref[def-supersing-isog-isog]{isogeny} \(\phi\) arises from some invertible ideal \(\ideal a\) of norm \(l\).%
 \par
-\hypertarget{p-813}{}%
+\hypertarget{p-814}{}%
 If \(l | \lb \ints_K : \ints \rb \) no such ideals exist, otherwise the number of invertible ideals of norm \(l\) is%
 \begin{equation*}
 1+ \left(\frac {\disc(K)}{l}\right) = \begin{cases}0\amp\text{ if }l \text{ inert }\\ 1\amp\text{ if }l \text{ ramified }\\ 2\amp\text{ if }l \text{ splits}\end{cases}
@@ -7461,19 +7461,19 @@ If \(l | \lb \ints_K : \ints \rb \) no such ideals exist, otherwise the number o
 \typeout{************************************************}
 %
 \paragraph[{Vertical isogenies}]{Vertical isogenies}\hypertarget{paragraphs-29}{}
-\hypertarget{p-814}{}%
-Let \(\ints\) be an order in an imaginary quadratic field \(K \) of discriminant \(D \lt -4\) and let \(\ints' = \ZZ+l\ints\).%
-\begin{lemma}{}{}{lemma-17}%
 \hypertarget{p-815}{}%
+Let \(\ints\) be an \hyperref[def-order-quaternion]{order} in an imaginary quadratic field \(K \) of discriminant \(D \lt -4\) and let \(\ints' = \ZZ+l\ints\).%
+\begin{lemma}{}{}{lemma-17}%
+\hypertarget{p-816}{}%
 Let \(E' / k\)  be an \hyperref[def-supersing-isog-ec]{elliptic curve} with CM by \(\ints '\) then there is a  unique ascending \(l\)-\hyperref[def-supersing-isog-isog]{isogeny} \(E'\to E\) with \(E/k\) an \hyperref[def-supersing-isog-ec]{elliptic curve} with CM by \(\ints\).%
 \end{lemma}
-\begin{definition}{}{definition-74}%
-\hypertarget{p-816}{}%
+\begin{definition}{}{definition-75}%
+\hypertarget{p-817}{}%
 An \(l\)-volcano \(V\) is a connected undirected graph whose vertices are partitioned into levels \(V_0, \ldots, V_d\).\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-198}{}The subgraph \(V_0\) is regular of degree \(\le 2\).%
-\item\hypertarget{li-199}{}For each \(i \gt 0\) each vertex in \(V_i\) has exactly one neighbour in level \(V_{i-1}\), and this accounts for all edges outside of \(V_0\).%
-\item\hypertarget{li-200}{}For \(i \lt d\) each vertex has degree \(l+1\).%
+\item\hypertarget{li-197}{}The subgraph \(V_0\) is regular of degree \(\le 2\).%
+\item\hypertarget{li-198}{}For each \(i \gt 0\) each vertex in \(V_i\) has exactly one neighbour in level \(V_{i-1}\), and this accounts for all edges outside of \(V_0\).%
+\item\hypertarget{li-199}{}For \(i \lt d\) each vertex has degree \(l+1\).%
 \end{enumerate}
 The number \(d\) is the depth.%
 \end{definition}
@@ -7650,7 +7650,7 @@ The number \(d\) is the depth.%
 }
 \caption{A \(3\)-volcano\label{figure-1}}
 \end{figure}
-\hypertarget{p-817}{}%
+\hypertarget{p-818}{}%
 The Sage code used to make this picture was:%
 \begin{sageinput}
 N = 3 # number of flows
@@ -7665,22 +7665,22 @@ show(H)
 #latex(H) # for the code
 \end{sageinput}
 \begin{theorem}{Kohel.}{}{theorem-62}%
-\hypertarget{p-818}{}%
+\hypertarget{p-819}{}%
 Let \(V\) be an ordinary component of \(G_l(\FF_q)\) that doesn't contain \(0\) or \(1728\) then \(V\) is an \(l\)-volcano s.t.\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-201}{}All vertices in \(V_i\) have the same \hyperref[def-supersing-isog-endo]{endomorphism} ring \(\ints_i\).%
-\item\hypertarget{li-202}{}The subgraph on \(V_0\) has degree%
+\item\hypertarget{li-200}{}All vertices in \(V_i\) have the same \hyperref[def-supersing-isog-endo]{endomorphism} ring \(\ints_i\).%
+\item\hypertarget{li-201}{}The subgraph on \(V_0\) has degree%
 \begin{equation*}
 1+ \left(\frac {\disc(K)}{l}\right)
 \end{equation*}
 where \(K = \Frac(\ints_0)\)%
-\item\hypertarget{li-203}{}If%
+\item\hypertarget{li-202}{}If%
 \begin{equation*}
 \left(\frac {\disc(K)}{l}\right) \ge 0
 \end{equation*}
-then \(\#V_0\) is the order \(\lb l \rb\) in \(\Cl (\ints_0)\) else \(\#V_0 = 1\).%
-\item\hypertarget{li-204}{}The depth of \(V\) is \(d = v_l (\lb \ints_K : \ZZ\lb\pi \rb\rb)\) where \(\pi\) is the Frobenius morphism on any \(E\) with \(j(E) \in V\).%
-\item\hypertarget{li-205}{}\(l \nmid \lb \ints_K : \ints_0 \rb\), \(\lb \ints_i : \ints_{i+1}\rb = l\) for \(0\le i \lt d\).%
+then \(\#V_0\) is the \hyperref[def-order-quaternion]{order} \(\lb l \rb\) in \(\Cl (\ints_0)\) else \(\#V_0 = 1\).%
+\item\hypertarget{li-203}{}The depth of \(V\) is \(d = v_l (\lb \ints_K : \ZZ\lb\pi \rb\rb)\) where \(\pi\) is the Frobenius morphism on any \(E\) with \(j(E) \in V\).%
+\item\hypertarget{li-204}{}\(l \nmid \lb \ints_K : \ints_0 \rb\), \(\lb \ints_i : \ints_{i+1}\rb = l\) for \(0\le i \lt d\).%
 \end{enumerate}
 %
 \end{theorem}
@@ -7692,20 +7692,20 @@ then \(\#V_0\) is the order \(\lb l \rb\) in \(\Cl (\ints_0)\) else \(\#V_0 = 1\
 %
 \paragraph[{Application: Identifying supersingular elliptic curves}]{Application: Identifying supersingular elliptic curves}\hypertarget{paragraphs-30}{}
 \begin{algorithm}{Sutherland.}{}{algorithm-1}%
-\hypertarget{p-819}{}%
+\hypertarget{p-820}{}%
 Input: \hyperref[def-supersing-isog-ec]{Elliptic curve} \(E/k\), \(\characteristic k = p\).%
 \par
-\hypertarget{p-820}{}%
+\hypertarget{p-821}{}%
 Output: Ordinary or supersingular.%
 \par
-\hypertarget{p-821}{}%
+\hypertarget{p-822}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-206}{}If \(j(E) \not \in \FF_{p^2}\) then ordinary.%
-\item\hypertarget{li-207}{}If \(p  =2,3\) return supersingular if \(j(E) = 0\) or ordinary otherwise.%
-\item\hypertarget{li-208}{}Find 3 roots of \(\phi_2(j(E), 4)\) over \(\FF_{p^2}\) if not possible return ordinary.%
-\item\hypertarget{li-209}{}Walk 3 paths in parallel for up to \(\lceil \log_2 p \rceil + 1 \) steps. If any of these paths get to \(V_d\), return ordinary.%
-\item\hypertarget{li-210}{}Otherwise supersingular.%
+\item\hypertarget{li-205}{}If \(j(E) \not \in \FF_{p^2}\) then ordinary.%
+\item\hypertarget{li-206}{}If \(p  =2,3\) return supersingular if \(j(E) = 0\) or ordinary otherwise.%
+\item\hypertarget{li-207}{}Find 3 roots of \(\phi_2(j(E), 4)\) over \(\FF_{p^2}\) if not possible return ordinary.%
+\item\hypertarget{li-208}{}Walk 3 paths in parallel for up to \(\lceil \log_2 p \rceil + 1 \) steps. If any of these paths get to \(V_d\), return ordinary.%
+\item\hypertarget{li-209}{}Otherwise supersingular.%
 \end{enumerate}
 %
 \end{algorithm}
@@ -7716,22 +7716,22 @@ Output: Ordinary or supersingular.%
 \typeout{************************************************}
 %
 \section[{Supersingular isogeny graph cryptography (Asra)}]{Supersingular isogeny graph cryptography (Asra)}\label{sec-supersing-isog-crypto}
-\hypertarget{p-822}{}%
+\hypertarget{p-823}{}%
 Supersingular \hyperref[def-supersing-isog-isog]{isogeny} graph crypto is a candidate for post-quantum crypto, not based on factoring etc.%
 \par
-\hypertarget{p-823}{}%
+\hypertarget{p-824}{}%
 Recall last time we defined \hyperref[def-supersing-isog-ramanujan]{Ramanujan graphs}, graphs with very good connectivity properties, a type of expander.%
 \begin{proposition}{}{}{proposition-60}%
-\hypertarget{p-824}{}%
-If \(G\) is Ramanujan, \(x\in V, S\subseteq V\). For a sufficiently large path the probability that the path ends in \(S\) is at least \(|S|/2|G|\).%
-\end{proposition}
 \hypertarget{p-825}{}%
-Upshot supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs are \((l +1)\)-regular, undirected, Ramanujan, connected.%
-\par
+If \(G\) is a \hyperref[def-supersing-isog-ramanujan]{Ramanujan graph}, \(x\in V, S\subseteq V\). For a sufficiently large path beginning at \(x\), the probability that the path ends in \(S\) is at least \(|S|/2|V|\).%
+\end{proposition}
 \hypertarget{p-826}{}%
-Some of our algorithms are only dependent on having a graph with this property, not so much the interpretation in terms of \hyperref[def-supersing-isog-isog]{isogenies}.%
+Upshot: supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs are \((l +1)\)-regular, undirected, Ramanujan, connected (technically, Ramanujan means connected already, but its worth emphasising).%
 \par
 \hypertarget{p-827}{}%
+Some of our algorithms are only dependent on having a graph with this property, not so much the interpretation in terms of \hyperref[def-supersing-isog-isog]{isogenies}.%
+\par
+\hypertarget{p-828}{}%
 Supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs first appeared in crypto as potential \hyperref[def-hash-function]{hash functions}.%
 %
 %
@@ -7740,21 +7740,21 @@ Supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs first appeared 
 \typeout{************************************************}
 %
 \subsection[{Hash functions}]{Hash functions}\label{subsection-68}
-\hypertarget{p-828}{}%
+\hypertarget{p-829}{}%
 (2010) (Charles, Goren, Lauter) proposed a cryptographically secure \hyperref[def-hash-function]{hash function} based on the hardness of computing paths in a supersingular \hyperref[def-supersing-isog-isog]{isogeny} graphs.%
 \begin{definition}{Hash functions.}{def-hash-function}%
-\hypertarget{p-829}{}%
+\hypertarget{p-830}{}%
 A \terminology{hash function} is a deterministic function \(h\colon \{0,1\}^* \to \{0,1\}^n\).%
 \end{definition}
 \begin{definition}{Collision resistance.}{def-collision-resistance}%
-\hypertarget{p-830}{}%
+\hypertarget{p-831}{}%
 A \hyperref[def-hash-function]{hash function} \(h\) is \terminology{collision resistant} if its hard to find \(x_1,x_2\) with \(x_1\ne x_2 \) s.t. \(h(x_1) = h(x_2)\).%
 \end{definition}
 \begin{definition}{Preimage resistance.}{def-preimage-resistance}%
-\hypertarget{p-831}{}%
+\hypertarget{p-832}{}%
 A \hyperref[def-hash-function]{hash function} \(h\) is \terminology{preimage resistant} if given \(y\in \{0,1\}^n\) its hard to find \(x\) s.t. \(h(x) = y\).%
 \end{definition}
-\hypertarget{p-832}{}%
+\hypertarget{p-833}{}%
 Cool example, private set intersection, say two groups, Starbucks and BU want to find a list of common customers (students who bought something at Starbucks) but don't want to reveal anything to each other about the students or customers not in the intersection. Compute hashes of the names of customers and share the hashes, can compute the size of, and the intersection itself.%
 %
 %
@@ -7770,7 +7770,7 @@ Cool example, private set intersection, say two groups, Starbucks and BU want to
 \typeout{************************************************}
 %
 \paragraph[{Parameters}]{Parameters}\hypertarget{paragraphs-31}{}
-\hypertarget{p-833}{}%
+\hypertarget{p-834}{}%
 \(G_l(\FF_{p^2})\), \(p \equiv 1 \pmod{12}\), \(l\) to be small, fix an ordering on the edges, fix an initial vertex \(j_0\) and an incoming edge.%
 %
 %
@@ -7779,10 +7779,10 @@ Cool example, private set intersection, say two groups, Starbucks and BU want to
 \typeout{************************************************}
 %
 \paragraph[{Protocol}]{Protocol}\hypertarget{paragraphs-32}{}
-\hypertarget{p-834}{}%
+\hypertarget{p-835}{}%
 \(m \in \{0,1\}^*\) write this as an \(l\)-bit string, \(m \in \{0,1,\ldots, l-1\}^*\), walk the graph based on \(m\) without backtracking.%
 \par
-\hypertarget{p-835}{}%
+\hypertarget{p-836}{}%
 Map the final \(j\) invariant to  \(\{0,1\}^{n\approx \log p}\).%
 %
 %
@@ -7791,14 +7791,14 @@ Map the final \(j\) invariant to  \(\{0,1\}^{n\approx \log p}\).%
 \typeout{************************************************}
 %
 \paragraph[{Properties}]{Properties}\hypertarget{paragraphs-33}{}
-\hypertarget{p-836}{}%
+\hypertarget{p-837}{}%
 Difficult means exponential in the size of the input normally.%
 \begin{proposition}{}{}{proposition-61}%
-\hypertarget{p-837}{}%
+\hypertarget{p-838}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-211}{}Preimage resistant iff when given \(j\) it is difficult to compute a positive integer \(e\) and an \hyperref[def-supersing-isog-isog]{isogeny} \(\phi\colon E_{j_0} \to E_j\) with degree \(l^e\).%
-\item\hypertarget{li-212}{}Collision resistant iff when given \(j\) it is difficult to compute \(e\) and  \(\phi \colon E_{j_0} \to E_{j_0}\) with degree \(l^e\).%
+\item\hypertarget{li-210}{}Preimage resistant iff when given \(j\) it is difficult to compute a positive integer \(e\) and an \hyperref[def-supersing-isog-isog]{isogeny} \(\phi\colon E_{j_0} \to E_j\) with degree \(l^e\).%
+\item\hypertarget{li-211}{}Collision resistant iff when given \(j\) it is difficult to compute \(e\) and  \(\phi \colon E_{j_0} \to E_{j_0}\) with degree \(l^e\).%
 \end{enumerate}
 %
 \end{proposition}
@@ -7809,10 +7809,10 @@ Difficult means exponential in the size of the input normally.%
 \typeout{************************************************}
 %
 \subsection[{Diffie-Hellman Key Exchange (1976)}]{Diffie-Hellman Key Exchange (1976)}\label{subsection-70}
-\hypertarget{p-838}{}%
+\hypertarget{p-839}{}%
 Choose \(p,\, \ZZ/p, g\) then Alice computes \(g^a\) send to Bob, he computes \(g^b\) and sends it back, they both compute \(g^{ab}\), which is their shared secret.%
 \par
-\hypertarget{p-839}{}%
+\hypertarget{p-840}{}%
 The security is based on the hardness of computing \(g^{ab}\) given \(g^a,g^b\).%
 %
 %
@@ -7828,10 +7828,10 @@ The security is based on the hardness of computing \(g^{ab}\) given \(g^a,g^b\).
 \typeout{************************************************}
 %
 \paragraph[{Parameters}]{Parameters}\hypertarget{paragraphs-34}{}
-\hypertarget{p-840}{}%
-Supersingular \hyperref[def-supersing-isog-ec]{elliptic curve} of smooth order: fix \(p\) to be big enough \(p = l_A^{e_A} l_B^{e_B} f  \pm 1\). \(l_A,l_B\) small primes, \(f\) is a number chosen such that \(p\) is big. Construct a supersingular \hyperref[def-supersing-isog-ec]{elliptic curve} \(E\) such that \(\# E(\FF_{p^2}) = (l_A^{e_A}l_B^{e_B} f)^2\), using Broker's algorithm.%
-\par
 \hypertarget{p-841}{}%
+Supersingular \hyperref[def-supersing-isog-ec]{elliptic curve} of smooth \hyperref[def-order-quaternion]{order}: fix \(p\) to be big enough \(p = l_A^{e_A} l_B^{e_B} f  \pm 1\). \(l_A,l_B\) small primes, \(f\) is a number chosen such that \(p\) is big. Construct a supersingular \hyperref[def-supersing-isog-ec]{elliptic curve} \(E\) such that \(\# E(\FF_{p^2}) = (l_A^{e_A}l_B^{e_B} f)^2\), using Broker's algorithm.%
+\par
+\hypertarget{p-842}{}%
 Construct bases \((P_A, Q_A)\) for \(E\lb l_A^{e_A}\rb\), \((P_B, Q_B)\) for \(E\lb l_B^{e_B}\rb\).%
 %
 %
@@ -7840,31 +7840,31 @@ Construct bases \((P_A, Q_A)\) for \(E\lb l_A^{e_A}\rb\), \((P_B, Q_B)\) for \(E
 \typeout{************************************************}
 %
 \paragraph[{Protocol}]{Protocol}\hypertarget{paragraphs-35}{}
-\hypertarget{p-842}{}%
+\hypertarget{p-843}{}%
 Alice takes \(m_A,n_A \in \ZZ/l_A^{e_A}\)%
 \par
-\hypertarget{p-843}{}%
+\hypertarget{p-844}{}%
 Bob takes \(m_B,n_B \in \ZZ/l_B^{e_B}\)%
 \par
-\hypertarget{p-844}{}%
+\hypertarget{p-845}{}%
 Alice finds \(R_A = m_AP_A + n_AQ_A\)%
 \par
-\hypertarget{p-845}{}%
+\hypertarget{p-846}{}%
 Bob finds \(R_B = m_BP_B + n_BQ_B\)%
 \par
-\hypertarget{p-846}{}%
+\hypertarget{p-847}{}%
 Alice finds \(\phi_A \colon E \to E/\langle R_A\rangle = E_A\)%
 \par
-\hypertarget{p-847}{}%
+\hypertarget{p-848}{}%
 Bob finds \(\phi_B \colon E \to E/\langle R_B\rangle = E_B\)%
 \par
-\hypertarget{p-848}{}%
+\hypertarget{p-849}{}%
 They send each other \(E_i, \phi_i(P_i),\phi_i(Q_i)\).%
 \par
-\hypertarget{p-849}{}%
+\hypertarget{p-850}{}%
 Both compute \(\phi'_A\colon E_B \to E_B/\langle m_A\phi_B(P_A) + n_A\phi_B(Q_A)\rangle\) or analogous.%
 \par
-\hypertarget{p-850}{}%
+\hypertarget{p-851}{}%
 Shared secret is \(j(E_{AB})\).%
 %
 %
@@ -7873,12 +7873,12 @@ Shared secret is \(j(E_{AB})\).%
 \typeout{************************************************}
 %
 \paragraph[{Hardness}]{Hardness}\hypertarget{paragraphs-36}{}
-\hypertarget{p-851}{}%
+\hypertarget{p-852}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-213}{}(Decisional supersingular \hyperref[def-supersing-isog-isog]{isogeny} problem) Given \(E, (P_A,Q_A)\) a basis for \(l_A^{e_A}\) torsion, let \(E_A\) be another curve, is \(E_A\) \(l_A^{e_A}\) isogenous to \(E\)?%
-\item\hypertarget{li-214}{}(Computational supersingular \hyperref[def-supersing-isog-isog]{isogeny} problem) Let \(\phi_A \colon E \to E_A\) be an \hyperref[def-supersing-isog-isog]{isogeny} with a kernel of the form \(\langle m_AP_A + n_AQ_A \rangle\). Given \(E_A\) and \(\phi_A(P_B)\) \(\phi_A(Q_B)\), find \(R_A\). \(p^{1/4}\) classical, \(p^{1/6}\) quantum.%
-\item\hypertarget{li-215}{}Given \(E_A, E_B, \phi_A(P_B), \phi_A(Q_B), \phi_B(P_A), \phi_B(Q_A)\) find \(j\)-invariant of \(E_{AB}\).%
+\item\hypertarget{li-212}{}(Decisional supersingular \hyperref[def-supersing-isog-isog]{isogeny} problem) Given \(E, (P_A,Q_A)\) a basis for \(l_A^{e_A}\) torsion, let \(E_A\) be another curve, is \(E_A\) \(l_A^{e_A}\) isogenous to \(E\)?%
+\item\hypertarget{li-213}{}(Computational supersingular \hyperref[def-supersing-isog-isog]{isogeny} problem) Let \(\phi_A \colon E \to E_A\) be an \hyperref[def-supersing-isog-isog]{isogeny} with a kernel of the form \(\langle m_AP_A + n_AQ_A \rangle\). Given \(E_A\) and \(\phi_A(P_B)\) \(\phi_A(Q_B)\), find \(R_A\). \(p^{1/4}\) classical, \(p^{1/6}\) quantum.%
+\item\hypertarget{li-214}{}Given \(E_A, E_B, \phi_A(P_B), \phi_A(Q_B), \phi_B(P_A), \phi_B(Q_A)\) find \(j\)-invariant of \(E_{AB}\).%
 \end{enumerate}
 %
 %
@@ -7888,34 +7888,34 @@ Shared secret is \(j(E_{AB})\).%
 \typeout{************************************************}
 %
 \subsection[{Supersingular isogeny public key}]{Supersingular isogeny public key}\label{subsection-72}
-\hypertarget{p-852}{}%
+\hypertarget{p-853}{}%
 Classically DH key-exchange \(\leadsto\) ElGamal encryption.%
 \par
-\hypertarget{p-853}{}%
+\hypertarget{p-854}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-216}{}\hypertarget{p-854}{}%
+\item\hypertarget{li-215}{}\hypertarget{p-855}{}%
 Key generation.%
 \par
-\hypertarget{p-855}{}%
+\hypertarget{p-856}{}%
 Alice: secret \(\phi_A \colon E \to E_A\), public \(E_A\) and \(\phi_A(P_B), \phi_A(Q_B)\).%
-\item\hypertarget{li-217}{}\hypertarget{p-856}{}%
+\item\hypertarget{li-216}{}\hypertarget{p-857}{}%
 Encryption.%
 \par
-\hypertarget{p-857}{}%
+\hypertarget{p-858}{}%
 Bob: choose \(\phi_B \colon E \to E_B\), compute \(j(E_{AB})\).%
 \par
-\hypertarget{p-858}{}%
+\hypertarget{p-859}{}%
 Send Alice \(c = (E_B, \phi_B(P_A), \phi_B(Q_A), m\oplus j(E_{AB}))\)%
-\item\hypertarget{li-218}{}\hypertarget{p-859}{}%
+\item\hypertarget{li-217}{}\hypertarget{p-860}{}%
 Decryption.%
 \par
-\hypertarget{p-860}{}%
+\hypertarget{p-861}{}%
 Alice use \((E_B, \phi_B(P_A), \phi_B(Q_A))\) to compute \(j(E_{AB})\). Computes \((m\oplus j(E_{AB})) \oplus j(E_{AB}) = m\).%
 \end{enumerate}
 %
 \par
-\hypertarget{p-861}{}%
+\hypertarget{p-862}{}%
 \(E(\FF_{p^2})\), \(p = l_A^{e_A} l_B^{e_B} f \pm 1\), for \(128\)-bit security use a \(512\)-bit key.%
 %
 %
@@ -7924,22 +7924,456 @@ Alice use \((E_B, \phi_B(P_A), \phi_B(Q_A))\) to compute \(j(E_{AB})\). Computes
 \typeout{************************************************}
 %
 \subsection[{Algorithmic aspects}]{Algorithmic aspects}\label{subsection-73}
-\hypertarget{p-862}{}%
+\hypertarget{p-863}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-219}{}(Choosing \(f\)) Prime number theorem for arithmetic progressions gives you a bound on the density of primes of the form \(l_A^{e_A} l_B^{e_B} f \pm 1\)%
-\item\hypertarget{li-220}{}Choosing a s.s. e.c. with the right group order, Broker's algorithm.%
-\item\hypertarget{li-221}{}\hypertarget{p-863}{}%
+\item\hypertarget{li-218}{}(Choosing \(f\)) Prime number theorem for arithmetic progressions gives you a bound on the density of primes of the form \(l_A^{e_A} l_B^{e_B} f \pm 1\)%
+\item\hypertarget{li-219}{}Choosing a s.s. e.c. with the right group \hyperref[def-order-quaternion]{order}, Broker's algorithm.%
+\item\hypertarget{li-220}{}\hypertarget{p-864}{}%
 Finding a basis for \(E\lb l_A^{e_A}\rb\).%
 \begin{enumerate}
-\item\hypertarget{li-222}{}Find a random point in \(E(\FF_{p^2})\) say \(P\).%
-\item\hypertarget{li-223}{}Check the order of \((l_B^{e_B} f)^2 \cdot P\). If its \(l_A^{e_A}\) set \(P_A = P\). Otherwise repeat from 1.%
-\item\hypertarget{li-224}{}Do the same with \(Q_A = Q\).%
-\item\hypertarget{li-225}{}Check independence by seeing if \(e(P_A,Q_A) \) has the right order, so that it is in \(E\lb l_A^{e_A} \rb\) torsion.%
+\item\hypertarget{li-221}{}Find a random point in \(E(\FF_{p^2})\) say \(P\).%
+\item\hypertarget{li-222}{}Check the \hyperref[def-order-quaternion]{order} of \((l_B^{e_B} f)^2 \cdot P\). If its \(l_A^{e_A}\) set \(P_A = P\). Otherwise repeat from 1.%
+\item\hypertarget{li-223}{}Do the same with \(Q_A = Q\).%
+\item\hypertarget{li-224}{}Check independence by seeing if \(e(P_A,Q_A) \) has the right \hyperref[def-order-quaternion]{order}, so that it is in \(E\lb l_A^{e_A} \rb\) torsion.%
 \end{enumerate}
 %
-\item\hypertarget{li-226}{}Computing the kernels generated by \(R_A = m_A P_A + n_A Q_A\), \(m_A, n_A \in \ZZ/l_A^{e_A} \ZZ\). Analogue of double and add. Set \(R_A = P_A + \lb m_A\inv n_A\rb Q_A\). Use differential addition (when you compute \(A+B\) with side info \(A-B\)) and a Montgomery ladder%
-\item\hypertarget{li-227}{}(Computing smooth degree \hyperref[def-supersing-isog-isog]{isogenies}) Decompose the \(l_A^{e_A}\) \hyperref[def-supersing-isog-isog]{isogeny} into \(e_A\) different \(l_A\)-\hyperref[def-supersing-isog-isog]{isogenies}, \(\phi_i\colon E_i \to E_{i+1}\) the kernel of \(\phi_i\) is \(\langle l_A^{e_A - i - 1} R_A\rangle\). Velu's formula runs in \(O(l)\) for \(l\)-\hyperref[def-supersing-isog-isog]{isogeny}.%
+\item\hypertarget{li-225}{}Computing the kernels generated by \(R_A = m_A P_A + n_A Q_A\), \(m_A, n_A \in \ZZ/l_A^{e_A} \ZZ\). Analogue of double and add. Set \(R_A = P_A + \lb m_A\inv n_A\rb Q_A\). Use differential addition (when you compute \(A+B\) with side info \(A-B\)) and a Montgomery ladder%
+\item\hypertarget{li-226}{}(Computing smooth degree \hyperref[def-supersing-isog-isog]{isogenies}) Decompose the \(l_A^{e_A}\) \hyperref[def-supersing-isog-isog]{isogeny} into \(e_A\) different \(l_A\)-\hyperref[def-supersing-isog-isog]{isogenies}, \(\phi_i\colon E_i \to E_{i+1}\) the kernel of \(\phi_i\) is \(\langle l_A^{e_A - i - 1} R_A\rangle\). Vélu's formula runs in \(O(l)\) for \(l\)-\hyperref[def-supersing-isog-isog]{isogeny}.%
+\end{enumerate}
+%
+%
+%
+\typeout{************************************************}
+\typeout{Section 3.3 Quaternion Algebras (Alex)}
+\typeout{************************************************}
+%
+\section[{Quaternion Algebras (Alex)}]{Quaternion Algebras (Alex)}\label{sec-quaternion-algebras}
+\hypertarget{p-865}{}%
+Q: Why study quaternion algebras?%
+\par
+\hypertarget{p-866}{}%
+A: They arise as the \hyperref[def-supersing-isog-endo]{endomorphism} algebras of \emph{supersingular} \hyperref[def-supersing-isog-ec]{elliptic curves} \(/\FF_{p^2}\).%
+\par
+\hypertarget{p-867}{}%
+I don't want to spoiler next week at all, but I cannot talk about quaternion algebras without a little bit of motivation first!%
+\begin{example}{What are we doing again?}{example-42}%
+\hypertarget{p-868}{}%
+Lets take%
+\begin{equation*}
+K = \FF_9 = \FF_3[\alpha] = \FF_3[x]/(x^2- x - 1)
+\end{equation*}
+and%
+\begin{equation*}
+E/K\colon y^2 = x^3 + \alpha x = f(x)\text{,}
+\end{equation*}
+\hyperref[def-simple-av]{simple} eh? It's supersingular as the \(j\)-invariant is 0 (and are in characteristic 3). Alternatively, count points or even compute the Hasse invariant, the coefficient of \(p -1 = 2\) in \(f(x)^{(p-1)/2 = 1}\), yep, it's 0.%
+\par
+\hypertarget{p-869}{}%
+We therefore have \(\#E(K) = 9 + 1 = 10\) so we have a \(2\)-torsion point (\(P = (0,0)\)) and any other point we can use to generate (will be \(5\) or \(10\) torsion). Let \(x = 1\) so \(y^2 = 1 + \alpha = \alpha^2\) so \(y = \pm\alpha\), say \(Q = (1,\alpha)\).%
+\par
+\hypertarget{p-870}{}%
+We have one \hyperref[def-supersing-isog-endo]{endomorphism}, \(p\)-power frobenius \(x\mapsto x^3\), \(y\mapsto y^3\). How to find another one?%
+\par
+\hypertarget{p-871}{}%
+Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\). In general the formulae are  a little annoying \hyperlink{bib-velu}{[61]}, when you have a 2-torsion point at \((0,0)\), not as bad:%
+\begin{equation*}
+\psi = \left(x + \frac{f'(0)}{x}, y - \frac{yf'(0)}{x^2} \right)
+\end{equation*}
+%
+\begin{equation*}
+f'(0) = \alpha
+\end{equation*}
+so%
+\begin{equation*}
+\psi= \left(\frac{x^2 + \alpha}{x}, y\frac{x^2 - \alpha}{x^2} \right)
+\end{equation*}
+(aside: if \(g/h = (x^2+\alpha)/x\) then \((g/h)' = (g' h - g h')/h^2 = (2x^2 - (x^2 + \alpha))/x^2 = (x^2 - \alpha)/x^2\), sanity check/fast computation?). The curve is then%
+\begin{equation*}
+E'\colon y^2 = x^3 + 0x^2 + (\alpha - 5\alpha)x +0 = x^3  - \alpha x
+\end{equation*}
+. I think really here we're just recovering those classic formulae for 2-\hyperref[def-supersing-isog-isog]{isogenies} between curves with a rational 2 torsion point at \((0,0)\) (used in 2-descent).%
+\begin{align*}
+C\amp\colon y^2 = x(x^2+ax+b)\\
+D\amp\colon v^2 = u(u^2+a_1u+b_1)\\
+\phi\amp\colon C\to D\\
+(x,y) \amp\mapsto ((y/x)^2 , y-by/x^2)\\
+\hat\phi\amp\colon D\to C\\
+(u,v) \amp\mapsto \left(\frac14\left(\frac vu\right)^2 ,\frac18( v-b_1 v/u^2)\right)
+\end{align*}
+%
+\par
+\hypertarget{p-872}{}%
+So far so good, our curve doesn't look exactly the same, but it's \(j\)-invariant is, so we are still in business. Is%
+\begin{equation*}
+E \simeq E'\text{?}
+\end{equation*}
+If we substitute \(x= \alpha^2 x\), \(y = \alpha ^3 y\) into \(E'\) we get%
+\begin{equation*}
+\alpha^6 y^2 = \alpha^6 x^3 - \alpha^3 x
+\end{equation*}
+%
+\begin{equation*}
+y^2 = x^3 - \alpha^{-3} x = x^3 +\alpha x\text{,}
+\end{equation*}
+call this map \(\iota\). Excellent, so to get \(\psi' \colon E\to E\) we compose \(\iota\circ \psi\).%
+\begin{equation*}
+\iota \circ\left( \frac{x^2  + \alpha}{x}, \frac{(x^2 - \alpha )y}{x^2}\right)  = \left( \alpha^2\frac{x^2  + \alpha}{x}, \alpha^3\frac{(x^2 - \alpha )y}{x^2}\right)
+\end{equation*}
+%
+\begin{equation*}
+= \left( (\alpha+  1)\frac{x^2  + \alpha}{x}, ( -\alpha  + 1)\frac{(x^2 - \alpha )y}{x^2}\right)\text{.}
+\end{equation*}
+%
+\par
+\hypertarget{p-873}{}%
+What happens to our other point \(Q\)? \(\psi'(Q) = (\alpha^2(1+\alpha), \alpha^4(1-\alpha)) =(-1, \alpha - 1)\)%
+\begin{gather*}
+(0 : 0 : 1) \mapsto (0 : 1 : 0),\, (0 : 1 : 0) \mapsto (0 : 1 : 0),\, (1 : \alpha : 1) \mapsto (-1 : \alpha -1 : 1),\\
+(1 : -\alpha : 1) \mapsto (-1 : -\alpha + 1 : 1),\, (-1 : \alpha -1 : 1) \mapsto (1 : -\alpha : 1),\\
+(-1 : -\alpha + 1 : 1) \mapsto (1 : \alpha : 1),\, (\alpha : \alpha + 1 : 1) \mapsto (-1 : -\alpha + 1 : 1),\\
+(\alpha : -\alpha -1 : 1) \mapsto (-1 : \alpha -1 : 1),\, (-\alpha : 1 : 1) \mapsto (1 : \alpha : 1),\, (-\alpha : -1 : 1) \mapsto (1 : -\alpha : 1)
+\end{gather*}
+A word of caution: If you are very awake you may check and be led to believe that this is just the multiplication by \(-2\) \hyperref[def-supersing-isog-isog]{isogeny} on \(E\), its action on \(E(\FF_9)\) points is the same!!!!! It's not the same \hyperref[def-supersing-isog-isog]{isogeny} though so you can relax. Now we have an \hyperref[def-supersing-isog-endo]{endomorphism} ring with two elements, what are the relations between themselves, and each other?%
+\par
+\hypertarget{p-874}{}%
+As we quotiented by a rational \(2\)-torsion point we have computed a factor of \(\pi - 1\), the other factor comes from quotienting by \(5\)-torsion. In fact we find. The frobenius has characteristic polynomial \(t^2 + 9 = (t + 3i)(t-3i)\) \(\pi\) looks like \(3i\). \(\psi\) has characteristic polynomial \(t^2 - 2t + 2 = (t+1)^2 + 1\), so \(\psi + 1\) looks like \(\pm i\). \(?? \cdot \psi = \pi - 1\)  \(?? \cdot (i - 1) = 3i - 1\), so \(?? = 2 - i = 2 - (\psi + 1) = 1 - \psi\).%
+\par
+\hypertarget{p-875}{}%
+So what if we quotient by non-rational 2-torsion? Pass to the quadratic extension \(\FF_{3^4}\), which we get from adjoining the other roots of \(0 = x^3 + \alpha x\) i.e. \(\pm \sqrt{-\alpha}\). Denote this extension \(\FF_3 \lb \beta \rb\),  \((\beta^2 - 1)^2 = -\alpha\). We can use Vélu again, it's degree two still but a bit more ugh, you might need a computer from now on, actually I've been using one all along.%
+\begin{equation*}
+\phi = \left( \frac{\left(\alpha + 1\right) x^{2} + \left(- \beta^{3}  -  \beta - 1\right) x}{x -   (\beta^{2} - 1)},y \frac{\left(-\alpha + 1\right) x^{2} + \left(\beta^{3}  -  \beta^{2} + \beta - 1\right) x -  1}{(x -  ( \beta^{2} - 1))^2} \right)
+\end{equation*}
+doing a computation it looks like \(\phi\) satisfies \(\phi^2 -\phi + 2\).%
+\par
+\hypertarget{p-876}{}%
+What are the relations between these? Hopefully they generate the \hyperref[def-supersing-isog-endo]{endomorphism} ring by now but without relations we are screwed! Do they commute? Computing \(\tau = \phi \psi  - \psi \phi\) is relevant, if 0, commutative, otherwise not! Note that if they are algebraically dependant they must commute! In our example we can compute \(\tau^2 + 3 = 0\)%
+\end{example}
+\begin{inlineexercise}{}{exercise-22}%
+\hypertarget{p-877}{}%
+Finish this example, compute the \hyperref[def-supersing-isog-endo]{endomorphism} ring as a recognisable quaternion \hyperref[def-order-quaternion]{order}.%
+\end{inlineexercise}
+\hypertarget{p-878}{}%
+Aside: I now believe Asra when she says not to use Vélu's formulae for large degree!%
+\par
+\hypertarget{p-879}{}%
+Aside 2: Frobenius can be weird for supersingular curves, e.g. for%
+\begin{equation*}
+y^2 = x^{3} + x/\FF_9
+\end{equation*}
+we have \(\pi = -3\). Or%
+\begin{equation*}
+y^2 = x^{3} + 1/\FF_{25}
+\end{equation*}
+we have \(\pi = -5\)%
+\begin{inlineexercise}{Good for long walks on the beach.}{exercise-23}%
+\hypertarget{p-880}{}%
+Show by hand that \(y^2 + y = x^3/\FF_4\) is supersingular and that frobenius is just the multiplication by \(-2\) map.%
+\end{inlineexercise}
+\begin{inlineexercise}{}{exercise-24}%
+\hypertarget{p-881}{}%
+PODASIP: this happens for all \(p^2\)?%
+\end{inlineexercise}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 3.3.1 Quaternion Algebras}
+\typeout{************************************************}
+%
+\subsection[{Quaternion Algebras}]{Quaternion Algebras}\label{subsection-74}
+\hypertarget{p-882}{}%
+Pretty much all of this material was ripped with the utmost love and affection from \hyperlink{bib-voight-quat}{[62]}, check it out.%
+\begin{proposition}{}{}{proposition-62}%
+\hypertarget{p-883}{}%
+The theory of Quaternion algebras is very rich.%
+\end{proposition}
+\begin{proof}\hypertarget{proof-105}{}
+\hypertarget{p-884}{}%
+The above book is 800 pages long.%
+\end{proof}
+\hypertarget{p-885}{}%
+So now we have gone out into nature and observed a beautiful new species of algebra, time to catch it, pin it to a wall, dissect it to study it in detail. It might not look as pretty any more but it's the way the science is done.%
+\begin{example}{Hamilton's quaternions.}{example-43}%
+\hypertarget{p-886}{}%
+Hamilton's quaternions \(\HH\) were the first quaternion algebra to be discovered (citation needed). The structure is like two copies of \(\CC\) tensored together in some non-commuting way over \(\RR\). We have a real algebra with two generators \(i,j\) s.t. \(i^2 = j^2  = (ij)^2 = -1\) we let \(k = ij\) for aesthetic reasons (note that these relations imply noncommutativity!). Like this we get a division algebra.%
+\end{example}
+\hypertarget{p-887}{}%
+Quaternion algebras are a generalisation of this to other fields.%
+\begin{definition}{Quaternion algebras.}{def-quaternion-algebra}%
+\hypertarget{p-888}{}%
+Let \(F\) be a field (not characteristic 2), a quaternion algebra over \(F\) is an algebra \(B\) over \(F\) for which there exist \(a,b\in F^\times\) such that there is a basis%
+\begin{equation*}
+1,i,j,k \in B
+\end{equation*}
+such that%
+\begin{equation*}
+i^2 = a,j^2=b,k=ij=-ji\text{,}
+\end{equation*}
+it is automatic that \(k^2 = -ab\) from this.%
+\par
+\hypertarget{p-889}{}%
+We denote this particular quaternion algebra by \(\legendre{a,b}{F}\)%
+\end{definition}
+\begin{example}{}{example-44}%
+\hypertarget{p-890}{}%
+%
+\begin{equation*}
+\HH = \legendre{-1,-1}{\RR}\text{.}
+\end{equation*}
+%
+\end{example}
+\begin{example}{}{example-45}%
+\hypertarget{p-891}{}%
+What is%
+\begin{equation*}
+\legendre{1,1}{F} \left( = \legendre{1,-1}{F}\right)\text{?}
+\end{equation*}
+We have another way to come up with \(4\)-dimensional non-commutative algebras over fields, matrices! Let%
+\begin{equation*}
+i=  \begin{pmatrix} 1\amp0\\0\amp -1\end{pmatrix}
+\end{equation*}
+%
+\begin{equation*}
+j =\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix}
+\end{equation*}
+so%
+\begin{equation*}
+k = ij = \begin{pmatrix} 0\amp1\\-1\amp 0\end{pmatrix} = -ji
+\end{equation*}
+as required.%
+\end{example}
+\hypertarget{p-892}{}%
+Call this example \emph{split}, in analogy with quadratic theory,  If \(x^2 - N\) has a solution mod \(p\) then \(\legendre{N}{p} = 1 = \legendre{1}{p}\).%
+\par
+\hypertarget{p-893}{}%
+Note that if \(a\) or \(b \in (F^\times)^2\) then we can divide the corresponding basis element by \(\sqrt{a}\) or whatever and find that \(\legendre{a,b}{F} = \legendre{1,b}{F}\). This shows:%
+\begin{proposition}{}{}{proposition-63}%
+\hypertarget{p-894}{}%
+After passing to the algebraic closure (or even the quadratic closure!) every quaternion algebra is split.%
+\end{proposition}
+\hypertarget{p-895}{}%
+This is helpful as it allows us to work with non-split quaternion algebras as matrix algebras over a quadratic extension.%
+\begin{example}{}{example-46}%
+\hypertarget{p-896}{}%
+\(\HH/\RR\) can be seen as \(\Mat_{2\times 2}(\RR(i)) = \Mat_{2\times 2}(\CC)\), explicitly%
+\begin{equation*}
+i=  i\begin{pmatrix} 1\amp0\\0\amp -1\end{pmatrix} = \begin{pmatrix} i\amp0\\0\amp -i\end{pmatrix}
+\end{equation*}
+%
+\begin{equation*}
+j = i\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix} = \begin{pmatrix} 0\amp i\\i\amp 0\end{pmatrix}
+\end{equation*}
+please excuse the unfortunate notational clash here, I hope you agree it's somewhat unavoidable.%
+\end{example}
+\hypertarget{p-897}{}%
+Here is a nice lemma I probably used implicitly already somewhere!%
+\begin{lemma}{}{}{lemma-18}%
+\hypertarget{p-898}{}%
+An \(F\)-algebra \(B\) with \(F\)-algebra generators \(i,j\) satisfying \(i^2,j^2\in F^\times\), \(ij = -ji\) is automatically a quaternion algebra (i.e. dimension 4).%
+\end{lemma}
+\begin{proof}\hypertarget{proof-106}{}
+\hypertarget{p-899}{}%
+Show linear independence of \(1,i,j,ij\) (exercise).%
+\end{proof}
+\begin{definition}{Conjugate, trace and norm.}{def-quat-alg-conj-trace-norm}%
+\hypertarget{p-900}{}%
+Given a quaternion algebra \(B/F\) there is a unique anti-involution \(\overline \cdot \colon B \to B\), called \terminology{conjugation}.%
+\par
+\hypertarget{p-901}{}%
+With basis \(1,i,j,ij\in \legendre{a,b}{F}\) as above it is given as%
+\begin{equation*}
+\overline {x + yi + zj + w ij} = x - yi - zj - w ij,\,x,y,z,w\in F\text{.}
+\end{equation*}
+%
+\par
+\hypertarget{p-902}{}%
+As normal (heh) we define the (reduced) norm and trace%
+\begin{equation*}
+\norm \alpha =  \alpha + \overline \alpha,\,\forall \alpha \in B
+\end{equation*}
+%
+\begin{equation*}
+\norm(x + yi + zj + w ij) = x^2 - ay^2 - b z^2 + ab w^2
+\end{equation*}
+and%
+\begin{equation*}
+\trace \alpha =  \alpha + \overline \alpha,\,\forall \alpha \in B
+\end{equation*}
+%
+\begin{equation*}
+\trace (x + yi + zj + w ij) = 2x\text{.}
+\end{equation*}
+%
+\end{definition}
+%
+%
+\typeout{************************************************}
+\typeout{Subsubsection 3.3.1.1 Orders}
+\typeout{************************************************}
+%
+\subsubsection[{Orders}]{Orders}\label{subsubsection-1}
+\hypertarget{p-903}{}%
+In our example, while the \hyperref[def-supersing-isog-endo]{endomorphism} algebra \(\End(E)\otimes \QQ\) was of interest, the \hyperref[def-supersing-isog-endo]{endomorphism} ring \(\End(E)\) was the more fundamental object. What is this? A quaternion ring?%
+\begin{definition}{Orders in quaternion algebras.}{def-order-quaternion}%
+\hypertarget{p-904}{}%
+Let \(B/\QQ\) be a quaternion algebra, an \terminology{order} in \(B\) is a full rank sub-\(\ZZ\)-module that is also a subring.%
+\end{definition}
+\begin{example}{The Lipschitz order.}{ex-lipshitz-order}%
+\hypertarget{p-905}{}%
+\(B = \legendre{-1,-1}{\QQ}\) (Hamilton quaternions with \(\QQ\)-coefficients) then we have an \hyperref[def-order-quaternion]{order}%
+\begin{equation*}
+\ZZ + \ZZ i + \ZZ j + \ZZ ij
+\end{equation*}
+the \terminology{Lipschitz \hyperref[def-order-quaternion]{order}}.%
+\end{example}
+\begin{definition}{Maximality.}{def-maximal-order}%
+\hypertarget{p-906}{}%
+Orders are ordered (heh) with respect to inclusion, thus we get notions of maximality of \hyperref[def-order-quaternion]{orders} etc.%
+\end{definition}
+\hypertarget{p-907}{}%
+Is the \hyperref[ex-lipshitz-order]{Lipschitz order} maximal? NO! Whats going on? \(\ZZ\lb i\rb\) is maximal in \(\QQ(i)\) after all. Consider%
+\begin{equation*}
+i + j + k,\,(i+j + k)^2 = i^2 + j^2 + k^2 + \cancelto{0}{ij + ji} + \cancelto{0}{ik + ki} + \cancelto{0}{jk + kj} = -3
+\end{equation*}
+so we have a \(\ZZ\lb \sqrt{-3}\rb\) lurking inside \(\legendre{-1,-1}{\QQ}\), quaternion algebras are not everything they appear to be at first sight! \(\ZZ\lb \sqrt{-3}\rb\) is non-maximal and we must add \(\sqrt{-3}/2\) to make it so. Lets add this in the quaternion setting:%
+\begin{example}{The Hurwitz order.}{ex-hurwitz-order}%
+\hypertarget{p-908}{}%
+Let \(B = \legendre{-1,-1}{\QQ}\), then%
+\begin{equation*}
+\ZZ+  \ZZ i + \ZZ j + \ZZ \left(\frac{i + j + k}{2}\right)
+\end{equation*}
+is an index two suborder of the \hyperref[ex-lipshitz-order]{Lipschitz order}, called the \terminology{Hurwitz \hyperref[def-order-quaternion]{order}}, this \emph{is} maximal.%
+\end{example}
+\hypertarget{p-909}{}%
+Warning, just because \(\sqrt{-3} \in \legendre{-1,-1}{\QQ}\) we do not have \(\legendre{-1,-3}{\QQ} = \legendre{-1,-1}{\QQ}\)!%
+\begin{example}{/Exercise.}{example-49}%
+\hypertarget{p-910}{}%
+Show that the \hyperref[def-supersing-isog-ec]{elliptic curve} from the exercise earlier%
+\begin{equation*}
+y^2 + y = x^3/\overline{\FF_2}
+\end{equation*}
+has \hyperref[def-supersing-isog-endo]{endomorphism} algebra the \hyperref[ex-hurwitz-order]{Hurwitz order}.%
+\end{example}
+\hypertarget{p-911}{}%
+Warning, there is no such thing as \emph{the} maximal \hyperref[def-order-quaternion]{order} of a quaternion algebra! Rather there are multiple maximal \hyperref[def-order-quaternion]{orders} due to non-commutativity, e.g. if \(\ints\) is a maximal \hyperref[def-order-quaternion]{order} then so is%
+\begin{equation*}
+\alpha \ints \alpha\inv \ne \ints\text{.}
+\end{equation*}
+%
+\par
+\hypertarget{p-912}{}%
+Normally when we have unique maximal things with a certain property, its because we can always take spans/unions and they still have that property.%
+\par
+\hypertarget{p-913}{}%
+This is no longer true here, the sum of two elements with integral trace and norm need not remain so, nor the product.%
+\par
+\hypertarget{p-914}{}%
+We can define discriminants of \hyperref[def-order-quaternion]{orders} which like normal give a hint as to their maximality%
+\begin{equation*}
+\ints = \ZZ + \ZZ i + \ZZ j + \ZZ ij \subseteq \legendre{a,b}{\QQ}
+\end{equation*}
+%
+\begin{equation*}
+\disc \ints  = d(1,i,j,ij) = \left| \det\begin{pmatrix} 2 \amp 0 \amp 0\amp 0 \\ 0 \amp 2a \amp 0 \amp 0 \\ 0 \amp 0 \amp 2b \amp 0 \\ 0 \amp 0 \amp 0 \amp -2ab\end{pmatrix}\right| = (4ab)^2
+\end{equation*}
+%
+\begin{inlineexercise}{}{exercise-25}%
+\hypertarget{p-915}{}%
+Find the discriminant of the \hyperref[ex-lipshitz-order]{Lipschitz order}.%
+\end{inlineexercise}
+%
+%
+\typeout{************************************************}
+\typeout{Subsubsection 3.3.1.2 Local theory}
+\typeout{************************************************}
+%
+\subsubsection[{Local theory}]{Local theory}\label{subsubsection-2}
+\begin{theorem}{}{}{theorem-63}%
+\hypertarget{p-916}{}%
+Over a local field \(F \ne \CC\) there is a unique division quaternion algebra \(B/F\) up to \(F\)-isomorphism.%
+\par
+\hypertarget{p-917}{}%
+If \(F = \QQ_p\), \(p\ne 2\) then this is%
+\begin{equation*}
+\legendre{e,p}{\QQ_p}
+\end{equation*}
+for \(e\) any quadratic non-residue mod \(p\).%
+\par
+\hypertarget{p-918}{}%
+This is saying that any quadratic extension of \(F\) embeds into \(B\)!%
+\end{theorem}
+\begin{definition}{Split and ramified quaternion algebras.}{def-split-ram-quaternion-algs}%
+\hypertarget{p-919}{}%
+Let \(B/\QQ_v\) be a quaternion algebra, we say that \(B\) is%
+\begin{equation*}
+\begin{cases}
+\text{split} \amp \text{if } B\cong M_2(\QQ_v)  = \legendre{1,-1}{\QQ_v}\\
+\text{ramified} \amp \text{otherwise}
+\end{cases}
+\end{equation*}
+%
+\par
+\hypertarget{p-920}{}%
+Correspondingly we say that \(B/\QQ\) is split/ramified at a place \(v\) if the corresponding \(B\otimes \QQ_v\) has that property.%
+\end{definition}
+\hypertarget{p-921}{}%
+The terminology definite for quaternion algebras \hyperref[def-dess-ramified]{ramified} at infinity is also used (i.e. for which \(B\otimes \RR = \HH\)).%
+\begin{theorem}{Albert-Brauer-Hasse-Noether.}{}{theorem-64}%
+\hypertarget{p-922}{}%
+Let \(B/F\) be a quaternion algebra  over  a  number field \(F\) (or any \hyperref[def-csa]{central \hyperref[def-simple-av]{simple} algebra}), if \(B\) splits at every place \(v\) of \(F\) then \(B\) is a matrix algebra \(M_d (F)\).%
+\end{theorem}
+\hypertarget{p-923}{}%
+In fact:%
+\begin{theorem}{}{}{theorem-65}%
+\hypertarget{p-924}{}%
+Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.%
+\end{theorem}
+\hypertarget{p-925}{}%
+Warning: Quaternion algebras may not be \hyperref[def-dess-ramified]{ramified} where you think they are?%
+\par
+\hypertarget{p-926}{}%
+Knowing the ramification of a quaternion algebra \(\QQ\) is enough to identify it uniquely, in fact we have the following theorem%
+\begin{theorem}{Main Theorem [62,~14.1.3].}{}{theorem-66}%
+\hypertarget{p-927}{}%
+There is a sequence of bijections%
+\begin{align*}
+\left\{ \text{quaternion algebras }B/\QQ \right\}/\text{isom.}\\
+S \mapsto \text{unique }B \text{ ramified at exactly }S\amp\updownarrow D\mapsto \{p : B \text{ is ramifies at } p\}\\
+\left\{ S \subseteq \text{places of }\QQ,\,2|\#S \right\}\\
+D \mapsto \{p|D\} \cup \{\infty\} \text{ if }2\nmid \omega(D)\amp\updownarrow S \mapsto \prod_{p\in S,p\ne \infty} p\\
+\left\{ D\in \ZZ_{\gt 0 }\text{ squarefree}\right\}
+\end{align*}
+%
+\end{theorem}
+\hypertarget{p-928}{}%
+Sometimes however we want generators and relations not just ramification information: (As we will only care about discriminant \(p\) quaternion algebras) In our setting the relevant theorem is:%
+\begin{theorem}{Pizer.}{}{theorem-67}%
+\hypertarget{p-929}{}%
+Let \(\QQ_{p,\infty}\) be the unique quaternion algebra \hyperref[def-dess-ramified]{ramified} at \(p,\infty\), let \(q \equiv 3 \pmod 4\) be such that \(\legendre pq = -1\), then%
+\begin{equation*}
+\QQ_{p,\infty} \cong
+\begin{cases}
+\legendre{-1,-1}{\QQ} \amp \text{ if }p\equiv 2\pmod 4,\\
+\legendre{-1,-p}{\QQ} \amp \text{ if }p\equiv 3\pmod 4,\\
+\legendre{-2,-p}{\QQ} \amp \text{ if }p\equiv 1\pmod 8,\\
+\legendre{-p,-q}{\QQ} \amp \text{ if }p\equiv 5\pmod 8.
+\end{cases}
+\end{equation*}
+%
+\end{theorem}
+\hypertarget{p-930}{}%
+Ibukiyama has given a nice description of a maximal \hyperref[def-order-quaternion]{order} in such.%
+\par
+\hypertarget{p-931}{}%
+Here are some nice references:\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-227}{}Computational Problems in Supersingular \hyperref[def-supersing-isog-ec]{Elliptic Curve} \hyperref[def-supersing-isog-isog]{Isogenies} - Steven D. Galbraith and Frederik Vercauteren \url{https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf}%
+\item\hypertarget{li-228}{}Computing \hyperref[def-supersing-isog-isog]{Isogenies} Between \hyperref[def-buntes-abvar]{Abelian Varieties} - David Lubicz Damien Robert \url{https://perso.univ-rennes1.fr/david.lubicz/articles/isogenies.pdf}%
+\item\hypertarget{li-229}{}Toric forms of \hyperref[def-supersing-isog-ec]{elliptic curves} and their arithmetic - Wouter Castryck and Frederik Vercauteren \url{https://homes.esat.kuleuven.be/\~fvercaut/papers/ec_forms.pdf}%
+\item\hypertarget{li-230}{}Isogenies of \hyperref[def-supersing-isog-ec]{Elliptic Curves}: A Computational Approach - Daniel Shumow \url{https://www.sagemath.org/files/thesis/shumow-thesis-2009.pdf}%
+\item\hypertarget{li-231}{}Hard and Easy Problems for Supersingular \hyperref[def-supersing-isog-isog]{Isogeny} Graphs - Christophe Petit and Kristin Lauter \url{https://eprint.iacr.org/2017/962.pdf}%
+\item\hypertarget{li-232}{}Perspectives on the Albert-Brauer-Hasse-Noether Theorem for Quaternion Algebras -  Thomas R. Shemanske \url{https://www.math.dartmouth.edu/\~trs/expository-papers/tex/ABHN.pdf}%
+\item\hypertarget{li-233}{}COMPUTING \hyperref[def-supersing-isog-isog]{ISOGENIES} BETWEEN SUPERSINGULAR \hyperref[def-supersing-isog-ec]{ELLIPTIC CURVES} OVER Fp CHRISTINA DELFS AND STEVEN D. GALBRAITH \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.740.6509\&rep=rep1\&type=pdf}%
 \end{enumerate}
 %
 %
@@ -8009,18 +8443,22 @@ Finding a basis for \(E\lb l_A^{e_A}\rb\).%
 \bibitem[47]{bib-polishchuck}\hypertarget{bib-polishchuck}{}Polishchuk, Alexander. \textit{Abelian varieties, theta functions and the Fourier transform}. Vol. 153. Cambridge University Press, 2003.
 \bibitem[48]{bib-rolshausen}\hypertarget{bib-rolshausen}{}Rolshausen, Klaus, and Norbert Schappacher.  \textit{On the second K-group of an elliptic curve.}  Journal für die reine und angewandte Mathematik 495 (1998): 61-77.
 \bibitem[49]{bib-sage}\hypertarget{bib-sage}{}\textit{SageMath, the Sage Mathematics Software System (Version 8.1.0)}, The Sage Developers, 2017, \url{http://www.sagemath.org}.
-\bibitem[50]{bib-serre-local-alg}\hypertarget{bib-serre-local-alg}{}Serre, Jean-Pierre. \textit{Local algebra}. Springer Science \& Business Media, 2000.
-\bibitem[51]{bib-serre-mordell-weil}\hypertarget{bib-serre-mordell-weil}{}Serre, Jean-Pierre, Martin Brown, and Michel Waldschmidt. \textit{Lectures on the Mordell-Weil theorem}. Vol. 2. Braunschweig: Vieweg, 1990.
-\bibitem[52]{bib-shafarevich-remizov}\hypertarget{bib-shafarevich-remizov}{}Shafarevich, Igor R., and Alexey O. Remizov. \textit{Linear algebra and geometry}. Springer Science \& Business Media, 2012.
-\bibitem[53]{bib-silverman}\hypertarget{bib-silverman}{}Silverman, Joseph H. \textit{The arithmetic of elliptic curves}. Vol. 106. Springer Science \& Business Media, 2009.
-\bibitem[54]{bib-silverman-advanced}\hypertarget{bib-silverman-advanced}{}Silverman, Joseph H. \textit{Advanced topics in the arithmetic of elliptic curves}. Vol. 151. Springer Science \& Business Media, 2013.
-\bibitem[55]{bib-tamme}\hypertarget{bib-tamme}{}Tamme, Günter. \textit{Introduction to étale cohomology}. Springer Science \& Business Media, 2012.
-\bibitem[56]{bib-tuitman-map-to-p1-1}\hypertarget{bib-tuitman-map-to-p1-1}{}Tuitman, Jan. \textit{Counting points on curves using a map to \(\PP^1\)}. Mathematics of Computation 85.298 (2016): 961-981.
-\bibitem[57]{bib-tuitman-map-to-p1-2}\hypertarget{bib-tuitman-map-to-p1-2}{}Tuitman, Jan. \textit{Counting points on curves using a map to \(\PP^1\), II}. Finite Fields and Their Applications 45 (2017): 301-322.
-\bibitem[58]{bib-vandergeer-moonen}\hypertarget{bib-vandergeer-moonen}{}van der Geer, G., Moonen, B. \textit{Abelian Varieties}, from \url{https://www.math.ru.nl/\~bmoonen/research.html\#bookabvar}.
-\bibitem[59]{bib-waterhouse}\hypertarget{bib-waterhouse}{}Waterhouse, William C.  \textit{Profinite groups are Galois groups}. Proceedings of the American Mathematical Society 42.2 (1974): 639-640.
-\bibitem[60]{bib-weng-nakamura}\hypertarget{bib-weng-nakamura}{}Weng, L., and Nakamura, I. \textit{Arithmetic geometry and number theory}, World Scientific, 2006.
-\bibitem[61]{bib-zag-ram}\hypertarget{bib-zag-ram}{}Zagier, Don.  \textit{The Bloch-Wigner-Ramakrishnan polylogarithm function.} Mathematische Annalen 286, no. 1 (1990): 613-624.
-\bibitem[62]{bib-pug}\hypertarget{bib-pug}{}\textit{Pug Template Engine} see \href{http://pug-lang.com/}{pug-lang.com}.
+\bibitem[50]{bib-serre-course}\hypertarget{bib-serre-course}{}Serre, Jean-Pierre. \textit{A course in arithmetic}. Vol. 7. Springer Science \& Business Media, 2012.
+\bibitem[51]{bib-serre-local-alg}\hypertarget{bib-serre-local-alg}{}Serre, Jean-Pierre. \textit{Local algebra}. Springer Science \& Business Media, 2000.
+\bibitem[52]{bib-serre-mordell-weil}\hypertarget{bib-serre-mordell-weil}{}Serre, Jean-Pierre, Martin Brown, and Michel Waldschmidt. \textit{Lectures on the Mordell-Weil theorem}. Vol. 2. Braunschweig: Vieweg, 1990.
+\bibitem[53]{bib-shafarevich-remizov}\hypertarget{bib-shafarevich-remizov}{}Shafarevich, Igor R., and Alexey O. Remizov. \textit{Linear algebra and geometry}. Springer Science \& Business Media, 2012.
+\bibitem[54]{bib-silverman}\hypertarget{bib-silverman}{}Silverman, Joseph H. \textit{The arithmetic of elliptic curves}. Vol. 106. Springer Science \& Business Media, 2009.
+\bibitem[55]{bib-silverman-advanced}\hypertarget{bib-silverman-advanced}{}Silverman, Joseph H. \textit{Advanced topics in the arithmetic of elliptic curves}. Vol. 151. Springer Science \& Business Media, 2013.
+\bibitem[56]{bib-sutherland}\hypertarget{bib-sutherland}{}Sutherland, Andrew. \textit{Isogeny volcanoes}. The Open Book Series 1, no. 1 (2013): 507-530. \url{https://msp.org/obs/2013/1-1/obs-v1-n1-p25-s.pdf}.
+\bibitem[57]{bib-tamme}\hypertarget{bib-tamme}{}Tamme, Günter. \textit{Introduction to étale cohomology}. Springer Science \& Business Media, 2012.
+\bibitem[58]{bib-tuitman-map-to-p1-1}\hypertarget{bib-tuitman-map-to-p1-1}{}Tuitman, Jan. \textit{Counting points on curves using a map to \(\PP^1\)}. Mathematics of Computation 85.298 (2016): 961-981.
+\bibitem[59]{bib-tuitman-map-to-p1-2}\hypertarget{bib-tuitman-map-to-p1-2}{}Tuitman, Jan. \textit{Counting points on curves using a map to \(\PP^1\), II}. Finite Fields and Their Applications 45 (2017): 301-322.
+\bibitem[60]{bib-vandergeer-moonen}\hypertarget{bib-vandergeer-moonen}{}van der Geer, G., Moonen, B. \textit{Abelian Varieties}, from \url{https://www.math.ru.nl/\~bmoonen/research.html\#bookabvar}.
+\bibitem[61]{bib-velu}\hypertarget{bib-velu}{}Vélu, Jacques. \textit{Isogénies entre courbes elliptiques}. CR Acad. Sci. Paris, Séries A 273 (1971): 305-347.
+\bibitem[62]{bib-voight-quat}\hypertarget{bib-voight-quat}{}Voight, John. \textit{Quaternion Algebras}. \url{http://quatalg.org}
+\bibitem[63]{bib-waterhouse}\hypertarget{bib-waterhouse}{}Waterhouse, William C.  \textit{Profinite groups are Galois groups}. Proceedings of the American Mathematical Society 42.2 (1974): 639-640.
+\bibitem[64]{bib-weng-nakamura}\hypertarget{bib-weng-nakamura}{}Weng, L., and Nakamura, I. \textit{Arithmetic geometry and number theory}, World Scientific, 2006.
+\bibitem[65]{bib-zag-ram}\hypertarget{bib-zag-ram}{}Zagier, Don.  \textit{The Bloch-Wigner-Ramakrishnan polylogarithm function.} Mathematische Annalen 286, no. 1 (1990): 613-624.
+\bibitem[66]{bib-pug}\hypertarget{bib-pug}{}\textit{Pug Template Engine} see \href{http://pug-lang.com/}{pug-lang.com}.
 \end{thebibliography}
 \end{document}

@@ -293,6 +293,7 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -403,7 +404,7 @@ r(f_A, f_B) = \rank \Hom(A,B)\text{.}
 <p id="p-422">Any such algebra is isomorphic to \(M_n(D)\) for \(D\) a division ring over \(k\text{.}\)</p></article><article class="definition-like" id="def-brauer-gp"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.14.11</span> <span class="title">Brauer groups</span>
 </h6>
-<p id="p-423">The <dfn class="terminology">Brauer group</dfn> of \(k\) \(\operatorname{Br}(k)\) is the set of <a knowl="./knowl/def-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebras</a> under \(\otimes\) module the algebras \(M_n(k)\text{.}\)</p></article><article class="theorem-like" id="fact-4"><h6 class="heading">
+<p id="p-423">The <dfn class="terminology">Brauer group</dfn> of \(k\) \(\operatorname{Br}(k)\) is the set of <a knowl="./knowl/def-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebras</a> under \(\otimes\) modulo the algebras \(M_n(k)\text{.}\)</p></article><article class="theorem-like" id="fact-4"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">1.14.12</span>
 </h6>
 <ul id="p-424" class="disc">
@@ -456,7 +457,7 @@ D\mapsto (\operatorname{inv}_v(D))_v
 <p id="p-430">\(\Rightarrow\) Let \(D_{\pi_A} , D_{\pi_B}\) be the division rings with invariants specified as in <a knowl="./knowl/prop-elem-av-local-invs.html" title="Proposition 1.14.13">Proposition 1.14.13</a>. \(\pi_A\sim \pi_B \implies D_{\pi_A} \simeq D_{\pi_B} \implies f_A = \operatorname{minpoly}(\pi_A) ^d = f_B\text{.}\)</p></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.14.3</span> <span class="title">Surjectivity and CM theory</span>
 </h3>
-<p id="p-431">We need to sow that for a\(\pi\) a \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\FF_q\) such that \(\pi_A \sim \pi\text{.}\)</p>
+<p id="p-431">We need to show that for \(\pi\) a \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\FF_q\) such that \(\pi_A \sim \pi\text{.}\)</p>
 <article class="definition-like" id="definition-42"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.14.16</span>
 </h6>
@@ -524,6 +525,9 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 <li id="li-96">Choose \(L = \QQ(\pi)(\sqrt{-p})\text{.}\)</li>
 <li id="li-97">Let \(d= \lb D_\pi: \QQ(\pi)\rb^{1/2}\text{.}\) This \(L\) splits \(D_\pi\text{.}\)</li>
 </ol></article></div>
+<article class="definition-like" id="def-cm-type"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.14.19</span> <span class="title">CM types</span>
+</h6>
 <p id="p-441">For a CM field \(L\) all the embeddings</p>
 <div class="displaymath">
 \begin{equation*}
@@ -541,8 +545,7 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 \Phi \cap \overline \Phi = \emptyset
 \end{equation*}
 </div>
-<p>such a choice of \(\Phi \) is called a CM type.</p>
-<p id="p-442">Let \(A/\CC\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> with CM by \(L\) i.e.</p>
+<p>such a choice of \(\Phi \) is called a <dfn class="terminology">CM type</dfn>.</p></article><p id="p-442">Let \(A/\CC\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> with CM by \(L\) i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 L\hookrightarrow \End^0(A)
@@ -556,15 +559,15 @@ L\hookrightarrow \End^0(A)
 </div>
 <p>acts on the tangent space at the origin \(\Lie(A)\text{.}\)</p>
 <article class="theorem-like" id="proposition-40"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.14.19</span>
+<span class="type">Proposition</span> <span class="codenumber">1.14.20</span>
 </h6>
-<p id="p-443">The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some CM type \(\Phi\text{.}\) We then say \(A/\CC\) is of type \((L,\Phi)\text{.}\)</p></article><article class="theorem-like" id="theorem-36"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14.20</span>
+<p id="p-443">The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \(\Phi\text{.}\) We then say \(A/\CC\) is of type \((L,\Phi)\text{.}\)</p></article><article class="theorem-like" id="theorem-36"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.14.21</span>
 </h6>
-<p id="p-444">For any CM type \((L,\Phi)\) there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\CC\) of type \((L, \Phi)\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-76" id="proof-76"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-76" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-445">Found in Shimura-Taniyama.</p></article></div>
+<p id="p-444">For any <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \((L,\Phi)\) there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\CC\) of type \((L, \Phi)\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-76" id="proof-76"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-76" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-445">Found in Shimura-Taniyama.</p></article></div>
 <p id="p-446">The fact that \(A\) is in fact defined over  a number field \(K\) is also in Shimura-Taniyama.</p>
 <article class="theorem-like" id="theorem-37"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14.21</span>
+<span class="type">Theorem</span> <span class="codenumber">1.14.22</span>
 </h6>
 <p id="p-447">Let \(A/K\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> which admits CM. Then \(A/K\) admits potentially good reduction at all places \(v\) of \(K\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-77" id="proof-77"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-77" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-448">Highly nontrivial, Neron models, Chevalley decomposition, Neron-Ogg-Shafarevich criterion, result of Grothendieck on potentially stable reduction.</p></article></div>
 <p id="p-449">After passing to a finite extension we will assume \(A/K\) has good reduction at places \(v|p\text{.}\) So we have a reduction \(A_{\FF_{q'}}/\FF_{q'}\text{.}\) For a place \(w|p\) of \(L\) let</p>
@@ -579,7 +582,7 @@ L\hookrightarrow \End^0(A)
 \end{equation*}
 </div>
 <article class="theorem-like" id="theorem-38"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14.22</span> <span class="title">Shimura-Taniyama formula</span>
+<span class="type">Theorem</span> <span class="codenumber">1.14.23</span> <span class="title">Shimura-Taniyama formula</span>
 </h6>
 <p id="p-450">For all places \(w|p\) of \(L\text{,}\)</p>
 <div class="displaymath">
@@ -589,7 +592,7 @@ L\hookrightarrow \End^0(A)
 </div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-78" id="proof-78"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-78" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-451">Tate has a proof using CM theory of \(p\)-divisible groups.</p></article></div>
 <p id="p-452">Recall we fixed \(\pi\) and from this we deterministically formed \(\QQ(\pi), D_{\pi}, L\) however we have no restriction on our choice of \(\Phi\text{.}\)</p>
 <article class="theorem-like" id="lemma-11"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">1.14.23</span>
+<span class="type">Lemma</span> <span class="codenumber">1.14.24</span>
 </h6>
 <p id="p-453">We can choose \(\Phi\) such that for all places \(w|p\) of \(L\text{,}\)</p>
 <div class="displaymath">
@@ -624,7 +627,7 @@ n_w + n_{\overline w} = \left( \frac{w(\pi)}{w(q)}  + \frac{\overline w(\pi)}{\o
 = \left( \frac{w(\pi\overline \pi)}{w(q)} \right) \#\Sigma_w = \#\Sigma_w
 \end{equation*}
 </div>
-<p>check the CM type \(\Phi = \bigcup_w \Phi_w\) where for each \(w\) \(\# \Phi_w = n_w\text{.}\) Then the formula follows.</p></article></div>
+<p>check the <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \(\Phi = \bigcup_w \Phi_w\) where for each \(w\) \(\# \Phi_w = n_w\text{.}\) Then the formula follows.</p></article></div>
 <p id="p-455">Combining the previous result with the Shimura-Taniyama formula we get that for all places \(w|p\)</p>
 <div class="displaymath">
 \begin{equation*}
