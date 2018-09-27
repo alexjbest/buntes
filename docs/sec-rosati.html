@@ -294,6 +294,7 @@ MathJax.Hub.Config({
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -325,7 +326,7 @@ MathJax.Hub.Config({
 \begin{equation*}
 e_l^\phi(f a ,a') = e_l^\phi(a, f^\dagger a')\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-57" id="proof-57"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-57" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-337">
+</div></article><article class="hiddenproof" id="proof-57"><a knowl="" class="id-ref" refid="hk-proof-57"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-57" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-337">
 \begin{equation*}
 e_l^\phi(f a ,a')  = e_l(fa, \phi a')= e_l(a, \hat f \phi a') = e_l(a, \phi\phi\inv \hat f \phi a') =  e_l^\phi(a, f^\dagger a')
 \end{equation*}
@@ -338,7 +339,7 @@ e_l^\phi(f a ,a')  = e_l(fa, \phi a')= e_l(a, \hat f \phi a') = e_l(a, \phi\phi\
 \begin{equation*}
 {\alpha^\dagger}^{\dagger} = \alpha\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-58" id="proof-58"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-58" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-339">We apply the previous proposition and skew-symmetry of a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> (over some extension)</p>
+</div></article><article class="hiddenproof" id="proof-58"><a knowl="" class="id-ref" refid="hk-proof-58"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-58" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-339">We apply the previous proposition and skew-symmetry of a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> (over some extension)</p>
 <div class="displaymath">
 \begin{equation*}
 e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alpha^\dagger}^{\dagger} a, a')
@@ -426,7 +427,7 @@ e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alp
 \begin{equation*}
 \{f \in \End^0(A) : f^\dagger = f\}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-59" id="proof-59"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-59" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-352">Fix \(\alpha \in \End^0(A)\) and \(l\ne \characteristic(k)\) odd. Applying <a knowl="./knowl/prop-milne-av-13-6.html" title="Proposition 1.10.8: 13.6">Proposition 1.10.8</a> we see that \(\lambda \alpha = \phi_{\sheaf L}\) for some \(\sheaf L\) iff \(e^{\lambda\alpha}_l\) is skew-<a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a>, but we also have</p>
+</div></article><article class="hiddenproof" id="proof-59"><a knowl="" class="id-ref" refid="hk-proof-59"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-59" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-352">Fix \(\alpha \in \End^0(A)\) and \(l\ne \characteristic(k)\) odd. Applying <a knowl="./knowl/prop-milne-av-13-6.html" title="Proposition 1.10.8: 13.6">Proposition 1.10.8</a> we see that \(\lambda \alpha = \phi_{\sheaf L}\) for some \(\sheaf L\) iff \(e^{\lambda\alpha}_l\) is skew-<a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a>, but we also have</p>
 <div class="displaymath">
 \begin{equation*}
 e_l^{\lambda\alpha}(a,a')=  e_l^{\lambda}(a,\alpha a') = -e_l^\lambda(\alpha a',a) = -e_l(a', \hat\alpha \lambda a)
@@ -437,7 +438,7 @@ e_l^{\lambda\alpha}(a,a')=  e_l^{\lambda}(a,\alpha a') = -e_l^\lambda(\alpha a',
 <article class="theorem-like" id="theorem-30"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.11.10</span>
 </h6>
-<p id="p-354">The automorphism group of a polarized <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> is finite.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-60" id="proof-60"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-60" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-355">Let \(\alpha\) be an automorphism of \((A, \lambda)\) i.e. \(\lambda =\hat \alpha  \lambda \alpha\text{,}\) then \(\alpha^\dagger \alpha= 1\) and so</p>
+<p id="p-354">The automorphism group of a polarized <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> is finite.</p></article><article class="hiddenproof" id="proof-60"><a knowl="" class="id-ref" refid="hk-proof-60"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-60" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-355">Let \(\alpha\) be an automorphism of \((A, \lambda)\) i.e. \(\lambda =\hat \alpha  \lambda \alpha\text{,}\) then \(\alpha^\dagger \alpha= 1\) and so</p>
 <div class="displaymath">
 \begin{equation*}
 \alpha \in \End(A)\cap \{\beta \in \End(A) \otimes \RR: \trace(\alpha^\dagger \alpha) = 2g\}

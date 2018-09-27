@@ -294,6 +294,7 @@ MathJax.Hub.Config({
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -334,7 +335,7 @@ e,f,g\in K[x],\,e + f = g
 h(e,f,g) \lt r(efg) = r(e) + r(f)  + r(g)\text{.}
 \end{equation*}
 </div>
-<p id="p-702">We have sharpness if and only if \(f/g\) is a Belyi map for \(\PP^1 \to \PP^1\) with \((f/g)(\infty) \in \{0,1,\infty\}\text{.}\) Another way of saying this is that if \(\deg f = \deg g\) then their leading coefficients are equal, and hence \(\deg (e) \lt \deg (f)\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-100" id="proof-100"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-100" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-703">First of all we note that the statement is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> in \(e,f,g\text{,}\) so we may arrange that \(h(g) \le h(e,f)\) which implies that \(h(e) = h(f) = h(e,f,g)\text{.}\) The second statement is less obviously invariant but note that \(\phi\) is  a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a> is equivalent to \(1-\phi\) and \(1/\phi\) being Belyi also and this preserves \(\phi(\infty) \in \{0,1,\infty\}\text{,}\) so rearranging does not change the truth of the second statement either. Let \(\phi = f/g\) so \(\deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)\text{,}\) we will denote this by \(h\) now. Apply Riemann-Hurwitz (suprise-suprise)</p>
+<p id="p-702">We have sharpness if and only if \(f/g\) is a Belyi map for \(\PP^1 \to \PP^1\) with \((f/g)(\infty) \in \{0,1,\infty\}\text{.}\) Another way of saying this is that if \(\deg f = \deg g\) then their leading coefficients are equal, and hence \(\deg (e) \lt \deg (f)\text{.}\)</p></article><article class="hiddenproof" id="proof-100"><a knowl="" class="id-ref" refid="hk-proof-100"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-100" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-703">First of all we note that the statement is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> in \(e,f,g\text{,}\) so we may arrange that \(h(g) \le h(e,f)\) which implies that \(h(e) = h(f) = h(e,f,g)\text{.}\) The second statement is less obviously invariant but note that \(\phi\) is  a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a> is equivalent to \(1-\phi\) and \(1/\phi\) being Belyi also and this preserves \(\phi(\infty) \in \{0,1,\infty\}\text{,}\) so rearranging does not change the truth of the second statement either. Let \(\phi = f/g\) so \(\deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)\text{,}\) we will denote this by \(h\) now. Apply Riemann-Hurwitz (suprise-suprise)</p>
 <div class="displaymath">
 \begin{equation*}
 -2 = -2h + \sum_{x\in \PP^1} e_\phi(x) - 1\text{.}
@@ -520,7 +521,7 @@ K = X^3 - Y^2
 <p>is of degree \(\gt m\text{.}\)</p>
 <p id="p-722">(Now the speaker has just given a theorem with an inequality, so in <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> to appear smart one of you should ask is this bound sharp.)</p>
 <p id="p-723">The bound is sharp, this can mean several things in general, originally it was asked that for infinity many \(m\) there is an example where \(\deg K = m + 1\text{.}\)</p></article><p id="p-724">The first part was proved initially by Davenport (in the same year, and journal). The second part had to wait until '81 for Stothers to prove it.</p>
-<p id="p-725">Someone else should probably also ask, how is any of this related to Dessins?</p>
+<p id="p-725">Someone else should probably also ask, how is any of this related to <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a>?</p>
 <p id="p-726">To prove sharpness we have to exhibit for each \(m\) triple of polynomials \(X,Y,K\) of degrees \(2m,3m,m+1\text{.}\) Coming up with polynomial families is hard, drawing stupid pictures is easy, can <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a> aid us here?</p>
 <p id="p-727">Lets back-track, when we proved Mason-Stothers we also said that sharpness was equivalent to \(f/g\) being Belyi, so \(X(t)^3/K(t) = (K(t) + Y(t)^2) / K(t) = Y(t)^2/K(t) + 1\) should be a Belyi map of degree \(6m\) from \(\PP^1\to \PP^1\text{.}\) What does its ramification look like? We should have all preimages of \(0\) degree 3, preimages of \(1\) degree 2, and above infinity \(m + 1\) points of degree \(1\) and the remaining of degree \(6m - (m + 1) = 5m - 1\text{.}\)</p>
 <p id="p-728">How can we draw a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessin</a> like this? Begin with a tree with all internal vertices degree 3, with \(2m\) vertices, this will have \(2m - 1\) edges, and as it is trivalent by the handshake lemma</p>
@@ -564,7 +565,7 @@ K = X^3 - Y^2
 <p>\(m= 2\)</p>
 <div class="displaymath">
 \begin{equation*}
-(x^4 - 4x)^3 - (x^6 -6x^3+6)^2  = 8*x^3 - 36\text{.}
+(x^4 - 4x)^3 - (x^6 -6x^3+6)^2  = 8x^3 - 36\text{.}
 \end{equation*}
 </div></article><article class="example-like" id="example-36"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.10.8</span>
@@ -622,7 +623,7 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 64a^3 b + (a^2 - 18ab - 27b^2)^2 = (a+9b)^3(a+b)
 \end{equation*}
 </div>
-<p>which could of course be verified independently, but how would you find this identity without Dessins? Now for \(a = -32, b= 23\) we get</p>
+<p>which could of course be verified independently, but how would you find this identity without <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a>? Now for \(a = -32, b= 23\) we get</p>
 <div class="displaymath">
 \begin{equation*}
 - 2^{21} \cdot 23 +  11^2 =  -1 \cdot 3^2 \cdot 5^6 \cdot 7^3

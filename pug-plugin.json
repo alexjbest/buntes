@@ -84,7 +84,7 @@
 
             var regexs = [];
             for (var i = 0; i < terms.length; i++) {
-                regexs.push(RegExp('(\\s|\-)(' + RegExp.escape(terms[i]) + '|' + RegExp.escape(pluralize(terms[i])) + ')([\\s.,:/)]|$)', 'gi'));
+                regexs.push(RegExp('(\\s|\-)(' + RegExp.escape(terms[i]) + '|' + RegExp.escape(pluralize(terms[i])) + ')([\\s.,:?/)]|$)', 'gi'));
             }
 
             var ou = pugWalk(ast, function (node) {

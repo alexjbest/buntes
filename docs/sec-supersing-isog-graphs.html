@@ -302,6 +302,7 @@ MathJax.Hub.Config({
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs" class="active">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -316,7 +317,7 @@ MathJax.Hub.Config({
 <article class="definition-like" id="def-supersing-isog-ec"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.1.1</span> <span class="title">Elliptic curves</span>
 </h6>
-<p id="p-787">An <dfn class="terminology">elliptic curve</dfn> \(E/k\) is a smooth projective curve of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> 1 together with a point \(\infty \in E(k)\text{.}\)</p></article><p id="p-788">We can always write such a curve using a Weierstrass equation</p>
+<p id="p-787">An <dfn class="terminology">elliptic curve</dfn> \(E/k\) is a smooth projective curve of <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> 1 together with a point \(\infty \in E(k)\text{.}\)</p></article><p id="p-788">We can always write such a curve using a Weierstrass equation</p>
 <div class="displaymath">
 \begin{equation*}
 E\colon y^2=  x^3  + ax  +b,\,a,b    \in k
@@ -365,7 +366,7 @@ E\lb n \rb = \left\{ P \in E(\overline k) : nP = \infty\right\}
 </ol></article><article class="theorem-like" id="lemma-16"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">3.1.6</span>
 </h6>
-<p id="p-793">Let \(E/k\) be an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> with \(j(E) \not\in\{0,1728\}\) and let \(l\ne p\) be prime, up to isomorphism the number of \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> from \(E\) defined over \(k\) is 0,1,2 or \(l+1\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-104" id="proof-104"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-104" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-794">In Maria's notes.</p></article></div>
+<p id="p-793">Let \(E/k\) be an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> with \(j(E) \not\in\{0,1728\}\) and let \(l\ne p\) be prime, up to isomorphism the number of \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> from \(E\) defined over \(k\) is 0,1,2 or \(l+1\text{.}\)</p></article><article class="hiddenproof" id="proof-104"><a knowl="" class="id-ref" refid="hk-proof-104"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-104" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-794">In Maria's notes.</p></article></div>
 <article class="paragraphs" id="paragraphs-23"><h5 class="heading"><span class="title">The modular equation</span></h5>
 <p id="p-795">Let \(j(\tau)\) be the modular \(j\)-function. For each prime \(l\) the minimal polynomial \(\phi_l\) of \(j(l\tau)\) over \(\CC (j(\tau))\) is the modular polynomial</p>
 <div class="displaymath">
@@ -421,7 +422,7 @@ m_j(l,l') = \ord_{t=j} \phi_l(j,t)
 \end{equation*}
 </div>
 <p>vertices are \(\overline k\) isomorphism classes of  <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> \(/k\text{,}\) edges are isomorphism classes of \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> defined over \(k\text{.}\)</p></article><p id="p-803">Since \(m_l(j,j') =  m(j',j)\) whenever \(j,j' \ne  0,1728\) the subgraph of \(G_l(k)\) supported on \(k\smallsetminus \{0,1728\}\) can be thought of as undirected. By the last note \(G_l(k)\) consists of ordinary and supersingular components.</p></article><article class="paragraphs" id="paragraphs-26"><h5 class="heading"><span class="title">Supersingular isogeny graphs</span></h5>
-<p id="p-804">Since every supersingular \(j\)-invariant lives in \(\FF_{p^2}\) if \(E\) is supersingular all roots of \(\phi_l(j(E), y)\) live in \(\FF_{p^2}\text{.}\) every vertex in a supersingular component has out-degree \(l+1\text{.}\)</p>
+<p id="p-804">Since every supersingular \(j\)-invariant lives in \(\FF_{p^2}\) if \(E\) is supersingular all roots of \(\phi_l(j(E), y)\) live in \(\FF_{p^2}\text{.}\) Every vertex in a supersingular component has out-degree \(l+1\text{.}\)</p>
 <p id="p-805">Moreover by a result of Kohel \(G_l(\FF_{p^2})\) has only one supersingular component.</p>
 <p id="p-806">By the above if \(p \equiv 1 \pmod {12}\) then the supersingular component of \(G_l(\FF_{p^2})\) is an undirected \((l+1)\)-regular graph with around \(p/12\) vertices.</p>
 <article class="theorem-like" id="theorem-61"><h6 class="heading">
@@ -430,7 +431,7 @@ m_j(l,l') = \ord_{t=j} \phi_l(j,t)
 <p id="p-807">The supersingular component of \(G_l(\FF_{p^2})\) is a <a knowl="./knowl/def-supersing-isog-ramanujan.html" title="Definition 3.1.13: Ramanujan graphs">Ramanujan graph</a>.</p></article><article class="definition-like" id="def-supersing-isog-ramanujan"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.1.13</span> <span class="title">Ramanujan graphs</span>
 </h6>
-<p id="p-808">A connected \(d\)-regular graph is a <dfn class="terminology">Ramanujan graph</dfn> if \(\lambda_2 \le \sqrt{d-1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjaceny matrix. (The largest one is always \(d\text{,}\) by \(d\)-regularity.)</p></article></article><article class="paragraphs" id="paragraphs-27"><h5 class="heading"><span class="title">Ordinary isogeny graphs</span></h5>
+<p id="p-808">A connected \(d\)-regular graph is a <dfn class="terminology">Ramanujan graph</dfn> if \(\lambda_2 \le \sqrt{d-1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjacent matrix. (The largest one is always \(d\text{,}\) by \(d\)-regularity.)</p></article></article><article class="paragraphs" id="paragraphs-27"><h5 class="heading"><span class="title">Ordinary isogeny graphs</span></h5>
 <p id="p-809">Let \(E/\FF_q\) be an ordinary <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>, then \(\End(E) \simeq \ints\) is an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> in an imaginary quadratic field \(K\) with \(\ZZ\lb \pi \rb \subseteq \ints \subseteq \ints_K\) where \(\pi\) is Frobenius and</p>
 <div class="displaymath">
 \begin{equation*}

@@ -294,6 +294,7 @@ MathJax.Hub.Config({
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -369,7 +370,7 @@ A\sim_{\text{isog}} B \iff V_l A \simeq V_l B \forall l \ne p\text{.}
 \begin{equation*}
 A\sim_{\text{isog}} B \iff f_A = f_B
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-70" id="proof-70"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-70" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-412">By above \(V_l A \simeq V_lB\) for all \(l \ne p\) but \(f_A\) (resp. \(f_B\)) is the charpoly of \(\pi_a\) (\(\pi_B\)) on \(V_l A\) (\(V_l(B)\)).</p>
+</div></article><article class="hiddenproof" id="proof-70"><a knowl="" class="id-ref" refid="hk-proof-70"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-70" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-412">By above \(V_l A \simeq V_lB\) for all \(l \ne p\) but \(f_A\) (resp. \(f_B\)) is the charpoly of \(\pi_a\) (\(\pi_B\)) on \(V_l A\) (\(V_l(B)\)).</p>
 <p id="p-413">The Galois modules \(V_lA\) and \(V_l B\) are semisimple. The Brauer-Nesbitt theorem says \(f_A = f_B \implies V_lA \simeq V_lB \) for \(l\ne p\text{.}\)</p></article></div>
 <p id="p-414">Recalling that \(f_A\) is a power of the minimal polynomial of \(\pi_A\text{,}\)</p>
 <div class="displaymath">
@@ -393,7 +394,7 @@ r(f_A, f_B) = \rank \Hom(A,B)\text{.}
 </div></article><article class="theorem-like" id="corollary-28"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.14.8</span>
 </h6>
-<p id="p-418">Let \(d = \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}\text{,}\) let \(h_A = \operatorname{minpoly}_\QQ(\pi_A)\) then \(f_A = h_A^d\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-71" id="proof-71"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-71" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-419">Study the formula for \(r(f_A, f_A)\) Edixhoven-van der Geer-Moonen 16.22.</p></article></div>
+<p id="p-418">Let \(d = \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}\text{,}\) let \(h_A = \operatorname{minpoly}_\QQ(\pi_A)\) then \(f_A = h_A^d\text{.}\)</p></article><article class="hiddenproof" id="proof-71"><a knowl="" class="id-ref" refid="hk-proof-71"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-71" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-419">Study the formula for \(r(f_A, f_A)\) Edixhoven-van der Geer-Moonen 16.22.</p></article></div>
 <p id="p-420">So the next step is to try and recover \(\End^0(A)\) from \(\pi\text{.}\)</p>
 <article class="definition-like" id="def-csa"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.14.9</span> <span class="title">Central simple algebras</span>
@@ -442,7 +443,7 @@ D\mapsto (\operatorname{inv}_v(D))_v
 \begin{equation*}
 \operatorname{inv}_v(\End^0(A)) = \begin{cases} \frac{v(\pi_A)}{v(q)} [k_v: \QQ_p], \amp v|p\\ \frac 12,\amp v\text{ real}\\ 0, \amp \text{else}\end{cases}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-72" id="proof-72"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-72" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-426">Edixhoven-van der Geer-Moonen 16.30.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-72"><a knowl="" class="id-ref" refid="hk-proof-72"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-72" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-426">Edixhoven-van der Geer-Moonen 16.30.</p></article></div>
 <article class="theorem-like" id="proposition-37"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.14.14</span>
 </h6>
@@ -453,7 +454,7 @@ D\mapsto (\operatorname{inv}_v(D))_v
 \begin{equation*}
 \pi_A\sim \pi_B \iff f_A = f_B\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-73" id="proof-73"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-73" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-429">\(\Leftarrow\) done.</p>
+</div></article><article class="hiddenproof" id="proof-73"><a knowl="" class="id-ref" refid="hk-proof-73"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-73" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-429">\(\Leftarrow\) done.</p>
 <p id="p-430">\(\Rightarrow\) Let \(D_{\pi_A} , D_{\pi_B}\) be the division rings with invariants specified as in <a knowl="./knowl/prop-elem-av-local-invs.html" title="Proposition 1.14.13">Proposition 1.14.13</a>. \(\pi_A\sim \pi_B \implies D_{\pi_A} \simeq D_{\pi_B} \implies f_A = \operatorname{minpoly}(\pi_A) ^d = f_B\text{.}\)</p></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.14.3</span> <span class="title">Surjectivity and CM theory</span>
 </h3>
@@ -464,7 +465,7 @@ D\mapsto (\operatorname{inv}_v(D))_v
 <p id="p-432">Such a \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> \(\pi\) is called effective.</p></article><article class="theorem-like" id="proposition-38"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.14.17</span>
 </h6>
-<p id="p-433">A \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> \(\pi\) is effective if and only if \(\pi^N\) is effective for some \(N\in \ZZ_{\ge 1}\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-74" id="proof-74"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-74" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-434">\(\Rightarrow\) clear.</p>
+<p id="p-433">A \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> \(\pi\) is effective if and only if \(\pi^N\) is effective for some \(N\in \ZZ_{\ge 1}\text{.}\)</p></article><article class="hiddenproof" id="proof-74"><a knowl="" class="id-ref" refid="hk-proof-74"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-74" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-434">\(\Rightarrow\) clear.</p>
 <p id="p-435">\(\Leftarrow\) By assumption we have \(A'/k\) a <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> s.t. \(\pi_{A'} \sim  \pi^N\) for \(k\) a degree \(N\) extension of \(\FF_q\text{.}\) Let</p>
 <div class="displaymath">
 \begin{equation*}
@@ -515,7 +516,7 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 \begin{equation*}
 [L:\QQ(\pi) ] = [ D_\pi: \QQ(\pi)]^{1/2}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-75" id="proof-75"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-75" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-440">Two cases:</p>
+</div></article><article class="hiddenproof" id="proof-75"><a knowl="" class="id-ref" refid="hk-proof-75"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-75" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-440">Two cases:</p>
 <ol class="decimal">
 <li id="li-94">\(\QQ(\pi)\) is totally real, in which case \(\QQ(\pi) = \QQ\) or \(\QQ(\sqrt{p})\text{.}\)</li>
 <li id="li-95">\(\QQ(\pi)\) is a CM field with totally real subfield \(\QQ(\pi + q/\pi)\text{.}\)</li>
@@ -564,12 +565,12 @@ L\hookrightarrow \End^0(A)
 <p id="p-443">The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \(\Phi\text{.}\) We then say \(A/\CC\) is of type \((L,\Phi)\text{.}\)</p></article><article class="theorem-like" id="theorem-36"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.14.21</span>
 </h6>
-<p id="p-444">For any <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \((L,\Phi)\) there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\CC\) of type \((L, \Phi)\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-76" id="proof-76"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-76" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-445">Found in Shimura-Taniyama.</p></article></div>
+<p id="p-444">For any <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \((L,\Phi)\) there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\CC\) of type \((L, \Phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-76"><a knowl="" class="id-ref" refid="hk-proof-76"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-76" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-445">Found in Shimura-Taniyama.</p></article></div>
 <p id="p-446">The fact that \(A\) is in fact defined over  a number field \(K\) is also in Shimura-Taniyama.</p>
 <article class="theorem-like" id="theorem-37"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.14.22</span>
 </h6>
-<p id="p-447">Let \(A/K\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> which admits CM. Then \(A/K\) admits potentially good reduction at all places \(v\) of \(K\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-77" id="proof-77"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-77" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-448">Highly nontrivial, Neron models, Chevalley decomposition, Neron-Ogg-Shafarevich criterion, result of Grothendieck on potentially stable reduction.</p></article></div>
+<p id="p-447">Let \(A/K\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> which admits CM. Then \(A/K\) admits potentially good reduction at all places \(v\) of \(K\text{.}\)</p></article><article class="hiddenproof" id="proof-77"><a knowl="" class="id-ref" refid="hk-proof-77"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-77" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-448">Highly nontrivial, Neron models, Chevalley decomposition, Neron-Ogg-Shafarevich criterion, result of Grothendieck on potentially stable reduction.</p></article></div>
 <p id="p-449">After passing to a finite extension we will assume \(A/K\) has good reduction at places \(v|p\text{.}\) So we have a reduction \(A_{\FF_{q'}}/\FF_{q'}\text{.}\) For a place \(w|p\) of \(L\) let</p>
 <div class="displaymath">
 \begin{equation*}
@@ -589,7 +590,7 @@ L\hookrightarrow \End^0(A)
 \begin{equation*}
 \frac{w(\pi_{A_{\FF_{q'}}})}{w(q')} = \frac{\#\Phi_w}{\#\Sigma_w}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-78" id="proof-78"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-78" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-451">Tate has a proof using CM theory of \(p\)-divisible groups.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-78"><a knowl="" class="id-ref" refid="hk-proof-78"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-78" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-451">Tate has a proof using CM theory of \(p\)-divisible groups.</p></article></div>
 <p id="p-452">Recall we fixed \(\pi\) and from this we deterministically formed \(\QQ(\pi), D_{\pi}, L\) however we have no restriction on our choice of \(\Phi\text{.}\)</p>
 <article class="theorem-like" id="lemma-11"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">1.14.24</span>
@@ -599,7 +600,7 @@ L\hookrightarrow \End^0(A)
 \begin{equation*}
 \frac{w(\pi)}{w(q)} = \frac{\#\Phi_w}{\#\Sigma_w}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-79" id="proof-79"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-79" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-454">Let \(v = w|_{\QQ(\pi)}\) be the place of \(\QQ(\pi)\) below \(w\text{.}\) Let</p>
+</div></article><article class="hiddenproof" id="proof-79"><a knowl="" class="id-ref" refid="hk-proof-79"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-79" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-454">Let \(v = w|_{\QQ(\pi)}\) be the place of \(\QQ(\pi)\) below \(w\text{.}\) Let</p>
 <div class="displaymath">
 \begin{equation*}
 n_w = \frac{w(\pi)}{w(q)}\#\Sigma_w = \frac{w(\pi)}{w(q)}[L_w :\QQ_p]

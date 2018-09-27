@@ -294,6 +294,7 @@ MathJax.Hub.Config({
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -392,7 +393,7 @@ f\colon S\to S'
 </div>
 <p>such that for all charts \(\phi, \psi\) on  \(S, S'\) respectively we have \(\psi \circ f \circ \phi\inv\) is holomorphic.</p>
 <p id="p-487">We call a morphism \(f\colon S\to \CC\) a <dfn class="terminology">holomorphic function</dfn> on \(S\text{.}\)</p>
-<p id="p-488">We say \(f \colon S \to \CC\) is a <dfn class="terminology">meromorphic function</dfn> is \(f\circ \phi\inv\) is meromorphic.</p></article><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-7" id="exercise-7"><h6 class="heading">
+<p id="p-488">We say \(f \colon S \to \CC\) is a <dfn class="terminology">meromorphic function</dfn> is \(f\circ \phi\inv\) is meromorphic.</p></article><article class="exercise-like" id="exercise-7"><a knowl="" class="id-ref" refid="hk-exercise-7"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.2.7</span>
 </h6></a></article><div id="hk-exercise-7" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-489">The set of <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> form a field.</p></article></div>
 <p id="p-490">We denote the field of <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> by \(\mathcal M (S)\text{.}\)</p>
@@ -403,7 +404,7 @@ f\colon S\to S'
 \begin{equation*}
 \mathcal M(\hat \CC) = \CC(z)\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-82" id="proof-82"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-82" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-492">Let \(f\colon \hat\CC \to \CC\) be meromorphic. Then the number of poles of \(f\) is finite say at \(a_1, \ldots, a_n\text{.}\) So, locally at  \(a_i\) we can write</p>
+</div></article><article class="hiddenproof" id="proof-82"><a knowl="" class="id-ref" refid="hk-proof-82"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-82" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-492">Let \(f\colon \hat\CC \to \CC\) be meromorphic. Then the number of poles of \(f\) is finite say at \(a_1, \ldots, a_n\text{.}\) So, locally at  \(a_i\) we can write</p>
 <div class="displaymath">
 \begin{equation*}
 f(z) = \sum_{j=1}^{j_i} \frac{\lambda_{j,i}}{(z-a_i)^j} + h_i(z)
@@ -417,7 +418,7 @@ f(z) - \sum_{i=1}^n \sum_{j=1}^{j_i} \frac{\lambda_{j,i}}{(z-a_i)^j}
 </div>
 <p>is holomorphic everywhere. By Liouville's theorem this is constant.</p></article></div>
 <p id="p-493">We say \(S,S'\) are isomorphic if \(\exists f\colon S\to S'\text{,}\) \(g\colon S'\to S\) morphisms such that \(f\circ g = \id_{S'}\text{,}\) \(g\circ f = \id_{S}\text{.}\)</p>
-<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-8" id="exercise-8"><h6 class="heading">
+<article class="exercise-like" id="exercise-8"><a knowl="" class="id-ref" refid="hk-exercise-8"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.2.9</span>
 </h6></a></article><div id="hk-exercise-8" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-494">Show that</p>
 <div class="displaymath">

@@ -176,7 +176,7 @@ section#sec-supersing-isog-graphs
 
             p
                 | Since every supersingular #[m j]-invariant lives in #[m \FF_{p^2}] if #[m E] is supersingular all roots of #[m \phi_l(j(E), y)] live in #[m \FF_{p^2}].
-                | every vertex in a supersingular component has out-degree #[m l+1].
+                | Every vertex in a supersingular component has out-degree #[m l+1].
             p
                 | Moreover by a result of Kohel #[m G_l(\FF_{p^2})] has only one supersingular component.
             p
@@ -190,7 +190,7 @@ section#sec-supersing-isog-graphs
             definition#def-supersing-isog-ramanujan
                 title Ramanujan graphs
                 statement: p
-                    | A connected #[m d]-regular graph is a #[term Ramanujan graph] if #[m \lambda_2 \le \sqrt{d-1}] where #[m \lambda_2] is the second largest eigenvalue of its adjaceny matrix.
+                    | A connected #[m d]-regular graph is a #[term Ramanujan graph] if #[m \lambda_2 \le \sqrt{d-1}] where #[m \lambda_2] is the second largest eigenvalue of its adjacent matrix.
                     | (The largest one is always #[m d], by #[m d]-regularity.)
 
 
@@ -962,6 +962,16 @@ section#sec-quaternion-algebras
                     | Show that the elliptic curve from the exercise earlier
                     me y^2 + y = x^3/\overline{\FF_2}
                     | has endomorphism algebra the Hurwitz order.
+                solution
+                    p
+                        | Here is what me and Angus think, we have the 2-power frobenius #[m \pi] a degree 2 isogeny whose square is minus 2, we also have the isogeny #[m \phi \colon x\mapsto \zeta_3 x, y\mapsto y] which is in fact an automorphism (degree 1) and satisifies #[m \phi^2 + \phi + 1 = 0].
+                        | The relation between these two isogenies is that #[m \pi \phi  = \phi^2 \pi \colon x\mapsto \zeta_3^2 x^2, y\mapsto y^2].
+                    p
+                        | Inside the Huwitz order we have some candidates for an element whose square is #[m -2] there are a few, coming in two types #[m a+ b] for #[m a \ne b \in \{i,j,k\}] and #[m a-b] for #[m a\ne b\in \{i,j,k\}], we choose the second type (why? because it works and the other doesn't), let #[m p = i + j] for concreteness.
+                        | We also have a cube root of unity in the Hurwitz order, it is #[m f = (-1 + i + j + k)/2].
+                    p
+                        | We can calculate now what #[m pf] and #[m f^2 p] are, they both come out to be #[m - i + k], some other square root of minus 2, which makes sense because degree is multiplicative.
+                        | Anyway this is consistent with the endomorphism ring but there is a slight problem, the order generated here has discriminant #[m 6], so its non-maximal as we know its contained in the Hurwitz order but the discriminant is higher, Deuring tells us we have to get a maximal order so we need something extra.
 
             p
                 | Warning, there is no such thing as #[em the] maximal order of a quaternion algebra!
@@ -1071,3 +1081,262 @@ section#sec-quaternion-algebras
 
 
 
+section#sec-deuring
+    title The Deuring Correspondence (Maria Ines)
+
+    introduction
+        p References:
+        p: ol
+            li Voight ch. 16,17,42
+            li Hard and Easy Problems for Supersingular Isogeny Graphs - Christophe Petit and Kristin Lauter #[url(href="https://eprint.iacr.org/2017/962.pdf")/]
+
+    subsection
+        title Background: Ideals and Ideal classes
+
+        p
+            | Let #[m B/\QQ] be a quaternion algebra and  #[m \ints \subseteq B] be an order.
+            | If #[m I \subseteq B ] is a  lattice, we can define #[m \ints_L (I) = \{ \alpha\in  B :  \alpha I  \subseteq I \}].
+            | This is an order , it's the left order of  #[m  I] similarly can define #[m \ints_R (I) ].
+
+        definition
+            statement: p
+                |  A left (resp. right) fractional ideal is a lattice #[m I \subseteq B] s.t. #[m \ints \subseteq       \ints_L (I) ] resp #[m \ints \subseteq \ints_R (I) ]
+
+        definition
+            statement: p
+                |  For lattices #[m I,J \subseteq B] we say #[m I] is #[term compatible] with #[m J] if
+                me \ints_R(I)= \ints_L(J)
+                |.
+                | A lattice #[m I ] is invertible if there is a lattice #[m I' \subseteq B] s.t.
+                me II' = \ints_L(I) =  \ints_R(I')
+                me I'I = \ints_L(I') =  \ints_R(I)
+                | with both products compatible
+
+        proposition
+            statement: p
+                | Let #[m \ints \subseteq B] be a maximal order then every left or right fractional #[m \ints]-ideal is invertible.
+        definition
+            statement: p
+                | An ideal of the form
+                me I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
+                | is a principal ideal.
+        fact: statement: p #[m I ] is invertible with #[m I\inv = \alpha \inv \ints_L(I) =  \ints_R(I) \alpha \inv].
+
+        definition
+            statement: p
+                | Let #[m I \subseteq B] be a fractional ideal the #[term reduced norm] of #[m I ] is the positive generator of the fractional ideal generated by
+                me \{ \operatorname{nrd} (\alpha) :  \alpha \in I \}
+                | in #[m \QQ]. We denote it #[m \operatorname{nrd}(I)].
+
+        paragraphs
+            title Ideal classes
+            definition
+                statement: p
+                    | Two left fractional ideals #[m I,J \subseteq B] are in the same left class
+                    me I\sim_L J
+                    | if #[m \exists  \alpha \in B^\times] s.t. #[m I\alpha = J]. Equivalently if #[m \ints_L(I)  = \ints_L(J)] and #[m I \sim J] as left modules over this order.
+                    | #[m \sim_L] is an equivalence relation #[m \lb I \rb] is the class of #[m I].
+                    | If #[m I ] is invertible then every #[m J \in \lb I \rb_L] is invertible, and then we say #[m \lb I \rb_L ] is invertible.
+
+            definition
+                statement: p
+                    | Let #[m \ints \subseteq B] be an order.
+                    | The #[term left class set] of #[m \ints] is
+                    me \operatorname{Cls}_L \ints   = \{ \lb I \rb_L : I \subseteq B \text{ is invertible  and } \ints_L(I) = \ints\}
+                    | its a pointed set with distinguished element #[m \lb \ints \rb_L].
+            theorem
+                statement: p
+                    | Let #[m \ints \subseteq B] be an order. then #[m \operatorname{Cls} _L \ints] is finite.
+                    | We call #[m \# \operatorname{Cls}_L\ints ] the #[term left class number] of #[m \ints].
+
+        paragraphs
+            title Types of orders
+
+            p
+                | Let #[m \ints ,\ints'  \subseteq B] be orders.
+
+            definition
+                statement: p
+                    | We say #[m \ints,\ints' ] are of the same type if #[m \exists \alpha \in B^\times] s.t. #[m \ints ' = \alpha \inv \ints \alpha].
+                    | #[m \ints,\ints'] are locally of the same type if #[m \ints_p, \ints_p'] are of the same type for all primes in #[m \ZZ\cup\{\infty\}].
+                    | #[m \ints] is connected to  #[m \ints'] if there exists an invertible fractional #[m \ints,\ints']-ideal #[m J \subseteq B] called a connecting ideal.
+            lemma
+                statement
+                    p
+                        | #[m \ints,\ints'] are of the same type iff they are isomorphic as #[m \ZZ]-algebras.
+                    p
+                        | #[m \ints,\ints'] are connected iff they are locally of the same type.
+
+            definition
+                statement: p
+                    | Let #[m \ints \subseteq B] be an order.
+                    ol
+                        li
+                            | The #[term genus] #[m \operatorname{Gen}(\ints)] of #[m \ints ] is the set of orders in #[m B ] connected to #[m \ints].
+                        li
+                            | The type set #[m \operatorname{Typ}(\ints)] of #[m \ints] is the set of #[m \ZZ]-algebra isomorphism classes of orders in #[m \operatorname{Gen} (\ints)].
+
+            lemma
+                statement: p
+                    | The set map #[m \operatorname{Cls}_L(\ints) \to \operatorname{Typ}(\ints)]
+                    me [ I]_L \mapsto \text{class of } \ints_R(I)
+                    | is surjective.
+
+            remark: p
+                ol
+                    li
+                        | Any two maximal orders in #[m B] are connected.
+                    li
+                        | In particular there are only finitely many conjugacy classes of maximal orders in #[m B].
+
+            example
+                title Voight 17.6.3
+                statement: p
+                    | Let
+                    me B = \legendre{-1,-23}{\QQ}
+                    | Then #[m \ints=  \ZZ +  \ZZ i + \ZZ \frac{i+j}{2} + \ZZ i \frac{i+j}{2}] is a maximal order and
+                    me \operatorname{Typ}(\ints) =  \left\{ \lb \ints \rb , \lb \ints_2 \rb , \lb \ints_3 \rb \right\}
+                    | .
+
+    subsection
+        title The Deuring Correspondence
+
+
+        p
+            | Fix a prime #[m p], let #[m E] be an elliptic curve over #[m \FF_q = \FF_{p^n}].
+
+        lemma
+            statement: p
+                | The endomorphism algebra  #[m \End(E)_\QQ = \End(E) \otimes \QQ] of #[m E] is either #[m \QQ] an imaginary quadratic field or a definite quaternion algebra #[m /\QQ].
+                // EASY????
+
+        theorem
+            title Deuring, this proof by Lenstra
+            statement: p
+                | Let #[m E/\FF_q] be a s.s. e.c. (i.e. assume #[m \End(E) \otimes \QQ] is a quaternion algebra).
+                | Then #[m \operatorname{Ram}(B)  =    \{p, \infty\}] and #[m \ints = \End(E) ] is a maximal order in #[m B].
+            proof
+                p
+                    | Let #[m n \gt 0]  be prime to #[m p ]. Then
+                    me E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
+                    | as groups so #[m \End(E\lb n\rb ) \simeq M_2(\ZZ/n)].
+                p
+                    | Claim: The structure map #[m \ints/n\ints  \to \End(E\lb n \rb)] is an isomorphism.
+                p
+                    | Check: suppose #[m \phi \in  \ints] kills #[m E\lb n \rb], then since #[m \phi] is separable then #[m \exists] #[m \psi \in \ints] s.t. #[m \phi = n \psi].
+                    | Hence #[m \phi = 0 \in \ints/n].
+                    | This gives injectivity.
+                p
+                    | As both rings are finite with the same order #[m n^4] we have an isomorphism.
+                p
+                    | Since #[m \ints] is a free #[m \ZZ] module
+                    me \ints_l = \ints \otimes \QQ_l = \ints \otimes \varprojlim _n \ZZ/l^n
+                    me \simeq \varprojlim_n \ints/l^n \simeq \varprojlim_n \End(E[l^n])
+                    me \simeq \End_{\ZZ_l}  \simeq M_2( \ZZ_l)
+                    | for any #[m l \ne p] primes.
+                    | This is an isomorphism as #[m \ZZ]-algebras.
+
+                p
+                    | In particular #[m \ints_l] is maximal in #[m B_l \simeq M_2(\QQ_l)] and #[m B] is split at #[m l] for all #[m l\ne p].
+                    | Since #[m B] is definite, it follows from the classification theorem that #[m \operatorname{Ram}(B)  = \left\{ p, \infty \right\}].
+                p
+                    | Fact: #[m \ints_p] is maximal in #[m B_p] (thm 42.1.9 of voight).
+                p
+                    | #[m \ints] is maximal in #[m B] because it is locally maximal.
+
+        theorem
+            title Deuring correspondence
+            statement: p
+                me \left\{ \text{maximal orders }\ints \subseteq B_{p,\infty}\right\}/\sim \leftrightarrow \left\{ j \text{ s.s. }\in \FF_{p^2}\right\}/\Gal{\FF_{p^2}}{\FF_p}
+                |.
+            proof: p
+                | Voight 42.4.7.
+
+        definition
+            statement: p
+                | Let #[m I \subseteq \ints = \End(E)] be an integral left #[m \ints]-ideal with #[m (\operatorname{nrd}(I), p) = 1].
+                | Define
+                me E\lb I \rb = \{ P \in E(\overline \FF_q) :  \alpha(P) = 0 \forall \alpha \in I\}
+                | Then there is a separable isogeny
+                me \Phi_I  \colon E \to E / E \lb I \rb
+                | with #[m \ker \Phi_I = E \lb I \rb].
+        fact: statement: p
+            me \deg (\Phi_I)  = \operatorname{nrd}(I)
+
+        proposition
+            statement: p
+                | The association #[m I \mapsto \phi_I] is a 1-1 correspondence provided that #[m (\deg \phi_I, p) = 1].
+                /// TODO ??????? this cant be literally true
+
+
+    subsection
+        title Applications to SIG crypto
+
+        problem
+            title Constructive Deuring correspondence
+            statement: p
+                | Given a maximal order #[m \ints \subseteq B_{p,\infty}] return a s.s. #[m j]-invariant #[m j] s.t. #[m \ints \simeq \End(E_j)].
+                // TODOwtf cant we have twists with different end algebra?
+                // Maybe this is only for ordinary?!
+
+        problem
+            title Inverse Deuring correspondence
+            statement: p
+                | Given a supersingular #[m j] invariant #[m j], compute a maximal order #[m \ints \subseteq B_{p,\infty}]  s.t. #[m \ints \simeq \End(E_j)].
+                | #[m \ints] is described by a #[m \ZZ]-basis.
+
+        problem
+            title Endomorphism ring computation problem
+            statement: p
+                | Given a supersingular #[m j] invariant #[m j], #[m \End(E_j)].
+                | #[m \End(E_j)] should be returned as #[m 4] or #[m 3] rational maps that form a #[m \ZZ]-basis.
+                | Their representation should be efficient in storage and in evaluation time at points.
+
+        remark
+             p
+                ol
+                    li
+                        | Problem 1 can be solved in polynomial time, (Prop. 14 in Petit-Lauter).
+                    li
+                        | P2 and P3 are polynomially equivalent but this isn't obvious (P-L sec.3.1 and 3.2)
+                    li
+                        | There is no known efficient algorithm to solve P3.
+
+        p
+            | Recall: the (Charles-Goren-Lauter) CGL hash function is preimage resistant iff given 2 s.s. #[m j]-invariants #[m j_1,j_2] its computationally hard to compute a  positive integer #[m e] and an isogeny #[m \phi \colon E_{j_1} \to E_{j_2}] of degree #[m l^e].
+
+        proposition
+            statement: p
+                | Assume there's an efficient algorithm to solve P3. Then there is an efficient algorithm to solve the preimage problem for the CGL hash function
+            proof
+                p
+                    | Algorithm
+                p
+                    | Input: two s.s. #[m j]-invariants #[m j_s,j_t \in \FF_{p^2}].
+                p
+                    | Output: sequence of #[m j]-invariants
+                    me j_s,\ldots,j_0,\ldots, j_t
+                    |.
+
+                p
+                    ol
+                        li
+                            | Compute #[m \End(j_s),\End(j_t)].
+                        li
+                            | Compute #[m \ints_s \simeq \End(E_{j_s})], #[m \ints_t \simeq \End(E_{j_t})]
+                        li
+                            | Compute ideals #[m I_s] and #[m I_t] connecting #[m \ints_0 ] to #[m \ints_s], #[m \ints_t]
+                        li
+                            | Compute ideals #[m J_s \in \lb I_s \rb],#[m J_t \in \lb I_t \rb], with norms #[m l^{e_s},l^{e_t}].
+                        li
+                            | For #[m J \in \{J_s,J_t\}] and corresponding #[m E \in \{E_s,E_t\}] and #[m e\in \{e_s, e_t\}] compute #[m J_i = \ints_0 p^2 + \ints_0 l^i] for #[m i = 0,\ldots, e].
+                            | For #[m i = 0,\ldots, e] compute #[m K_i \in \lb J_i \rb_L] with powersmooth norm. Translate #[m K_i] into an isogeny
+                            me \phi\colon E_0 \to E_i
+                            |  Deduce a sequence #[m (j_0, j(E_1),\ldots,j(E) = j_e)].
+                        li
+                            | Return #[m (j(E_s), \ldots,j_0, \ldots,j(E_t))].
+
+                p
+                    | Except for step 1 everything can be done efficiently.
+
+        remark: p The converse is also true.

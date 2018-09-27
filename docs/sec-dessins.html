@@ -294,6 +294,7 @@ MathJax.Hub.Config({
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -358,7 +359,7 @@ G_\QQ \acts (X,D) \leftrightarrow (S,f) \acts G_\QQ
 \{\text{faces of }D\}
 \end{equation*}
 </div>
-<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-17" id="exercise-17"><h6 class="heading">
+<article class="exercise-like" id="exercise-17"><a knowl="" class="id-ref" refid="hk-exercise-17"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.7.3</span>
 </h6></a></article><div id="hk-exercise-17" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-644">Prove this.</p></article></div>
 <article class="remark-like" id="remark-15"><h6 class="heading">
@@ -392,7 +393,7 @@ G_\QQ \acts (X,D) \leftrightarrow (S,f) \acts G_\QQ
 <article class="theorem-like" id="proposition-57"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.7.6</span>
 </h6>
-<p id="p-649">There exists \((X,D)\) with permutation representation \((\sigma_0, \sigma_1)\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-97" id="proof-97"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-97" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-650">Write \(\sigma_0\sigma_1 = \tau_1 \cdots \tau_k\text{,}\) \(\tau_i\) disjoint cycles each of length \(n_i\) with \(\sum n_i = N\text{.}\) Create \(k\) faces bounded by \(2n_1, \ldots, 2n_k\) vertices, and assign the vertices white and black colours so that the graph is bicoloured. As \(\sigma_0\sigma_1\) should jump two each time we get an identification of all edges which we then  glue using \(\sigma_0\text{.}\)</p></article></div>
+<p id="p-649">There exists \((X,D)\) with permutation representation \((\sigma_0, \sigma_1)\text{.}\)</p></article><article class="hiddenproof" id="proof-97"><a knowl="" class="id-ref" refid="hk-proof-97"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-97" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-650">Write \(\sigma_0\sigma_1 = \tau_1 \cdots \tau_k\text{,}\) \(\tau_i\) disjoint cycles each of length \(n_i\) with \(\sum n_i = N\text{.}\) Create \(k\) faces bounded by \(2n_1, \ldots, 2n_k\) vertices, and assign the vertices white and black colours so that the graph is bicoloured. As \(\sigma_0\sigma_1\) should jump two each time we get an identification of all edges which we then  glue using \(\sigma_0\text{.}\)</p></article></div>
 <article class="definition-like" id="definition-63"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.7.7</span>
 </h6>
@@ -494,14 +495,14 @@ G_\QQ\acts \{\text{Dessins}\}\leftrightarrow \{\text{Belyi pairs}\}
 }
 \end{equation*}
 </div>
-<p id="p-660">The \(G_\QQ\) action is faithful on <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessins</a> of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> \(g\text{.}\)</p>
+<p id="p-660">The \(G_\QQ\) action is faithful on <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessins</a> of <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> \(g\text{.}\)</p>
 <article class="example-like" id="example-32"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.7.11</span>
 </h6>
-<p id="p-661">Same example \(\PP^1\) with a single edge, \(f_D  = z\text{,}\) \(\deg f_D = \#\) edges, \(m_v(f)=  \deg v\text{.}\)</p></article><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-18" id="exercise-18"><h6 class="heading">
+<p id="p-661">Same example \(\PP^1\) with a single edge, \(f_D  = z\text{,}\) \(\deg f_D = \#\) edges, \(m_v(f)=  \deg v\text{.}\)</p></article><article class="exercise-like" id="exercise-18"><a knowl="" class="id-ref" refid="hk-exercise-18"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.7.12</span>
 </h6></a></article><div id="hk-exercise-18" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-662">String.</p></article></div>
-<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-19" id="exercise-19"><h6 class="heading">
+<article class="exercise-like" id="exercise-19"><a knowl="" class="id-ref" refid="hk-exercise-19"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.7.13</span>
 </h6></a></article><div id="hk-exercise-19" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-663">\(n\) star.</p></article></div></section></section></div></main>
 </div>

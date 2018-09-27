@@ -294,6 +294,7 @@ MathJax.Hub.Config({
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -301,10 +302,10 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-riemann-hurwitz"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Riemann Hurwitz Formula (Sachi)</span>
 </h2>
-<a href="sec-riemann-hurwitz.html" class="permalink">¶</a><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-9" id="exercise-9"><h6 class="heading">
+<a href="sec-riemann-hurwitz.html" class="permalink">¶</a><article class="exercise-like" id="exercise-9"><a knowl="" class="id-ref" refid="hk-exercise-9"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.3.1</span> <span class="title">Unimportant</span>
-</h6></a></article><div id="hk-exercise-9" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-509">The <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> is invariant under changing triangulation.</p></article></div>
-<p id="p-510">In particular there are at least two distinct ways of thinking about <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> for <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> \(R\)</p>
+</h6></a></article><div id="hk-exercise-9" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-509">The <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> is invariant under changing triangulation.</p></article></div>
+<p id="p-510">In particular there are at least two distinct ways of thinking about <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> for <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> \(R\)</p>
 <ol class="decimal">
 <li id="li-101"><div class="displaymath">
 \begin{equation*}
@@ -313,7 +314,7 @@ MathJax.Hub.Config({
 </div></li>
 <li id="li-102">The dimension of the space of holomorphic differentials on \(R\text{.}\)</li>
 </ol>
-<p id="p-511">Goal: given \(R\) calculate <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a></p>
+<p id="p-511">Goal: given \(R\) calculate <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a></p>
 <div class="displaymath">
 \begin{equation*}
 y^2 = (x+1)(x-1)(x+2)(x-2)
@@ -386,8 +387,8 @@ f(U_r) \subseteq V_s\text{.}
 \begin{equation*}
 \xymatrix{U_r \ar[r]^f \ar[d]_\phi &amp; V_s \ar[d]^\Psi \\ D \ar[r]_{w\mapsto w^m} &amp; D}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-83" id="proof-83"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-83" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-517">In Sachi's notes.</p></article></div>
-<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-84" id="proof-84"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-84" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-518">Of <a knowl="./knowl/claim-euler-degree-total-branching.html" title="Claim 2.3.3">Claim 2.3.3</a>.</p>
+</div></article><article class="hiddenproof" id="proof-83"><a knowl="" class="id-ref" refid="hk-proof-83"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-83" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-517">In Sachi's notes.</p></article></div>
+<article class="hiddenproof" id="proof-84"><a knowl="" class="id-ref" refid="hk-proof-84"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-84" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-518">Of <a knowl="./knowl/claim-euler-degree-total-branching.html" title="Claim 2.3.3">Claim 2.3.3</a>.</p>
 <p id="p-519">Triangulate \(R\) so that every face lies in some small coordinate neighborhood s.t.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -525,7 +526,7 @@ z\not\in \Lambda
 </div></article><article class="theorem-like" id="corollary-31"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">2.3.9</span>
 </h6>
-<p id="p-533">There are no non-constant morphisms from a sphere to a surface of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> \(\gt 0\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-85" id="proof-85"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-85" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-534">
+<p id="p-533">There are no non-constant morphisms from a sphere to a surface of <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> \(\gt 0\text{.}\)</p></article><article class="hiddenproof" id="proof-85"><a knowl="" class="id-ref" refid="hk-proof-85"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-85" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-534">
 \begin{equation*}
 f\colon \PP^1 \CC \to S
 \end{equation*}
@@ -540,7 +541,7 @@ f\colon \PP^1 \CC \to S
 2 = (+)\cdot (-) - b\text{.}
 \end{equation*}
 </div></article></div>
-<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-10" id="exercise-10"><h6 class="heading">
+<article class="exercise-like" id="exercise-10"><a knowl="" class="id-ref" refid="hk-exercise-10"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.3.10</span>
 </h6></a></article><div id="hk-exercise-10" class="hidden-content tex2jax_ignore"><article class="exercise-like"><div class="displaymath" id="p-535">
 \begin{equation*}
@@ -548,7 +549,7 @@ x^n  +y^ n + z^n = 0
 \end{equation*}
 </div>
 <p>is not solvable in non-constant polynomials for \(n \gt 2\text{.}\)</p></article></div>
-<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-11" id="exercise-11"><h6 class="heading">
+<article class="exercise-like" id="exercise-11"><a knowl="" class="id-ref" refid="hk-exercise-11"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.3.11</span>
 </h6></a></article><div id="hk-exercise-11" class="hidden-content tex2jax_ignore"><article class="exercise-like"><div class="displaymath" id="p-536">
 \begin{equation*}
@@ -562,10 +563,10 @@ f \colon E \to E / \sim
 \end{equation*}
 </div>
 <p>is nice, compute the <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a>  of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> 4 and <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> 2.</p></article></div>
-<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-12" id="exercise-12"><h6 class="heading">
+<article class="exercise-like" id="exercise-12"><a knowl="" class="id-ref" refid="hk-exercise-12"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.3.12</span>
 </h6></a></article><div id="hk-exercise-12" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-537">\(X\) compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> of \(g\ge 2\) then there are at most \(84(g-1)\) automorphisms of \(X\text{.}\)</p></article></div>
-<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-13" id="exercise-13"><h6 class="heading">
+<article class="exercise-like" id="exercise-13"><a knowl="" class="id-ref" refid="hk-exercise-13"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.3.13</span>
 </h6></a></article><div id="hk-exercise-13" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-538">Klein quartic</p>
 <div class="displaymath">
@@ -573,7 +574,7 @@ f \colon E \to E / \sim
 x^3 y + y^3 z + z^3 x = 0
 \end{equation*}
 </div>
-<p>has 168 automorphisms and is <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> 3.</p></article></div></article></section></div></main>
+<p>has 168 automorphisms and is <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> 3.</p></article></div></article></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

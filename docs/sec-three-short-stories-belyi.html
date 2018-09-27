@@ -294,6 +294,7 @@ MathJax.Hub.Config({
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -341,7 +342,7 @@ E\colon y^2 = x^3 + x^2 + p
 </ol></article><article class="theorem-like" id="thm-beckmann"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.11.7</span> <span class="title">Beckmann</span>
 </h6>
-<p id="p-745">Let \(\phi \colon X \to \PP^1\) be a Belyi map with <a knowl="./knowl/def-field-of-moduli.html" title="Definition 2.11.3">field of moduli</a> \(M\text{.}\) Let \(G\) be the Galois group of the Galois closure of \(\phi\text{.}\) Then for all \(p\) such that \(p \nmid |G|\text{,}\) \(\tilde \phi \colon \tilde X \to \PP^1\) has good reduction at \(p\) and \(p\) is unramified in \(M\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-101" id="proof-101"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-101" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-746">Of Zapponi.</p>
+<p id="p-745">Let \(\phi \colon X \to \PP^1\) be a Belyi map with <a knowl="./knowl/def-field-of-moduli.html" title="Definition 2.11.3">field of moduli</a> \(M\text{.}\) Let \(G\) be the Galois group of the Galois closure of \(\phi\text{.}\) Then for all \(p\) such that \(p \nmid |G|\text{,}\) \(\tilde \phi \colon \tilde X \to \PP^1\) has good reduction at \(p\) and \(p\) is unramified in \(M\text{.}\)</p></article><article class="hiddenproof" id="proof-101"><a knowl="" class="id-ref" refid="hk-proof-101"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-101" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-746">Of Zapponi.</p>
 <p id="p-747">Let \(\phi\colon X \to \PP^1\) be a Belyi map of degree \(n\text{.}\) Let \(K\) be the <a knowl="./knowl/def-field-of-moduli.html" title="Definition 2.11.3">field of moduli</a> of \(X\text{,}\) \(M\) the <a knowl="./knowl/def-field-of-moduli.html" title="Definition 2.11.3">field of moduli</a> of \(\phi\) then \(M/K\) is a finite extension. Take \(G\) as above and let \(\ideal p \subseteq \ints_K\) be a place of bad semistable reduction for \(X\text{.}\) Then \(\wp| \ideal p\) for \(\wp \subseteq \ints_M\) is a place of bad semistable reduction for \(\phi\text{.}\) By <a knowl="./knowl/thm-beckmann.html" title="Theorem 2.11.7: Beckmann">Theorem 2.11.7</a> \(p \mid |G|\) for \(p\in \ZZ\) below \(\ideal p\) but \(G \hookrightarrow S_n\) which implies \(p|n!\) so \(p\le n\text{.}\)</p></article></div></section><section class="subsection" id="subsection-65"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.11.2</span> <span class="title">Finitists Dream</span>
 </h3>
@@ -390,7 +391,7 @@ B(\phi) \subseteq \{0,1,\infty\}\text{.}
 \begin{equation*}
 e_\psi(P) \le 2\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-102" id="proof-102"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-102" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-753">Of Tame \(p\)-Belyi</p>
+</div></article><article class="hiddenproof" id="proof-102"><a knowl="" class="id-ref" refid="hk-proof-102"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-102" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-753">Of Tame \(p\)-Belyi</p>
 <p id="p-754">Take \(\psi \colon C\to \PP^1\) as in the lemma then</p>
 <div class="displaymath">
 \begin{equation*}
@@ -422,7 +423,7 @@ x\mapsto x^{p^m -1}\text{.}
 <article class="remark-like" id="observation-2"><h6 class="heading">
 <span class="type">Observation</span> <span class="codenumber">2.11.12</span>
 </h6>
-<p id="p-756">\(\PP^1 \smallsetminus \{0,1,\infty\}\) is the moduli space of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> 0 curves with four (ordered) marked points.</p>
+<p id="p-756">\(\PP^1 \smallsetminus \{0,1,\infty\}\) is the moduli space of <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> 0 curves with four (ordered) marked points.</p>
 <div class="displaymath">
 \begin{equation*}
 (\PP^1, \alpha_1,\alpha_2,\alpha_3,\alpha_4) \mapsto \image(\alpha_4) \text{ when } \alpha_1 \mapsto 0,\alpha_2\mapsto 1, \alpha_3 \mapsto \infty\text{.}
@@ -430,7 +431,7 @@ x\mapsto x^{p^m -1}\text{.}
 </div></article><article class="definition-like" id="definition-67"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.11.13</span>
 </h6>
-<p id="p-757">Let \(\mathcal M_{g,n}\) be the moduli space of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> \(g\) curves with \(n\) (ordered) marked points (then \(\mathcal M_{g,\lb n\rb}\) is the same for unordered points). If \(n\) is large enough relative to \(g\) then \(\mathcal M_{g,n}\) will be a scheme (but the unordered version will not).</p></article><article class="example-like" id="example-38"><h6 class="heading">
+<p id="p-757">Let \(\mathcal M_{g,n}\) be the moduli space of <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> \(g\) curves with \(n\) (ordered) marked points (then \(\mathcal M_{g,\lb n\rb}\) is the same for unordered points). If \(n\) is large enough relative to \(g\) then \(\mathcal M_{g,n}\) will be a scheme (but the unordered version will not).</p></article><article class="example-like" id="example-38"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.11.14</span>
 </h6>
 <div class="displaymath" id="p-758">
@@ -479,18 +480,18 @@ X\smallsetminus \phi\inv (B(\phi)) \to \PP^1 \smallsetminus \{0,1,\infty\} \sime
 B(\phi) = \{r_1,r_2,r_3,r_4\}
 \end{equation*}
 </div>
-<p>and \(r_5 = \phi(q_1) = \phi(q_2)\text{.}\) So Braungardt for surfaces \((X/\overline \QQ)\text{?}\) Does there exist \(\phi \colon X \to \mathcal M_{0,\lb 5 \rb}\) which is étale?</p>
+<p>and \(r_5 = \phi(q_1) = \phi(q_2)\text{.}\) So Braungardt for surfaces \((X/\overline \QQ)\text{?}\) Does there exist \(\phi \colon X \to \mathcal M_{0,\lb 5 \rb}\) which is <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a>?</p>
 <article class="theorem-like" id="theorem-60"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.11.17</span> <span class="title">Braungardt</span>
 </h6>
-<p id="p-763">For \(X/\overline \QQ\) an abelian surface \(X\) is <a knowl="./knowl/def-birational.html" title="Definition 1.4.10">birational</a> to an <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> cover of \(\mathcal M_{0,\lb 5 \rb}\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-103" id="proof-103"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-103" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-764">Sketch.</p>
+<p id="p-763">For \(X/\overline \QQ\) an abelian surface \(X\) is <a knowl="./knowl/def-birational.html" title="Definition 1.4.10">birational</a> to an <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> cover of \(\mathcal M_{0,\lb 5 \rb}\text{.}\)</p></article><article class="hiddenproof" id="proof-103"><a knowl="" class="id-ref" refid="hk-proof-103"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-103" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-764">Sketch.</p>
 <p id="p-765">For an abelian surface over \(\overline \QQ\) there exists another isogenous to it which is principally polarized. Such surfaces come in two flavours</p>
 <div class="displaymath">
 \begin{equation*}
 E_1 \times E_2
 \end{equation*}
 </div>
-<p>or \(J(C)\) for \(C\) of <a knowl="./knowl/fact-existance-genus.html" title="Fact 2.2.16">genus</a> 2.</p>
+<p>or \(J(C)\) for \(C\) of <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> 2.</p>
 <p id="p-766">Case 1:</p>
 <p id="p-767">Let \(\phi_i \colon E_i \to \PP^1\smallsetminus \{0,1,\infty\}\) be Belyi maps. Then we have \(\alpha \colon A \xrightarrow{\phi_1,\phi_2} \PP^1 \times \PP^1\text{.}\) Then \(\alpha\) restricts to a finite unramified cover</p>
 <div class="displaymath">
