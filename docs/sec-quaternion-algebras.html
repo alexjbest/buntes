@@ -296,8 +296,12 @@ MathJax.Hub.Config({
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras" class="active">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
+<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
+<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups</a></li></ul>
+<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
+<ul><li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li></ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-quaternion-algebras"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Quaternion Algebras (Alex)</span>
@@ -323,7 +327,7 @@ E/K\colon y^2 = x^3 + \alpha x = f(x)\text{,}
 <p><a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> eh? It's supersingular as the \(j\)-invariant is 0 (and are in characteristic 3). Alternatively, count points or even compute the Hasse invariant, the coefficient of \(p -1 = 2\) in \(f(x)^{(p-1)/2 = 1}\text{,}\) yep, it's 0.</p>
 <p id="p-869">We therefore have \(\#E(K) = 9 + 1 = 10\) so we have a \(2\)-torsion point (\(P = (0,0)\)) and any other point we can use to generate (will be \(5\) or \(10\) torsion). Let \(x = 1\) so \(y^2 = 1 + \alpha = \alpha^2\) so \(y = \pm\alpha\text{,}\) say \(Q = (1,\alpha)\text{.}\)</p>
 <p id="p-870">We have one <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a>, \(p\)-power frobenius \(x\mapsto x^3\text{,}\) \(y\mapsto y^3\text{.}\) How to find another one?</p>
-<p id="p-871">Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\text{.}\) In general the formulae are  a little annoying <a knowl="./knowl/bib-velu.html" title="Bibliographic Entry 61: Isogénies entre courbes elliptiques">[61]</a>, when you have a 2-torsion point at \((0,0)\text{,}\) not as bad:</p>
+<p id="p-871">Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\text{.}\) In general the formulae are  a little annoying <a knowl="./knowl/bib-velu.html" title="Bibliographic Entry 66: Isogénies entre courbes elliptiques">[66]</a>, when you have a 2-torsion point at \((0,0)\text{,}\) not as bad:</p>
 <div class="displaymath">
 \begin{equation*}
 \psi = \left(x + \frac{f'(0)}{x}, y - \frac{yf'(0)}{x^2} \right)
@@ -428,7 +432,7 @@ y^2 = x^{3} + 1/\FF_{25}
 </h6></a></article><div id="hk-exercise-24" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-881">PODASIP: this happens for all \(p^2\text{?}\)</p></article></div></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Quaternion Algebras</span>
 </h3>
-<section class="introduction" id="introduction-15"><p id="p-882">Pretty much all of this material was ripped with the utmost love and affection from <a knowl="./knowl/bib-voight-quat.html" title="Bibliographic Entry 62: Quaternion Algebras">[62]</a>, check it out.</p>
+<section class="introduction" id="introduction-15"><p id="p-882">Pretty much all of this material was ripped with the utmost love and affection from <a knowl="./knowl/bib-voight-quat.html" title="Bibliographic Entry 67: Quaternion Algebras">[67]</a>, check it out.</p>
 <article class="theorem-like" id="proposition-62"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.3.5</span>
 </h6>
@@ -646,14 +650,14 @@ y^2 + y = x^3/\overline{\FF_2}
 <article class="theorem-like" id="theorem-64"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.3.22</span> <span class="title">Albert-Brauer-Hasse-Noether</span>
 </h6>
-<p id="p-925">Let \(B/F\) be a quaternion algebra  over  a  number field \(F\) (or any <a knowl="./knowl/def-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebra</a>), if \(B\) splits at every place \(v\) of \(F\) then \(B\) is a matrix algebra \(M_d (F)\text{.}\)</p></article><p id="p-926">In fact:</p>
+<p id="p-925">Let \(B/F\) be a quaternion algebra  over  a  number field \(F\) (or any <a knowl="./knowl/def-abvar-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebra</a>), if \(B\) splits at every place \(v\) of \(F\) then \(B\) is a matrix algebra \(M_d (F)\text{.}\)</p></article><p id="p-926">In fact:</p>
 <article class="theorem-like" id="theorem-65"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.3.23</span>
 </h6>
 <p id="p-927">Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.</p></article><p id="p-928">Warning: Quaternion algebras may not be <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> where you think they are?</p>
 <p id="p-929">Knowing the ramification of a quaternion algebra \(\QQ\) is enough to identify it uniquely, in fact we have the following theorem</p>
 <article class="theorem-like" id="theorem-66"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.3.24</span> <span class="title">Main Theorem [62, 14.1.3]</span>
+<span class="type">Theorem</span> <span class="codenumber">3.3.24</span> <span class="title">Main Theorem [67, 14.1.3]</span>
 </h6>
 <p id="p-930">There is a sequence of bijections</p>
 <div class="displaymath">

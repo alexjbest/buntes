@@ -1,0 +1,171 @@
+
+title #[m p]-divisible groups
+
+introduction#sec-p-div-gps-intro
+    p
+        | These are notes for the short-lived BUNTES Fall 2018 part II, the topic is
+        | #[m p]-divisible groups.
+
+    p
+        | #[url(href="http://math.bu.edu/people/midff/buntes/fall2018.html")/].
+
+    p
+        | References:
+        ol
+            li
+                | Tate
+            li
+                | Schatz
+
+section#sec-p-div-gps
+    title #[m p]-divisible groups
+
+
+
+    p
+        | Why study  #[m p]-divisible groups (Jacob Stix).
+        ol
+            li
+                | Analyse local #[m p]-adic galois action on #[m p]-torsion of elliptic curves, Serre's open image theorem.
+                me \phi_l \colon G_K \to \Aut \lb l \rb
+                | Surjective for almost all #[m l].
+            li
+                | Tool for representing #[m p]-adic cohomology, e.g #[m p]-adic hodge theory.
+            li
+                | Describe local properties of moduli spaces of abelian varieties which map to moduli spaces of #[m p]-divisible groups which can be described by semilinear algebra (Serre-Tate).
+            li
+                | Explicit local CFT via Lubin-Tate formal groups describing wildly ramified abelian extensions.
+            li
+                | The true fundamental group in characteristic #[m p] must include infinitesimal group schemes, #[m p]-divisible groups enter through their tate modules.
+    paragraphs
+        title Detour, schemes
+        p
+            There is an (anti)-equivalence of categories
+            me \{\text{ring}\} \leftrightarrow\{\text{affine schemes}\}
+            |.
+        p
+            | Moral whatever  a scheme is the data of a ring is enough to specify it + homs
+            me \Hom_{Ring} (B,A) \leftrightarrow \Hom_{Aff}(\Spec A, \Spec B)
+
+            | to specify a base field or base ring play a similar game with #[m R]-algebras and #[m R]-schemes.
+        p
+            | Yoneda, schemes are functors:
+            | Let #[m R\lb T_1,\ldots,T_n\rb ] be a polynomial ring over #[m R], we want solutions to
+            me f_1=  f_2 = \cdots = f_m = 0
+            | with coefficients in #[m lk] this is asking for  a map
+            me R\lb T_1, \ldots ,T_n] /(f_i) \to A
+            | same as
+            me \Hom_{R-alg} R[T_1,\ldots, T_n] /(f_i), A)
+            | functor #[m A] to this is a functor from #[m R]-algs to sets.
+        definition
+            statement: p
+                | For any affine scheme #[m A = \Spec B] we attach a functor #[m h_X] from #[m \mathrm{Sch}^\op] to sets, sending #[m \Spec S \mapsto \Hom_{\mathrm{Sch}} (\Spec S, X) = \Hom_{Ring} (B,S) = h_X(\Spec S)].
+                | spec S points of X
+        example: statement: p
+            me \aff^n = \Spec \ZZ \lb T_1,\ldots, T_n\rb
+            me \aff^n(T) = \Hom_{\mathrm{Sch}} (T, \aff^n) = \Hom_{Ring}(\ZZ[T_1,\ldots, T_n], S)\cong S^n
+        example: statement: p
+            me E \colon \Spec k[x,y] / (y^2 - (x^3 + ax +b)),\,k = \QQ
+            | #[m E(\QQ(i)) = \QQ(i)] points, choosing #[m x,y] satisfying weierstrass equation.
+        p
+            | Suppose #[m h_X \colon \mathrm{Sch}^\op \to R] factors through #[m \mathrm{Grp} \to \mathrm{Set}] then this is a group scheme.
+        example
+            statement: p
+                me \mathbf G_a = \Spec k[t]
+                me S\mapsto \Hom(k[t], S) \cong (S,+)
+
+        example
+            statement: p
+                me \mathbf G_m = \Spec k[t,t\inv]
+                me S\mapsto \Hom(k[t,t\inv], S) \cong (S^\times,\cdot)
+
+        example
+            statement: p
+                me \mu_n = \Spec k[t]/(t^n -1)
+
+        example
+            statement: p
+                me \alpha_{p^n} = \Spec k[t]/(t^{p^n})
+                | char #[m k = p]:w
+        p
+            | Cartier Duality
+            | #[m G] is a finite group scheme #[m /R] there is a dual
+            me G^* (T) = \Hom (G_T, \mathbf G_m)
+            | #[m R]-scheme #[m T]
+            me G \cong (G^*)^*
+        example: statement: p
+            me \mu_{p^n} \leftrightarrow \ZZ/p^n
+        definition
+            statement: p
+                | Let #[m p] be a prime and #[m h] a non-negative integer.
+                | A #[m p]-divisible group of height #[m h] is an inductive system
+                me (G_v, i_v)
+                | where each #[m G_v] is a group scheme #[m /R] of size #[m p^{vh}]
+                me i_v \colon G_v \to G_{v+1}
+                | identifies #[m G_v] with kernel of multiplication by #[m p^v].
+                me 0 \to G_v \xrightarrow{i_v} G_{v+1} \xrightarrow{[p^v]} G_{v+1}
+        remark
+            p
+                | We can show that #[m G_\mu,G_v] are two levels then
+                me 0 \to G_\mu \xrightarrow{i_{\mu, v}} G_{\mu +v } \xrightarrow{[p^\mu]} G_{\mu,v}
+                |so
+                me 0 \to G_\mu \to G_{\mu + v}  \to G_v \to 0
+                | .
+
+        p
+            | The connected etale sequence
+        p
+            | A finite flat group scheme #[m G] over a henselian local ring #[m R] admitsa (functorial) decomposition
+            me 0  \to G^\circ \to G \to G^\et \to 0
+            | connected and etale
+        p
+            | There is an equivalence of categories between finite etale gp scheme #[m /R] and its continuous #[m \absgal k] modules when #[m R = k] is a field.
+        definition
+            statement: p
+                | An #[m n]-dimensional formal lie group #[m /R] is the formal power series ring
+                me A = R\lb \lb x_1, \ldots, x_n \rb\rb
+                | with a suitable co-multiplication structure.
+                me m^* \colon A \to A\widehat \otimes A
+                me m^*(X_i) = (f_i(Y,Z))
+                | require
+                ol
+                    li: me F(X,0) = F(0,X) = X
+                    li: me F(X,F(Y,Z)) = F(F(Y,Z),X) = X
+                    li: me F(Y,Z) = F(Z,Y)
+
+        p
+            | Let #[m \psi] denote multiplication by #[m p] in #[m A] then #[m A] is divisible if #[m \psi] is an isogeny (surj. with finite kernel).
+            | Alternatively #[m A] is a finite free #[m \psi (A)]-module.
+        theorem
+            statement: p
+                | Let #[m R] be a complete noetherian local ring with residue characteristic #[m p \gt 0].
+                | We have an equiv of cats
+                me \text{conn. p-div gps} \leftrightarrow \text{div. formal lie groups /R}
+        example
+            statement: p
+                me \mathbf G_m(p) , \, F(X)= Y+Z+YZ
+        example
+            statement
+                p
+                    | #[m E] ordinary elliptic curve #[m /\overline{\FF}_p]
+                p
+                    me E[p] (\overline \FF_p)
+                    | is non-empty
+                    me E[p] = E[p]^\circ \times E[p]^\et
+                    | .
+                p
+                    | etale group schemes over alg. closed fields are constant
+                    me E = E[p]^\circ \times A
+                p
+                    | It can't be entirely etale #[m \lb p \rb] would be etale but this induces the 0 map on tangent space so #[m E\lb p \rb^\circ \ne 0].
+                p
+                    me |E\lb p \rb | =  p^2
+                    | so each order #[m p].
+                p
+                    me A = \ZZ/p
+                p
+                    | #[m E] is cartier self dual
+                    me A^* = \mu_p = E[p]^\circ
+                p
+                    | Induct for #[m E\lb p^n\rb ].
+

@@ -296,15 +296,19 @@ MathJax.Hub.Config({
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
+<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
+<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups</a></li></ul>
+<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
+<ul><li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li></ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-av-complex"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Abelian varieties over \(\CC\) (Alex)</span>
 </h2>
 <a href="sec-av-complex.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-37">The goal of this talk is to understand what <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> look like over \(\CC\text{.}\) The goal for me is to understand what a (principal) polarisation is and why it is important.</p>
 <p id="p-38">First immediate question: why study complex theory at all? The most classical field, algebraically closed, archimidean, characteristic 0.</p>
-<p id="p-39">Recall/rapidly learn the picture for <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, given \(E\) an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> we have for some \(\Lambda\) a rank 2 lattice in \(\CC\)</p>
+<p id="p-39">Recall/rapidly learn the picture for <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, given \(E\) an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> we have for some \(\Lambda\) a rank 2 <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> in \(\CC\)</p>
 <div class="displaymath">
 \begin{align*}
 \CC/\Lambda \amp\xrightarrow{\sim} E(\CC) \subseteq \PP^2(\CC)\\
@@ -340,7 +344,7 @@ y^2 = 4x^3 - g_2 x - g_3\text{.}
 A(\CC) \cong V/\Lambda
 \end{equation*}
 </div>
-<p>where \(V\) is a \(g\) dimensional complex vector space and \(\Lambda\) is a full rank lattice of \(V\) (i.e \(\Lambda\) is a discrete subgroup of \(V\) s.t. \(\RR\otimes \Lambda  = V\)).</p></article><article class="hiddenproof" id="proof-8"><a knowl="" class="id-ref" refid="hk-proof-8"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-43">Differential geometry gives us a map of complex manifolds, the exponential map</p>
+<p>where \(V\) is a \(g\) dimensional complex vector space and \(\Lambda\) is a full rank <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> of \(V\) (i.e \(\Lambda\) is a discrete subgroup of \(V\) s.t. \(\RR\otimes \Lambda  = V\)).</p></article><article class="hiddenproof" id="proof-8"><a knowl="" class="id-ref" refid="hk-proof-8"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-43">Differential geometry gives us a map of complex manifolds, the exponential map</p>
 <div class="displaymath">
 \begin{equation*}
 \exp\colon\Tgt_0(A(\CC)) \to A(\CC)
@@ -348,7 +352,7 @@ A(\CC) \cong V/\Lambda
 </div>
 <p>this is holomorphic. And since \(A(\CC)\) is abelian, this is a homomorphism also. In general this is locally an isomorphism around 0.</p>
 <p id="p-44">Claim: \(\exp\) is injective. There exists a neighborhood \(U\supseteq 0\) s.t. \(\exp(U) \cong U\text{.}\) Consider the image \(\exp(\Tgt_0 A(\CC))\text{.}\) For \(x\in \exp(\Tgt_0 A(\CC))\text{,}\) \(\{U+x\}\) are all open and give a cover. Thus \(\exp(\Tgt_0A(\CC))\) is open. Since \(A(\CC)\) is connected we are thus reduced to showing \(\exp(\Tgt_0 A(\CC))\) is closed also. Since \(\exp\) is a homomorphism, the image is a subgroup. So its complement is the union of its non-trivial cosets, which is open. Thus \(\exp(\Tgt_0A(\CC))\) is closed. Giving \(\exp(\Tgt_0A(\CC)) = A(\CC)\text{,}\) which proves the claim.</p>
-<p id="p-45">\(\exp\) is a local isomorphism, which gives that \(\ker(\exp)\) is discrete, i.e. a lattice. We now have</p>
+<p id="p-45">\(\exp\) is a local isomorphism, which gives that \(\ker(\exp)\) is discrete, i.e. a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>. We now have</p>
 <div class="displaymath">
 \begin{equation*}
 A(\CC) \cong \Tgt_0A(\CC)/ \ker(\exp)
@@ -563,7 +567,7 @@ E(u,v) = \frac{uv}{\im \tau}
 V^* = \{f\colon V\to \CC : f(u+v) = f(u)+f(v),\,f(\alpha v) = \bar \alpha f(v) \}
 \end{equation*}
 </div>
-<p>and given \(\Lambda \subset V\) a lattice, let</p>
+<p>and given \(\Lambda \subset V\) a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>, let</p>
 <div class="displaymath">
 \begin{equation*}
 \Lambda^* = \{f\in V^* : f(\lambda) \in \ZZ\,\forall \lambda\in \Lambda\}\text{.}

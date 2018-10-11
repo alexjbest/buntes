@@ -296,8 +296,12 @@ MathJax.Hub.Config({
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
+<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
+<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups</a></li></ul>
+<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
+<ul><li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li></ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<ul><li><a href="references-1.html" data-scroll="references-1">References</a></li></ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-polarizations-etale"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Polarizations and Étale cohomology (Alex)</span>
@@ -324,7 +328,7 @@ MathJax.Hub.Config({
 <p id="p-245">We then have a notion of degree, <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a> of degree 1 (i.e. isomorphisms \(A\to \hat A\)) are called <dfn class="terminology">principal <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a></dfn>.</p></article><article class="remark-like" id="remark-7"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">1.9.2</span>
 </h6>
-<p id="p-246">This is in fact equivalent to the <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">previous definition 1.7.21</a>, see <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 60: Abelian Varieties">[60, cor. 11.5]</a>.</p></article><p id="p-247">Natural questions: what does the <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(\sheaf L\) tell us about the <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>? Can we tell principality?</p>
+<p id="p-246">This is in fact equivalent to the <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">previous definition 1.7.21</a>, see <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 65: Abelian Varieties">[65, cor. 11.5]</a>.</p></article><p id="p-247">Natural questions: what does the <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(\sheaf L\) tell us about the <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>? Can we tell principality?</p>
 <p id="p-248">To answer this we must (rapidly) recall (Zariski) sheaf cohomology. But this will help us in the next section too.</p>
 <p id="p-249">A <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> (or indeed any sheaf) defines for us for any open subset \(U \hookrightarrow X\) an abelian group of sections \(\sheaf L(U)\text{.}\)</p>
 <p id="p-250">However taking (global) sections doesn't play well with exact sequences!</p>
@@ -389,8 +393,8 @@ H^0(X, \sheaf F) , H^1(X, \sheaf F) , H^2(X, \sheaf F) , \ldots\text{.}
 <p id="p-261">The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is determined by its Chow form, which by these formulae has some (large) bounded degree, as we are over a finite field however there are only finitely many such.</p></article></div></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Étale Cohomology of Abelian Varieties</span>
 </h3>
-<p id="p-262">See <a knowl="./knowl/bib-milne-etale.html" title="Bibliographic Entry 43: Etale cohomology">[43]</a> or <a knowl="./knowl/bib-tamme.html" title="Bibliographic Entry 57: Introduction to étale cohomology">[57]</a>.</p>
-<p id="p-263">Recall for <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> over \(A/\CC\) we considered singular cohomology of the complex points \(A(\CC)\text{.}\) Indeed this theory was strongly connected to the lattice \(\Lambda\) defining \(A(\CC)\text{.}\)</p>
+<p id="p-262">See <a knowl="./knowl/bib-milne-etale.html" title="Bibliographic Entry 48: Etale cohomology">[48]</a> or <a knowl="./knowl/bib-tamme.html" title="Bibliographic Entry 62: Introduction to étale cohomology">[62]</a>.</p>
+<p id="p-263">Recall for <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> over \(A/\CC\) we considered singular cohomology of the complex points \(A(\CC)\text{.}\) Indeed this theory was strongly connected to the <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(\Lambda\) defining \(A(\CC)\text{.}\)</p>
 <p id="p-264">We saw that in fact \(\pi_1(A,0) = \pi^{-1} (0) = \Lambda \subseteq V\) which was the universal covering space of \(A(\CC)\text{.}\) We want to emulate this over a general field.</p>
 <p id="p-265">We want to allow multiplication by \(n\) to define finite covers for our <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> as they did before.</p>
 <p id="p-266">Problem: Zariski topology is too coarse: we can't find an open \(U\) set around \(0 \in A\) such that \(\lb 2\rb \colon U \to A\) is an isomorphism onto its image. Isogenies are not local isomorphisms for the Zariski topology.</p>
@@ -491,7 +495,7 @@ F(Y) = \Hom(\tilde X ,Y) = \varinjlim_i \Hom(X_i, Y)\text{.}
 \begin{equation*}
 \pi_1(X,x) = \Aut_X(\tilde X) = \varprojlim_i \Aut_X(X_i)\text{.}
 \end{equation*}
-</div></article><p id="p-283">So we need to understand <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> covers of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Following <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 60: Abelian Varieties">[60]</a>:</p>
+</div></article><p id="p-283">So we need to understand <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> covers of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Following <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 65: Abelian Varieties">[65]</a>:</p>
 <article class="theorem-like" id="proposition-23"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.9.14</span> <span class="title">surprising proposition</span>
 </h6>
@@ -612,7 +616,7 @@ H^1_\et(A , \ZZ_l) = \Hom(\pi_1(A,0), \ZZ_l) = \Hom(T_l,\ZZ_l)
 \begin{equation*}
 H^r(A_\et, \ZZ_l) = \bigwedge^r H^1(A_\et, \ZZ_l)
 \end{equation*}
-</div></article><p id="p-298">Note that Milne gives a combined proof of the above two statements, this relies on some theorems on Hopf algebras such as <a knowl="./knowl/bib-borel-hopf.html" title="Bibliographic Entry 15: Sur La Cohomologie Des Espaces Fibres Principaux Et Des Espaces Homogenes De Groupes De Lie Compacts">[15, Theoreme 6.1]</a>.</p></section></section></div></main>
+</div></article><p id="p-298">Note that Milne gives a combined proof of the above two statements, this relies on some theorems on Hopf algebras such as <a knowl="./knowl/bib-borel-hopf.html" title="Bibliographic Entry 17: Sur La Cohomologie Des Espaces Fibres Principaux Et Des Espaces Homogenes De Groupes De Lie Compacts">[17, Theoreme 6.1]</a>.</p></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

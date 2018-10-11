@@ -1,0 +1,173 @@
+title Shimura varieties
+
+introduction#sec-shimura-intro
+    p
+        | These are notes for BUNTES Fall 2018 part III, the topic is
+        | Shimura varieties
+
+    p
+        | #[url(href="http://math.bu.edu/people/midff/buntes/fall2018.html")/].
+
+    p
+        | Outline:
+        ol
+            li
+                | 
+    p
+        | References: 
+
+
+section#sec-buntes-modular-curves
+    title Modular curves (Aash)
+
+    definition#def-buntes-lattice
+        title Lattices
+        statement: p
+            | A #[term lattice] is a free abelian group of rank 2
+            me \Lambda \otimes \RR \to \CC
+            | is an isomorphism
+            me \Lambda = \ZZ\lb \alpha \rb  \oplus \ZZ\lb \beta \rb
+            | if
+            me \Lambda = \gamma \Lambda ',\,\gamma \in \CC
+            | then we say the two lattices are #[term homothetic].
+
+    p
+        | Any lattice is homothetic to one of the form
+        me \Lambda = \langle 1 , \tau \rangle
+        | as we can take a positively oriented basis we have that all such are equivalent to
+        me \tau \in \HH = \{ z\in \CC: \Im(z) \gt 0 \}
+        | . So there is a bijection between #[m \HH] and ordered bases of lattices.
+    p
+        | #[m \SL_2(\ZZ)] acts on #[m \HH] and the action corresponds to changing bases.
+
+    p
+        | The action of #[m \PSL_2(\ZZ)] is faithful.
+        | #[m i,\rho = e^{\pi i /3}] have non-trivial stabilisers
+        me \Stab_i =  \langle S\rangle = \begin{pmatrix} 0\amp1 \\ -1 \amp 0 \end{pmatrix}
+        me \Stab_\rho =  \langle TS\rangle,\,T = \begin{pmatrix} 1\amp1 \\ 0 \amp 1 \end{pmatrix}
+    p
+        | We can determine the order of elements by looking at the characteristic polynomials.
+
+    p
+        | We then have
+        me Y(1) =\SL_2(\ZZ) \backslash \HH
+        | a complex manifold
+        | and
+        me j\colon Y(1) \to \CC
+        | is an isomorphism.
+
+    p
+        | We have a fundamental domain for this action
+        me D = \{ z\in \CC : |z|  \ge 1,\, |\Re(z)| \le \frac 12 \}
+        | #[m Y(1)] is Hausdorff because the action is properly discontinuous.
+    p
+        | Care must be taken around the elliptic points (those with larger stabiliser), to define the complex structure.
+    p
+        | The extended upper half plane
+        me \HH^* = \HH \cup \PP^1 (\QQ)
+        | also has an #[m \SL_2(\ZZ)] action via fractional linear transformations, which is proper.
+
+    p
+        | We can define a basis of neighbourhoods around the cusps by transforming them to the cusp #[m \infty] where we can use the basis of neighbourhoods given by
+        me \HH_N = \{ z\in \HH : | \Im(z)| \gt N\}
+        | .
+
+    p
+        | The parameter #[m q] around #[m \infty] is defined as #[m e^{2\pi i z/N}] for some #[m N\in \ZZ], #[m q] is fixed by #[m T].
+    p
+        | We can quotient by the action of #[m \SL_2(\ZZ) ] on #[m \HH^*] to get
+        me X(1) = \SL_2(\ZZ) \backslash \HH^*
+        | which is now compact, genus 0, which matches up with #[m Y(1)] having #[m \CC] points #[m \CC] earlier.
+
+    p
+        |If #[m X] is a projective curve then #[m X(\CC)] has the structure of a compact Riemann surface.
+        | If #[m S] is such a surface then there exists a unique up to isomorphism #[m X] with #[m X(\CC) = S].
+
+    p
+        | The meromorphic functions on #[m S] are the function field of #[m X] and there is a correspondence
+
+        me \text{Compact Riemann surfaces} \leftrightarrow \text{Smooth proj. curves}
+
+    p
+        | Given a finite index subgroup of #[m \SL_2(\ZZ)] we can do something similar to obtain
+        me \Gamma\backslash \HH
+        | .
+        | One of the most prominent examples of such a subgroup is
+        me \Gamma(N) = \left\{ \gamma \in \SL_2(\ZZ) : \gamma \equiv \begin{pmatrix} 1\amp0 \\ 0 \amp 1 \end{pmatrix} \pmod N \right\}
+        | along with
+        me \Gamma_1(N) = \left\{ \gamma \in \SL_2(\ZZ) : \gamma \equiv \begin{pmatrix} 1\amp\ast \\ 0 \amp 1 \end{pmatrix} \pmod N \right\}
+        me \Gamma_0(N) = \left\{ \gamma \in \SL_2(\ZZ) : \gamma \equiv \begin{pmatrix} \ast\amp\ast \\ 0 \amp \ast \end{pmatrix} \pmod N \right\}
+        | .
+    p
+        | #[m \Gamma(N)] is normal inside #[m \SL_2(\ZZ)] and #[m \Gamma_1(N)] is normal inside #[m \Gamma_0(N)].
+
+    p
+        | The aforementioned equivalence of categories gives us a smooth projective curve for each of these examples.
+
+    p
+        | In fact one can find a smooth projective curve with #[m \QQ]-coefficients realising each of these Riemann surfaces.
+
+    p
+        | For
+        me \Gamma_0(N) \backslash \HH^*
+        | we have the function #[m j(z)] from before, but also #[m j(Nz)] which is still a function on the quotient now as
+        me j(N \gamma z) = j\left( N\frac{az + b}{cz+d} \right)
+        me               = j\left( N\frac{az + b}{c'Nz+d} \right)
+        me               = j\left( \frac{aNz + bN}{c'Nz+d} \right)
+        me               = j\left( \gamma ' Nz\right)
+        me               = j\left( Nz\right)
+
+    p
+        | We can therefore let
+        me g = \prod_{\gamma} (Y - j(\gamma Nz))
+        | the product over the cosets of #[m \Gamma_0(N) \subseteq \SL_2(\ZZ)].
+    p
+        | The coefficients of #[m g] are meromorphic functions on #[m X(1) = \CC\lb j \rb].
+        | So we have
+        me g(Y) = F(j(z), Y)
+        |and
+        me g (j(Nz)) = F(j(z), j(Nz)) = 0
+        | then #[m F(X,Y)] is irreducible and  has integer coefficients.
+    p
+        | Then the curve #[m X_0(N)] whose function field is
+        me \QQ \lb X,Y\rb/ F(X,Y)
+        | so #[m U \subseteq X_0(N)] is isomorphic to an affine variety defined by
+        me F(X,Y) = 0 \smallsetminus \text{singular pts}
+    p
+        me \Gamma_0(N) \backslash \HH \to U(\CC)
+        me z \mapsto (j(z), j(Nz))
+        | #[m j(\gamma z) = z\,\forall z] iff #[m \gamma \in \SL_2(\ZZ)].
+    p
+        | If for #[m z= z_1,z_2] have #[m (j(z),j(Nz))] equal then #[m z_1,z_2] are in the same #[m \Gamma_0(N)] orbit.
+
+    p
+        | We can do similar for #[m \Gamma_1] but only over #[m \QQ(\zeta_N)].
+
+    paragraphs
+        title Elliptic curves
+
+        p
+            | Several definitions:
+            ol
+                li
+                    | Smooth proj. curve genus 1 with a rational point.
+                li
+                    | smooth curve given by Weierstrass eqn.
+                    me y^2 + a_1xy + a_3 y =  x^3 + a_2x^2 + a_4 x + a_6
+                    |.
+                li
+                    | Complex torus of  dimension 1.
+
+        p
+            | Over #[m \CC] at least all are equivalent.
+        p
+            | To get the weierstrass equation from the curve we use Riemann-Roch to see that
+            me H(1[0]) = 1,\, H(2[0]) = 2,\,H(3[0]) =3
+            |So we call a generator of #[m H(2\lb 0 \rb) \smallsetminus H(\lb 0 \rb)] the function #[m x] same for #[m y] and #[m H(3\lb 0 \rb)], now in #[m H(6 \lb 0 \rb)] we have
+            me 1,x,y,x^2 ,xy,y^2,x^3
+
+            | so there is a linear relation among these, giving the Weierstrass equation.
+        p
+            | To get the equation for a torus we use the Weierstrass #[m \wp] function.
+
+        // TODO j and lambda?

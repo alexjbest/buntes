@@ -11,51 +11,32 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Types of orders</span></h5>
-<p>Let \(\ints ,\ints'  \subseteq B\) be <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a>.</p>
-<article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.10</span>
-</h6>
-<p>We say \(\ints,\ints' \) are of the same type if \(\exists \alpha \in B^\times\) s.t. \(\ints ' = \alpha \inv \ints \alpha\text{.}\) \(\ints,\ints'\) are locally of the same type if \(\ints_p, \ints_p'\) are of the same type for all primes in \(\ZZ\cup\{\infty\}\text{.}\) \(\ints\) is connected to  \(\ints'\) if there exists an invertible fractional \(\ints,\ints'\)-ideal \(J \subseteq B\) called a connecting ideal.</p></article><article class="theorem-like"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">3.4.11</span>
-</h6>
-<p>\(\ints,\ints'\) are of the same type iff they are isomorphic as \(\ZZ\)-algebras.</p>
-<p>\(\ints,\ints'\) are connected iff they are locally of the same type.</p></article><article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.12</span>
-</h6>
-<p>Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>.</p>
+<article class="paragraphs"><h5 class="heading"><span class="title">Elliptic curves</span></h5>
+<p>Several definitions:</p>
 <ol class="decimal">
-<li>The <dfn class="terminology">genus</dfn> \(\operatorname{Gen}(\ints)\) of \(\ints \) is the set of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> in \(B \) connected to \(\ints\text{.}\)</li>
-<li>The type set \(\operatorname{Typ}(\ints)\) of \(\ints\) is the set of \(\ZZ\)-algebra isomorphism classes of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> in \(\operatorname{Gen} (\ints)\text{.}\)</li>
-</ol></article><article class="theorem-like"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">3.4.13</span>
-</h6>
-<p>The set map \(\operatorname{Cls}_L(\ints) \to \operatorname{Typ}(\ints)\)</p>
-<div class="displaymath">
+<li>Smooth proj. curve <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> 1 with a rational point.</li>
+<li>smooth curve given by Weierstrass eqn.<div class="displaymath">
 \begin{equation*}
-[ I]_L \mapsto \text{class of } \ints_R(I)
+y^2 + a_1xy + a_3 y =  x^3 + a_2x^2 + a_4 x + a_6\text{.}
 \end{equation*}
 </div>
-<p>is surjective.</p></article><article class="remark-like"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">3.4.14</span>
-</h6>
-<ol class="decimal">
-<li>Any two maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> in \(B\) are connected.</li>
-<li>In particular there are only finitely many conjugacy classes of maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> in \(B\text{.}\)</li>
-</ol></article><article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.4.15</span> <span class="title">Voight 17.6.3</span>
-</h6>
-<p>Let</p>
+</li>
+<li>Complex torus of  dimension 1.</li>
+</ol>
+<p>Over \(\CC\) at least all are equivalent.</p>
+<p>To get the weierstrass equation from the curve we use Riemann-Roch to see that</p>
 <div class="displaymath">
 \begin{equation*}
-B = \legendre{-1,-23}{\QQ}
+H(1[0]) = 1,\, H(2[0]) = 2,\,H(3[0]) =3
 \end{equation*}
 </div>
-<p>Then \(\ints=  \ZZ +  \ZZ i + \ZZ \frac{i+j}{2} + \ZZ i \frac{i+j}{2}\) is a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> and</p>
+<p>So we call a generator of \(H(2\lb 0 \rb) \smallsetminus H(\lb 0 \rb)\) the function \(x\) same for \(y\) and \(H(3\lb 0 \rb)\text{,}\) now in \(H(6 \lb 0 \rb)\) we have</p>
 <div class="displaymath">
 \begin{equation*}
-\operatorname{Typ}(\ints) =  \left\{ \lb \ints \rb , \lb \ints_2 \rb , \lb \ints_3 \rb \right\}\text{.}
+1,x,y,x^2 ,xy,y^2,x^3
 \end{equation*}
-</div></article></article><span class="incontext"><a href="sec-deuing.html#paragraphs-40">in-context</a></span>
+</div>
+<p>so there is a linear relation among these, giving the Weierstrass equation.</p>
+<p>To get the equation for a torus we use the Weierstrass \(\wp\) function.</p></article><span class="incontext"><a href="sec-buntes-modular-curves.html#paragraphs-40">in-context</a></span>
 </body>
 </html>
