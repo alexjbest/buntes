@@ -171,3 +171,237 @@ section#sec-buntes-modular-curves
             | To get the equation for a torus we use the Weierstrass #[m \wp] function.
 
         // TODO j and lambda?
+
+section#sec-buntes-modular-forms
+    title Modular forms (Asra)
+
+    p
+        | Last time we saw the #[m j]-function, which was #[m \SL_2(\ZZ)]-invariant, this is quite a strong condition, and in fact #[m j] is pretty much all we get under this condition.
+        | So instead we weaken this somewhat to some other variance property.
+
+    p
+        | If #[m w = f(z) \diff z] on #[m \HH] and #[m f(z)] is meromorphic.
+        | #[m \gamma \in \Gamma] then
+        me  f(\gamma z) d(\gamma z) = f(\gamma z) d\left( \frac{az+b}{cz+d} \right)
+        me                          = f(\gamma z) \left( \frac{\cdots \diff }{(cz+d)^2} \right)
+        | so we get a condition
+        me f(\gamma z) = (cz+d)^2 f(z)
+        | this is how we come to:
+
+    definition#def-buntes-weak-modular
+        statement: p
+            | A holomorphic function #[m f\colon \HH \to \CC] is a #[term weakly modular] function for #[m \Gamma] of weight #[m k] if
+            me f(\gamma z) = (cz+d)^k f(z) \forall \gamma  = \begin{pmatrix} a\amp b \\ c \amp d    \end{pmatrix} \in \Gamma
+            |.
+
+    remark
+        p
+            | If #[m -I \in \Gamma] and #[m k] odd
+            me f(-z)  = - f(-z)
+            | so in this setting we only have interesting behaviour for even #[m k].
+        p
+            |If #[m \Gamma] is a congruence subgroup of level #[m N] we have
+            me \begin{pmatrix} 1\amp N \\ 0 \amp 1 \end{pmatrix} \in \Gamma
+            | gives you a #[m q]-expansion
+            me q=  e^{2\pi i z}
+            me f(z) = \sum_{m\in \ZZ} a_m  q^{m/N}
+            | .
+        p
+            | #[m f] is holomorphic at #[m \infty] if #[m a_m  = 0] for #[m m \lt 0].
+        p
+            | #[m f] is holomorphic at all cusps if #[m f(\gamma z)(cz+d)^k] is holomorphic at #[m \infty] for all #[m \gamma \in \SL_2(\ZZ)].
+
+    example
+        statement: p
+            | Cusps for #[m \Gamma_0(p)], we know we have #[m \infty], what is the orbit of this?
+            me \gamma\in \Gamma_0(p),\, \gamma  =  \begin{pmatrix} a\amp b \\ cp \amp d    \end{pmatrix}
+            me \gamma \infty  = \frac{a}{cp}
+            | so anything with  a #[m p] in the denominator is equivalent to #[m \infty], what about the rest?
+            me \gamma 0  = \frac{b}{d}, \, \gcd(b,d)  =1
+            | , so we have two cusps.
+
+    definition#def-buntes-mfs
+        title Modular forms
+        statement: p
+            | A #[term modular form] is  a weakly modular function that is holomorphic at all the cusps.
+
+    example
+        statement
+            p
+                | Eisenstein series
+                me G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
+                | is a modular form of weight #[m k \gt 2] for #[m \SL_2(\ZZ)].
+                me \lim_{\im z\to \infty} G_k(z) = \lim_{\im z\to \infty} \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k} = \sum'_{n\in \ZZ} \frac{1}{n^k} = 2\zeta(k)
+                | .
+
+            p
+                | So here the function does not vanish at 0.
+
+    definition#def-buntes-cusp-forms
+        title Cusp forms
+        statement: p
+            | A #[term cusp form] is a modular form that vanishes at all cusps.
+
+    p
+        | Given a cusp it will be stabilised by some
+        me \begin{pmatrix} 1\amp h \\ 0 \amp 1 \end{pmatrix}
+        | call the smallest such #[m h] for a given cusp the #[term width] of the cusp.
+
+    example
+        statement
+            p
+                | Let's find the width of a cusp in #[m \Gamma_0(qp)] we have
+                me \begin{pmatrix} 1\amp 1 \\ 0 \amp 1 \end{pmatrix}
+                | so the width of #[m \infty] is 1.
+            p
+                | What about #[m \alpha = 1/p]?
+                ol
+                    li
+                        | Find an element #[m \gamma \in \SL_2(\ZZ)] s.t. #[m \gamma(\infty) = \alpha].
+                    li
+                        | Compute
+                        me  \delta(x) = \gamma \begin{pmatrix} 1\amp x \\ 0 \amp 1 \end{pmatrix} \gamma\inv
+                    li
+                        | Find the smallest #[m x] such that #[m \delta(x) = \Gamma_0(pq)]
+                me  \gamma = \begin{pmatrix} 1\amp 0 \\ p \amp 1 \end{pmatrix},\, \gamma(\infty) = \frac 1p
+                me  \begin{pmatrix} 1\amp 0 \\ p \amp 1 \end{pmatrix} \begin{pmatrix} 1\amp x \\ 0 \amp 1 \end{pmatrix} \begin{pmatrix} 1\amp 0 \\ -p \amp 1 \end{pmatrix}  = \begin{pmatrix} 1 - px \amp x  \\ -p^2 \amp px+ 1 \end{pmatrix}
+
+    example
+        title A cusp form
+        statement: p
+            | Let #[m \Delta(\tau) = g_2(\tau)^3 - 27g_3(\tau)^2,\,g_2(\tau) = 60G_4(\tau),\,g_3(\tau) =140G_6(\tau)]
+            | #[m \Delta(\tau)] has weight 12 for #[m \SL_2(\ZZ)].
+            | This vanishes at #[m \infty] because
+            me \zeta(4) = \frac{\pi^4}{90}
+            me \zeta(6) = \frac{\pi^6}{945}
+            | also
+            me j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
+            | so #[m \Delta(\tau)] vanishes at #[m \infty] becasue #[m g_2(\tau)] doesn't  and #[m j(z)] has a  simple pole at #[m \infty].
+
+
+    p
+        | #[m M_k(\Gamma)] as the space of modular forms of weight #[m k] for #[m \Gamma] is a #[m \CC] -v.s.
+        | #[m S_k(\Gamma)] as the space of cusp forms of weight #[m k] for #[m \Gamma] is a #[m \CC] -v.s.
+
+    theorem
+        statement: p
+            | #[m M_k(\Gamma)] and #[m S_k(\Gamma)] are finite dimensional
+            me.
+                \dim(M_k(\Gamma)) =
+                \begin{cases}
+                0 \amp \text{ if } k \le -1\\
+                1 \amp \text{ if } k = 0\\
+                (k-1)(g-1) + v_\infty \frac k2 + \sum_p [\frac k2 (1- \frac{1}{e_p})] \amp \text{ if } k \ge 2
+                \end{cases}
+            | where #[m g] is the genus of #[m X(\Gamma)]
+            | #[m v_\infty] is the number of inequivalent cusps
+            | #[m P] are the elliptic points
+            | #[m \lb \cdot \rb] is the integer part
+            me.
+                \dim(S_k(\Gamma)) =
+                \begin{cases}
+                0 \amp \text{ if } k \le 0 \\
+                (k-1)(g-1) + v_\infty (\frac k2 - 1) + \sum_p [\frac k2 (1- \frac{1}{e_p})] \amp \text{ if } k \ge 2
+                \end{cases}
+
+    p
+        me \dim(S_2(\Gamma)) = g(X(\Gamma))
+
+    proposition
+        statement: p
+            | If #[m f \in S_2(\Gamma)] then #[m f(z) \diff z] is a holomorphic differential.
+
+
+    p
+        | Given an elliptic curve
+        me E/  \CC = \CC/\Lambda
+        me E \to E'
+        me \CC/\Lambda \to \CC/\Lambda'
+        |, studying degree #[m n] isogenies, is like strudying index  #[m n ] sublattices
+
+    definition
+        statement: p
+            | #[m n \ge 1] then #[m T(n)] is the  #[m n]th #[term Hecke operator] acting on
+            me \divisors (\mathcal L)
+            | by
+            me T(n) \Lambda = \sum_{\Lambda' \subseteq \Lambda,\,[\Lambda : \Lambda'] = n} (\Lambda')
+    definition
+        statement: p
+            | Let #[m  \lambda \in \CC^\times] the homothety operator #[m R_\lambda] is #[m R_\lambda \Lambda = \lambda\Lambda].
+
+    theorem
+        statement: p
+            ol
+                li
+                    me R_\lambda R_\mu = R_{\lambda\mu}
+                li
+                    me R_\lambda T(n) = T(n) R_{\lambda}
+                li
+                    me T(nm) = T(n) T(m),\,\gcd(n,m) =1
+                li
+                    me T(p^e)T(p) = T(p^{e+1 }) + p T(p^{e-1}) R_p
+        proof
+            p
+                | Of 4.
+            p
+                | #[m \Lambda \in \mathcal L] for #[m \Lambda' \subseteq \Lambda ] index #[m p^{e+1}] have
+                me a(\Lambda')  = \# \{ \Gamma : \Lambda'  \subseteq \Lambda \subseteq_p \Lambda \}
+                me b(\Lambda')  = 1 \text{ if } \Lambda' \subseteq p\Lambda
+                | now
+                me T(p^e)T(p) \Lambda = T(p^e) \sum_{\Gamma \subseteq_p \Lambda } (\Gamma) = \sum_{\Gamma \subseteq_p \Lambda } \sum_{\Lambda' \subseteq_{p^e} \Gamma} (\Lambda') =\sum_{\Lambda' \subseteq_{p^e} \Gamma}  a(\Lambda') (\Lambda')
+                me T(p^{e+1} ) \Lambda  =  \sum_{\Lambda'\subseteq_{p^{e+1}} \Lambda} (\Lambda')
+                me T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p^{e-1}} p\Lambda } (Lambda'') = \sum_{\Lambda' \subseteq_{p^{e+1}} \Lambda} b(\Lambda') (\Lambda')
+                | Split into cases, do some maths..
+
+    p
+        | Hecke operators on lattices
+        | Given #[m \Lambda' \subseteq_n \Lambda] there is an integer matrix of determinant  #[m n] taking one basis to the other.
+        | Have a correspondence
+        me \{ \alpha \in M_2(\ZZ) : \det(\alpha) = n \}  \leftrightarrow \{ \Lambda ' : \Lambda ' \subseteq_n \Lambda\}
+        | representatives in Hermite normal form
+
+        me S_n = \{\begin{pmatrix} a\amp b \\ 0 \amp d\end{pmatrix} : ad= n,\, a,d\gt 0\, 0\le b \lt d\}
+
+    corollary
+        statement: p
+            | Let #[m \Lambda \in \mathcal L], #[m \Lambda = \ZZ w_1 + \ZZ w_2] then  #[m T(n)] acts as follows
+            me T(n) \Lambda =  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} \ZZ(aw_1 + bw_2) + \ZZ dw_2 = \sum_{\alpha \in S_n} \alpha \Lambda
+
+
+    corollary
+        statement: p
+            | For #[m p ] prime #[m T(p)]:
+            me T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw_2
+            | .
+
+    p
+        | The Hecke operators act on modular forms #[m f(\tau)] by reinterpreting weakly modualr functiosn of weight #[m k] as functions on lattices that have  a weight #[m k] action under homothety.
+
+    p
+        | This boils down to
+        me (T_k(n) f)(\tau) = n^{k-1}  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} d^{-k} f\left( \frac{ a\tau +b}{d}\right)
+
+    corollary
+        statement: p
+            | For #[m p ] prime
+            me (T_k(p) f)(\tau) = p^{k-1}f(pz) +\frac 1p \sum_{0 \le b  \lt p} f\left( \frac {z + b}{p} \right)
+            |.
+
+    p
+        | We have an action on fourier expansions
+        me f(\psi) = \sum_{m\in \ZZ} a_m q^m
+        me T_k(p)f(\tau) = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p} \sum_{b=0}^{p-1}  \left( \sum_{m\in \ZZ} a_m e^{2\pi i m (z+b)/p}\right)
+        me               = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p}  \sum_{m\in \ZZ} a_me^{2\pi i m z/p} \sum_{b=0}^{p-1} \underbrace{e^{2\pi i m b/p}}_{p\text{ if }p|m,0\text{otw}}
+        me               = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} +\sum_{m\in \ZZ} a_{pm}q^m
+
+    corollary: statement: p: me a_1(T_p(f)) = a_p(f)
+
+    p
+        | If #[m f\in S_k(\Gamma_0(1))] is an eigenfunction for these operators we can normalise so that #[m a_1(f) = 1].
+
+    p
+        me T(m)T(n) = T(mn)
+        me a_ma_n = a_{mn}
+        me a_{p^r} = a_p a_{p^{r-1}} + p^{k-1} a_{p^{r+1}}
+    p
+        | Petersson inner product, is hermitian.

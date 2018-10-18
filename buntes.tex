@@ -670,7 +670,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 {\Huge BUNTES}\\[\baselineskip]
 {\LARGE BU Number Theory Expository Seminar}\\[3\baselineskip]
 {\Large BUNTES Attendees (notes by Alex)}\\[3\baselineskip]
-{\Large October 11, 2018}\\}
+{\Large October 18, 2018}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -695,7 +695,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 \begin{chapterptx}{Abelian Varieties}{}{Abelian Varieties}{}{}\label{chapter-abelian-varieties}
 \begin{introduction}{}%
 \hypertarget{p-1}{}%
-These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated October 11, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated October 18, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 \end{introduction}%
 %
 %
@@ -4371,7 +4371,7 @@ is a root of unity \(\pi^N_{A_{\FF_{q'}}} = \pi^{N'}\).%
 \begin{chapterptx}{Dessins d'Enfants}{}{Dessins d'Enfants}{}{}\label{chapter-dessins}
 \begin{introduction}{}%
 \hypertarget{p-456}{}%
-These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated October 11, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated October 18, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 \end{introduction}%
 %
 %
@@ -9343,6 +9343,364 @@ so there is a linear relation among these, giving the Weierstrass equation.%
 \hypertarget{p-1049}{}%
 To get the equation for a torus we use the Weierstrass \(\wp\) function.%
 \end{paragraphs}%
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 5.2 Modular forms (Asra)}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Modular forms (Asra)}{}{Modular forms (Asra)}{}{}\label{sec-buntes-modular-forms}
+\hypertarget{p-1050}{}%
+Last time we saw the \(j\)-function, which was \(\SL_2(\ZZ)\)-invariant, this is quite a strong condition, and in fact \(j\) is pretty much all we get under this condition. So instead we weaken this somewhat to some other variance property.%
+\par
+\hypertarget{p-1051}{}%
+If \(w = f(z) \diff z\) on \(\HH\) and \(f(z)\) is meromorphic. \(\gamma \in \Gamma\) then%
+\begin{equation*}
+f(\gamma z) d(\gamma z) = f(\gamma z) d\left( \frac{az+b}{cz+d} \right)
+\end{equation*}
+%
+\begin{equation*}
+= f(\gamma z) \left( \frac{\cdots \diff }{(cz+d)^2} \right)
+\end{equation*}
+so we get a condition%
+\begin{equation*}
+f(\gamma z) = (cz+d)^2 f(z)
+\end{equation*}
+this is how we come to:%
+\begin{definition}{}{def-buntes-weak-modular}%
+\hypertarget{p-1052}{}%
+A \hyperref[def-morph-riem-surf]{holomorphic function} \(f\colon \HH \to \CC\) is a \terminology{weakly modular} function for \(\Gamma\) of weight \(k\) if%
+\begin{equation*}
+f(\gamma z) = (cz+d)^k f(z) \forall \gamma  = \begin{pmatrix} a\amp b \\ c \amp d    \end{pmatrix} \in \Gamma\text{.}
+\end{equation*}
+%
+\end{definition}
+\begin{remark}{}{remark-26}%
+\hypertarget{p-1053}{}%
+If \(-I \in \Gamma\) and \(k\) odd%
+\begin{equation*}
+f(-z)  = - f(-z)
+\end{equation*}
+so in this setting we only have interesting behaviour for even \(k\).%
+\par
+\hypertarget{p-1054}{}%
+If \(\Gamma\) is a congruence subgroup of level \(N\) we have%
+\begin{equation*}
+\begin{pmatrix} 1\amp N \\ 0 \amp 1 \end{pmatrix} \in \Gamma
+\end{equation*}
+gives you a \(q\)-expansion%
+\begin{equation*}
+q=  e^{2\pi i z}
+\end{equation*}
+%
+\begin{equation*}
+f(z) = \sum_{m\in \ZZ} a_m  q^{m/N}\text{.}
+\end{equation*}
+%
+\par
+\hypertarget{p-1055}{}%
+\(f\) is holomorphic at \(\infty\) if \(a_m  = 0\) for \(m \lt 0\).%
+\par
+\hypertarget{p-1056}{}%
+\(f\) is holomorphic at all cusps if \(f(\gamma z)(cz+d)^k\) is holomorphic at \(\infty\) for all \(\gamma \in \SL_2(\ZZ)\).%
+\end{remark}
+\begin{example}{}{example-60}%
+\hypertarget{p-1057}{}%
+Cusps for \(\Gamma_0(p)\), we know we have \(\infty\), what is the orbit of this?%
+\begin{equation*}
+\gamma\in \Gamma_0(p),\, \gamma  =  \begin{pmatrix} a\amp b \\ cp \amp d    \end{pmatrix}
+\end{equation*}
+%
+\begin{equation*}
+\gamma \infty  = \frac{a}{cp}
+\end{equation*}
+so anything with  a \(p\) in the denominator is equivalent to \(\infty\), what about the rest?%
+\begin{equation*}
+\gamma 0  = \frac{b}{d}, \, \gcd(b,d)  =1\text{,}
+\end{equation*}
+so we have two cusps.%
+\end{example}
+\begin{definition}{Modular forms.}{def-buntes-mfs}%
+\hypertarget{p-1058}{}%
+A \terminology{modular form} is  a \hyperref[def-buntes-weak-modular]{weakly modular} function that is holomorphic at all the cusps.%
+\end{definition}
+\begin{example}{}{example-61}%
+\hypertarget{p-1059}{}%
+Eisenstein series%
+\begin{equation*}
+G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
+\end{equation*}
+is a \hyperref[def-buntes-mfs]{modular form} of weight \(k \gt 2\) for \(\SL_2(\ZZ)\).%
+\begin{equation*}
+\lim_{\im z\to \infty} G_k(z) = \lim_{\im z\to \infty} \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k} = \sum'_{n\in \ZZ} \frac{1}{n^k} = 2\zeta(k)\text{.}
+\end{equation*}
+%
+\par
+\hypertarget{p-1060}{}%
+So here the function does not vanish at 0.%
+\end{example}
+\begin{definition}{Cusp forms.}{def-buntes-cusp-forms}%
+\hypertarget{p-1061}{}%
+A \terminology{cusp form} is a \hyperref[def-buntes-mfs]{modular form} that vanishes at all cusps.%
+\end{definition}
+\hypertarget{p-1062}{}%
+Given a cusp it will be stabilised by some%
+\begin{equation*}
+\begin{pmatrix} 1\amp h \\ 0 \amp 1 \end{pmatrix}
+\end{equation*}
+call the smallest such \(h\) for a given cusp the \terminology{width} of the cusp.%
+\begin{example}{}{example-62}%
+\hypertarget{p-1063}{}%
+Let's find the \hyperref[def-buntes-cusp-forms]{width} of a cusp in \(\Gamma_0(qp)\) we have%
+\begin{equation*}
+\begin{pmatrix} 1\amp 1 \\ 0 \amp 1 \end{pmatrix}
+\end{equation*}
+so the \hyperref[def-buntes-cusp-forms]{width} of \(\infty\) is 1.%
+\par
+\hypertarget{p-1064}{}%
+What about \(\alpha = 1/p\)?\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-263}{}Find an element \(\gamma \in \SL_2(\ZZ)\) s.t. \(\gamma(\infty) = \alpha\).%
+\item\hypertarget{li-264}{}Compute%
+\begin{equation*}
+\delta(x) = \gamma \begin{pmatrix} 1\amp x \\ 0 \amp 1 \end{pmatrix} \gamma\inv
+\end{equation*}
+%
+\item\hypertarget{li-265}{}Find the smallest \(x\) such that \(\delta(x) = \Gamma_0(pq)\)%
+\end{enumerate}
+%
+\begin{equation*}
+\gamma = \begin{pmatrix} 1\amp 0 \\ p \amp 1 \end{pmatrix},\, \gamma(\infty) = \frac 1p
+\end{equation*}
+%
+\begin{equation*}
+\begin{pmatrix} 1\amp 0 \\ p \amp 1 \end{pmatrix} \begin{pmatrix} 1\amp x \\ 0 \amp 1 \end{pmatrix} \begin{pmatrix} 1\amp 0 \\ -p \amp 1 \end{pmatrix}  = \begin{pmatrix} 1 - px \amp x  \\ -p^2 \amp px+ 1 \end{pmatrix}
+\end{equation*}
+%
+\end{example}
+\begin{example}{A cusp form.}{example-63}%
+\hypertarget{p-1065}{}%
+Let \(\Delta(\tau) = g_2(\tau)^3 - 27g_3(\tau)^2,\,g_2(\tau) = 60G_4(\tau),\,g_3(\tau) =140G_6(\tau)\) \(\Delta(\tau)\) has weight 12 for \(\SL_2(\ZZ)\). This vanishes at \(\infty\) because%
+\begin{equation*}
+\zeta(4) = \frac{\pi^4}{90}
+\end{equation*}
+%
+\begin{equation*}
+\zeta(6) = \frac{\pi^6}{945}
+\end{equation*}
+also%
+\begin{equation*}
+j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
+\end{equation*}
+so \(\Delta(\tau)\) vanishes at \(\infty\) becasue \(g_2(\tau)\) doesn't  and \(j(z)\) has a  \hyperref[def-simple-av]{simple} pole at \(\infty\).%
+\end{example}
+\hypertarget{p-1066}{}%
+\(M_k(\Gamma)\) as the space of \hyperref[def-buntes-mfs]{modular forms} of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s. \(S_k(\Gamma)\) as the space of \hyperref[def-buntes-cusp-forms]{cusp forms} of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s.%
+\begin{theorem}{}{}{theorem-72}%
+\hypertarget{p-1067}{}%
+\(M_k(\Gamma)\) and \(S_k(\Gamma)\) are finite dimensional%
+\begin{equation*}
+\dim(M_k(\Gamma)) =
+\begin{cases}
+0 \amp \text{ if } k \le -1\\
+1 \amp \text{ if } k = 0\\
+(k-1)(g-1) + v_\infty \frac k2 + \sum_p [\frac k2 (1- \frac{1}{e_p})] \amp \text{ if } k \ge 2
+\end{cases}
+\end{equation*}
+where \(g\) is the \hyperref[sec-deuring]{genus} of \(X(\Gamma)\) \(v_\infty\) is the number of inequivalent cusps \(P\) are the elliptic points \(\lb \cdot \rb\) is the integer part%
+\begin{equation*}
+\dim(S_k(\Gamma)) =
+\begin{cases}
+0 \amp \text{ if } k \le 0 \\
+(k-1)(g-1) + v_\infty (\frac k2 - 1) + \sum_p [\frac k2 (1- \frac{1}{e_p})] \amp \text{ if } k \ge 2
+\end{cases}
+\end{equation*}
+%
+\end{theorem}
+\hypertarget{p-1068}{}%
+%
+\begin{equation*}
+\dim(S_2(\Gamma)) = g(X(\Gamma))
+\end{equation*}
+%
+\begin{proposition}{}{}{proposition-67}%
+\hypertarget{p-1069}{}%
+If \(f \in S_2(\Gamma)\) then \(f(z) \diff z\) is a holomorphic differential.%
+\end{proposition}
+\hypertarget{p-1070}{}%
+Given an \hyperref[def-supersing-isog-ec]{elliptic curve}%
+\begin{equation*}
+E/  \CC = \CC/\Lambda
+\end{equation*}
+%
+\begin{equation*}
+E \to E'
+\end{equation*}
+%
+\begin{equation*}
+\CC/\Lambda \to \CC/\Lambda'\text{,}
+\end{equation*}
+studying degree \(n\) \hyperref[def-supersing-isog-isog]{isogenies}, is like strudying index  \(n \) sublattices%
+\begin{definition}{}{definition-100}%
+\hypertarget{p-1071}{}%
+\(n \ge 1\) then \(T(n)\) is the  \(n\)th \terminology{Hecke operator} acting on%
+\begin{equation*}
+\divisors (\mathcal L)
+\end{equation*}
+by%
+\begin{equation*}
+T(n) \Lambda = \sum_{\Lambda' \subseteq \Lambda,\,[\Lambda : \Lambda'] = n} (\Lambda')
+\end{equation*}
+%
+\end{definition}
+\begin{definition}{}{definition-101}%
+\hypertarget{p-1072}{}%
+Let \(\lambda \in \CC^\times\) the homothety operator \(R_\lambda\) is \(R_\lambda \Lambda = \lambda\Lambda\).%
+\end{definition}
+\begin{theorem}{}{}{theorem-73}%
+\hypertarget{p-1073}{}%
+\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-266}{}%
+\begin{equation*}
+R_\lambda R_\mu = R_{\lambda\mu}
+\end{equation*}
+%
+\item\hypertarget{li-267}{}%
+\begin{equation*}
+R_\lambda T(n) = T(n) R_{\lambda}
+\end{equation*}
+%
+\item\hypertarget{li-268}{}%
+\begin{equation*}
+T(nm) = T(n) T(m),\,\gcd(n,m) =1
+\end{equation*}
+%
+\item\hypertarget{li-269}{}%
+\begin{equation*}
+T(p^e)T(p) = T(p^{e+1 }) + p T(p^{e-1}) R_p
+\end{equation*}
+%
+\end{enumerate}
+%
+\end{theorem}
+\begin{proof}\hypertarget{proof-110}{}
+\hypertarget{p-1074}{}%
+Of 4.%
+\par
+\hypertarget{p-1075}{}%
+\(\Lambda \in \mathcal L\) for \(\Lambda' \subseteq \Lambda \) index \(p^{e+1}\) have%
+\begin{equation*}
+a(\Lambda')  = \# \{ \Gamma : \Lambda'  \subseteq \Lambda \subseteq_p \Lambda \}
+\end{equation*}
+%
+\begin{equation*}
+b(\Lambda')  = 1 \text{ if } \Lambda' \subseteq p\Lambda
+\end{equation*}
+now%
+\begin{equation*}
+T(p^e)T(p) \Lambda = T(p^e) \sum_{\Gamma \subseteq_p \Lambda } (\Gamma) = \sum_{\Gamma \subseteq_p \Lambda } \sum_{\Lambda' \subseteq_{p^e} \Gamma} (\Lambda') =\sum_{\Lambda' \subseteq_{p^e} \Gamma}  a(\Lambda') (\Lambda')
+\end{equation*}
+%
+\begin{equation*}
+T(p^{e+1} ) \Lambda  =  \sum_{\Lambda'\subseteq_{p^{e+1}} \Lambda} (\Lambda')
+\end{equation*}
+%
+\begin{equation*}
+T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p^{e-1}} p\Lambda } (Lambda'') = \sum_{\Lambda' \subseteq_{p^{e+1}} \Lambda} b(\Lambda') (\Lambda')
+\end{equation*}
+Split into cases, do some maths..%
+\end{proof}
+\hypertarget{p-1076}{}%
+Hecke operators on \hyperref[def-buntes-lattice]{lattices} Given \(\Lambda' \subseteq_n \Lambda\) there is an integer matrix of determinant  \(n\) taking one basis to the other. Have a correspondence%
+\begin{equation*}
+\{ \alpha \in M_2(\ZZ) : \det(\alpha) = n \}  \leftrightarrow \{ \Lambda ' : \Lambda ' \subseteq_n \Lambda\}
+\end{equation*}
+representatives in Hermite normal form%
+\begin{equation*}
+S_n = \{\begin{pmatrix} a\amp b \\ 0 \amp d\end{pmatrix} : ad= n,\, a,d\gt 0\, 0\le b \lt d\}
+\end{equation*}
+%
+\begin{corollary}{}{}{corollary-35}%
+\hypertarget{p-1077}{}%
+Let \(\Lambda \in \mathcal L\), \(\Lambda = \ZZ w_1 + \ZZ w_2\) then  \(T(n)\) acts as follows%
+\begin{equation*}
+T(n) \Lambda =  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} \ZZ(aw_1 + bw_2) + \ZZ dw_2 = \sum_{\alpha \in S_n} \alpha \Lambda
+\end{equation*}
+%
+\end{corollary}
+\begin{corollary}{}{}{corollary-36}%
+\hypertarget{p-1078}{}%
+For \(p \) prime \(T(p)\):%
+\begin{equation*}
+T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw_2\text{.}
+\end{equation*}
+%
+\end{corollary}
+\hypertarget{p-1079}{}%
+The \hyperref[def-buntes-cusp-forms]{Hecke operators} act on \hyperref[def-buntes-mfs]{modular forms} \(f(\tau)\) by reinterpreting weakly modualr functiosn of weight \(k\) as functions on \hyperref[def-buntes-lattice]{lattices} that have  a weight \(k\) action under homothety.%
+\par
+\hypertarget{p-1080}{}%
+This boils down to%
+\begin{equation*}
+(T_k(n) f)(\tau) = n^{k-1}  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} d^{-k} f\left( \frac{ a\tau +b}{d}\right)
+\end{equation*}
+%
+\begin{corollary}{}{}{corollary-37}%
+\hypertarget{p-1081}{}%
+For \(p \) prime%
+\begin{equation*}
+(T_k(p) f)(\tau) = p^{k-1}f(pz) +\frac 1p \sum_{0 \le b  \lt p} f\left( \frac {z + b}{p} \right)\text{.}
+\end{equation*}
+%
+\end{corollary}
+\hypertarget{p-1082}{}%
+We have an action on fourier expansions%
+\begin{equation*}
+f(\psi) = \sum_{m\in \ZZ} a_m q^m
+\end{equation*}
+%
+\begin{equation*}
+T_k(p)f(\tau) = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p} \sum_{b=0}^{p-1}  \left( \sum_{m\in \ZZ} a_m e^{2\pi i m (z+b)/p}\right)
+\end{equation*}
+%
+\begin{equation*}
+= p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p}  \sum_{m\in \ZZ} a_me^{2\pi i m z/p} \sum_{b=0}^{p-1} \underbrace{e^{2\pi i m b/p}}_{p\text{ if }p|m,0\text{otw}}
+\end{equation*}
+%
+\begin{equation*}
+= p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} +\sum_{m\in \ZZ} a_{pm}q^m
+\end{equation*}
+%
+\begin{corollary}{}{}{corollary-38}%
+\hypertarget{p-1083}{}%
+%
+\begin{equation*}
+a_1(T_p(f)) = a_p(f)
+\end{equation*}
+%
+\end{corollary}
+\hypertarget{p-1084}{}%
+If \(f\in S_k(\Gamma_0(1))\) is an eigenfunction for these operators we can normalise so that \(a_1(f) = 1\).%
+\par
+\hypertarget{p-1085}{}%
+%
+\begin{equation*}
+T(m)T(n) = T(mn)
+\end{equation*}
+%
+\begin{equation*}
+a_ma_n = a_{mn}
+\end{equation*}
+%
+\begin{equation*}
+a_{p^r} = a_p a_{p^{r-1}} + p^{k-1} a_{p^{r+1}}
+\end{equation*}
+%
+\par
+\hypertarget{p-1086}{}%
+Petersson inner product, is hermitian.%
 \end{sectionptx}
 \end{chapterptx}
 %
