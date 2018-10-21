@@ -502,6 +502,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -670,7 +671,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 {\Huge BUNTES}\\[\baselineskip]
 {\LARGE BU Number Theory Expository Seminar}\\[3\baselineskip]
 {\Large BUNTES Attendees (notes by Alex)}\\[3\baselineskip]
-{\Large October 18, 2018}\\}
+{\Large October 21, 2018}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -695,7 +696,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 \begin{chapterptx}{Abelian Varieties}{}{Abelian Varieties}{}{}\label{chapter-abelian-varieties}
 \begin{introduction}{}%
 \hypertarget{p-1}{}%
-These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated October 18, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated October 21, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 \end{introduction}%
 %
 %
@@ -788,7 +789,7 @@ Plan:\leavevmode%
 TFAE for a projective curve \(E\) over \(k\).\leavevmode%
 \begin{enumerate}
 \item\hypertarget{item-cubic-eq}{}\(E\) is given by \(Y^2Z = X^3 + aXZ^2 + bZ^3\), \(4a^3 + 27b^2 \ne 0\).%
-\item\hypertarget{item-nonsing-pt}{}\(E\) is nonsingular of \hyperref[sec-deuring]{genus} 1 with a distinguished point \(P_0\).%
+\item\hypertarget{item-nonsing-pt}{}\(E\) is nonsingular of \hyperref[def-class-set]{genus} 1 with a distinguished point \(P_0\).%
 \item\hypertarget{item-nonsing-gp}{}\(E\) is nonsingular with an \hyperref[def-alg-gp]{algebraic group} structure.%
 \item\hypertarget{item-cmplx}{}(if \(k \subseteq \CC\)) such that \(E(\CC) = \CC/\Lambda\) for some \hyperref[def-buntes-lattice]{lattice} \(\Lambda \subseteq \CC\).%
 \end{enumerate}
@@ -2628,7 +2629,7 @@ We then have a notion of degree, \hyperref[def-polarization]{polarizations} of d
 \end{definition}
 \begin{remark}{}{remark-7}%
 \hypertarget{p-246}{}%
-This is in fact equivalent to the \hyperref[def-princ-pol]{previous definition~\ref{def-princ-pol}}, see \hyperlink{bib-vandergeer-moonen}{[65,~cor. 11.5]}.%
+This is in fact equivalent to the \hyperref[def-princ-pol]{previous definition~\ref{def-princ-pol}}, see \hyperlink{bib-vandergeer-moonen}{[66,~cor. 11.5]}.%
 \end{remark}
 \hypertarget{p-247}{}%
 Natural questions: what does the \hyperref[def-line-bundle]{line bundle} \(\sheaf L\) tell us about the \hyperref[def-polarization]{polarization}? Can we tell principality?%
@@ -2716,7 +2717,7 @@ The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is d
 %
 \begin{subsectionptx}{Étale Cohomology of Abelian Varieties}{}{Étale Cohomology of Abelian Varieties}{}{}\label{subsection-27}
 \hypertarget{p-262}{}%
-See \hyperlink{bib-milne-etale}{[48]} or \hyperlink{bib-tamme}{[62]}.%
+See \hyperlink{bib-milne-etale}{[48]} or \hyperlink{bib-tamme}{[63]}.%
 \par
 \hypertarget{p-263}{}%
 Recall for \hyperref[def-buntes-abvar]{abelian varieties} over \(A/\CC\) we considered singular cohomology of the complex points \(A(\CC)\). Indeed this theory was strongly connected to the \hyperref[def-buntes-lattice]{lattice} \(\Lambda\) defining \(A(\CC)\).%
@@ -2738,7 +2739,7 @@ f^{-1}(U)\ar[d] \ar[r]^{\sim} & U\ar@{^(->}[d]^i\\
 X \ar[r]_f & Y
 }\text{.}
 \end{equation*}
-There exists an open subset \(U\) such that the base change \(X \times_Y U\) is isomorphic with \(\coprod U\) of several copies of \(U\) in a \hyperref[sec-deuring]{compatible} way with the map to \(U\).%
+There exists an open subset \(U\) such that the base change \(X \times_Y U\) is isomorphic with \(\coprod U\) of several copies of \(U\) in a \hyperref[def-buntes-compat]{compatible} way with the map to \(U\).%
 \par
 \hypertarget{p-268}{}%
 So let's cheat, the best isomorphism is the identity map%
@@ -2835,7 +2836,7 @@ We then define%
 %
 \end{definition}
 \hypertarget{p-283}{}%
-So we need to understand \hyperref[def-etale]{étale} covers of \hyperref[def-buntes-abvar]{abelian varieties}. Following \hyperlink{bib-vandergeer-moonen}{[65]}:%
+So we need to understand \hyperref[def-etale]{étale} covers of \hyperref[def-buntes-abvar]{abelian varieties}. Following \hyperlink{bib-vandergeer-moonen}{[66]}:%
 \begin{proposition}{surprising proposition.}{}{proposition-23}%
 \hypertarget{p-284}{}%
 Let \(X\)  be a \hyperref[def-abelian-complete-var]{complete} variety over a field \(k\) with \(e\in X(k)\) and \(m \colon X\times X\to X\) s.t. \(m(e,x) = m(x,e) = x\) for all \(x \in X\). Then \((X, m,e)\) is an \hyperref[def-buntes-abvar]{abelian variety}.%
@@ -2990,7 +2991,7 @@ is then a constant function, since not surjective. So we define%
 e_m\colon E[m]\times E[m] \amp\to \mu_m\\
 (s,t)\amp \mapsto \frac{g_t(x+s)}{g_t(x)}
 \end{align*}
-will state many properties later, but for now. \(e_m\) is \hyperref[sec-deuring]{compatible}:%
+will state many properties later, but for now. \(e_m\) is \hyperref[def-buntes-compat]{compatible}:%
 \begin{equation*}
 e_{mm'} (a,a')^{m'} = e_m(m'a, m'a') \ \forall a,a' \in E[mm']
 \end{equation*}
@@ -3048,7 +3049,7 @@ e_m(a,a'_1+a'_2) = e_m(a,a'_1)e_m(a,a'_2)
 %
 \item\hypertarget{li-45}{}\(e_m\) is non-degenerate: if \(e_m(a,a') = 1 \forall a\in A\lb m\rb\) then \(a' = 0\) (and likewise for the reverse).%
 \item\hypertarget{li-46}{}\(e_m\) is Galois-invariant... but we assume \(\overline k =k\) so we ignore this.%
-\item\hypertarget{li-47}{}\(e_m\) is \hyperref[sec-deuring]{compatible}%
+\item\hypertarget{li-47}{}\(e_m\) is \hyperref[def-buntes-compat]{compatible}%
 \begin{equation*}
 e_{mm'} (a,a')^{m'} = e_m(m'a, m'a') \ \forall a \in A[mm'], a'\in A^\vee [mm']
 \end{equation*}
@@ -4371,7 +4372,7 @@ is a root of unity \(\pi^N_{A_{\FF_{q'}}} = \pi^{N'}\).%
 \begin{chapterptx}{Dessins d'Enfants}{}{Dessins d'Enfants}{}{}\label{chapter-dessins}
 \begin{introduction}{}%
 \hypertarget{p-456}{}%
-These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated October 18, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated October 21, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 \end{introduction}%
 %
 %
@@ -4535,7 +4536,7 @@ We have a faithful action of \(\absgal{\QQ}\) on \hyperref[def-dessin-denfant]{d
 \end{corollary}
 \begin{theorem}{}{}{theorem-42}%
 \hypertarget{p-477}{}%
-We have a faithful action of \(\absgal{\QQ}\) on the set of \hyperref[def-dessin-denfant]{dessins} of any fixed \hyperref[sec-deuring]{genus}.%
+We have a faithful action of \(\absgal{\QQ}\) on the set of \hyperref[def-dessin-denfant]{dessins} of any fixed \hyperref[def-class-set]{genus}.%
 \end{theorem}
 \end{subsectionptx}
 %
@@ -4826,10 +4827,10 @@ The (uniquely determined) \(g\) is the \terminology{genus} of the surface.%
 \begin{sectionptx}{Riemann Hurwitz Formula (Sachi)}{}{Riemann Hurwitz Formula (Sachi)}{}{}\label{sec-riemann-hurwitz}
 \begin{inlineexercise}{Unimportant.}{exercise-9}%
 \hypertarget{p-509}{}%
-The \hyperref[sec-deuring]{genus} is invariant under changing triangulation.%
+The \hyperref[def-class-set]{genus} is invariant under changing triangulation.%
 \end{inlineexercise}
 \hypertarget{p-510}{}%
-In particular there are at least two distinct ways of thinking about \hyperref[sec-deuring]{genus} for \hyperref[def-top-riem-surface]{Riemann surfaces} \(R\)\leavevmode%
+In particular there are at least two distinct ways of thinking about \hyperref[def-class-set]{genus} for \hyperref[def-top-riem-surface]{Riemann surfaces} \(R\)\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-101}{}%
 \begin{equation*}
@@ -4841,7 +4842,7 @@ In particular there are at least two distinct ways of thinking about \hyperref[s
 %
 \par
 \hypertarget{p-511}{}%
-Goal: given \(R\) calculate \hyperref[sec-deuring]{genus}%
+Goal: given \(R\) calculate \hyperref[def-class-set]{genus}%
 \begin{equation*}
 y^2 = (x+1)(x-1)(x+2)(x-2)
 \end{equation*}
@@ -5043,7 +5044,7 @@ For \(\pi\colon R\to S\) a non-constant morphism of compact \hyperref[def-top-ri
 \end{claim}
 \begin{corollary}{}{}{corollary-31}%
 \hypertarget{p-533}{}%
-There are no non-constant morphisms from a sphere to a surface of \hyperref[sec-deuring]{genus} \(\gt 0\).%
+There are no non-constant morphisms from a sphere to a surface of \hyperref[def-class-set]{genus} \(\gt 0\).%
 \end{corollary}
 \begin{proof}\hypertarget{proof-85}{}
 \hypertarget{p-534}{}%
@@ -5091,7 +5092,7 @@ Klein quartic%
 \begin{equation*}
 x^3 y + y^3 z + z^3 x = 0
 \end{equation*}
-has 168 automorphisms and is \hyperref[sec-deuring]{genus} 3.%
+has 168 automorphisms and is \hyperref[def-class-set]{genus} 3.%
 \end{inlineexercise}
 \end{paragraphs}%
 \end{sectionptx}
@@ -5335,7 +5336,7 @@ S =\HH/\Gamma \ar[r]_f & \HH/N(\Gamma) = S/\Aut(S)
 since \(\phi_1,\phi_2\) are holomorphic then so is \(f\). So \(\deg f=  | N(\Gamma) /\Gamma|\) and \(\deg f  \lt \infty\).%
 \end{proof}
 \hypertarget{p-570}{}%
-Say \(\Sigma\), \(g\ge 2\), \(G\subseteq \Aut(\Sigma)\). Let \(\bar g\) be the \hyperref[sec-deuring]{genus} of \(\Sigma /G\)%
+Say \(\Sigma\), \(g\ge 2\), \(G\subseteq \Aut(\Sigma)\). Let \(\bar g\) be the \hyperref[def-class-set]{genus} of \(\Sigma /G\)%
 \begin{equation*}
 2g - 2 = |G| (2\bar g - 2) + \sum_p (I(p) - 1) = |G|(2\bar g - 2 + \sum_{i=1}^n (1 - \frac{1}{|I(p_i)|}))
 \end{equation*}
@@ -5350,7 +5351,7 @@ Consider%
 \begin{equation*}
 1 \to \Gamma(n) \to \Gamma(1) \to \PSL_2(\ZZ/n\ZZ) \to 1
 \end{equation*}
-compute \hyperref[sec-deuring]{genus} of \(\HH/\Gamma(n)\).%
+compute \hyperref[def-class-set]{genus} of \(\HH/\Gamma(n)\).%
 \end{inlineexercise}
 \end{paragraphs}%
 \end{subsectionptx}
@@ -5370,10 +5371,10 @@ compute \hyperref[sec-deuring]{genus} of \(\HH/\Gamma(n)\).%
 %
 \begin{subsectionptx}{Moduli space of compact Riemann surfaces with genus \(g\)}{}{Moduli space of compact Riemann surfaces with genus \(g\)}{}{}\label{subsection-50}
 \hypertarget{p-573}{}%
-\(g =0\). Uniformization tells us that up to isomorphisms all \hyperref[def-top-riem-surface]{Riemann surfaces} of \hyperref[sec-deuring]{genus} \(0\) are \(\PP^1\) hence the moduli space \(\mathcal M _0  = \{\text{pt}\}\).%
+\(g =0\). Uniformization tells us that up to isomorphisms all \hyperref[def-top-riem-surface]{Riemann surfaces} of \hyperref[def-class-set]{genus} \(0\) are \(\PP^1\) hence the moduli space \(\mathcal M _0  = \{\text{pt}\}\).%
 \par
 \hypertarget{p-574}{}%
-\(g = 1\). Uniformization tells us that each \hyperref[def-top-riem-surface]{Riemann surface} of \hyperref[sec-deuring]{genus} \(1\) is a torus and can be written as \(\CC/ \omega_1\ZZ+ \omega_2\ZZ \to \CC/(\ZZ \oplus \tau \ZZ)\), with \(\tau = \pm \omega_1/\omega_2\).%
+\(g = 1\). Uniformization tells us that each \hyperref[def-top-riem-surface]{Riemann surface} of \hyperref[def-class-set]{genus} \(1\) is a torus and can be written as \(\CC/ \omega_1\ZZ+ \omega_2\ZZ \to \CC/(\ZZ \oplus \tau \ZZ)\), with \(\tau = \pm \omega_1/\omega_2\).%
 \begin{proposition}{2.54.}{}{proposition-45}%
 \hypertarget{p-575}{}%
 %
@@ -5612,7 +5613,7 @@ S_F \to \PP^1
 \begin{equation*}
 (x,y) \to x
 \end{equation*}
-\(S_F\) has \hyperref[sec-deuring]{genus} 0. \(S_F \to \PP^1\) is of degree 3 and \hyperref[def-dess-ramified]{ramified} at most over \(0, \frac{-27}{4}, \infty\). \(\operatorname{Mon}(x)  \simeq \Sigma_3\) so not a normal covering. Normalization of \((S_F, x)\) is \(S_{\tilde F} , \tilde x)\) where%
+\(S_F\) has \hyperref[def-class-set]{genus} 0. \(S_F \to \PP^1\) is of degree 3 and \hyperref[def-dess-ramified]{ramified} at most over \(0, \frac{-27}{4}, \infty\). \(\operatorname{Mon}(x)  \simeq \Sigma_3\) so not a normal covering. Normalization of \((S_F, x)\) is \(S_{\tilde F} , \tilde x)\) where%
 \begin{equation*}
 \tilde F (x,y) = y^2 ( 1-y)^2 x +  (1-y + y^2)
 \end{equation*}
@@ -6181,7 +6182,7 @@ G_\QQ\acts \{\text{Dessins}\}\leftrightarrow \{\text{Belyi pairs}\}
 %
 \par
 \hypertarget{p-660}{}%
-The \(G_\QQ\) action is faithful on \hyperref[def-dessin-denfant]{dessins} of \hyperref[sec-deuring]{genus} \(g\).%
+The \(G_\QQ\) action is faithful on \hyperref[def-dessin-denfant]{dessins} of \hyperref[def-class-set]{genus} \(g\).%
 \begin{example}{}{example-32}%
 \hypertarget{p-661}{}%
 Same example \(\PP^1\) with a single edge, \(f_D  = z\), \(\deg f_D = \#\) edges, \(m_v(f)=  \deg v\).%
@@ -6217,7 +6218,7 @@ Alex: So I haven't typed this section as it was a lot of pictures and I haven't 
 We begin with one of the most famous results in arithmetic geometry.%
 \begin{theorem}{Mordell conjecture/Falting's theorem.}{}{theorem-52}%
 \hypertarget{p-666}{}%
-Let \(C\) be an algebraic curve of \hyperref[sec-deuring]{genus} \(\ge 2\) over a number field \(K\). Then \(C(K)\) is finite.%
+Let \(C\) be an algebraic curve of \hyperref[def-class-set]{genus} \(\ge 2\) over a number field \(K\). Then \(C(K)\) is finite.%
 \end{theorem}
 \hypertarget{p-667}{}%
 There are many proofs of this, Falting's being the original and most famous.%
@@ -6356,7 +6357,7 @@ The idea now is that \(N(A,B, C)\) is measuring ramification, while \(H(A, B,C)\
 %
 \begin{inlineexercise}{}{exercise-21}%
 \hypertarget{p-685}{}%
-If \(C\)  has \hyperref[sec-deuring]{genus} 0 or 1, no such \(f\) can exist (hint: Riemann-Hurwitz).%
+If \(C\)  has \hyperref[def-class-set]{genus} 0 or 1, no such \(f\) can exist (hint: Riemann-Hurwitz).%
 \end{inlineexercise}
 \end{paragraphs}%
 \begin{paragraphs}{ABC implies a bound on Mordell.}{paragraphs-19}%
@@ -6392,7 +6393,7 @@ b_f(0) = \sum_{f(p) = 0} (e_p - 1)\text{.}
 \end{proposition}
 \begin{proof}\hypertarget{proof-98}{}
 \hypertarget{p-688}{}%
-The \hyperref[sec-deuring]{genus} 0 case follows from the fact that the \(f\) is a rational function (and in fact the error term is \(O(1)\)) (exercise). For the general case we need the theory of log heights on curves. From this we require the following\leavevmode%
+The \hyperref[def-class-set]{genus} 0 case follows from the fact that the \(f\) is a rational function (and in fact the error term is \(O(1)\)) (exercise). For the general case we need the theory of log heights on curves. From this we require the following\leavevmode%
 \begin{itemize}[label=\textbullet]
 \item{}For \(D\) a divisor on \(C\) we have  a height function%
 \begin{equation*}
@@ -6487,7 +6488,7 @@ ABC implies Mordell.%
 \end{theorem}
 \begin{proof}\hypertarget{proof-99}{}
 \hypertarget{p-693}{}%
-Let \(C\) be a given curve of \hyperref[sec-deuring]{genus} \(g \ge 2\) Belyi's theorem gives a function%
+Let \(C\) be a given curve of \hyperref[def-class-set]{genus} \(g \ge 2\) Belyi's theorem gives a function%
 \begin{equation*}
 f\colon C \to \PP^1
 \end{equation*}
@@ -7032,7 +7033,7 @@ for \(\characteristic (k) \ne 3\) such that \(e_\tau(P) = 1\) or \(3\).%
 \begin{subsectionptx}{In the Stacks}{}{In the Stacks}{}{}\label{subsection-66}
 \begin{observation}{}{observation-2}%
 \hypertarget{p-756}{}%
-\(\PP^1 \smallsetminus \{0,1,\infty\}\) is the moduli space of \hyperref[sec-deuring]{genus} 0 curves with four (ordered) marked points.%
+\(\PP^1 \smallsetminus \{0,1,\infty\}\) is the moduli space of \hyperref[def-class-set]{genus} 0 curves with four (ordered) marked points.%
 \begin{equation*}
 (\PP^1, \alpha_1,\alpha_2,\alpha_3,\alpha_4) \mapsto \image(\alpha_4) \text{ when } \alpha_1 \mapsto 0,\alpha_2\mapsto 1, \alpha_3 \mapsto \infty\text{.}
 \end{equation*}
@@ -7040,7 +7041,7 @@ for \(\characteristic (k) \ne 3\) such that \(e_\tau(P) = 1\) or \(3\).%
 \end{observation}
 \begin{definition}{}{definition-67}%
 \hypertarget{p-757}{}%
-Let \(\mathcal M_{g,n}\) be the moduli space of \hyperref[sec-deuring]{genus} \(g\) curves with \(n\) (ordered) marked points (then \(\mathcal M_{g,\lb n\rb}\) is the same for unordered points). If \(n\) is large enough relative to \(g\) then \(\mathcal M_{g,n}\) will be a scheme (but the unordered version will not).%
+Let \(\mathcal M_{g,n}\) be the moduli space of \hyperref[def-class-set]{genus} \(g\) curves with \(n\) (ordered) marked points (then \(\mathcal M_{g,\lb n\rb}\) is the same for unordered points). If \(n\) is large enough relative to \(g\) then \(\mathcal M_{g,n}\) will be a scheme (but the unordered version will not).%
 \end{definition}
 \begin{example}{}{example-38}%
 \hypertarget{p-758}{}%
@@ -7100,7 +7101,7 @@ For an abelian surface over \(\overline \QQ\) there exists another isogenous to 
 \begin{equation*}
 E_1 \times E_2
 \end{equation*}
-or \(J(C)\) for \(C\) of \hyperref[sec-deuring]{genus} 2.%
+or \(J(C)\) for \(C\) of \hyperref[def-class-set]{genus} 2.%
 \par
 \hypertarget{p-766}{}%
 Case 1:%
@@ -7351,7 +7352,7 @@ Outline:\leavevmode%
 %
 \par
 \hypertarget{p-785}{}%
-References: [\hyperlink{bib-sutherland}{61}, \hyperlink{bib-voight-quat}{67}, \hyperlink{bib-velu}{66}]%
+References: [\hyperlink{bib-sutherland}{62}, \hyperlink{bib-voight-quat}{68}, \hyperlink{bib-velu}{67}]%
 \end{introduction}%
 %
 %
@@ -7371,7 +7372,7 @@ References: [\hyperlink{bib-sutherland}{61}, \hyperlink{bib-voight-quat}{67}, \h
 Let \(k = \FF_q\), \(\characteristic (k) = p \ne 2,3\).%
 \begin{definition}{Elliptic curves.}{def-supersing-isog-ec}%
 \hypertarget{p-787}{}%
-An \terminology{elliptic curve} \(E/k\) is a smooth projective curve of \hyperref[sec-deuring]{genus} 1 together with a point \(\infty \in E(k)\).%
+An \terminology{elliptic curve} \(E/k\) is a smooth projective curve of \hyperref[def-class-set]{genus} 1 together with a point \(\infty \in E(k)\).%
 \end{definition}
 \hypertarget{p-788}{}%
 We can always write such a curve using a Weierstrass equation%
@@ -8047,7 +8048,7 @@ We therefore have \(\#E(K) = 9 + 1 = 10\) so we have a \(2\)-torsion point (\(P 
 We have one \hyperref[def-supersing-isog-endo]{endomorphism}, \(p\)-power frobenius \(x\mapsto x^3\), \(y\mapsto y^3\). How to find another one?%
 \par
 \hypertarget{p-871}{}%
-Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\). In general the formulae are  a little annoying \hyperlink{bib-velu}{[66]}, when you have a 2-torsion point at \((0,0)\), not as bad:%
+Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\). In general the formulae are  a little annoying \hyperlink{bib-velu}{[67]}, when you have a 2-torsion point at \((0,0)\), not as bad:%
 \begin{equation*}
 \psi = \left(x + \frac{f'(0)}{x}, y - \frac{yf'(0)}{x^2} \right)
 \end{equation*}
@@ -8061,9 +8062,9 @@ so%
 \end{equation*}
 (aside: if \(g/h = (x^2+\alpha)/x\) then \((g/h)' = (g' h - g h')/h^2 = (2x^2 - (x^2 + \alpha))/x^2 = (x^2 - \alpha)/x^2\), sanity check/fast computation?). The curve is then%
 \begin{equation*}
-E'\colon y^2 = x^3 + 0x^2 + (\alpha - 5\alpha)x +0 = x^3  - \alpha x
+E'\colon y^2 = x^3 + 0x^2 + (\alpha - 5\alpha)x +0 = x^3  - \alpha x\text{.}
 \end{equation*}
-. I think really here we're just recovering those classic formulae for 2-\hyperref[def-supersing-isog-isog]{isogenies} between curves with a rational 2 torsion point at \((0,0)\) (used in 2-descent).%
+I think really here we're just recovering those classic formulae for 2-\hyperref[def-supersing-isog-isog]{isogenies} between curves with a rational 2 torsion point at \((0,0)\) (used in 2-descent).%
 \begin{align*}
 C\amp\colon y^2 = x(x^2+ax+b)\\
 D\amp\colon v^2 = u(u^2+a_1u+b_1)\\
@@ -8155,7 +8156,7 @@ PODASIP: this happens for all \(p^2\)?%
 \begin{subsectionptx}{Quaternion Algebras}{}{Quaternion Algebras}{}{}\label{subsection-74}
 \begin{introduction}{}%
 \hypertarget{p-882}{}%
-Pretty much all of this material was ripped with the utmost love and affection from \hyperlink{bib-voight-quat}{[67]}, check it out.%
+Pretty much all of this material was ripped with the utmost love and affection from \hyperlink{bib-voight-quat}{[68]}, check it out.%
 \begin{proposition}{}{}{proposition-62}%
 \hypertarget{p-883}{}%
 The theory of Quaternion algebras is very rich.%
@@ -8418,7 +8419,7 @@ Warning: Quaternion algebras may not be \hyperref[def-dess-ramified]{ramified} w
 \par
 \hypertarget{p-929}{}%
 Knowing the ramification of a quaternion algebra \(\QQ\) is enough to identify it uniquely, in fact we have the following theorem%
-\begin{theorem}{Main Theorem [67,~14.1.3].}{}{theorem-66}%
+\begin{theorem}{Main Theorem [68,~14.1.3].}{}{theorem-66}%
 \hypertarget{p-930}{}%
 There is a sequence of bijections%
 \begin{align*}
@@ -8496,7 +8497,7 @@ Let \(B/\QQ\) be a quaternion algebra and  \(\ints \subseteq B\) be an \hyperref
 \hypertarget{p-938}{}%
 A left (resp. right) fractional ideal is a \hyperref[def-buntes-lattice]{lattice} \(I \subseteq B\) s.t. \(\ints \subseteq       \ints_L (I) \) resp \(\ints \subseteq \ints_R (I) \)%
 \end{definition}
-\begin{definition}{}{definition-85}%
+\begin{definition}{Compatibility.}{def-buntes-compat}%
 \hypertarget{p-939}{}%
 For \hyperref[def-buntes-lattice]{lattices} \(I,J \subseteq B\) we say \(I\) is \terminology{compatible} with \(J\) if%
 \begin{equation*}
@@ -8510,13 +8511,13 @@ II' = \ints_L(I) =  \ints_R(I')
 \begin{equation*}
 I'I = \ints_L(I') =  \ints_R(I)
 \end{equation*}
-with both products \hyperref[sec-deuring]{compatible}%
+with both products \hyperref[def-buntes-compat]{compatible}%
 \end{definition}
 \begin{proposition}{}{}{proposition-64}%
 \hypertarget{p-940}{}%
 Let \(\ints \subseteq B\) be a maximal \hyperref[def-order-quaternion]{order} then every left or right fractional \(\ints\)-ideal is invertible.%
 \end{proposition}
-\begin{definition}{}{definition-86}%
+\begin{definition}{Principal ideals.}{definition-86}%
 \hypertarget{p-941}{}%
 An ideal of the form%
 \begin{equation*}
@@ -8528,7 +8529,7 @@ is a principal ideal.%
 \hypertarget{p-942}{}%
 \(I \) is invertible with \(I\inv = \alpha \inv \ints_L(I) =  \ints_R(I) \alpha \inv\).%
 \end{fact}
-\begin{definition}{}{definition-87}%
+\begin{definition}{Reduced norms.}{def-nrd}%
 \hypertarget{p-943}{}%
 Let \(I \subseteq B\) be a fractional ideal the \terminology{reduced norm} of \(I \) is the positive generator of the fractional ideal generated by%
 \begin{equation*}
@@ -8537,7 +8538,7 @@ Let \(I \subseteq B\) be a fractional ideal the \terminology{reduced norm} of \(
 in \(\QQ\). We denote it \(\operatorname{nrd}(I)\).%
 \end{definition}
 \begin{paragraphs}{Ideal classes.}{paragraphs-37}%
-\begin{definition}{}{definition-88}%
+\begin{definition}{Ideal classes.}{def-ideal-class}%
 \hypertarget{p-944}{}%
 Two left fractional ideals \(I,J \subseteq B\) are in the same left class%
 \begin{equation*}
@@ -8545,7 +8546,7 @@ I\sim_L J
 \end{equation*}
 if \(\exists  \alpha \in B^\times\) s.t. \(I\alpha = J\). Equivalently if \(\ints_L(I)  = \ints_L(J)\) and \(I \sim J\) as left modules over this \hyperref[def-order-quaternion]{order}. \(\sim_L\) is an equivalence relation \(\lb I \rb\) is the class of \(I\). If \(I \) is invertible then every \(J \in \lb I \rb_L\) is invertible, and then we say \(\lb I \rb_L \) is invertible.%
 \end{definition}
-\begin{definition}{}{definition-89}%
+\begin{definition}{Class sets.}{def-class-set}%
 \hypertarget{p-945}{}%
 Let \(\ints \subseteq B\) be an \hyperref[def-order-quaternion]{order}. The \terminology{left class set} of \(\ints\) is%
 \begin{equation*}
@@ -9200,7 +9201,7 @@ We can quotient by the action of \(\SL_2(\ZZ) \) on \(\HH^*\) to get%
 \begin{equation*}
 X(1) = \SL_2(\ZZ) \backslash \HH^*
 \end{equation*}
-which is now compact, \hyperref[sec-deuring]{genus} 0, which matches up with \(Y(1)\) having \(\CC\) points \(\CC\) earlier.%
+which is now compact, \hyperref[def-class-set]{genus} 0, which matches up with \(Y(1)\) having \(\CC\) points \(\CC\) earlier.%
 \par
 \hypertarget{p-1033}{}%
 If \(X\) is a projective curve then \(X(\CC)\) has the structure of a compact \hyperref[def-top-riem-surface]{Riemann surface}. If \(S\) is such a surface then there exists a unique up to isomorphism \(X\) with \(X(\CC) = S\).%
@@ -9316,7 +9317,7 @@ We can do similar for \(\Gamma_1\) but only over \(\QQ(\zeta_N)\).%
 \hypertarget{p-1046}{}%
 Several definitions:\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-260}{}Smooth proj. curve \hyperref[sec-deuring]{genus} 1 with a rational point.%
+\item\hypertarget{li-260}{}Smooth proj. curve \hyperref[def-class-set]{genus} 1 with a rational point.%
 \item\hypertarget{li-261}{}smooth curve given by Weierstrass eqn.%
 \begin{equation*}
 y^2 + a_1xy + a_3 y =  x^3 + a_2x^2 + a_4 x + a_6\text{.}
@@ -9493,7 +9494,7 @@ also%
 \begin{equation*}
 j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
 \end{equation*}
-so \(\Delta(\tau)\) vanishes at \(\infty\) becasue \(g_2(\tau)\) doesn't  and \(j(z)\) has a  \hyperref[def-simple-av]{simple} pole at \(\infty\).%
+so \(\Delta(\tau)\) vanishes at \(\infty\) because \(g_2(\tau)\) doesn't  and \(j(z)\) has a  \hyperref[def-simple-av]{simple} pole at \(\infty\).%
 \end{example}
 \hypertarget{p-1066}{}%
 \(M_k(\Gamma)\) as the space of \hyperref[def-buntes-mfs]{modular forms} of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s. \(S_k(\Gamma)\) as the space of \hyperref[def-buntes-cusp-forms]{cusp forms} of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s.%
@@ -9508,7 +9509,7 @@ so \(\Delta(\tau)\) vanishes at \(\infty\) becasue \(g_2(\tau)\) doesn't  and \(
 (k-1)(g-1) + v_\infty \frac k2 + \sum_p [\frac k2 (1- \frac{1}{e_p})] \amp \text{ if } k \ge 2
 \end{cases}
 \end{equation*}
-where \(g\) is the \hyperref[sec-deuring]{genus} of \(X(\Gamma)\) \(v_\infty\) is the number of inequivalent cusps \(P\) are the elliptic points \(\lb \cdot \rb\) is the integer part%
+where \(g\) is the \hyperref[def-class-set]{genus} of \(X(\Gamma)\) \(v_\infty\) is the number of inequivalent cusps \(P\) are the elliptic points \(\lb \cdot \rb\) is the integer part%
 \begin{equation*}
 \dim(S_k(\Gamma)) =
 \begin{cases}
@@ -9541,7 +9542,7 @@ E \to E'
 \begin{equation*}
 \CC/\Lambda \to \CC/\Lambda'\text{,}
 \end{equation*}
-studying degree \(n\) \hyperref[def-supersing-isog-isog]{isogenies}, is like strudying index  \(n \) sublattices%
+studying degree \(n\) \hyperref[def-supersing-isog-isog]{isogenies}, is like studying index  \(n \) sublattices%
 \begin{definition}{}{definition-100}%
 \hypertarget{p-1071}{}%
 \(n \ge 1\) then \(T(n)\) is the  \(n\)th \terminology{Hecke operator} acting on%
@@ -9608,7 +9609,7 @@ T(p^{e+1} ) \Lambda  =  \sum_{\Lambda'\subseteq_{p^{e+1}} \Lambda} (\Lambda')
 \end{equation*}
 %
 \begin{equation*}
-T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p^{e-1}} p\Lambda } (Lambda'') = \sum_{\Lambda' \subseteq_{p^{e+1}} \Lambda} b(\Lambda') (\Lambda')
+T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p^{e-1}} p\Lambda } (\Lambda'') = \sum_{\Lambda' \subseteq_{p^{e+1}} \Lambda} b(\Lambda') (\Lambda')
 \end{equation*}
 Split into cases, do some maths..%
 \end{proof}
@@ -9639,7 +9640,7 @@ T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw
 %
 \end{corollary}
 \hypertarget{p-1079}{}%
-The \hyperref[def-buntes-cusp-forms]{Hecke operators} act on \hyperref[def-buntes-mfs]{modular forms} \(f(\tau)\) by reinterpreting weakly modualr functiosn of weight \(k\) as functions on \hyperref[def-buntes-lattice]{lattices} that have  a weight \(k\) action under homothety.%
+The \hyperref[def-buntes-cusp-forms]{Hecke operators} act on \hyperref[def-buntes-mfs]{modular forms} \(f(\tau)\) by reinterpreting \hyperref[def-buntes-weak-modular]{weakly modular} functions of weight \(k\) as functions on \hyperref[def-buntes-lattice]{lattices} that have  a weight \(k\) action under homothety.%
 \par
 \hypertarget{p-1080}{}%
 This boils down to%
@@ -9698,9 +9699,22 @@ a_ma_n = a_{mn}
 a_{p^r} = a_p a_{p^{r-1}} + p^{k-1} a_{p^{r+1}}
 \end{equation*}
 %
-\par
+\begin{definition}{Petersson inner product.}{def-pet}%
 \hypertarget{p-1086}{}%
-Petersson inner product, is hermitian.%
+The \terminology{Petersson inner product} of two \hyperref[def-buntes-cusp-forms]{cusp forms} \(f,g\in S_k(\SL_2(\ZZ))\) is defined to be%
+\begin{equation*}
+\pair{f}{g} = \int_{\mathcal D} f \bar g y^{k-2} \diff x \diff y
+\end{equation*}
+where \(\mathcal D\) is a fundamental domain for \(\SL_2(\ZZ)\).%
+\end{definition}
+\begin{proposition}{}{}{proposition-68}%
+\hypertarget{p-1087}{}%
+Let \(f,g\in S_k(\SL_2(\ZZ))\), \(n\in \NN\) then%
+\begin{equation*}
+\pair{T(n) f}{g} = \pair{f}{T(n)g}\text{.}
+\end{equation*}
+%
+\end{proposition}
 \end{sectionptx}
 \end{chapterptx}
 %
@@ -9780,17 +9794,18 @@ Petersson inner product, is hermitian.%
 \bibitem[58]{bib-shafarevich-remizov}\hypertarget{bib-shafarevich-remizov}{}Shafarevich, Igor R., and Alexey O. Remizov. \textit{Linear algebra and geometry}. Springer Science \& Business Media, 2012.
 \bibitem[59]{bib-silverman}\hypertarget{bib-silverman}{}Silverman, Joseph H. \textit{The arithmetic of elliptic curves}. Vol. 106. Springer Science \& Business Media, 2009.
 \bibitem[60]{bib-silverman-advanced}\hypertarget{bib-silverman-advanced}{}Silverman, Joseph H. \textit{Advanced topics in the arithmetic of elliptic curves}. Vol. 151. Springer Science \& Business Media, 2013.
-\bibitem[61]{bib-sutherland}\hypertarget{bib-sutherland}{}Sutherland, Andrew. \textit{Isogeny volcanoes}. The Open Book Series 1, no. 1 (2013): 507-530. \url{https://msp.org/obs/2013/1-1/obs-v1-n1-p25-s.pdf}.
-\bibitem[62]{bib-tamme}\hypertarget{bib-tamme}{}Tamme, Günter. \textit{Introduction to étale cohomology}. Springer Science \& Business Media, 2012.
-\bibitem[63]{bib-tuitman-map-to-p1-1}\hypertarget{bib-tuitman-map-to-p1-1}{}Tuitman, Jan. \textit{Counting points on curves using a map to \(\PP^1\)}. Mathematics of Computation 85.298 (2016): 961-981.
-\bibitem[64]{bib-tuitman-map-to-p1-2}\hypertarget{bib-tuitman-map-to-p1-2}{}Tuitman, Jan. \textit{Counting points on curves using a map to \(\PP^1\), II}. Finite Fields and Their Applications 45 (2017): 301-322.
-\bibitem[65]{bib-vandergeer-moonen}\hypertarget{bib-vandergeer-moonen}{}van der Geer, G., Moonen, B. \textit{Abelian Varieties}, from \url{https://www.math.ru.nl/\~bmoonen/research.html\#bookabvar}.
-\bibitem[66]{bib-velu}\hypertarget{bib-velu}{}Vélu, Jacques. \textit{Isogénies entre courbes elliptiques}. CR Acad. Sci. Paris, Séries A 273 (1971): 305-347.
-\bibitem[67]{bib-voight-quat}\hypertarget{bib-voight-quat}{}Voight, John. \textit{Quaternion Algebras}. \url{http://quatalg.org}
-\bibitem[68]{bib-waterhouse}\hypertarget{bib-waterhouse}{}Waterhouse, William C.  \textit{Profinite groups are Galois groups}. Proceedings of the American Mathematical Society 42.2 (1974): 639-640.
-\bibitem[69]{bib-weng-nakamura}\hypertarget{bib-weng-nakamura}{}Weng, L., and Nakamura, I. \textit{Arithmetic geometry and number theory}, World Scientific, 2006.
-\bibitem[70]{bib-zag-ram}\hypertarget{bib-zag-ram}{}Zagier, Don.  \textit{The Bloch-Wigner-Ramakrishnan polylogarithm function.} Mathematische Annalen 286, no. 1 (1990): 613-624.
-\bibitem[71]{bib-pug}\hypertarget{bib-pug}{}\textit{Pug Template Engine} see \href{http://pug-lang.com/}{pug-lang.com}.
+\bibitem[61]{bib-stacks}\hypertarget{bib-stacks}{}Stacks Project Authors, \textit{The Stacks Project}, \href{}{https://stacks.math.columbia.edu}.
+\bibitem[62]{bib-sutherland}\hypertarget{bib-sutherland}{}Sutherland, Andrew. \textit{Isogeny volcanoes}. The Open Book Series 1, no. 1 (2013): 507-530. \url{https://msp.org/obs/2013/1-1/obs-v1-n1-p25-s.pdf}.
+\bibitem[63]{bib-tamme}\hypertarget{bib-tamme}{}Tamme, Günter. \textit{Introduction to étale cohomology}. Springer Science \& Business Media, 2012.
+\bibitem[64]{bib-tuitman-map-to-p1-1}\hypertarget{bib-tuitman-map-to-p1-1}{}Tuitman, Jan. \textit{Counting points on curves using a map to \(\PP^1\)}. Mathematics of Computation 85.298 (2016): 961-981.
+\bibitem[65]{bib-tuitman-map-to-p1-2}\hypertarget{bib-tuitman-map-to-p1-2}{}Tuitman, Jan. \textit{Counting points on curves using a map to \(\PP^1\), II}. Finite Fields and Their Applications 45 (2017): 301-322.
+\bibitem[66]{bib-vandergeer-moonen}\hypertarget{bib-vandergeer-moonen}{}van der Geer, G., Moonen, B. \textit{Abelian Varieties}, from \url{https://www.math.ru.nl/\~bmoonen/research.html\#bookabvar}.
+\bibitem[67]{bib-velu}\hypertarget{bib-velu}{}Vélu, Jacques. \textit{Isogénies entre courbes elliptiques}. CR Acad. Sci. Paris, Séries A 273 (1971): 305-347.
+\bibitem[68]{bib-voight-quat}\hypertarget{bib-voight-quat}{}Voight, John. \textit{Quaternion Algebras}. \url{http://quatalg.org}
+\bibitem[69]{bib-waterhouse}\hypertarget{bib-waterhouse}{}Waterhouse, William C.  \textit{Profinite groups are Galois groups}. Proceedings of the American Mathematical Society 42.2 (1974): 639-640.
+\bibitem[70]{bib-weng-nakamura}\hypertarget{bib-weng-nakamura}{}Weng, L., and Nakamura, I. \textit{Arithmetic geometry and number theory}, World Scientific, 2006.
+\bibitem[71]{bib-zag-ram}\hypertarget{bib-zag-ram}{}Zagier, Don.  \textit{The Bloch-Wigner-Ramakrishnan polylogarithm function.} Mathematische Annalen 286, no. 1 (1990): 613-624.
+\bibitem[72]{bib-pug}\hypertarget{bib-pug}{}\textit{Pug Template Engine} see \href{http://pug-lang.com/}{pug-lang.com}.
 \end{thebibliography}
 \end{references-chapter-numberless}
 \end{document}

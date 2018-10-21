@@ -98,6 +98,7 @@ MathJax.Hub.Config({
 
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -331,7 +332,7 @@ MathJax.Hub.Config({
 <p id="p-245">We then have a notion of degree, <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a> of degree 1 (i.e. isomorphisms \(A\to \hat A\)) are called <dfn class="terminology">principal <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarizations</a></dfn>.</p></article><article class="remark-like" id="remark-7"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">1.9.2</span>
 </h6>
-<p id="p-246">This is in fact equivalent to the <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">previous definition 1.7.21</a>, see <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 65: Abelian Varieties">[65, cor. 11.5]</a>.</p></article><p id="p-247">Natural questions: what does the <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(\sheaf L\) tell us about the <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>? Can we tell principality?</p>
+<p id="p-246">This is in fact equivalent to the <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">previous definition 1.7.21</a>, see <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 66: Abelian Varieties">[66, cor. 11.5]</a>.</p></article><p id="p-247">Natural questions: what does the <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(\sheaf L\) tell us about the <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>? Can we tell principality?</p>
 <p id="p-248">To answer this we must (rapidly) recall (Zariski) sheaf cohomology. But this will help us in the next section too.</p>
 <p id="p-249">A <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> (or indeed any sheaf) defines for us for any open subset \(U \hookrightarrow X\) an abelian group of sections \(\sheaf L(U)\text{.}\)</p>
 <p id="p-250">However taking (global) sections doesn't play well with exact sequences!</p>
@@ -396,7 +397,7 @@ H^0(X, \sheaf F) , H^1(X, \sheaf F) , H^2(X, \sheaf F) , \ldots\text{.}
 <p id="p-261">The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is determined by its Chow form, which by these formulae has some (large) bounded degree, as we are over a finite field however there are only finitely many such.</p></article></div></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Étale Cohomology of Abelian Varieties</span>
 </h3>
-<p id="p-262">See <a knowl="./knowl/bib-milne-etale.html" title="Bibliographic Entry 48: Etale cohomology">[48]</a> or <a knowl="./knowl/bib-tamme.html" title="Bibliographic Entry 62: Introduction to étale cohomology">[62]</a>.</p>
+<p id="p-262">See <a knowl="./knowl/bib-milne-etale.html" title="Bibliographic Entry 48: Etale cohomology">[48]</a> or <a knowl="./knowl/bib-tamme.html" title="Bibliographic Entry 63: Introduction to étale cohomology">[63]</a>.</p>
 <p id="p-263">Recall for <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> over \(A/\CC\) we considered singular cohomology of the complex points \(A(\CC)\text{.}\) Indeed this theory was strongly connected to the <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(\Lambda\) defining \(A(\CC)\text{.}\)</p>
 <p id="p-264">We saw that in fact \(\pi_1(A,0) = \pi^{-1} (0) = \Lambda \subseteq V\) which was the universal covering space of \(A(\CC)\text{.}\) We want to emulate this over a general field.</p>
 <p id="p-265">We want to allow multiplication by \(n\) to define finite covers for our <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> as they did before.</p>
@@ -410,7 +411,7 @@ X \ar[r]_f &amp; Y
 }\text{.}
 \end{equation*}
 </div>
-<p>There exists an open subset \(U\) such that the base change \(X \times_Y U\) is isomorphic with \(\coprod U\) of several copies of \(U\) in a <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">compatible</a> way with the map to \(U\text{.}\)</p>
+<p>There exists an open subset \(U\) such that the base change \(X \times_Y U\) is isomorphic with \(\coprod U\) of several copies of \(U\) in a <a knowl="./knowl/def-buntes-compat.html" title="Definition 3.4.2: Compatibility">compatible</a> way with the map to \(U\text{.}\)</p>
 <p id="p-268">So let's cheat, the best isomorphism is the identity map</p>
 <div class="displaymath">
 \begin{equation*}
@@ -498,7 +499,7 @@ F(Y) = \Hom(\tilde X ,Y) = \varinjlim_i \Hom(X_i, Y)\text{.}
 \begin{equation*}
 \pi_1(X,x) = \Aut_X(\tilde X) = \varprojlim_i \Aut_X(X_i)\text{.}
 \end{equation*}
-</div></article><p id="p-283">So we need to understand <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> covers of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Following <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 65: Abelian Varieties">[65]</a>:</p>
+</div></article><p id="p-283">So we need to understand <a knowl="./knowl/def-etale.html" title="Definition 1.9.12: Étale morphisms">étale</a> covers of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Following <a knowl="./knowl/bib-vandergeer-moonen.html" title="Bibliographic Entry 66: Abelian Varieties">[66]</a>:</p>
 <article class="theorem-like" id="proposition-23"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.9.14</span> <span class="title">surprising proposition</span>
 </h6>

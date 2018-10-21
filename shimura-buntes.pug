@@ -276,7 +276,7 @@ section#sec-buntes-modular-forms
             me \zeta(6) = \frac{\pi^6}{945}
             | also
             me j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
-            | so #[m \Delta(\tau)] vanishes at #[m \infty] becasue #[m g_2(\tau)] doesn't  and #[m j(z)] has a  simple pole at #[m \infty].
+            | so #[m \Delta(\tau)] vanishes at #[m \infty] because #[m g_2(\tau)] doesn't  and #[m j(z)] has a  simple pole at #[m \infty].
 
 
     p
@@ -317,7 +317,7 @@ section#sec-buntes-modular-forms
         me E/  \CC = \CC/\Lambda
         me E \to E'
         me \CC/\Lambda \to \CC/\Lambda'
-        |, studying degree #[m n] isogenies, is like strudying index  #[m n ] sublattices
+        |, studying degree #[m n] isogenies, is like studying index  #[m n ] sublattices
 
     definition
         statement: p
@@ -350,7 +350,7 @@ section#sec-buntes-modular-forms
                 | now
                 me T(p^e)T(p) \Lambda = T(p^e) \sum_{\Gamma \subseteq_p \Lambda } (\Gamma) = \sum_{\Gamma \subseteq_p \Lambda } \sum_{\Lambda' \subseteq_{p^e} \Gamma} (\Lambda') =\sum_{\Lambda' \subseteq_{p^e} \Gamma}  a(\Lambda') (\Lambda')
                 me T(p^{e+1} ) \Lambda  =  \sum_{\Lambda'\subseteq_{p^{e+1}} \Lambda} (\Lambda')
-                me T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p^{e-1}} p\Lambda } (Lambda'') = \sum_{\Lambda' \subseteq_{p^{e+1}} \Lambda} b(\Lambda') (\Lambda')
+                me T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p^{e-1}} p\Lambda } (\Lambda'') = \sum_{\Lambda' \subseteq_{p^{e+1}} \Lambda} b(\Lambda') (\Lambda')
                 | Split into cases, do some maths..
 
     p
@@ -375,7 +375,7 @@ section#sec-buntes-modular-forms
             | .
 
     p
-        | The Hecke operators act on modular forms #[m f(\tau)] by reinterpreting weakly modualr functiosn of weight #[m k] as functions on lattices that have  a weight #[m k] action under homothety.
+        | The Hecke operators act on modular forms #[m f(\tau)] by reinterpreting weakly modular functions of weight #[m k] as functions on lattices that have  a weight #[m k] action under homothety.
 
     p
         | This boils down to
@@ -403,5 +403,16 @@ section#sec-buntes-modular-forms
         me T(m)T(n) = T(mn)
         me a_ma_n = a_{mn}
         me a_{p^r} = a_p a_{p^{r-1}} + p^{k-1} a_{p^{r+1}}
-    p
-        | Petersson inner product, is hermitian.
+
+    definition#def-pet
+        title Petersson inner product
+        statement: p
+            | The #[term Petersson inner product] of two cusp forms #[m f,g\in S_k(\SL_2(\ZZ))] is defined to be
+            me \pair{f}{g} = \int_{\mathcal D} f \bar g y^{k-2} \diff x \diff y
+            | where #[m \mathcal D] is a fundamental domain for #[m \SL_2(\ZZ)].
+
+    proposition
+        statement: p
+            |Let #[m f,g\in S_k(\SL_2(\ZZ))], #[m n\in \NN] then
+            me \pair{T(n) f}{g} = \pair{f}{T(n)g}
+            | .

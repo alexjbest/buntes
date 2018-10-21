@@ -98,6 +98,7 @@ MathJax.Hub.Config({
 
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -462,7 +463,7 @@ G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
 j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
 \end{equation*}
 </div>
-<p>so \(\Delta(\tau)\) vanishes at \(\infty\) becasue \(g_2(\tau)\) doesn't  and \(j(z)\) has a  <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> pole at \(\infty\text{.}\)</p></article><p id="p-1066">\(M_k(\Gamma)\) as the space of <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s. \(S_k(\Gamma)\) as the space of <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">cusp forms</a> of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s.</p>
+<p>so \(\Delta(\tau)\) vanishes at \(\infty\) because \(g_2(\tau)\) doesn't  and \(j(z)\) has a  <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> pole at \(\infty\text{.}\)</p></article><p id="p-1066">\(M_k(\Gamma)\) as the space of <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s. \(S_k(\Gamma)\) as the space of <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">cusp forms</a> of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s.</p>
 <article class="theorem-like" id="theorem-72"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">5.2.9</span>
 </h6>
@@ -477,7 +478,7 @@ j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
 \end{cases}
 \end{equation*}
 </div>
-<p>where \(g\) is the <a href="sec-deuring.html" class="xref" title="Section 3.4: The Deuring Correspondence (Maria Ines)">genus</a> of \(X(\Gamma)\) \(v_\infty\) is the number of inequivalent cusps \(P\) are the elliptic points \(\lb \cdot \rb\) is the integer part</p>
+<p>where \(g\) is the <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> of \(X(\Gamma)\) \(v_\infty\) is the number of inequivalent cusps \(P\) are the elliptic points \(\lb \cdot \rb\) is the integer part</p>
 <div class="displaymath">
 \begin{equation*}
 \dim(S_k(\Gamma)) =
@@ -510,7 +511,7 @@ E \to E'
 \CC/\Lambda \to \CC/\Lambda'\text{,}
 \end{equation*}
 </div>
-<p>studying degree \(n\) <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>, is like strudying index  \(n \) sublattices</p>
+<p>studying degree \(n\) <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>, is like studying index  \(n \) sublattices</p>
 <article class="definition-like" id="definition-100"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.2.11</span>
 </h6>
@@ -577,7 +578,7 @@ T(p^{e+1} ) \Lambda  =  \sum_{\Lambda'\subseteq_{p^{e+1}} \Lambda} (\Lambda')
 </div>
 <div class="displaymath">
 \begin{equation*}
-T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p^{e-1}} p\Lambda } (Lambda'') = \sum_{\Lambda' \subseteq_{p^{e+1}} \Lambda} b(\Lambda') (\Lambda')
+T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p^{e-1}} p\Lambda } (\Lambda'') = \sum_{\Lambda' \subseteq_{p^{e+1}} \Lambda} b(\Lambda') (\Lambda')
 \end{equation*}
 </div>
 <p>Split into cases, do some maths..</p></article></div>
@@ -609,7 +610,7 @@ T(n) \Lambda =  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} \ZZ(aw_1 + bw_2) + \ZZ 
 \begin{equation*}
 T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw_2\text{.}
 \end{equation*}
-</div></article><p id="p-1079">The <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">Hecke operators</a> act on <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> \(f(\tau)\) by reinterpreting weakly modualr functiosn of weight \(k\) as functions on <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> that have  a weight \(k\) action under homothety.</p>
+</div></article><p id="p-1079">The <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">Hecke operators</a> act on <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> \(f(\tau)\) by reinterpreting <a knowl="./knowl/def-buntes-weak-modular.html" title="Definition 5.2.1">weakly modular</a> functions of weight \(k\) as functions on <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> that have  a weight \(k\) action under homothety.</p>
 <p id="p-1080">This boils down to</p>
 <div class="displaymath">
 \begin{equation*}
@@ -668,7 +669,24 @@ a_ma_n = a_{mn}
 a_{p^r} = a_p a_{p^{r-1}} + p^{k-1} a_{p^{r+1}}
 \end{equation*}
 </div>
-<p id="p-1086">Petersson inner product, is hermitian.</p></section></div></main>
+<article class="definition-like" id="def-pet"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.2.18</span> <span class="title">Petersson inner product</span>
+</h6>
+<p id="p-1086">The <dfn class="terminology">Petersson inner product</dfn> of two <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">cusp forms</a> \(f,g\in S_k(\SL_2(\ZZ))\) is defined to be</p>
+<div class="displaymath">
+\begin{equation*}
+\pair{f}{g} = \int_{\mathcal D} f \bar g y^{k-2} \diff x \diff y
+\end{equation*}
+</div>
+<p>where \(\mathcal D\) is a fundamental domain for \(\SL_2(\ZZ)\text{.}\)</p></article><article class="theorem-like" id="proposition-68"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">5.2.19</span>
+</h6>
+<p id="p-1087">Let \(f,g\in S_k(\SL_2(\ZZ))\text{,}\) \(n\in \NN\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\pair{T(n) f}{g} = \pair{f}{T(n)g}\text{.}
+\end{equation*}
+</div></article></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];
