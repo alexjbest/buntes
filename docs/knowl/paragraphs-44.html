@@ -11,53 +11,59 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Maps between Jacobians</span></h5>
-<p>Let \(X,Y/k\) be curves and \(f\colon X \to Y\) a morphism.</p>
-<article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.14</span>
+<article class="paragraphs"><h5 class="heading"><span class="title">Alternative definition</span></h5>
+<div class="displaymath">
+\begin{equation*}
+\mathbf S = \Res_\RR^\CC \mathbf G_m
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\mathbf S(A) = \{ (a,b) \in A^2 : a^2+  b^2 \ne 0\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\mathbf S(\RR) = \CC^\times
+\end{equation*}
+</div>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">5.4.12</span>
 </h6>
-<p>We have a pushforward map</p>
+<p>There is  a natural bijection between morphisms of <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic groups</a></p>
 <div class="displaymath">
 \begin{equation*}
-f_*\colon \Pic^0(X) \to \Pic^0(Y)
+\mathbf S \to \GL(V)
 \end{equation*}
 </div>
+<p>and Hodge structures on \(V\text{.}\)</p></article><p>Hence for any lie group \(G\) we can define a hodge structure on \(G\) as a morphism of <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic groups</a></p>
 <div class="displaymath">
 \begin{equation*}
-\sum n_x [x] \mapsto \sum n_x[f(x)]
+\mathbf S \to G
 \end{equation*}
 </div>
-<p>if \(f\) is finite then we have  a pullback</p>
-<div class="displaymath">
-\begin{equation*}
-f^* \colon \Pic^0(Y) \to \Pic^0(X)
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-\sum n_y[y] \mapsto \sum n_y [f\inv (y)]
-\end{equation*}
-</div>
-<p>(with <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a>).</p></article><p>We want further maps between jacobians</p>
+<p>If \(G \to \GL(V)\) is a faithful rep this induces a hodge structure on \(V\text{.}\)</p>
 <article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.15</span>
+<span class="type">Definition</span> <span class="codenumber">5.4.13</span>
 </h6>
-<p>A correspondence between \(X,Y\) is a curve \(Z\) and a pair of finite morphisms.</p>
+<p>A <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of a HS \(h\colon \mathbf S \to \GL(v)\) is an alternating bilinear form</p>
 <div class="displaymath">
 \begin{equation*}
-X \leftarrow Z \to Y
+\Psi \colon V\times V \to \RR
 \end{equation*}
 </div>
-<p>then we get induced maps</p>
-<div class="displaymath">
+<p>with</p>
+<ol class="decimal">
+<li><div class="displaymath">
 \begin{equation*}
-T_* = g_* f^* \colon \Pic^0(X) \to \Pic^0(Y)
+\Psi (Jv,Jw) =  \Psi(v,w) \text{ for } J = h(i)
 \end{equation*}
-</div>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{equation*}
-T^* = f_* g^* \colon \Pic^0(Y) \to \Pic^0(X)
+\Psi(v,Jw) \text{ is pos. def.}
 \end{equation*}
-</div></article></article><span class="incontext"><a href="sec-buntes-av-jac.html#paragraphs-44">in-context</a></span>
+</div></li>
+</ol></article></article><span class="incontext"><a href="sec-buntes-hs.html#paragraphs-44">in-context</a></span>
 </body>
 </html>

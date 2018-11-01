@@ -11,65 +11,47 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Jacobians over \(\CC\)</span></h5>
-<p>Given \(X\) a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> of <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> \(g\) then</p>
+<article class="paragraphs"><h5 class="heading"><span class="title">Modular jacobians and Hecke correspondences</span></h5>
+<p>Consider \(p\nmid N\) we have</p>
 <div class="displaymath">
 \begin{equation*}
-H^0(X, \Omega_X^1) \simeq \CC^g
-\end{equation*}
-</div>
-<p>one might wish to consider, for \(P,Q \in X\text{,}\) \(\omega\in H^0(X, \Omega_X^1)\)</p>
-<div class="displaymath">
-\begin{equation*}
-\int_P^Q \omega
-\end{equation*}
-</div>
-<p>this is not well defined as there are choices of path \(P\to Q\text{.}\)</p>
-<div class="displaymath">
-\begin{equation*}
-H_1(X,\ZZ) = \ZZ^{2g}
-\end{equation*}
-</div>
-<p>have  a map</p>
-<div class="displaymath">
-\begin{equation*}
-H_1(X,\ZZ) \to H^0(X, \Omega_X^1) ^\vee
+X_0(N) = \{ (E,C_N) : E\text{ e.c. }, C_N \text{ cyclic sub order } N\}
 \end{equation*}
 </div>
 <div class="displaymath">
 \begin{equation*}
-\gamma \mapsto (\omega \mapsto \int_\gamma \omega)
+X_0(pN) = \{(E,C_{pN})\} = \{(E,C_N,C_p)\}
 \end{equation*}
 </div>
-<p>Let</p>
+<p>so we have</p>
+<article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.3.16</span>
+</h6>
+<p>the Hecke correspondence \(T_p\) on \(X_0(N)\) is</p>
 <div class="displaymath">
 \begin{equation*}
-J(X) = H^0(X, \Omega_X^1) ^\vee/H_1(X,\ZZ)
+X_0(N) \mapsfrom X_0(pN) \to X_0(N)
 \end{equation*}
 </div>
+<div class="displaymath">
+\begin{equation*}
+(E,C_N)\mapsfrom (E,C_N,C_p)\to (E/C_p, C_p + C_N)\text{.}
+\end{equation*}
+</div></article><p>We have the modular jacobian \(J_0(N)\) and the induced map</p>
+<div class="displaymath">
+\begin{equation*}
+T_p \colon J_0(N) \to J_0(N)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+[E] \mapsto \sum_{C_p \subseteq E} [E/C_p]
+\end{equation*}
+</div>
+<p>One can consider \(J_0(N)_{\FF_p}\)</p>
 <article class="theorem-like"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.3.11</span>
+<span class="type">Theorem</span> <span class="codenumber">5.3.17</span> <span class="title">Eichler-Shimura</span>
 </h6>
-<p>\(J(X) \) is the \(\CC\) points of an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\CC\text{.}\) Further the map</p>
-<div class="displaymath">
-\begin{equation*}
-\Pic^0(X) \to J(X)
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-[P] - [Q] \mapsto (\omega \mapsto \int^P_Q \omega)
-\end{equation*}
-</div>
-<p>is an isomorphism of abelian groups.</p></article><article class="hiddenproof"><a knowl="./knowl/proof-114-hidden.html" title="Proof 5.3.11.1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><article class="remark-like"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">5.3.12</span>
-</h6>
-<p>In this case we see</p>
-<div class="displaymath">
-\begin{equation*}
-\Lie(\Jac(X)) = H^0(X, \Omega_X^1)
-\end{equation*}
-</div>
-<p>this is true in general.</p></article></article><span class="incontext"><a href="sec-buntes-av-jac.html#paragraphs-43">in-context</a></span>
+<p>\(T_{p*} = \Frob_p + p \Frob_p\inv \in \End(J_0(N)_{\FF_p})\text{.}\)</p></article></article><span class="incontext"><a href="sec-buntes-av-jac.html#paragraphs-43">in-context</a></span>
 </body>
 </html>
