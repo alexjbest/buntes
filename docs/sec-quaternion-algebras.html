@@ -48,7 +48,7 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
@@ -303,6 +303,8 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -428,28 +430,29 @@ y^2 = x^{3} + 1/\FF_{25}
 \end{equation*}
 </div>
 <p>we have \(\pi = -5\)</p>
+<p id="p-880">Indeed one can find on the internet claims like, all <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> over finite fields have extra <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphisms</a> because frobenius exists!</p>
 <article class="exercise-like" id="exercise-23"><a knowl="" class="id-ref" refid="hk-exercise-23"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">3.3.3</span> <span class="title">Good for long walks on the beach</span>
-</h6></a></article><div id="hk-exercise-23" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-880">Show by hand that \(y^2 + y = x^3/\FF_4\) is supersingular and that frobenius is just the multiplication by \(-2\) map.</p></article></div>
+</h6></a></article><div id="hk-exercise-23" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-881">Show by hand that \(y^2 + y = x^3/\FF_4\) is supersingular and that frobenius is just the multiplication by \(-2\) map.</p></article></div>
 <article class="exercise-like" id="exercise-24"><a knowl="" class="id-ref" refid="hk-exercise-24"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">3.3.4</span>
-</h6></a></article><div id="hk-exercise-24" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-881">PODASIP: this happens for all \(p^2\text{?}\)</p></article></div></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
+</h6></a></article><div id="hk-exercise-24" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-882">PODASIP: this happens for all \(p^2\text{?}\)</p></article></div></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Quaternion Algebras</span>
 </h3>
-<section class="introduction" id="introduction-15"><p id="p-882">Pretty much all of this material was ripped with the utmost love and affection from <a knowl="./knowl/bib-voight-quat.html" title="Bibliographic Entry 68: Quaternion Algebras">[68]</a>, check it out.</p>
+<section class="introduction" id="introduction-15"><p id="p-883">Pretty much all of this material was ripped with the utmost love and affection from <a knowl="./knowl/bib-voight-quat.html" title="Bibliographic Entry 68: Quaternion Algebras">[68]</a>, check it out.</p>
 <article class="theorem-like" id="proposition-62"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.3.5</span>
 </h6>
-<p id="p-883">The theory of Quaternion algebras is very rich.</p></article><article class="hiddenproof" id="proof-105"><a knowl="" class="id-ref" refid="hk-proof-105"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-105" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-884">The above book is 800 pages long.</p></article></div>
-<p id="p-885">So now we have gone out into nature and observed a beautiful new species of algebra, time to catch it, pin it to a wall, dissect it to study it in detail. It might not look as pretty any more but it's the way the science is done.</p>
+<p id="p-884">The theory of Quaternion algebras is very rich.</p></article><article class="hiddenproof" id="proof-105"><a knowl="" class="id-ref" refid="hk-proof-105"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-105" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-885">The above book is 800 pages long.</p></article></div>
+<p id="p-886">So now we have gone out into nature and observed a beautiful new species of algebra, time to catch it, pin it to a wall, dissect it to study it in detail. It might not look as pretty any more but it's the way the science is done.</p>
 <article class="example-like" id="example-43"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.3.6</span> <span class="title">Hamilton's quaternions</span>
 </h6>
-<p id="p-886">Hamilton's quaternions \(\HH\) were the first quaternion algebra to be discovered (citation needed). The structure is like two copies of \(\CC\) tensored together in some non-commuting way over \(\RR\text{.}\) We have a real algebra with two generators \(i,j\) s.t. \(i^2 = j^2  = (ij)^2 = -1\) we let \(k = ij\) for aesthetic reasons (note that these relations imply noncommutativity!). Like this we get a division algebra.</p></article><p id="p-887">Quaternion algebras are a generalisation of this to other fields.</p>
+<p id="p-887">Hamilton's quaternions \(\HH\) were the first quaternion algebra to be discovered (citation needed). The structure is like two copies of \(\CC\) tensored together in some non-commuting way over \(\RR\text{.}\) We have a real algebra with two generators \(i,j\) s.t. \(i^2 = j^2  = (ij)^2 = -1\) we let \(k = ij\) for aesthetic reasons (note that these relations imply noncommutativity!). Like this we get a division algebra.</p></article><p id="p-888">Quaternion algebras are a generalisation of this to other fields.</p>
 <article class="definition-like" id="def-quaternion-algebra"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.3.7</span> <span class="title">Quaternion algebras</span>
 </h6>
-<p id="p-888">Let \(F\) be a field (not characteristic 2), a quaternion algebra over \(F\) is an algebra \(B\) over \(F\) for which there exist \(a,b\in F^\times\) such that there is a basis</p>
+<p id="p-889">Let \(F\) be a field (not characteristic 2), a quaternion algebra over \(F\) is an algebra \(B\) over \(F\) for which there exist \(a,b\in F^\times\) such that there is a basis</p>
 <div class="displaymath">
 \begin{equation*}
 1,i,j,k \in B
@@ -462,17 +465,17 @@ i^2 = a,j^2=b,k=ij=-ji\text{,}
 \end{equation*}
 </div>
 <p>it is automatic that \(k^2 = -ab\) from this.</p>
-<p id="p-889">We denote this particular quaternion algebra by \(\legendre{a,b}{F}\)</p></article><article class="example-like" id="example-44"><h6 class="heading">
+<p id="p-890">We denote this particular quaternion algebra by \(\legendre{a,b}{F}\)</p></article><article class="example-like" id="example-44"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.3.8</span>
 </h6>
-<div class="displaymath" id="p-890">
+<div class="displaymath" id="p-891">
 \begin{equation*}
 \HH = \legendre{-1,-1}{\RR}\text{.}
 \end{equation*}
 </div></article><article class="example-like" id="example-45"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.3.9</span>
 </h6>
-<p id="p-891">What is</p>
+<p id="p-892">What is</p>
 <div class="displaymath">
 \begin{equation*}
 \legendre{1,1}{F} \left( = \legendre{1,-1}{F}\right)\text{?}
@@ -495,16 +498,16 @@ j =\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix}
 k = ij = \begin{pmatrix} 0\amp1\\-1\amp 0\end{pmatrix} = -ji
 \end{equation*}
 </div>
-<p>as required.</p></article><p id="p-892">Call this example <em class="emphasis">split</em>, in analogy with quadratic theory,  If \(x^2 - N\) has a solution mod \(p\) then \(\legendre{N}{p} = 1 = \legendre{1}{p}\text{.}\)</p>
-<p id="p-893">Note that if \(a\) or \(b \in (F^\times)^2\) then we can divide the corresponding basis element by \(\sqrt{a}\) or whatever and find that \(\legendre{a,b}{F} = \legendre{1,b}{F}\text{.}\) This shows:</p>
+<p>as required.</p></article><p id="p-893">Call this example <em class="emphasis">split</em>, in analogy with quadratic theory,  If \(x^2 - N\) has a solution mod \(p\) then \(\legendre{N}{p} = 1 = \legendre{1}{p}\text{.}\)</p>
+<p id="p-894">Note that if \(a\) or \(b \in (F^\times)^2\) then we can divide the corresponding basis element by \(\sqrt{a}\) or whatever and find that \(\legendre{a,b}{F} = \legendre{1,b}{F}\text{.}\) This shows:</p>
 <article class="theorem-like" id="proposition-63"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.3.10</span>
 </h6>
-<p id="p-894">After passing to the algebraic closure (or even the quadratic closure!) every quaternion algebra is split.</p></article><p id="p-895">This is helpful as it allows us to work with non-split quaternion algebras as matrix algebras over a quadratic extension.</p>
+<p id="p-895">After passing to the algebraic closure (or even the quadratic closure!) every quaternion algebra is split.</p></article><p id="p-896">This is helpful as it allows us to work with non-split quaternion algebras as matrix algebras over a quadratic extension.</p>
 <article class="example-like" id="example-46"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.3.11</span>
 </h6>
-<p id="p-896">\(\HH/\RR\) can be seen as \(\Mat_{2\times 2}(\RR(i)) = \Mat_{2\times 2}(\CC)\text{,}\) explicitly</p>
+<p id="p-897">\(\HH/\RR\) can be seen as \(\Mat_{2\times 2}(\RR(i)) = \Mat_{2\times 2}(\CC)\text{,}\) explicitly</p>
 <div class="displaymath">
 \begin{equation*}
 i=  i\begin{pmatrix} 1\amp0\\0\amp -1\end{pmatrix} = \begin{pmatrix} i\amp0\\0\amp -i\end{pmatrix}
@@ -515,22 +518,22 @@ i=  i\begin{pmatrix} 1\amp0\\0\amp -1\end{pmatrix} = \begin{pmatrix} i\amp0\\0\a
 j = i\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix} = \begin{pmatrix} 0\amp i\\i\amp 0\end{pmatrix}
 \end{equation*}
 </div>
-<p>please excuse the unfortunate notational clash here, I hope you agree it's somewhat unavoidable.</p></article><p id="p-897">Here is a nice lemma I probably used implicitly already somewhere!</p>
+<p>please excuse the unfortunate notational clash here, I hope you agree it's somewhat unavoidable.</p></article><p id="p-898">Here is a nice lemma I probably used implicitly already somewhere!</p>
 <article class="theorem-like" id="lemma-18"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">3.3.12</span>
 </h6>
-<p id="p-898">An \(F\)-algebra \(B\) with \(F\)-algebra generators \(i,j\) satisfying \(i^2,j^2\in F^\times\text{,}\) \(ij = -ji\) is automatically a quaternion algebra (i.e. dimension 4).</p></article><article class="hiddenproof" id="proof-106"><a knowl="" class="id-ref" refid="hk-proof-106"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-106" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-899">Show linear independence of \(1,i,j,ij\) (exercise).</p></article></div>
+<p id="p-899">An \(F\)-algebra \(B\) with \(F\)-algebra generators \(i,j\) satisfying \(i^2,j^2\in F^\times\text{,}\) \(ij = -ji\) is automatically a quaternion algebra (i.e. dimension 4).</p></article><article class="hiddenproof" id="proof-106"><a knowl="" class="id-ref" refid="hk-proof-106"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-106" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-900">Show linear independence of \(1,i,j,ij\) (exercise).</p></article></div>
 <article class="definition-like" id="def-quat-alg-conj-trace-norm"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.3.13</span> <span class="title">Conjugate, trace and norm</span>
 </h6>
-<p id="p-900">Given a quaternion algebra \(B/F\) there is a unique anti-involution \(\overline \cdot \colon B \to B\text{,}\) called <dfn class="terminology">conjugation</dfn>.</p>
-<p id="p-901">With basis \(1,i,j,ij\in \legendre{a,b}{F}\) as above it is given as</p>
+<p id="p-901">Given a quaternion algebra \(B/F\) there is a unique anti-involution \(\overline \cdot \colon B \to B\text{,}\) called <dfn class="terminology">conjugation</dfn>.</p>
+<p id="p-902">With basis \(1,i,j,ij\in \legendre{a,b}{F}\) as above it is given as</p>
 <div class="displaymath">
 \begin{equation*}
 \overline {x + yi + zj + w ij} = x - yi - zj - w ij,\,x,y,z,w\in F\text{.}
 \end{equation*}
 </div>
-<p id="p-902">As normal (heh) we define the (reduced) norm and trace</p>
+<p id="p-903">As normal (heh) we define the (reduced) norm and trace</p>
 <div class="displaymath">
 \begin{equation*}
 \norm \alpha =  \alpha + \overline \alpha,\,\forall \alpha \in B
@@ -554,14 +557,14 @@ j = i\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix} = \begin{pmatrix} 0\amp i\\i\a
 </div></article></section><section class="subsubsection" id="subsubsection-1"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">3.3.1.1</span> <span class="title">Orders</span>
 </h4>
-<p id="p-903">In our example, while the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebra \(\End(E)\otimes \QQ\) was of interest, the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring \(\End(E)\) was the more fundamental object. What is this? A quaternion ring?</p>
+<p id="p-904">In our example, while the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebra \(\End(E)\otimes \QQ\) was of interest, the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring \(\End(E)\) was the more fundamental object. What is this? A quaternion ring?</p>
 <article class="definition-like" id="def-order-quaternion"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.3.14</span> <span class="title">Orders in quaternion algebras</span>
 </h6>
-<p id="p-904">Let \(B/\QQ\) be a quaternion algebra, an <dfn class="terminology">order</dfn> in \(B\) is a full rank sub-\(\ZZ\)-module that is also a subring.</p></article><article class="example-like" id="ex-lipshitz-order"><h6 class="heading">
+<p id="p-905">Let \(B/\QQ\) be a quaternion algebra, an <dfn class="terminology">order</dfn> in \(B\) is a full rank sub-\(\ZZ\)-module that is also a subring.</p></article><article class="example-like" id="ex-lipshitz-order"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.3.15</span> <span class="title">The Lipschitz order</span>
 </h6>
-<p id="p-905">\(B = \legendre{-1,-1}{\QQ}\) (Hamilton quaternions with \(\QQ\)-coefficients) then we have an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a></p>
+<p id="p-906">\(B = \legendre{-1,-1}{\QQ}\) (Hamilton quaternions with \(\QQ\)-coefficients) then we have an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a></p>
 <div class="displaymath">
 \begin{equation*}
 \ZZ + \ZZ i + \ZZ j + \ZZ ij
@@ -570,7 +573,7 @@ j = i\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix} = \begin{pmatrix} 0\amp i\\i\a
 <p>the <dfn class="terminology">Lipschitz <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a></dfn>.</p></article><article class="definition-like" id="def-maximal-order"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.3.16</span> <span class="title">Maximality</span>
 </h6>
-<p id="p-906">Orders are ordered (heh) with respect to inclusion, thus we get notions of maximality of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> etc.</p></article><p id="p-907">Is the <a knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.15: The Lipschitz order">Lipschitz order</a> maximal? NO! Whats going on? \(\ZZ\lb i\rb\) is maximal in \(\QQ(i)\) after all. Consider</p>
+<p id="p-907">Orders are ordered (heh) with respect to inclusion, thus we get notions of maximality of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> etc.</p></article><p id="p-908">Is the <a knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.15: The Lipschitz order">Lipschitz order</a> maximal? NO! Whats going on? \(\ZZ\lb i\rb\) is maximal in \(\QQ(i)\) after all. Consider</p>
 <div class="displaymath">
 \begin{equation*}
 i + j + k,\,(i+j + k)^2 = i^2 + j^2 + k^2 + \cancelto{0}{ij + ji} + \cancelto{0}{ik + ki} + \cancelto{0}{jk + kj} = -3
@@ -580,17 +583,17 @@ i + j + k,\,(i+j + k)^2 = i^2 + j^2 + k^2 + \cancelto{0}{ij + ji} + \cancelto{0}
 <article class="example-like" id="ex-hurwitz-order"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.3.17</span> <span class="title">The Hurwitz order</span>
 </h6>
-<p id="p-908">Let \(B = \legendre{-1,-1}{\QQ}\text{,}\) then</p>
+<p id="p-909">Let \(B = \legendre{-1,-1}{\QQ}\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \ZZ+  \ZZ i + \ZZ j + \ZZ \left(\frac{i + j + k}{2}\right)
 \end{equation*}
 </div>
-<p>is an index two suborder of the <a knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.15: The Lipschitz order">Lipschitz order</a>, called the <dfn class="terminology">Hurwitz <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a></dfn>, this <em class="emphasis">is</em> maximal.</p></article><p id="p-909">Warning, just because \(\sqrt{-3} \in \legendre{-1,-1}{\QQ}\) we do not have \(\legendre{-1,-3}{\QQ} = \legendre{-1,-1}{\QQ}\text{!}\)</p>
+<p>is an index two suborder of the <a knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.15: The Lipschitz order">Lipschitz order</a>, called the <dfn class="terminology">Hurwitz <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a></dfn>, this <em class="emphasis">is</em> maximal.</p></article><p id="p-910">Warning, just because \(\sqrt{-3} \in \legendre{-1,-1}{\QQ}\) we do not have \(\legendre{-1,-3}{\QQ} = \legendre{-1,-1}{\QQ}\text{!}\)</p>
 <article class="example-like" id="example-49"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.3.18</span> <span class="title">/Exercise</span>
 </h6>
-<p id="p-910">Show that the <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> from the exercise earlier</p>
+<p id="p-911">Show that the <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> from the exercise earlier</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 + y = x^3/\overline{\FF_2}
@@ -599,19 +602,19 @@ y^2 + y = x^3/\overline{\FF_2}
 <p>has <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebra the <a knowl="./knowl/ex-hurwitz-order.html" title="Example 3.3.17: The Hurwitz order">Hurwitz order</a>.</p>
 <div class="solutions">
 <a knowl="" class="id-ref" refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div id="hk-solution-1" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-911">Here is what me and Angus think, we have the 2-power frobenius \(\pi\) a degree 2 <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> whose square is minus 2, we also have the <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi \colon x\mapsto \zeta_3 x, y\mapsto y\) which is in fact an automorphism (degree 1) and satisifies \(\phi^2 + \phi + 1 = 0\text{.}\) The relation between these two <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> is that \(\pi \phi  = \phi^2 \pi \colon x\mapsto \zeta_3^2 x^2, y\mapsto y^2\text{.}\)</p>
-<p id="p-912">Inside the Huwitz <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> we have some candidates for an element whose square is \(-2\) there are a few, coming in two types \(a+ b\) for \(a \ne b \in \{i,j,k\}\) and \(a-b\) for \(a\ne b\in \{i,j,k\}\text{,}\) we choose the second type (why? because it works and the other doesn't), let \(p = i + j\) for concreteness. We also have a cube root of unity in the <a knowl="./knowl/ex-hurwitz-order.html" title="Example 3.3.17: The Hurwitz order">Hurwitz order</a>, it is \(f = (-1 + i + j + k)/2\text{.}\)</p>
-<p id="p-913">We can calculate now what \(pf\) and \(f^2 p\) are, they both come out to be \(- i + k\text{,}\) some other square root of minus 2, which makes sense because degree is multiplicative. Anyway this is consistent with the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring but there is a slight problem, the <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> generated here has discriminant \(6\text{,}\) so its non-maximal as we know its contained in the <a knowl="./knowl/ex-hurwitz-order.html" title="Example 3.3.17: The Hurwitz order">Hurwitz order</a> but the discriminant is higher, Deuring tells us we have to get a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> so we need something extra.</p>
+<p id="p-912">Here is what me and Angus think, we have the 2-power frobenius \(\pi\) a degree 2 <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> whose square is minus 2, we also have the <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi \colon x\mapsto \zeta_3 x, y\mapsto y\) which is in fact an automorphism (degree 1) and satisifies \(\phi^2 + \phi + 1 = 0\text{.}\) The relation between these two <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> is that \(\pi \phi  = \phi^2 \pi \colon x\mapsto \zeta_3^2 x^2, y\mapsto y^2\text{.}\)</p>
+<p id="p-913">Inside the Huwitz <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> we have some candidates for an element whose square is \(-2\) there are a few, coming in two types \(a+ b\) for \(a \ne b \in \{i,j,k\}\) and \(a-b\) for \(a\ne b\in \{i,j,k\}\text{,}\) we choose the second type (why? because it works and the other doesn't), let \(p = i + j\) for concreteness. We also have a cube root of unity in the <a knowl="./knowl/ex-hurwitz-order.html" title="Example 3.3.17: The Hurwitz order">Hurwitz order</a>, it is \(f = (-1 + i + j + k)/2\text{.}\)</p>
+<p id="p-914">We can calculate now what \(pf\) and \(f^2 p\) are, they both come out to be \(- i + k\text{,}\) some other square root of minus 2, which makes sense because degree is multiplicative. Anyway this is consistent with the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring but there is a slight problem, the <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> generated here has discriminant \(6\text{,}\) so its non-maximal as we know its contained in the <a knowl="./knowl/ex-hurwitz-order.html" title="Example 3.3.17: The Hurwitz order">Hurwitz order</a> but the discriminant is higher, Deuring tells us we have to get a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> so we need something extra.</p>
 </div></div>
-</div></article><p id="p-914">Warning, there is no such thing as <em class="emphasis">the</em> maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> of a quaternion algebra! Rather there are multiple maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> due to non-commutativity, e.g. if \(\ints\) is a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> then so is</p>
+</div></article><p id="p-915">Warning, there is no such thing as <em class="emphasis">the</em> maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> of a quaternion algebra! Rather there are multiple maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> due to non-commutativity, e.g. if \(\ints\) is a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> then so is</p>
 <div class="displaymath">
 \begin{equation*}
 \alpha \ints \alpha\inv \ne \ints\text{.}
 \end{equation*}
 </div>
-<p id="p-915">Normally when we have unique maximal things with a certain property, its because we can always take spans/unions and they still have that property.</p>
-<p id="p-916">This is no longer true here, the sum of two elements with integral trace and norm need not remain so, nor the product.</p>
-<p id="p-917">We can define discriminants of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> which like normal give a hint as to their maximality</p>
+<p id="p-916">Normally when we have unique maximal things with a certain property, its because we can always take spans/unions and they still have that property.</p>
+<p id="p-917">This is no longer true here, the sum of two elements with integral trace and norm need not remain so, nor the product.</p>
+<p id="p-918">We can define discriminants of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> which like normal give a hint as to their maximality</p>
 <div class="displaymath">
 \begin{equation*}
 \ints = \ZZ + \ZZ i + \ZZ j + \ZZ ij \subseteq \legendre{a,b}{\QQ}
@@ -624,24 +627,24 @@ y^2 + y = x^3/\overline{\FF_2}
 </div>
 <article class="exercise-like" id="exercise-25"><a knowl="" class="id-ref" refid="hk-exercise-25"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">3.3.19</span>
-</h6></a></article><div id="hk-exercise-25" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-918">Find the discriminant of the <a knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.15: The Lipschitz order">Lipschitz order</a>.</p></article></div></section><section class="subsubsection" id="subsubsection-2"><h4 class="heading hide-type">
+</h6></a></article><div id="hk-exercise-25" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-919">Find the discriminant of the <a knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.15: The Lipschitz order">Lipschitz order</a>.</p></article></div></section><section class="subsubsection" id="subsubsection-2"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">3.3.1.2</span> <span class="title">Local theory</span>
 </h4>
 <article class="theorem-like" id="theorem-63"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.3.20</span>
 </h6>
-<p id="p-919">Over a local field \(F \ne \CC\) there is a unique division quaternion algebra \(B/F\) up to \(F\)-isomorphism.</p>
-<p id="p-920">If \(F = \QQ_p\text{,}\) \(p\ne 2\) then this is</p>
+<p id="p-920">Over a local field \(F \ne \CC\) there is a unique division quaternion algebra \(B/F\) up to \(F\)-isomorphism.</p>
+<p id="p-921">If \(F = \QQ_p\text{,}\) \(p\ne 2\) then this is</p>
 <div class="displaymath">
 \begin{equation*}
 \legendre{e,p}{\QQ_p}
 \end{equation*}
 </div>
 <p>for \(e\) any quadratic non-residue mod \(p\text{.}\)</p>
-<p id="p-921">This is saying that any quadratic extension of \(F\) embeds into \(B\text{!}\)</p></article><article class="definition-like" id="def-split-ram-quaternion-algs"><h6 class="heading">
+<p id="p-922">This is saying that any quadratic extension of \(F\) embeds into \(B\text{!}\)</p></article><article class="definition-like" id="def-split-ram-quaternion-algs"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.3.21</span> <span class="title">Split and ramified quaternion algebras</span>
 </h6>
-<p id="p-922">Let \(B/\QQ_v\) be a quaternion algebra, we say that \(B\) is</p>
+<p id="p-923">Let \(B/\QQ_v\) be a quaternion algebra, we say that \(B\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases}
@@ -650,20 +653,20 @@ y^2 + y = x^3/\overline{\FF_2}
 \end{cases}
 \end{equation*}
 </div>
-<p id="p-923">Correspondingly we say that \(B/\QQ\) is split/ramified at a place \(v\) if the corresponding \(B\otimes \QQ_v\) has that property.</p></article><p id="p-924">The terminology definite for quaternion algebras <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at infinity is also used (i.e. for which \(B\otimes \RR = \HH\)).</p>
+<p id="p-924">Correspondingly we say that \(B/\QQ\) is split/ramified at a place \(v\) if the corresponding \(B\otimes \QQ_v\) has that property.</p></article><p id="p-925">The terminology definite for quaternion algebras <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at infinity is also used (i.e. for which \(B\otimes \RR = \HH\)).</p>
 <article class="theorem-like" id="theorem-64"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.3.22</span> <span class="title">Albert-Brauer-Hasse-Noether</span>
 </h6>
-<p id="p-925">Let \(B/F\) be a quaternion algebra  over  a  number field \(F\) (or any <a knowl="./knowl/def-abvar-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebra</a>), if \(B\) splits at every place \(v\) of \(F\) then \(B\) is a matrix algebra \(M_d (F)\text{.}\)</p></article><p id="p-926">In fact:</p>
+<p id="p-926">Let \(B/F\) be a quaternion algebra  over  a  number field \(F\) (or any <a knowl="./knowl/def-abvar-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebra</a>), if \(B\) splits at every place \(v\) of \(F\) then \(B\) is a matrix algebra \(M_d (F)\text{.}\)</p></article><p id="p-927">In fact:</p>
 <article class="theorem-like" id="theorem-65"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.3.23</span>
 </h6>
-<p id="p-927">Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.</p></article><p id="p-928">Warning: Quaternion algebras may not be <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> where you think they are?</p>
-<p id="p-929">Knowing the ramification of a quaternion algebra \(\QQ\) is enough to identify it uniquely, in fact we have the following theorem</p>
+<p id="p-928">Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.</p></article><p id="p-929">Warning: Quaternion algebras may not be <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> where you think they are?</p>
+<p id="p-930">Knowing the ramification of a quaternion algebra \(\QQ\) is enough to identify it uniquely, in fact we have the following theorem</p>
 <article class="theorem-like" id="theorem-66"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.3.24</span> <span class="title">Main Theorem [68, 14.1.3]</span>
 </h6>
-<p id="p-930">There is a sequence of bijections</p>
+<p id="p-931">There is a sequence of bijections</p>
 <div class="displaymath">
 \begin{align*}
 \left\{ \text{quaternion algebras }B/\QQ \right\}/\text{isom.}\\
@@ -672,11 +675,11 @@ S \mapsto \text{unique }B \text{ ramified at exactly }S\amp\updownarrow D\mapsto
 D \mapsto \{p|D\} \cup \{\infty\} \text{ if }2\nmid \omega(D)\amp\updownarrow S \mapsto \prod_{p\in S,p\ne \infty} p\\
 \left\{ D\in \ZZ_{\gt 0 }\text{ squarefree}\right\}
 \end{align*}
-</div></article><p id="p-931">Sometimes however we want generators and relations not just ramification information: (As we will only care about discriminant \(p\) quaternion algebras) In our setting the relevant theorem is:</p>
+</div></article><p id="p-932">Sometimes however we want generators and relations not just ramification information: (As we will only care about discriminant \(p\) quaternion algebras) In our setting the relevant theorem is:</p>
 <article class="theorem-like" id="theorem-67"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.3.25</span> <span class="title">Pizer</span>
 </h6>
-<p id="p-932">Let \(\QQ_{p,\infty}\) be the unique quaternion algebra <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at \(p,\infty\text{,}\) let \(q \equiv 3 \pmod 4\) be such that \(\legendre pq = -1\text{,}\) then</p>
+<p id="p-933">Let \(\QQ_{p,\infty}\) be the unique quaternion algebra <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at \(p,\infty\text{,}\) let \(q \equiv 3 \pmod 4\) be such that \(\legendre pq = -1\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \QQ_{p,\infty} \cong
@@ -687,8 +690,8 @@ D \mapsto \{p|D\} \cup \{\infty\} \text{ if }2\nmid \omega(D)\amp\updownarrow S 
 \legendre{-p,-q}{\QQ} \amp \text{ if }p\equiv 5\pmod 8.
 \end{cases}
 \end{equation*}
-</div></article><p id="p-933">Ibukiyama has given a nice description of a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> in such.</p>
-<p id="p-934">Here are some nice references:</p>
+</div></article><p id="p-934">Ibukiyama has given a nice description of a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> in such.</p>
+<p id="p-935">Here are some nice references:</p>
 <ol class="decimal">
 <li id="li-227">Computational Problems in Supersingular <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">Elliptic Curve</a> <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">Isogenies</a> - Steven D. Galbraith and Frederik Vercauteren <a class="url" href="https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf</code></a>
 </li>

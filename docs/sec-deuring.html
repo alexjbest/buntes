@@ -48,7 +48,7 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
@@ -303,6 +303,8 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -310,22 +312,22 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-deuring"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">The Deuring Correspondence (Maria Ines)</span>
 </h2>
-<a href="sec-deuring.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-935">References:</p>
-<ol id="p-936" class="decimal">
+<a href="sec-deuring.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-936">References:</p>
+<ol id="p-937" class="decimal">
 <li id="li-234">Voight ch. 16,17,42</li>
 <li id="li-235">Hard and Easy Problems for Supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">Isogeny</a> Graphs - Christophe Petit and Kristin Lauter <a class="url" href="https://eprint.iacr.org/2017/962.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://eprint.iacr.org/2017/962.pdf</code></a>
 </li>
 </ol></section><section class="subsection" id="subsection-75"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Background: Ideals and Ideal classes</span>
 </h3>
-<p id="p-937">Let \(B/\QQ\) be a quaternion algebra and  \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>. If \(I \subseteq B \) is a  <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>, we can define \(\ints_L (I) = \{ \alpha\in  B :  \alpha I  \subseteq I \}\text{.}\) This is an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> , it's the left <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> of  \(I\) similarly can define \(\ints_R (I) \text{.}\)</p>
+<p id="p-938">Let \(B/\QQ\) be a quaternion algebra and  \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>. If \(I \subseteq B \) is a  <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>, we can define \(\ints_L (I) = \{ \alpha\in  B :  \alpha I  \subseteq I \}\text{.}\) This is an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> , it's the left <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> of  \(I\) similarly can define \(\ints_R (I) \text{.}\)</p>
 <article class="definition-like" id="definition-84"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.1</span>
 </h6>
-<p id="p-938">A left (resp. right) fractional ideal is a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(I \subseteq B\) s.t. \(\ints \subseteq       \ints_L (I) \) resp \(\ints \subseteq \ints_R (I) \)</p></article><article class="definition-like" id="def-buntes-compat"><h6 class="heading">
+<p id="p-939">A left (resp. right) fractional ideal is a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(I \subseteq B\) s.t. \(\ints \subseteq       \ints_L (I) \) resp \(\ints \subseteq \ints_R (I) \)</p></article><article class="definition-like" id="def-buntes-compat"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.2</span> <span class="title">Compatibility</span>
 </h6>
-<p id="p-939">For <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> \(I,J \subseteq B\) we say \(I\) is <dfn class="terminology">compatible</dfn> with \(J\) if</p>
+<p id="p-940">For <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> \(I,J \subseteq B\) we say \(I\) is <dfn class="terminology">compatible</dfn> with \(J\) if</p>
 <div class="displaymath">
 \begin{equation*}
 \ints_R(I)= \ints_L(J)\text{.}
@@ -345,10 +347,10 @@ I'I = \ints_L(I') =  \ints_R(I)
 <p>with both products <a knowl="./knowl/def-buntes-compat.html" title="Definition 3.4.2: Compatibility">compatible</a></p></article><article class="theorem-like" id="proposition-64"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.4.3</span>
 </h6>
-<p id="p-940">Let \(\ints \subseteq B\) be a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> then every left or right fractional \(\ints\)-ideal is invertible.</p></article><article class="definition-like" id="definition-86"><h6 class="heading">
+<p id="p-941">Let \(\ints \subseteq B\) be a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> then every left or right fractional \(\ints\)-ideal is invertible.</p></article><article class="definition-like" id="definition-86"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.4</span> <span class="title">Principal ideals</span>
 </h6>
-<p id="p-941">An ideal of the form</p>
+<p id="p-942">An ideal of the form</p>
 <div class="displaymath">
 \begin{equation*}
 I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
@@ -357,10 +359,10 @@ I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
 <p>is a principal ideal.</p></article><article class="theorem-like" id="fact-10"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">3.4.5</span>
 </h6>
-<p id="p-942">\(I \) is invertible with \(I\inv = \alpha \inv \ints_L(I) =  \ints_R(I) \alpha \inv\text{.}\)</p></article><article class="definition-like" id="def-nrd"><h6 class="heading">
+<p id="p-943">\(I \) is invertible with \(I\inv = \alpha \inv \ints_L(I) =  \ints_R(I) \alpha \inv\text{.}\)</p></article><article class="definition-like" id="def-nrd"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.6</span> <span class="title">Reduced norms</span>
 </h6>
-<p id="p-943">Let \(I \subseteq B\) be a fractional ideal the <dfn class="terminology">reduced norm</dfn> of \(I \) is the positive generator of the fractional ideal generated by</p>
+<p id="p-944">Let \(I \subseteq B\) be a fractional ideal the <dfn class="terminology">reduced norm</dfn> of \(I \) is the positive generator of the fractional ideal generated by</p>
 <div class="displaymath">
 \begin{equation*}
 \{ \operatorname{nrd} (\alpha) :  \alpha \in I \}
@@ -370,7 +372,7 @@ I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
 <article class="definition-like" id="def-ideal-class"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.7</span> <span class="title">Ideal classes</span>
 </h6>
-<p id="p-944">Two left fractional ideals \(I,J \subseteq B\) are in the same left class</p>
+<p id="p-945">Two left fractional ideals \(I,J \subseteq B\) are in the same left class</p>
 <div class="displaymath">
 \begin{equation*}
 I\sim_L J
@@ -379,7 +381,7 @@ I\sim_L J
 <p>if \(\exists  \alpha \in B^\times\) s.t. \(I\alpha = J\text{.}\) Equivalently if \(\ints_L(I)  = \ints_L(J)\) and \(I \sim J\) as left modules over this <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>. \(\sim_L\) is an equivalence relation \(\lb I \rb\) is the class of \(I\text{.}\) If \(I \) is invertible then every \(J \in \lb I \rb_L\) is invertible, and then we say \(\lb I \rb_L \) is invertible.</p></article><article class="definition-like" id="def-class-set"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.8</span> <span class="title">Class sets</span>
 </h6>
-<p id="p-945">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>. The <dfn class="terminology">left class set</dfn> of \(\ints\) is</p>
+<p id="p-946">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>. The <dfn class="terminology">left class set</dfn> of \(\ints\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{Cls}_L \ints   = \{ \lb I \rb_L : I \subseteq B \text{ is invertible  and } \ints_L(I) = \ints\}
@@ -388,26 +390,26 @@ I\sim_L J
 <p>its a pointed set with distinguished element \(\lb \ints \rb_L\text{.}\)</p></article><article class="theorem-like" id="theorem-68"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.4.9</span>
 </h6>
-<p id="p-946">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>. then \(\operatorname{Cls} _L \ints\) is finite. We call \(\# \operatorname{Cls}_L\ints \) the <dfn class="terminology">left class number</dfn> of \(\ints\text{.}\)</p></article></article><article class="paragraphs" id="paragraphs-38"><h5 class="heading"><span class="title">Types of orders</span></h5>
-<p id="p-947">Let \(\ints ,\ints'  \subseteq B\) be <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a>.</p>
+<p id="p-947">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>. then \(\operatorname{Cls} _L \ints\) is finite. We call \(\# \operatorname{Cls}_L\ints \) the <dfn class="terminology">left class number</dfn> of \(\ints\text{.}\)</p></article></article><article class="paragraphs" id="paragraphs-38"><h5 class="heading"><span class="title">Types of orders</span></h5>
+<p id="p-948">Let \(\ints ,\ints'  \subseteq B\) be <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a>.</p>
 <article class="definition-like" id="definition-90"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.10</span>
 </h6>
-<p id="p-948">We say \(\ints,\ints' \) are of the same type if \(\exists \alpha \in B^\times\) s.t. \(\ints ' = \alpha \inv \ints \alpha\text{.}\) \(\ints,\ints'\) are locally of the same type if \(\ints_p, \ints_p'\) are of the same type for all primes in \(\ZZ\cup\{\infty\}\text{.}\) \(\ints\) is connected to  \(\ints'\) if there exists an invertible fractional \(\ints,\ints'\)-ideal \(J \subseteq B\) called a connecting ideal.</p></article><article class="theorem-like" id="lemma-19"><h6 class="heading">
+<p id="p-949">We say \(\ints,\ints' \) are of the same type if \(\exists \alpha \in B^\times\) s.t. \(\ints ' = \alpha \inv \ints \alpha\text{.}\) \(\ints,\ints'\) are locally of the same type if \(\ints_p, \ints_p'\) are of the same type for all primes in \(\ZZ\cup\{\infty\}\text{.}\) \(\ints\) is connected to  \(\ints'\) if there exists an invertible fractional \(\ints,\ints'\)-ideal \(J \subseteq B\) called a connecting ideal.</p></article><article class="theorem-like" id="lemma-19"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">3.4.11</span>
 </h6>
-<p id="p-949">\(\ints,\ints'\) are of the same type iff they are isomorphic as \(\ZZ\)-algebras.</p>
-<p id="p-950">\(\ints,\ints'\) are connected iff they are locally of the same type.</p></article><article class="definition-like" id="definition-91"><h6 class="heading">
+<p id="p-950">\(\ints,\ints'\) are of the same type iff they are isomorphic as \(\ZZ\)-algebras.</p>
+<p id="p-951">\(\ints,\ints'\) are connected iff they are locally of the same type.</p></article><article class="definition-like" id="definition-91"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.12</span>
 </h6>
-<p id="p-951">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>.</p>
+<p id="p-952">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>.</p>
 <ol class="decimal">
 <li id="li-236">The <dfn class="terminology">genus</dfn> \(\operatorname{Gen}(\ints)\) of \(\ints \) is the set of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> in \(B \) connected to \(\ints\text{.}\)</li>
 <li id="li-237">The type set \(\operatorname{Typ}(\ints)\) of \(\ints\) is the set of \(\ZZ\)-algebra isomorphism classes of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> in \(\operatorname{Gen} (\ints)\text{.}\)</li>
 </ol></article><article class="theorem-like" id="lemma-20"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">3.4.13</span>
 </h6>
-<p id="p-952">The set map \(\operatorname{Cls}_L(\ints) \to \operatorname{Typ}(\ints)\)</p>
+<p id="p-953">The set map \(\operatorname{Cls}_L(\ints) \to \operatorname{Typ}(\ints)\)</p>
 <div class="displaymath">
 \begin{equation*}
 [ I]_L \mapsto \text{class of } \ints_R(I)
@@ -416,13 +418,13 @@ I\sim_L J
 <p>is surjective.</p></article><article class="remark-like" id="remark-22"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">3.4.14</span>
 </h6>
-<ol id="p-953" class="decimal">
+<ol id="p-954" class="decimal">
 <li id="li-238">Any two maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> in \(B\) are connected.</li>
 <li id="li-239">In particular there are only finitely many conjugacy classes of maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">orders</a> in \(B\text{.}\)</li>
 </ol></article><article class="example-like" id="example-50"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.4.15</span> <span class="title">Voight 17.6.3</span>
 </h6>
-<p id="p-954">Let</p>
+<p id="p-955">Let</p>
 <div class="displaymath">
 \begin{equation*}
 B = \legendre{-1,-23}{\QQ}
@@ -436,24 +438,24 @@ B = \legendre{-1,-23}{\QQ}
 </div></article></article></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">The Deuring Correspondence</span>
 </h3>
-<p id="p-955">Fix a prime \(p\text{,}\) let \(E\) be an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> over \(\FF_q = \FF_{p^n}\text{.}\)</p>
+<p id="p-956">Fix a prime \(p\text{,}\) let \(E\) be an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> over \(\FF_q = \FF_{p^n}\text{.}\)</p>
 <article class="theorem-like" id="lemma-21"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">3.4.16</span>
 </h6>
-<p id="p-956">The <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebra  \(\End(E)_\QQ = \End(E) \otimes \QQ\) of \(E\) is either \(\QQ\) an imaginary quadratic field or a definite quaternion algebra \(/\QQ\text{.}\)</p></article><article class="theorem-like" id="theorem-69"><h6 class="heading">
+<p id="p-957">The <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebra  \(\End(E)_\QQ = \End(E) \otimes \QQ\) of \(E\) is either \(\QQ\) an imaginary quadratic field or a definite quaternion algebra \(/\QQ\text{.}\)</p></article><article class="theorem-like" id="theorem-69"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.4.17</span> <span class="title">Deuring, this proof by Lenstra</span>
 </h6>
-<p id="p-957">Let \(E/\FF_q\) be a s.s. e.c. (i.e. assume \(\End(E) \otimes \QQ\) is a quaternion algebra). Then \(\operatorname{Ram}(B)  =    \{p, \infty\}\) and \(\ints = \End(E) \) is a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> in \(B\text{.}\)</p></article><article class="hiddenproof" id="proof-107"><a knowl="" class="id-ref" refid="hk-proof-107"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-107" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-958">Let \(n \gt 0\)  be prime to \(p \text{.}\) Then</p>
+<p id="p-958">Let \(E/\FF_q\) be a s.s. e.c. (i.e. assume \(\End(E) \otimes \QQ\) is a quaternion algebra). Then \(\operatorname{Ram}(B)  =    \{p, \infty\}\) and \(\ints = \End(E) \) is a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> in \(B\text{.}\)</p></article><article class="hiddenproof" id="proof-107"><a knowl="" class="id-ref" refid="hk-proof-107"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-107" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-959">Let \(n \gt 0\)  be prime to \(p \text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
 \end{equation*}
 </div>
 <p>as groups so \(\End(E\lb n\rb ) \simeq M_2(\ZZ/n)\text{.}\)</p>
-<p id="p-959">Claim: The structure map \(\ints/n\ints  \to \End(E\lb n \rb)\) is an isomorphism.</p>
-<p id="p-960">Check: suppose \(\phi \in  \ints\) kills \(E\lb n \rb\text{,}\) then since \(\phi\) is separable then \(\exists\) \(\psi \in \ints\) s.t. \(\phi = n \psi\text{.}\) Hence \(\phi = 0 \in \ints/n\text{.}\) This gives injectivity.</p>
-<p id="p-961">As both rings are finite with the same <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> \(n^4\) we have an isomorphism.</p>
-<p id="p-962">Since \(\ints\) is a free \(\ZZ\) module</p>
+<p id="p-960">Claim: The structure map \(\ints/n\ints  \to \End(E\lb n \rb)\) is an isomorphism.</p>
+<p id="p-961">Check: suppose \(\phi \in  \ints\) kills \(E\lb n \rb\text{,}\) then since \(\phi\) is separable then \(\exists\) \(\psi \in \ints\) s.t. \(\phi = n \psi\text{.}\) Hence \(\phi = 0 \in \ints/n\text{.}\) This gives injectivity.</p>
+<p id="p-962">As both rings are finite with the same <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> \(n^4\) we have an isomorphism.</p>
+<p id="p-963">Since \(\ints\) is a free \(\ZZ\) module</p>
 <div class="displaymath">
 \begin{equation*}
 \ints_l = \ints \otimes \QQ_l = \ints \otimes \varprojlim _n \ZZ/l^n
@@ -470,21 +472,21 @@ E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
 \end{equation*}
 </div>
 <p>for any \(l \ne p\) primes. This is an isomorphism as \(\ZZ\)-algebras.</p>
-<p id="p-963">In particular \(\ints_l\) is maximal in \(B_l \simeq M_2(\QQ_l)\) and \(B\) is split at \(l\) for all \(l\ne p\text{.}\) Since \(B\) is definite, it follows from the classification theorem that \(\operatorname{Ram}(B)  = \left\{ p, \infty \right\}\text{.}\)</p>
-<p id="p-964">Fact: \(\ints_p\) is maximal in \(B_p\) (thm 42.1.9 of voight).</p>
-<p id="p-965">\(\ints\) is maximal in \(B\) because it is locally maximal.</p></article></div>
+<p id="p-964">In particular \(\ints_l\) is maximal in \(B_l \simeq M_2(\QQ_l)\) and \(B\) is split at \(l\) for all \(l\ne p\text{.}\) Since \(B\) is definite, it follows from the classification theorem that \(\operatorname{Ram}(B)  = \left\{ p, \infty \right\}\text{.}\)</p>
+<p id="p-965">Fact: \(\ints_p\) is maximal in \(B_p\) (thm 42.1.9 of voight).</p>
+<p id="p-966">\(\ints\) is maximal in \(B\) because it is locally maximal.</p></article></div>
 <article class="theorem-like" id="theorem-70"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.4.18</span> <span class="title">Deuring correspondence</span>
 </h6>
-<div class="displaymath" id="p-966">
+<div class="displaymath" id="p-967">
 \begin{equation*}
 \left\{ \text{maximal orders }\ints \subseteq B_{p,\infty}\right\}/\sim \leftrightarrow \left\{ j \text{ s.s. }\in \FF_{p^2}\right\}/\Gal{\FF_{p^2}}{\FF_p}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-108"><a knowl="" class="id-ref" refid="hk-proof-108"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-108" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-967">Voight 42.4.7.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-108"><a knowl="" class="id-ref" refid="hk-proof-108"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-108" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-968">Voight 42.4.7.</p></article></div>
 <article class="definition-like" id="definition-92"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.19</span>
 </h6>
-<p id="p-968">Let \(I \subseteq \ints = \End(E)\) be an integral left \(\ints\)-ideal with \((\operatorname{nrd}(I), p) = 1\text{.}\) Define</p>
+<p id="p-969">Let \(I \subseteq \ints = \End(E)\) be an integral left \(\ints\)-ideal with \((\operatorname{nrd}(I), p) = 1\text{.}\) Define</p>
 <div class="displaymath">
 \begin{equation*}
 E\lb I \rb = \{ P \in E(\overline \FF_q) :  \alpha(P) = 0 \forall \alpha \in I\}
@@ -499,45 +501,45 @@ E\lb I \rb = \{ P \in E(\overline \FF_q) :  \alpha(P) = 0 \forall \alpha \in I\}
 <p>with \(\ker \Phi_I = E \lb I \rb\text{.}\)</p></article><article class="theorem-like" id="fact-11"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">3.4.20</span>
 </h6>
-<div class="displaymath" id="p-969">
+<div class="displaymath" id="p-970">
 \begin{equation*}
 \deg (\Phi_I)  = \operatorname{nrd}(I)
 \end{equation*}
 </div></article><article class="theorem-like" id="proposition-65"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.4.21</span>
 </h6>
-<p id="p-970">The association \(I \mapsto \phi_I\) is a 1-1 correspondence provided that \((\deg \phi_I, p) = 1\text{.}\)</p></article></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
+<p id="p-971">The association \(I \mapsto \phi_I\) is a 1-1 correspondence provided that \((\deg \phi_I, p) = 1\text{.}\)</p></article></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">Applications to SIG crypto</span>
 </h3>
 <article class="example-like" id="problem-1"><h6 class="heading">
 <span class="type">Problem</span> <span class="codenumber">3.4.22</span> <span class="title">Constructive Deuring correspondence</span>
 </h6>
-<p id="p-971">Given a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> \(\ints \subseteq B_{p,\infty}\) return a s.s. \(j\)-invariant \(j\) s.t. \(\ints \simeq \End(E_j)\text{.}\)</p></article><article class="example-like" id="problem-2"><h6 class="heading">
+<p id="p-972">Given a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> \(\ints \subseteq B_{p,\infty}\) return a s.s. \(j\)-invariant \(j\) s.t. \(\ints \simeq \End(E_j)\text{.}\)</p></article><article class="example-like" id="problem-2"><h6 class="heading">
 <span class="type">Problem</span> <span class="codenumber">3.4.23</span> <span class="title">Inverse Deuring correspondence</span>
 </h6>
-<p id="p-972">Given a supersingular \(j\) invariant \(j\text{,}\) compute a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> \(\ints \subseteq B_{p,\infty}\)  s.t. \(\ints \simeq \End(E_j)\text{.}\) \(\ints\) is described by a \(\ZZ\)-basis.</p></article><article class="example-like" id="problem-3"><h6 class="heading">
+<p id="p-973">Given a supersingular \(j\) invariant \(j\text{,}\) compute a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> \(\ints \subseteq B_{p,\infty}\)  s.t. \(\ints \simeq \End(E_j)\text{.}\) \(\ints\) is described by a \(\ZZ\)-basis.</p></article><article class="example-like" id="problem-3"><h6 class="heading">
 <span class="type">Problem</span> <span class="codenumber">3.4.24</span> <span class="title">Endomorphism ring computation problem</span>
 </h6>
-<p id="p-973">Given a supersingular \(j\) invariant \(j\text{,}\) \(\End(E_j)\text{.}\) \(\End(E_j)\) should be returned as \(4\) or \(3\) <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational maps</a> that form a \(\ZZ\)-basis. Their representation should be efficient in storage and in evaluation time at points.</p></article><article class="remark-like" id="remark-23"><h6 class="heading">
+<p id="p-974">Given a supersingular \(j\) invariant \(j\text{,}\) \(\End(E_j)\text{.}\) \(\End(E_j)\) should be returned as \(4\) or \(3\) <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational maps</a> that form a \(\ZZ\)-basis. Their representation should be efficient in storage and in evaluation time at points.</p></article><article class="remark-like" id="remark-23"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">3.4.25</span>
 </h6>
-<ol id="p-974" class="decimal">
+<ol id="p-975" class="decimal">
 <li id="li-240">Problem 1 can be solved in polynomial time, (Prop. 14 in Petit-Lauter).</li>
 <li id="li-241">P2 and P3 are polynomially equivalent but this isn't obvious (P-L sec.3.1 and 3.2)</li>
 <li id="li-242">There is no known efficient algorithm to solve P3.</li>
-</ol></article><p id="p-975">Recall: the (Charles-Goren-Lauter) CGL <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> is <a knowl="./knowl/def-preimage-resistance.html" title="Definition 3.2.4: Preimage resistance">preimage resistant</a> iff given 2 s.s. \(j\)-invariants \(j_1,j_2\) its computationally hard to compute a  positive integer \(e\) and an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi \colon E_{j_1} \to E_{j_2}\) of degree \(l^e\text{.}\)</p>
+</ol></article><p id="p-976">Recall: the (Charles-Goren-Lauter) CGL <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> is <a knowl="./knowl/def-preimage-resistance.html" title="Definition 3.2.4: Preimage resistance">preimage resistant</a> iff given 2 s.s. \(j\)-invariants \(j_1,j_2\) its computationally hard to compute a  positive integer \(e\) and an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi \colon E_{j_1} \to E_{j_2}\) of degree \(l^e\text{.}\)</p>
 <article class="theorem-like" id="proposition-66"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.4.26</span>
 </h6>
-<p id="p-976">Assume there's an efficient algorithm to solve P3. Then there is an efficient algorithm to solve the preimage problem for the CGL <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a></p></article><article class="hiddenproof" id="proof-109"><a knowl="" class="id-ref" refid="hk-proof-109"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-109" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-977">Algorithm</p>
-<p id="p-978">Input: two s.s. \(j\)-invariants \(j_s,j_t \in \FF_{p^2}\text{.}\)</p>
-<p id="p-979">Output: sequence of \(j\)-invariants</p>
+<p id="p-977">Assume there's an efficient algorithm to solve P3. Then there is an efficient algorithm to solve the preimage problem for the CGL <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a></p></article><article class="hiddenproof" id="proof-109"><a knowl="" class="id-ref" refid="hk-proof-109"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-109" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-978">Algorithm</p>
+<p id="p-979">Input: two s.s. \(j\)-invariants \(j_s,j_t \in \FF_{p^2}\text{.}\)</p>
+<p id="p-980">Output: sequence of \(j\)-invariants</p>
 <div class="displaymath">
 \begin{equation*}
 j_s,\ldots,j_0,\ldots, j_t\text{.}
 \end{equation*}
 </div>
-<ol id="p-980" class="decimal">
+<ol id="p-981" class="decimal">
 <li id="li-243">Compute \(\End(j_s),\End(j_t)\text{.}\)</li>
 <li id="li-244">Compute \(\ints_s \simeq \End(E_{j_s})\text{,}\) \(\ints_t \simeq \End(E_{j_t})\)</li>
 <li id="li-245">Compute ideals \(I_s\) and \(I_t\) connecting \(\ints_0 \) to \(\ints_s\text{,}\) \(\ints_t\)</li>
@@ -549,11 +551,11 @@ j_s,\ldots,j_0,\ldots, j_t\text{.}
 </div>Deduce a sequence \((j_0, j(E_1),\ldots,j(E) = j_e)\text{.}\)</li>
 <li id="li-248">Return \((j(E_s), \ldots,j_0, \ldots,j(E_t))\text{.}\)</li>
 </ol>
-<p id="p-981">Except for step 1 everything can be done efficiently.</p></article></div>
+<p id="p-982">Except for step 1 everything can be done efficiently.</p></article></div>
 <article class="remark-like" id="remark-24"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">3.4.27</span>
 </h6>
-<p id="p-982">The converse is also true.</p></article></section></section></div></main>
+<p id="p-983">The converse is also true.</p></article></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

@@ -31,6 +31,19 @@
 \tcbuselibrary{skins}
 \tcbuselibrary{breakable}
 \tcbuselibrary{raster}
+%% We load some "stock" tcolorbox styles that we use a lot
+%% Placement here is provisional, there will be some color work also
+%% First, black on white, no border, transparent, but no assumption about titles
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+%% Second, bold title, run-in to text/paragraph/heading
+%% Space afterwards will be controlled by environment,
+%% dependent of constructions of the tcb title
+\tcbset{ runintitlestyle/.style={fonttitle=\normalfont\bfseries, attach title to upper} }
+%% Spacing prior to each exercise, anywhere
+\tcbset{ exercisespacingstyle/.style={before skip={1.5ex plus 0.5ex}} }
+%% Spacing prior to each block
+\tcbset{ blockspacingstyle/.style={before skip={2.0ex plus 0.5ex}} }
 %% xparse allows the construction of more robust commands,
 %% this is a necessity for isolating styling and behavior
 %% The tcolorbox library of the same name loads the base library
@@ -121,6 +134,7 @@
 %% titlesec package, loading "titleps" package cooperatively
 %% See code comments about the necessity and purpose of "explicit" option
 \usepackage[explicit, pagestyles]{titlesec}
+\newtitlemark{\chaptertitlename}
 %% Set global/default page style for document due
 %% to potential re-definitions after documentclass
 \pagestyle{headings}
@@ -206,20 +220,30 @@
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries}{\divisionnameptx\space\thechapter}{20pt}{\Huge#1}
 [{\Large\authorsptx}]
+\titleformat{name=\chapter,numberless}[display]
+{\normalfont\huge\bfseries}{}{0pt}{#1}
+[{\Large\authorsptx}]
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titleformat{\section}
 {\normalfont\Large\bfseries}{\thesection\space\titleptx}{1em}{}
 [{\large\authorsptx}]
 \titleformat{name=\section,numberless}
 {\normalfont\Large\bfseries}{}{0pt}{#1}
+[{\large\authorsptx}]
 \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titleformat{\subsection}
 {\normalfont\large\bfseries}{\thesubsection\space\titleptx}{1em}{}
+[{\normalsize\authorsptx}]
+\titleformat{name=\subsection,numberless}
+{\normalfont\large\bfseries}{}{0pt}{#1}
 [{\normalsize\authorsptx}]
 \titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \titleformat{\subsubsection}
 {\normalfont\normalsize\bfseries}{\thesubsubsection\space\titleptx}{1em}{}
 [{\small\authorsptx}]
+\titleformat{name=\subsubsection,numberless}
+{\normalfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
 \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 %%
 %% Semantic Macros
@@ -272,74 +296,74 @@
 %% tcolorbox, with styles, for THEOREM-LIKE
 %%
 %% theorem: fairly simple numbered block/structure
-\tcbset{ theoremstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{theorem}[3]{title={{Theorem~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, label=#3, breakable, fontupper=\itshape, theoremstyle, }
+\tcbset{ theoremstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{theorem}[3]{title={{Theorem~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, fontupper=\itshape, theoremstyle, }
 %% proposition: fairly simple numbered block/structure
-\tcbset{ propositionstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{proposition}[3]{title={{Proposition~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, label=#3, breakable, fontupper=\itshape, propositionstyle, }
+\tcbset{ propositionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{proposition}[3]{title={{Proposition~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, fontupper=\itshape, propositionstyle, }
 %% corollary: fairly simple numbered block/structure
-\tcbset{ corollarystyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{corollary}[3]{title={{Corollary~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, label=#3, breakable, fontupper=\itshape, corollarystyle, }
+\tcbset{ corollarystyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{corollary}[3]{title={{Corollary~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, fontupper=\itshape, corollarystyle, }
 %% lemma: fairly simple numbered block/structure
-\tcbset{ lemmastyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{lemma}[3]{title={{Lemma~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, label=#3, breakable, fontupper=\itshape, lemmastyle, }
+\tcbset{ lemmastyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{lemma}[3]{title={{Lemma~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, fontupper=\itshape, lemmastyle, }
 %% fact: fairly simple numbered block/structure
-\tcbset{ factstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{fact}[3]{title={{Fact~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, label=#3, breakable, fontupper=\itshape, factstyle, }
+\tcbset{ factstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{fact}[3]{title={{Fact~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, fontupper=\itshape, factstyle, }
 %% claim: fairly simple numbered block/structure
-\tcbset{ claimstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{claim}[3]{title={{Claim~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, label=#3, breakable, fontupper=\itshape, claimstyle, }
+\tcbset{ claimstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{claim}[3]{title={{Claim~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, fontupper=\itshape, claimstyle, }
 %% algorithm: fairly simple numbered block/structure
-\tcbset{ algorithmstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{algorithm}[3]{title={{Algorithm~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, label=#3, breakable, fontupper=\itshape, algorithmstyle, }
+\tcbset{ algorithmstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{algorithm}[3]{title={{Algorithm~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, fontupper=\itshape, algorithmstyle, }
 %%
 %% tcolorbox, with styles, for AXIOM-LIKE
 %%
 %% conjecture: fairly simple numbered block/structure
-\tcbset{ conjecturestyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{conjecture}[3]{title={{Conjecture~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, label=#3, breakable, fontupper=\itshape, conjecturestyle, }
+\tcbset{ conjecturestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{conjecture}[3]{title={{Conjecture~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, fontupper=\itshape, conjecturestyle, }
 %%
 %% tcolorbox, with styles, for DEFINITION-LIKE
 %%
 %% definition: fairly simple numbered block/structure
-\tcbset{ definitionstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, after upper={\hfill{}\(\lozenge\)}, } }
-\newtcolorbox[use counter=cthm, number within=section]{definition}[2]{title={{Definition~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, label=#2, breakable, definitionstyle, }
+\tcbset{ definitionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\hfill{}\(\lozenge\)}, } }
+\newtcolorbox[use counter=cthm, number within=section]{definition}[2]{title={{Definition~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, definitionstyle, }
 %%
 %% tcolorbox, with styles, for REMARK-LIKE
 %%
 %% note: fairly simple numbered block/structure
-\tcbset{ notestyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{note}[2]{title={{Note~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, label=#2, breakable, notestyle, }
+\tcbset{ notestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{note}[2]{title={{Note~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, notestyle, }
 %% remark: fairly simple numbered block/structure
-\tcbset{ remarkstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{remark}[2]{title={{Remark~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, label=#2, breakable, remarkstyle, }
+\tcbset{ remarkstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{remark}[2]{title={{Remark~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, remarkstyle, }
 %% observation: fairly simple numbered block/structure
-\tcbset{ observationstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{observation}[2]{title={{Observation~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, label=#2, breakable, observationstyle, }
+\tcbset{ observationstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{observation}[2]{title={{Observation~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, observationstyle, }
 %%
 %% tcolorbox, with styles, for EXAMPLE-LIKE
 %%
 %% example: fairly simple numbered block/structure
-\tcbset{ examplestyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, after upper={\hfill{}\(\square\)}, } }
-\newtcolorbox[use counter=cthm, number within=section]{example}[2]{title={{Example~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, label=#2, breakable, examplestyle, }
+\tcbset{ examplestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\hfill{}\(\square\)}, } }
+\newtcolorbox[use counter=cthm, number within=section]{example}[2]{title={{Example~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, examplestyle, }
 %% question: fairly simple numbered block/structure
-\tcbset{ questionstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, after upper={\hfill{}\(\square\)}, } }
-\newtcolorbox[use counter=cthm, number within=section]{question}[2]{title={{Question~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, label=#2, breakable, questionstyle, }
+\tcbset{ questionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\hfill{}\(\square\)}, } }
+\newtcolorbox[use counter=cthm, number within=section]{question}[2]{title={{Question~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, questionstyle, }
 %% problem: fairly simple numbered block/structure
-\tcbset{ problemstyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, after upper={\hfill{}\(\square\)}, } }
-\newtcolorbox[use counter=cthm, number within=section]{problem}[2]{title={{Problem~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, label=#2, breakable, problemstyle, }
+\tcbset{ problemstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\hfill{}\(\square\)}, } }
+\newtcolorbox[use counter=cthm, number within=section]{problem}[2]{title={{Problem~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, problemstyle, }
 %%
 %% tcolorbox, with styles, for inline exercises
 %%
 %% inlineexercise: fairly simple numbered block/structure
-\tcbset{ inlineexercisestyle/.style={size=minimal, boxrule=-0.3pt, frame empty, colback=white, colbacktitle=white, coltitle=black, fonttitle=\normalfont\bfseries, attach title to upper, after title={\space}, } }
-\newtcolorbox[use counter=cthm, number within=section]{inlineexercise}[2]{title={{Exercise~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, label=#2, breakable, inlineexercisestyle, }
+\tcbset{ inlineexercisestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter=cthm, number within=section]{inlineexercise}[2]{title={{Exercise~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, inlineexercisestyle, }
 %%
 %% xparse environments for introductions and conclusions of divisions
 %%
 %% introduction: in a structured division
 \NewDocumentEnvironment{introduction}{m}
-{\notblank{#1}{\noindent\textbf{#1}\space}{}}{}
+{\notblank{#1}{\noindent\textbf{#1}\space}{}}{\par\medskip}
 %%
 %% tcolorbox, with styles, for miscellaneous environments
 %%
@@ -448,7 +472,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 
 %% Begin: Author-provided packages
 %% (From  docinfo/latex-preamble/package  elements)
-\usepackage{xypic}\usepackage{newpxtext}\usepackage{newpxmath}\usepackage{cancel}%% End: Author-provided packages
+\usepackage{xypic}\usepackage{newpxtext}\usepackage{newpxmath}\usepackage{cancel}\usepackage{mathrsfs}%% End: Author-provided packages
 %% Begin: Author-provided macros
 %% (From  docinfo/macros  element)
 %% Plus three from MBX for XML characters
@@ -671,7 +695,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 {\Huge BUNTES}\\[\baselineskip]
 {\LARGE BU Number Theory Expository Seminar}\\[3\baselineskip]
 {\Large BUNTES Attendees (notes by Alex)}\\[3\baselineskip]
-{\Large October 21, 2018}\\}
+{\Large November 1, 2018}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -696,7 +720,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 \begin{chapterptx}{Abelian Varieties}{}{Abelian Varieties}{}{}\label{chapter-abelian-varieties}
 \begin{introduction}{}%
 \hypertarget{p-1}{}%
-These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated October 21, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Fall 2017, the topic is \hyperref[def-buntes-abvar]{Abelian varieties}, they were last updated November 1, 2018. We are using Milne's \hyperref[def-buntes-abvar]{abelian varieties} notes primarily, for more details see \href{http://math.bu.edu/people/angusmca/buntes/fall2017.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 \end{introduction}%
 %
 %
@@ -1135,10 +1159,10 @@ Now we will consider \hyperref[def-line-bundle]{line bundles} on \(X = V/\Lambda
 \begin{equation*}
 L\xrightarrow{\pi} X
 \end{equation*}
-such that for any \(x\in X\) there exists \(U\ni x\) with \(\pi^{-1} (U) \cong \CC \times U\). We can obtain these from hermitian forms and some auxilliary data as follows.%
+such that for any \(x\in X\) there exists \(U\ni x\) with \(\pi^{-1} (U) \cong \CC \times U\). We can obtain these from \hyperref[sec-buntes-av-jac]{hermitian forms} and some auxilliary data as follows.%
 \begin{definition}{}{definition-8}%
 \hypertarget{p-58}{}%
-If \(H\) is a hermitian form on \(V\) such that \(E(\Lambda\times\Lambda) \subseteq \ZZ\) there exists a map%
+If \(H\) is a \hyperref[sec-buntes-av-jac]{hermitian form} on \(V\) such that \(E(\Lambda\times\Lambda) \subseteq \ZZ\) there exists a map%
 \begin{equation*}
 \alpha \colon \Lambda \to \CC^*  = \{z\in \CC^* : |z| = 1\}
 \end{equation*}
@@ -1224,7 +1248,7 @@ A \terminology{Riemann form} is \(E\colon \Lambda \times \Lambda \to \ZZ\) alter
 \begin{equation*}
 E_\RR \colon V\times V\to \RR
 \end{equation*}
-has the property that \(E(iu,iv) = E(u,v)\) and  the corresponding Hermitian form is positive definite.%
+has the property that \(E(iu,iv) = E(u,v)\) and  the corresponding \hyperref[sec-buntes-av-jac]{Hermitian form} is positive definite.%
 \end{definition}
 \begin{definition}{Polarizable tori.}{def-polarizable}%
 \hypertarget{p-72}{}%
@@ -1237,7 +1261,7 @@ Every \(\CC/\Lambda\) where \(\Lambda = \langle 1,\tau\rangle_{\ZZ}\) is \hyperr
 \hypertarget{p-74}{}%
 To see this take%
 \begin{equation*}
-E(u,v) = \frac{uv}{\im \tau}
+E(u,v) = \frac{u\bar v}{\im \tau}
 \end{equation*}
 as a \hyperref[def-riemann-form]{Riemann form}.%
 \end{example}
@@ -4372,7 +4396,7 @@ is a root of unity \(\pi^N_{A_{\FF_{q'}}} = \pi^{N'}\).%
 \begin{chapterptx}{Dessins d'Enfants}{}{Dessins d'Enfants}{}{}\label{chapter-dessins}
 \begin{introduction}{}%
 \hypertarget{p-456}{}%
-These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated October 21, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
+These are notes for BUNTES Spring 2018, the topic is \hyperref[def-dessin-denfant]{Dessins} d'Enfants, they were last updated November 1, 2018. For more details see \href{http://math.bu.edu/people/angusmca/buntes/spring2018.html}{the webpage}. These notes are by Alex, feel free to email me at \href{mailto:alex.j.best@gmail.com}{\nolinkurl{alex.j.best@gmail.com}} to report typos/suggest improvements, I'll be forever grateful.%
 \end{introduction}%
 %
 %
@@ -5200,7 +5224,7 @@ is still a covering map and \(\HH/\Gamma\) is a \hyperref[def-top-riem-surface]{
 \end{paragraphs}%
 \begin{paragraphs}{Reflections on \(\HH\).}{paragraphs-12}%
 \hypertarget{p-553}{}%
-Say \(\mu\) is a geodesic in \(\HH\), i.e. a horocycle.There is \(M \in \PSL_2(\RR)\) with \(M\mu\) the imaginary axis. Then \(R = -\bar z\) is the reflection  over the imaginary axis. Now \(R_\mu = M\inv\circ R \circ M\) is a reflection over \(\mu\).%
+Say \(\mu\) is a geodesic in \(\HH\), i.e. a horocycle. There is \(M \in \PSL_2(\RR)\) with \(M\mu\) the imaginary axis. Then \(R = -\bar z\) is the reflection  over the imaginary axis. Now \(R_\mu = M\inv\circ R \circ M\) is a reflection over \(\mu\).%
 \begin{equation*}
 R_\mu = \frac{a\bar z  + b}{ c\bar z + d}\not\in \PSL_2(\RR)
 \end{equation*}
@@ -5770,7 +5794,7 @@ P^\sigma = \sum a^\sigma_{ij} x^iy^j \in \CC\lb x,y\rb
 if \(R = P/Q\) set \(R^\sigma = P^\sigma / Q^\sigma\).%
 \item\hypertarget{li-118}{}If \(S \simeq S_F\), \(S^\sigma = S_{F^\sigma}\).%
 \item\hypertarget{li-119}{}If \(\Psi = (R_1, R_2)\) \(S_F\to S_G\) is a morphism, set \(\Psi^ \sigma = (R_1^\sigma , R_2 ^\sigma) \colon S_{F^\sigma} \to S_{G^\sigma}\).%
-\item\hypertarget{li-120}{}For an equivalence class \((S,f) = (S_F, R(x,y))\) of \hyperref[def-dess-ramified]{ramified} cvers of \(\PP^1\) set \((S,f)^\sigma = (S^\sigma, f^\sigma) = (S_{F^\sigma}, R^\sigma (x,y))\).%
+\item\hypertarget{li-120}{}For an equivalence class \((S,f) = (S_F, R(x,y))\) of \hyperref[def-dess-ramified]{ramified} covers of \(\PP^1\) set \((S,f)^\sigma = (S^\sigma, f^\sigma) = (S_{F^\sigma}, R^\sigma (x,y))\).%
 \end{enumerate}
 %
 \end{definition}
@@ -6205,7 +6229,7 @@ String.%
 %
 \begin{sectionptx}{A Sandwich Table of Dessins d'Enfants}{}{A Sandwich Table of Dessins d'Enfants}{}{}\label{sec-sandwich}
 \hypertarget{p-664}{}%
-Alex: So I haven't typed this section as it was a lot of pictures and I haven't got nice scans of them, will try at some point.%
+Alex: So I haven't typed this section as it was a lot of pictures and I haven't got nice scans of them, will try at some point (maybe?). Angus' notes can be found at \url{http://math.bu.edu/people/angusmca/buntes/spring2018.html}.%
 \end{sectionptx}
 %
 %
@@ -8138,12 +8162,15 @@ we have \(\pi = -3\). Or%
 y^2 = x^{3} + 1/\FF_{25}
 \end{equation*}
 we have \(\pi = -5\)%
-\begin{inlineexercise}{Good for long walks on the beach.}{exercise-23}%
+\par
 \hypertarget{p-880}{}%
+Indeed one can find on the internet claims like, all \hyperref[def-supersing-isog-ec]{elliptic curves} over finite fields have extra \hyperref[def-supersing-isog-endo]{endomorphisms} because frobenius exists!%
+\begin{inlineexercise}{Good for long walks on the beach.}{exercise-23}%
+\hypertarget{p-881}{}%
 Show by hand that \(y^2 + y = x^3/\FF_4\) is supersingular and that frobenius is just the multiplication by \(-2\) map.%
 \end{inlineexercise}
 \begin{inlineexercise}{}{exercise-24}%
-\hypertarget{p-881}{}%
+\hypertarget{p-882}{}%
 PODASIP: this happens for all \(p^2\)?%
 \end{inlineexercise}
 \end{introduction}%
@@ -8155,26 +8182,26 @@ PODASIP: this happens for all \(p^2\)?%
 %
 \begin{subsectionptx}{Quaternion Algebras}{}{Quaternion Algebras}{}{}\label{subsection-74}
 \begin{introduction}{}%
-\hypertarget{p-882}{}%
+\hypertarget{p-883}{}%
 Pretty much all of this material was ripped with the utmost love and affection from \hyperlink{bib-voight-quat}{[68]}, check it out.%
 \begin{proposition}{}{}{proposition-62}%
-\hypertarget{p-883}{}%
+\hypertarget{p-884}{}%
 The theory of Quaternion algebras is very rich.%
 \end{proposition}
 \begin{proof}\hypertarget{proof-105}{}
-\hypertarget{p-884}{}%
+\hypertarget{p-885}{}%
 The above book is 800 pages long.%
 \end{proof}
-\hypertarget{p-885}{}%
+\hypertarget{p-886}{}%
 So now we have gone out into nature and observed a beautiful new species of algebra, time to catch it, pin it to a wall, dissect it to study it in detail. It might not look as pretty any more but it's the way the science is done.%
 \begin{example}{Hamilton's quaternions.}{example-43}%
-\hypertarget{p-886}{}%
+\hypertarget{p-887}{}%
 Hamilton's quaternions \(\HH\) were the first quaternion algebra to be discovered (citation needed). The structure is like two copies of \(\CC\) tensored together in some non-commuting way over \(\RR\). We have a real algebra with two generators \(i,j\) s.t. \(i^2 = j^2  = (ij)^2 = -1\) we let \(k = ij\) for aesthetic reasons (note that these relations imply noncommutativity!). Like this we get a division algebra.%
 \end{example}
-\hypertarget{p-887}{}%
+\hypertarget{p-888}{}%
 Quaternion algebras are a generalisation of this to other fields.%
 \begin{definition}{Quaternion algebras.}{def-quaternion-algebra}%
-\hypertarget{p-888}{}%
+\hypertarget{p-889}{}%
 Let \(F\) be a field (not characteristic 2), a quaternion algebra over \(F\) is an algebra \(B\) over \(F\) for which there exist \(a,b\in F^\times\) such that there is a basis%
 \begin{equation*}
 1,i,j,k \in B
@@ -8185,11 +8212,11 @@ i^2 = a,j^2=b,k=ij=-ji\text{,}
 \end{equation*}
 it is automatic that \(k^2 = -ab\) from this.%
 \par
-\hypertarget{p-889}{}%
+\hypertarget{p-890}{}%
 We denote this particular quaternion algebra by \(\legendre{a,b}{F}\)%
 \end{definition}
 \begin{example}{}{example-44}%
-\hypertarget{p-890}{}%
+\hypertarget{p-891}{}%
 %
 \begin{equation*}
 \HH = \legendre{-1,-1}{\RR}\text{.}
@@ -8197,7 +8224,7 @@ We denote this particular quaternion algebra by \(\legendre{a,b}{F}\)%
 %
 \end{example}
 \begin{example}{}{example-45}%
-\hypertarget{p-891}{}%
+\hypertarget{p-892}{}%
 What is%
 \begin{equation*}
 \legendre{1,1}{F} \left( = \legendre{1,-1}{F}\right)\text{?}
@@ -8216,19 +8243,19 @@ k = ij = \begin{pmatrix} 0\amp1\\-1\amp 0\end{pmatrix} = -ji
 \end{equation*}
 as required.%
 \end{example}
-\hypertarget{p-892}{}%
+\hypertarget{p-893}{}%
 Call this example \emph{split}, in analogy with quadratic theory,  If \(x^2 - N\) has a solution mod \(p\) then \(\legendre{N}{p} = 1 = \legendre{1}{p}\).%
 \par
-\hypertarget{p-893}{}%
+\hypertarget{p-894}{}%
 Note that if \(a\) or \(b \in (F^\times)^2\) then we can divide the corresponding basis element by \(\sqrt{a}\) or whatever and find that \(\legendre{a,b}{F} = \legendre{1,b}{F}\). This shows:%
 \begin{proposition}{}{}{proposition-63}%
-\hypertarget{p-894}{}%
+\hypertarget{p-895}{}%
 After passing to the algebraic closure (or even the quadratic closure!) every quaternion algebra is split.%
 \end{proposition}
-\hypertarget{p-895}{}%
+\hypertarget{p-896}{}%
 This is helpful as it allows us to work with non-split quaternion algebras as matrix algebras over a quadratic extension.%
 \begin{example}{}{example-46}%
-\hypertarget{p-896}{}%
+\hypertarget{p-897}{}%
 \(\HH/\RR\) can be seen as \(\Mat_{2\times 2}(\RR(i)) = \Mat_{2\times 2}(\CC)\), explicitly%
 \begin{equation*}
 i=  i\begin{pmatrix} 1\amp0\\0\amp -1\end{pmatrix} = \begin{pmatrix} i\amp0\\0\amp -i\end{pmatrix}
@@ -8239,28 +8266,28 @@ j = i\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix} = \begin{pmatrix} 0\amp i\\i\a
 \end{equation*}
 please excuse the unfortunate notational clash here, I hope you agree it's somewhat unavoidable.%
 \end{example}
-\hypertarget{p-897}{}%
+\hypertarget{p-898}{}%
 Here is a nice lemma I probably used implicitly already somewhere!%
 \begin{lemma}{}{}{lemma-18}%
-\hypertarget{p-898}{}%
+\hypertarget{p-899}{}%
 An \(F\)-algebra \(B\) with \(F\)-algebra generators \(i,j\) satisfying \(i^2,j^2\in F^\times\), \(ij = -ji\) is automatically a quaternion algebra (i.e. dimension 4).%
 \end{lemma}
 \begin{proof}\hypertarget{proof-106}{}
-\hypertarget{p-899}{}%
+\hypertarget{p-900}{}%
 Show linear independence of \(1,i,j,ij\) (exercise).%
 \end{proof}
 \begin{definition}{Conjugate, trace and norm.}{def-quat-alg-conj-trace-norm}%
-\hypertarget{p-900}{}%
+\hypertarget{p-901}{}%
 Given a quaternion algebra \(B/F\) there is a unique anti-involution \(\overline \cdot \colon B \to B\), called \terminology{conjugation}.%
 \par
-\hypertarget{p-901}{}%
+\hypertarget{p-902}{}%
 With basis \(1,i,j,ij\in \legendre{a,b}{F}\) as above it is given as%
 \begin{equation*}
 \overline {x + yi + zj + w ij} = x - yi - zj - w ij,\,x,y,z,w\in F\text{.}
 \end{equation*}
 %
 \par
-\hypertarget{p-902}{}%
+\hypertarget{p-903}{}%
 As normal (heh) we define the (reduced) norm and trace%
 \begin{equation*}
 \norm \alpha =  \alpha + \overline \alpha,\,\forall \alpha \in B
@@ -8287,14 +8314,14 @@ and%
 \typeout{************************************************}
 %
 \begin{subsubsectionptx}{Orders}{}{Orders}{}{}\label{subsubsection-1}
-\hypertarget{p-903}{}%
+\hypertarget{p-904}{}%
 In our example, while the \hyperref[def-supersing-isog-endo]{endomorphism} algebra \(\End(E)\otimes \QQ\) was of interest, the \hyperref[def-supersing-isog-endo]{endomorphism} ring \(\End(E)\) was the more fundamental object. What is this? A quaternion ring?%
 \begin{definition}{Orders in quaternion algebras.}{def-order-quaternion}%
-\hypertarget{p-904}{}%
+\hypertarget{p-905}{}%
 Let \(B/\QQ\) be a quaternion algebra, an \terminology{order} in \(B\) is a full rank sub-\(\ZZ\)-module that is also a subring.%
 \end{definition}
 \begin{example}{The Lipschitz order.}{ex-lipshitz-order}%
-\hypertarget{p-905}{}%
+\hypertarget{p-906}{}%
 \(B = \legendre{-1,-1}{\QQ}\) (Hamilton quaternions with \(\QQ\)-coefficients) then we have an \hyperref[def-order-quaternion]{order}%
 \begin{equation*}
 \ZZ + \ZZ i + \ZZ j + \ZZ ij
@@ -8302,27 +8329,27 @@ Let \(B/\QQ\) be a quaternion algebra, an \terminology{order} in \(B\) is a full
 the \terminology{Lipschitz \hyperref[def-order-quaternion]{order}}.%
 \end{example}
 \begin{definition}{Maximality.}{def-maximal-order}%
-\hypertarget{p-906}{}%
+\hypertarget{p-907}{}%
 Orders are ordered (heh) with respect to inclusion, thus we get notions of maximality of \hyperref[def-order-quaternion]{orders} etc.%
 \end{definition}
-\hypertarget{p-907}{}%
+\hypertarget{p-908}{}%
 Is the \hyperref[ex-lipshitz-order]{Lipschitz order} maximal? NO! Whats going on? \(\ZZ\lb i\rb\) is maximal in \(\QQ(i)\) after all. Consider%
 \begin{equation*}
 i + j + k,\,(i+j + k)^2 = i^2 + j^2 + k^2 + \cancelto{0}{ij + ji} + \cancelto{0}{ik + ki} + \cancelto{0}{jk + kj} = -3
 \end{equation*}
 so we have a \(\ZZ\lb \sqrt{-3}\rb\) lurking inside \(\legendre{-1,-1}{\QQ}\), quaternion algebras are not everything they appear to be at first sight! \(\ZZ\lb \sqrt{-3}\rb\) is non-maximal and we must add \(\sqrt{-3}/2\) to make it so. Lets add this in the quaternion setting:%
 \begin{example}{The Hurwitz order.}{ex-hurwitz-order}%
-\hypertarget{p-908}{}%
+\hypertarget{p-909}{}%
 Let \(B = \legendre{-1,-1}{\QQ}\), then%
 \begin{equation*}
 \ZZ+  \ZZ i + \ZZ j + \ZZ \left(\frac{i + j + k}{2}\right)
 \end{equation*}
 is an index two suborder of the \hyperref[ex-lipshitz-order]{Lipschitz order}, called the \terminology{Hurwitz \hyperref[def-order-quaternion]{order}}, this \emph{is} maximal.%
 \end{example}
-\hypertarget{p-909}{}%
+\hypertarget{p-910}{}%
 Warning, just because \(\sqrt{-3} \in \legendre{-1,-1}{\QQ}\) we do not have \(\legendre{-1,-3}{\QQ} = \legendre{-1,-1}{\QQ}\)!%
 \begin{example}{/Exercise.}{example-49}%
-\hypertarget{p-910}{}%
+\hypertarget{p-911}{}%
 Show that the \hyperref[def-supersing-isog-ec]{elliptic curve} from the exercise earlier%
 \begin{equation*}
 y^2 + y = x^3/\overline{\FF_2}
@@ -8330,29 +8357,29 @@ y^2 + y = x^3/\overline{\FF_2}
 has \hyperref[def-supersing-isog-endo]{endomorphism} algebra the \hyperref[ex-hurwitz-order]{Hurwitz order}.%
 \par\smallskip%
 \noindent\textbf{Solution}.\hypertarget{solution-1}{}\quad%
-\hypertarget{p-911}{}%
+\hypertarget{p-912}{}%
 Here is what me and Angus think, we have the 2-power frobenius \(\pi\) a degree 2 \hyperref[def-supersing-isog-isog]{isogeny} whose square is minus 2, we also have the \hyperref[def-supersing-isog-isog]{isogeny} \(\phi \colon x\mapsto \zeta_3 x, y\mapsto y\) which is in fact an automorphism (degree 1) and satisifies \(\phi^2 + \phi + 1 = 0\). The relation between these two \hyperref[def-supersing-isog-isog]{isogenies} is that \(\pi \phi  = \phi^2 \pi \colon x\mapsto \zeta_3^2 x^2, y\mapsto y^2\).%
 \par
-\hypertarget{p-912}{}%
+\hypertarget{p-913}{}%
 Inside the Huwitz \hyperref[def-order-quaternion]{order} we have some candidates for an element whose square is \(-2\) there are a few, coming in two types \(a+ b\) for \(a \ne b \in \{i,j,k\}\) and \(a-b\) for \(a\ne b\in \{i,j,k\}\), we choose the second type (why? because it works and the other doesn't), let \(p = i + j\) for concreteness. We also have a cube root of unity in the \hyperref[ex-hurwitz-order]{Hurwitz order}, it is \(f = (-1 + i + j + k)/2\).%
 \par
-\hypertarget{p-913}{}%
+\hypertarget{p-914}{}%
 We can calculate now what \(pf\) and \(f^2 p\) are, they both come out to be \(- i + k\), some other square root of minus 2, which makes sense because degree is multiplicative. Anyway this is consistent with the \hyperref[def-supersing-isog-endo]{endomorphism} ring but there is a slight problem, the \hyperref[def-order-quaternion]{order} generated here has discriminant \(6\), so its non-maximal as we know its contained in the \hyperref[ex-hurwitz-order]{Hurwitz order} but the discriminant is higher, Deuring tells us we have to get a maximal \hyperref[def-order-quaternion]{order} so we need something extra.%
 \end{example}
-\hypertarget{p-914}{}%
+\hypertarget{p-915}{}%
 Warning, there is no such thing as \emph{the} maximal \hyperref[def-order-quaternion]{order} of a quaternion algebra! Rather there are multiple maximal \hyperref[def-order-quaternion]{orders} due to non-commutativity, e.g. if \(\ints\) is a maximal \hyperref[def-order-quaternion]{order} then so is%
 \begin{equation*}
 \alpha \ints \alpha\inv \ne \ints\text{.}
 \end{equation*}
 %
 \par
-\hypertarget{p-915}{}%
+\hypertarget{p-916}{}%
 Normally when we have unique maximal things with a certain property, its because we can always take spans/unions and they still have that property.%
 \par
-\hypertarget{p-916}{}%
+\hypertarget{p-917}{}%
 This is no longer true here, the sum of two elements with integral trace and norm need not remain so, nor the product.%
 \par
-\hypertarget{p-917}{}%
+\hypertarget{p-918}{}%
 We can define discriminants of \hyperref[def-order-quaternion]{orders} which like normal give a hint as to their maximality%
 \begin{equation*}
 \ints = \ZZ + \ZZ i + \ZZ j + \ZZ ij \subseteq \legendre{a,b}{\QQ}
@@ -8363,7 +8390,7 @@ We can define discriminants of \hyperref[def-order-quaternion]{orders} which lik
 \end{equation*}
 %
 \begin{inlineexercise}{}{exercise-25}%
-\hypertarget{p-918}{}%
+\hypertarget{p-919}{}%
 Find the discriminant of the \hyperref[ex-lipshitz-order]{Lipschitz order}.%
 \end{inlineexercise}
 \end{subsubsectionptx}
@@ -8375,21 +8402,21 @@ Find the discriminant of the \hyperref[ex-lipshitz-order]{Lipschitz order}.%
 %
 \begin{subsubsectionptx}{Local theory}{}{Local theory}{}{}\label{subsubsection-2}
 \begin{theorem}{}{}{theorem-63}%
-\hypertarget{p-919}{}%
+\hypertarget{p-920}{}%
 Over a local field \(F \ne \CC\) there is a unique division quaternion algebra \(B/F\) up to \(F\)-isomorphism.%
 \par
-\hypertarget{p-920}{}%
+\hypertarget{p-921}{}%
 If \(F = \QQ_p\), \(p\ne 2\) then this is%
 \begin{equation*}
 \legendre{e,p}{\QQ_p}
 \end{equation*}
 for \(e\) any quadratic non-residue mod \(p\).%
 \par
-\hypertarget{p-921}{}%
+\hypertarget{p-922}{}%
 This is saying that any quadratic extension of \(F\) embeds into \(B\)!%
 \end{theorem}
 \begin{definition}{Split and ramified quaternion algebras.}{def-split-ram-quaternion-algs}%
-\hypertarget{p-922}{}%
+\hypertarget{p-923}{}%
 Let \(B/\QQ_v\) be a quaternion algebra, we say that \(B\) is%
 \begin{equation*}
 \begin{cases}
@@ -8399,28 +8426,28 @@ Let \(B/\QQ_v\) be a quaternion algebra, we say that \(B\) is%
 \end{equation*}
 %
 \par
-\hypertarget{p-923}{}%
+\hypertarget{p-924}{}%
 Correspondingly we say that \(B/\QQ\) is split/ramified at a place \(v\) if the corresponding \(B\otimes \QQ_v\) has that property.%
 \end{definition}
-\hypertarget{p-924}{}%
+\hypertarget{p-925}{}%
 The terminology definite for quaternion algebras \hyperref[def-dess-ramified]{ramified} at infinity is also used (i.e. for which \(B\otimes \RR = \HH\)).%
 \begin{theorem}{Albert-Brauer-Hasse-Noether.}{}{theorem-64}%
-\hypertarget{p-925}{}%
+\hypertarget{p-926}{}%
 Let \(B/F\) be a quaternion algebra  over  a  number field \(F\) (or any \hyperref[def-abvar-csa]{central \hyperref[def-simple-av]{simple} algebra}), if \(B\) splits at every place \(v\) of \(F\) then \(B\) is a matrix algebra \(M_d (F)\).%
 \end{theorem}
-\hypertarget{p-926}{}%
+\hypertarget{p-927}{}%
 In fact:%
 \begin{theorem}{}{}{theorem-65}%
-\hypertarget{p-927}{}%
+\hypertarget{p-928}{}%
 Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.%
 \end{theorem}
-\hypertarget{p-928}{}%
+\hypertarget{p-929}{}%
 Warning: Quaternion algebras may not be \hyperref[def-dess-ramified]{ramified} where you think they are?%
 \par
-\hypertarget{p-929}{}%
+\hypertarget{p-930}{}%
 Knowing the ramification of a quaternion algebra \(\QQ\) is enough to identify it uniquely, in fact we have the following theorem%
 \begin{theorem}{Main Theorem [68,~14.1.3].}{}{theorem-66}%
-\hypertarget{p-930}{}%
+\hypertarget{p-931}{}%
 There is a sequence of bijections%
 \begin{align*}
 \left\{ \text{quaternion algebras }B/\QQ \right\}/\text{isom.}\\
@@ -8431,10 +8458,10 @@ D \mapsto \{p|D\} \cup \{\infty\} \text{ if }2\nmid \omega(D)\amp\updownarrow S 
 \end{align*}
 %
 \end{theorem}
-\hypertarget{p-931}{}%
+\hypertarget{p-932}{}%
 Sometimes however we want generators and relations not just ramification information: (As we will only care about discriminant \(p\) quaternion algebras) In our setting the relevant theorem is:%
 \begin{theorem}{Pizer.}{}{theorem-67}%
-\hypertarget{p-932}{}%
+\hypertarget{p-933}{}%
 Let \(\QQ_{p,\infty}\) be the unique quaternion algebra \hyperref[def-dess-ramified]{ramified} at \(p,\infty\), let \(q \equiv 3 \pmod 4\) be such that \(\legendre pq = -1\), then%
 \begin{equation*}
 \QQ_{p,\infty} \cong
@@ -8447,10 +8474,10 @@ Let \(\QQ_{p,\infty}\) be the unique quaternion algebra \hyperref[def-dess-ramif
 \end{equation*}
 %
 \end{theorem}
-\hypertarget{p-933}{}%
+\hypertarget{p-934}{}%
 Ibukiyama has given a nice description of a maximal \hyperref[def-order-quaternion]{order} in such.%
 \par
-\hypertarget{p-934}{}%
+\hypertarget{p-935}{}%
 Here are some nice references:\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-227}{}Computational Problems in Supersingular \hyperref[def-supersing-isog-ec]{Elliptic Curve} \hyperref[def-supersing-isog-isog]{Isogenies} - Steven D. Galbraith and Frederik Vercauteren \url{https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf}%
@@ -8473,10 +8500,10 @@ Here are some nice references:\leavevmode%
 %
 \begin{sectionptx}{The Deuring Correspondence (Maria Ines)}{}{The Deuring Correspondence (Maria Ines)}{}{}\label{sec-deuring}
 \begin{introduction}{}%
-\hypertarget{p-935}{}%
+\hypertarget{p-936}{}%
 References:%
 \par
-\hypertarget{p-936}{}%
+\hypertarget{p-937}{}%
 \leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-234}{}Voight ch. 16,17,42%
@@ -8491,14 +8518,14 @@ References:%
 \typeout{************************************************}
 %
 \begin{subsectionptx}{Background: Ideals and Ideal classes}{}{Background: Ideals and Ideal classes}{}{}\label{subsection-75}
-\hypertarget{p-937}{}%
+\hypertarget{p-938}{}%
 Let \(B/\QQ\) be a quaternion algebra and  \(\ints \subseteq B\) be an \hyperref[def-order-quaternion]{order}. If \(I \subseteq B \) is a  \hyperref[def-buntes-lattice]{lattice}, we can define \(\ints_L (I) = \{ \alpha\in  B :  \alpha I  \subseteq I \}\). This is an \hyperref[def-order-quaternion]{order} , it's the left \hyperref[def-order-quaternion]{order} of  \(I\) similarly can define \(\ints_R (I) \).%
 \begin{definition}{}{definition-84}%
-\hypertarget{p-938}{}%
+\hypertarget{p-939}{}%
 A left (resp. right) fractional ideal is a \hyperref[def-buntes-lattice]{lattice} \(I \subseteq B\) s.t. \(\ints \subseteq       \ints_L (I) \) resp \(\ints \subseteq \ints_R (I) \)%
 \end{definition}
 \begin{definition}{Compatibility.}{def-buntes-compat}%
-\hypertarget{p-939}{}%
+\hypertarget{p-940}{}%
 For \hyperref[def-buntes-lattice]{lattices} \(I,J \subseteq B\) we say \(I\) is \terminology{compatible} with \(J\) if%
 \begin{equation*}
 \ints_R(I)= \ints_L(J)\text{.}
@@ -8514,11 +8541,11 @@ I'I = \ints_L(I') =  \ints_R(I)
 with both products \hyperref[def-buntes-compat]{compatible}%
 \end{definition}
 \begin{proposition}{}{}{proposition-64}%
-\hypertarget{p-940}{}%
+\hypertarget{p-941}{}%
 Let \(\ints \subseteq B\) be a maximal \hyperref[def-order-quaternion]{order} then every left or right fractional \(\ints\)-ideal is invertible.%
 \end{proposition}
 \begin{definition}{Principal ideals.}{definition-86}%
-\hypertarget{p-941}{}%
+\hypertarget{p-942}{}%
 An ideal of the form%
 \begin{equation*}
 I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
@@ -8526,11 +8553,11 @@ I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
 is a principal ideal.%
 \end{definition}
 \begin{fact}{}{}{fact-10}%
-\hypertarget{p-942}{}%
+\hypertarget{p-943}{}%
 \(I \) is invertible with \(I\inv = \alpha \inv \ints_L(I) =  \ints_R(I) \alpha \inv\).%
 \end{fact}
 \begin{definition}{Reduced norms.}{def-nrd}%
-\hypertarget{p-943}{}%
+\hypertarget{p-944}{}%
 Let \(I \subseteq B\) be a fractional ideal the \terminology{reduced norm} of \(I \) is the positive generator of the fractional ideal generated by%
 \begin{equation*}
 \{ \operatorname{nrd} (\alpha) :  \alpha \in I \}
@@ -8539,7 +8566,7 @@ in \(\QQ\). We denote it \(\operatorname{nrd}(I)\).%
 \end{definition}
 \begin{paragraphs}{Ideal classes.}{paragraphs-37}%
 \begin{definition}{Ideal classes.}{def-ideal-class}%
-\hypertarget{p-944}{}%
+\hypertarget{p-945}{}%
 Two left fractional ideals \(I,J \subseteq B\) are in the same left class%
 \begin{equation*}
 I\sim_L J
@@ -8547,7 +8574,7 @@ I\sim_L J
 if \(\exists  \alpha \in B^\times\) s.t. \(I\alpha = J\). Equivalently if \(\ints_L(I)  = \ints_L(J)\) and \(I \sim J\) as left modules over this \hyperref[def-order-quaternion]{order}. \(\sim_L\) is an equivalence relation \(\lb I \rb\) is the class of \(I\). If \(I \) is invertible then every \(J \in \lb I \rb_L\) is invertible, and then we say \(\lb I \rb_L \) is invertible.%
 \end{definition}
 \begin{definition}{Class sets.}{def-class-set}%
-\hypertarget{p-945}{}%
+\hypertarget{p-946}{}%
 Let \(\ints \subseteq B\) be an \hyperref[def-order-quaternion]{order}. The \terminology{left class set} of \(\ints\) is%
 \begin{equation*}
 \operatorname{Cls}_L \ints   = \{ \lb I \rb_L : I \subseteq B \text{ is invertible  and } \ints_L(I) = \ints\}
@@ -8555,26 +8582,26 @@ Let \(\ints \subseteq B\) be an \hyperref[def-order-quaternion]{order}. The \ter
 its a pointed set with distinguished element \(\lb \ints \rb_L\).%
 \end{definition}
 \begin{theorem}{}{}{theorem-68}%
-\hypertarget{p-946}{}%
+\hypertarget{p-947}{}%
 Let \(\ints \subseteq B\) be an \hyperref[def-order-quaternion]{order}. then \(\operatorname{Cls} _L \ints\) is finite. We call \(\# \operatorname{Cls}_L\ints \) the \terminology{left class number} of \(\ints\).%
 \end{theorem}
 \end{paragraphs}%
 \begin{paragraphs}{Types of orders.}{paragraphs-38}%
-\hypertarget{p-947}{}%
+\hypertarget{p-948}{}%
 Let \(\ints ,\ints'  \subseteq B\) be \hyperref[def-order-quaternion]{orders}.%
 \begin{definition}{}{definition-90}%
-\hypertarget{p-948}{}%
+\hypertarget{p-949}{}%
 We say \(\ints,\ints' \) are of the same type if \(\exists \alpha \in B^\times\) s.t. \(\ints ' = \alpha \inv \ints \alpha\). \(\ints,\ints'\) are locally of the same type if \(\ints_p, \ints_p'\) are of the same type for all primes in \(\ZZ\cup\{\infty\}\). \(\ints\) is connected to  \(\ints'\) if there exists an invertible fractional \(\ints,\ints'\)-ideal \(J \subseteq B\) called a connecting ideal.%
 \end{definition}
 \begin{lemma}{}{}{lemma-19}%
-\hypertarget{p-949}{}%
+\hypertarget{p-950}{}%
 \(\ints,\ints'\) are of the same type iff they are isomorphic as \(\ZZ\)-algebras.%
 \par
-\hypertarget{p-950}{}%
+\hypertarget{p-951}{}%
 \(\ints,\ints'\) are connected iff they are locally of the same type.%
 \end{lemma}
 \begin{definition}{}{definition-91}%
-\hypertarget{p-951}{}%
+\hypertarget{p-952}{}%
 Let \(\ints \subseteq B\) be an \hyperref[def-order-quaternion]{order}.\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-236}{}The \terminology{genus} \(\operatorname{Gen}(\ints)\) of \(\ints \) is the set of \hyperref[def-order-quaternion]{orders} in \(B \) connected to \(\ints\).%
@@ -8583,7 +8610,7 @@ Let \(\ints \subseteq B\) be an \hyperref[def-order-quaternion]{order}.\leavevmo
 %
 \end{definition}
 \begin{lemma}{}{}{lemma-20}%
-\hypertarget{p-952}{}%
+\hypertarget{p-953}{}%
 The set map \(\operatorname{Cls}_L(\ints) \to \operatorname{Typ}(\ints)\)%
 \begin{equation*}
 [ I]_L \mapsto \text{class of } \ints_R(I)
@@ -8591,7 +8618,7 @@ The set map \(\operatorname{Cls}_L(\ints) \to \operatorname{Typ}(\ints)\)%
 is surjective.%
 \end{lemma}
 \begin{remark}{}{remark-22}%
-\hypertarget{p-953}{}%
+\hypertarget{p-954}{}%
 \leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-238}{}Any two maximal \hyperref[def-order-quaternion]{orders} in \(B\) are connected.%
@@ -8600,7 +8627,7 @@ is surjective.%
 %
 \end{remark}
 \begin{example}{Voight 17.6.3.}{example-50}%
-\hypertarget{p-954}{}%
+\hypertarget{p-955}{}%
 Let%
 \begin{equation*}
 B = \legendre{-1,-23}{\QQ}
@@ -8620,34 +8647,34 @@ Then \(\ints=  \ZZ +  \ZZ i + \ZZ \frac{i+j}{2} + \ZZ i \frac{i+j}{2}\) is a max
 \typeout{************************************************}
 %
 \begin{subsectionptx}{The Deuring Correspondence}{}{The Deuring Correspondence}{}{}\label{subsection-76}
-\hypertarget{p-955}{}%
+\hypertarget{p-956}{}%
 Fix a prime \(p\), let \(E\) be an \hyperref[def-supersing-isog-ec]{elliptic curve} over \(\FF_q = \FF_{p^n}\).%
 \begin{lemma}{}{}{lemma-21}%
-\hypertarget{p-956}{}%
+\hypertarget{p-957}{}%
 The \hyperref[def-supersing-isog-endo]{endomorphism} algebra  \(\End(E)_\QQ = \End(E) \otimes \QQ\) of \(E\) is either \(\QQ\) an imaginary quadratic field or a definite quaternion algebra \(/\QQ\).%
 \end{lemma}
 \begin{theorem}{Deuring, this proof by Lenstra.}{}{theorem-69}%
-\hypertarget{p-957}{}%
+\hypertarget{p-958}{}%
 Let \(E/\FF_q\) be a s.s. e.c. (i.e. assume \(\End(E) \otimes \QQ\) is a quaternion algebra). Then \(\operatorname{Ram}(B)  =    \{p, \infty\}\) and \(\ints = \End(E) \) is a maximal \hyperref[def-order-quaternion]{order} in \(B\).%
 \end{theorem}
 \begin{proof}\hypertarget{proof-107}{}
-\hypertarget{p-958}{}%
+\hypertarget{p-959}{}%
 Let \(n \gt 0\)  be prime to \(p \). Then%
 \begin{equation*}
 E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
 \end{equation*}
 as groups so \(\End(E\lb n\rb ) \simeq M_2(\ZZ/n)\).%
 \par
-\hypertarget{p-959}{}%
+\hypertarget{p-960}{}%
 Claim: The structure map \(\ints/n\ints  \to \End(E\lb n \rb)\) is an isomorphism.%
 \par
-\hypertarget{p-960}{}%
+\hypertarget{p-961}{}%
 Check: suppose \(\phi \in  \ints\) kills \(E\lb n \rb\), then since \(\phi\) is separable then \(\exists\) \(\psi \in \ints\) s.t. \(\phi = n \psi\). Hence \(\phi = 0 \in \ints/n\). This gives injectivity.%
 \par
-\hypertarget{p-961}{}%
+\hypertarget{p-962}{}%
 As both rings are finite with the same \hyperref[def-order-quaternion]{order} \(n^4\) we have an isomorphism.%
 \par
-\hypertarget{p-962}{}%
+\hypertarget{p-963}{}%
 Since \(\ints\) is a free \(\ZZ\) module%
 \begin{equation*}
 \ints_l = \ints \otimes \QQ_l = \ints \otimes \varprojlim _n \ZZ/l^n
@@ -8662,17 +8689,17 @@ Since \(\ints\) is a free \(\ZZ\) module%
 \end{equation*}
 for any \(l \ne p\) primes. This is an isomorphism as \(\ZZ\)-algebras.%
 \par
-\hypertarget{p-963}{}%
+\hypertarget{p-964}{}%
 In particular \(\ints_l\) is maximal in \(B_l \simeq M_2(\QQ_l)\) and \(B\) is split at \(l\) for all \(l\ne p\). Since \(B\) is definite, it follows from the classification theorem that \(\operatorname{Ram}(B)  = \left\{ p, \infty \right\}\).%
 \par
-\hypertarget{p-964}{}%
+\hypertarget{p-965}{}%
 Fact: \(\ints_p\) is maximal in \(B_p\) (thm 42.1.9 of voight).%
 \par
-\hypertarget{p-965}{}%
+\hypertarget{p-966}{}%
 \(\ints\) is maximal in \(B\) because it is locally maximal.%
 \end{proof}
 \begin{theorem}{Deuring correspondence.}{}{theorem-70}%
-\hypertarget{p-966}{}%
+\hypertarget{p-967}{}%
 %
 \begin{equation*}
 \left\{ \text{maximal orders }\ints \subseteq B_{p,\infty}\right\}/\sim \leftrightarrow \left\{ j \text{ s.s. }\in \FF_{p^2}\right\}/\Gal{\FF_{p^2}}{\FF_p}\text{.}
@@ -8680,11 +8707,11 @@ Fact: \(\ints_p\) is maximal in \(B_p\) (thm 42.1.9 of voight).%
 %
 \end{theorem}
 \begin{proof}\hypertarget{proof-108}{}
-\hypertarget{p-967}{}%
+\hypertarget{p-968}{}%
 Voight 42.4.7.%
 \end{proof}
 \begin{definition}{}{definition-92}%
-\hypertarget{p-968}{}%
+\hypertarget{p-969}{}%
 Let \(I \subseteq \ints = \End(E)\) be an integral left \(\ints\)-ideal with \((\operatorname{nrd}(I), p) = 1\). Define%
 \begin{equation*}
 E\lb I \rb = \{ P \in E(\overline \FF_q) :  \alpha(P) = 0 \forall \alpha \in I\}
@@ -8696,7 +8723,7 @@ Then there is a separable \hyperref[def-supersing-isog-isog]{isogeny}%
 with \(\ker \Phi_I = E \lb I \rb\).%
 \end{definition}
 \begin{fact}{}{}{fact-11}%
-\hypertarget{p-969}{}%
+\hypertarget{p-970}{}%
 %
 \begin{equation*}
 \deg (\Phi_I)  = \operatorname{nrd}(I)
@@ -8704,7 +8731,7 @@ with \(\ker \Phi_I = E \lb I \rb\).%
 %
 \end{fact}
 \begin{proposition}{}{}{proposition-65}%
-\hypertarget{p-970}{}%
+\hypertarget{p-971}{}%
 The association \(I \mapsto \phi_I\) is a 1-1 correspondence provided that \((\deg \phi_I, p) = 1\).%
 \end{proposition}
 \end{subsectionptx}
@@ -8716,19 +8743,19 @@ The association \(I \mapsto \phi_I\) is a 1-1 correspondence provided that \((\d
 %
 \begin{subsectionptx}{Applications to SIG crypto}{}{Applications to SIG crypto}{}{}\label{subsection-77}
 \begin{problem}{Constructive Deuring correspondence.}{problem-1}%
-\hypertarget{p-971}{}%
+\hypertarget{p-972}{}%
 Given a maximal \hyperref[def-order-quaternion]{order} \(\ints \subseteq B_{p,\infty}\) return a s.s. \(j\)-invariant \(j\) s.t. \(\ints \simeq \End(E_j)\).%
 \end{problem}
 \begin{problem}{Inverse Deuring correspondence.}{problem-2}%
-\hypertarget{p-972}{}%
+\hypertarget{p-973}{}%
 Given a supersingular \(j\) invariant \(j\), compute a maximal \hyperref[def-order-quaternion]{order} \(\ints \subseteq B_{p,\infty}\)  s.t. \(\ints \simeq \End(E_j)\). \(\ints\) is described by a \(\ZZ\)-basis.%
 \end{problem}
 \begin{problem}{Endomorphism ring computation problem.}{problem-3}%
-\hypertarget{p-973}{}%
+\hypertarget{p-974}{}%
 Given a supersingular \(j\) invariant \(j\), \(\End(E_j)\). \(\End(E_j)\) should be returned as \(4\) or \(3\) \hyperref[def-rational-map]{rational maps} that form a \(\ZZ\)-basis. Their representation should be efficient in storage and in evaluation time at points.%
 \end{problem}
 \begin{remark}{}{remark-23}%
-\hypertarget{p-974}{}%
+\hypertarget{p-975}{}%
 \leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-240}{}Problem 1 can be solved in polynomial time, (Prop. 14 in Petit-Lauter).%
@@ -8737,27 +8764,27 @@ Given a supersingular \(j\) invariant \(j\), \(\End(E_j)\). \(\End(E_j)\) should
 \end{enumerate}
 %
 \end{remark}
-\hypertarget{p-975}{}%
+\hypertarget{p-976}{}%
 Recall: the (Charles-Goren-Lauter) CGL \hyperref[def-hash-function]{hash function} is \hyperref[def-preimage-resistance]{preimage resistant} iff given 2 s.s. \(j\)-invariants \(j_1,j_2\) its computationally hard to compute a  positive integer \(e\) and an \hyperref[def-supersing-isog-isog]{isogeny} \(\phi \colon E_{j_1} \to E_{j_2}\) of degree \(l^e\).%
 \begin{proposition}{}{}{proposition-66}%
-\hypertarget{p-976}{}%
+\hypertarget{p-977}{}%
 Assume there's an efficient algorithm to solve P3. Then there is an efficient algorithm to solve the preimage problem for the CGL \hyperref[def-hash-function]{hash function}%
 \end{proposition}
 \begin{proof}\hypertarget{proof-109}{}
-\hypertarget{p-977}{}%
+\hypertarget{p-978}{}%
 Algorithm%
 \par
-\hypertarget{p-978}{}%
+\hypertarget{p-979}{}%
 Input: two s.s. \(j\)-invariants \(j_s,j_t \in \FF_{p^2}\).%
 \par
-\hypertarget{p-979}{}%
+\hypertarget{p-980}{}%
 Output: sequence of \(j\)-invariants%
 \begin{equation*}
 j_s,\ldots,j_0,\ldots, j_t\text{.}
 \end{equation*}
 %
 \par
-\hypertarget{p-980}{}%
+\hypertarget{p-981}{}%
 \leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-243}{}Compute \(\End(j_s),\End(j_t)\).%
@@ -8773,11 +8800,11 @@ Deduce a sequence \((j_0, j(E_1),\ldots,j(E) = j_e)\).%
 \end{enumerate}
 %
 \par
-\hypertarget{p-981}{}%
+\hypertarget{p-982}{}%
 Except for step 1 everything can be done efficiently.%
 \end{proof}
 \begin{remark}{}{remark-24}%
-\hypertarget{p-982}{}%
+\hypertarget{p-983}{}%
 The converse is also true.%
 \end{remark}
 \end{subsectionptx}
@@ -8791,13 +8818,13 @@ The converse is also true.%
 %
 \begin{chapterptx}{\(p\)-divisible groups}{}{\(p\)-divisible groups}{}{}\label{chapter-p-div}
 \begin{introduction}{}%
-\hypertarget{p-983}{}%
+\hypertarget{p-984}{}%
 These are notes for the short-lived BUNTES Fall 2018 part II, the topic is \(p\)-divisible groups.%
 \par
-\hypertarget{p-984}{}%
+\hypertarget{p-985}{}%
 \url{http://math.bu.edu/people/midff/buntes/fall2018.html}.%
 \par
-\hypertarget{p-985}{}%
+\hypertarget{p-986}{}%
 References:\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-249}{}Tate%
@@ -8812,7 +8839,7 @@ References:\leavevmode%
 \typeout{************************************************}
 %
 \begin{sectionptx}{\(p\)-divisible groups (Sachi)}{}{\(p\)-divisible groups (Sachi)}{}{}\label{sec-p-div-gps}
-\hypertarget{p-986}{}%
+\hypertarget{p-987}{}%
 Why study  \(p\)-divisible groups (Jacob Stix).\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-251}{}Analyse local \(p\)-adic galois action on \(p\)-torsion of \hyperref[def-supersing-isog-ec]{elliptic curves}, Serre's open image theorem.%
@@ -8827,21 +8854,21 @@ Surjective for almost all \(l\).%
 \end{enumerate}
 %
 \begin{paragraphs}{Detour, schemes.}{paragraphs-39}%
-\hypertarget{p-987}{}%
+\hypertarget{p-988}{}%
 There is an (anti)-equivalence of categories%
 \begin{equation*}
 \{\text{ring}\} \leftrightarrow\{\text{affine schemes}\}\text{.}
 \end{equation*}
 %
 \par
-\hypertarget{p-988}{}%
+\hypertarget{p-989}{}%
 Moral whatever  a scheme is the data of a ring is enough to specify it + homs%
 \begin{equation*}
 \Hom_{Ring} (B,A) \leftrightarrow \Hom_{Aff}(\Spec A, \Spec B)
 \end{equation*}
 to specify a base field or base ring play a similar game with \(R\)-algebras and \(R\)-schemes.%
 \par
-\hypertarget{p-989}{}%
+\hypertarget{p-990}{}%
 Yoneda, schemes are functors: Let \(R\lb T_1,\ldots,T_n\rb \) be a polynomial ring over \(R\), we want solutions to%
 \begin{equation*}
 f_1=  f_2 = \cdots = f_m = 0
@@ -8856,11 +8883,11 @@ same as%
 \end{equation*}
 functor \(A\) to this is a functor from \(R\)-algs to sets.%
 \begin{definition}{}{definition-93}%
-\hypertarget{p-990}{}%
+\hypertarget{p-991}{}%
 For any affine scheme \(A = \Spec B\) we attach a functor \(h_X\) from \(\mathrm{Sch}^\op\) to sets, sending \(\Spec S \mapsto \Hom_{\mathrm{Sch}} (\Spec S, X) = \Hom_{Ring} (B,S) = h_X(\Spec S)\). spec S points of X%
 \end{definition}
 \begin{example}{}{example-51}%
-\hypertarget{p-991}{}%
+\hypertarget{p-992}{}%
 %
 \begin{equation*}
 \aff^n = \Spec \ZZ \lb T_1,\ldots, T_n\rb
@@ -8872,17 +8899,17 @@ For any affine scheme \(A = \Spec B\) we attach a functor \(h_X\) from \(\mathrm
 %
 \end{example}
 \begin{example}{}{example-52}%
-\hypertarget{p-992}{}%
+\hypertarget{p-993}{}%
 %
 \begin{equation*}
 E \colon \Spec k[x,y] / (y^2 - (x^3 + ax +b)),\,k = \QQ
 \end{equation*}
 \(E(\QQ(i)) = \QQ(i)\) points, choosing \(x,y\) satisfying weierstrass equation.%
 \end{example}
-\hypertarget{p-993}{}%
+\hypertarget{p-994}{}%
 Suppose \(h_X \colon \mathrm{Sch}^\op \to R\) factors through \(\mathrm{Grp} \to \mathrm{Set}\) then this is a group scheme.%
 \begin{example}{}{example-53}%
-\hypertarget{p-994}{}%
+\hypertarget{p-995}{}%
 %
 \begin{equation*}
 \mathbf G_a = \Spec k[t]
@@ -8894,7 +8921,7 @@ S\mapsto \Hom(k[t], S) \cong (S,+)
 %
 \end{example}
 \begin{example}{}{example-54}%
-\hypertarget{p-995}{}%
+\hypertarget{p-996}{}%
 %
 \begin{equation*}
 \mathbf G_m = \Spec k[t,t\inv]
@@ -8906,7 +8933,7 @@ S\mapsto \Hom(k[t,t\inv], S) \cong (S^\times,\cdot)
 %
 \end{example}
 \begin{example}{}{example-55}%
-\hypertarget{p-996}{}%
+\hypertarget{p-997}{}%
 %
 \begin{equation*}
 \mu_n = \Spec k[t]/(t^n -1)
@@ -8914,14 +8941,14 @@ S\mapsto \Hom(k[t,t\inv], S) \cong (S^\times,\cdot)
 %
 \end{example}
 \begin{example}{}{example-56}%
-\hypertarget{p-997}{}%
+\hypertarget{p-998}{}%
 %
 \begin{equation*}
 \alpha_{p^n} = \Spec k[t]/(t^{p^n})
 \end{equation*}
 char \(k = p\)%
 \end{example}
-\hypertarget{p-998}{}%
+\hypertarget{p-999}{}%
 Cartier Duality \(G\) is a finite group scheme \(/R\) there is a dual%
 \begin{equation*}
 G^* (T) = \Hom (G_T, \mathbf G_m)
@@ -8932,7 +8959,7 @@ G \cong (G^*)^*
 \end{equation*}
 %
 \begin{example}{}{example-57}%
-\hypertarget{p-999}{}%
+\hypertarget{p-1000}{}%
 %
 \begin{equation*}
 \mu_{p^n} \leftrightarrow \ZZ/p^n
@@ -8940,7 +8967,7 @@ G \cong (G^*)^*
 %
 \end{example}
 \begin{definition}{}{definition-94}%
-\hypertarget{p-1000}{}%
+\hypertarget{p-1001}{}%
 Let \(p\) be a prime and \(h\) a non-negative integer. A \(p\)-divisible group of height \(h\) is an inductive system%
 \begin{equation*}
 (G_v, i_v)
@@ -8956,7 +8983,7 @@ identifies \(G_v\) with kernel of multiplication by \(p^v\).%
 %
 \end{definition}
 \begin{remark}{}{remark-25}%
-\hypertarget{p-1001}{}%
+\hypertarget{p-1002}{}%
 We can show that \(G_\mu,G_v\) are two levels then%
 \begin{equation*}
 0 \to G_\mu \xrightarrow{i_{\mu, v}} G_{\mu +v } \xrightarrow{[p^\mu]} G_{\mu,v}
@@ -8967,20 +8994,20 @@ so%
 \end{equation*}
 %
 \end{remark}
-\hypertarget{p-1002}{}%
+\hypertarget{p-1003}{}%
 The connected etale sequence%
 \par
-\hypertarget{p-1003}{}%
+\hypertarget{p-1004}{}%
 A finite flat group scheme \(G\) over a henselian local ring \(R\) admitsa (functorial) decomposition%
 \begin{equation*}
 0  \to G^\circ \to G \to G^\et \to 0
 \end{equation*}
 connected and etale%
 \par
-\hypertarget{p-1004}{}%
+\hypertarget{p-1005}{}%
 There is an equivalence of categories between finite etale gp scheme \(/R\) and its continuous \(\absgal k\) modules when \(R = k\) is a field.%
 \begin{definition}{}{definition-95}%
-\hypertarget{p-1005}{}%
+\hypertarget{p-1006}{}%
 An \(n\)-dimensional formal lie group \(/R\) is the formal power series ring%
 \begin{equation*}
 A = R\lb \lb x_1, \ldots, x_n \rb\rb
@@ -9013,10 +9040,10 @@ F(Y,Z) = F(Z,Y)
 \end{enumerate}
 %
 \end{definition}
-\hypertarget{p-1006}{}%
+\hypertarget{p-1007}{}%
 Let \(\psi\) denote multiplication by \(p\) in \(A\) then \(A\) is divisible if \(\psi\) is an \hyperref[def-supersing-isog-isog]{isogeny} (surj. with finite kernel). Alternatively \(A\) is a finite free \(\psi (A)\)-module.%
 \begin{theorem}{}{}{theorem-71}%
-\hypertarget{p-1007}{}%
+\hypertarget{p-1008}{}%
 Let \(R\) be a \hyperref[def-abelian-complete-var]{complete} noetherian local ring with residue characteristic \(p \gt 0\). We have an equiv of cats%
 \begin{equation*}
 \text{conn. p-div gps} \leftrightarrow \text{div. formal lie groups /R}
@@ -9024,7 +9051,7 @@ Let \(R\) be a \hyperref[def-abelian-complete-var]{complete} noetherian local ri
 %
 \end{theorem}
 \begin{example}{}{example-58}%
-\hypertarget{p-1008}{}%
+\hypertarget{p-1009}{}%
 %
 \begin{equation*}
 \mathbf G_m(p) , \, F(X)= Y+Z+YZ
@@ -9032,10 +9059,10 @@ Let \(R\) be a \hyperref[def-abelian-complete-var]{complete} noetherian local ri
 %
 \end{example}
 \begin{example}{}{example-59}%
-\hypertarget{p-1009}{}%
+\hypertarget{p-1010}{}%
 \(E\) ordinary \hyperref[def-supersing-isog-ec]{elliptic curve} \(/\overline{\FF}_p\)%
 \par
-\hypertarget{p-1010}{}%
+\hypertarget{p-1011}{}%
 %
 \begin{equation*}
 E[p] (\overline \FF_p)
@@ -9046,38 +9073,38 @@ E[p] = E[p]^\circ \times E[p]^\et\text{.}
 \end{equation*}
 %
 \par
-\hypertarget{p-1011}{}%
+\hypertarget{p-1012}{}%
 etale group schemes over alg. closed fields are constant%
 \begin{equation*}
 E = E[p]^\circ \times A
 \end{equation*}
 %
 \par
-\hypertarget{p-1012}{}%
+\hypertarget{p-1013}{}%
 It can't be entirely etale \(\lb p \rb\) would be etale but this induces the 0 map on tangent space so \(E\lb p \rb^\circ \ne 0\).%
 \par
-\hypertarget{p-1013}{}%
+\hypertarget{p-1014}{}%
 %
 \begin{equation*}
 |E\lb p \rb | =  p^2
 \end{equation*}
 so each \hyperref[def-order-quaternion]{order} \(p\).%
 \par
-\hypertarget{p-1014}{}%
+\hypertarget{p-1015}{}%
 %
 \begin{equation*}
 A = \ZZ/p
 \end{equation*}
 %
 \par
-\hypertarget{p-1015}{}%
+\hypertarget{p-1016}{}%
 \(E\) is cartier self dual%
 \begin{equation*}
 A^* = \mu_p = E[p]^\circ
 \end{equation*}
 %
 \par
-\hypertarget{p-1016}{}%
+\hypertarget{p-1017}{}%
 Induct for \(E\lb p^n\rb \).%
 \end{example}
 \end{paragraphs}%
@@ -9091,20 +9118,20 @@ Induct for \(E\lb p^n\rb \).%
 %
 \begin{chapterptx}{Shimura varieties}{}{Shimura varieties}{}{}\label{chapter-buntes-shimura}
 \begin{introduction}{}%
-\hypertarget{p-1017}{}%
+\hypertarget{p-1018}{}%
 These are notes for BUNTES Fall 2018 part III, the topic is Shimura varieties%
 \par
-\hypertarget{p-1018}{}%
+\hypertarget{p-1019}{}%
 \url{http://math.bu.edu/people/midff/buntes/fall2018.html}.%
 \par
-\hypertarget{p-1019}{}%
+\hypertarget{p-1020}{}%
 Outline:\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-259}{}%
 \end{enumerate}
 %
 \par
-\hypertarget{p-1020}{}%
+\hypertarget{p-1021}{}%
 References:%
 \end{introduction}%
 %
@@ -9115,7 +9142,7 @@ References:%
 %
 \begin{sectionptx}{Modular curves (Aash)}{}{Modular curves (Aash)}{}{}\label{sec-buntes-modular-curves}
 \begin{definition}{Lattices.}{def-buntes-lattice}%
-\hypertarget{p-1021}{}%
+\hypertarget{p-1022}{}%
 A \terminology{lattice} is a free abelian group of rank 2%
 \begin{equation*}
 \Lambda \otimes \RR \to \CC
@@ -9130,7 +9157,7 @@ if%
 \end{equation*}
 then we say the two \hyperref[def-buntes-lattice]{lattices} are \terminology{homothetic}.%
 \end{definition}
-\hypertarget{p-1022}{}%
+\hypertarget{p-1023}{}%
 Any \hyperref[def-buntes-lattice]{lattice} is \hyperref[def-buntes-lattice]{homothetic} to one of the form%
 \begin{equation*}
 \Lambda = \langle 1 , \tau \rangle
@@ -9141,10 +9168,10 @@ as we can take a positively oriented basis we have that all such are equivalent 
 \end{equation*}
 So there is a bijection between \(\HH\) and ordered bases of \hyperref[def-buntes-lattice]{lattices}.%
 \par
-\hypertarget{p-1023}{}%
+\hypertarget{p-1024}{}%
 \(\SL_2(\ZZ)\) acts on \(\HH\) and the action corresponds to changing bases.%
 \par
-\hypertarget{p-1024}{}%
+\hypertarget{p-1025}{}%
 The action of \(\PSL_2(\ZZ)\) is faithful. \(i,\rho = e^{\pi i /3}\) have non-trivial stabilisers%
 \begin{equation*}
 \Stab_i =  \langle S\rangle = \begin{pmatrix} 0\amp1 \\ -1 \amp 0 \end{pmatrix}
@@ -9155,10 +9182,10 @@ The action of \(\PSL_2(\ZZ)\) is faithful. \(i,\rho = e^{\pi i /3}\) have non-tr
 \end{equation*}
 %
 \par
-\hypertarget{p-1025}{}%
+\hypertarget{p-1026}{}%
 We can determine the \hyperref[def-order-quaternion]{order} of elements by looking at the characteristic polynomials.%
 \par
-\hypertarget{p-1026}{}%
+\hypertarget{p-1027}{}%
 We then have%
 \begin{equation*}
 Y(1) =\SL_2(\ZZ) \backslash \HH
@@ -9169,51 +9196,51 @@ j\colon Y(1) \to \CC
 \end{equation*}
 is an isomorphism.%
 \par
-\hypertarget{p-1027}{}%
+\hypertarget{p-1028}{}%
 We have a fundamental domain for this action%
 \begin{equation*}
 D = \{ z\in \CC : |z|  \ge 1,\, |\Re(z)| \le \frac 12 \}
 \end{equation*}
 \(Y(1)\) is Hausdorff because the action is properly discontinuous.%
 \par
-\hypertarget{p-1028}{}%
+\hypertarget{p-1029}{}%
 Care must be taken around the elliptic points (those with larger stabiliser), to define the complex structure.%
 \par
-\hypertarget{p-1029}{}%
+\hypertarget{p-1030}{}%
 The extended upper half plane%
 \begin{equation*}
 \HH^* = \HH \cup \PP^1 (\QQ)
 \end{equation*}
 also has an \(\SL_2(\ZZ)\) action via fractional linear transformations, which is proper.%
 \par
-\hypertarget{p-1030}{}%
+\hypertarget{p-1031}{}%
 We can define a basis of neighbourhoods around the cusps by transforming them to the cusp \(\infty\) where we can use the basis of neighbourhoods given by%
 \begin{equation*}
 \HH_N = \{ z\in \HH : | \Im(z)| \gt N\}\text{.}
 \end{equation*}
 %
 \par
-\hypertarget{p-1031}{}%
+\hypertarget{p-1032}{}%
 The parameter \(q\) around \(\infty\) is defined as \(e^{2\pi i z/N}\) for some \(N\in \ZZ\), \(q\) is fixed by \(T\).%
 \par
-\hypertarget{p-1032}{}%
+\hypertarget{p-1033}{}%
 We can quotient by the action of \(\SL_2(\ZZ) \) on \(\HH^*\) to get%
 \begin{equation*}
 X(1) = \SL_2(\ZZ) \backslash \HH^*
 \end{equation*}
 which is now compact, \hyperref[def-class-set]{genus} 0, which matches up with \(Y(1)\) having \(\CC\) points \(\CC\) earlier.%
 \par
-\hypertarget{p-1033}{}%
+\hypertarget{p-1034}{}%
 If \(X\) is a projective curve then \(X(\CC)\) has the structure of a compact \hyperref[def-top-riem-surface]{Riemann surface}. If \(S\) is such a surface then there exists a unique up to isomorphism \(X\) with \(X(\CC) = S\).%
 \par
-\hypertarget{p-1034}{}%
+\hypertarget{p-1035}{}%
 The \hyperref[def-morph-riem-surf]{meromorphic functions} on \(S\) are the function field of \(X\) and there is a correspondence%
 \begin{equation*}
 \text{Compact Riemann surfaces} \leftrightarrow \text{Smooth proj. curves}
 \end{equation*}
 %
 \par
-\hypertarget{p-1035}{}%
+\hypertarget{p-1036}{}%
 Given a finite index subgroup of \(\SL_2(\ZZ)\) we can do something similar to obtain%
 \begin{equation*}
 \Gamma\backslash \HH\text{.}
@@ -9232,16 +9259,16 @@ along with%
 \end{equation*}
 %
 \par
-\hypertarget{p-1036}{}%
+\hypertarget{p-1037}{}%
 \(\Gamma(N)\) is normal inside \(\SL_2(\ZZ)\) and \(\Gamma_1(N)\) is normal inside \(\Gamma_0(N)\).%
 \par
-\hypertarget{p-1037}{}%
+\hypertarget{p-1038}{}%
 The aforementioned equivalence of categories gives us a smooth projective curve for each of these examples.%
 \par
-\hypertarget{p-1038}{}%
+\hypertarget{p-1039}{}%
 In fact one can find a smooth projective curve with \(\QQ\)-coefficients realising each of these \hyperref[def-top-riem-surface]{Riemann surfaces}.%
 \par
-\hypertarget{p-1039}{}%
+\hypertarget{p-1040}{}%
 For%
 \begin{equation*}
 \Gamma_0(N) \backslash \HH^*
@@ -9268,14 +9295,14 @@ j(N \gamma z) = j\left( N\frac{az + b}{cz+d} \right)
 \end{equation*}
 %
 \par
-\hypertarget{p-1040}{}%
+\hypertarget{p-1041}{}%
 We can therefore let%
 \begin{equation*}
 g = \prod_{\gamma} (Y - j(\gamma Nz))
 \end{equation*}
 the product over the cosets of \(\Gamma_0(N) \subseteq \SL_2(\ZZ)\).%
 \par
-\hypertarget{p-1041}{}%
+\hypertarget{p-1042}{}%
 The coefficients of \(g\) are \hyperref[def-morph-riem-surf]{meromorphic functions} on \(X(1) = \CC\lb j \rb\). So we have%
 \begin{equation*}
 g(Y) = F(j(z), Y)
@@ -9286,7 +9313,7 @@ g (j(Nz)) = F(j(z), j(Nz)) = 0
 \end{equation*}
 then \(F(X,Y)\) is irreducible and  has integer coefficients.%
 \par
-\hypertarget{p-1042}{}%
+\hypertarget{p-1043}{}%
 Then the curve \(X_0(N)\) whose function field is%
 \begin{equation*}
 \QQ \lb X,Y\rb/ F(X,Y)
@@ -9297,7 +9324,7 @@ F(X,Y) = 0 \smallsetminus \text{singular pts}
 \end{equation*}
 %
 \par
-\hypertarget{p-1043}{}%
+\hypertarget{p-1044}{}%
 %
 \begin{equation*}
 \Gamma_0(N) \backslash \HH \to U(\CC)
@@ -9308,13 +9335,13 @@ z \mapsto (j(z), j(Nz))
 \end{equation*}
 \(j(\gamma z) = z\,\forall z\) iff \(\gamma \in \SL_2(\ZZ)\).%
 \par
-\hypertarget{p-1044}{}%
+\hypertarget{p-1045}{}%
 If for \(z= z_1,z_2\) have \((j(z),j(Nz))\) equal then \(z_1,z_2\) are in the same \(\Gamma_0(N)\) orbit.%
 \par
-\hypertarget{p-1045}{}%
+\hypertarget{p-1046}{}%
 We can do similar for \(\Gamma_1\) but only over \(\QQ(\zeta_N)\).%
 \begin{paragraphs}{Elliptic curves.}{paragraphs-40}%
-\hypertarget{p-1046}{}%
+\hypertarget{p-1047}{}%
 Several definitions:\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-260}{}Smooth proj. curve \hyperref[def-class-set]{genus} 1 with a rational point.%
@@ -9327,10 +9354,10 @@ y^2 + a_1xy + a_3 y =  x^3 + a_2x^2 + a_4 x + a_6\text{.}
 \end{enumerate}
 %
 \par
-\hypertarget{p-1047}{}%
+\hypertarget{p-1048}{}%
 Over \(\CC\) at least all are equivalent.%
 \par
-\hypertarget{p-1048}{}%
+\hypertarget{p-1049}{}%
 To get the weierstrass equation from the curve we use Riemann-Roch to see that%
 \begin{equation*}
 H(1[0]) = 1,\, H(2[0]) = 2,\,H(3[0]) =3
@@ -9341,7 +9368,7 @@ So we call a generator of \(H(2\lb 0 \rb) \smallsetminus H(\lb 0 \rb)\) the func
 \end{equation*}
 so there is a linear relation among these, giving the Weierstrass equation.%
 \par
-\hypertarget{p-1049}{}%
+\hypertarget{p-1050}{}%
 To get the equation for a torus we use the Weierstrass \(\wp\) function.%
 \end{paragraphs}%
 \end{sectionptx}
@@ -9352,10 +9379,10 @@ To get the equation for a torus we use the Weierstrass \(\wp\) function.%
 \typeout{************************************************}
 %
 \begin{sectionptx}{Modular forms (Asra)}{}{Modular forms (Asra)}{}{}\label{sec-buntes-modular-forms}
-\hypertarget{p-1050}{}%
+\hypertarget{p-1051}{}%
 Last time we saw the \(j\)-function, which was \(\SL_2(\ZZ)\)-invariant, this is quite a strong condition, and in fact \(j\) is pretty much all we get under this condition. So instead we weaken this somewhat to some other variance property.%
 \par
-\hypertarget{p-1051}{}%
+\hypertarget{p-1052}{}%
 If \(w = f(z) \diff z\) on \(\HH\) and \(f(z)\) is meromorphic. \(\gamma \in \Gamma\) then%
 \begin{equation*}
 f(\gamma z) d(\gamma z) = f(\gamma z) d\left( \frac{az+b}{cz+d} \right)
@@ -9370,7 +9397,7 @@ f(\gamma z) = (cz+d)^2 f(z)
 \end{equation*}
 this is how we come to:%
 \begin{definition}{}{def-buntes-weak-modular}%
-\hypertarget{p-1052}{}%
+\hypertarget{p-1053}{}%
 A \hyperref[def-morph-riem-surf]{holomorphic function} \(f\colon \HH \to \CC\) is a \terminology{weakly modular} function for \(\Gamma\) of weight \(k\) if%
 \begin{equation*}
 f(\gamma z) = (cz+d)^k f(z) \forall \gamma  = \begin{pmatrix} a\amp b \\ c \amp d    \end{pmatrix} \in \Gamma\text{.}
@@ -9378,14 +9405,14 @@ f(\gamma z) = (cz+d)^k f(z) \forall \gamma  = \begin{pmatrix} a\amp b \\ c \amp 
 %
 \end{definition}
 \begin{remark}{}{remark-26}%
-\hypertarget{p-1053}{}%
+\hypertarget{p-1054}{}%
 If \(-I \in \Gamma\) and \(k\) odd%
 \begin{equation*}
 f(-z)  = - f(-z)
 \end{equation*}
 so in this setting we only have interesting behaviour for even \(k\).%
 \par
-\hypertarget{p-1054}{}%
+\hypertarget{p-1055}{}%
 If \(\Gamma\) is a congruence subgroup of level \(N\) we have%
 \begin{equation*}
 \begin{pmatrix} 1\amp N \\ 0 \amp 1 \end{pmatrix} \in \Gamma
@@ -9400,14 +9427,14 @@ f(z) = \sum_{m\in \ZZ} a_m  q^{m/N}\text{.}
 \end{equation*}
 %
 \par
-\hypertarget{p-1055}{}%
+\hypertarget{p-1056}{}%
 \(f\) is holomorphic at \(\infty\) if \(a_m  = 0\) for \(m \lt 0\).%
 \par
-\hypertarget{p-1056}{}%
+\hypertarget{p-1057}{}%
 \(f\) is holomorphic at all cusps if \(f(\gamma z)(cz+d)^k\) is holomorphic at \(\infty\) for all \(\gamma \in \SL_2(\ZZ)\).%
 \end{remark}
 \begin{example}{}{example-60}%
-\hypertarget{p-1057}{}%
+\hypertarget{p-1058}{}%
 Cusps for \(\Gamma_0(p)\), we know we have \(\infty\), what is the orbit of this?%
 \begin{equation*}
 \gamma\in \Gamma_0(p),\, \gamma  =  \begin{pmatrix} a\amp b \\ cp \amp d    \end{pmatrix}
@@ -9423,11 +9450,11 @@ so anything with  a \(p\) in the denominator is equivalent to \(\infty\), what a
 so we have two cusps.%
 \end{example}
 \begin{definition}{Modular forms.}{def-buntes-mfs}%
-\hypertarget{p-1058}{}%
+\hypertarget{p-1059}{}%
 A \terminology{modular form} is  a \hyperref[def-buntes-weak-modular]{weakly modular} function that is holomorphic at all the cusps.%
 \end{definition}
 \begin{example}{}{example-61}%
-\hypertarget{p-1059}{}%
+\hypertarget{p-1060}{}%
 Eisenstein series%
 \begin{equation*}
 G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
@@ -9438,28 +9465,28 @@ is a \hyperref[def-buntes-mfs]{modular form} of weight \(k \gt 2\) for \(\SL_2(\
 \end{equation*}
 %
 \par
-\hypertarget{p-1060}{}%
+\hypertarget{p-1061}{}%
 So here the function does not vanish at 0.%
 \end{example}
 \begin{definition}{Cusp forms.}{def-buntes-cusp-forms}%
-\hypertarget{p-1061}{}%
+\hypertarget{p-1062}{}%
 A \terminology{cusp form} is a \hyperref[def-buntes-mfs]{modular form} that vanishes at all cusps.%
 \end{definition}
-\hypertarget{p-1062}{}%
+\hypertarget{p-1063}{}%
 Given a cusp it will be stabilised by some%
 \begin{equation*}
 \begin{pmatrix} 1\amp h \\ 0 \amp 1 \end{pmatrix}
 \end{equation*}
 call the smallest such \(h\) for a given cusp the \terminology{width} of the cusp.%
 \begin{example}{}{example-62}%
-\hypertarget{p-1063}{}%
+\hypertarget{p-1064}{}%
 Let's find the \hyperref[def-buntes-cusp-forms]{width} of a cusp in \(\Gamma_0(qp)\) we have%
 \begin{equation*}
 \begin{pmatrix} 1\amp 1 \\ 0 \amp 1 \end{pmatrix}
 \end{equation*}
 so the \hyperref[def-buntes-cusp-forms]{width} of \(\infty\) is 1.%
 \par
-\hypertarget{p-1064}{}%
+\hypertarget{p-1065}{}%
 What about \(\alpha = 1/p\)?\leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-263}{}Find an element \(\gamma \in \SL_2(\ZZ)\) s.t. \(\gamma(\infty) = \alpha\).%
@@ -9481,7 +9508,7 @@ What about \(\alpha = 1/p\)?\leavevmode%
 %
 \end{example}
 \begin{example}{A cusp form.}{example-63}%
-\hypertarget{p-1065}{}%
+\hypertarget{p-1066}{}%
 Let \(\Delta(\tau) = g_2(\tau)^3 - 27g_3(\tau)^2,\,g_2(\tau) = 60G_4(\tau),\,g_3(\tau) =140G_6(\tau)\) \(\Delta(\tau)\) has weight 12 for \(\SL_2(\ZZ)\). This vanishes at \(\infty\) because%
 \begin{equation*}
 \zeta(4) = \frac{\pi^4}{90}
@@ -9496,10 +9523,10 @@ j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
 \end{equation*}
 so \(\Delta(\tau)\) vanishes at \(\infty\) because \(g_2(\tau)\) doesn't  and \(j(z)\) has a  \hyperref[def-simple-av]{simple} pole at \(\infty\).%
 \end{example}
-\hypertarget{p-1066}{}%
+\hypertarget{p-1067}{}%
 \(M_k(\Gamma)\) as the space of \hyperref[def-buntes-mfs]{modular forms} of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s. \(S_k(\Gamma)\) as the space of \hyperref[def-buntes-cusp-forms]{cusp forms} of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s.%
 \begin{theorem}{}{}{theorem-72}%
-\hypertarget{p-1067}{}%
+\hypertarget{p-1068}{}%
 \(M_k(\Gamma)\) and \(S_k(\Gamma)\) are finite dimensional%
 \begin{equation*}
 \dim(M_k(\Gamma)) =
@@ -9519,17 +9546,17 @@ where \(g\) is the \hyperref[def-class-set]{genus} of \(X(\Gamma)\) \(v_\infty\)
 \end{equation*}
 %
 \end{theorem}
-\hypertarget{p-1068}{}%
+\hypertarget{p-1069}{}%
 %
 \begin{equation*}
 \dim(S_2(\Gamma)) = g(X(\Gamma))
 \end{equation*}
 %
 \begin{proposition}{}{}{proposition-67}%
-\hypertarget{p-1069}{}%
+\hypertarget{p-1070}{}%
 If \(f \in S_2(\Gamma)\) then \(f(z) \diff z\) is a holomorphic differential.%
 \end{proposition}
-\hypertarget{p-1070}{}%
+\hypertarget{p-1071}{}%
 Given an \hyperref[def-supersing-isog-ec]{elliptic curve}%
 \begin{equation*}
 E/  \CC = \CC/\Lambda
@@ -9544,7 +9571,7 @@ E \to E'
 \end{equation*}
 studying degree \(n\) \hyperref[def-supersing-isog-isog]{isogenies}, is like studying index  \(n \) sublattices%
 \begin{definition}{}{definition-100}%
-\hypertarget{p-1071}{}%
+\hypertarget{p-1072}{}%
 \(n \ge 1\) then \(T(n)\) is the  \(n\)th \terminology{Hecke operator} acting on%
 \begin{equation*}
 \divisors (\mathcal L)
@@ -9556,11 +9583,11 @@ T(n) \Lambda = \sum_{\Lambda' \subseteq \Lambda,\,[\Lambda : \Lambda'] = n} (\La
 %
 \end{definition}
 \begin{definition}{}{definition-101}%
-\hypertarget{p-1072}{}%
+\hypertarget{p-1073}{}%
 Let \(\lambda \in \CC^\times\) the homothety operator \(R_\lambda\) is \(R_\lambda \Lambda = \lambda\Lambda\).%
 \end{definition}
 \begin{theorem}{}{}{theorem-73}%
-\hypertarget{p-1073}{}%
+\hypertarget{p-1074}{}%
 \leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-266}{}%
@@ -9587,10 +9614,10 @@ T(p^e)T(p) = T(p^{e+1 }) + p T(p^{e-1}) R_p
 %
 \end{theorem}
 \begin{proof}\hypertarget{proof-110}{}
-\hypertarget{p-1074}{}%
+\hypertarget{p-1075}{}%
 Of 4.%
 \par
-\hypertarget{p-1075}{}%
+\hypertarget{p-1076}{}%
 \(\Lambda \in \mathcal L\) for \(\Lambda' \subseteq \Lambda \) index \(p^{e+1}\) have%
 \begin{equation*}
 a(\Lambda')  = \# \{ \Gamma : \Lambda'  \subseteq \Lambda \subseteq_p \Lambda \}
@@ -9613,7 +9640,7 @@ T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p
 \end{equation*}
 Split into cases, do some maths..%
 \end{proof}
-\hypertarget{p-1076}{}%
+\hypertarget{p-1077}{}%
 Hecke operators on \hyperref[def-buntes-lattice]{lattices} Given \(\Lambda' \subseteq_n \Lambda\) there is an integer matrix of determinant  \(n\) taking one basis to the other. Have a correspondence%
 \begin{equation*}
 \{ \alpha \in M_2(\ZZ) : \det(\alpha) = n \}  \leftrightarrow \{ \Lambda ' : \Lambda ' \subseteq_n \Lambda\}
@@ -9624,7 +9651,7 @@ S_n = \{\begin{pmatrix} a\amp b \\ 0 \amp d\end{pmatrix} : ad= n,\, a,d\gt 0\, 0
 \end{equation*}
 %
 \begin{corollary}{}{}{corollary-35}%
-\hypertarget{p-1077}{}%
+\hypertarget{p-1078}{}%
 Let \(\Lambda \in \mathcal L\), \(\Lambda = \ZZ w_1 + \ZZ w_2\) then  \(T(n)\) acts as follows%
 \begin{equation*}
 T(n) \Lambda =  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} \ZZ(aw_1 + bw_2) + \ZZ dw_2 = \sum_{\alpha \in S_n} \alpha \Lambda
@@ -9632,31 +9659,31 @@ T(n) \Lambda =  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} \ZZ(aw_1 + bw_2) + \ZZ 
 %
 \end{corollary}
 \begin{corollary}{}{}{corollary-36}%
-\hypertarget{p-1078}{}%
+\hypertarget{p-1079}{}%
 For \(p \) prime \(T(p)\):%
 \begin{equation*}
 T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw_2\text{.}
 \end{equation*}
 %
 \end{corollary}
-\hypertarget{p-1079}{}%
+\hypertarget{p-1080}{}%
 The \hyperref[def-buntes-cusp-forms]{Hecke operators} act on \hyperref[def-buntes-mfs]{modular forms} \(f(\tau)\) by reinterpreting \hyperref[def-buntes-weak-modular]{weakly modular} functions of weight \(k\) as functions on \hyperref[def-buntes-lattice]{lattices} that have  a weight \(k\) action under homothety.%
 \par
-\hypertarget{p-1080}{}%
+\hypertarget{p-1081}{}%
 This boils down to%
 \begin{equation*}
 (T_k(n) f)(\tau) = n^{k-1}  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} d^{-k} f\left( \frac{ a\tau +b}{d}\right)
 \end{equation*}
 %
 \begin{corollary}{}{}{corollary-37}%
-\hypertarget{p-1081}{}%
+\hypertarget{p-1082}{}%
 For \(p \) prime%
 \begin{equation*}
 (T_k(p) f)(\tau) = p^{k-1}f(pz) +\frac 1p \sum_{0 \le b  \lt p} f\left( \frac {z + b}{p} \right)\text{.}
 \end{equation*}
 %
 \end{corollary}
-\hypertarget{p-1082}{}%
+\hypertarget{p-1083}{}%
 We have an action on fourier expansions%
 \begin{equation*}
 f(\psi) = \sum_{m\in \ZZ} a_m q^m
@@ -9675,17 +9702,17 @@ T_k(p)f(\tau) = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p} \sum_{b=0}^{p-1
 \end{equation*}
 %
 \begin{corollary}{}{}{corollary-38}%
-\hypertarget{p-1083}{}%
+\hypertarget{p-1084}{}%
 %
 \begin{equation*}
 a_1(T_p(f)) = a_p(f)
 \end{equation*}
 %
 \end{corollary}
-\hypertarget{p-1084}{}%
+\hypertarget{p-1085}{}%
 If \(f\in S_k(\Gamma_0(1))\) is an eigenfunction for these operators we can normalise so that \(a_1(f) = 1\).%
 \par
-\hypertarget{p-1085}{}%
+\hypertarget{p-1086}{}%
 %
 \begin{equation*}
 T(m)T(n) = T(mn)
@@ -9700,7 +9727,7 @@ a_{p^r} = a_p a_{p^{r-1}} + p^{k-1} a_{p^{r+1}}
 \end{equation*}
 %
 \begin{definition}{Petersson inner product.}{def-pet}%
-\hypertarget{p-1086}{}%
+\hypertarget{p-1087}{}%
 The \terminology{Petersson inner product} of two \hyperref[def-buntes-cusp-forms]{cusp forms} \(f,g\in S_k(\SL_2(\ZZ))\) is defined to be%
 \begin{equation*}
 \pair{f}{g} = \int_{\mathcal D} f \bar g y^{k-2} \diff x \diff y
@@ -9708,13 +9735,725 @@ The \terminology{Petersson inner product} of two \hyperref[def-buntes-cusp-forms
 where \(\mathcal D\) is a fundamental domain for \(\SL_2(\ZZ)\).%
 \end{definition}
 \begin{proposition}{}{}{proposition-68}%
-\hypertarget{p-1087}{}%
+\hypertarget{p-1088}{}%
 Let \(f,g\in S_k(\SL_2(\ZZ))\), \(n\in \NN\) then%
 \begin{equation*}
 \pair{T(n) f}{g} = \pair{f}{T(n)g}\text{.}
 \end{equation*}
 %
 \end{proposition}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 5.3 Abelian varieties and Jacobians (Angus)}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Abelian varieties and Jacobians (Angus)}{}{Abelian varieties and Jacobians (Angus)}{}{}\label{sec-buntes-av-jac}
+\begin{quote}\hypertarget{blockquote-2}{}
+Sydney forever\par\hfill\begin{tabular}{l@{}}
+\textemdash{}Angus McAndrew
+\end{tabular}\\\par
+\end{quote}
+\begin{paragraphs}{Background.}{paragraphs-41}%
+\begin{definition}{}{definition-103}%
+\hypertarget{p-1089}{}%
+An \hyperref[def-supersing-isog-ec]{elliptic curve} is any one of the following\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-270}{}Smooth proj cuve of \hyperref[def-class-set]{genus} 1 with  a marked rational point.%
+\item\hypertarget{li-271}{}A smooth proj curve with a group law%
+\item\hypertarget{li-272}{}if \(k \subseteq \CC\) we have%
+\begin{equation*}
+E(\CC) = \CC/ \Lambda
+\end{equation*}
+%
+\begin{equation*}
+\Lambda = \ZZ \omega_1 \oplus \ZZ \omega_2,\, \omega_1/\omega_2 \not\in \RR
+\end{equation*}
+%
+\item\hypertarget{li-273}{}if \(\characteristic k \ne 2,3\) A smooth projective curve specified by%
+\begin{equation*}
+y^2=  x^3+ ax + b\text{.}
+\end{equation*}
+%
+\end{enumerate}
+%
+\end{definition}
+\hypertarget{p-1090}{}%
+Aash showed that 1 implies 4 and 3 implies 1.%
+\par
+\hypertarget{p-1091}{}%
+One can view the group law on \(E\) either via the chord-tangent method (Bezout's theorem). Or via the isomorphism%
+\begin{equation*}
+E \to \Pic^0(E)
+\end{equation*}
+%
+\begin{equation*}
+P \mapsto [P] - [0]\text{.}
+\end{equation*}
+%
+\begin{definition}{}{definition-104}%
+\hypertarget{p-1092}{}%
+An \hyperref[def-buntes-abvar]{abelian variety} is a proper irreducible variety with a group law given by regular functions.%
+\end{definition}
+\begin{remark}{}{remark-27}%
+\hypertarget{p-1093}{}%
+\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-274}{}In this definition proper is equivalent to projective.%
+\item\hypertarget{li-275}{}\hypertarget{p-1094}{}%
+The rigidity theorem tells us:%
+\begin{enumerate}
+\item\hypertarget{li-276}{}Any morphism of \hyperref[def-buntes-abvar]{abelian varieties} that preserves the identity is a homomorphism.%
+\item\hypertarget{li-277}{}Abelian varieties are abelian%
+\end{enumerate}
+%
+\end{enumerate}
+%
+\end{remark}
+\end{paragraphs}%
+\begin{paragraphs}{Ablelian varieties over \(\CC\).}{paragraphs-42}%
+\begin{proposition}{}{}{proposition-69}%
+\hypertarget{p-1095}{}%
+Let \(A/k\subseteq \CC\) then%
+\begin{equation*}
+A(\CC) = \CC^g/\Lambda
+\end{equation*}
+where \(g = \dim A\) and \(\Lambda \subseteq \CC^g\) is a rank \(2g\) \hyperref[def-buntes-lattice]{lattice}.%
+\end{proposition}
+\begin{proof}\hypertarget{proof-111}{}
+\hypertarget{p-1096}{}%
+The lie algebra \(\Lie(A(\CC))\) is a complex vector space of dimension \(g\). We have the exponential%
+\begin{equation*}
+\exp \colon \Lie(A(\CC)) \to A(\CC)
+\end{equation*}
+which is surjective onto the connected component of the identity, and locally at \(0\) a diffeomorphism. So \(\exp\) surjects. Since its locally isomorphic at \(0\) we have \(\ker(\exp)\) discrete and hence a \hyperref[def-buntes-lattice]{lattice}. \(A \) proper means \(A(\CC)\) is compact so%
+\begin{equation*}
+\rank \ker (\exp) = 2g\text{.}\qedhere
+\end{equation*}
+%
+\end{proof}
+\hypertarget{p-1097}{}%
+We have a map%
+\begin{equation*}
+\{\text{AVs}/\CC\} \to \{\text{complex tori}\}
+\end{equation*}
+but this is not surjective. Which \hyperref[def-buntes-lattice]{lattices} give AVs?%
+\begin{definition}{}{definition-105}%
+\hypertarget{p-1098}{}%
+Let \(V\) be a \(\CC\)-vector space and \(\Lambda \subseteq V\) be a full \hyperref[def-buntes-lattice]{lattice}. A \terminology{Hermitian form} on \(V\) is a function%
+\begin{equation*}
+H \colon V\times V \to \CC
+\end{equation*}
+which is \(\CC\)-linear in the first component, \(\CC\)-antilinear in the second (i.e. a sesquilinear form). And satisfies%
+\begin{equation*}
+H(u,v) = \overline{H(v,u)}
+\end{equation*}
+A \hyperref[def-riemann-form]{Riemann form} on \((V,\Lambda)\) is a positive definite \hyperref[sec-buntes-av-jac]{Hermitian form} on \(V\) s.t. \(\im(H|_V) \colon \Lambda \to \ZZ\).%
+\end{definition}
+\begin{proposition}{}{}{proposition-70}%
+\hypertarget{p-1099}{}%
+We have a bijection%
+\begin{equation*}
+\{\text{AVs}/\CC\} \leftrightarrow \{(V,\Lambda)\text{ s.t. there is a Riemann form on } (V, \Lambda)\}\text{.}
+\end{equation*}
+%
+\end{proposition}
+\begin{proof}\hypertarget{proof-112}{}
+\hypertarget{p-1100}{}%
+Swinnerton-Dyer analytic theory of AVs ch.2.%
+\end{proof}
+\begin{example}{}{example-64}%
+\hypertarget{p-1101}{}%
+For an \hyperref[def-supersing-isog-ec]{elliptic curve} \(E(\CC) = \CC/ \ZZ \omega_1 + \ZZ \omega_2\)%
+\begin{equation*}
+H(u,v) = u\bar v/ \im(\omega_1 \bar \omega_2)\text{.}
+\end{equation*}
+%
+\end{example}
+\end{paragraphs}%
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 5.3.1 Jacobian varieties}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Jacobian varieties}{}{Jacobian varieties}{}{}\label{subsection-78}
+\begin{definition}{}{definition-106}%
+\hypertarget{p-1102}{}%
+Given \(X\) a curve%
+\begin{equation*}
+\Pic^0(X) = \divisors^0(X)/\{(f) : f \in K(X)\}
+\end{equation*}
+this is some abelian group.%
+\end{definition}
+\begin{theorem}{}{}{theorem-74}%
+\hypertarget{p-1103}{}%
+Let \(X\) be a \hyperref[def-class-set]{genus} \(g\) curve \(/k\). Then there exists an \hyperref[def-buntes-abvar]{abelian variety} \(\Jac(X)/k\) of \(\dim = g\) s.t.%
+\begin{equation*}
+\Jac(X)(L) = \Pic^0(X\otimes L)
+\end{equation*}
+%
+\end{theorem}
+\begin{remark}{}{remark-28}%
+\hypertarget{p-1104}{}%
+This is false as stated unless \(X(k) \ne \emptyset\).%
+\end{remark}
+\begin{proof}\hypertarget{proof-113}{}
+\hypertarget{p-1105}{}%
+Idea: Pick \(P_0 \in X(k)\) we have a bijection%
+\begin{equation*}
+\divisors^0(X) \to \divisors^r(X)
+\end{equation*}
+%
+\begin{equation*}
+D \mapsto D + r[P_0]
+\end{equation*}
+we have  a map%
+\begin{equation*}
+X^r \to X^r/ S_r = X^{(r)} \to \divisors^r(X)
+\end{equation*}
+we can construct \(\Jac(X)\) as a quotient of \(X^{(r)}\) full details Milne AVs ch. 2.%
+\end{proof}
+\begin{paragraphs}{Jacobians over \(\CC\).}{paragraphs-43}%
+\hypertarget{p-1106}{}%
+Given \(X\) a compact \hyperref[def-top-riem-surface]{Riemann surface} of \hyperref[def-class-set]{genus} \(g\) then%
+\begin{equation*}
+H^0(X, \Omega_X^1) \simeq \CC^g
+\end{equation*}
+one might wish to consider, for \(P,Q \in X\), \(\omega\in H^0(X, \Omega_X^1)\)%
+\begin{equation*}
+\int_P^Q \omega
+\end{equation*}
+this is not well defined as there are choices of path \(P\to Q\).%
+\begin{equation*}
+H_1(X,\ZZ) = \ZZ^{2g}
+\end{equation*}
+have  a map%
+\begin{equation*}
+H_1(X,\ZZ) \to H^0(X, \Omega_X^1) ^\vee
+\end{equation*}
+%
+\begin{equation*}
+\gamma \mapsto (\omega \mapsto \int_\gamma \omega)
+\end{equation*}
+Let%
+\begin{equation*}
+J(X) = H^0(X, \Omega_X^1) ^\vee/H_1(X,\ZZ)
+\end{equation*}
+%
+\begin{theorem}{}{}{theorem-75}%
+\hypertarget{p-1107}{}%
+\(J(X) \) is the \(\CC\) points of an \hyperref[def-buntes-abvar]{abelian variety} over \(\CC\). Further the map%
+\begin{equation*}
+\Pic^0(X) \to J(X)
+\end{equation*}
+%
+\begin{equation*}
+[P] - [Q] \mapsto (\omega \mapsto \int^P_Q \omega)
+\end{equation*}
+is an isomorphism of abelian groups.%
+\end{theorem}
+\begin{proof}\hypertarget{proof-114}{}
+\hypertarget{p-1108}{}%
+For the first claim we need a \hyperref[def-riemann-form]{Riemann form} on%
+\begin{equation*}
+(H^0(X, \Omega_X^1)^\vee , H_1(X,\ZZ))
+\end{equation*}
+we have%
+\begin{equation*}
+H_1(X, \ZZ) \times H_1(X, \ZZ) \to \ZZ
+\end{equation*}
+%
+\begin{equation*}
+(\gamma_1, \gamma_2) \mapsto -(\gamma_1\cap \gamma_2)\text{.}\qedhere
+\end{equation*}
+%
+\end{proof}
+\begin{remark}{}{remark-29}%
+\hypertarget{p-1109}{}%
+In this case we see%
+\begin{equation*}
+\Lie(\Jac(X)) = H^0(X, \Omega_X^1)
+\end{equation*}
+this is true in general.%
+\end{remark}
+\end{paragraphs}%
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 5.3.2 Some constructions/properties of AVs}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Some constructions/properties of AVs}{}{Some constructions/properties of AVs}{}{}\label{subsection-79}
+\hypertarget{p-1110}{}%
+Let \(A,B\) be AVs\(/k\). Any identity preserving morphism \(\phi \colon A \to B\) is a homomorphism. Such a homomorphism is called an \hyperref[def-supersing-isog-isog]{isogeny} if it surjective with finite kernel. i.e. \(\lb n \rb \colon A \to A\) is an \hyperref[def-supersing-isog-isog]{isogeny} and for \(\characteristic(k) \nmid n\).%
+\begin{equation*}
+A[n] \simeq (\ZZ/n)^{2g}
+\end{equation*}
+then we have the Tate module for \(l\) prime%
+\begin{equation*}
+T_lA = \varprojlim_n A[l^n] \simeq \ZZ_l^{2g}
+\end{equation*}
+in fact%
+\begin{equation*}
+H^1_{\et} (A, \ZZ_l) \simeq T_lA ^\vee
+\end{equation*}
+we can also consider \(\Pic^0(A)\). There exists an \hyperref[def-buntes-abvar]{abelian variety}%
+\begin{equation*}
+\hat A/l
+\end{equation*}
+s.t.%
+\begin{equation*}
+\hat A (L) = \Pic^0(A \otimes L)
+\end{equation*}
+this is called the \hyperref[def-dual-abvar]{dual abelian variety}. So earlier we saw \(\hat E \simeq E\). in general \(\hat A \not \simeq  A\).%
+\par
+\hypertarget{p-1111}{}%
+However for an ample divisor \(D\) we get an isog%
+\begin{equation*}
+\phi_D \colon A \to \hat A
+\end{equation*}
+%
+\begin{equation*}
+P \mapsto t_P^* D -D
+\end{equation*}
+an \hyperref[def-supersing-isog-isog]{isogeny} \(\phi\colon A\to \hat A\) is a \hyperref[def-polarization]{polarization} if%
+\begin{equation*}
+\phi =  \phi_D /\bar k
+\end{equation*}
+over \(\CC\)  a \hyperref[def-polarization]{polarization} is equivalent to a choice of \hyperref[def-riemann-form]{Riemann form}.%
+\par
+\hypertarget{p-1112}{}%
+A \hyperref[def-polarization]{principal polarization} is a \hyperref[def-polarization]{polarization} which is an isomorphism. e.g.%
+\begin{equation*}
+\phi_{[0]} \colon E \to \hat E
+\end{equation*}
+%
+\begin{equation*}
+P \mapsto [P] - [0]
+\end{equation*}
+%
+\begin{remark}{}{remark-30}%
+\hypertarget{p-1113}{}%
+Jacobian varieties always admit \hyperref[def-polarization]{principal polarizations}.%
+\end{remark}
+\hypertarget{p-1114}{}%
+On \(T_lA \) we have  a \hyperref[prop-weil-pair]{Weil pairing}%
+\begin{equation*}
+T_lA \times T_lA^\vee \to \ZZ_l
+\end{equation*}
+%
+\begin{paragraphs}{Maps between Jacobians.}{paragraphs-44}%
+\hypertarget{p-1115}{}%
+Let \(X,Y/k\) be curves and \(f\colon X \to Y\) a morphism.%
+\begin{definition}{}{definition-107}%
+\hypertarget{p-1116}{}%
+We have a pushforward map%
+\begin{equation*}
+f_*\colon \Pic^0(X) \to \Pic^0(Y)
+\end{equation*}
+%
+\begin{equation*}
+\sum n_x [x] \mapsto \sum n_x[f(x)]
+\end{equation*}
+if \(f\) is finite then we have  a pullback%
+\begin{equation*}
+f^* \colon \Pic^0(Y) \to \Pic^0(X)
+\end{equation*}
+%
+\begin{equation*}
+\sum n_y[y] \mapsto \sum n_y [f\inv (y)]
+\end{equation*}
+(with \hyperref[def-riem-order-vanish]{multiplicity}).%
+\end{definition}
+\hypertarget{p-1117}{}%
+We want further maps between jacobians%
+\begin{definition}{}{definition-108}%
+\hypertarget{p-1118}{}%
+A correspondence between \(X,Y\) is a curve \(Z\) and a pair of finite morphisms.%
+\begin{equation*}
+X \leftarrow Z \to Y
+\end{equation*}
+then we get induced maps%
+\begin{equation*}
+T_* = g_* f^* \colon \Pic^0(X) \to \Pic^0(Y)
+\end{equation*}
+%
+\begin{equation*}
+T^* = f_* g^* \colon \Pic^0(Y) \to \Pic^0(X)
+\end{equation*}
+%
+\end{definition}
+\end{paragraphs}%
+\begin{paragraphs}{Modular jacobians and Hecke correspondences.}{paragraphs-45}%
+\hypertarget{p-1119}{}%
+Conside \(p\nmid N\) we have%
+\begin{equation*}
+X_0(N) = \{ (E,C_N) : E\text{ e.c. }, C_N \text{ cyclic sub order } N\}
+\end{equation*}
+%
+\begin{equation*}
+X_0(pN) = \{(E,C_{pN})\} = \{(E,C_N,C_p)\}
+\end{equation*}
+so we have%
+\begin{definition}{}{definition-109}%
+\hypertarget{p-1120}{}%
+the Hecke correspondence \(T_p\) on \(X_0(N)\) is%
+\begin{equation*}
+X_0(N) \mapsfrom X_0(pN) \to X_0(N)
+\end{equation*}
+%
+\begin{equation*}
+(E,C_N)\mapsfrom (E,C_N,C_p)\to (E/C_p, C_p + C_N)\text{.}
+\end{equation*}
+%
+\end{definition}
+\hypertarget{p-1121}{}%
+We have the modular jacobian \(J_0(N)\) and the induced map%
+\begin{equation*}
+T_p \colon J_0(N) \to J_0(N)
+\end{equation*}
+%
+\begin{equation*}
+[E] \mapsto \sum_{C_p \subseteq E} [E/C_p]
+\end{equation*}
+%
+\par
+\hypertarget{p-1122}{}%
+One can consider \(J_0(N)_{\FF_p}\)%
+\begin{theorem}{Eichler-Shimura.}{}{theorem-76}%
+\hypertarget{p-1123}{}%
+\(T_{p*} = \Frob_p + p \Frob_p\inv \in \End(J_0(N)_{\FF_p})\).%
+\end{theorem}
+\end{paragraphs}%
+\end{subsectionptx}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 5.4 Ricky Show}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Ricky Show}{}{Ricky Show}{}{}\label{sec-buntes-hs}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 5.4.1 Moduli of PPAVs}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Moduli of PPAVs}{}{Moduli of PPAVs}{}{}\label{subsection-80}
+\hypertarget{p-1124}{}%
+Recall if \(A/ \CC\) is an \hyperref[def-buntes-abvar]{abelian variety},  then%
+\begin{equation*}
+A = A(\CC) =  \CC^g/ \Lambda, \,g = \dim (A)
+\end{equation*}
+%
+\begin{equation*}
+\Lambda \cong H_1(A,\ZZ)
+\end{equation*}
+Also a \hyperref[def-polarization]{polarization} \(\lambda \lambda A \to A^\vee\) is equivalent to choosing a \hyperref[def-riemann-form]{Riemann form}%
+\begin{equation*}
+E \colon \Lambda \times \Lambda \to \ZZ
+\end{equation*}
+s.t.\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-278}{}\(E\) is bilinear alternating%
+\item\hypertarget{li-279}{}\(E_\RR \colon V\times V \to \RR\) has \(E_\RR(iv,iw)  = E_\RR( v,w)\).%
+\item\hypertarget{li-280}{}%
+\begin{equation*}
+H(v,w) = E_\RR(iv, w) + i E_\RR(v,w)
+\end{equation*}
+is a positive definite \hyperref[sec-buntes-av-jac]{Hermitian form} on \(V\).%
+\end{enumerate}
+A \hyperref[def-polarization]{principal polarization} corresponds to \(E\) being a perfect pairing.%
+\begin{definition}{}{definition-110}%
+\hypertarget{p-1125}{}%
+A PPAV (principally polarized \hyperref[def-buntes-abvar]{abelian variety}) is a pair \((A,\lambda)\).%
+\end{definition}
+\hypertarget{p-1126}{}%
+If \((\ZZ^{2g}, \Psi)\) is the standard \(2g\)-dim symplectic form \(\Psi\) then by linear algebra there is a symplectic isomorphism%
+\begin{equation*}
+\alpha \colon \ZZ^{2g} \xrightarrow\sim \Lambda
+\end{equation*}
+with \(\Psi(v,w) = E(\alpha(v), \alpha(w))\).%
+\par
+\hypertarget{p-1127}{}%
+Recall the standard \(\Psi\) is%
+\begin{equation*}
+\Psi (v,w) = v^\transpose J w, J = \begin{pmatrix} 0 \amp I_g \\ -I_g \amp 0\end{pmatrix}
+\end{equation*}
+%
+\begin{definition}{}{definition-111}%
+\hypertarget{p-1128}{}%
+The \terminology{Siegel upper half space} is%
+\begin{equation*}
+\mathscr H_g = \{ Z = X+iY \in M_g(\CC) : Z^\transpose  = Z ; \, X,Y \in M_g(\RR); \, Y \gt 0\}
+\end{equation*}
+i.e. \(Y\) is pos. def.%
+\end{definition}
+\hypertarget{p-1129}{}%
+Check: \(\mathscr H_1\) is the usual upper half plane.%
+\begin{proposition}{}{}{proposition-71}%
+\hypertarget{p-1130}{}%
+\(\mathscr H_g \cong \Sp_{2g}(\RR)/U(g)\) where \(\Sp_{2g} (R) = \{ M \in \GL_{2g}(R) : M^\transpose J M = J\}\)%
+\begin{equation*}
+U(g) = O(2g) \cap \Sp_{2g}(\RR) \cap \GL_{g}(\CC)\text{.}
+\end{equation*}
+%
+\end{proposition}
+\begin{proof}\hypertarget{proof-115}{}
+\hypertarget{p-1131}{}%
+(Sketch) First one can show that \(\Sp_{2g}(\RR)\) acts transitively on \(\mathscr H_g\) via linear fractional transformations:%
+\begin{equation*}
+M = \begin{pmatrix} A\amp B\\ C\amp D\end{pmatrix} \in \Sp_{2g}(\RR),\, Z\in \mathscr H_g
+\end{equation*}
+%
+\begin{equation*}
+M\cdot Z = (AZ+B)(CZ+D)\inv \in \mathscr H_g
+\end{equation*}
+second one computes \(\Stab J = U(g)\)%
+\par
+\hypertarget{p-1132}{}%
+For \(g= 1\), \(\Sp_2(\RR) = \SL_2(\RR)\) acts transitively on \(\mathscr H_1\), \(\Stab(i) = \specialorthogonal (2) = U(1)\).%
+\begin{equation*}
+\begin{pmatrix} \cos \theta\amp \sin \theta \\ - \sin \theta \amp \cos \theta \end{pmatrix} i = i
+\end{equation*}
+and if%
+\begin{equation*}
+\begin{pmatrix} a \amp b \\ c \amp d\end{pmatrix} i = i
+\end{equation*}
+then \(ai + b = -c + di\) so \(M= \begin{pmatrix} a\amp b\\ -b \amp a \end{pmatrix}\in \specialorthogonal(2)\).%
+\end{proof}
+\begin{proposition}{}{}{proposition-72}%
+\hypertarget{p-1133}{}%
+There is a natural bijection between%
+\begin{equation*}
+\{(A,\lambda, \alpha) : (A,\lambda)= PPAV,\,\alpha\colon \ZZ^{2g} \xrightarrow \sim \Lambda\} \xrightarrow\sim \mathscr H_g
+\end{equation*}
+this induces a  bijection%
+\begin{equation*}
+\{(A,\lambda) \} \xrightarrow \sim \Sp_{2g}(\ZZ) \backslash \mathscr H_g = \Sp_{2g}(\ZZ) \backslash \Sp_{2g} (\RR) / U(g)\text{.}
+\end{equation*}
+%
+\end{proposition}
+\begin{proof}\hypertarget{proof-116}{}
+\hypertarget{p-1134}{}%
+We will construct a map%
+\begin{equation*}
+\{(A,\lambda ,\alpha)\} \xrightarrow\sim\Sp_{2g} (\RR)/U(g)
+\end{equation*}
+first we construct  a bijection between%
+\begin{equation*}
+\{(A,\lambda, \alpha)\}
+\end{equation*}
+and some linear data on a fixed space , so given \((A, \lambda, \alpha)\) use \(\alpha\) to identify%
+\begin{equation*}
+\alpha\colon \ZZ^{2g} \xrightarrow \sim \Lambda = H_1(A,\ZZ)
+\end{equation*}
+then  tensor with \(\RR\) to get%
+\begin{equation*}
+\alpha_\RR \colon \RR^{2g} \xrightarrow\sim \Lambda\otimes \RR \cong \Lie(A) (= \CC^g)
+\end{equation*}
+the action of \(i\) on the right induces \(J\) on the left with \(J^2 = -I\).%
+\par
+\hypertarget{p-1135}{}%
+From \(E_\RR(iv,iw) = E_\RR(v,w)\) we get \(J \) symplectic%
+\begin{equation*}
+\Psi_\RR(Jv, Jw) = \Psi_\RR( v,w)
+\end{equation*}
+from \(E_\RR(iv,v) \gt 0\) we get \(J\) is positive%
+\begin{equation*}
+\Psi_\RR(Jv,v) \gt 0
+\end{equation*}
+conversely given \(J\) symplectic positive \(J^2 = -I\) on \(\RR^{2g}\) we can construct \((A,\lambda) = (V/\ZZ^{2g}, E)\) This comes with an \(\alpha\) for free since \(H_1(A, \ZZ) \cong \ZZ^{2g}\).%
+\par
+\hypertarget{p-1136}{}%
+Suppose \(J\) and \(J_0\) are two complex structures, symplectic positive matrices on \(\RR^{2g}\). Then a lemma from linear algebra tells us that there exists a \(S \in \Sp_{2g}(\RR)\). s.t. \(J_0  = S J S \inv\). We see that this \(S\) is well defined up to an element of \(G = Z(J) \cap \Sp_{2g}(\RR)\). But if \(\gamma \in G \) then \(\gamma\) preserves the associated \(\CC\)-str. on \(\RR^{2g}\). then since \(\gamma\) is symplectic, it preserves%
+\begin{equation*}
+H(v,w) = E_\RR(iv,w) + iE_\RR(v,w)
+\end{equation*}
+implies%
+\begin{equation*}
+\gamma \in U(g)\text{.}\qedhere
+\end{equation*}
+%
+\end{proof}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 5.4.2 Hodge structures}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Hodge structures}{}{Hodge structures}{}{}\label{subsection-81}
+\hypertarget{p-1137}{}%
+Let \(M\) be a \(\cinf\) compact \(\RR\)-manifold. Then \(H^i_{\mathrm{sing}}(M, \RR)  \cong H^i_\dR(M)\). What avout for compact \(\CC\)-manifolds \(X\)? For \(M\) have \(H^i_\dR(M)  = H^i(\Omega^\bullet (M))\). This won't give de Rham isomorphism for \(X\):%
+\begin{equation*}
+H^i_{\mathrm{sing}}(X)
+\end{equation*}
+supported up to \(i = 2d\) with \(d = \dim_\CC(X)\). but \(H^i(\Omega^\bullet_{\mathrm{hol}}(C))\) is supported up to \(i = d\).%
+\par
+\hypertarget{p-1138}{}%
+For \(M\)%
+\begin{equation*}
+0 \to \underline \RR \to \Omega^0 \to \Omega^1 \to \cdots \to \Omega^d \to 0
+\end{equation*}
+is a resolution of \(\underline \RR\) by acyclic sheaves, by the existence of \(\cinf\) bump functions.%
+\begin{equation*}
+H^i_\dR(M) \cong H^i(M, \underline \RR) \cong H^i_{\mathrm{sing}}(M, \RR)\text{.}
+\end{equation*}
+For \(X\) this doesn't work with \(\Omega_{\mathrm{hol}}^\bullet\) as there are no holomorphic bump functions.%
+\begin{equation*}
+0 \to \underline \CC \to \Omega^0_{\mathrm{hol}} \to \Omega^1_{\mathrm{hol}} \to \cdots \to \Omega_{\mathrm{hol}}^\bullet \to 0
+\end{equation*}
+is still a resolution but not acyclic. Instead we use hypercohomology which takes as input any resolution and outputs a cohomology group. This has the property that%
+\begin{equation*}
+H^i(X, \underline \CC) \cong \mathbf H ^i(\Omega_X^\bullet)
+\end{equation*}
+so we define \(H^i_\dR(X) = \mathbf H^i(\Omega_X^\bullet)\). so that%
+\begin{equation*}
+H^i_\dR(X) \cong H^i(X, \underline \CC) \cong H^i_{\mathrm{sing}}(X, \CC)
+\end{equation*}
+%
+\par
+\hypertarget{p-1139}{}%
+On \(X\) we have the sheaf of \((p,q)\) forms \(\Omega^{p,q}\) These are locally given by%
+\begin{equation*}
+\sum_{|I| = p, |J| = q} f_{I,J} \diff z_I \diff \bar z_J\text{.}
+\end{equation*}
+We have%
+\begin{equation*}
+\bar \partial \colon \Omega^{p,q} \to \Omega^{p,q+1}
+\end{equation*}
+satisfying \(\bar \partial ^2 = 0\). So we can define \(H^{p,q}(X) = \ker \bar \partial/ \image \bar \partial\) (Dolbeaut cohomology).%
+\begin{theorem}{Hodge decomposition.}{}{theorem-77}%
+\hypertarget{p-1140}{}%
+For a compact Kahler manifold (e.g. \(X\) a projective variety) we have%
+\begin{equation*}
+H^n_\dR(X) \cong \bigoplus _{p+q =n} H^{p,q}(X)
+\end{equation*}
+%
+\end{theorem}
+\begin{remark}{}{remark-31}%
+\hypertarget{p-1141}{}%
+%
+\begin{equation*}
+H^{p,q} (X) \cong H^q( X, \Omega^p)
+\end{equation*}
+using \(\bar \partial\) poincare lemma%
+\end{remark}
+\begin{example}{}{example-65}%
+\hypertarget{p-1142}{}%
+\(E/\CC\) \hyperref[def-supersing-isog-ec]{elliptic curve}.%
+\begin{equation*}
+H^0_\dR = H^{0,0}
+\end{equation*}
+%
+\begin{equation*}
+H^1_\dR = H^{1,0} \oplus H^{0,1}
+\end{equation*}
+%
+\begin{equation*}
+H^2_\dR = H^{2,0} \oplus H^{1,1} \oplus H^{0,2}
+\end{equation*}
+outer terms 0, diamond is  1 , 1 , 1, 1.%
+\end{example}
+\begin{definition}{}{definition-112}%
+\hypertarget{p-1143}{}%
+A Hodge structure on \(V/\RR\) is a \(\ZZ\)-bigrading on \(V_\CC = V \otimes \CC\) such that%
+\begin{equation*}
+\overline V^{p,q}  = V^{q,p}
+\end{equation*}
+its of type \(S\subseteq \ZZ^2\) if \(V^{pq} \ne 0 \) iff \((p,q) \in S\),%
+\end{definition}
+\begin{example}{}{example-66}%
+\hypertarget{p-1144}{}%
+the Hodge decomposition gives a hodge structure on \(H^n_{\mathrm{sing}}(X, \RR)\).%
+\end{example}
+\hypertarget{p-1145}{}%
+If \(V\) has a hodfe structure of weight \(n\) (i.e. \(V^{pq} \ne 0\) iff \(p,q = n\)). Then we can recover the hodge structure from the associated hodge filtration%
+\begin{equation*}
+\Fil^p V_\CC = \bigoplus_{p' \ge p} V^{p' q}
+\end{equation*}
+%
+\begin{example}{}{example-67}%
+\hypertarget{p-1146}{}%
+%
+\begin{equation*}
+\Fil^0(H^1(E)) = H^{1,0} \oplus H^{0,1}
+\end{equation*}
+%
+\begin{equation*}
+\Fil^1(H^1(E)) = H^{1,0}
+\end{equation*}
+%
+\begin{equation*}
+\Fil^2(H^1(E)) = 0
+\end{equation*}
+%
+\end{example}
+\begin{inlineexercise}{}{exercise-26}%
+\hypertarget{p-1147}{}%
+%
+\begin{equation*}
+V^{p,q} = \Fil^p V \cap \overline {\Fil^q V}
+\end{equation*}
+in weight \(n\).%
+\end{inlineexercise}
+\begin{paragraphs}{Alternative definition.}{paragraphs-46}%
+\hypertarget{p-1148}{}%
+%
+\begin{equation*}
+\mathbf S = \Res_\RR^\CC \mathbf G_m
+\end{equation*}
+%
+\begin{equation*}
+\mathbf S(A) = \{ (a,b) \in A^2 : a^2+  b^2 \ne 0\}
+\end{equation*}
+%
+\begin{equation*}
+\mathbf S(\RR) = \CC^\times
+\end{equation*}
+%
+\begin{proposition}{}{}{proposition-73}%
+\hypertarget{p-1149}{}%
+There is  a natural bijection between morphisms of \hyperref[def-alg-gp]{algebraic groups}%
+\begin{equation*}
+\mathbf S \to \GL(V)
+\end{equation*}
+and Hodge structures on \(V\).%
+\end{proposition}
+\hypertarget{p-1150}{}%
+Hence for any lie gorup \(G\) we can define a hodge structure on \(G\) as a morphism of \hyperref[def-alg-gp]{algebraic groups}%
+\begin{equation*}
+\mathbf S \to G
+\end{equation*}
+If \(G \to \GL(V)\) is a faithful rep this induces a hodge structure on \(V\).%
+\begin{definition}{}{definition-113}%
+\hypertarget{p-1151}{}%
+A \hyperref[def-polarization]{polarization} of a HS \(h\colon \mathbf S \to \GL(v)\) is an alternating bilinear form%
+\begin{equation*}
+\Psi \colon V\times V \to \RR
+\end{equation*}
+with\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-281}{}%
+\begin{equation*}
+\Psi (Jv,Jw) =  \Psi(v,w) \text{ for } J = h(i)
+\end{equation*}
+%
+\item\hypertarget{li-282}{}%
+\begin{equation*}
+\Psi(v,Jw) \text{ is pos. def.}
+\end{equation*}
+%
+\end{enumerate}
+%
+\end{definition}
+\end{paragraphs}%
+\end{subsectionptx}
 \end{sectionptx}
 \end{chapterptx}
 %

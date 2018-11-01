@@ -48,7 +48,7 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
@@ -303,6 +303,8 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves" class="active">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -313,7 +315,7 @@ MathJax.Hub.Config({
 <a href="sec-buntes-modular-curves.html" class="permalink">¶</a><article class="definition-like" id="def-buntes-lattice"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.1.1</span> <span class="title">Lattices</span>
 </h6>
-<p id="p-1021">A <dfn class="terminology">lattice</dfn> is a free abelian group of rank 2</p>
+<p id="p-1022">A <dfn class="terminology">lattice</dfn> is a free abelian group of rank 2</p>
 <div class="displaymath">
 \begin{equation*}
 \Lambda \otimes \RR \to \CC
@@ -331,7 +333,7 @@ MathJax.Hub.Config({
 \Lambda = \gamma \Lambda ',\,\gamma \in \CC
 \end{equation*}
 </div>
-<p>then we say the two <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> are <dfn class="terminology">homothetic</dfn>.</p></article><p id="p-1022">Any <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> is <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">homothetic</a> to one of the form</p>
+<p>then we say the two <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> are <dfn class="terminology">homothetic</dfn>.</p></article><p id="p-1023">Any <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> is <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">homothetic</a> to one of the form</p>
 <div class="displaymath">
 \begin{equation*}
 \Lambda = \langle 1 , \tau \rangle
@@ -344,8 +346,8 @@ MathJax.Hub.Config({
 \end{equation*}
 </div>
 <p>So there is a bijection between \(\HH\) and ordered bases of <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a>.</p>
-<p id="p-1023">\(\SL_2(\ZZ)\) acts on \(\HH\) and the action corresponds to changing bases.</p>
-<p id="p-1024">The action of \(\PSL_2(\ZZ)\) is faithful. \(i,\rho = e^{\pi i /3}\) have non-trivial stabilisers</p>
+<p id="p-1024">\(\SL_2(\ZZ)\) acts on \(\HH\) and the action corresponds to changing bases.</p>
+<p id="p-1025">The action of \(\PSL_2(\ZZ)\) is faithful. \(i,\rho = e^{\pi i /3}\) have non-trivial stabilisers</p>
 <div class="displaymath">
 \begin{equation*}
 \Stab_i =  \langle S\rangle = \begin{pmatrix} 0\amp1 \\ -1 \amp 0 \end{pmatrix}
@@ -356,8 +358,8 @@ MathJax.Hub.Config({
 \Stab_\rho =  \langle TS\rangle,\,T = \begin{pmatrix} 1\amp1 \\ 0 \amp 1 \end{pmatrix}
 \end{equation*}
 </div>
-<p id="p-1025">We can determine the <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> of elements by looking at the characteristic polynomials.</p>
-<p id="p-1026">We then have</p>
+<p id="p-1026">We can determine the <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> of elements by looking at the characteristic polynomials.</p>
+<p id="p-1027">We then have</p>
 <div class="displaymath">
 \begin{equation*}
 Y(1) =\SL_2(\ZZ) \backslash \HH
@@ -370,43 +372,43 @@ j\colon Y(1) \to \CC
 \end{equation*}
 </div>
 <p>is an isomorphism.</p>
-<p id="p-1027">We have a fundamental domain for this action</p>
+<p id="p-1028">We have a fundamental domain for this action</p>
 <div class="displaymath">
 \begin{equation*}
 D = \{ z\in \CC : |z|  \ge 1,\, |\Re(z)| \le \frac 12 \}
 \end{equation*}
 </div>
 <p>\(Y(1)\) is Hausdorff because the action is properly discontinuous.</p>
-<p id="p-1028">Care must be taken around the elliptic points (those with larger stabiliser), to define the complex structure.</p>
-<p id="p-1029">The extended upper half plane</p>
+<p id="p-1029">Care must be taken around the elliptic points (those with larger stabiliser), to define the complex structure.</p>
+<p id="p-1030">The extended upper half plane</p>
 <div class="displaymath">
 \begin{equation*}
 \HH^* = \HH \cup \PP^1 (\QQ)
 \end{equation*}
 </div>
 <p>also has an \(\SL_2(\ZZ)\) action via fractional linear transformations, which is proper.</p>
-<p id="p-1030">We can define a basis of neighbourhoods around the cusps by transforming them to the cusp \(\infty\) where we can use the basis of neighbourhoods given by</p>
+<p id="p-1031">We can define a basis of neighbourhoods around the cusps by transforming them to the cusp \(\infty\) where we can use the basis of neighbourhoods given by</p>
 <div class="displaymath">
 \begin{equation*}
 \HH_N = \{ z\in \HH : | \Im(z)| \gt N\}\text{.}
 \end{equation*}
 </div>
-<p id="p-1031">The parameter \(q\) around \(\infty\) is defined as \(e^{2\pi i z/N}\) for some \(N\in \ZZ\text{,}\) \(q\) is fixed by \(T\text{.}\)</p>
-<p id="p-1032">We can quotient by the action of \(\SL_2(\ZZ) \) on \(\HH^*\) to get</p>
+<p id="p-1032">The parameter \(q\) around \(\infty\) is defined as \(e^{2\pi i z/N}\) for some \(N\in \ZZ\text{,}\) \(q\) is fixed by \(T\text{.}\)</p>
+<p id="p-1033">We can quotient by the action of \(\SL_2(\ZZ) \) on \(\HH^*\) to get</p>
 <div class="displaymath">
 \begin{equation*}
 X(1) = \SL_2(\ZZ) \backslash \HH^*
 \end{equation*}
 </div>
 <p>which is now compact, <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> 0, which matches up with \(Y(1)\) having \(\CC\) points \(\CC\) earlier.</p>
-<p id="p-1033">If \(X\) is a projective curve then \(X(\CC)\) has the structure of a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>. If \(S\) is such a surface then there exists a unique up to isomorphism \(X\) with \(X(\CC) = S\text{.}\)</p>
-<p id="p-1034">The <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on \(S\) are the function field of \(X\) and there is a correspondence</p>
+<p id="p-1034">If \(X\) is a projective curve then \(X(\CC)\) has the structure of a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>. If \(S\) is such a surface then there exists a unique up to isomorphism \(X\) with \(X(\CC) = S\text{.}\)</p>
+<p id="p-1035">The <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on \(S\) are the function field of \(X\) and there is a correspondence</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Compact Riemann surfaces} \leftrightarrow \text{Smooth proj. curves}
 \end{equation*}
 </div>
-<p id="p-1035">Given a finite index subgroup of \(\SL_2(\ZZ)\) we can do something similar to obtain</p>
+<p id="p-1036">Given a finite index subgroup of \(\SL_2(\ZZ)\) we can do something similar to obtain</p>
 <div class="displaymath">
 \begin{equation*}
 \Gamma\backslash \HH\text{.}
@@ -429,10 +431,10 @@ X(1) = \SL_2(\ZZ) \backslash \HH^*
 \Gamma_0(N) = \left\{ \gamma \in \SL_2(\ZZ) : \gamma \equiv \begin{pmatrix} \ast\amp\ast \\ 0 \amp \ast \end{pmatrix} \pmod N \right\}\text{.}
 \end{equation*}
 </div>
-<p id="p-1036">\(\Gamma(N)\) is normal inside \(\SL_2(\ZZ)\) and \(\Gamma_1(N)\) is normal inside \(\Gamma_0(N)\text{.}\)</p>
-<p id="p-1037">The aforementioned equivalence of categories gives us a smooth projective curve for each of these examples.</p>
-<p id="p-1038">In fact one can find a smooth projective curve with \(\QQ\)-coefficients realising each of these <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>.</p>
-<p id="p-1039">For</p>
+<p id="p-1037">\(\Gamma(N)\) is normal inside \(\SL_2(\ZZ)\) and \(\Gamma_1(N)\) is normal inside \(\Gamma_0(N)\text{.}\)</p>
+<p id="p-1038">The aforementioned equivalence of categories gives us a smooth projective curve for each of these examples.</p>
+<p id="p-1039">In fact one can find a smooth projective curve with \(\QQ\)-coefficients realising each of these <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>.</p>
+<p id="p-1040">For</p>
 <div class="displaymath">
 \begin{equation*}
 \Gamma_0(N) \backslash \HH^*
@@ -464,14 +466,14 @@ j(N \gamma z) = j\left( N\frac{az + b}{cz+d} \right)
 = j\left( Nz\right)
 \end{equation*}
 </div>
-<p id="p-1040">We can therefore let</p>
+<p id="p-1041">We can therefore let</p>
 <div class="displaymath">
 \begin{equation*}
 g = \prod_{\gamma} (Y - j(\gamma Nz))
 \end{equation*}
 </div>
 <p>the product over the cosets of \(\Gamma_0(N) \subseteq \SL_2(\ZZ)\text{.}\)</p>
-<p id="p-1041">The coefficients of \(g\) are <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on \(X(1) = \CC\lb j \rb\text{.}\) So we have</p>
+<p id="p-1042">The coefficients of \(g\) are <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on \(X(1) = \CC\lb j \rb\text{.}\) So we have</p>
 <div class="displaymath">
 \begin{equation*}
 g(Y) = F(j(z), Y)
@@ -484,7 +486,7 @@ g (j(Nz)) = F(j(z), j(Nz)) = 0
 \end{equation*}
 </div>
 <p>then \(F(X,Y)\) is irreducible and  has integer coefficients.</p>
-<p id="p-1042">Then the curve \(X_0(N)\) whose function field is</p>
+<p id="p-1043">Then the curve \(X_0(N)\) whose function field is</p>
 <div class="displaymath">
 \begin{equation*}
 \QQ \lb X,Y\rb/ F(X,Y)
@@ -496,7 +498,7 @@ g (j(Nz)) = F(j(z), j(Nz)) = 0
 F(X,Y) = 0 \smallsetminus \text{singular pts}
 \end{equation*}
 </div>
-<div class="displaymath" id="p-1043">
+<div class="displaymath" id="p-1044">
 \begin{equation*}
 \Gamma_0(N) \backslash \HH \to U(\CC)
 \end{equation*}
@@ -507,10 +509,10 @@ z \mapsto (j(z), j(Nz))
 \end{equation*}
 </div>
 <p>\(j(\gamma z) = z\,\forall z\) iff \(\gamma \in \SL_2(\ZZ)\text{.}\)</p>
-<p id="p-1044">If for \(z= z_1,z_2\) have \((j(z),j(Nz))\) equal then \(z_1,z_2\) are in the same \(\Gamma_0(N)\) orbit.</p>
-<p id="p-1045">We can do similar for \(\Gamma_1\) but only over \(\QQ(\zeta_N)\text{.}\)</p>
+<p id="p-1045">If for \(z= z_1,z_2\) have \((j(z),j(Nz))\) equal then \(z_1,z_2\) are in the same \(\Gamma_0(N)\) orbit.</p>
+<p id="p-1046">We can do similar for \(\Gamma_1\) but only over \(\QQ(\zeta_N)\text{.}\)</p>
 <article class="paragraphs" id="paragraphs-40"><h5 class="heading"><span class="title">Elliptic curves</span></h5>
-<p id="p-1046">Several definitions:</p>
+<p id="p-1047">Several definitions:</p>
 <ol class="decimal">
 <li id="li-260">Smooth proj. curve <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> 1 with a rational point.</li>
 <li id="li-261">smooth curve given by Weierstrass eqn.<div class="displaymath">
@@ -521,8 +523,8 @@ y^2 + a_1xy + a_3 y =  x^3 + a_2x^2 + a_4 x + a_6\text{.}
 </li>
 <li id="li-262">Complex torus of  dimension 1.</li>
 </ol>
-<p id="p-1047">Over \(\CC\) at least all are equivalent.</p>
-<p id="p-1048">To get the weierstrass equation from the curve we use Riemann-Roch to see that</p>
+<p id="p-1048">Over \(\CC\) at least all are equivalent.</p>
+<p id="p-1049">To get the weierstrass equation from the curve we use Riemann-Roch to see that</p>
 <div class="displaymath">
 \begin{equation*}
 H(1[0]) = 1,\, H(2[0]) = 2,\,H(3[0]) =3
@@ -535,7 +537,7 @@ H(1[0]) = 1,\, H(2[0]) = 2,\,H(3[0]) =3
 \end{equation*}
 </div>
 <p>so there is a linear relation among these, giving the Weierstrass equation.</p>
-<p id="p-1049">To get the equation for a torus we use the Weierstrass \(\wp\) function.</p></article></section></div></main>
+<p id="p-1050">To get the equation for a torus we use the Weierstrass \(\wp\) function.</p></article></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

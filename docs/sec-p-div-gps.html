@@ -48,7 +48,7 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
@@ -303,6 +303,8 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -310,7 +312,7 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-p-div-gps"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">\(p\)-divisible groups (Sachi)</span>
 </h2>
-<a href="sec-p-div-gps.html" class="permalink">¶</a><p id="p-986">Why study  \(p\)-divisible groups (Jacob Stix).</p>
+<a href="sec-p-div-gps.html" class="permalink">¶</a><p id="p-987">Why study  \(p\)-divisible groups (Jacob Stix).</p>
 <ol class="decimal">
 <li id="li-251">Analyse local \(p\)-adic galois action on \(p\)-torsion of <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, Serre's open image theorem.<div class="displaymath">
 \begin{equation*}
@@ -323,20 +325,20 @@ MathJax.Hub.Config({
 <li id="li-255">The true fundamental group in characteristic \(p\) must include infinitesimal group schemes, \(p\)-divisible groups enter through their tate modules.</li>
 </ol>
 <article class="paragraphs" id="paragraphs-39"><h5 class="heading"><span class="title">Detour, schemes</span></h5>
-<p id="p-987">There is an (anti)-equivalence of categories</p>
+<p id="p-988">There is an (anti)-equivalence of categories</p>
 <div class="displaymath">
 \begin{equation*}
 \{\text{ring}\} \leftrightarrow\{\text{affine schemes}\}\text{.}
 \end{equation*}
 </div>
-<p id="p-988">Moral whatever  a scheme is the data of a ring is enough to specify it + homs</p>
+<p id="p-989">Moral whatever  a scheme is the data of a ring is enough to specify it + homs</p>
 <div class="displaymath">
 \begin{equation*}
 \Hom_{Ring} (B,A) \leftrightarrow \Hom_{Aff}(\Spec A, \Spec B)
 \end{equation*}
 </div>
 <p>to specify a base field or base ring play a similar game with \(R\)-algebras and \(R\)-schemes.</p>
-<p id="p-989">Yoneda, schemes are functors: Let \(R\lb T_1,\ldots,T_n\rb \) be a polynomial ring over \(R\text{,}\) we want solutions to</p>
+<p id="p-990">Yoneda, schemes are functors: Let \(R\lb T_1,\ldots,T_n\rb \) be a polynomial ring over \(R\text{,}\) we want solutions to</p>
 <div class="displaymath">
 \begin{equation*}
 f_1=  f_2 = \cdots = f_m = 0
@@ -358,10 +360,10 @@ R\lb T_1, \ldots ,T_n] /(f_i) \to A
 <article class="definition-like" id="definition-93"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">4.1.1</span>
 </h6>
-<p id="p-990">For any affine scheme \(A = \Spec B\) we attach a functor \(h_X\) from \(\mathrm{Sch}^\op\) to sets, sending \(\Spec S \mapsto \Hom_{\mathrm{Sch}} (\Spec S, X) = \Hom_{Ring} (B,S) = h_X(\Spec S)\text{.}\) spec S points of X</p></article><article class="example-like" id="example-51"><h6 class="heading">
+<p id="p-991">For any affine scheme \(A = \Spec B\) we attach a functor \(h_X\) from \(\mathrm{Sch}^\op\) to sets, sending \(\Spec S \mapsto \Hom_{\mathrm{Sch}} (\Spec S, X) = \Hom_{Ring} (B,S) = h_X(\Spec S)\text{.}\) spec S points of X</p></article><article class="example-like" id="example-51"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.2</span>
 </h6>
-<div class="displaymath" id="p-991">
+<div class="displaymath" id="p-992">
 \begin{equation*}
 \aff^n = \Spec \ZZ \lb T_1,\ldots, T_n\rb
 \end{equation*}
@@ -373,16 +375,16 @@ R\lb T_1, \ldots ,T_n] /(f_i) \to A
 </div></article><article class="example-like" id="example-52"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.3</span>
 </h6>
-<div class="displaymath" id="p-992">
+<div class="displaymath" id="p-993">
 \begin{equation*}
 E \colon \Spec k[x,y] / (y^2 - (x^3 + ax +b)),\,k = \QQ
 \end{equation*}
 </div>
-<p>\(E(\QQ(i)) = \QQ(i)\) points, choosing \(x,y\) satisfying weierstrass equation.</p></article><p id="p-993">Suppose \(h_X \colon \mathrm{Sch}^\op \to R\) factors through \(\mathrm{Grp} \to \mathrm{Set}\) then this is a group scheme.</p>
+<p>\(E(\QQ(i)) = \QQ(i)\) points, choosing \(x,y\) satisfying weierstrass equation.</p></article><p id="p-994">Suppose \(h_X \colon \mathrm{Sch}^\op \to R\) factors through \(\mathrm{Grp} \to \mathrm{Set}\) then this is a group scheme.</p>
 <article class="example-like" id="example-53"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.4</span>
 </h6>
-<div class="displaymath" id="p-994">
+<div class="displaymath" id="p-995">
 \begin{equation*}
 \mathbf G_a = \Spec k[t]
 \end{equation*}
@@ -394,7 +396,7 @@ S\mapsto \Hom(k[t], S) \cong (S,+)
 </div></article><article class="example-like" id="example-54"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.5</span>
 </h6>
-<div class="displaymath" id="p-995">
+<div class="displaymath" id="p-996">
 \begin{equation*}
 \mathbf G_m = \Spec k[t,t\inv]
 \end{equation*}
@@ -406,19 +408,19 @@ S\mapsto \Hom(k[t,t\inv], S) \cong (S^\times,\cdot)
 </div></article><article class="example-like" id="example-55"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.6</span>
 </h6>
-<div class="displaymath" id="p-996">
+<div class="displaymath" id="p-997">
 \begin{equation*}
 \mu_n = \Spec k[t]/(t^n -1)
 \end{equation*}
 </div></article><article class="example-like" id="example-56"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.7</span>
 </h6>
-<div class="displaymath" id="p-997">
+<div class="displaymath" id="p-998">
 \begin{equation*}
 \alpha_{p^n} = \Spec k[t]/(t^{p^n})
 \end{equation*}
 </div>
-<p>char \(k = p\)</p></article><p id="p-998">Cartier Duality \(G\) is a finite group scheme \(/R\) there is a dual</p>
+<p>char \(k = p\)</p></article><p id="p-999">Cartier Duality \(G\) is a finite group scheme \(/R\) there is a dual</p>
 <div class="displaymath">
 \begin{equation*}
 G^* (T) = \Hom (G_T, \mathbf G_m)
@@ -433,14 +435,14 @@ G \cong (G^*)^*
 <article class="example-like" id="example-57"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.8</span>
 </h6>
-<div class="displaymath" id="p-999">
+<div class="displaymath" id="p-1000">
 \begin{equation*}
 \mu_{p^n} \leftrightarrow \ZZ/p^n
 \end{equation*}
 </div></article><article class="definition-like" id="definition-94"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">4.1.9</span>
 </h6>
-<p id="p-1000">Let \(p\) be a prime and \(h\) a non-negative integer. A \(p\)-divisible group of height \(h\) is an inductive system</p>
+<p id="p-1001">Let \(p\) be a prime and \(h\) a non-negative integer. A \(p\)-divisible group of height \(h\) is an inductive system</p>
 <div class="displaymath">
 \begin{equation*}
 (G_v, i_v)
@@ -460,7 +462,7 @@ i_v \colon G_v \to G_{v+1}
 </div></article><article class="remark-like" id="remark-25"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">4.1.10</span>
 </h6>
-<p id="p-1001">We can show that \(G_\mu,G_v\) are two levels then</p>
+<p id="p-1002">We can show that \(G_\mu,G_v\) are two levels then</p>
 <div class="displaymath">
 \begin{equation*}
 0 \to G_\mu \xrightarrow{i_{\mu, v}} G_{\mu +v } \xrightarrow{[p^\mu]} G_{\mu,v}
@@ -471,19 +473,19 @@ i_v \colon G_v \to G_{v+1}
 \begin{equation*}
 0 \to G_\mu \to G_{\mu + v}  \to G_v \to 0\text{.}
 \end{equation*}
-</div></article><p id="p-1002">The connected etale sequence</p>
-<p id="p-1003">A finite flat group scheme \(G\) over a henselian local ring \(R\) admitsa (functorial) decomposition</p>
+</div></article><p id="p-1003">The connected etale sequence</p>
+<p id="p-1004">A finite flat group scheme \(G\) over a henselian local ring \(R\) admitsa (functorial) decomposition</p>
 <div class="displaymath">
 \begin{equation*}
 0  \to G^\circ \to G \to G^\et \to 0
 \end{equation*}
 </div>
 <p>connected and etale</p>
-<p id="p-1004">There is an equivalence of categories between finite etale gp scheme \(/R\) and its continuous \(\absgal k\) modules when \(R = k\) is a field.</p>
+<p id="p-1005">There is an equivalence of categories between finite etale gp scheme \(/R\) and its continuous \(\absgal k\) modules when \(R = k\) is a field.</p>
 <article class="definition-like" id="definition-95"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">4.1.11</span>
 </h6>
-<p id="p-1005">An \(n\)-dimensional formal lie group \(/R\) is the formal power series ring</p>
+<p id="p-1006">An \(n\)-dimensional formal lie group \(/R\) is the formal power series ring</p>
 <div class="displaymath">
 \begin{equation*}
 A = R\lb \lb x_1, \ldots, x_n \rb\rb
@@ -517,11 +519,11 @@ F(X,F(Y,Z)) = F(F(Y,Z),X) = X
 F(Y,Z) = F(Z,Y)
 \end{equation*}
 </div></li>
-</ol></article><p id="p-1006">Let \(\psi\) denote multiplication by \(p\) in \(A\) then \(A\) is divisible if \(\psi\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> (surj. with finite kernel). Alternatively \(A\) is a finite free \(\psi (A)\)-module.</p>
+</ol></article><p id="p-1007">Let \(\psi\) denote multiplication by \(p\) in \(A\) then \(A\) is divisible if \(\psi\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> (surj. with finite kernel). Alternatively \(A\) is a finite free \(\psi (A)\)-module.</p>
 <article class="theorem-like" id="theorem-71"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">4.1.12</span>
 </h6>
-<p id="p-1007">Let \(R\) be a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> noetherian local ring with residue characteristic \(p \gt 0\text{.}\) We have an equiv of cats</p>
+<p id="p-1008">Let \(R\) be a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> noetherian local ring with residue characteristic \(p \gt 0\text{.}\) We have an equiv of cats</p>
 <div class="displaymath">
 \begin{equation*}
 \text{conn. p-div gps} \leftrightarrow \text{div. formal lie groups /R}
@@ -529,15 +531,15 @@ F(Y,Z) = F(Z,Y)
 </div></article><article class="example-like" id="example-58"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.13</span>
 </h6>
-<div class="displaymath" id="p-1008">
+<div class="displaymath" id="p-1009">
 \begin{equation*}
 \mathbf G_m(p) , \, F(X)= Y+Z+YZ
 \end{equation*}
 </div></article><article class="example-like" id="example-59"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.1.14</span>
 </h6>
-<p id="p-1009">\(E\) ordinary <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(/\overline{\FF}_p\)</p>
-<div class="displaymath" id="p-1010">
+<p id="p-1010">\(E\) ordinary <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(/\overline{\FF}_p\)</p>
+<div class="displaymath" id="p-1011">
 \begin{equation*}
 E[p] (\overline \FF_p)
 \end{equation*}
@@ -548,31 +550,31 @@ E[p] (\overline \FF_p)
 E[p] = E[p]^\circ \times E[p]^\et\text{.}
 \end{equation*}
 </div>
-<p id="p-1011">etale group schemes over alg. closed fields are constant</p>
+<p id="p-1012">etale group schemes over alg. closed fields are constant</p>
 <div class="displaymath">
 \begin{equation*}
 E = E[p]^\circ \times A
 \end{equation*}
 </div>
-<p id="p-1012">It can't be entirely etale \(\lb p \rb\) would be etale but this induces the 0 map on tangent space so \(E\lb p \rb^\circ \ne 0\text{.}\)</p>
-<div class="displaymath" id="p-1013">
+<p id="p-1013">It can't be entirely etale \(\lb p \rb\) would be etale but this induces the 0 map on tangent space so \(E\lb p \rb^\circ \ne 0\text{.}\)</p>
+<div class="displaymath" id="p-1014">
 \begin{equation*}
 |E\lb p \rb | =  p^2
 \end{equation*}
 </div>
 <p>so each <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> \(p\text{.}\)</p>
-<div class="displaymath" id="p-1014">
+<div class="displaymath" id="p-1015">
 \begin{equation*}
 A = \ZZ/p
 \end{equation*}
 </div>
-<p id="p-1015">\(E\) is cartier self dual</p>
+<p id="p-1016">\(E\) is cartier self dual</p>
 <div class="displaymath">
 \begin{equation*}
 A^* = \mu_p = E[p]^\circ
 \end{equation*}
 </div>
-<p id="p-1016">Induct for \(E\lb p^n\rb \text{.}\)</p></article></article></section></div></main>
+<p id="p-1017">Induct for \(E\lb p^n\rb \text{.}\)</p></article></article></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

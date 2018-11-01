@@ -12,27 +12,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>What about \(\alpha = 1/p\text{?}\)</p>
-<ol class="decimal">
-<li>Find an element \(\gamma \in \SL_2(\ZZ)\) s.t. \(\gamma(\infty) = \alpha\text{.}\)</li>
-<li>Compute<div class="displaymath">
-\begin{equation*}
-\delta(x) = \gamma \begin{pmatrix} 1\amp x \\ 0 \amp 1 \end{pmatrix} \gamma\inv
-\end{equation*}
-</div>
-</li>
-<li>Find the smallest \(x\) such that \(\delta(x) = \Gamma_0(pq)\)</li>
-</ol>
+<p>Let's find the <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">width</a> of a cusp in \(\Gamma_0(qp)\) we have</p>
 <div class="displaymath">
 \begin{equation*}
-\gamma = \begin{pmatrix} 1\amp 0 \\ p \amp 1 \end{pmatrix},\, \gamma(\infty) = \frac 1p
+\begin{pmatrix} 1\amp 1 \\ 0 \amp 1 \end{pmatrix}
 \end{equation*}
 </div>
-<div class="displaymath">
-\begin{equation*}
-\begin{pmatrix} 1\amp 0 \\ p \amp 1 \end{pmatrix} \begin{pmatrix} 1\amp x \\ 0 \amp 1 \end{pmatrix} \begin{pmatrix} 1\amp 0 \\ -p \amp 1 \end{pmatrix}  = \begin{pmatrix} 1 - px \amp x  \\ -p^2 \amp px+ 1 \end{pmatrix}
-\end{equation*}
-</div>
+<p>so the <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">width</a> of \(\infty\) is 1.</p>
 <span class="incontext"><a href="sec-buntes-modular-forms.html#p-1064">in-context</a></span>
 </body>
 </html>

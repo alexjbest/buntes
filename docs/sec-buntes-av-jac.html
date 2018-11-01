@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Abelian varieties and Jacobians (Angus)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-modular-forms.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-buntes-hs.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-modular-forms.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-buntes-hs.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories aboute Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
+<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
+<ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac" class="active">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-buntes-av-jac"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Abelian varieties and Jacobians (Angus)</span>
+</h2>
+<a href="sec-buntes-av-jac.html" class="permalink">¶</a><blockquote class="blockquote" id="blockquote-2">Sydney forever<cite class="attribution">―Angus McAndrew</cite>
+</blockquote>
+<article class="paragraphs" id="paragraphs-41"><h5 class="heading"><span class="title">Background</span></h5>
+<article class="definition-like" id="definition-103"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.3.1</span>
+</h6>
+<p id="p-1089">An <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> is any one of the following</p>
+<ol class="decimal">
+<li id="li-270">Smooth proj cuve of <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> 1 with  a marked rational point.</li>
+<li id="li-271">A smooth proj curve with a group law</li>
+<li id="li-272">if \(k \subseteq \CC\) we have<div class="displaymath">
+\begin{equation*}
+E(\CC) = \CC/ \Lambda
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Lambda = \ZZ \omega_1 \oplus \ZZ \omega_2,\, \omega_1/\omega_2 \not\in \RR
+\end{equation*}
+</div>
+</li>
+<li id="li-273">if \(\characteristic k \ne 2,3\) A smooth projective curve specified by<div class="displaymath">
+\begin{equation*}
+y^2=  x^3+ ax + b\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><p id="p-1090">Aash showed that 1 implies 4 and 3 implies 1.</p>
+<p id="p-1091">One can view the group law on \(E\) either via the chord-tangent method (Bezout's theorem). Or via the isomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+E \to \Pic^0(E)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto [P] - [0]\text{.}
+\end{equation*}
+</div>
+<article class="definition-like" id="definition-104"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.3.2</span>
+</h6>
+<p id="p-1092">An <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> is a proper irreducible variety with a group law given by regular functions.</p></article><article class="remark-like" id="remark-27"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">5.3.3</span>
+</h6>
+<ol id="p-1093" class="decimal">
+<li id="li-274">In this definition proper is equivalent to projective.</li>
+<li id="li-275">
+<p id="p-1094">The rigidity theorem tells us:</p>
+<ol class="lower-alpha">
+<li id="li-276">Any morphism of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> that preserves the identity is a homomorphism.</li>
+<li id="li-277">Abelian varieties are abelian</li>
+</ol>
+</li>
+</ol></article></article><article class="paragraphs" id="paragraphs-42"><h5 class="heading"><span class="title">Ablelian varieties over \(\CC\)</span></h5>
+<article class="theorem-like" id="proposition-69"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">5.3.4</span>
+</h6>
+<p id="p-1095">Let \(A/k\subseteq \CC\) then</p>
+<div class="displaymath">
+\begin{equation*}
+A(\CC) = \CC^g/\Lambda
+\end{equation*}
+</div>
+<p>where \(g = \dim A\) and \(\Lambda \subseteq \CC^g\) is a rank \(2g\) <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>.</p></article><article class="hiddenproof" id="proof-111"><a knowl="" class="id-ref" refid="hk-proof-111"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-111" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1096">The lie algebra \(\Lie(A(\CC))\) is a complex vector space of dimension \(g\text{.}\) We have the exponential</p>
+<div class="displaymath">
+\begin{equation*}
+\exp \colon \Lie(A(\CC)) \to A(\CC)
+\end{equation*}
+</div>
+<p>which is surjective onto the connected component of the identity, and locally at \(0\) a diffeomorphism. So \(\exp\) surjects. Since its locally isomorphic at \(0\) we have \(\ker(\exp)\) discrete and hence a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>. \(A \) proper means \(A(\CC)\) is compact so</p>
+<div class="displaymath">
+\begin{equation*}
+\rank \ker (\exp) = 2g\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-1097">We have a map</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{AVs}/\CC\} \to \{\text{complex tori}\}
+\end{equation*}
+</div>
+<p>but this is not surjective. Which <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> give AVs?</p>
+<article class="definition-like" id="definition-105"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.3.5</span>
+</h6>
+<p id="p-1098">Let \(V\) be a \(\CC\)-vector space and \(\Lambda \subseteq V\) be a full <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>. A <dfn class="terminology">Hermitian form</dfn> on \(V\) is a function</p>
+<div class="displaymath">
+\begin{equation*}
+H \colon V\times V \to \CC
+\end{equation*}
+</div>
+<p>which is \(\CC\)-linear in the first component, \(\CC\)-antilinear in the second (i.e. a sesquilinear form). And satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+H(u,v) = \overline{H(v,u)}
+\end{equation*}
+</div>
+<p>A <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a> on \((V,\Lambda)\) is a positive definite <a href="sec-buntes-av-jac.html" class="xref" title="Section 5.3: Abelian varieties and Jacobians (Angus)">Hermitian form</a> on \(V\) s.t. \(\im(H|_V) \colon \Lambda \to \ZZ\text{.}\)</p></article><article class="theorem-like" id="proposition-70"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">5.3.6</span>
+</h6>
+<p id="p-1099">We have a bijection</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{AVs}/\CC\} \leftrightarrow \{(V,\Lambda)\text{ s.t. there is a Riemann form on } (V, \Lambda)\}\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-112"><a knowl="" class="id-ref" refid="hk-proof-112"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-112" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1100">Swinnerton-Dyer analytic theory of AVs ch.2.</p></article></div>
+<article class="example-like" id="example-64"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.3.7</span>
+</h6>
+<p id="p-1101">For an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E(\CC) = \CC/ \ZZ \omega_1 + \ZZ \omega_2\)</p>
+<div class="displaymath">
+\begin{equation*}
+H(u,v) = u\bar v/ \im(\omega_1 \bar \omega_2)\text{.}
+\end{equation*}
+</div></article></article><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Jacobian varieties</span>
+</h3>
+<article class="definition-like" id="definition-106"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.3.8</span>
+</h6>
+<p id="p-1102">Given \(X\) a curve</p>
+<div class="displaymath">
+\begin{equation*}
+\Pic^0(X) = \divisors^0(X)/\{(f) : f \in K(X)\}
+\end{equation*}
+</div>
+<p>this is some abelian group.</p></article><article class="theorem-like" id="theorem-74"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">5.3.9</span>
+</h6>
+<p id="p-1103">Let \(X\) be a <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> \(g\) curve \(/k\text{.}\) Then there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(\Jac(X)/k\) of \(\dim = g\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\Jac(X)(L) = \Pic^0(X\otimes L)
+\end{equation*}
+</div></article><article class="remark-like" id="remark-28"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">5.3.10</span>
+</h6>
+<p id="p-1104">This is false as stated unless \(X(k) \ne \emptyset\text{.}\)</p></article><article class="hiddenproof" id="proof-113"><a knowl="" class="id-ref" refid="hk-proof-113"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-113" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1105">Idea: Pick \(P_0 \in X(k)\) we have a bijection</p>
+<div class="displaymath">
+\begin{equation*}
+\divisors^0(X) \to \divisors^r(X)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+D \mapsto D + r[P_0]
+\end{equation*}
+</div>
+<p>we have  a map</p>
+<div class="displaymath">
+\begin{equation*}
+X^r \to X^r/ S_r = X^{(r)} \to \divisors^r(X)
+\end{equation*}
+</div>
+<p>we can construct \(\Jac(X)\) as a quotient of \(X^{(r)}\) full details Milne AVs ch. 2.</p></article></div>
+<article class="paragraphs" id="paragraphs-43"><h5 class="heading"><span class="title">Jacobians over \(\CC\)</span></h5>
+<p id="p-1106">Given \(X\) a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> of <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> \(g\) then</p>
+<div class="displaymath">
+\begin{equation*}
+H^0(X, \Omega_X^1) \simeq \CC^g
+\end{equation*}
+</div>
+<p>one might wish to consider, for \(P,Q \in X\text{,}\) \(\omega\in H^0(X, \Omega_X^1)\)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \omega
+\end{equation*}
+</div>
+<p>this is not well defined as there are choices of path \(P\to Q\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+H_1(X,\ZZ) = \ZZ^{2g}
+\end{equation*}
+</div>
+<p>have  a map</p>
+<div class="displaymath">
+\begin{equation*}
+H_1(X,\ZZ) \to H^0(X, \Omega_X^1) ^\vee
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\gamma \mapsto (\omega \mapsto \int_\gamma \omega)
+\end{equation*}
+</div>
+<p>Let</p>
+<div class="displaymath">
+\begin{equation*}
+J(X) = H^0(X, \Omega_X^1) ^\vee/H_1(X,\ZZ)
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-75"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">5.3.11</span>
+</h6>
+<p id="p-1107">\(J(X) \) is the \(\CC\) points of an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\CC\text{.}\) Further the map</p>
+<div class="displaymath">
+\begin{equation*}
+\Pic^0(X) \to J(X)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+[P] - [Q] \mapsto (\omega \mapsto \int^P_Q \omega)
+\end{equation*}
+</div>
+<p>is an isomorphism of abelian groups.</p></article><article class="hiddenproof" id="proof-114"><a knowl="" class="id-ref" refid="hk-proof-114"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-114" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1108">For the first claim we need a <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a> on</p>
+<div class="displaymath">
+\begin{equation*}
+(H^0(X, \Omega_X^1)^\vee , H_1(X,\ZZ))
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+H_1(X, \ZZ) \times H_1(X, \ZZ) \to \ZZ
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(\gamma_1, \gamma_2) \mapsto -(\gamma_1\cap \gamma_2)\text{.}
+\end{equation*}
+</div></article></div>
+<article class="remark-like" id="remark-29"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">5.3.12</span>
+</h6>
+<p id="p-1109">In this case we see</p>
+<div class="displaymath">
+\begin{equation*}
+\Lie(\Jac(X)) = H^0(X, \Omega_X^1)
+\end{equation*}
+</div>
+<p>this is true in general.</p></article></article></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Some constructions/properties of AVs</span>
+</h3>
+<p id="p-1110">Let \(A,B\) be AVs\(/k\text{.}\) Any identity preserving morphism \(\phi \colon A \to B\) is a homomorphism. Such a homomorphism is called an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> if it surjective with finite kernel. i.e. \(\lb n \rb \colon A \to A\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> and for \(\characteristic(k) \nmid n\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+A[n] \simeq (\ZZ/n)^{2g}
+\end{equation*}
+</div>
+<p>then we have the Tate module for \(l\) prime</p>
+<div class="displaymath">
+\begin{equation*}
+T_lA = \varprojlim_n A[l^n] \simeq \ZZ_l^{2g}
+\end{equation*}
+</div>
+<p>in fact</p>
+<div class="displaymath">
+\begin{equation*}
+H^1_{\et} (A, \ZZ_l) \simeq T_lA ^\vee
+\end{equation*}
+</div>
+<p>we can also consider \(\Pic^0(A)\text{.}\) There exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a></p>
+<div class="displaymath">
+\begin{equation*}
+\hat A/l
+\end{equation*}
+</div>
+<p>s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\hat A (L) = \Pic^0(A \otimes L)
+\end{equation*}
+</div>
+<p>this is called the <a knowl="./knowl/def-dual-abvar.html" title="Definition 1.7.13: Dual abelian varieties">dual abelian variety</a>. So earlier we saw \(\hat E \simeq E\text{.}\) in general \(\hat A \not \simeq  A\text{.}\)</p>
+<p id="p-1111">However for an ample divisor \(D\) we get an isog</p>
+<div class="displaymath">
+\begin{equation*}
+\phi_D \colon A \to \hat A
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto t_P^* D -D
+\end{equation*}
+</div>
+<p>an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi\colon A\to \hat A\) is a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> if</p>
+<div class="displaymath">
+\begin{equation*}
+\phi =  \phi_D /\bar k
+\end{equation*}
+</div>
+<p>over \(\CC\)  a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> is equivalent to a choice of <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a>.</p>
+<p id="p-1112">A <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarization</a> is a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> which is an isomorphism. e.g.</p>
+<div class="displaymath">
+\begin{equation*}
+\phi_{[0]} \colon E \to \hat E
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto [P] - [0]
+\end{equation*}
+</div>
+<article class="remark-like" id="remark-30"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">5.3.13</span>
+</h6>
+<p id="p-1113">Jacobian varieties always admit <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarizations</a>.</p></article><p id="p-1114">On \(T_lA \) we have  a <a knowl="./knowl/prop-weil-pair.html" title="Proposition 1.3.20: Existence of Weil pairing">Weil pairing</a></p>
+<div class="displaymath">
+\begin{equation*}
+T_lA \times T_lA^\vee \to \ZZ_l
+\end{equation*}
+</div>
+<article class="paragraphs" id="paragraphs-44"><h5 class="heading"><span class="title">Maps between Jacobians</span></h5>
+<p id="p-1115">Let \(X,Y/k\) be curves and \(f\colon X \to Y\) a morphism.</p>
+<article class="definition-like" id="definition-107"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.3.14</span>
+</h6>
+<p id="p-1116">We have a pushforward map</p>
+<div class="displaymath">
+\begin{equation*}
+f_*\colon \Pic^0(X) \to \Pic^0(Y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sum n_x [x] \mapsto \sum n_x[f(x)]
+\end{equation*}
+</div>
+<p>if \(f\) is finite then we have  a pullback</p>
+<div class="displaymath">
+\begin{equation*}
+f^* \colon \Pic^0(Y) \to \Pic^0(X)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sum n_y[y] \mapsto \sum n_y [f\inv (y)]
+\end{equation*}
+</div>
+<p>(with <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a>).</p></article><p id="p-1117">We want further maps between jacobians</p>
+<article class="definition-like" id="definition-108"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.3.15</span>
+</h6>
+<p id="p-1118">A correspondence between \(X,Y\) is a curve \(Z\) and a pair of finite morphisms.</p>
+<div class="displaymath">
+\begin{equation*}
+X \leftarrow Z \to Y
+\end{equation*}
+</div>
+<p>then we get induced maps</p>
+<div class="displaymath">
+\begin{equation*}
+T_* = g_* f^* \colon \Pic^0(X) \to \Pic^0(Y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T^* = f_* g^* \colon \Pic^0(Y) \to \Pic^0(X)
+\end{equation*}
+</div></article></article><article class="paragraphs" id="paragraphs-45"><h5 class="heading"><span class="title">Modular jacobians and Hecke correspondences</span></h5>
+<p id="p-1119">Conside \(p\nmid N\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+X_0(N) = \{ (E,C_N) : E\text{ e.c. }, C_N \text{ cyclic sub order } N\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+X_0(pN) = \{(E,C_{pN})\} = \{(E,C_N,C_p)\}
+\end{equation*}
+</div>
+<p>so we have</p>
+<article class="definition-like" id="definition-109"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.3.16</span>
+</h6>
+<p id="p-1120">the Hecke correspondence \(T_p\) on \(X_0(N)\) is</p>
+<div class="displaymath">
+\begin{equation*}
+X_0(N) \mapsfrom X_0(pN) \to X_0(N)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(E,C_N)\mapsfrom (E,C_N,C_p)\to (E/C_p, C_p + C_N)\text{.}
+\end{equation*}
+</div></article><p id="p-1121">We have the modular jacobian \(J_0(N)\) and the induced map</p>
+<div class="displaymath">
+\begin{equation*}
+T_p \colon J_0(N) \to J_0(N)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+[E] \mapsto \sum_{C_p \subseteq E} [E/C_p]
+\end{equation*}
+</div>
+<p id="p-1122">One can consider \(J_0(N)_{\FF_p}\)</p>
+<article class="theorem-like" id="theorem-76"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">5.3.17</span> <span class="title">Eichler-Shimura</span>
+</h6>
+<p id="p-1123">\(T_{p*} = \Frob_p + p \Frob_p\inv \in \End(J_0(N)_{\FF_p})\text{.}\)</p></article></article></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code-->
+</body>
+</html>

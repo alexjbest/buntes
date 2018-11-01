@@ -416,3 +416,485 @@ section#sec-buntes-modular-forms
             |Let #[m f,g\in S_k(\SL_2(\ZZ))], #[m n\in \NN] then
             me \pair{T(n) f}{g} = \pair{f}{T(n)g}
             | .
+
+section#sec-buntes-av-jac
+    title Abelian varieties and Jacobians (Angus)
+
+    blockquote
+        line Sydney forever
+        attribution Angus McAndrew
+
+    paragraphs
+        title Background
+
+        definition
+            statement: p
+                | An elliptic curve is any one of the following
+                ol
+                    li
+                        | Smooth proj cuve of genus 1 with  a marked rational point.
+                    li
+                        | A smooth proj curve with a group law
+                    li
+                        | if #[m k \subseteq \CC] we have
+                        me E(\CC) = \CC/ \Lambda
+                        me \Lambda = \ZZ \omega_1 \oplus \ZZ \omega_2,\, \omega_1/\omega_2 \not\in \RR
+                    li
+                        | if #[m \characteristic k \ne 2,3] A smooth projective curve specified by
+                        me y^2=  x^3+ ax + b
+                        | .
+        p
+            | Aash showed that 1 implies 4 and 3 implies 1.
+
+        p
+            | One can view the group law on #[m E] either via the chord-tangent method (Bezout's theorem).
+            | Or via the isomorphism
+            me E \to \Pic^0(E)
+            me P \mapsto [P] - [0]
+            |.
+
+        definition
+            statement: p
+                | An abelian variety is a proper irreducible variety with a group law given by regular functions.
+
+        remark
+            p
+                ol
+                    li
+                        | In this definition proper is equivalent to projective.
+                    li: p
+                        | The rigidity theorem tells us:
+                        ol
+                            li
+                                | Any morphism of abelian varieties that preserves the identity is a homomorphism.
+                            li
+                                | Abelian varieties are abelian
+
+    paragraphs
+        title Ablelian varieties over #[m \CC]
+
+        proposition
+            statement: p
+                | Let #[m A/k\subseteq \CC] then
+                me A(\CC) = \CC^g/\Lambda
+                | where #[m g = \dim A] and #[m \Lambda \subseteq \CC^g] is a rank #[m 2g] lattice.
+            proof: p
+                | The lie algebra #[m \Lie(A(\CC))] is a complex vector space of dimension #[m g].
+                | We have the exponential
+                me \exp \colon \Lie(A(\CC)) \to A(\CC)
+                | which is surjective onto the connected component of the identity, and locally at #[m 0] a diffeomorphism.
+                | So #[m \exp] surjects.
+                | Since its locally isomorphic at #[m 0] we have #[m \ker(\exp)] discrete and hence a lattice.
+
+
+                | #[m A ] proper means #[m A(\CC)] is compact so
+                me \rank \ker (\exp) = 2g
+                | .
+
+        p
+            | We have a map
+            me \{\text{AVs}/\CC\} \to \{\text{complex tori}\}
+            | but this is not surjective.
+            | Which lattices give AVs?
+
+        definition
+            statement: p
+                | Let #[m V] be a #[m \CC]-vector space and #[m \Lambda \subseteq V] be a full lattice.
+
+                | A #[term Hermitian form] on #[m V] is a function
+                me H \colon V\times V \to \CC
+                | which is #[m \CC]-linear in the first component, #[m \CC]-antilinear in the second (i.e. a sesquilinear form).
+                | And satisfies
+                me H(u,v) = \overline{H(v,u)}
+                | A Riemann form on #[m (V,\Lambda)] is a positive definite Hermitian form on #[m V] s.t. #[m \im(H|_V) \colon \Lambda \to \ZZ].
+
+        proposition
+            statement: p
+                | We have a bijection
+                me \{\text{AVs}/\CC\} \leftrightarrow \{(V,\Lambda)\text{ s.t. there is a Riemann form on } (V, \Lambda)\}
+                | .
+            proof: p
+                | Swinnerton-Dyer analytic theory of AVs ch.2.
+
+        example
+            statement: p
+                | For an elliptic curve #[m E(\CC) = \CC/ \ZZ \omega_1 + \ZZ \omega_2]
+                me H(u,v) = u\bar v/ \im(\omega_1 \bar \omega_2)
+                | .
+
+    subsection
+        title Jacobian varieties
+
+        definition
+            statement: p
+                | Given #[m X] a curve
+                me \Pic^0(X) = \divisors^0(X)/\{(f) : f \in K(X)\}
+                | this is some abelian group.
+
+        theorem
+            statement: p
+                | Let #[m X] be a genus #[m g] curve #[m /k].
+                | Then there exists an abelian variety #[m \Jac(X)/k] of #[m \dim = g] s.t.
+                me \Jac(X)(L) = \Pic^0(X\otimes L)
+        remark
+            p
+                | This is false as stated unless #[m X(k) \ne \emptyset].
+
+
+        proof
+            p
+                | Idea:
+                | Pick #[m P_0 \in X(k)] we have a bijection
+                me \divisors^0(X) \to \divisors^r(X)
+                me D \mapsto D + r[P_0]
+                | we have  a map
+                me  X^r \to X^r/ S_r = X^{(r)} \to \divisors^r(X)
+
+                | we can construct #[m \Jac(X)] as a quotient of #[m X^{(r)}] full details Milne AVs ch. 2.
+
+        paragraphs
+            title Jacobians over #[m \CC]
+
+            p
+                | Given #[m X] a compact Riemann surface of genus #[m g] then
+                me H^0(X, \Omega_X^1) \simeq \CC^g
+
+                | one might wish to consider, for #[m  P,Q \in X], #[m \omega\in H^0(X, \Omega_X^1)]
+                me \int_P^Q \omega
+                | this is not well defined as there are choices of path #[m P\to Q].
+                me H_1(X,\ZZ) = \ZZ^{2g}
+                | have  a map
+                me H_1(X,\ZZ) \to H^0(X, \Omega_X^1) ^\vee
+                me \gamma \mapsto (\omega \mapsto \int_\gamma \omega)
+                | Let
+                me J(X) = H^0(X, \Omega_X^1) ^\vee/H_1(X,\ZZ)
+
+            theorem
+                statement: p
+                    | #[m J(X) ] is the #[m \CC] points of an abelian variety over #[m \CC].
+                    | Further the map
+                    me \Pic^0(X) \to J(X)
+                    me [P] - [Q] \mapsto (\omega \mapsto \int^P_Q \omega)
+                    | is an isomorphism of abelian groups.
+                proof
+                    p
+                        | For the first claim we need a Riemann form on
+                        me (H^0(X, \Omega_X^1)^\vee , H_1(X,\ZZ))
+                        | we have
+                        me H_1(X, \ZZ) \times H_1(X, \ZZ) \to \ZZ
+                        me (\gamma_1, \gamma_2) \mapsto -(\gamma_1\cap \gamma_2)
+                        |.
+
+            remark
+                p
+                    | In this case we see
+                    me \Lie(\Jac(X)) = H^0(X, \Omega_X^1)
+                    | this is true in general.
+
+    subsection
+        title Some constructions/properties of AVs
+
+        p
+            | Let #[m A,B] be AVs#[m /k].
+            | Any identity preserving morphism #[m \phi \colon A \to B] is a homomorphism.
+
+            | Such a homomorphism is called an isogeny if it surjective with finite kernel.
+            | i.e. #[m \lb n \rb \colon A \to A] is an isogeny and for #[m \characteristic(k) \nmid n].
+            me A[n] \simeq (\ZZ/n)^{2g}
+            | then we have the Tate module for #[m l] prime
+            me T_lA = \varprojlim_n A[l^n] \simeq \ZZ_l^{2g}
+            | in fact
+            me H^1_{\et} (A, \ZZ_l) \simeq T_lA ^\vee
+            | we can also consider #[m \Pic^0(A)].
+
+            | There exists an abelian variety
+            me \hat A/l
+            | s.t.
+            me \hat A (L) = \Pic^0(A \otimes L)
+            | this is called the dual abelian variety.
+
+            | So earlier we saw #[m \hat E \simeq E].
+            | in general #[m \hat A \not \simeq  A].
+        p
+            | However for an ample divisor #[m D] we get an isog
+            me \phi_D \colon A \to \hat A
+            me P \mapsto t_P^* D -D
+            | an isogeny #[m \phi\colon A\to \hat A] is a polarization if
+            me \phi =  \phi_D /\bar k
+            | over #[m \CC]  a polarization is equivalent to a choice of Riemann form.
+
+        p
+            | A principal polarization is a polarization which is an isomorphism.
+            | e.g.
+            me \phi_{[0]} \colon E \to \hat E
+            me P \mapsto [P] - [0]
+        remark
+            p
+                | Jacobian varieties always admit principal polarizations.
+
+        p
+            | On #[m T_lA ] we have  a Weil pairing
+            me T_lA \times T_lA^\vee \to \ZZ_l
+        paragraphs
+            title Maps between Jacobians
+
+            p
+                | Let #[m X,Y/k] be curves and #[m f\colon X \to Y] a morphism.
+
+            definition
+                statement: p
+                    | We have a pushforward map
+                    me f_*\colon \Pic^0(X) \to \Pic^0(Y)
+                    me \sum n_x [x] \mapsto \sum n_x[f(x)]
+                    | if #[m f] is finite then we have  a pullback
+                    me f^* \colon \Pic^0(Y) \to \Pic^0(X)
+                    me \sum n_y[y] \mapsto \sum n_y [f\inv (y)]
+                    | (with multiplicity).
+
+            p
+                | We want further maps between jacobians
+
+            definition
+                statement: p
+                    | A correspondence between #[m X,Y] is a curve #[m Z] and a pair of finite morphisms.
+                    me X \leftarrow Z \to Y
+                    | then we get induced maps
+                    me T_* = g_* f^* \colon \Pic^0(X) \to \Pic^0(Y)
+                    me T^* = f_* g^* \colon \Pic^0(Y) \to \Pic^0(X)
+        paragraphs
+            title
+                | Modular jacobians and Hecke correspondences
+
+
+            p
+                | Conside #[m p\nmid N] we have
+                me X_0(N) = \{ (E,C_N) : E\text{ e.c. }, C_N \text{ cyclic sub order } N\}
+                me X_0(pN) = \{(E,C_{pN})\} = \{(E,C_N,C_p)\}
+                | so we have
+            definition
+                statement: p
+                    | the Hecke correspondence #[m T_p] on #[m X_0(N)] is
+                    me X_0(N) \mapsfrom X_0(pN) \to X_0(N)
+                    me (E,C_N)\mapsfrom (E,C_N,C_p)\to (E/C_p, C_p + C_N)
+                    |.
+            p
+                | We have the modular jacobian #[m J_0(N)] and the induced map
+                me T_p \colon J_0(N) \to J_0(N)
+                me [E] \mapsto \sum_{C_p \subseteq E} [E/C_p]
+            p
+                | One can consider #[m J_0(N)_{\FF_p}]
+
+            theorem
+                title Eichler-Shimura
+                statement: p
+                    | #[m T_{p*} = \Frob_p + p \Frob_p\inv \in \End(J_0(N)_{\FF_p})].
+
+section#sec-buntes-hs
+    title Ricky Show
+
+    subsection
+        title Moduli of PPAVs
+
+        p
+            | Recall if #[m A/ \CC] is an abelian variety,  then
+            me  A = A(\CC) =  \CC^g/ \Lambda, \,g = \dim (A)
+            me \Lambda \cong H_1(A,\ZZ)
+            | Also a polarization #[m \lambda \lambda A \to A^\vee] is equivalent to choosing a Riemann form
+            me E \colon \Lambda \times \Lambda \to \ZZ
+            | s.t.
+            ol
+                li
+                    |#[m E] is bilinear alternating
+                li
+                    | #[m E_\RR \colon V\times V \to \RR] has #[m E_\RR(iv,iw)  = E_\RR( v,w)].
+
+                li
+                    me H(v,w) = E_\RR(iv, w) + i E_\RR(v,w)
+                    | is a positive definite Hermitian form on #[m V].
+            | A principal polarization corresponds to #[m E] being a perfect pairing.
+        definition
+            statement: p
+                | A PPAV (principally polarized abelian variety) is a pair #[m (A,\lambda)].
+
+        p
+            | If #[m (\ZZ^{2g}, \Psi)] is the standard #[m 2g]-dim symplectic form #[m \Psi] then by linear algebra there is a symplectic isomorphism
+            me \alpha \colon \ZZ^{2g} \xrightarrow\sim \Lambda
+            | with #[m \Psi(v,w) = E(\alpha(v), \alpha(w))].
+        p
+            | Recall the standard #[m \Psi] is
+            me \Psi (v,w) = v^\transpose J w, J = \begin{pmatrix} 0 \amp I_g \\ -I_g \amp 0\end{pmatrix}
+        definition
+            statement: p
+                | The #[term Siegel upper half space] is
+                me \mathscr H_g = \{ Z = X+iY \in M_g(\CC) : Z^\transpose  = Z ; \, X,Y \in M_g(\RR); \, Y \gt 0\}
+                | i.e. #[m Y] is pos. def.
+        p
+            | Check: #[m \mathscr H_1] is the usual upper half plane.
+
+        proposition
+            statement: p
+                | #[m \mathscr H_g \cong \Sp_{2g}(\RR)/U(g)] where #[m \Sp_{2g} (R) = \{ M \in \GL_{2g}(R) : M^\transpose J M = J\}]
+                me U(g) = O(2g) \cap \Sp_{2g}(\RR) \cap \GL_{g}(\CC)
+                | .
+            proof
+                p
+                    | (Sketch) First one can show that #[m \Sp_{2g}(\RR)] acts transitively on #[m \mathscr H_g] via linear fractional transformations:
+                    me  M = \begin{pmatrix} A\amp B\\ C\amp D\end{pmatrix} \in \Sp_{2g}(\RR),\, Z\in \mathscr H_g
+                    me M\cdot Z = (AZ+B)(CZ+D)\inv \in \mathscr H_g
+                    | second one computes #[m \Stab J = U(g)]
+                p
+                    | For #[m g= 1], #[m \Sp_2(\RR) = \SL_2(\RR)] acts transitively on #[m \mathscr H_1], #[m \Stab(i) = \specialorthogonal (2) = U(1)].
+                    me \begin{pmatrix} \cos \theta\amp \sin \theta \\ - \sin \theta \amp \cos \theta \end{pmatrix} i = i
+                    |  and if
+                    me \begin{pmatrix} a \amp b \\ c \amp d\end{pmatrix} i = i
+                    | then #[m ai + b = -c + di] so #[m M= \begin{pmatrix} a\amp b\\ -b \amp a \end{pmatrix}\in \specialorthogonal(2)].
+                    // can one identify Sp_2g  with Sp_2(mat_g)?? and do these things easily.
+
+        proposition
+            statement: p
+                | There is a natural bijection between
+                me \{(A,\lambda, \alpha) : (A,\lambda)= PPAV,\,\alpha\colon \ZZ^{2g} \xrightarrow \sim \Lambda\} \xrightarrow\sim \mathscr H_g
+                | this induces a  bijection
+                me \{(A,\lambda) \} \xrightarrow \sim \Sp_{2g}(\ZZ) \backslash \mathscr H_g = \Sp_{2g}(\ZZ) \backslash \Sp_{2g} (\RR) / U(g)
+                | .
+            proof
+                p
+                    | We will construct a map
+                    me \{(A,\lambda ,\alpha)\} \xrightarrow\sim\Sp_{2g} (\RR)/U(g)
+                    | first we construct  a bijection between
+                    me \{(A,\lambda, \alpha)\}
+                    | and some linear data on a fixed space ,
+                    | so given #[m (A, \lambda, \alpha)] use #[m \alpha] to identify
+                    me \alpha\colon \ZZ^{2g} \xrightarrow \sim \Lambda = H_1(A,\ZZ)
+                    | then  tensor with #[m \RR] to get
+                    me \alpha_\RR \colon \RR^{2g} \xrightarrow\sim \Lambda\otimes \RR \cong \Lie(A) (= \CC^g)
+                    | the action of #[m i] on the right induces #[m J] on the left with #[m J^2 = -I].
+                p
+                    | From #[m  E_\RR(iv,iw) = E_\RR(v,w)] we get #[m J ] symplectic
+                    me \Psi_\RR(Jv, Jw) = \Psi_\RR( v,w)
+                    | from #[m E_\RR(iv,v) \gt 0] we get #[m J] is positive
+                    me \Psi_\RR(Jv,v) \gt 0
+                    | conversely given #[m J] symplectic positive #[m J^2 = -I] on #[m \RR^{2g}]
+                    | we can construct #[m (A,\lambda) = (V/\ZZ^{2g}, E)]
+                    | This comes with an #[m \alpha] for free since #[m H_1(A, \ZZ) \cong \ZZ^{2g}].
+                p
+                    | Suppose #[m J] and #[m J_0] are two complex structures, symplectic positive matrices on #[m \RR^{2g}].
+                    | Then a lemma from linear algebra tells us that there exists a #[m S \in \Sp_{2g}(\RR)].
+                    | s.t. #[m J_0  = S J S \inv].
+                    | We see that this #[m S] is well defined up to an element of #[m G = Z(J) \cap \Sp_{2g}(\RR)].
+                    | But if #[m \gamma \in G ] then #[m \gamma] preserves the associated #[m \CC]-str. on #[m \RR^{2g}].
+                    | then since #[m \gamma] is symplectic, it preserves
+                    me H(v,w) = E_\RR(iv,w) + iE_\RR(v,w)
+                    | implies
+                    me \gamma \in U(g)
+                    | .
+
+    subsection
+        title Hodge structures
+
+        p
+            | Let #[m M] be a #[m \cinf] compact #[m \RR]-manifold.
+
+            | Then #[m H^i_{\mathrm{sing}}(M, \RR)  \cong H^i_\dR(M)].
+            | What avout for compact #[m \CC]-manifolds #[m X]?
+            | For #[m M] have #[m H^i_\dR(M)  = H^i(\Omega^\bullet (M))].
+            | This won't give de Rham isomorphism for #[m X]:
+            me H^i_{\mathrm{sing}}(X)
+            | supported up to #[m i = 2d] with #[m d = \dim_\CC(X)].
+            | but #[m H^i(\Omega^\bullet_{\mathrm{hol}}(C))] is supported up to #[m  i = d].
+
+        p
+            | For #[m M]
+            me 0 \to \underline \RR \to \Omega^0 \to \Omega^1 \to \cdots \to \Omega^d \to 0
+            | is a resolution of #[m \underline \RR] by acyclic sheaves, by the existence of #[m \cinf] bump functions.
+            me H^i_\dR(M) \cong H^i(M, \underline \RR) \cong H^i_{\mathrm{sing}}(M, \RR)
+            | .
+            | For #[m X] this doesn't work with #[m \Omega_{\mathrm{hol}}^\bullet] as there are no holomorphic bump functions.
+
+            me 0 \to \underline \CC \to \Omega^0_{\mathrm{hol}} \to \Omega^1_{\mathrm{hol}} \to \cdots \to \Omega_{\mathrm{hol}}^\bullet \to 0
+            | is still a resolution but not acyclic.
+            | Instead we use hypercohomology which takes as input any resolution and outputs a cohomology group.
+            | This has the property that
+            me H^i(X, \underline \CC) \cong \mathbf H ^i(\Omega_X^\bullet)
+            | so we define #[m H^i_\dR(X) = \mathbf H^i(\Omega_X^\bullet)].
+            | so that
+            me H^i_\dR(X) \cong H^i(X, \underline \CC) \cong H^i_{\mathrm{sing}}(X, \CC)
+        p
+            | On #[m X] we have the sheaf of #[m (p,q)] forms #[m \Omega^{p,q}]
+            | These are locally given by
+            me \sum_{|I| = p, |J| = q} f_{I,J} \diff z_I \diff \bar z_J
+            | . We have
+            me \bar \partial \colon \Omega^{p,q} \to \Omega^{p,q+1}
+            | satisfying #[m \bar \partial ^2 = 0].
+            | So we can define #[m H^{p,q}(X) = \ker \bar \partial/ \image \bar \partial] (Dolbeaut cohomology).
+        theorem
+            title Hodge decomposition
+            statement: p
+                | For a compact Kahler manifold (e.g. #[m X] a projective variety) we have
+                me H^n_\dR(X) \cong \bigoplus _{p+q =n} H^{p,q}(X)
+        remark
+            statement: p
+                me H^{p,q} (X) \cong H^q( X, \Omega^p)
+                | using #[m \bar \partial] poincare lemma
+
+        example
+            statement: p
+                | #[m E/\CC] elliptic curve.
+
+                me H^0_\dR = H^{0,0}
+                me H^1_\dR = H^{1,0} \oplus H^{0,1}
+                me H^2_\dR = H^{2,0} \oplus H^{1,1} \oplus H^{0,2}
+                | outer terms 0, diamond is  1 , 1 , 1, 1.
+        definition
+            statement: p
+                | A Hodge structure on #[m V/\RR] is a #[m \ZZ]-bigrading on #[m V_\CC = V \otimes \CC] such that
+                me \overline V^{p,q}  = V^{q,p}
+                | its of type #[m S\subseteq \ZZ^2] if #[m V^{pq} \ne 0 ] iff #[m (p,q) \in S],
+        example
+            statement: p
+                | the Hodge decomposition gives a hodge structure on #[m H^n_{\mathrm{sing}}(X, \RR)].
+
+        p
+            | If #[m V] has a hodfe structure of weight #[m n] (i.e. #[m V^{pq} \ne 0] iff #[m p,q = n]).
+            | Then we can recover the hodge structure from the associated hodge filtration
+            me \Fil^p V_\CC = \bigoplus_{p' \ge p} V^{p' q}
+        example
+            statement: p
+                me \Fil^0(H^1(E)) = H^{1,0} \oplus H^{0,1}
+                me \Fil^1(H^1(E)) = H^{1,0}
+                me \Fil^2(H^1(E)) = 0
+
+        exercise
+            statement: p
+                me V^{p,q} = \Fil^p V \cap \overline {\Fil^q V}
+                | in weight #[m n].
+
+        paragraphs
+            title Alternative definition
+
+            p
+                me \mathbf S = \Res_\RR^\CC \mathbf G_m
+                me \mathbf S(A) = \{ (a,b) \in A^2 : a^2+  b^2 \ne 0\}
+                me \mathbf S(\RR) = \CC^\times
+
+            proposition
+                statement: p
+                    | There is  a natural bijection between morphisms of algebraic groups
+                    me \mathbf S \to \GL(V)
+                    | and Hodge structures on #[m V].
+
+            p
+                | Hence for any lie gorup #[m G] we can define a hodge structure on #[m G] as a morphism of algebraic groups
+                me \mathbf S \to G
+                | If #[m G \to \GL(V)] is a faithful rep this induces a hodge structure on #[m V].
+            definition
+                statement: p
+                    | A polarization of a HS #[m h\colon \mathbf S \to \GL(v)] is an alternating bilinear form
+                    me \Psi \colon V\times V \to \RR
+                    | with
+                    ol
+                        li
+                            me \Psi (Jv,Jw) =  \Psi(v,w) \text{ for } J = h(i)
+                        li
+                            me \Psi(v,Jw) \text{ is pos. def.}
+

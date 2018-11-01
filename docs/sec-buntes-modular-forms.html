@@ -48,7 +48,7 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
@@ -249,11 +249,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-modular-curves.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-modular-curves.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-buntes-av-jac.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-modular-curves.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-modular-curves.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-buntes-av-jac.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -303,6 +303,8 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms" class="active">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -310,8 +312,8 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-buntes-modular-forms"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Modular forms (Asra)</span>
 </h2>
-<a href="sec-buntes-modular-forms.html" class="permalink">¶</a><p id="p-1050">Last time we saw the \(j\)-function, which was \(\SL_2(\ZZ)\)-invariant, this is quite a strong condition, and in fact \(j\) is pretty much all we get under this condition. So instead we weaken this somewhat to some other variance property.</p>
-<p id="p-1051">If \(w = f(z) \diff z\) on \(\HH\) and \(f(z)\) is meromorphic. \(\gamma \in \Gamma\) then</p>
+<a href="sec-buntes-modular-forms.html" class="permalink">¶</a><p id="p-1051">Last time we saw the \(j\)-function, which was \(\SL_2(\ZZ)\)-invariant, this is quite a strong condition, and in fact \(j\) is pretty much all we get under this condition. So instead we weaken this somewhat to some other variance property.</p>
+<p id="p-1052">If \(w = f(z) \diff z\) on \(\HH\) and \(f(z)\) is meromorphic. \(\gamma \in \Gamma\) then</p>
 <div class="displaymath">
 \begin{equation*}
 f(\gamma z) d(\gamma z) = f(\gamma z) d\left( \frac{az+b}{cz+d} \right)
@@ -332,7 +334,7 @@ f(\gamma z) = (cz+d)^2 f(z)
 <article class="definition-like" id="def-buntes-weak-modular"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.2.1</span>
 </h6>
-<p id="p-1052">A <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">holomorphic function</a> \(f\colon \HH \to \CC\) is a <dfn class="terminology">weakly modular</dfn> function for \(\Gamma\) of weight \(k\) if</p>
+<p id="p-1053">A <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">holomorphic function</a> \(f\colon \HH \to \CC\) is a <dfn class="terminology">weakly modular</dfn> function for \(\Gamma\) of weight \(k\) if</p>
 <div class="displaymath">
 \begin{equation*}
 f(\gamma z) = (cz+d)^k f(z) \forall \gamma  = \begin{pmatrix} a\amp b \\ c \amp d    \end{pmatrix} \in \Gamma\text{.}
@@ -340,14 +342,14 @@ f(\gamma z) = (cz+d)^k f(z) \forall \gamma  = \begin{pmatrix} a\amp b \\ c \amp 
 </div></article><article class="remark-like" id="remark-26"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">5.2.2</span>
 </h6>
-<p id="p-1053">If \(-I \in \Gamma\) and \(k\) odd</p>
+<p id="p-1054">If \(-I \in \Gamma\) and \(k\) odd</p>
 <div class="displaymath">
 \begin{equation*}
 f(-z)  = - f(-z)
 \end{equation*}
 </div>
 <p>so in this setting we only have interesting behaviour for even \(k\text{.}\)</p>
-<p id="p-1054">If \(\Gamma\) is a congruence subgroup of level \(N\) we have</p>
+<p id="p-1055">If \(\Gamma\) is a congruence subgroup of level \(N\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{pmatrix} 1\amp N \\ 0 \amp 1 \end{pmatrix} \in \Gamma
@@ -364,11 +366,11 @@ q=  e^{2\pi i z}
 f(z) = \sum_{m\in \ZZ} a_m  q^{m/N}\text{.}
 \end{equation*}
 </div>
-<p id="p-1055">\(f\) is holomorphic at \(\infty\) if \(a_m  = 0\) for \(m \lt 0\text{.}\)</p>
-<p id="p-1056">\(f\) is holomorphic at all cusps if \(f(\gamma z)(cz+d)^k\) is holomorphic at \(\infty\) for all \(\gamma \in \SL_2(\ZZ)\text{.}\)</p></article><article class="example-like" id="example-60"><h6 class="heading">
+<p id="p-1056">\(f\) is holomorphic at \(\infty\) if \(a_m  = 0\) for \(m \lt 0\text{.}\)</p>
+<p id="p-1057">\(f\) is holomorphic at all cusps if \(f(\gamma z)(cz+d)^k\) is holomorphic at \(\infty\) for all \(\gamma \in \SL_2(\ZZ)\text{.}\)</p></article><article class="example-like" id="example-60"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.2.3</span>
 </h6>
-<p id="p-1057">Cusps for \(\Gamma_0(p)\text{,}\) we know we have \(\infty\text{,}\) what is the orbit of this?</p>
+<p id="p-1058">Cusps for \(\Gamma_0(p)\text{,}\) we know we have \(\infty\text{,}\) what is the orbit of this?</p>
 <div class="displaymath">
 \begin{equation*}
 \gamma\in \Gamma_0(p),\, \gamma  =  \begin{pmatrix} a\amp b \\ cp \amp d    \end{pmatrix}
@@ -388,10 +390,10 @@ f(z) = \sum_{m\in \ZZ} a_m  q^{m/N}\text{.}
 <p>so we have two cusps.</p></article><article class="definition-like" id="def-buntes-mfs"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.2.4</span> <span class="title">Modular forms</span>
 </h6>
-<p id="p-1058">A <dfn class="terminology">modular form</dfn> is  a <a knowl="./knowl/def-buntes-weak-modular.html" title="Definition 5.2.1">weakly modular</a> function that is holomorphic at all the cusps.</p></article><article class="example-like" id="example-61"><h6 class="heading">
+<p id="p-1059">A <dfn class="terminology">modular form</dfn> is  a <a knowl="./knowl/def-buntes-weak-modular.html" title="Definition 5.2.1">weakly modular</a> function that is holomorphic at all the cusps.</p></article><article class="example-like" id="example-61"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.2.5</span>
 </h6>
-<p id="p-1059">Eisenstein series</p>
+<p id="p-1060">Eisenstein series</p>
 <div class="displaymath">
 \begin{equation*}
 G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
@@ -403,10 +405,10 @@ G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
 \lim_{\im z\to \infty} G_k(z) = \lim_{\im z\to \infty} \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k} = \sum'_{n\in \ZZ} \frac{1}{n^k} = 2\zeta(k)\text{.}
 \end{equation*}
 </div>
-<p id="p-1060">So here the function does not vanish at 0.</p></article><article class="definition-like" id="def-buntes-cusp-forms"><h6 class="heading">
+<p id="p-1061">So here the function does not vanish at 0.</p></article><article class="definition-like" id="def-buntes-cusp-forms"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.2.6</span> <span class="title">Cusp forms</span>
 </h6>
-<p id="p-1061">A <dfn class="terminology">cusp form</dfn> is a <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular form</a> that vanishes at all cusps.</p></article><p id="p-1062">Given a cusp it will be stabilised by some</p>
+<p id="p-1062">A <dfn class="terminology">cusp form</dfn> is a <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular form</a> that vanishes at all cusps.</p></article><p id="p-1063">Given a cusp it will be stabilised by some</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{pmatrix} 1\amp h \\ 0 \amp 1 \end{pmatrix}
@@ -416,14 +418,14 @@ G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
 <article class="example-like" id="example-62"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.2.7</span>
 </h6>
-<p id="p-1063">Let's find the <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">width</a> of a cusp in \(\Gamma_0(qp)\) we have</p>
+<p id="p-1064">Let's find the <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">width</a> of a cusp in \(\Gamma_0(qp)\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{pmatrix} 1\amp 1 \\ 0 \amp 1 \end{pmatrix}
 \end{equation*}
 </div>
 <p>so the <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">width</a> of \(\infty\) is 1.</p>
-<p id="p-1064">What about \(\alpha = 1/p\text{?}\)</p>
+<p id="p-1065">What about \(\alpha = 1/p\text{?}\)</p>
 <ol class="decimal">
 <li id="li-263">Find an element \(\gamma \in \SL_2(\ZZ)\) s.t. \(\gamma(\infty) = \alpha\text{.}\)</li>
 <li id="li-264">Compute<div class="displaymath">
@@ -446,7 +448,7 @@ G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
 </div></article><article class="example-like" id="example-63"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.2.8</span> <span class="title">A cusp form</span>
 </h6>
-<p id="p-1065">Let \(\Delta(\tau) = g_2(\tau)^3 - 27g_3(\tau)^2,\,g_2(\tau) = 60G_4(\tau),\,g_3(\tau) =140G_6(\tau)\) \(\Delta(\tau)\) has weight 12 for \(\SL_2(\ZZ)\text{.}\) This vanishes at \(\infty\) because</p>
+<p id="p-1066">Let \(\Delta(\tau) = g_2(\tau)^3 - 27g_3(\tau)^2,\,g_2(\tau) = 60G_4(\tau),\,g_3(\tau) =140G_6(\tau)\) \(\Delta(\tau)\) has weight 12 for \(\SL_2(\ZZ)\text{.}\) This vanishes at \(\infty\) because</p>
 <div class="displaymath">
 \begin{equation*}
 \zeta(4) = \frac{\pi^4}{90}
@@ -463,11 +465,11 @@ G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
 j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
 \end{equation*}
 </div>
-<p>so \(\Delta(\tau)\) vanishes at \(\infty\) because \(g_2(\tau)\) doesn't  and \(j(z)\) has a  <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> pole at \(\infty\text{.}\)</p></article><p id="p-1066">\(M_k(\Gamma)\) as the space of <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s. \(S_k(\Gamma)\) as the space of <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">cusp forms</a> of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s.</p>
+<p>so \(\Delta(\tau)\) vanishes at \(\infty\) because \(g_2(\tau)\) doesn't  and \(j(z)\) has a  <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> pole at \(\infty\text{.}\)</p></article><p id="p-1067">\(M_k(\Gamma)\) as the space of <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s. \(S_k(\Gamma)\) as the space of <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">cusp forms</a> of weight \(k\) for \(\Gamma\) is a \(\CC\) -v.s.</p>
 <article class="theorem-like" id="theorem-72"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">5.2.9</span>
 </h6>
-<p id="p-1067">\(M_k(\Gamma)\) and \(S_k(\Gamma)\) are finite dimensional</p>
+<p id="p-1068">\(M_k(\Gamma)\) and \(S_k(\Gamma)\) are finite dimensional</p>
 <div class="displaymath">
 \begin{equation*}
 \dim(M_k(\Gamma)) =
@@ -487,7 +489,7 @@ j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
 (k-1)(g-1) + v_\infty (\frac k2 - 1) + \sum_p [\frac k2 (1- \frac{1}{e_p})] \amp \text{ if } k \ge 2
 \end{cases}
 \end{equation*}
-</div></article><div class="displaymath" id="p-1068">
+</div></article><div class="displaymath" id="p-1069">
 \begin{equation*}
 \dim(S_2(\Gamma)) = g(X(\Gamma))
 \end{equation*}
@@ -495,7 +497,7 @@ j(z) = \frac{g_2(\tau)^3}{\Delta(\tau)}
 <article class="theorem-like" id="proposition-67"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">5.2.10</span>
 </h6>
-<p id="p-1069">If \(f \in S_2(\Gamma)\) then \(f(z) \diff z\) is a holomorphic differential.</p></article><p id="p-1070">Given an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a></p>
+<p id="p-1070">If \(f \in S_2(\Gamma)\) then \(f(z) \diff z\) is a holomorphic differential.</p></article><p id="p-1071">Given an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a></p>
 <div class="displaymath">
 \begin{equation*}
 E/  \CC = \CC/\Lambda
@@ -515,7 +517,7 @@ E \to E'
 <article class="definition-like" id="definition-100"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.2.11</span>
 </h6>
-<p id="p-1071">\(n \ge 1\) then \(T(n)\) is the  \(n\)th <dfn class="terminology">Hecke operator</dfn> acting on</p>
+<p id="p-1072">\(n \ge 1\) then \(T(n)\) is the  \(n\)th <dfn class="terminology">Hecke operator</dfn> acting on</p>
 <div class="displaymath">
 \begin{equation*}
 \divisors (\mathcal L)
@@ -529,10 +531,10 @@ T(n) \Lambda = \sum_{\Lambda' \subseteq \Lambda,\,[\Lambda : \Lambda'] = n} (\La
 </div></article><article class="definition-like" id="definition-101"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.2.12</span>
 </h6>
-<p id="p-1072">Let \(\lambda \in \CC^\times\) the homothety operator \(R_\lambda\) is \(R_\lambda \Lambda = \lambda\Lambda\text{.}\)</p></article><article class="theorem-like" id="theorem-73"><h6 class="heading">
+<p id="p-1073">Let \(\lambda \in \CC^\times\) the homothety operator \(R_\lambda\) is \(R_\lambda \Lambda = \lambda\Lambda\text{.}\)</p></article><article class="theorem-like" id="theorem-73"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">5.2.13</span>
 </h6>
-<ol id="p-1073" class="decimal">
+<ol id="p-1074" class="decimal">
 <li id="li-266"><div class="displaymath">
 \begin{equation*}
 R_\lambda R_\mu = R_{\lambda\mu}
@@ -553,8 +555,8 @@ T(nm) = T(n) T(m),\,\gcd(n,m) =1
 T(p^e)T(p) = T(p^{e+1 }) + p T(p^{e-1}) R_p
 \end{equation*}
 </div></li>
-</ol></article><article class="hiddenproof" id="proof-110"><a knowl="" class="id-ref" refid="hk-proof-110"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-110" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1074">Of 4.</p>
-<p id="p-1075">\(\Lambda \in \mathcal L\) for \(\Lambda' \subseteq \Lambda \) index \(p^{e+1}\) have</p>
+</ol></article><article class="hiddenproof" id="proof-110"><a knowl="" class="id-ref" refid="hk-proof-110"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-110" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1075">Of 4.</p>
+<p id="p-1076">\(\Lambda \in \mathcal L\) for \(\Lambda' \subseteq \Lambda \) index \(p^{e+1}\) have</p>
 <div class="displaymath">
 \begin{equation*}
 a(\Lambda')  = \# \{ \Gamma : \Lambda'  \subseteq \Lambda \subseteq_p \Lambda \}
@@ -582,7 +584,7 @@ T(p^{e-1} )R_p \Lambda  =  T(p^{e-1}) (p \Lambda) = \sum_{\Lambda'' \subseteq_{p
 \end{equation*}
 </div>
 <p>Split into cases, do some maths..</p></article></div>
-<p id="p-1076">Hecke operators on <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> Given \(\Lambda' \subseteq_n \Lambda\) there is an integer matrix of determinant  \(n\) taking one basis to the other. Have a correspondence</p>
+<p id="p-1077">Hecke operators on <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> Given \(\Lambda' \subseteq_n \Lambda\) there is an integer matrix of determinant  \(n\) taking one basis to the other. Have a correspondence</p>
 <div class="displaymath">
 \begin{equation*}
 \{ \alpha \in M_2(\ZZ) : \det(\alpha) = n \}  \leftrightarrow \{ \Lambda ' : \Lambda ' \subseteq_n \Lambda\}
@@ -597,7 +599,7 @@ S_n = \{\begin{pmatrix} a\amp b \\ 0 \amp d\end{pmatrix} : ad= n,\, a,d\gt 0\, 0
 <article class="theorem-like" id="corollary-35"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">5.2.14</span>
 </h6>
-<p id="p-1077">Let \(\Lambda \in \mathcal L\text{,}\) \(\Lambda = \ZZ w_1 + \ZZ w_2\) then  \(T(n)\) acts as follows</p>
+<p id="p-1078">Let \(\Lambda \in \mathcal L\text{,}\) \(\Lambda = \ZZ w_1 + \ZZ w_2\) then  \(T(n)\) acts as follows</p>
 <div class="displaymath">
 \begin{equation*}
 T(n) \Lambda =  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} \ZZ(aw_1 + bw_2) + \ZZ dw_2 = \sum_{\alpha \in S_n} \alpha \Lambda
@@ -605,13 +607,13 @@ T(n) \Lambda =  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} \ZZ(aw_1 + bw_2) + \ZZ 
 </div></article><article class="theorem-like" id="corollary-36"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">5.2.15</span>
 </h6>
-<p id="p-1078">For \(p \) prime \(T(p)\text{:}\)</p>
+<p id="p-1079">For \(p \) prime \(T(p)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw_2\text{.}
 \end{equation*}
-</div></article><p id="p-1079">The <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">Hecke operators</a> act on <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> \(f(\tau)\) by reinterpreting <a knowl="./knowl/def-buntes-weak-modular.html" title="Definition 5.2.1">weakly modular</a> functions of weight \(k\) as functions on <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> that have  a weight \(k\) action under homothety.</p>
-<p id="p-1080">This boils down to</p>
+</div></article><p id="p-1080">The <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">Hecke operators</a> act on <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> \(f(\tau)\) by reinterpreting <a knowl="./knowl/def-buntes-weak-modular.html" title="Definition 5.2.1">weakly modular</a> functions of weight \(k\) as functions on <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> that have  a weight \(k\) action under homothety.</p>
+<p id="p-1081">This boils down to</p>
 <div class="displaymath">
 \begin{equation*}
 (T_k(n) f)(\tau) = n^{k-1}  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} d^{-k} f\left( \frac{ a\tau +b}{d}\right)
@@ -620,12 +622,12 @@ T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw
 <article class="theorem-like" id="corollary-37"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">5.2.16</span>
 </h6>
-<p id="p-1081">For \(p \) prime</p>
+<p id="p-1082">For \(p \) prime</p>
 <div class="displaymath">
 \begin{equation*}
 (T_k(p) f)(\tau) = p^{k-1}f(pz) +\frac 1p \sum_{0 \le b  \lt p} f\left( \frac {z + b}{p} \right)\text{.}
 \end{equation*}
-</div></article><p id="p-1082">We have an action on fourier expansions</p>
+</div></article><p id="p-1083">We have an action on fourier expansions</p>
 <div class="displaymath">
 \begin{equation*}
 f(\psi) = \sum_{m\in \ZZ} a_m q^m
@@ -649,12 +651,12 @@ T_k(p)f(\tau) = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p} \sum_{b=0}^{p-1
 <article class="theorem-like" id="corollary-38"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">5.2.17</span>
 </h6>
-<div class="displaymath" id="p-1083">
+<div class="displaymath" id="p-1084">
 \begin{equation*}
 a_1(T_p(f)) = a_p(f)
 \end{equation*}
-</div></article><p id="p-1084">If \(f\in S_k(\Gamma_0(1))\) is an eigenfunction for these operators we can normalise so that \(a_1(f) = 1\text{.}\)</p>
-<div class="displaymath" id="p-1085">
+</div></article><p id="p-1085">If \(f\in S_k(\Gamma_0(1))\) is an eigenfunction for these operators we can normalise so that \(a_1(f) = 1\text{.}\)</p>
+<div class="displaymath" id="p-1086">
 \begin{equation*}
 T(m)T(n) = T(mn)
 \end{equation*}
@@ -672,7 +674,7 @@ a_{p^r} = a_p a_{p^{r-1}} + p^{k-1} a_{p^{r+1}}
 <article class="definition-like" id="def-pet"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.2.18</span> <span class="title">Petersson inner product</span>
 </h6>
-<p id="p-1086">The <dfn class="terminology">Petersson inner product</dfn> of two <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">cusp forms</a> \(f,g\in S_k(\SL_2(\ZZ))\) is defined to be</p>
+<p id="p-1087">The <dfn class="terminology">Petersson inner product</dfn> of two <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">cusp forms</a> \(f,g\in S_k(\SL_2(\ZZ))\) is defined to be</p>
 <div class="displaymath">
 \begin{equation*}
 \pair{f}{g} = \int_{\mathcal D} f \bar g y^{k-2} \diff x \diff y
@@ -681,7 +683,7 @@ a_{p^r} = a_p a_{p^{r-1}} + p^{k-1} a_{p^{r+1}}
 <p>where \(\mathcal D\) is a fundamental domain for \(\SL_2(\ZZ)\text{.}\)</p></article><article class="theorem-like" id="proposition-68"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">5.2.19</span>
 </h6>
-<p id="p-1087">Let \(f,g\in S_k(\SL_2(\ZZ))\text{,}\) \(n\in \NN\) then</p>
+<p id="p-1088">Let \(f,g\in S_k(\SL_2(\ZZ))\text{,}\) \(n\in \NN\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \pair{T(n) f}{g} = \pair{f}{T(n)g}\text{.}
