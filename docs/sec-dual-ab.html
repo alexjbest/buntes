@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -316,9 +329,9 @@ MathJax.Hub.Config({
 <span class="type">Subsection</span> <span class="codenumber">1.7.1</span> <span class="title">Introduction</span>
 </h3>
 <article class="paragraphs" id="paragraphs-1"><h5 class="heading"><span class="title">Meta-goal</span></h5>
-<p id="p-163">Understand <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>.</p></article><article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Setup</span></h5>
-<p id="p-164">\(A\) an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(/k\text{.}\)</p></article><article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Last time</span></h5>
-<p id="p-165">For \(L\) a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> on \(A\) we get a map</p>
+<p id="p-163">Understand line bundles on abelian varieties.</p></article><article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Setup</span></h5>
+<p id="p-164">\(A\) an abelian variety \(/k\text{.}\)</p></article><article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Last time</span></h5>
+<p id="p-165">For \(L\) a line bundle on \(A\) we get a map</p>
 <div class="displaymath">
 \begin{align*}
 \phi_L\colon A(K) \amp\to \Pic(A)\\
@@ -382,13 +395,13 @@ L \amp\mapsto \phi_L\text{.}
 \amp = \{\text{translation invariant line bundles}\}/\sim
 \end{align*}
 </div></article></article><article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Goals</span></h5>
-<p id="p-171">Study \(\Pic^0(A)\text{,}\) give it an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> structure, solve a moduli problem, demonstrate some duality.</p></article></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<p id="p-171">Study \(\Pic^0(A)\text{,}\) give it an abelian variety structure, solve a moduli problem, demonstrate some duality.</p></article></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">Aside: alternate description of \(\Pic^0(A)\)</span>
 </h3>
 <article class="definition-like" id="def-alg-equivalence"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.7.3</span> <span class="title">Algebraic Equivalence</span>
 </h6>
-<p id="p-172">Two <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> \(L_1,L_2\)  on an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> are <dfn class="terminology">algebraically equivalent</dfn> if there exists a variety \(Y\) with <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L\) on \(A\times Y\) and points \(y_1y_2 \in Y\) s.t. \(L|_{A\times\{y_1\}} \simeq L_1, L|_{A\times\{y_2\}} \simeq L_2\text{.}\)</p></article><article class="remark-like" id="remark-2"><h6 class="heading">
+<p id="p-172">Two line bundles \(L_1,L_2\)  on an abelian variety are <dfn class="terminology">algebraically equivalent</dfn> if there exists a variety \(Y\) with line bundle \(L\) on \(A\times Y\) and points \(y_1y_2 \in Y\) s.t. \(L|_{A\times\{y_1\}} \simeq L_1, L|_{A\times\{y_2\}} \simeq L_2\text{.}\)</p></article><article class="remark-like" id="remark-2"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">1.7.4</span>
 </h6>
 <p id="p-173">This looks like homotopy.</p></article><article class="theorem-like" id="proposition-17"><h6 class="heading">
@@ -398,19 +411,19 @@ L \amp\mapsto \phi_L\text{.}
 \begin{equation*}
 \Pic^0(A) = \{\text{line bundles which are alg. equiv to } \sheaf O_A\}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-33"><a knowl="" class="id-ref" refid="hk-proof-33"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-33" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-175"><a knowl="./knowl/bib-polishchuck.html" title="Bibliographic Entry 52: Abelian varieties, theta functions and the Fourier transform">[52]</a>.</p></article></div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+</div></article><article class="hiddenproof" id="proof-33"><a knowl="" class="id-ref" refid="hk-proof-33"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-33" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-175"><a knowl="./knowl/bib-polishchuck.html" title="Bibliographic Entry 55: Abelian varieties, theta functions and the Fourier transform">[55]</a>.</p></article></div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.3</span> <span class="title">See-Saws</span>
 </h3>
 <article class="theorem-like" id="thm-see-saw"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.7.6</span> <span class="title">See-saw theorem</span>
 </h6>
-<p id="p-176">Let \(X,T\) be varieties      \(X\) <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a>, let \(L\) be a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a>  on \(X\times T\text{,}\) let \(T_1 = \{t\in T : L|_{X\times\{t\}} \text{ is trivial}\}\) then \(T_1\) is closed in \(T\text{.}\) Further let \(p_2\colon X\times T_1 \to T_1\text{,}\) then \(L|_{X\times T_1} \cong p^*_2 M\) for some <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(M\) on \(T_1\text{.}\)</p></article><article class="remark-like" id="remark-3"><h6 class="heading">
+<p id="p-176">Let \(X,T\) be varieties      \(X\) complete, let \(L\) be a line bundle  on \(X\times T\text{,}\) let \(T_1 = \{t\in T : L|_{X\times\{t\}} \text{ is trivial}\}\) then \(T_1\) is closed in \(T\text{.}\) Further let \(p_2\colon X\times T_1 \to T_1\text{,}\) then \(L|_{X\times T_1} \cong p^*_2 M\) for some line bundle \(M\) on \(T_1\text{.}\)</p></article><article class="remark-like" id="remark-3"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">1.7.7</span>
 </h6>
 <p id="p-177">In fact \(M = p_{2*}L\text{.}\)</p></article><article class="theorem-like" id="corollary-11"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.7.8</span> <span class="title">that no one states/only Milne</span>
 </h6>
-<p id="p-178">Let X, T be as above and let \(L, M\) be <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on \(X\times T\) s.t.</p>
+<p id="p-178">Let X, T be as above and let \(L, M\) be line bundles on \(X\times T\) s.t.</p>
 <div class="displaymath">
 \begin{equation*}
 L|_{X\times \{t\}} \cong M|_{X\times \{t\}} \forall t\in T
@@ -507,23 +520,23 @@ H^j(A\times A, m^*L) =  H^j(A\times A, p_1^*L \otimes p_2^*L) = \bigoplus_{i=0}^
 \Lambda (L) =  m^* L \otimes (p_1^* L)^{-1} \otimes (p_2^* L)^{-1}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-189">Given an ample <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L\) on \(A\) we now have an isomophism of groups</p>
+<p id="p-189">Given an ample line bundle \(L\) on \(A\) we now have an isomophism of groups</p>
 <div class="displaymath">
 \begin{equation*}
 A(k)/K(L)(k) \cong \Pic^0(A)
 \end{equation*}
 </div>
-<p>the LHS allows us to put an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> structure on \(\Pic^0(A)\text{.}\)</p></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<p>the LHS allows us to put an abelian variety structure on \(\Pic^0(A)\text{.}\)</p></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.5</span> <span class="title">The Dual Abelian Variety</span>
 </h3>
 <article class="theorem-like" id="theorem-15"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.7.12</span>
 </h6>
-<p id="p-190">Let \(A\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> and \(L\) an ample <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> on \(A\text{,}\) then the quotient scheme \(A/K(L)\) exists and is an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> of the same dimension as \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-37"><a knowl="" class="id-ref" refid="hk-proof-37"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-37" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-191">(Sketch) (characteristic 0) Cover \(A\) by affine opens \(U_i = \Spec R_i\) such that for all \(a \in A\) the orbit \(K(L)a \subseteq U_i\) for some \(i\text{.}\) We can do this because <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> are projective. Then we say \(U_i / K(L) = \Spec(R^{K(L)}_i)\) then glue. (details in Mumford, II sec, 6  appendix). Since we are in characteristic 0, the quotient scheme is in fact a variety.</p></article></div>
+<p id="p-190">Let \(A\) be an abelian variety and \(L\) an ample line bundle on \(A\text{,}\) then the quotient scheme \(A/K(L)\) exists and is an abelian variety of the same dimension as \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-37"><a knowl="" class="id-ref" refid="hk-proof-37"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-37" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-191">(Sketch) (characteristic 0) Cover \(A\) by affine opens \(U_i = \Spec R_i\) such that for all \(a \in A\) the orbit \(K(L)a \subseteq U_i\) for some \(i\text{.}\) We can do this because abelian varieties are projective. Then we say \(U_i / K(L) = \Spec(R^{K(L)}_i)\) then glue. (details in Mumford, II sec, 6  appendix). Since we are in characteristic 0, the quotient scheme is in fact a variety.</p></article></div>
 <article class="definition-like" id="def-dual-abvar"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.7.13</span> <span class="title">Dual abelian varieties</span>
 </h6>
-<p id="p-192">The <dfn class="terminology">dual <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a></dfn> is</p>
+<p id="p-192">The <dfn class="terminology">dual abelian variety</dfn> is</p>
 <div class="displaymath">
 \begin{equation*}
 \hat A = A/K(L)\text{.}
@@ -537,7 +550,7 @@ A(k)/K(L)(k) \cong \Pic^0(A)
 \hat A(K) = \Pic^0(A)
 \end{equation*}
 </div></li>
-<li id="li-34">We have an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a><div class="displaymath">
+<li id="li-34">We have an isogeny<div class="displaymath">
 \begin{equation*}
 \phi_L\colon A \to \hat A\text{.}
 \end{equation*}
@@ -546,7 +559,7 @@ A(k)/K(L)(k) \cong \Pic^0(A)
 </ul></article><article class="theorem-like" id="thm-poincare-bundle"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.7.15</span>
 </h6>
-<p id="p-194">There is a unique <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(\sheaf P\) on \(A\times \hat A\) called the <dfn class="terminology">Poincaré bundle</dfn> such that</p>
+<p id="p-194">There is a unique line bundle \(\sheaf P\) on \(A\times \hat A\) called the <dfn class="terminology">Poincaré bundle</dfn> such that</p>
 <ol class="decimal">
 <li id="li-35"><div class="displaymath">
 \begin{equation*}
@@ -558,7 +571,7 @@ A(k)/K(L)(k) \cong \Pic^0(A)
 \sheaf P|_{0\times \hat A} = 0
 \end{equation*}
 </div></li>
-<li id="li-37">If \(Z\) is a  scheme with a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(R\) on \(A\times Z\) satisfying 1., 2., there exists a unique<div class="displaymath">
+<li id="li-37">If \(Z\) is a  scheme with a line bundle \(R\) on \(A\times Z\) satisfying 1., 2., there exists a unique<div class="displaymath">
 \begin{equation*}
 f\colon Z\to \hat A
 \end{equation*}
@@ -577,7 +590,7 @@ Z \mapsto \left\{ L\in \Pic (A\times Z) : \substack{ L|_{A\times \{z\}} \in \Pic
 </div></article></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.6</span> <span class="title">Dual morphisms</span>
 </h3>
-<p id="p-195">Let \(f\colon A\to B\) be a homomorphism of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Let \(\sheaf P_A,\sheaf P_B\) be the <a knowl="./knowl/thm-poincare-bundle.html" title="Theorem 1.7.15">Poincaré bundles</a> on  \(A\) and \(B\text{.}\) Consider \(M=    (F\times \id_{\hat B})^* \sheaf P_B\) on \(A\times \hat B\text{,}\) then</p>
+<p id="p-195">Let \(f\colon A\to B\) be a homomorphism of abelian varieties. Let \(\sheaf P_A,\sheaf P_B\) be the Poincaré bundles on  \(A\) and \(B\text{.}\) Consider \(M=    (F\times \id_{\hat B})^* \sheaf P_B\) on \(A\times \hat B\text{,}\) then</p>
 <ol class="decimal">
 <li id="li-38"><div class="displaymath">
 \begin{equation*}
@@ -626,7 +639,7 @@ L\mapsto f^*L
 \hat{\lb n_A\rb} = [n_{\hat A}]
 \end{equation*}
 </div></li>
-</ul></article><p id="p-198">Consider the <a knowl="./knowl/thm-poincare-bundle.html" title="Theorem 1.7.15">Poincaré bundle</a> \(\sheaf P_{\hat A}\) on \(\hat A \times \hat{\hat{A}}\text{,}\) now think of \(\sheaf P_A\) as living on \(\hat A \times A\text{.}\) By the universal property of \(\sheaf P_{\hat A}\) get a unique morphism</p>
+</ul></article><p id="p-198">Consider the Poincaré bundle \(\sheaf P_{\hat A}\) on \(\hat A \times \hat{\hat{A}}\text{,}\) now think of \(\sheaf P_A\) as living on \(\hat A \times A\text{.}\) By the universal property of \(\sheaf P_{\hat A}\) get a unique morphism</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{can}_A\colon A\to\hat{\hat A}\text{.}
@@ -645,16 +658,16 @@ L\mapsto f^*L
 </div></article><article class="theorem-like" id="proposition-19"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.7.20</span>
 </h6>
-<p id="p-201">If \(f\colon A \to B\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>, then \(\hat f\colon \hat B \to \hat A\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>. Further if \(N  = \ker f\text{,}\) then \(\hat N = \ker \hat f\) is the Cartier  dual of \(N\text{.}\)</p></article><article class="definition-like" id="def-princ-pol"><h6 class="heading">
+<p id="p-201">If \(f\colon A \to B\) is an isogeny, then \(\hat f\colon \hat B \to \hat A\) is an isogeny. Further if \(N  = \ker f\text{,}\) then \(\hat N = \ker \hat f\) is the Cartier  dual of \(N\text{.}\)</p></article><article class="definition-like" id="def-princ-pol"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.7.21</span> <span class="title">Symmetric morphisms, (principal) polarizations</span>
 </h6>
 <p id="p-202">A morphism \(f\colon A \to \hat A\) is <dfn class="terminology">symmetric</dfn> if \(f = \hat f\circ \operatorname{can}_A\)</p>
-<p id="p-203">A <dfn class="terminology">polarization</dfn> is a <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(f\colon A \to \hat A\) s.t. \(f=  \phi_L\) for some ample <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L\) on \(A\text{.}\)</p>
-<p id="p-204">A <dfn class="terminology">principal <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a></dfn> is a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of degree 1, i.e. an isomorphism.</p></article><article class="remark-like" id="remark-6"><h6 class="heading">
+<p id="p-203">A <dfn class="terminology">polarization</dfn> is a symmetric isogeny \(f\colon A \to \hat A\) s.t. \(f=  \phi_L\) for some ample line bundle \(L\) on \(A\text{.}\)</p>
+<p id="p-204">A <dfn class="terminology">principal polarization</dfn> is a polarization of degree 1, i.e. an isomorphism.</p></article><article class="remark-like" id="remark-6"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">1.7.22</span>
 </h6>
-<p id="p-205">Elliptic curves always admit <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarization</a>.</p>
-<p id="p-206">If one wishes to mimic the theory of <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, one should study principally polarized <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>.</p></article></section></section></div></main>
+<p id="p-205">Elliptic curves always admit principal polarization.</p>
+<p id="p-206">If one wishes to mimic the theory of elliptic curves, one should study principally polarized abelian varieties.</p></article></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

@@ -56,10 +56,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -107,7 +112,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -245,6 +252,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -313,6 +324,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -320,12 +333,12 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="chapter" id="chapter-supersing-isog"><h1 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span>
 </h1>
-<a href="chapter-supersing-isog.html" class="permalink">¶</a><section class="introduction" id="sec-supersing-isog-intro"><p id="p-782">These are notes for BUNTES Fall 2018, the topic is Supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graphs and Quaternion Algebras.</p>
+<a href="chapter-supersing-isog.html" class="permalink">¶</a><section class="introduction" id="sec-supersing-isog-intro"><p id="p-782">These are notes for BUNTES Fall 2018, the topic is Supersingular isogeny graphs and Quaternion Algebras.</p>
 <p id="p-783"><a class="url" href="http://math.bu.edu/people/midff/buntes/fall2018.html" target="_blank"><code class="code-inline tex2jax_ignore">http://math.bu.edu/people/midff/buntes/fall2018.html</code></a>.</p>
 <p id="p-784">Outline:</p>
 <ol class="decimal">
-<li id="li-178">Background, <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graphs, applications.</li>
-<li id="li-179">Supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graph cryptography (candidate for post-quantum cryptography).</li>
+<li id="li-178">Background, isogeny graphs, applications.</li>
+<li id="li-179">Supersingular isogeny graph cryptography (candidate for post-quantum cryptography).</li>
 <li id="li-180">Introduction to Quaternion algebras.</li>
 <li id="li-181">The Deuring correspondence:<div class="displaymath">
 \begin{equation*}
@@ -334,7 +347,7 @@ MathJax.Hub.Config({
 </div>
 </li>
 </ol>
-<p id="p-785">References: [<a knowl="./knowl/bib-sutherland.html" title="Bibliographic Entry 62: Isogeny volcanoes">62</a>, <a knowl="./knowl/bib-voight-quat.html" title="Bibliographic Entry 68: Quaternion Algebras">68</a>, <a knowl="./knowl/bib-velu.html" title="Bibliographic Entry 67: Isogénies entre courbes elliptiques">67</a>]</p></section><nav class="summary-links"><ul>
+<p id="p-785">References: [<a knowl="./knowl/bib-sutherland.html" title="Bibliographic Entry 66: Isogeny volcanoes">66</a>, <a knowl="./knowl/bib-voight-quat.html" title="Bibliographic Entry 72: Quaternion Algebras">72</a>, <a knowl="./knowl/bib-velu.html" title="Bibliographic Entry 71: Isogénies entre courbes elliptiques">71</a>]</p></section><nav class="summary-links"><ul>
 <li><a href="sec-supersing-isog-graphs.html"><span class="codenumber">3.1</span> <span class="title">Isogeny graphs: background and motivation (Maria Ines)</span></a></li>
 <li><a href="sec-supersing-isog-crypto.html"><span class="codenumber">3.2</span> <span class="title">Supersingular isogeny graph cryptography (Asra)</span></a></li>
 <li><a href="sec-quaternion-algebras.html"><span class="codenumber">3.3</span> <span class="title">Quaternion Algebras (Alex)</span></a></li>

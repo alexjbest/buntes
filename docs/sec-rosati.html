@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -312,7 +325,7 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-rosati"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.11</span> <span class="title">The Rosati involution (Alex)</span>
 </h2>
-<a href="sec-rosati.html" class="permalink">¶</a><p id="p-331">Let \(A/k\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> and \(f \in \End(A)\text{.}\) Via pullback we get \(\hat f \in \End(\hat A)\text{,}\) in the case where \(A\) is polarized i.e. we have an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi \colon A\to \hat A\) we might wonder what the relation is between \(\hat f\) and \(f\text{.}\) E.g. \(\hat \id = \id\) but here we have \(\hat \phi \id \phi = \lb \deg \phi\rb\text{,}\) this is a little ugly, depends on the degree of our <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>. If we work with \(\Hom^0(A,B) = \Hom(A,B) \otimes \QQ\) rather than \(\Hom(A,B)\) we have a bona fide inverse \(\phi\inv\) of an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi\text{.}\) So now we can ask precisely, what is the relationship of the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> \(f^\dagger = \phi^{-1}\circ \hat f \circ \phi\in \End^0(A)\) with \(f\text{?}\)</p>
+<a href="sec-rosati.html" class="permalink">¶</a><p id="p-331">Let \(A/k\) be an abelian variety and \(f \in \End(A)\text{.}\) Via pullback we get \(\hat f \in \End(\hat A)\text{,}\) in the case where \(A\) is polarized i.e. we have an isogeny \(\phi \colon A\to \hat A\) we might wonder what the relation is between \(\hat f\) and \(f\text{.}\) E.g. \(\hat \id = \id\) but here we have \(\hat \phi \id \phi = \lb \deg \phi\rb\text{,}\) this is a little ugly, depends on the degree of our polarization. If we work with \(\Hom^0(A,B) = \Hom(A,B) \otimes \QQ\) rather than \(\Hom(A,B)\) we have a bona fide inverse \(\phi\inv\) of an isogeny \(\phi\text{.}\) So now we can ask precisely, what is the relationship of the endomorphism \(f^\dagger = \phi^{-1}\circ \hat f \circ \phi\in \End^0(A)\) with \(f\text{?}\)</p>
 <p id="p-332">What sort of properties does this map \(f \mapsto f^\dagger\) have?</p>
 <article class="definition-like" id="definition-37"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.11.1</span> <span class="title">The Rosati involution</span>
@@ -331,7 +344,7 @@ MathJax.Hub.Config({
 </div></article><article class="theorem-like" id="proposition-30"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.11.4</span>
 </h6>
-<p id="p-336">Recall the \(l\)-adic <a knowl="./knowl/prop-weil-pair.html" title="Proposition 1.3.20: Existence of Weil pairing">Weil pairing</a> for \(l \ne \characteristic(k)\text{,}\) fix \(a,a'\in V_lA = T_lA\otimes \QQ\text{,}\) then</p>
+<p id="p-336">Recall the \(l\)-adic Weil pairing for \(l \ne \characteristic(k)\text{,}\) fix \(a,a'\in V_lA = T_lA\otimes \QQ\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 e_l^\phi(f a ,a') = e_l^\phi(a, f^\dagger a')\text{.}
@@ -349,7 +362,7 @@ e_l^\phi(f a ,a')  = e_l(fa, \phi a')= e_l(a, \hat f \phi a') = e_l(a, \phi\phi\
 \begin{equation*}
 {\alpha^\dagger}^{\dagger} = \alpha\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-58"><a knowl="" class="id-ref" refid="hk-proof-58"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-58" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-339">We apply the previous proposition and skew-symmetry of a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> (over some extension)</p>
+</div></article><article class="hiddenproof" id="proof-58"><a knowl="" class="id-ref" refid="hk-proof-58"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-58" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-339">We apply the previous proposition and skew-symmetry of a polarization (over some extension)</p>
 <div class="displaymath">
 \begin{equation*}
 e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alpha^\dagger}^{\dagger} a, a')
@@ -377,7 +390,7 @@ e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alp
 \tr(ff^\dagger) = 2g\frac{(D^{g-1}\cdot f^*(D))}{(D^g)}
 \end{equation*}
 </div>
-<p>for \(\phi = \phi_{\sheaf L(D)}\text{.}\)</p></article><p id="p-343">So given a <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> we have a division algebra  \(/ \QQ\) equipped with  a positive definite involution.</p>
+<p>for \(\phi = \phi_{\sheaf L(D)}\text{.}\)</p></article><p id="p-343">So given a simple abelian variety we have a division algebra  \(/ \QQ\) equipped with  a positive definite involution.</p>
 <article class="definition-like" id="def-albert-alg"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.11.7</span> <span class="title punctuated">Albert algebras?</span>
 </h6>
@@ -385,21 +398,21 @@ e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alp
 <article class="theorem-like" id="theorem-29"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.11.8</span> <span class="title">Albert (1934/5)</span>
 </h6>
-<p id="p-346">Let \((D, ')\) be an <a knowl="./knowl/def-albert-alg.html" title="Definition 1.11.7: Albert algebras?">Albert algebra</a>, let \(K\) be the center of \(D\) and \(K_0\) the subfield fixed by \('\text{.}\) Then we have the following classification</p>
+<p id="p-346">Let \((D, ')\) be an Albert algebra, let \(K\) be the center of \(D\) and \(K_0\) the subfield fixed by \('\text{.}\) Then we have the following classification</p>
 <ol class="decimal">
 <li id="li-56">Type I: \(D = K = K_0\) a totally real number field and \('\) is the identity.</li>
-<li id="li-57">Type II: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is split at all infinite places and \('\) is defined by letting starting with the standard quaternion algebra <a knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.13: Conjugate, trace and norm">conjugation</a> for which \(x + x^* = \tr(x)\) and then letting \(x' = ax^* a^{-1}\) for some \(a \in D\) for which \(a^2 \in K\) and is totally negative.</li>
-<li id="li-58">Type III: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at all infinite places and \('\) is the standard quaternion algebra <a knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.13: Conjugate, trace and norm">conjugation</a> as above.</li>
+<li id="li-57">Type II: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is split at all infinite places and \('\) is defined by letting starting with the standard quaternion algebra conjugation for which \(x + x^* = \tr(x)\) and then letting \(x' = ax^* a^{-1}\) for some \(a \in D\) for which \(a^2 \in K\) and is totally negative.</li>
+<li id="li-58">Type III: \(D\) is a quaternion algebra over \(K = K_0\) a totally real field, that is ramified at all infinite places and \('\) is the standard quaternion algebra conjugation as above.</li>
 <li id="li-59">Type IV: \(D\) is a division algebra over a CM field \(K\) and \(K_0\) is the maximal totally real subfield. Additionally if \(v\) is a finite place with \(v = \bar v\) we have \(\operatorname{Inv}_v(D) = 0\) and \(\operatorname{Inv}_v(D) + \operatorname{Inv}_{\bar v}(D) = 0\) for all places \(v\text{.}\)</li>
 </ol></article><p id="p-347">There is a fascinating table in Mumford, page 200 or something.</p>
-<p id="p-348">As one might hope, changing the <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> does not change the type of the algebra + involution pair.</p>
-<p id="p-349">One might wonder which <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphisms</a> are invariant under this process? I.e. what is</p>
+<p id="p-348">As one might hope, changing the polarization does not change the type of the algebra + involution pair.</p>
+<p id="p-349">One might wonder which endomorphisms are invariant under this process? I.e. what is</p>
 <div class="displaymath">
 \begin{equation*}
 \{f \in \End^0(A) : f^\dagger = f\}\text{.}
 \end{equation*}
 </div>
-<p>Equivalently, for which \(f\) is the dual given by conjugating by our <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>.</p>
+<p>Equivalently, for which \(f\) is the dual given by conjugating by our polarization.</p>
 <p id="p-350">We can map</p>
 <div class="displaymath">
 \begin{equation*}
@@ -422,7 +435,7 @@ e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alp
 \phi \mapsto \lambda\inv \phi
 \end{equation*}
 </div>
-<p>for some fixed <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> \(\lambda\text{,}\) hence we can view \(\NS(A)\otimes \QQ\) inside \(\End^0(A)\text{.}\)</p>
+<p>for some fixed polarization \(\lambda\text{,}\) hence we can view \(\NS(A)\otimes \QQ\) inside \(\End^0(A)\text{.}\)</p>
 <article class="theorem-like" id="proposition-33"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.11.9</span>
 </h6>
@@ -437,18 +450,18 @@ e_l^\lambda(\alpha a,a') = e_l^\lambda(a, \alpha^\dagger a') = e_l^\lambda({\alp
 \begin{equation*}
 \{f \in \End^0(A) : f^\dagger = f\}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-59"><a knowl="" class="id-ref" refid="hk-proof-59"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-59" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-352">Fix \(\alpha \in \End^0(A)\) and \(l\ne \characteristic(k)\) odd. Applying <a knowl="./knowl/prop-milne-av-13-6.html" title="Proposition 1.10.8: 13.6">Proposition 1.10.8</a> we see that \(\lambda \alpha = \phi_{\sheaf L}\) for some \(\sheaf L\) iff \(e^{\lambda\alpha}_l\) is skew-<a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a>, but we also have</p>
+</div></article><article class="hiddenproof" id="proof-59"><a knowl="" class="id-ref" refid="hk-proof-59"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-59" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-352">Fix \(\alpha \in \End^0(A)\) and \(l\ne \characteristic(k)\) odd. Applying <a knowl="./knowl/prop-milne-av-13-6.html" title="Proposition 1.10.8: 13.6">Proposition 1.10.8</a> we see that \(\lambda \alpha = \phi_{\sheaf L}\) for some \(\sheaf L\) iff \(e^{\lambda\alpha}_l\) is skew-symmetric, but we also have</p>
 <div class="displaymath">
 \begin{equation*}
 e_l^{\lambda\alpha}(a,a')=  e_l^{\lambda}(a,\alpha a') = -e_l^\lambda(\alpha a',a) = -e_l(a', \hat\alpha \lambda a)
 \end{equation*}
 </div>
 <p>for all \(a,a' \in V_lA\) this is the same as requiring \(\lambda\alpha = \hat \alpha \lambda\) i.e. \(\alpha = \alpha^\dagger\text{.}\) .</p></article></div>
-<p id="p-353">Another cool result we can now prove (in fact this was the reason Weil introduced the notion of a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a>).</p>
+<p id="p-353">Another cool result we can now prove (in fact this was the reason Weil introduced the notion of a polarization).</p>
 <article class="theorem-like" id="theorem-30"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.11.10</span>
 </h6>
-<p id="p-354">The automorphism group of a polarized <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> is finite.</p></article><article class="hiddenproof" id="proof-60"><a knowl="" class="id-ref" refid="hk-proof-60"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-60" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-355">Let \(\alpha\) be an automorphism of \((A, \lambda)\) i.e. \(\lambda =\hat \alpha  \lambda \alpha\text{,}\) then \(\alpha^\dagger \alpha= 1\) and so</p>
+<p id="p-354">The automorphism group of a polarized abelian variety is finite.</p></article><article class="hiddenproof" id="proof-60"><a knowl="" class="id-ref" refid="hk-proof-60"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-60" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-355">Let \(\alpha\) be an automorphism of \((A, \lambda)\) i.e. \(\lambda =\hat \alpha  \lambda \alpha\text{,}\) then \(\alpha^\dagger \alpha= 1\) and so</p>
 <div class="displaymath">
 \begin{equation*}
 \alpha \in \End(A)\cap \{\beta \in \End(A) \otimes \RR: \trace(\alpha^\dagger \alpha) = 2g\}

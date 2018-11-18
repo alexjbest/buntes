@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -315,14 +328,14 @@ MathJax.Hub.Config({
 <a href="sec-belyi-thm.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><article class="theorem-like" id="theorem-48"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.6.1</span>
 </h6>
-<p id="p-597">Let \(S \) be a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">riemann surface</a>, then the following are equivalent.</p>
+<p id="p-597">Let \(S \) be a compact riemann surface, then the following are equivalent.</p>
 <ol class="decimal">
 <li id="li-111">\(S\) is defined over \(\overline\QQ\) (iff over  a number field)</li>
 <li id="li-112">\(S\) admits a morphism \(f \colon S \to \PP^1\) with at most 3 branching values.</li>
 </ol></article><article class="definition-like" id="def-belyi-function"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.6.2</span> <span class="title">Belyi functions</span>
 </h6>
-<p id="p-598">A <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic function</a> with less than 4 branching values is a <dfn class="terminology">Belyi function</dfn>.</p></article><article class="remark-like" id="remark-12"><h6 class="heading">
+<p id="p-598">A meromorphic function with less than 4 branching values is a <dfn class="terminology">Belyi function</dfn>.</p></article><article class="remark-like" id="remark-12"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.6.3</span>
 </h6>
 <ol id="p-599" class="decimal">
@@ -368,13 +381,13 @@ x\colon S_\lambda \to \PP^1
 \infty \mapsto \infty
 \end{equation*}
 </div>
-<p>ramifies over \(0,1,\lambda,\infty\text{.}\) Then \(f = P_\lambda \circ x \colon S_\lambda \to \PP^1\) ramifies exactly at \((0,0), (1,0), (\lambda,0), \infty\text{.}\) With branching values \(0,0,1,\infty\) so that \(f\) is a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a>.</p></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<p>ramifies over \(0,1,\lambda,\infty\text{.}\) Then \(f = P_\lambda \circ x \colon S_\lambda \to \PP^1\) ramifies exactly at \((0,0), (1,0), (\lambda,0), \infty\text{.}\) With branching values \(0,0,1,\infty\) so that \(f\) is a Belyi function.</p></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Proof of a) implies b)</span>
 </h3>
 <article class="remark-like" id="note-7"><h6 class="heading">
 <span class="type">Note</span> <span class="codenumber">2.6.7</span>
 </h6>
-<p id="p-603">Its enough to show \(\exists f\colon S\to \PP^1\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> over \(\{0,1,\infty, \lambda_1, \ldots, \lambda_n\} \subseteq \QQ \cup \{\infty\}\text{.}\) Given this we can repeatedly use <a knowl="./knowl/def-belyi-poly.html" title="Definition 2.6.4: Belyi polynomials">Belyi polynomials</a> to obtain \(g\colon S \to \PP^1\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> over \(\{0,1, \infty\}\text{.}\)</p></article><p id="p-604">Write \(S = S_F\)</p>
+<p id="p-603">Its enough to show \(\exists f\colon S\to \PP^1\) ramified over \(\{0,1,\infty, \lambda_1, \ldots, \lambda_n\} \subseteq \QQ \cup \{\infty\}\text{.}\) Given this we can repeatedly use Belyi polynomials to obtain \(g\colon S \to \PP^1\) ramified over \(\{0,1, \infty\}\text{.}\)</p></article><p id="p-604">Write \(S = S_F\)</p>
 <div class="displaymath">
 \begin{equation*}
 F(x,y) = p_0(x)y^n + \cdots + p_n(x)
@@ -429,11 +442,11 @@ P^\sigma = \sum a^\sigma_{ij} x^iy^j \in \CC\lb x,y\rb
 </div>if \(R = P/Q\) set \(R^\sigma = P^\sigma / Q^\sigma\text{.}\)</li>
 <li id="li-118">If \(S \simeq S_F\text{,}\) \(S^\sigma = S_{F^\sigma}\text{.}\)</li>
 <li id="li-119">If \(\Psi = (R_1, R_2)\) \(S_F\to S_G\) is a morphism, set \(\Psi^ \sigma = (R_1^\sigma , R_2 ^\sigma) \colon S_{F^\sigma} \to S_{G^\sigma}\text{.}\)</li>
-<li id="li-120">For an equivalence class \((S,f) = (S_F, R(x,y))\) of <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> covers of \(\PP^1\) set \((S,f)^\sigma = (S^\sigma, f^\sigma) = (S_{F^\sigma}, R^\sigma (x,y))\text{.}\)</li>
+<li id="li-120">For an equivalence class \((S,f) = (S_F, R(x,y))\) of ramified covers of \(\PP^1\) set \((S,f)^\sigma = (S^\sigma, f^\sigma) = (S_{F^\sigma}, R^\sigma (x,y))\text{.}\)</li>
 </ol></article><article class="exercise-like" id="exercise-16"><a knowl="" class="id-ref" refid="hk-exercise-16"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.6.11</span>
 </h6></a></article><div id="hk-exercise-16" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-613">Verify this Galois action is well-defined (lemma 3.12).</p></article></div>
-<p id="p-614">Recall: \(S_F\) is    constructed from a noncompact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> \(S_F^\times \subseteq \CC^2\) by adding finitely many points, (theorem 1.86). If \(P=  (a,b) \in S_F^\times\) then \(P^\sigma = (a^\sigma, b^\sigma)\text{.}\) What about the other points?</p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
+<p id="p-614">Recall: \(S_F\) is    constructed from a noncompact Riemann surface \(S_F^\times \subseteq \CC^2\) by adding finitely many points, (theorem 1.86). If \(P=  (a,b) \in S_F^\times\) then \(P^\sigma = (a^\sigma, b^\sigma)\text{.}\) What about the other points?</p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.4</span> <span class="title">Points and valuations</span>
 </h3>
 <article class="definition-like" id="definition-59"><h6 class="heading">
@@ -463,18 +476,18 @@ M_v = \{ \phi\in \mathcal M : v(\phi) \gt 0\} = (\phi)
 <article class="theorem-like" id="proposition-52"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.6.13</span> <span class="title">3.15</span>
 </h6>
-<p id="p-618">Every point \(P \in S\) a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> defines a valuation on \(\mathcal M(S)\) by \(v_P(\phi) = \ord_P(\phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-92"><a knowl="" class="id-ref" refid="hk-proof-92"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-92" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-619">Easy exercise.</p></article></div>
+<p id="p-618">Every point \(P \in S\) a compact Riemann surface defines a valuation on \(\mathcal M(S)\) by \(v_P(\phi) = \ord_P(\phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-92"><a knowl="" class="id-ref" refid="hk-proof-92"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-92" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-619">Easy exercise.</p></article></div>
 <article class="theorem-like" id="theorem-49"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.6.14</span> <span class="title">3.23</span>
 </h6>
-<p id="p-620">For any compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> \(S\)</p>
+<p id="p-620">For any compact Riemann surface \(S\)</p>
 <div class="displaymath">
 \begin{equation*}
 P\in S \mapsto v_P = \ord_P
 \end{equation*}
 </div>
 <p>gives a 1-1 correspondence between points of \(S\) and normalised valuations on \(\mathcal M(S)\text{.}\)</p></article><article class="hiddenproof" id="proof-93"><a knowl="" class="id-ref" refid="hk-proof-93"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-93" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-621">Sketch: First prove it for \(S = \PP^1\text{.}\)</p>
-<p id="p-622">Inductively <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> separate points.</p>
+<p id="p-622">Inductively meromorphic functions separate points.</p>
 <p id="p-623">Surjectivity study behaviour of valuations in finite extensions of fields and use a nonconstant morphism \(f\colon S \to \PP^1\) to reduce to the case of \(\PP^1\text{.}\)</p></article></div>
 <article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Galois action on points</span></h5>
 <article class="definition-like" id="definition-60"><h6 class="heading">
@@ -533,10 +546,10 @@ P\in S \mapsto v_P = \ord_P
 <article class="theorem-like" id="proposition-54"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.6.19</span> <span class="title">Criterion 3.29</span>
 </h6>
-<p id="p-630">For a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> \(S\) the following are equivalent</p>
+<p id="p-630">For a compact Riemann surface \(S\) the following are equivalent</p>
 <ol class="decimal">
 <li id="li-140">\(S\) is defined over \(\overline \QQ\text{.}\)</li>
-<li id="li-141">\(\{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}\) contains only finitely many isomorphism classes of <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>.</li>
+<li id="li-141">\(\{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}\) contains only finitely many isomorphism classes of Riemann surfaces.</li>
 </ol></article><article class="hiddenproof" id="proof-95"><a knowl="" class="id-ref" refid="hk-proof-95"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-95" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-631">1 implies 2: \(S =S_F\text{,}\) \(F = K\lb x,y\rb\) for \(K\) a number field then</p>
 <div class="displaymath">
 \begin{equation*}

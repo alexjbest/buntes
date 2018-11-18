@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -312,27 +325,27 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-supersing-isog-crypto"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Supersingular isogeny graph cryptography (Asra)</span>
 </h2>
-<a href="sec-supersing-isog-crypto.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-823">Supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graph crypto is a candidate for post-quantum crypto, not based on factoring etc.</p>
-<p id="p-824">Recall last time we defined <a knowl="./knowl/def-supersing-isog-ramanujan.html" title="Definition 3.1.13: Ramanujan graphs">Ramanujan graphs</a>, graphs with very good connectivity properties, a type of expander.</p>
+<a href="sec-supersing-isog-crypto.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-823">Supersingular isogeny graph crypto is a candidate for post-quantum crypto, not based on factoring etc.</p>
+<p id="p-824">Recall last time we defined Ramanujan graphs, graphs with very good connectivity properties, a type of expander.</p>
 <article class="theorem-like" id="proposition-60"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.2.1</span>
 </h6>
-<p id="p-825">If \(G\) is a <a knowl="./knowl/def-supersing-isog-ramanujan.html" title="Definition 3.1.13: Ramanujan graphs">Ramanujan graph</a>, \(x\in V, S\subseteq V\text{.}\) For a sufficiently large path beginning at \(x\text{,}\) the probability that the path ends in \(S\) is at least \(|S|/2|V|\text{.}\)</p></article><p id="p-826">Upshot: supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graphs are \((l +1)\)-regular, undirected, Ramanujan, connected (technically, Ramanujan means connected already, but its worth emphasising).</p>
-<p id="p-827">Some of our algorithms are only dependent on having a graph with this property, not so much the interpretation in terms of <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>.</p>
-<p id="p-828">Supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graphs first appeared in crypto as potential <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash functions</a>.</p></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
+<p id="p-825">If \(G\) is a Ramanujan graph, \(x\in V, S\subseteq V\text{.}\) For a sufficiently large path beginning at \(x\text{,}\) the probability that the path ends in \(S\) is at least \(|S|/2|V|\text{.}\)</p></article><p id="p-826">Upshot: supersingular isogeny graphs are \((l +1)\)-regular, undirected, Ramanujan, connected (technically, Ramanujan means connected already, but its worth emphasising).</p>
+<p id="p-827">Some of our algorithms are only dependent on having a graph with this property, not so much the interpretation in terms of isogenies.</p>
+<p id="p-828">Supersingular isogeny graphs first appeared in crypto as potential hash functions.</p></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Hash functions</span>
 </h3>
-<p id="p-829">(2010) (Charles, Goren, Lauter) proposed a cryptographically secure <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> based on the hardness of computing paths in a supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> graphs.</p>
+<p id="p-829">(2010) (Charles, Goren, Lauter) proposed a cryptographically secure hash function based on the hardness of computing paths in a supersingular isogeny graphs.</p>
 <article class="definition-like" id="def-hash-function"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.2.2</span> <span class="title">Hash functions</span>
 </h6>
 <p id="p-830">A <dfn class="terminology">hash function</dfn> is a deterministic function \(h\colon \{0,1\}^* \to \{0,1\}^n\text{.}\)</p></article><article class="definition-like" id="def-collision-resistance"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.2.3</span> <span class="title">Collision resistance</span>
 </h6>
-<p id="p-831">A <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> \(h\) is <dfn class="terminology">collision resistant</dfn> if its hard to find \(x_1,x_2\) with \(x_1\ne x_2 \) s.t. \(h(x_1) = h(x_2)\text{.}\)</p></article><article class="definition-like" id="def-preimage-resistance"><h6 class="heading">
+<p id="p-831">A hash function \(h\) is <dfn class="terminology">collision resistant</dfn> if its hard to find \(x_1,x_2\) with \(x_1\ne x_2 \) s.t. \(h(x_1) = h(x_2)\text{.}\)</p></article><article class="definition-like" id="def-preimage-resistance"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.2.4</span> <span class="title">Preimage resistance</span>
 </h6>
-<p id="p-832">A <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> \(h\) is <dfn class="terminology">preimage resistant</dfn> if given \(y\in \{0,1\}^n\) its hard to find \(x\) s.t. \(h(x) = y\text{.}\)</p></article><p id="p-833">Cool example, private set intersection, say two groups, Starbucks and BU want to find a list of common customers (students who bought something at Starbucks) but don't want to reveal anything to each other about the students or customers not in the intersection. Compute hashes of the names of customers and share the hashes, can compute the size of, and the intersection itself.</p></section><section class="subsection" id="subsection-69"><h3 class="heading hide-type">
+<p id="p-832">A hash function \(h\) is <dfn class="terminology">preimage resistant</dfn> if given \(y\in \{0,1\}^n\) its hard to find \(x\) s.t. \(h(x) = y\text{.}\)</p></article><p id="p-833">Cool example, private set intersection, say two groups, Starbucks and BU want to find a list of common customers (students who bought something at Starbucks) but don't want to reveal anything to each other about the students or customers not in the intersection. Compute hashes of the names of customers and share the hashes, can compute the size of, and the intersection itself.</p></section><section class="subsection" id="subsection-69"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Supersingular isogeny hash functions</span>
 </h3>
 <article class="paragraphs" id="paragraphs-31"><h5 class="heading"><span class="title">Parameters</span></h5>
@@ -344,7 +357,7 @@ MathJax.Hub.Config({
 <span class="type">Proposition</span> <span class="codenumber">3.2.5</span>
 </h6>
 <ol id="p-838" class="decimal">
-<li id="li-210">Preimage resistant iff when given \(j\) it is difficult to compute a positive integer \(e\) and an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi\colon E_{j_0} \to E_j\) with degree \(l^e\text{.}\)</li>
+<li id="li-210">Preimage resistant iff when given \(j\) it is difficult to compute a positive integer \(e\) and an isogeny \(\phi\colon E_{j_0} \to E_j\) with degree \(l^e\text{.}\)</li>
 <li id="li-211">Collision resistant iff when given \(j\) it is difficult to compute \(e\) and  \(\phi \colon E_{j_0} \to E_{j_0}\) with degree \(l^e\text{.}\)</li>
 </ol></article></article></section><section class="subsection" id="subsection-70"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Diffie-Hellman Key Exchange (1976)</span>
@@ -354,7 +367,7 @@ MathJax.Hub.Config({
 <span class="type">Subsection</span> <span class="codenumber">3.2.4</span> <span class="title">Supersingular isogeny Diffie-Hellman (SIDH)</span>
 </h3>
 <article class="paragraphs" id="paragraphs-34"><h5 class="heading"><span class="title">Parameters</span></h5>
-<p id="p-841">Supersingular <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> of smooth <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>: fix \(p\) to be big enough \(p = l_A^{e_A} l_B^{e_B} f  \pm 1\text{.}\) \(l_A,l_B\) small primes, \(f\) is a number chosen such that \(p\) is big. Construct a supersingular <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E\) such that \(\# E(\FF_{p^2}) = (l_A^{e_A}l_B^{e_B} f)^2\text{,}\) using Broker's algorithm.</p>
+<p id="p-841">Supersingular elliptic curve of smooth order: fix \(p\) to be big enough \(p = l_A^{e_A} l_B^{e_B} f  \pm 1\text{.}\) \(l_A,l_B\) small primes, \(f\) is a number chosen such that \(p\) is big. Construct a supersingular elliptic curve \(E\) such that \(\# E(\FF_{p^2}) = (l_A^{e_A}l_B^{e_B} f)^2\text{,}\) using Broker's algorithm.</p>
 <p id="p-842">Construct bases \((P_A, Q_A)\) for \(E\lb l_A^{e_A}\rb\text{,}\) \((P_B, Q_B)\) for \(E\lb l_B^{e_B}\rb\text{.}\)</p></article><article class="paragraphs" id="paragraphs-35"><h5 class="heading"><span class="title">Protocol</span></h5>
 <p id="p-843">Alice takes \(m_A,n_A \in \ZZ/l_A^{e_A}\)</p>
 <p id="p-844">Bob takes \(m_B,n_B \in \ZZ/l_B^{e_B}\)</p>
@@ -366,8 +379,8 @@ MathJax.Hub.Config({
 <p id="p-850">Both compute \(\phi'_A\colon E_B \to E_B/\langle m_A\phi_B(P_A) + n_A\phi_B(Q_A)\rangle\) or analogous.</p>
 <p id="p-851">Shared secret is \(j(E_{AB})\text{.}\)</p></article><article class="paragraphs" id="paragraphs-36"><h5 class="heading"><span class="title">Hardness</span></h5>
 <ol id="p-852" class="decimal">
-<li id="li-212">(Decisional supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> problem) Given \(E, (P_A,Q_A)\) a basis for \(l_A^{e_A}\) torsion, let \(E_A\) be another curve, is \(E_A\) \(l_A^{e_A}\) isogenous to \(E\text{?}\)</li>
-<li id="li-213">(Computational supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> problem) Let \(\phi_A \colon E \to E_A\) be an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> with a kernel of the form \(\langle m_AP_A + n_AQ_A \rangle\text{.}\) Given \(E_A\) and \(\phi_A(P_B)\) \(\phi_A(Q_B)\text{,}\) find \(R_A\text{.}\) \(p^{1/4}\) classical, \(p^{1/6}\) quantum.</li>
+<li id="li-212">(Decisional supersingular isogeny problem) Given \(E, (P_A,Q_A)\) a basis for \(l_A^{e_A}\) torsion, let \(E_A\) be another curve, is \(E_A\) \(l_A^{e_A}\) isogenous to \(E\text{?}\)</li>
+<li id="li-213">(Computational supersingular isogeny problem) Let \(\phi_A \colon E \to E_A\) be an isogeny with a kernel of the form \(\langle m_AP_A + n_AQ_A \rangle\text{.}\) Given \(E_A\) and \(\phi_A(P_B)\) \(\phi_A(Q_B)\text{,}\) find \(R_A\text{.}\) \(p^{1/4}\) classical, \(p^{1/6}\) quantum.</li>
 <li id="li-214">Given \(E_A, E_B, \phi_A(P_B), \phi_A(Q_B), \phi_B(P_A), \phi_B(Q_A)\) find \(j\)-invariant of \(E_{AB}\text{.}\)</li>
 </ol></article></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.5</span> <span class="title">Supersingular isogeny public key</span>
@@ -393,18 +406,18 @@ MathJax.Hub.Config({
 </h3>
 <ol id="p-863" class="decimal">
 <li id="li-218">(Choosing \(f\)) Prime number theorem for arithmetic progressions gives you a bound on the density of primes of the form \(l_A^{e_A} l_B^{e_B} f \pm 1\)</li>
-<li id="li-219">Choosing a s.s. e.c. with the right group <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>, Broker's algorithm.</li>
+<li id="li-219">Choosing a s.s. e.c. with the right group order, Broker's algorithm.</li>
 <li id="li-220">
 <p id="p-864">Finding a basis for \(E\lb l_A^{e_A}\rb\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-221">Find a random point in \(E(\FF_{p^2})\) say \(P\text{.}\)</li>
-<li id="li-222">Check the <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> of \((l_B^{e_B} f)^2 \cdot P\text{.}\) If its \(l_A^{e_A}\) set \(P_A = P\text{.}\) Otherwise repeat from 1.</li>
+<li id="li-222">Check the order of \((l_B^{e_B} f)^2 \cdot P\text{.}\) If its \(l_A^{e_A}\) set \(P_A = P\text{.}\) Otherwise repeat from 1.</li>
 <li id="li-223">Do the same with \(Q_A = Q\text{.}\)</li>
-<li id="li-224">Check independence by seeing if \(e(P_A,Q_A) \) has the right <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>, so that it is in \(E\lb l_A^{e_A} \rb\) torsion.</li>
+<li id="li-224">Check independence by seeing if \(e(P_A,Q_A) \) has the right order, so that it is in \(E\lb l_A^{e_A} \rb\) torsion.</li>
 </ol>
 </li>
 <li id="li-225">Computing the kernels generated by \(R_A = m_A P_A + n_A Q_A\text{,}\) \(m_A, n_A \in \ZZ/l_A^{e_A} \ZZ\text{.}\) Analogue of double and add. Set \(R_A = P_A + \lb m_A\inv n_A\rb Q_A\text{.}\) Use differential addition (when you compute \(A+B\) with side info \(A-B\)) and a Montgomery ladder</li>
-<li id="li-226">(Computing smooth degree <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>) Decompose the \(l_A^{e_A}\) <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> into \(e_A\) different \(l_A\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>, \(\phi_i\colon E_i \to E_{i+1}\) the kernel of \(\phi_i\) is \(\langle l_A^{e_A - i - 1} R_A\rangle\text{.}\) Vélu's formula runs in \(O(l)\) for \(l\)-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>.</li>
+<li id="li-226">(Computing smooth degree isogenies) Decompose the \(l_A^{e_A}\) isogeny into \(e_A\) different \(l_A\)-isogenies, \(\phi_i\colon E_i \to E_{i+1}\) the kernel of \(\phi_i\) is \(\langle l_A^{e_A - i - 1} R_A\rangle\text{.}\) Vélu's formula runs in \(O(l)\) for \(l\)-isogeny.</li>
 </ol></section></section></div></main>
 </div>
 <!--Start: Google code--><script>

@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -389,13 +402,13 @@ U_1 =\{[z_0,z_1] : z_1 \ne 0\}\to \CC
 </div></article><article class="example-like" id="example-19"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.2.5</span>
 </h6>
-<p id="p-485">Let \(\Lambda = \ZZ \oplus \ZZ i \subseteq \CC\) then \(X = \CC/\Lambda\) is a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>.</p></article></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
+<p id="p-485">Let \(\Lambda = \ZZ \oplus \ZZ i \subseteq \CC\) then \(X = \CC/\Lambda\) is a Riemann surface.</p></article></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Morphisms</span>
 </h3>
 <article class="definition-like" id="def-morph-riem-surf"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.2.6</span> <span class="title">(Holo/Mero)-morphisms of Riemann surfaces</span>
 </h6>
-<p id="p-486">A <dfn class="terminology">morphism of <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a></dfn> is a continuous map</p>
+<p id="p-486">A <dfn class="terminology">morphism of Riemann surfaces</dfn> is a continuous map</p>
 <div class="displaymath">
 \begin{equation*}
 f\colon S\to S'
@@ -405,8 +418,8 @@ f\colon S\to S'
 <p id="p-487">We call a morphism \(f\colon S\to \CC\) a <dfn class="terminology">holomorphic function</dfn> on \(S\text{.}\)</p>
 <p id="p-488">We say \(f \colon S \to \CC\) is a <dfn class="terminology">meromorphic function</dfn> is \(f\circ \phi\inv\) is meromorphic.</p></article><article class="exercise-like" id="exercise-7"><a knowl="" class="id-ref" refid="hk-exercise-7"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.2.7</span>
-</h6></a></article><div id="hk-exercise-7" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-489">The set of <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> form a field.</p></article></div>
-<p id="p-490">We denote the field of <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> by \(\mathcal M (S)\text{.}\)</p>
+</h6></a></article><div id="hk-exercise-7" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-489">The set of meromorphic functions on a Riemann surface form a field.</p></article></div>
+<p id="p-490">We denote the field of meromorphic functions by \(\mathcal M (S)\text{.}\)</p>
 <article class="theorem-like" id="proposition-41"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.2.8</span> <span class="title">1.26</span>
 </h6>
@@ -440,13 +453,13 @@ f(z) - \sum_{i=1}^n \sum_{j=1}^{j_i} \frac{\lambda_{j,i}}{(z-a_i)^j}
 <span class="type">Remark</span> <span class="codenumber">2.2.10</span>
 </h6>
 <p id="p-495">\(\CC \not\simeq \mathbf D\) by Liouville.</p>
-<p id="p-496">If \(S, S'\) are connected compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>, then any nonconstant morphism \(f\colon S \to S'\) is surjective. (Nonconstant holomorphic maps are open)</p></article></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
+<p id="p-496">If \(S, S'\) are connected compact Riemann surfaces, then any nonconstant morphism \(f\colon S \to S'\) is surjective. (Nonconstant holomorphic maps are open)</p></article></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.4</span> <span class="title">Ramification</span>
 </h3>
 <article class="definition-like" id="def-riem-order-vanish"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.2.11</span> <span class="title">Orders of vanishing</span>
 </h6>
-<p id="p-497">The <dfn class="terminology">order of vanishing</dfn> at \(P\in S\) of a <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">holomorphic function</a> on \(S\) is defined as follows: For \(\phi\) a  chart centered at \(P\) write</p>
+<p id="p-497">The <dfn class="terminology">order of vanishing</dfn> at \(P\in S\) of a holomorphic function on \(S\) is defined as follows: For \(\phi\) a  chart centered at \(P\) write</p>
 <div class="displaymath">
 \begin{equation*}
 f\circ \phi\inv (z) = a_n z^n + a_{n+1}z^{n+1} + \cdots,\,a_n\ne 0
@@ -459,7 +472,7 @@ f\circ \phi\inv (z) = a_n z^n + a_{n+1}z^{n+1} + \cdots,\,a_n\ne 0
 m_P(f) = \ord_P(\psi\circ f)\text{.}
 \end{equation*}
 </div>
-<p id="p-499">If \(m_P(f)\ge 2\) then we call \(P\) a <dfn class="terminology">branch point</dfn> of \(f\) and call \(f\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at \(P\text{.}\)</p></article><article class="example-like" id="example-20"><h6 class="heading">
+<p id="p-499">If \(m_P(f)\ge 2\) then we call \(P\) a <dfn class="terminology">branch point</dfn> of \(f\) and call \(f\) ramified at \(P\text{.}\)</p></article><article class="example-like" id="example-20"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.2.12</span>
 </h6>
 <div class="displaymath" id="p-500">
@@ -487,14 +500,14 @@ f\circ \phi\inv_a(z) = a^2 + 2az + z^2
 <p id="p-501">Any orientable compact surface can be triangulated.</p></article><article class="theorem-like" id="fact-5"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">2.2.14</span>
 </h6>
-<p id="p-502">Riemann surfaces are orientable.</p></article><p id="p-503">Given such an oriented polygon coming from a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>, we can associate a word \(w\) to it from travelling around the perimeter.</p>
+<p id="p-502">Riemann surfaces are orientable.</p></article><p id="p-503">Given such an oriented polygon coming from a Riemann surface, we can associate a word \(w\) to it from travelling around the perimeter.</p>
 <article class="example-like" id="example-21"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.2.15</span>
 </h6>
 <p id="p-504">For the sphere \(w = a\inv ab\inv bc\inv c\text{.}\)</p></article><article class="theorem-like" id="fact-existance-genus"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">2.2.16</span>
 </h6>
-<p id="p-505">Every such word can be normalised without changing the corresponding <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>.</p>
+<p id="p-505">Every such word can be normalised without changing the corresponding Riemann surface.</p>
 <div class="displaymath">
 \begin{equation*}
 w = \begin{cases} w_0 = aa\inv,\\ w_g = a_1b_1 a_1\inv b_1\inv \cdots a_gb_g a_g\inv b_g\inv\end{cases}

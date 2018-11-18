@@ -1,11 +1,17 @@
 macros.
 
+    % \linespread{2.5}
 
     % really small matrices https://tex.stackexchange.com/questions/109072/smallmatrix-with-vertical-line-as-column-separator-how-to-do-it
     \newenvironment{smallermatrix}[1]
     {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny% change to whatever you need
     \array{#1}}
     {\endarray}
+
+
+    % allow     \floor*{\frac{x}{2}} \lt \frac{x}{2} \lt \ceil*{\frac{x}{2}}  e.g https://tex.stackexchange.com/questions/118173/how-to-write-ceil-and-floor-in-latex
+    \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+    \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
     \newcommand{\ideal}[1]{\mathfrak{#1}}
     \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -65,8 +71,11 @@ macros.
     \newcommand{\dR}{\mathrm{dR}}
     % crystalline
     \newcommand{\crys}{\mathrm{crys}}
+    \newcommand{\cris}{\mathrm{cris}}
     % etale
     \newcommand{\et}{\mathrm{\acute{e}t}}
+    % etale
+    \newcommand{\sing}{\mathrm{sing}}
     % Petersson
     \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -286,3 +295,8 @@ macros.
     \DeclareMathOperator{\unitary}{U}
     \DeclareMathOperator{\specialunitary}{SU}
     \DeclareMathOperator{\Sym}{Sym}
+
+    \DeclareMathOperator{\Aff}{Aff}
+
+    %chern class
+    \DeclareMathOperator{\ch}{ch}

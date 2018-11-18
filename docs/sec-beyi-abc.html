@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -316,7 +329,7 @@ MathJax.Hub.Config({
 <article class="theorem-like" id="theorem-52"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.9.1</span> <span class="title">Mordell conjecture/Falting's theorem</span>
 </h6>
-<p id="p-666">Let \(C\) be an algebraic curve of <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> \(\ge 2\) over a number field \(K\text{.}\) Then \(C(K)\) is finite.</p></article><p id="p-667">There are many proofs of this, Falting's being the original and most famous.</p>
+<p id="p-666">Let \(C\) be an algebraic curve of genus \(\ge 2\) over a number field \(K\text{.}\) Then \(C(K)\) is finite.</p></article><p id="p-667">There are many proofs of this, Falting's being the original and most famous.</p>
 <article class="remark-like" id="remark-16"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.9.2</span>
 </h6>
@@ -456,7 +469,7 @@ f\colon F_n \to \PP^1
 </div>
 <article class="exercise-like" id="exercise-21"><a knowl="" class="id-ref" refid="hk-exercise-21"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.9.7</span>
-</h6></a></article><div id="hk-exercise-21" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-685">If \(C\)  has <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> 0 or 1, no such \(f\) can exist (hint: Riemann-Hurwitz).</p></article></div></article><article class="paragraphs" id="paragraphs-19"><h5 class="heading"><span class="title">ABC implies a bound on Mordell</span></h5>
+</h6></a></article><div id="hk-exercise-21" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-685">If \(C\)  has genus 0 or 1, no such \(f\) can exist (hint: Riemann-Hurwitz).</p></article></div></article><article class="paragraphs" id="paragraphs-19"><h5 class="heading"><span class="title">ABC implies a bound on Mordell</span></h5>
 <p id="p-686">We begin with a technical proposition:</p>
 <article class="theorem-like" id="proposition-58"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.9.8</span>
@@ -492,7 +505,7 @@ N_\infty(r) = \prod_{\ideal p \supseteq (1/r)} \norm(\ideal p)
 \begin{equation*}
 b_f(0) = \sum_{f(p) = 0} (e_p - 1)\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-98"><a knowl="" class="id-ref" refid="hk-proof-98"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-98" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-688">The <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> 0 case follows from the fact that the \(f\) is a rational function (and in fact the error term is \(O(1)\)) (exercise). For the general case we need the theory of log heights on curves. From this we require the following</p>
+</div></article><article class="hiddenproof" id="proof-98"><a knowl="" class="id-ref" refid="hk-proof-98"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-98" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-688">The genus 0 case follows from the fact that the \(f\) is a rational function (and in fact the error term is \(O(1)\)) (exercise). For the general case we need the theory of log heights on curves. From this we require the following</p>
 <ul class="disc">
 <li id="li-145">For \(D\) a divisor on \(C\) we have  a height function<div class="displaymath">
 \begin{equation*}
@@ -600,7 +613,7 @@ N(f(P)) \lt H(f(P))^{m/d} K\text{.}
 <article class="theorem-like" id="theorem-53"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.9.10</span> <span class="title">ABC implies Mordell</span>
 </h6>
-<p id="p-692">ABC implies Mordell.</p></article><article class="hiddenproof" id="proof-99"><a knowl="" class="id-ref" refid="hk-proof-99"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-99" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-693">Let \(C\) be a given curve of <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> \(g \ge 2\) Belyi's theorem gives a function</p>
+<p id="p-692">ABC implies Mordell.</p></article><article class="hiddenproof" id="proof-99"><a knowl="" class="id-ref" refid="hk-proof-99"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-99" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-693">Let \(C\) be a given curve of genus \(g \ge 2\) Belyi's theorem gives a function</p>
 <div class="displaymath">
 \begin{equation*}
 f\colon C \to \PP^1

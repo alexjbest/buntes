@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -314,8 +327,8 @@ MathJax.Hub.Config({
 </h2>
 <a href="sec-riemann-hurwitz.html" class="permalink">¶</a><article class="exercise-like" id="exercise-9"><a knowl="" class="id-ref" refid="hk-exercise-9"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.3.1</span> <span class="title">Unimportant</span>
-</h6></a></article><div id="hk-exercise-9" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-509">The <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> is invariant under changing triangulation.</p></article></div>
-<p id="p-510">In particular there are at least two distinct ways of thinking about <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> for <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> \(R\)</p>
+</h6></a></article><div id="hk-exercise-9" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-509">The genus is invariant under changing triangulation.</p></article></div>
+<p id="p-510">In particular there are at least two distinct ways of thinking about genus for Riemann surfaces \(R\)</p>
 <ol class="decimal">
 <li id="li-101"><div class="displaymath">
 \begin{equation*}
@@ -324,7 +337,7 @@ MathJax.Hub.Config({
 </div></li>
 <li id="li-102">The dimension of the space of holomorphic differentials on \(R\text{.}\)</li>
 </ol>
-<p id="p-511">Goal: given \(R\) calculate <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a></p>
+<p id="p-511">Goal: given \(R\) calculate genus</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 = (x+1)(x-1)(x+2)(x-2)
@@ -369,7 +382,7 @@ b = \sum_{x\in \PP^1 \CC} (\deg(\pi) - \# \pi\inv (x))\text{.}
 </div></article><article class="theorem-like" id="lemma-14"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">2.3.4</span>
 </h6>
-<p id="p-516">Locally given some choice of coordinates a non-constant <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">morphism of Riemann surfaces</a></p>
+<p id="p-516">Locally given some choice of coordinates a non-constant morphism of Riemann surfaces</p>
 <div class="displaymath">
 \begin{equation*}
 f\colon R \to S
@@ -405,7 +418,7 @@ f(U_r) \subseteq V_s\text{.}
 \pi \colon R\to \PP^1 \CC
 \end{equation*}
 </div>
-<p>is given by \(w \mapsto w^m\text{,}\) s.t. every edge, all <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a> are vertices. This ensures that each face edge and vertex has \(n  = \deg (\pi)\) preimages (except <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a>). Then accounting for <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a> we have \(\deg(\pi) -  \# \pi\inv (x_0)\) preimages.</p></article></div>
+<p>is given by \(w \mapsto w^m\text{,}\) s.t. every edge, all branch points are vertices. This ensures that each face edge and vertex has \(n  = \deg (\pi)\) preimages (except branch points). Then accounting for branch points we have \(\deg(\pi) -  \# \pi\inv (x_0)\) preimages.</p></article></div>
 <article class="example-like" id="example-23"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.3.5</span>
 </h6>
@@ -428,7 +441,7 @@ ax + by + cz = 0
 R:\{P(x,y) = 0\} \xrightarrow\pi \PP^1\CC
 \end{equation*}
 </div>
-<p>compute \(b\text{.}\) In other words, if we fix an arbitrary point \(Q\in C\) then there are \(d(d-1)\) lines through \(Q\) which are tangent to \(C\text{.}\) Projecting to the \(x\)-coordinate \(\iff\) family of lines through a point at \(\infty\) \(\iff\) \(\ast\) line in \((\PP^2)^*\text{.}\) We have a new question: How many points does this line intersect (up to <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a>). By bezout \(\iff  \deg C^*\text{.}\)</p>
+<p>compute \(b\text{.}\) In other words, if we fix an arbitrary point \(Q\in C\) then there are \(d(d-1)\) lines through \(Q\) which are tangent to \(C\text{.}\) Projecting to the \(x\)-coordinate \(\iff\) family of lines through a point at \(\infty\) \(\iff\) \(\ast\) line in \((\PP^2)^*\text{.}\) We have a new question: How many points does this line intersect (up to multiplicity). By bezout \(\iff  \deg C^*\text{.}\)</p>
 <p id="p-522">Proof (Matt emerton) Consider a point on \(C\) in \(\PP^2\) such that no tangent line to the curve at   \(\infty\) passes through it. Move this point to the origin. If we write</p>
 <div class="displaymath">
 \begin{equation*}
@@ -487,13 +500,13 @@ g=  \frac{(d-1)(d-2)}{2}\text{.}
 </div></article><article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">A 3-fold equivalence of categories</span></h5>
 <p id="p-523">Amazing synthesis.</p>
 <ol class="decimal">
-<li id="li-103">Analysis: Compact connected <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">riemann surfaces</a>.</li>
+<li id="li-103">Analysis: Compact connected riemann surfaces.</li>
 <li id="li-104">Algebra: Field extensions \(K/\CC\) where \(K\) is finitely generated of transcendence degree 1 over \(\CC\text{.}\)</li>
-<li id="li-105">Geometry: <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">Complete</a> nonsingular irreducible algebraic curves in \(\PP^n\text{.}\)</li>
+<li id="li-105">Geometry: Complete nonsingular irreducible algebraic curves in \(\PP^n\text{.}\)</li>
 </ol>
 <p id="p-524">3) curve \(\to\) 2) field extension. Over \(C\) all rational functions \(\frac{P(x)}{Q(x)}\) \(\deg P= \deg Q\text{,}\) \(P,Q \colon C\to \CC \cup \{\infty\}\text{.}\)</p>
 <p id="p-525">3) \(\to\) 1) take complex structure induced by \(\PP^n\text{.}\)</p>
-<p id="p-526">1) \(\to\) 2) associated field of <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on \(X\text{.}\)</p>
+<p id="p-526">1) \(\to\) 2) associated field of meromorphic functions on \(X\text{.}\)</p>
 <p id="p-527">1) \(\to\) 3) Any curve which is holomorphic has an embedding into \(\PP^n\) (Riemann-Roch).</p>
 <p id="p-528">2) \(\to\) 1) \(K/\CC\) consider valuation rings \(R\) such that \(K\supseteq R\supseteq \CC\text{.}\)</p>
 <article class="example-like" id="example-24"><h6 class="heading">
@@ -502,7 +515,7 @@ g=  \frac{(d-1)(d-2)}{2}\text{.}
 <p id="p-529">\(g =0\text{,}\) \(\PP^1 \CC\) \(\CC(t)\text{,}\) \(\CC\cup \{\infty\}\text{.}\)</p></article><article class="example-like" id="example-25"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.3.7</span>
 </h6>
-<p id="p-530">\(g =1\text{,}\) <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, \(f(x,y,z)\) smooth plane cubic, \(f= 0\text{,}\) \(\CC(\sqrt{f(x)}, x)\text{.}\)</p>
+<p id="p-530">\(g =1\text{,}\) elliptic curves, \(f(x,y,z)\) smooth plane cubic, \(f= 0\text{,}\) \(\CC(\sqrt{f(x)}, x)\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \CC/\Lambda \to \PP^2
@@ -528,7 +541,7 @@ z\not\in \Lambda
 <article class="theorem-like" id="claim-riemann-hurwitz"><h6 class="heading">
 <span class="type">Claim</span> <span class="codenumber">2.3.8</span>
 </h6>
-<p id="p-532">For \(\pi\colon R\to S\) a non-constant morphism of compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a></p>
+<p id="p-532">For \(\pi\colon R\to S\) a non-constant morphism of compact Riemann surfaces</p>
 <div class="displaymath">
 \begin{equation*}
 \chi(R) = \deg \pi \cdot \chi(S)  - \sum_{x\in S} (\deg(\pi) - \#\pi\inv(x))\text{.}
@@ -536,7 +549,7 @@ z\not\in \Lambda
 </div></article><article class="theorem-like" id="corollary-31"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">2.3.9</span>
 </h6>
-<p id="p-533">There are no non-constant morphisms from a sphere to a surface of <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> \(\gt 0\text{.}\)</p></article><article class="hiddenproof" id="proof-85"><a knowl="" class="id-ref" refid="hk-proof-85"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-85" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-534">
+<p id="p-533">There are no non-constant morphisms from a sphere to a surface of genus \(\gt 0\text{.}\)</p></article><article class="hiddenproof" id="proof-85"><a knowl="" class="id-ref" refid="hk-proof-85"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-85" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-534">
 \begin{equation*}
 f\colon \PP^1 \CC \to S
 \end{equation*}
@@ -566,16 +579,16 @@ x^n  +y^ n + z^n = 0
 E = \CC/ \ZZ + \ZZ i
 \end{equation*}
 </div>
-<p>multiplication by \(i\) rotates \(x \mapsto xi\) let \(x \sim xi\text{.}\) If we mod out by \(\sim\) to get \(E/\sim\) this is still a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> and the quotient map</p>
+<p>multiplication by \(i\) rotates \(x \mapsto xi\) let \(x \sim xi\text{.}\) If we mod out by \(\sim\) to get \(E/\sim\) this is still a Riemann surface and the quotient map</p>
 <div class="displaymath">
 \begin{equation*}
 f \colon E \to E / \sim
 \end{equation*}
 </div>
-<p>is nice, compute the <a knowl="./knowl/def-branch-point.html" title="Definition 2.3.2: Branch points">branch points</a>  of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> 4 and <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> 2.</p></article></div>
+<p>is nice, compute the branch points  of order 4 and order 2.</p></article></div>
 <article class="exercise-like" id="exercise-12"><a knowl="" class="id-ref" refid="hk-exercise-12"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.3.12</span>
-</h6></a></article><div id="hk-exercise-12" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-537">\(X\) compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> of \(g\ge 2\) then there are at most \(84(g-1)\) automorphisms of \(X\text{.}\)</p></article></div>
+</h6></a></article><div id="hk-exercise-12" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-537">\(X\) compact Riemann surface of \(g\ge 2\) then there are at most \(84(g-1)\) automorphisms of \(X\text{.}\)</p></article></div>
 <article class="exercise-like" id="exercise-13"><a knowl="" class="id-ref" refid="hk-exercise-13"><h6 class="heading">
 <span class="type">Exercise</span> <span class="codenumber">2.3.13</span>
 </h6></a></article><div id="hk-exercise-13" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-538">Klein quartic</p>
@@ -584,7 +597,7 @@ f \colon E \to E / \sim
 x^3 y + y^3 z + z^3 x = 0
 \end{equation*}
 </div>
-<p>has 168 automorphisms and is <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> 3.</p></article></div></article></section></div></main>
+<p>has 168 automorphisms and is genus 3.</p></article></div></article></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

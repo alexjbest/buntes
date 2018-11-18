@@ -828,10 +828,11 @@ section#sec-buntes-hs
             statement: p
                 | For a compact Kahler manifold (e.g. #[m X] a projective variety) we have
                 me H^n_\dR(X) \cong \bigoplus _{p+q =n} H^{p,q}(X)
+                |.
         remark
             p
                 me H^{p,q} (X) \cong H^q( X, \Omega^p)
-                | using #[m \bar \partial] poincare lemma
+                | using #[m \bar \partial] Poincaré lemma
 
         example
             statement: p
@@ -841,11 +842,12 @@ section#sec-buntes-hs
                 me H^1_\dR = H^{1,0} \oplus H^{0,1}
                 me H^2_\dR = H^{2,0} \oplus H^{1,1} \oplus H^{0,2}
                 | outer terms 0, diamond is  1 , 1 , 1, 1.
-        definition
+        definition#def-hodge-str
+            title Hodge structures
             statement: p
-                | A Hodge structure on #[m V/\RR] is a #[m \ZZ]-bigrading on #[m V_\CC = V \otimes \CC] such that
+                | A #[term Hodge structure] on #[m V/\RR] is a #[m \ZZ]-bigrading on #[m V_\CC = V \otimes \CC] such that
                 me \overline V^{p,q}  = V^{q,p}
-                | its of type #[m S\subseteq \ZZ^2] if #[m V^{pq} \ne 0 ] iff #[m (p,q) \in S],
+                | its of #[term Hodge type] #[m S\subseteq \ZZ^2] if #[m V^{pq} \ne 0 ] iff #[m (p,q) \in S],
         example
             statement: p
                 | the Hodge decomposition gives a hodge structure on #[m H^n_{\mathrm{sing}}(X, \RR)].
@@ -894,3 +896,351 @@ section#sec-buntes-hs
                         li
                             me \Psi(v,Jw) \text{ is pos. def.}
 
+
+section#sec-buntes-vhs
+    title Variations of Hodge Structures
+
+    subsection
+        title
+            | Review of Hodge Theory
+
+        p
+            | #[m X] complex manifold #[m X\subseteq \PP^N] which is #[m m]-dimensional.
+
+            | For each #[m n] associate to #[m X]
+            me H_\ZZ = H^n_{\mathrm{sing}}(X, \ZZ) / \tors
+            // TODO is this meant to be this?
+            me H_\CC = H_\ZZ \otimes \CC = H^n_\dR(X)
+            | we have a bilinear pairing
+            me Q\colon H_\ZZ \times H_\ZZ \to \ZZ
+            me Q(\alpha,\beta) = \int_X \alpha \cup \beta \cup \omega^{m-n}
+            | where #[m \omega] is a generator of #[m H^2( \PP^N , \ZZ)] restricted to #[m X].
+            | This gives us the set-up of #[m X] as a differentiable manifold.
+            | Now say something about complex structure.
+            | We have a decomposition of differential forms on #[m X]
+            me A^n(X) = \bigoplus_{p+q  =n} A^{p,q}
+            | degree #[m n] forms decomposing as a combination of type #[m p,q] forms.
+
+        p
+            | Hodge theorem descends to a decomposition on cohomology
+            me H^n_\dR(X) = \bigoplus_{p+q = n} H^{p,q}
+            me H^{p,q} = \overline{H^{q,p}}
+
+            me Q(H^{p,q}, H^{p',q'}) = 0
+            | unless #[m p+p' = q+q' = n].
+        p
+            | A hodge structure of weight #[m n] is the data #[m (H_\ZZ, Q)] satisfying the Hodge decomposition,
+            | Bilinearity
+
+        p
+            | Questions:
+            ol
+                li
+                    | To what extent does the HS of #[m X] determine #[m X]?
+                    | (Torelli problem)
+                li
+                    | To what extent can we read off the geometric data of #[m  X] from its Hodge structure.
+
+    subsection
+        title
+            | Variations of Hodge structures:
+        introduction
+            p
+                | Let #[m Y \subseteq X] be codimension #[m k], this gives a class in
+                me H^{k,k}(X) \subseteq H^{2k}(X,\CC)
+                | what about the converse?
+
+            p
+                | For each cohomology class #[m \gamma]  in #[m H^{2k} (X,\CC)] is #[m \gamma] a rational linear combination of classes of subvarieties. (Hodge conjecture).
+
+        subsubsection
+            title Hodge theory for curves
+
+            p
+                | #[m (H_\ZZ, Q)], #[m H^{1,0} \oplus H^{0,1}] have the period matrix
+                me H^{0,1}/\Lambda \cong \Jac(C)
+            p
+                me y^2 = x(x-1)(x-\lambda)
+                me \lambda \in \PP^1 - \{0,1,\infty\}
+
+                | each #[m E_\lambda \leftrightarrow H^{1,0} \oplus H^{0,1}] so can ask as #[m \lambda] varies we can ask how #[m H^{1,0}] is situated inside of #[m H^{1,0} \oplus H^{0,1}].
+
+            p
+                me \omega = \frac{\diff x}{y} \in H^0(X,\Omega_X)
+                | pairing with #[m H_1(X)]
+                me \int_\gamma \omega
+                | .
+
+            p
+                | For #[m B] a variety #[m \{X_b\}] are varieties with Hodge structures for each #[m b\in B].
+                | Locally we can identify
+                me H_\ZZ = H^n(X_b , \ZZ)/\tors
+                | and #[m H_\CC ] with that of #[m X_{b_0}].
+            p
+                | Then consider
+                me H^{n-k, k}(X_b)
+                | or the associated
+                me F^k = \bigoplus_{l=0}^k H^{n-l,l}(X_b)
+                | subspaces of #[m H_\CC].
+
+            p
+                | Question:
+                | What is a moduli space of linear subspaces?
+            p
+                |Answer:
+                | The grassmanian!
+                me {\mathrm{Gr}}(k,V)
+                | of #[m k]-dimensional subspaces of a fixed vector space #[m V].
+                | What is the tangent space to the Grassmanian at a point #[m W\subseteq V]?
+                me \Hom(W, V/W)
+                | if we take the complementary subspace #[m W  \oplus C = V] given another subspace
+                me W' \cap C =  \{ 0 \}
+                | have #[m \pi_{W'}, \pi_C]
+
+                me {\mathrm{Gr}}(k,V) = \{\text{all\,}W'\}
+                me \cong \Hom(W,C)
+                | by #[m \pi_C \circ (\pi_W|_{W'})\inv].
+
+            fact
+                statement: p
+                    ol
+                        li
+                            | #[m \phi\colon B\to {\mathrm{Gr}}] mapping #[m b \mapsto F^k(X_b) \subseteq H_\CC] is holomorphic.
+                        li
+                            | In terms of identifying the tangent space of the grassmanian to the hom set, the image under
+                            me \diff \phi_k = \delta_k
+                            | of any tangent vector of #[m B] at #[m b_0] carries #[m F^{k} ] to #[m F^{k+1}/F^k]
+                            | so we have maps
+                            me \delta_k \colon T_{b_0} B \to \Hom(H^{n-k,k} (X), H^{n-k-1, k+1}(X))
+                            | satisfying
+                            me \delta_{k+1} (V) \circ \delta_k(W) =  \delta_{k+1}(W) \circ \delta_k(W)
+                            | for all #[m v,w\in T].
+            p
+                | Since #[m F^k(X_b)] satisfy
+                me Q(F^k, F^{n- k - 1} ) = 0
+                | for all #[m b].
+                me Q(\delta_v(v)(\alpha), \beta) + Q(\alpha, \delta_{n-k-1}(v)(\beta)) = 0
+                | for all #[m \alpha\in H^{n-k, k}(X)], #[m \beta \in H^{k+1, n-k - 1}(X)] for #[m v \in T]
+
+            definition
+                statement: p
+                    | An #[term infinitesimal variation of Hodge structures] is
+                    me (H_\ZZ, Q, H^{p,q}, T, \delta_q\colon T \to \Hom(H^{p,q}, H^{p-1, q+1}))
+
+            p
+                | Two observations:
+
+            remark
+                p
+                    | Variations of hodge structures are often computable, e.g. for hypersurfaces in #[m \PP^N].
+
+            p
+                me X\subseteq \PP^{n+1}
+                | let #[m X = \{ f = 0 \}] of #[m \deg d].
+            p
+                | Lefschetz implies the only interesting cohomology is in the middle dimension.
+                me H^n(X)
+                me H^{n,0}(X)
+                | Poincaré residues of #[m n+1] forms of #[m \PP^{n+1}] with poles along #[m X]
+                me \frac{  \Res_\omega g(z_0, \ldots, z_{n+1}) \Omega} f = \frac{g \widetilde \Omega}{\sum \partder[f]{z_i}}
+                | .
+            p
+                me \CC[z_0, \ldots, z_{n+1}]/\text{Jacobian ideal}
+                | graded parts #[m H^{p,q}(X)]
+
+            problem
+                p
+                    | Identify #[m H_\ZZ] inside of #[m H^n]
+
+            p
+                |Solution: VHS
+                | #[m \delta_k] maps turn out to be polynomial multiplication #[m d\ge n+1].
+
+            theorem
+                title Noether-Lefschetz
+                statement: p
+                    | A surface #[m S \subseteq \PP^4] of degree #[m d \ge 4] having general moduli contains no curves other than complete intersections #[m S \cap T] with other surfaces #[m T].
+
+
+
+section#sec-buntes-ricky2
+    title Moduli of linearized #[m \CC]-structures (RICKY)
+
+    subsection
+        title Motivation: Period morphisms
+
+        p
+            | Recall for  #[m A] a  polarized AV we get a lattice #[m H_1(A,\ZZ)] with some structure.
+            | To keep track of the #[m \CC]-structure  we record the Hodge structure induced on #[m H_1(A,\RR)] via the Hodge decomposition theorem.
+            | If we want to say construct a moduli space of Elliptic Curves we might try to create a moduli space of #[m \CC]-structures on a fixed torus #[m T].
+
+        p
+            | The linearized version of this is to fix #[m H^1(T, \RR)] and consider possible Hodge structures on it.
+
+        example
+            statement: p
+                me E_\lambda \colon y^2 = x(x-1) (x-\lambda)
+                me \mathcal E \xrightarrow f S = \PP^1 \smallsetminus \{0,1,\infty\}
+                | then we can identify
+                me V_\lambda = H^1_\sing(E_\lambda, \RR)
+                | for nearby #[m \lambda \in S].
+                | Then the Hodge structure looks like:
+                me F^1 V_{\lambda, \CC} = \langle \frac{\diff x}{y} \rangle \hookrightarrow V_{\lambda, \CC}
+                | this induces a period map
+                me S\supseteq U \to PP^1
+                | sending #[m s \mapsto F^1V_{s, \CC}].
+
+        p
+            | Today generalise the role of #[m \PP^1] in this.
+
+    subsection
+        title Moduli of Hodge structures
+
+        p
+            | Recall: a Hodge structure on a real vector space #[m V] is equivalent to a morphism #[m h \colon \mathbf S \to \GL(V)] where #[m \mathbf S  = \Res_\RR^\CC \mathbf G_m]
+            | Given #[m h], let
+            me V^{p,q} = \{ v \in V_\CC : h(z) v= z^{-p} \bar z ^{-q} v\}
+            | (the characters of #[m \mathbf S] are of the form #[m \chi_{p,q} = z^{-p} \bar z ^{-q}] for #[m (p,q)\in \ZZ^2].
+            | So a general Hodge structure on a Lie group
+            /// ????
+            |   #[m G] is defined to be a map #[m \mathbf S \to G].
+
+        lemma
+            statement: p
+                | The combinatorial data of two Hodge structures are the same iff they are conjugate (i.e. the maps #[m \mathbf S \to \GL(V)] are conjugate).
+            proof
+                p
+                    | If #[m h] and #[m h'] are conjugate by #[m g] then conjugation by #[m g] takes #[m V^{p,q}] of one into the other (b/c it preserves the character spaces of #[m \mathbf S]).
+                    | Conversely if #[m \{V_1^{p,q}, V_2^{p,q}\}] are two HS with the same combinatorial data then we can take #[m g \colon V_{\CC} \to V_{\CC}].
+                    | Taking #[m V_1^{p,q} \cong V_2^{p,q}] and satisfying #[m g(\bar v) = \overline{g(v)}] (using Hodge symmetry) since #[m g] commutes with #[m \bar \cdot], it descends to a  map on #[m V].
+
+        p
+            | Let  #[m X] be a conjugacy class of morphisms #[m h\colon \mathbf S \to G].
+        p
+            | Impose the condition that:
+            men h(\RR^\times) \text{ lies in the center of }G(\RR) \forall h
+            | (If the HS on #[m V] is of weight #[m k] then #[m h(t) = t^k I], the converse is also true.)
+
+        p
+            | #[m G] acts transitively on #[m X] (via conjugation).
+            | So
+            me X=  G/K
+            | for #[m K = \Stab(h) ] for some #[m h] in #[m X].
+            | This gives #[m X] the structure of a #[m C^\infty]-manifold.
+        paragraphs
+            title The #[m \CC]-strucutre on #[m X]
+
+            p
+                | We give #[m T_hX = \Lie G / \Lie K] a #[m \CC]-v.s. structure let #[m \psi_g (x)  = g x g \inv] gives
+                me G\to \Aut(G)
+                | and its derivative is the adjoint map #[m \ad].
+                | If we compose with #[m h \colon \mathbf S\to G] we get a hodge structure on #[m L=  \Lie G].
+            p
+                | As #[m h(\RR^\times)] is in the center of #[m G(\RR)], have #[m \ad h(\RR^\times)] is the identity on #[m L].
+                | Hence the hodge structure on #[m L] is of weight 0.
+                | By above remark.
+            p
+                | Let #[m L^{0,0} = L_\CC^{0,0} \cap L] be the real #[m (0,0)] part of the HS on #[m L].
+
+            lemma
+                statement: p
+                    me L^{0,0} = \Lie K
+                proof: p
+                    | By the definition of #[m K], #[m \psi_h(k) = k] for all #[m k \in K].
+                    | Differentiating gives
+                    me (\ad h) (v) = v
+                    | for all #[m v \in \Lie K]
+                    | So #[m \Lie K  \subseteq L^{0,0}].
+
+                    | Conversely if #[m v \in L^{0,0}] then #[m (\ad h) (v)=v] implies
+                    me (\ad h)(\exp v) = \exp v
+                    | so #[m \exp v \in K] i.e. #[m v \in \Lie K].
+
+            lemma
+                statement: p
+                    | The inclusion #[m L \hookrightarrow L_\CC] induces an isomorphism of #[m \RR]-v.s.
+                    me L/L^{0,0} \xrightarrow\sim L_\CC / F^0 L_\CC
+                    | .
+                proof
+                    p
+                        | see notes.
+
+            p
+                | These lemmas combined give #[m T_h X] a  #[m \CC]-structure.
+
+            p
+                | To get a #[m \CC]-manifold structure on #[m X] we embed #[m X] into a #[m \CC] manifold in a way that respects the #[m \CC]-structures on the tangent spaces.
+
+            p
+                | Pick a faithful representation #[m G \hookrightarrow \GL(V)].
+                | Then #[m h \in X] we get a Hodge structure on #[m V] via
+                me \mathbf S \xrightarrow h G \xrightarrow \rho \GL(V)
+                | all other #[m h' \in X] have the same combinatorial data.
+            p
+                | Let #[m \mathbf F] be the flag variety parameterises filtrations of the type associated to #[m h \in X].
+            p
+                | To be safe assume #[m V] of weight #[m k].
+
+            p
+                | We have an injective map
+                me X \hookrightarrow \phi \mathcal F
+                | this induces a complex structure on #[m X], see notes for deets.
+    subsection
+        title Geometric conditions and chill (on VHS)
+
+        p
+            | Recall that a VHS parameterised by a space #[m S] must satisfy #[q Griffiths transversality], this translates to the condition
+
+        theorem
+            statement: p
+                | A VHS on #[m V] satisfies Griffiths transversality iff
+                men \text{the HS  on } L = \Lie(G) \text{ of type }\{(-1,1),(0,0),(1,-1)\}
+                | .
+                // TODO xiao says this means parallel transport preserves filtration
+
+        paragraphs
+            title Background on Cartan involutions
+
+            definition
+                statement: p
+                    | Let #[m G] be a real algebraic group with involution #[m \sigma].
+                    | The #[term real form] associated to #[m \sigma] is
+                    me G^\sigma (A) = \{ g \in G(A \otimes \CC) : \sigma(g) = \bar g\}
+                    | for all #[m \RR]-algebras #[m A].
+
+            example
+                statement: p
+                    | #[m G = \GL_n], #[m \sigma(g) = (g^\perp)\inv] then
+                    me G^\sigma = U(n)
+                    | observe that this is compact!
+
+            definition
+                statement: p
+                    | #[m \sigma] is called a #[term Cartan involution] if #[m G^\sigma] is compact, i.e. #[m G^\sigma(\RR)] is compact and meets every connected component of #[m G^\sigma(\CC)].
+
+            theorem
+                statement: p
+                    | Let #[m G] be connected, then #[m G] is reductive iff #[m G] admits a Cartan involution.
+
+            lemma
+                title for next time
+                statement
+                    p
+                        | If #[m K] is a compact lie group then any #[m \CC]-representation #[m V] of it admits a #[m K]-invariant pos. def. Hermitian form
+                    p
+                        | Conversely if #[m K] has a faithful representation admitting a #[m K]-inv pos. def. Herm. form. then #[m K] is compact.
+                proof
+                    p
+                        | #[m K] compact, take any #[m H_0(u,v)] a pos. def. herm. form on #[m V].
+                        | Then
+                        me H(u,v) = \int_K H_0(Ku, Kv) \diff K
+                        |  is #[m K]-invariant with some properties.
+
+                        | For the converse statement the conditions imply #[m K \hookrightarrow U(K)] hence #[m K] is compact.
+
+            remark
+                statement: p
+                    | One source of involutions on #[m G] come from #[m C\in G\smallsetminus Z] s.t. #[m C^2 \in Z] then
+                    me g   \mapsto C g C\inv
+                    | is such an involution.
+                    | e.g. #[m  J]!!

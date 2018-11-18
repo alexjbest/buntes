@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -249,11 +260,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-av-jac.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-av-jac.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-buntes-vhs.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-av-jac.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-av-jac.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-buntes-vhs.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs" class="active">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -315,7 +328,7 @@ MathJax.Hub.Config({
 <a href="sec-buntes-hs.html" class="permalink">¶</a><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.4.1</span> <span class="title">Moduli of PPAVs</span>
 </h3>
-<p id="p-1124">Recall if \(A/ \CC\) is an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>,  then</p>
+<p id="p-1124">Recall if \(A/ \CC\) is an abelian variety,  then</p>
 <div class="displaymath">
 \begin{equation*}
 A = A(\CC) =  \CC^g/ \Lambda, \,g = \dim (A)
@@ -326,7 +339,7 @@ A = A(\CC) =  \CC^g/ \Lambda, \,g = \dim (A)
 \Lambda \cong H_1(A,\ZZ)
 \end{equation*}
 </div>
-<p>Also a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> \(\lambda \lambda A \to A^\vee\) is equivalent to choosing a <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a></p>
+<p>Also a polarization \(\lambda \lambda A \to A^\vee\) is equivalent to choosing a Riemann form</p>
 <div class="displaymath">
 \begin{equation*}
 E \colon \Lambda \times \Lambda \to \ZZ
@@ -341,13 +354,13 @@ E \colon \Lambda \times \Lambda \to \ZZ
 \begin{equation*}
 H(v,w) = E_\RR(iv, w) + i E_\RR(v,w)
 \end{equation*}
-</div>is a positive definite <a href="sec-buntes-av-jac.html" class="xref" title="Section 5.3: Abelian varieties and Jacobians (Angus)">Hermitian form</a> on \(V\text{.}\)</li>
+</div>is a positive definite Hermitian form on \(V\text{.}\)</li>
 </ol>
-<p>A <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarization</a> corresponds to \(E\) being a perfect pairing.</p>
+<p>A principal polarization corresponds to \(E\) being a perfect pairing.</p>
 <article class="definition-like" id="definition-110"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.4.1</span>
 </h6>
-<p id="p-1125">A PPAV (principally polarized <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>) is a pair \((A,\lambda)\text{.}\)</p></article><p id="p-1126">If \((\ZZ^{2g}, \Psi)\) is the standard \(2g\)-dim symplectic form \(\Psi\) then by linear algebra there is a symplectic isomorphism</p>
+<p id="p-1125">A PPAV (principally polarized abelian variety) is a pair \((A,\lambda)\text{.}\)</p></article><p id="p-1126">If \((\ZZ^{2g}, \Psi)\) is the standard \(2g\)-dim symplectic form \(\Psi\) then by linear algebra there is a symplectic isomorphism</p>
 <div class="displaymath">
 \begin{equation*}
 \alpha \colon \ZZ^{2g} \xrightarrow\sim \Lambda
@@ -525,7 +538,7 @@ H^i_\dR(X) \cong H^i(X, \underline \CC) \cong H^i_{\mathrm{sing}}(X, \CC)
 <p id="p-1140">For a compact Kahler manifold (e.g. \(X\) a projective variety) we have</p>
 <div class="displaymath">
 \begin{equation*}
-H^n_\dR(X) \cong \bigoplus _{p+q =n} H^{p,q}(X)
+H^n_\dR(X) \cong \bigoplus _{p+q =n} H^{p,q}(X)\text{.}
 \end{equation*}
 </div></article><article class="remark-like" id="remark-31"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">5.4.6</span>
@@ -535,10 +548,10 @@ H^n_\dR(X) \cong \bigoplus _{p+q =n} H^{p,q}(X)
 H^{p,q} (X) \cong H^q( X, \Omega^p)
 \end{equation*}
 </div>
-<p>using \(\bar \partial\) poincare lemma</p></article><article class="example-like" id="example-65"><h6 class="heading">
+<p>using \(\bar \partial\) Poincaré lemma</p></article><article class="example-like" id="example-65"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.4.7</span>
 </h6>
-<p id="p-1142">\(E/\CC\) <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>.</p>
+<p id="p-1142">\(E/\CC\) elliptic curve.</p>
 <div class="displaymath">
 \begin{equation*}
 H^0_\dR = H^{0,0}
@@ -554,16 +567,16 @@ H^1_\dR = H^{1,0} \oplus H^{0,1}
 H^2_\dR = H^{2,0} \oplus H^{1,1} \oplus H^{0,2}
 \end{equation*}
 </div>
-<p>outer terms 0, diamond is  1 , 1 , 1, 1.</p></article><article class="definition-like" id="definition-112"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.4.8</span>
+<p>outer terms 0, diamond is  1 , 1 , 1, 1.</p></article><article class="definition-like" id="def-hodge-str"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.4.8</span> <span class="title">Hodge structures</span>
 </h6>
-<p id="p-1143">A Hodge structure on \(V/\RR\) is a \(\ZZ\)-bigrading on \(V_\CC = V \otimes \CC\) such that</p>
+<p id="p-1143">A <dfn class="terminology">Hodge structure</dfn> on \(V/\RR\) is a \(\ZZ\)-bigrading on \(V_\CC = V \otimes \CC\) such that</p>
 <div class="displaymath">
 \begin{equation*}
 \overline V^{p,q}  = V^{q,p}
 \end{equation*}
 </div>
-<p>its of type \(S\subseteq \ZZ^2\) if \(V^{pq} \ne 0 \) iff \((p,q) \in S\text{,}\)</p></article><article class="example-like" id="example-66"><h6 class="heading">
+<p>its of <dfn class="terminology">Hodge type</dfn> \(S\subseteq \ZZ^2\) if \(V^{pq} \ne 0 \) iff \((p,q) \in S\text{,}\)</p></article><article class="example-like" id="example-66"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.4.9</span>
 </h6>
 <p id="p-1144">the Hodge decomposition gives a hodge structure on \(H^n_{\mathrm{sing}}(X, \RR)\text{.}\)</p></article><p id="p-1145">If \(V\) has a hodge structure of weight \(n\) (i.e. \(V^{pq} \ne 0\) iff \(p,q = n\)). Then we can recover the hodge structure from the associated hodge filtration</p>
@@ -616,13 +629,13 @@ V^{p,q} = \Fil^p V \cap \overline {\Fil^q V}
 <article class="theorem-like" id="proposition-73"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">5.4.12</span>
 </h6>
-<p id="p-1149">There is  a natural bijection between morphisms of <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic groups</a></p>
+<p id="p-1149">There is  a natural bijection between morphisms of algebraic groups</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf S \to \GL(V)
 \end{equation*}
 </div>
-<p>and Hodge structures on \(V\text{.}\)</p></article><p id="p-1150">Hence for any lie group \(G\) we can define a hodge structure on \(G\) as a morphism of <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic groups</a></p>
+<p>and Hodge structures on \(V\text{.}\)</p></article><p id="p-1150">Hence for any lie group \(G\) we can define a hodge structure on \(G\) as a morphism of algebraic groups</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf S \to G
@@ -632,7 +645,7 @@ V^{p,q} = \Fil^p V \cap \overline {\Fil^q V}
 <article class="definition-like" id="definition-113"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.4.13</span>
 </h6>
-<p id="p-1151">A <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of a HS \(h\colon \mathbf S \to \GL(v)\) is an alternating bilinear form</p>
+<p id="p-1151">A polarization of a HS \(h\colon \mathbf S \to \GL(v)\) is an alternating bilinear form</p>
 <div class="displaymath">
 \begin{equation*}
 \Psi \colon V\times V \to \RR

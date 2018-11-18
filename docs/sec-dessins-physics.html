@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -335,15 +348,15 @@ S(\phi_1, \phi_2) = \int_M \mathcal L(\phi_1,\phi_2)
 g(x) s(x)
 \end{equation*}
 </div>
-<p>is another section, call \(G\) the <dfn class="terminology">gauge group</dfn>. The important <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge transformations</a> are the ones that fix the set of physically realisable states (i.e. fixes the subset of \(\mathcal E\) that minimise \(S\)).</p></article></article><article class="paragraphs" id="paragraphs-22"><h5 class="heading"><span class="title">Quivers and dessins</span></h5>
-<p id="p-772">Let's now study the relationship between quivers and <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessins</a>.</p>
+<p>is another section, call \(G\) the <dfn class="terminology">gauge group</dfn>. The important gauge transformations are the ones that fix the set of physically realisable states (i.e. fixes the subset of \(\mathcal E\) that minimise \(S\)).</p></article></article><article class="paragraphs" id="paragraphs-22"><h5 class="heading"><span class="title">Quivers and dessins</span></h5>
+<p id="p-772">Let's now study the relationship between quivers and dessins.</p>
 <article class="example-like" id="example-39"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.12.2</span>
 </h6>
-<p id="p-773">\(\mathcal N = 4\) SYM (supersymmetric Yang-Mills) (Gauge symmetries given by some product of \(\specialunitary (N)\)) .</p></article><p id="p-774">A quiver is a directed graph, possibly with self-loops. Here we think of the nodes as corresponding to factors of the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a>. And the arrows as fields, so in a bouquet with 3 petals we have three fields, and only \(G = \specialunitary (N)\text{.}\)</p>
-<p id="p-775">There is also the notion of a periodic quiver (a tiling of the plane). We can take the triangular <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> and consider its dual, this is a hexagonal tiling with a bicolouring corresponding to the fact we had upwards pointing and downwards pointing triangles. This is a Dimer model.</p>
-<p id="p-776">Relating the Dimer model back to physics: We have hexagonal faces in correspondence with factors of the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">Gauge group</a>, and edges fields, with vertices terms in \(W\text{.}\)</p>
-<p id="p-777">So one distinct face gives one factor in the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a> so \(G = \specialunitary (N)\text{.}\) 3 distinct edges give 3 fields \(X_1, X_2, X_3\text{.}\) To recover \(W\) consider the permutation arising from reading the edges around the vertices counterclockwise. A black vertex \((1,2,3)\) gives \(\sigma_B\) corresponding to a positive term in \(W\text{.}\) A white vertex \((1,2,3)\) gives \(\sigma_W\) corresponding to a negative term in \(W\text{.}\) Then \(\sigma_\infty = (\sigma_B\sigma_W)\inv = (123)\) \(\sigma_i\) gives a term for each cycle. Each cycle in \(\sigma_B\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_B\) gives \(X_1X_2X_3\text{.}\) Each cycle in \(\sigma_W\inv\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_W\) gives \(X_1X_3X_2\text{.}\) Then</p>
+<p id="p-773">\(\mathcal N = 4\) SYM (supersymmetric Yang-Mills) (Gauge symmetries given by some product of \(\specialunitary (N)\)) .</p></article><p id="p-774">A quiver is a directed graph, possibly with self-loops. Here we think of the nodes as corresponding to factors of the gauge group. And the arrows as fields, so in a bouquet with 3 petals we have three fields, and only \(G = \specialunitary (N)\text{.}\)</p>
+<p id="p-775">There is also the notion of a periodic quiver (a tiling of the plane). We can take the triangular lattice and consider its dual, this is a hexagonal tiling with a bicolouring corresponding to the fact we had upwards pointing and downwards pointing triangles. This is a Dimer model.</p>
+<p id="p-776">Relating the Dimer model back to physics: We have hexagonal faces in correspondence with factors of the Gauge group, and edges fields, with vertices terms in \(W\text{.}\)</p>
+<p id="p-777">So one distinct face gives one factor in the gauge group so \(G = \specialunitary (N)\text{.}\) 3 distinct edges give 3 fields \(X_1, X_2, X_3\text{.}\) To recover \(W\) consider the permutation arising from reading the edges around the vertices counterclockwise. A black vertex \((1,2,3)\) gives \(\sigma_B\) corresponding to a positive term in \(W\text{.}\) A white vertex \((1,2,3)\) gives \(\sigma_W\) corresponding to a negative term in \(W\text{.}\) Then \(\sigma_\infty = (\sigma_B\sigma_W)\inv = (123)\) \(\sigma_i\) gives a term for each cycle. Each cycle in \(\sigma_B\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_B\) gives \(X_1X_2X_3\text{.}\) Each cycle in \(\sigma_W\inv\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_W\) gives \(X_1X_3X_2\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 W = \trace((\text{sim of }\sigma_B\text{ terms}) - (\text{sim of }\sigma_W\text{ terms}))
@@ -369,7 +382,7 @@ W = \trace((\text{sim of }\sigma_B\text{ terms}) - (\text{sim of }\sigma_W\text{
 = \ZZ/3\ZZ\text{.}
 \end{equation*}
 </div>
-<p id="p-779">The fundamental domain of the Dimer gives a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> on the torus with two vertices of degree 3. This corresponds to the Belyi pair \((\Sigma, \beta)\) where</p>
+<p id="p-779">The fundamental domain of the Dimer gives a dessin on the torus with two vertices of degree 3. This corresponds to the Belyi pair \((\Sigma, \beta)\) where</p>
 <div class="displaymath">
 \begin{equation*}
 \Sigma \colon y^2 = x^3 + 1
@@ -400,7 +413,7 @@ W = \trace((\text{sim of }\sigma_B\text{ terms}) - (\text{sim of }\sigma_W\text{
 <article class="example-like" id="example-40"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.12.3</span>
 </h6>
-<p id="p-780">Take the quiver with two vertices and two edges in each direction connecting them. This has 4 fields and two factors of \(G\) (i.e. \(G = \specialunitary (N) \times \specialunitary (N)\)). The dimer is a square <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> alternately coloured, with \(\sigma_B = \sigma_W = (1234), \sigma_\infty = (13)(24)\text{.}\)</p>
+<p id="p-780">Take the quiver with two vertices and two edges in each direction connecting them. This has 4 fields and two factors of \(G\) (i.e. \(G = \specialunitary (N) \times \specialunitary (N)\)). The dimer is a square lattice alternately coloured, with \(\sigma_B = \sigma_W = (1234), \sigma_\infty = (13)(24)\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 W = \trace (X_1X_2X_3X_4 - X_1 X_4 X_3 X_2)\text{.}
@@ -463,10 +476,10 @@ W = \trace (X_1X_2X_3X_4 - X_1 X_4 X_3 X_2)\text{.}
 \beta\inv(\infty)= \{(\frac 12,0), (\infty,\infty)\}
 \end{equation*}
 </div>
-<p>on the Dimer we have the square <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> so taking a fundamental domain containing  of the vertices we see the torus as a topology.</p></article><article class="example-like" id="example-41"><h6 class="heading">
+<p>on the Dimer we have the square lattice so taking a fundamental domain containing  of the vertices we see the torus as a topology.</p></article><article class="example-like" id="example-41"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.12.4</span> <span class="title">Final example</span>
 </h6>
-<p id="p-781">Let's jump straight to the Dimer the hexagonal <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> with fundamental domain containing 6 vertices. We have 9 fields and three factors in the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a> \(G = \specialunitary (N)^2\text{.}\)</p>
+<p id="p-781">Let's jump straight to the Dimer the hexagonal lattice with fundamental domain containing 6 vertices. We have 9 fields and three factors in the gauge group \(G = \specialunitary (N)^2\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma_B = (147)(258)(369)

@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -315,8 +328,8 @@ MathJax.Hub.Config({
 <a href="sec-rs-discrete-groups-ii.html" class="permalink">¶</a><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Moduli space of compact Riemann surfaces with genus \(g\)</span>
 </h3>
-<p id="p-573">\(g =0\text{.}\) Uniformization tells us that up to isomorphisms all <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> of <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> \(0\) are \(\PP^1\) hence the moduli space \(\mathcal M _0  = \{\text{pt}\}\text{.}\)</p>
-<p id="p-574">\(g = 1\text{.}\) Uniformization tells us that each <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> of <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> \(1\) is a torus and can be written as \(\CC/ \omega_1\ZZ+ \omega_2\ZZ \to \CC/(\ZZ \oplus \tau \ZZ)\text{,}\) with \(\tau = \pm \omega_1/\omega_2\text{.}\)</p>
+<p id="p-573">\(g =0\text{.}\) Uniformization tells us that up to isomorphisms all Riemann surfaces of genus \(0\) are \(\PP^1\) hence the moduli space \(\mathcal M _0  = \{\text{pt}\}\text{.}\)</p>
+<p id="p-574">\(g = 1\text{.}\) Uniformization tells us that each Riemann surface of genus \(1\) is a torus and can be written as \(\CC/ \omega_1\ZZ+ \omega_2\ZZ \to \CC/(\ZZ \oplus \tau \ZZ)\text{,}\) with \(\tau = \pm \omega_1/\omega_2\text{.}\)</p>
 <article class="theorem-like" id="proposition-45"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.5.1</span> <span class="title">2.54</span>
 </h6>
@@ -354,14 +367,14 @@ A,A' \in \GL_2(\ZZ)
 \end{equation*}
 </div>
 <p>isomorphism is induced by \(T(z) = (c\tau_2 + d) z\text{.}\)</p></article></div>
-<p id="p-577">\(g \gt 1\) \(\mathcal M_g\) is a complex variety of dimension \(3g-3\text{.}\) Uniformization tells us that describing a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> amounts to specifying \(2g\) real \(2\times 2\) matrices \(\{\gamma_i\}_{i=1}^{2g}\) such that</p>
+<p id="p-577">\(g \gt 1\) \(\mathcal M_g\) is a complex variety of dimension \(3g-3\text{.}\) Uniformization tells us that describing a Riemann surface amounts to specifying \(2g\) real \(2\times 2\) matrices \(\{\gamma_i\}_{i=1}^{2g}\) such that</p>
 <ol class="decimal">
 <li id="li-109">\(\det(\gamma_i) = 1\) which implies that \(\gamma_i\) depends on 3 real parameters so we have a total of \(6g\text{.}\)</li>
-<li id="li-110">\(\prod_{i=1}^g \lb \gamma_i, \gamma_{g+i}\rb = \begin{pmatrix} 1\amp 0 \\ 0\amp 1\end{pmatrix}\) 3 relations, so \(6g- 3\text{.}\) Since for any \(\gamma \in \PSL_2(\RR)\) \(\Gamma = \langle \gamma_i \rangle\) and \(\gamma\Gamma \gamma\inv\) uniformize isomorphic <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> implies \(6g-6\) real parameters, so \(3g-3\) complex parameters.</li>
+<li id="li-110">\(\prod_{i=1}^g \lb \gamma_i, \gamma_{g+i}\rb = \begin{pmatrix} 1\amp 0 \\ 0\amp 1\end{pmatrix}\) 3 relations, so \(6g- 3\text{.}\) Since for any \(\gamma \in \PSL_2(\RR)\) \(\Gamma = \langle \gamma_i \rangle\) and \(\gamma\Gamma \gamma\inv\) uniformize isomorphic Riemann surfaces implies \(6g-6\) real parameters, so \(3g-3\) complex parameters.</li>
 </ol></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.2</span> <span class="title">Monodromy</span>
 </h3>
-<p id="p-578">Let \(f\colon S_1 \to S\) be a morphism of degree \(d\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> over \(y_1,\ldots, y_n \in S\text{.}\) For \(y\in S\smallsetminus \{y_1,\ldots, y_n\}\) we have a group homomorphism</p>
+<p id="p-578">Let \(f\colon S_1 \to S\) be a morphism of degree \(d\) ramified over \(y_1,\ldots, y_n \in S\text{.}\) For \(y\in S\smallsetminus \{y_1,\ldots, y_n\}\) we have a group homomorphism</p>
 <div class="displaymath">
 \begin{equation*}
 M_f\colon \pi_1(S \smallsetminus \{y_1, \ldots, y_n\} )\to \operatorname{Bij} (f\inv (y))
@@ -386,7 +399,7 @@ M_f\colon \pi_1(S \smallsetminus \{y_1, \ldots, y_n\} )\to \operatorname{Bij} (f
 \pi \colon \HH/\Gamma_1 \to \HH/ \Gamma
 \end{equation*}
 </div>
-<p>be the <a knowl="./knowl/def-fuchsian-group.html" title="Definition 2.4.5: Fuchsian groups">Fuchsian group</a> representation of the map</p>
+<p>be the Fuchsian group representation of the map</p>
 <div class="displaymath">
 \begin{equation*}
 f\colon S_1 \to S\ni y\text{.}
@@ -437,7 +450,7 @@ M_\pi \colon \Gamma \to \operatorname{Bij} (\Gamma_1 \backslash \Gamma)
 <article class="theorem-like" id="proposition-46"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.5.3</span> <span class="title">2.63</span>
 </h6>
-<p id="p-583">For \(S\) a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> and \(\beta = \{ a_1, \ldots, a_n\} \subset S\) for some \(d \ge 1\) there are only finitely many pairs \((\tilde S, f)\) where \(\tilde S\) is a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> and</p>
+<p id="p-583">For \(S\) a compact Riemann surface and \(\beta = \{ a_1, \ldots, a_n\} \subset S\) for some \(d \ge 1\) there are only finitely many pairs \((\tilde S, f)\) where \(\tilde S\) is a compact Riemann surface and</p>
 <div class="displaymath">
 \begin{equation*}
 f\colon \tilde S \to S
@@ -494,7 +507,7 @@ S = \{ y^2 = \prod_{i=1}^N (x- a_i)\} \to \PP^1
 (x,y) \to x
 \end{equation*}
 </div>
-<p>covering group \(G\) is <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> 2 generated by the involution  \(J(x,y) = (x,-y)\text{.}\)</p></article><article class="theorem-like" id="proposition-48"><h6 class="heading">
+<p>covering group \(G\) is order 2 generated by the involution  \(J(x,y) = (x,-y)\text{.}\)</p></article><article class="theorem-like" id="proposition-48"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.5.7</span> <span class="title">2.66</span>
 </h6>
 <p id="p-588">A covering</p>
@@ -535,11 +548,11 @@ f^* \colon M(\PP^1 ) \hookrightarrow M(S)
 \begin{equation*}
 \operatorname{Mon}(f)  \simeq \Aut(\tilde S, \tilde f)
 \end{equation*}
-</div></article><p id="p-594">Interpretation in terms of <a knowl="./knowl/def-fuchsian-group.html" title="Definition 2.4.5: Fuchsian groups">Fuchsian groups</a>:</p>
+</div></article><p id="p-594">Interpretation in terms of Fuchsian groups:</p>
 <article class="theorem-like" id="proposition-49"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.5.10</span>
 </h6>
-<p id="p-595">Let \(f\colon S_1 \to S\) be a covering of <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> \(S_1\smallsetminus f\inv \{ y_1, \ldots, y_n \} \to S \smallsetminus\{ y_1, \ldots, y_n \}\text{.}\) The unramified cover and \(\pi \colon \HH/ \Gamma_1 \to \HH/ \Gamma\) the <a knowl="./knowl/def-fuchsian-group.html" title="Definition 2.4.5: Fuchsian groups">Fuchsian group</a> representatives. The normalisation of \(f\) can be represented as the compactification of</p>
+<p id="p-595">Let \(f\colon S_1 \to S\) be a covering of Riemann surfaces \(S_1\smallsetminus f\inv \{ y_1, \ldots, y_n \} \to S \smallsetminus\{ y_1, \ldots, y_n \}\text{.}\) The unramified cover and \(\pi \colon \HH/ \Gamma_1 \to \HH/ \Gamma\) the Fuchsian group representatives. The normalisation of \(f\) can be represented as the compactification of</p>
 <div class="displaymath">
 \begin{equation*}
 \HH/ \bigcap_{\gamma \in \Gamma} \gamma \inv \Gamma_1 \gamma \to \HH/\Gamma_1 \to \HH/\Gamma
@@ -559,7 +572,7 @@ S_F \to \PP^1
 (x,y) \to x
 \end{equation*}
 </div>
-<p>\(S_F\) has <a knowl="./knowl/def-class-set.html" title="Definition 3.4.8: Class sets">genus</a> 0. \(S_F \to \PP^1\) is of degree 3 and <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at most over \(0, \frac{-27}{4}, \infty\text{.}\) \(\operatorname{Mon}(x)  \simeq \Sigma_3\) so not a normal covering. Normalization of \((S_F, x)\) is \(S_{\tilde F} , \tilde x)\) where</p>
+<p>\(S_F\) has genus 0. \(S_F \to \PP^1\) is of degree 3 and ramified at most over \(0, \frac{-27}{4}, \infty\text{.}\) \(\operatorname{Mon}(x)  \simeq \Sigma_3\) so not a normal covering. Normalization of \((S_F, x)\) is \(S_{\tilde F} , \tilde x)\) where</p>
 <div class="displaymath">
 \begin{equation*}
 \tilde F (x,y) = y^2 ( 1-y)^2 x +  (1-y + y^2)

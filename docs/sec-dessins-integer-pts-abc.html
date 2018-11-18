@@ -48,10 +48,15 @@ MathJax.Hub.Config({
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\newenvironment{smallermatrix}[1]
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
@@ -99,7 +104,9 @@ MathJax.Hub.Config({
 \newcommand{\Ar}{\mathrm{Ar}}
 \newcommand{\dR}{\mathrm{dR}}
 \newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
 \newcommand{\pinf}{{1/p^\infty}}
@@ -237,6 +244,10 @@ MathJax.Hub.Config({
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
 \DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -305,6 +316,8 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -345,7 +358,7 @@ e,f,g\in K[x],\,e + f = g
 h(e,f,g) \lt r(efg) = r(e) + r(f)  + r(g)\text{.}
 \end{equation*}
 </div>
-<p id="p-702">We have sharpness if and only if \(f/g\) is a Belyi map for \(\PP^1 \to \PP^1\) with \((f/g)(\infty) \in \{0,1,\infty\}\text{.}\) Another way of saying this is that if \(\deg f = \deg g\) then their leading coefficients are equal, and hence \(\deg (e) \lt \deg (f)\text{.}\)</p></article><article class="hiddenproof" id="proof-100"><a knowl="" class="id-ref" refid="hk-proof-100"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-100" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-703">First of all we note that the statement is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> in \(e,f,g\text{,}\) so we may arrange that \(h(g) \le h(e,f)\) which implies that \(h(e) = h(f) = h(e,f,g)\text{.}\) The second statement is less obviously invariant but note that \(\phi\) is  a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a> is equivalent to \(1-\phi\) and \(1/\phi\) being Belyi also and this preserves \(\phi(\infty) \in \{0,1,\infty\}\text{,}\) so rearranging does not change the truth of the second statement either. Let \(\phi = f/g\) so \(\deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)\text{,}\) we will denote this by \(h\) now. Apply Riemann-Hurwitz (suprise-suprise)</p>
+<p id="p-702">We have sharpness if and only if \(f/g\) is a Belyi map for \(\PP^1 \to \PP^1\) with \((f/g)(\infty) \in \{0,1,\infty\}\text{.}\) Another way of saying this is that if \(\deg f = \deg g\) then their leading coefficients are equal, and hence \(\deg (e) \lt \deg (f)\text{.}\)</p></article><article class="hiddenproof" id="proof-100"><a knowl="" class="id-ref" refid="hk-proof-100"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-100" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-703">First of all we note that the statement is symmetric in \(e,f,g\text{,}\) so we may arrange that \(h(g) \le h(e,f)\) which implies that \(h(e) = h(f) = h(e,f,g)\text{.}\) The second statement is less obviously invariant but note that \(\phi\) is  a Belyi function is equivalent to \(1-\phi\) and \(1/\phi\) being Belyi also and this preserves \(\phi(\infty) \in \{0,1,\infty\}\text{,}\) so rearranging does not change the truth of the second statement either. Let \(\phi = f/g\) so \(\deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)\text{,}\) we will denote this by \(h\) now. Apply Riemann-Hurwitz (suprise-suprise)</p>
 <div class="displaymath">
 \begin{equation*}
 -2 = -2h + \sum_{x\in \PP^1} e_\phi(x) - 1\text{.}
@@ -529,12 +542,12 @@ K = X^3 - Y^2
 \end{equation*}
 </div>
 <p>is of degree \(\gt m\text{.}\)</p>
-<p id="p-722">(Now the speaker has just given a theorem with an inequality, so in <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a> to appear smart one of you should ask is this bound sharp.)</p>
+<p id="p-722">(Now the speaker has just given a theorem with an inequality, so in order to appear smart one of you should ask is this bound sharp.)</p>
 <p id="p-723">The bound is sharp, this can mean several things in general, originally it was asked that for infinity many \(m\) there is an example where \(\deg K = m + 1\text{.}\)</p></article><p id="p-724">The first part was proved initially by Davenport (in the same year, and journal). The second part had to wait until '81 for Stothers to prove it.</p>
-<p id="p-725">Someone else should probably also ask, how is any of this related to <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a>?</p>
-<p id="p-726">To prove sharpness we have to exhibit for each \(m\) triple of polynomials \(X,Y,K\) of degrees \(2m,3m,m+1\text{.}\) Coming up with polynomial families is hard, drawing stupid pictures is easy, can <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a> aid us here?</p>
+<p id="p-725">Someone else should probably also ask, how is any of this related to Dessins?</p>
+<p id="p-726">To prove sharpness we have to exhibit for each \(m\) triple of polynomials \(X,Y,K\) of degrees \(2m,3m,m+1\text{.}\) Coming up with polynomial families is hard, drawing stupid pictures is easy, can Dessins aid us here?</p>
 <p id="p-727">Lets back-track, when we proved Mason-Stothers we also said that sharpness was equivalent to \(f/g\) being Belyi, so \(X(t)^3/K(t) = (K(t) + Y(t)^2) / K(t) = Y(t)^2/K(t) + 1\) should be a Belyi map of degree \(6m\) from \(\PP^1\to \PP^1\text{.}\) What does its ramification look like? We should have all preimages of \(0\) degree 3, preimages of \(1\) degree 2, and above infinity \(m + 1\) points of degree \(1\) and the remaining of degree \(6m - (m + 1) = 5m - 1\text{.}\)</p>
-<p id="p-728">How can we draw a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessin</a> like this? Begin with a tree with all internal vertices degree 3, with \(2m\) vertices, this will have \(2m - 1\) edges, and as it is trivalent by the handshake lemma</p>
+<p id="p-728">How can we draw a Dessin like this? Begin with a tree with all internal vertices degree 3, with \(2m\) vertices, this will have \(2m - 1\) edges, and as it is trivalent by the handshake lemma</p>
 <div class="displaymath">
 \begin{equation*}
 3 \#\{\text{internal}\} + \#\{\text{leaves}\} =  4m - 2
@@ -562,7 +575,7 @@ K = X^3 - Y^2
 \#\{\text{leaves}\} =  m + 1
 \end{equation*}
 </div>
-<p>Add loops to the leaves, you now have a <a knowl="./knowl/def-clean-dessin.html" title="Definition 2.1.7: Clean dessins">clean Dessin</a> as above. It has \(2m- 1 + m + 1 = 3m\) edges. We have a face for every loop of degree 1, and one on the outside of degree \(m+ 1 +2(2m-1)  = 5m - 1\) as each internal edge is traversed twice if you walk around the outside. So this works!</p>
+<p>Add loops to the leaves, you now have a clean Dessin as above. It has \(2m- 1 + m + 1 = 3m\) edges. We have a face for every loop of degree 1, and one on the outside of degree \(m+ 1 +2(2m-1)  = 5m - 1\) as each internal edge is traversed twice if you walk around the outside. So this works!</p>
 <article class="example-like" id="example-35"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.10.7</span>
 </h6>
@@ -621,7 +634,7 @@ K(t) = -\frac{1}{108} (3t^{6} + 14t^3 +27)
 </div>
 <p>these get lower as we increase \(t\) though.</p></article><p id="p-731">We should expect this decrease from this method as if \(\deg X = 2m\) and \(\deg K = m + 1\) then \(\sqrt{X(t)}/K(t)\) grows like \(t^{m}/t^{m+1} = t\inv\text{.}\)</p>
 <p id="p-732">Can we do the same for abc?</p>
-<p id="p-733">Take the <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessin</a> with a deg 1 vertex at infinity, degree 3 at 0 with an edge surrounding 1, we get a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a></p>
+<p id="p-733">Take the Dessin with a deg 1 vertex at infinity, degree 3 at 0 with an edge surrounding 1, we get a Belyi function</p>
 <div class="displaymath">
 \begin{equation*}
 f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^3(x+1)}
@@ -633,7 +646,7 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 64a^3 b + (a^2 - 18ab - 27b^2)^2 = (a+9b)^3(a+b)
 \end{equation*}
 </div>
-<p>which could of course be verified independently, but how would you find this identity without <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a>? Now for \(a = -32, b= 23\) we get</p>
+<p>which could of course be verified independently, but how would you find this identity without Dessins? Now for \(a = -32, b= 23\) we get</p>
 <div class="displaymath">
 \begin{equation*}
 - 2^{21} \cdot 23 +  11^2 =  -1 \cdot 3^2 \cdot 5^6 \cdot 7^3
@@ -653,7 +666,7 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 </div>
 <p>(the current winner has quality \(1.6299\)).</p>
 <article class="paragraphs" id="paragraphs-20"><h5 class="heading"><span class="title">References</span></h5>
-<p id="p-734">A semi-random <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.14: Orders in quaternion algebras">order</a>, maybe starting at the top is nice though. If you have trouble finding something let me know.</p>
+<p id="p-734">A semi-random order, maybe starting at the top is nice though. If you have trouble finding something let me know.</p>
 <ol class="decimal">
 <li id="li-150">On Computing Belyi Maps - J. Sijsling, J. Voight</li>
 <li id="li-151">Belyi Functions: Examples, Properties, and Applications - Zvonkin (really nice survey)</li>
@@ -669,17 +682,17 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 <li id="li-161">Davenport–Zannier polynomials over \(\QQ\) - Fedor Pakovich, Alexander K. Zvonkin (a nice extension perhaps?)</li>
 <li id="li-162">Minimum Degree of the Difference of Two Polynomials over Q, and Weighted Plane Trees -  Fedor Pakovich,  Alexander K. Zvonkin (as above)</li>
 <li id="li-163">The ABC-conjecture for polynomials - Abhishek Parab</li>
-<li id="li-164">On Marshall Hall's Conjecture and Gaps Between Integer Points on Mordell <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">Elliptic Curves</a> - Ryan D'Mello</li>
+<li id="li-164">On Marshall Hall's Conjecture and Gaps Between Integer Points on Mordell Elliptic Curves - Ryan D'Mello</li>
 <li id="li-165">Neighboring powers - F. Beukers, C. L. Stewart (a more general problem, but nice history and examples)</li>
-<li id="li-166">Rational Points Near Curves and Small Nonzero \(| x^3 - y^2|\) via <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">Lattice</a> Reduction - Elkies</li>
+<li id="li-166">Rational Points Near Curves and Small Nonzero \(| x^3 - y^2|\) via Lattice Reduction - Elkies</li>
 <li id="li-167">ABC implies Mordell - Elkies</li>
 <li id="li-168">Dessins d'enfant -  Jeroen Sijsling (master thesis)</li>
-<li id="li-169">Algorithms and differential relations for <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi functions</a> - Mark van Hoeij, Raimundas Vidunas.</li>
+<li id="li-169">Algorithms and differential relations for Belyi functions - Mark van Hoeij, Raimundas Vidunas.</li>
 <li id="li-170">Belyi functions for hyperbolic hypergeometric-to-Heun transformations -  Mark van Hoeij, Raimundas Vidunas (has application to ABC over number fields at the end)</li>
 <li id="li-171">Some remarks on the S-unit equation in function fields  - Umberto Zannier</li>
-<li id="li-172">A note on integral points on <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> - Mark Watkins</li>
+<li id="li-172">A note on integral points on elliptic curves - Mark Watkins</li>
 <li id="li-173">On Hall’s conjecture - Andrej Dujella (more recent progress)</li>
-<li id="li-174">Hecke Groups, <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a> d'Enfants and the Archimedean Solids -  Yang-Hui He, and James Read</li>
+<li id="li-174">Hecke Groups, Dessins d'Enfants and the Archimedean Solids -  Yang-Hui He, and James Read</li>
 <li id="li-175">Belyi functions for Archimedean solids - Nicolas Magot, Alexander Zvonkin (didn't really use this but it's nice!)</li>
 </ol></article></section></section></div></main>
 </div>

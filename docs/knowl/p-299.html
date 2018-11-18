@@ -12,7 +12,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Start with <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, later repeat for <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. \(E/k\) an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>, \(m\ge 2\text{,}\) if \(\characteristic(k) = p \gt 0\) \((m,p) = 1\text{.}\) The Weil \(e_m\)-pairing \(e_m \colon E\lb m\rb \times E\lb m \rb \to \mu_m\) is defined as follows: Fix \(T\in E\lb m \rb\) then \(f\in \overline  k (E)\) s.t. \(\divisor(f) = m(T) - m(0)\text{.}\) Fix \(T' \in E\) with \(mT' = T\) and \(g\in \overline k(E)\) s.t. \(\divisor(g) = \lb m \rb^*(T) = \lb m \rb^*(0)= \sum_{R\in E\lb m \rb} (T+R) - (R)\text{.}\) Check \(\divisor (f\circ \lb m \rb) = \divisor(g^m)\text{,}\) hence</p>
+<p>Start with elliptic curves, later repeat for abelian varieties. \(E/k\) an elliptic curve, \(m\ge 2\text{,}\) if \(\characteristic(k) = p \gt 0\) \((m,p) = 1\text{.}\) The Weil \(e_m\)-pairing \(e_m \colon E\lb m\rb \times E\lb m \rb \to \mu_m\) is defined as follows: Fix \(T\in E\lb m \rb\) then \(f\in \overline  k (E)\) s.t. \(\divisor(f) = m(T) - m(0)\text{.}\) Fix \(T' \in E\) with \(mT' = T\) and \(g\in \overline k(E)\) s.t. \(\divisor(g) = \lb m \rb^*(T) = \lb m \rb^*(0)= \sum_{R\in E\lb m \rb} (T+R) - (R)\text{.}\) Check \(\divisor (f\circ \lb m \rb) = \divisor(g^m)\text{,}\) hence</p>
 <div class="displaymath">
 \begin{equation*}
 f\circ [m] = c g^m
@@ -36,13 +36,13 @@ e_m\colon E[m]\times E[m] \amp\to \mu_m\\
 (s,t)\amp \mapsto \frac{g_t(x+s)}{g_t(x)}
 \end{align*}
 </div>
-<p>will state many properties later, but for now. \(e_m\) is <a knowl="./knowl/def-buntes-compat.html" title="Definition 3.4.2: Compatibility">compatible</a>:</p>
+<p>will state many properties later, but for now. \(e_m\) is compatible:</p>
 <div class="displaymath">
 \begin{equation*}
 e_{mm'} (a,a')^{m'} = e_m(m'a, m'a') \ \forall a,a' \in E[mm']
 \end{equation*}
 </div>
-<p>so for any \(l\ne \characteristic(k)\) prime we can combine \(e_{l^n}\)-pairings into an \(l\)-adic <a knowl="./knowl/prop-weil-pair.html" title="Proposition 1.3.20: Existence of Weil pairing">Weil pairing</a> on \(T_l E\)</p>
+<p>so for any \(l\ne \characteristic(k)\) prime we can combine \(e_{l^n}\)-pairings into an \(l\)-adic Weil pairing on \(T_l E\)</p>
 <div class="displaymath">
 \begin{equation*}
 e \colon T_l E\times T_lE \to T_l \mu = \ZZ_l(1)

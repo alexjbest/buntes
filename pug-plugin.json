@@ -31,7 +31,7 @@
             var refs = new Array();
             var lastref = "";
             var count = 0;
-            var fast = 0;
+            var fast = 1;
 
             if (fast)
                 return ast;
