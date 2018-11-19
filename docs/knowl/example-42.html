@@ -26,9 +26,9 @@ K = \FF_9 = \FF_3[\alpha] = \FF_3[x]/(x^2- x - 1)
 E/K\colon y^2 = x^3 + \alpha x = f(x)\text{,}
 \end{equation*}
 </div>
-<p>simple eh? It's supersingular as the \(j\)-invariant is 0 (and are in characteristic 3). Alternatively, count points or even compute the Hasse invariant, the coefficient of \(p -1 = 2\) in \(f(x)^{(p-1)/2 = 1}\text{,}\) yep, it's 0.</p>
+<p><a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> eh? It's supersingular as the \(j\)-invariant is 0 (and are in characteristic 3). Alternatively, count points or even compute the Hasse invariant, the coefficient of \(p -1 = 2\) in \(f(x)^{(p-1)/2 = 1}\text{,}\) yep, it's 0.</p>
 <p>We therefore have \(\#E(K) = 9 + 1 = 10\) so we have a \(2\)-torsion point (\(P = (0,0)\)) and any other point we can use to generate (will be \(5\) or \(10\) torsion). Let \(x = 1\) so \(y^2 = 1 + \alpha = \alpha^2\) so \(y = \pm\alpha\text{,}\) say \(Q = (1,\alpha)\text{.}\)</p>
-<p>We have one endomorphism, \(p\)-power frobenius \(x\mapsto x^3\text{,}\) \(y\mapsto y^3\text{.}\) How to find another one?</p>
+<p>We have one <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a>, \(p\)-power frobenius \(x\mapsto x^3\text{,}\) \(y\mapsto y^3\text{.}\) How to find another one?</p>
 <p>Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\text{.}\) In general the formulae are  a little annoying <a knowl="./knowl/bib-velu.html" title="Bibliographic Entry 71: Isogénies entre courbes elliptiques">[71]</a>, when you have a 2-torsion point at \((0,0)\text{,}\) not as bad:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -52,7 +52,7 @@ f'(0) = \alpha
 E'\colon y^2 = x^3 + 0x^2 + (\alpha - 5\alpha)x +0 = x^3  - \alpha x\text{.}
 \end{equation*}
 </div>
-<p>I think really here we're just recovering those classic formulae for 2-isogenies between curves with a rational 2 torsion point at \((0,0)\) (used in 2-descent).</p>
+<p>I think really here we're just recovering those classic formulae for 2-<a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> between curves with a rational 2 torsion point at \((0,0)\) (used in 2-descent).</p>
 <div class="displaymath">
 \begin{align*}
 C\amp\colon y^2 = x(x^2+ax+b)\\
@@ -100,7 +100,7 @@ y^2 = x^3 - \alpha^{-3} x = x^3 +\alpha x\text{,}
 (\alpha : -\alpha -1 : 1) \mapsto (-1 : \alpha -1 : 1),\, (-\alpha : 1 : 1) \mapsto (1 : \alpha : 1),\, (-\alpha : -1 : 1) \mapsto (1 : -\alpha : 1)
 \end{gather*}
 </div>
-<p>A word of caution: If you are very awake you may check and be led to believe that this is just the multiplication by \(-2\) isogeny on \(E\text{,}\) its action on \(E(\FF_9)\) points is the same!!!!! It's not the same isogeny though so you can relax. Now we have an endomorphism ring with two elements, what are the relations between themselves, and each other?</p>
+<p>A word of caution: If you are very awake you may check and be led to believe that this is just the multiplication by \(-2\) <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> on \(E\text{,}\) its action on \(E(\FF_9)\) points is the same!!!!! It's not the same <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> though so you can relax. Now we have an <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring with two elements, what are the relations between themselves, and each other?</p>
 <p>As we quotiented by a rational \(2\)-torsion point we have computed a factor of \(\pi - 1\text{,}\) the other factor comes from quotienting by \(5\)-torsion. In fact we find. The frobenius has characteristic polynomial \(t^2 + 9 = (t + 3i)(t-3i)\) \(\pi\) looks like \(3i\text{.}\) \(\psi\) has characteristic polynomial \(t^2 - 2t + 2 = (t+1)^2 + 1\text{,}\) so \(\psi + 1\) looks like \(\pm i\text{.}\) \(?? \cdot \psi = \pi - 1\)  \(?? \cdot (i - 1) = 3i - 1\text{,}\) so \(?? = 2 - i = 2 - (\psi + 1) = 1 - \psi\text{.}\)</p>
 <p>So what if we quotient by non-rational 2-torsion? Pass to the quadratic extension \(\FF_{3^4}\text{,}\) which we get from adjoining the other roots of \(0 = x^3 + \alpha x\) i.e. \(\pm \sqrt{-\alpha}\text{.}\) Denote this extension \(\FF_3 \lb \beta \rb\text{,}\)  \((\beta^2 - 1)^2 = -\alpha\text{.}\) We can use Vélu again, it's degree two still but a bit more ugh, you might need a computer from now on, actually I've been using one all along.</p>
 <div class="displaymath">
@@ -109,6 +109,6 @@ y^2 = x^3 - \alpha^{-3} x = x^3 +\alpha x\text{,}
 \end{equation*}
 </div>
 <p>doing a computation it looks like \(\phi\) satisfies \(\phi^2 -\phi + 2\text{.}\)</p>
-<p>What are the relations between these? Hopefully they generate the endomorphism ring by now but without relations we are screwed! Do they commute? Computing \(\tau = \phi \psi  - \psi \phi\) is relevant, if 0, commutative, otherwise not! Note that if they are algebraically dependant they must commute! In our example we can compute \(\tau^2 + 3 = 0\)</p></article><span class="incontext"><a href="sec-quaternion-algebras.html#example-42">in-context</a></span>
+<p>What are the relations between these? Hopefully they generate the <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring by now but without relations we are screwed! Do they commute? Computing \(\tau = \phi \psi  - \psi \phi\) is relevant, if 0, commutative, otherwise not! Note that if they are algebraically dependant they must commute! In our example we can compute \(\tau^2 + 3 = 0\)</p></article><span class="incontext"><a href="sec-quaternion-algebras.html#example-42">in-context</a></span>
 </body>
 </html>

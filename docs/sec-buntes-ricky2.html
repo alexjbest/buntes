@@ -328,8 +328,8 @@ MathJax.Hub.Config({
 <a href="sec-buntes-ricky2.html" class="permalink">¶</a><section class="subsection" id="subsection-86"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.6.1</span> <span class="title">Motivation: Period morphisms</span>
 </h3>
-<p id="p-1176">Recall for  \(A\) a  polarized AV we get a lattice \(H_1(A,\ZZ)\) with some structure. To keep track of the \(\CC\)-structure  we record the Hodge structure induced on \(H_1(A,\RR)\) via the Hodge decomposition theorem. If we want to say construct a moduli space of Elliptic Curves we might try to create a moduli space of \(\CC\)-structures on a fixed torus \(T\text{.}\)</p>
-<p id="p-1177">The linearized version of this is to fix \(H^1(T, \RR)\) and consider possible Hodge structures on it.</p>
+<p id="p-1176">Recall for  \(A\) a  polarized AV we get a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(H_1(A,\ZZ)\) with some structure. To keep track of the \(\CC\)-structure  we record the <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> induced on \(H_1(A,\RR)\) via the Hodge decomposition theorem. If we want to say construct a moduli space of <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">Elliptic Curves</a> we might try to create a moduli space of \(\CC\)-structures on a fixed torus \(T\text{.}\)</p>
+<p id="p-1177">The linearized version of this is to fix \(H^1(T, \RR)\) and consider possible <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a> on it.</p>
 <article class="example-like" id="example-68"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.6.1</span>
 </h6>
@@ -349,7 +349,7 @@ E_\lambda \colon y^2 = x(x-1) (x-\lambda)
 V_\lambda = H^1_\sing(E_\lambda, \RR)
 \end{equation*}
 </div>
-<p>for nearby \(\lambda \in S\text{.}\) Then the Hodge structure looks like:</p>
+<p>for nearby \(\lambda \in S\text{.}\) Then the <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> looks like:</p>
 <div class="displaymath">
 \begin{equation*}
 F^1 V_{\lambda, \CC} = \langle \frac{\diff x}{y} \rangle \hookrightarrow V_{\lambda, \CC}
@@ -364,17 +364,17 @@ S\supseteq U \to PP^1
 <p>sending \(s \mapsto F^1V_{s, \CC}\text{.}\)</p></article><p id="p-1179">Today generalise the role of \(\PP^1\) in this.</p></section><section class="subsection" id="subsection-87"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.6.2</span> <span class="title">Moduli of Hodge structures</span>
 </h3>
-<p id="p-1180">Recall: a Hodge structure on a real vector space \(V\) is equivalent to a morphism \(h \colon \mathbf S \to \GL(V)\) where \(\mathbf S  = \Res_\RR^\CC \mathbf G_m\) Given \(h\text{,}\) let</p>
+<p id="p-1180">Recall: a <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on a real vector space \(V\) is equivalent to a morphism \(h \colon \mathbf S \to \GL(V)\) where \(\mathbf S  = \Res_\RR^\CC \mathbf G_m\) Given \(h\text{,}\) let</p>
 <div class="displaymath">
 \begin{equation*}
 V^{p,q} = \{ v \in V_\CC : h(z) v= z^{-p} \bar z ^{-q} v\}
 \end{equation*}
 </div>
-<p>(the characters of \(\mathbf S\) are of the form \(\chi_{p,q} = z^{-p} \bar z ^{-q}\) for \((p,q)\in \ZZ^2\text{.}\) So a general Hodge structure on a Lie group  \(G\) is defined to be a map \(\mathbf S \to G\text{.}\)</p>
+<p>(the characters of \(\mathbf S\) are of the form \(\chi_{p,q} = z^{-p} \bar z ^{-q}\) for \((p,q)\in \ZZ^2\text{.}\) So a general <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on a Lie group  \(G\) is defined to be a map \(\mathbf S \to G\text{.}\)</p>
 <article class="theorem-like" id="lemma-22"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">5.6.2</span>
 </h6>
-<p id="p-1181">The combinatorial data of two Hodge structures are the same iff they are conjugate (i.e. the maps \(\mathbf S \to \GL(V)\) are conjugate).</p></article><article class="hiddenproof" id="proof-117"><a knowl="" class="id-ref" refid="hk-proof-117"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-117" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1182">If \(h\) and \(h'\) are conjugate by \(g\) then conjugation by \(g\) takes \(V^{p,q}\) of one into the other (b/c it preserves the character spaces of \(\mathbf S\)). Conversely if \(\{V_1^{p,q}, V_2^{p,q}\}\) are two HS with the same combinatorial data then we can take \(g \colon V_{\CC} \to V_{\CC}\text{.}\) Taking \(V_1^{p,q} \cong V_2^{p,q}\) and satisfying \(g(\bar v) = \overline{g(v)}\) (using Hodge symmetry) since \(g\) commutes with \(\bar \cdot\text{,}\) it descends to a  map on \(V\text{.}\)</p></article></div>
+<p id="p-1181">The combinatorial data of two <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a> are the same iff they are conjugate (i.e. the maps \(\mathbf S \to \GL(V)\) are conjugate).</p></article><article class="hiddenproof" id="proof-117"><a knowl="" class="id-ref" refid="hk-proof-117"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-117" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1182">If \(h\) and \(h'\) are conjugate by \(g\) then <a knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a> by \(g\) takes \(V^{p,q}\) of one into the other (b/c it preserves the character spaces of \(\mathbf S\)). Conversely if \(\{V_1^{p,q}, V_2^{p,q}\}\) are two HS with the same combinatorial data then we can take \(g \colon V_{\CC} \to V_{\CC}\text{.}\) Taking \(V_1^{p,q} \cong V_2^{p,q}\) and satisfying \(g(\bar v) = \overline{g(v)}\) (using Hodge symmetry) since \(g\) commutes with \(\bar \cdot\text{,}\) it descends to a  map on \(V\text{.}\)</p></article></div>
 <p id="p-1183">Let  \(X\) be a conjugacy class of morphisms \(h\colon \mathbf S \to G\text{.}\)</p>
 <p id="p-1184">Impose the condition that:</p>
 <div class="displaymath">
@@ -383,7 +383,7 @@ h(\RR^\times) \text{ lies in the center of }G(\RR) \forall h\tag{5.6.1}
 \end{equation}
 </div>
 <p>(If the HS on \(V\) is of weight \(k\) then \(h(t) = t^k I\text{,}\) the converse is also true.)</p>
-<p id="p-1185">\(G\) acts transitively on \(X\) (via conjugation). So</p>
+<p id="p-1185">\(G\) acts transitively on \(X\) (via <a knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a>). So</p>
 <div class="displaymath">
 \begin{equation*}
 X=  G/K
@@ -397,8 +397,8 @@ X=  G/K
 G\to \Aut(G)
 \end{equation*}
 </div>
-<p>and its derivative is the adjoint map \(\ad\text{.}\) If we compose with \(h \colon \mathbf S\to G\) we get a hodge structure on \(L=  \Lie G\text{.}\)</p>
-<p id="p-1187">As \(h(\RR^\times)\) is in the center of \(G(\RR)\text{,}\) have \(\ad h(\RR^\times)\) is the identity on \(L\text{.}\) Hence the hodge structure on \(L\) is of weight 0. By above remark.</p>
+<p>and its derivative is the adjoint map \(\ad\text{.}\) If we compose with \(h \colon \mathbf S\to G\) we get a <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> on \(L=  \Lie G\text{.}\)</p>
+<p id="p-1187">As \(h(\RR^\times)\) is in the center of \(G(\RR)\text{,}\) have \(\ad h(\RR^\times)\) is the identity on \(L\text{.}\) Hence the <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> on \(L\) is of weight 0. By above remark.</p>
 <p id="p-1188">Let \(L^{0,0} = L_\CC^{0,0} \cap L\) be the real \((0,0)\) part of the HS on \(L\text{.}\)</p>
 <article class="theorem-like" id="lemma-23"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">5.6.3</span>
@@ -431,7 +431,7 @@ L/L^{0,0} \xrightarrow\sim L_\CC / F^0 L_\CC\text{.}
 </div></article><article class="hiddenproof" id="proof-119"><a knowl="" class="id-ref" refid="hk-proof-119"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-119" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1192">see notes.</p></article></div>
 <p id="p-1193">These lemmas combined give \(T_h X\) a  \(\CC\)-structure.</p>
 <p id="p-1194">To get a \(\CC\)-manifold structure on \(X\) we embed \(X\) into a \(\CC\) manifold in a way that respects the \(\CC\)-structures on the tangent spaces.</p>
-<p id="p-1195">Pick a faithful representation \(G \hookrightarrow \GL(V)\text{.}\) Then \(h \in X\) we get a Hodge structure on \(V\) via</p>
+<p id="p-1195">Pick a faithful representation \(G \hookrightarrow \GL(V)\text{.}\) Then \(h \in X\) we get a <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on \(V\) via</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf S \xrightarrow h G \xrightarrow \rho \GL(V)
@@ -462,7 +462,7 @@ X \hookrightarrow \phi \mathcal F
 <article class="definition-like" id="definition-115"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.6.6</span>
 </h6>
-<p id="p-1201">Let \(G\) be a real algebraic group with involution \(\sigma\text{.}\) The <dfn class="terminology">real form</dfn> associated to \(\sigma\) is</p>
+<p id="p-1201">Let \(G\) be a real <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> with involution \(\sigma\text{.}\) The <dfn class="terminology">real form</dfn> associated to \(\sigma\) is</p>
 <div class="displaymath">
 \begin{equation*}
 G^\sigma (A) = \{ g \in G(A \otimes \CC) : \sigma(g) = \bar g\}
@@ -483,10 +483,10 @@ G^\sigma = U(n)
 <p id="p-1203">\(\sigma\) is called a <dfn class="terminology">Cartan involution</dfn> if \(G^\sigma\) is compact, i.e. \(G^\sigma(\RR)\) is compact and meets every connected component of \(G^\sigma(\CC)\text{.}\)</p></article><article class="theorem-like" id="theorem-80"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">5.6.9</span>
 </h6>
-<p id="p-1204">Let \(G\) be connected, then \(G\) is reductive iff \(G\) admits a Cartan involution.</p></article><article class="theorem-like" id="lemma-25"><h6 class="heading">
+<p id="p-1204">Let \(G\) be connected, then \(G\) is reductive iff \(G\) admits a <a href="sec-buntes-ricky2.html" class="xref" title="Section 5.6: Moduli of linearized \(\CC\)-structures (RICKY)">Cartan involution</a>.</p></article><article class="theorem-like" id="lemma-25"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">5.6.10</span> <span class="title">for next time</span>
 </h6>
-<p id="p-1205">If \(K\) is a compact lie group then any \(\CC\)-representation \(V\) of it admits a \(K\)-invariant pos. def. Hermitian form</p>
+<p id="p-1205">If \(K\) is a compact lie group then any \(\CC\)-representation \(V\) of it admits a \(K\)-invariant pos. def. <a href="sec-buntes-av-jac.html" class="xref" title="Section 5.3: Abelian varieties and Jacobians (Angus)">Hermitian form</a></p>
 <p id="p-1206">Conversely if \(K\) has a faithful representation admitting a \(K\)-inv pos. def. Herm. form. then \(K\) is compact.</p></article><article class="hiddenproof" id="proof-120"><a knowl="" class="id-ref" refid="hk-proof-120"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-120" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1207">\(K\) compact, take any \(H_0(u,v)\) a pos. def. herm. form on \(V\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
