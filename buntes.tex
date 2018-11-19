@@ -1170,10 +1170,10 @@ Now we will consider \hyperref[def-line-bundle]{line bundles} on \(X = V/\Lambda
 \begin{equation*}
 L\xrightarrow{\pi} X
 \end{equation*}
-such that for any \(x\in X\) there exists \(U\ni x\) with \(\pi^{-1} (U) \cong \CC \times U\). We can obtain these from \hyperref[sec-buntes-av-jac]{hermitian forms} and some auxilliary data as follows.%
+such that for any \(x\in X\) there exists \(U\ni x\) with \(\pi^{-1} (U) \cong \CC \times U\). We can obtain these from \hyperref[def-herm-form]{hermitian forms} and some auxilliary data as follows.%
 \begin{definition}{}{definition-8}%
 \hypertarget{p-58}{}%
-If \(H\) is a \hyperref[sec-buntes-av-jac]{hermitian form} on \(V\) such that \(E(\Lambda\times\Lambda) \subseteq \ZZ\) there exists a map%
+If \(H\) is a \hyperref[def-herm-form]{hermitian form} on \(V\) such that \(E(\Lambda\times\Lambda) \subseteq \ZZ\) there exists a map%
 \begin{equation*}
 \alpha \colon \Lambda \to \CC^*  = \{z\in \CC^* : |z| = 1\}
 \end{equation*}
@@ -1259,7 +1259,7 @@ A \terminology{Riemann form} is \(E\colon \Lambda \times \Lambda \to \ZZ\) alter
 \begin{equation*}
 E_\RR \colon V\times V\to \RR
 \end{equation*}
-has the property that \(E(iu,iv) = E(u,v)\) and  the corresponding \hyperref[sec-buntes-av-jac]{Hermitian form} is positive definite.%
+has the property that \(E(iu,iv) = E(u,v)\) and  the corresponding \hyperref[def-herm-form]{Hermitian form} is positive definite.%
 \end{definition}
 \begin{definition}{Polarizable tori.}{def-polarizable}%
 \hypertarget{p-72}{}%
@@ -2343,7 +2343,7 @@ A \terminology{principal \hyperref[def-polarization]{polarization}} is a \hyperr
 Elliptic curves always admit \hyperref[def-polarization]{principal polarization}.%
 \par
 \hypertarget{p-206}{}%
-If one wishes to mimic the theory of \hyperref[def-supersing-isog-ec]{elliptic curves}, one should study principally polarized \hyperref[def-buntes-abvar]{abelian varieties}.%
+If one wishes to mimic the theory of \hyperref[def-supersing-isog-ec]{elliptic curves}, one should study \hyperref[def-princ-pol-av]{principally polarized abelian varieties}.%
 \end{remark}
 \end{subsectionptx}
 \end{sectionptx}
@@ -3312,7 +3312,7 @@ If \(\lambda = \alpha^* \lambda'\) then%
 \end{note}
 \begin{corollary}{13.10.}{}{corollary-21}%
 \hypertarget{p-324}{}%
-\(A\) an \hyperref[def-buntes-abvar]{abelian variety}, \(\lambda \colon A \to A^\vee\) is a \hyperref[def-polarization]{polarization} with \((\deg (\lambda), p) = 1\) then \(A\) is  isogenous to a principally polarized \hyperref[def-buntes-abvar]{abelian variety}.%
+\(A\) an \hyperref[def-buntes-abvar]{abelian variety}, \(\lambda \colon A \to A^\vee\) is a \hyperref[def-polarization]{polarization} with \((\deg (\lambda), p) = 1\) then \(A\) is  isogenous to a \hyperref[def-princ-pol-av]{principally polarized abelian variety}.%
 \end{corollary}
 \begin{proof}\hypertarget{proof-54}{}
 \hypertarget{p-325}{}%
@@ -9132,12 +9132,20 @@ These are notes for BUNTES Fall 2018 part III, the topic is Shimura varieties%
 \hypertarget{p-1020}{}%
 Outline:\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-259}{}%
+\item\hypertarget{li-259}{}Modular curves/forms%
+\item\hypertarget{li-260}{}Abelian varieties%
+\item\hypertarget{li-261}{}Hodge structures%
+\item\hypertarget{li-262}{}Definition/construction of Shimura varieties%
 \end{enumerate}
 %
 \par
 \hypertarget{p-1021}{}%
-References:%
+References:\leavevmode%
+\begin{itemize}[label=\textbullet]
+\item{}Weinstein, \href{http://math.bu.edu/people/jsweinst/Teaching/MA843Fall13/index.html}{Lecture Notes on Shimura varieties}%
+\item{}Milne, \href{https://www.jmilne.org/math/xnotes/svi.pdf}{Introduction to Shimura Varieties}%
+\end{itemize}
+%
 \end{introduction}%
 %
 %
@@ -9349,13 +9357,13 @@ We can do similar for \(\Gamma_1\) but only over \(\QQ(\zeta_N)\).%
 \hypertarget{p-1047}{}%
 Several definitions:\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-260}{}Smooth proj. curve \hyperref[def-class-set]{genus} 1 with a rational point.%
-\item\hypertarget{li-261}{}smooth curve given by Weierstrass eqn.%
+\item\hypertarget{li-265}{}Smooth proj. curve \hyperref[def-class-set]{genus} 1 with a rational point.%
+\item\hypertarget{li-266}{}smooth curve given by Weierstrass eqn.%
 \begin{equation*}
 y^2 + a_1xy + a_3 y =  x^3 + a_2x^2 + a_4 x + a_6\text{.}
 \end{equation*}
 %
-\item\hypertarget{li-262}{}Complex torus of  dimension 1.%
+\item\hypertarget{li-267}{}Complex torus of  dimension 1.%
 \end{enumerate}
 %
 \par
@@ -9494,13 +9502,13 @@ so the \hyperref[def-buntes-cusp-forms]{width} of \(\infty\) is 1.%
 \hypertarget{p-1065}{}%
 What about \(\alpha = 1/p\)?\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-263}{}Find an element \(\gamma \in \SL_2(\ZZ)\) s.t. \(\gamma(\infty) = \alpha\).%
-\item\hypertarget{li-264}{}Compute%
+\item\hypertarget{li-268}{}Find an element \(\gamma \in \SL_2(\ZZ)\) s.t. \(\gamma(\infty) = \alpha\).%
+\item\hypertarget{li-269}{}Compute%
 \begin{equation*}
 \delta(x) = \gamma \begin{pmatrix} 1\amp x \\ 0 \amp 1 \end{pmatrix} \gamma\inv
 \end{equation*}
 %
-\item\hypertarget{li-265}{}Find the smallest \(x\) such that \(\delta(x) = \Gamma_0(pq)\)%
+\item\hypertarget{li-270}{}Find the smallest \(x\) such that \(\delta(x) = \Gamma_0(pq)\)%
 \end{enumerate}
 %
 \begin{equation*}
@@ -9575,7 +9583,7 @@ E \to E'
 \CC/\Lambda \to \CC/\Lambda'\text{,}
 \end{equation*}
 studying degree \(n\) \hyperref[def-supersing-isog-isog]{isogenies}, is like studying index  \(n \) sublattices%
-\begin{definition}{}{definition-100}%
+\begin{definition}{Hecke operators.}{def-buntes-hecke-ops}%
 \hypertarget{p-1072}{}%
 \(n \ge 1\) then \(T(n)\) is the  \(n\)th \terminology{Hecke operator} acting on%
 \begin{equation*}
@@ -9595,22 +9603,22 @@ Let \(\lambda \in \CC^\times\) the homothety operator \(R_\lambda\) is \(R_\lamb
 \hypertarget{p-1074}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-266}{}%
+\item\hypertarget{li-271}{}%
 \begin{equation*}
 R_\lambda R_\mu = R_{\lambda\mu}
 \end{equation*}
 %
-\item\hypertarget{li-267}{}%
+\item\hypertarget{li-272}{}%
 \begin{equation*}
 R_\lambda T(n) = T(n) R_{\lambda}
 \end{equation*}
 %
-\item\hypertarget{li-268}{}%
+\item\hypertarget{li-273}{}%
 \begin{equation*}
 T(nm) = T(n) T(m),\,\gcd(n,m) =1
 \end{equation*}
 %
-\item\hypertarget{li-269}{}%
+\item\hypertarget{li-274}{}%
 \begin{equation*}
 T(p^e)T(p) = T(p^{e+1 }) + p T(p^{e-1}) R_p
 \end{equation*}
@@ -9672,7 +9680,7 @@ T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw
 %
 \end{corollary}
 \hypertarget{p-1080}{}%
-The \hyperref[def-buntes-cusp-forms]{Hecke operators} act on \hyperref[def-buntes-mfs]{modular forms} \(f(\tau)\) by reinterpreting \hyperref[def-buntes-weak-modular]{weakly modular} functions of weight \(k\) as functions on \hyperref[def-buntes-lattice]{lattices} that have  a weight \(k\) action under homothety.%
+The \hyperref[def-buntes-hecke-ops]{Hecke operators} act on \hyperref[def-buntes-mfs]{modular forms} \(f(\tau)\) by reinterpreting \hyperref[def-buntes-weak-modular]{weakly modular} functions of weight \(k\) as functions on \hyperref[def-buntes-lattice]{lattices} that have  a weight \(k\) action under homothety.%
 \par
 \hypertarget{p-1081}{}%
 This boils down to%
@@ -9766,9 +9774,9 @@ Let \(f,g\in S_k(\SL_2(\ZZ))\), \(n\in \NN\) then%
 \hypertarget{p-1089}{}%
 An \hyperref[def-supersing-isog-ec]{elliptic curve} is any one of the following\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-270}{}Smooth projective curve of \hyperref[def-class-set]{genus} 1 with  a marked rational point.%
-\item\hypertarget{li-271}{}A smooth projective curve with a group law%
-\item\hypertarget{li-272}{}if \(k \subseteq \CC\) we have%
+\item\hypertarget{li-275}{}Smooth projective curve of \hyperref[def-class-set]{genus} 1 with  a marked rational point.%
+\item\hypertarget{li-276}{}A smooth projective curve with a group law%
+\item\hypertarget{li-277}{}if \(k \subseteq \CC\) we have%
 \begin{equation*}
 E(\CC) = \CC/ \Lambda
 \end{equation*}
@@ -9777,7 +9785,7 @@ E(\CC) = \CC/ \Lambda
 \Lambda = \ZZ \omega_1 \oplus \ZZ \omega_2,\, \omega_1/\omega_2 \not\in \RR
 \end{equation*}
 %
-\item\hypertarget{li-273}{}if \(\characteristic k \ne 2,3\) A smooth projective curve specified by%
+\item\hypertarget{li-278}{}if \(\characteristic k \ne 2,3\) A smooth projective curve specified by%
 \begin{equation*}
 y^2=  x^3+ ax + b\text{.}
 \end{equation*}
@@ -9806,12 +9814,12 @@ An \hyperref[def-buntes-abvar]{abelian variety} is a proper irreducible variety 
 \hypertarget{p-1093}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-274}{}In this definition proper is equivalent to projective.%
-\item\hypertarget{li-275}{}\hypertarget{p-1094}{}%
+\item\hypertarget{li-279}{}In this definition proper is equivalent to projective.%
+\item\hypertarget{li-280}{}\hypertarget{p-1094}{}%
 The rigidity theorem tells us:%
 \begin{enumerate}
-\item\hypertarget{li-276}{}Any morphism of \hyperref[def-buntes-abvar]{abelian varieties} that preserves the identity is a homomorphism.%
-\item\hypertarget{li-277}{}Abelian varieties are abelian%
+\item\hypertarget{li-281}{}Any morphism of \hyperref[def-buntes-abvar]{abelian varieties} that preserves the identity is a homomorphism.%
+\item\hypertarget{li-282}{}Abelian varieties are abelian%
 \end{enumerate}
 %
 \end{enumerate}
@@ -9851,7 +9859,7 @@ We have a map%
 \{\text{AVs}/\CC\} \to \{\text{complex tori}\}
 \end{equation*}
 but this is not surjective. Which \hyperref[def-buntes-lattice]{lattices} give AVs?%
-\begin{definition}{}{definition-105}%
+\begin{definition}{Hermitian forms.}{def-herm-form}%
 \hypertarget{p-1098}{}%
 Let \(V\) be a \(\CC\)-vector space and \(\Lambda \subseteq V\) be a full \hyperref[def-buntes-lattice]{lattice}. A \terminology{Hermitian form} on \(V\) is a function%
 \begin{equation*}
@@ -9861,7 +9869,7 @@ which is \(\CC\)-linear in the first component, \(\CC\)-antilinear in the second
 \begin{equation*}
 H(u,v) = \overline{H(v,u)}
 \end{equation*}
-A \hyperref[def-riemann-form]{Riemann form} on \((V,\Lambda)\) is a positive definite \hyperref[sec-buntes-av-jac]{Hermitian form} on \(V\) s.t. \(\im(H|_V) \colon \Lambda \to \ZZ\).%
+A \hyperref[def-riemann-form]{Riemann form} on \((V,\Lambda)\) is a positive definite \hyperref[def-herm-form]{Hermitian form} on \(V\) s.t. \(\im(H|_V) \colon \Lambda \to \ZZ\).%
 \end{definition}
 \begin{proposition}{}{}{proposition-70}%
 \hypertarget{p-1099}{}%
@@ -10171,18 +10179,18 @@ E \colon \Lambda \times \Lambda \to \ZZ
 \end{equation*}
 s.t.\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-278}{}\(E\) is bilinear alternating%
-\item\hypertarget{li-279}{}\(E_\RR \colon V\times V \to \RR\) has \(E_\RR(iv,iw)  = E_\RR( v,w)\).%
-\item\hypertarget{li-280}{}%
+\item\hypertarget{li-283}{}\(E\) is bilinear alternating%
+\item\hypertarget{li-284}{}\(E_\RR \colon V\times V \to \RR\) has \(E_\RR(iv,iw)  = E_\RR( v,w)\).%
+\item\hypertarget{li-285}{}%
 \begin{equation*}
 H(v,w) = E_\RR(iv, w) + i E_\RR(v,w)
 \end{equation*}
-is a positive definite \hyperref[sec-buntes-av-jac]{Hermitian form} on \(V\).%
+is a positive definite \hyperref[def-herm-form]{Hermitian form} on \(V\).%
 \end{enumerate}
 A \hyperref[def-polarization]{principal polarization} corresponds to \(E\) being a perfect pairing.%
-\begin{definition}{}{definition-110}%
+\begin{definition}{}{def-princ-pol-av}%
 \hypertarget{p-1125}{}%
-A PPAV (principally polarized \hyperref[def-buntes-abvar]{abelian variety}) is a pair \((A,\lambda)\).%
+A \terminology{PPAV} (\terminology{principally polarized \hyperref[def-buntes-abvar]{abelian variety}}) is a pair \((A,\lambda)\).%
 \end{definition}
 \hypertarget{p-1126}{}%
 If \((\ZZ^{2g}, \Psi)\) is the standard \(2g\)-dim symplectic form \(\Psi\) then by linear algebra there is a symplectic isomorphism%
@@ -10197,7 +10205,7 @@ Recall the standard \(\Psi\) is%
 \Psi (v,w) = v^\transpose J w, J = \begin{pmatrix} 0 \amp I_g \\ -I_g \amp 0\end{pmatrix}
 \end{equation*}
 %
-\begin{definition}{}{definition-111}%
+\begin{definition}{}{def-siegel-space}%
 \hypertarget{p-1128}{}%
 The \terminology{Siegel upper half space} is%
 \begin{equation*}
@@ -10451,12 +10459,12 @@ A \hyperref[def-polarization]{polarization} of a HS \(h\colon \mathbf S \to \GL(
 \end{equation*}
 with\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-281}{}%
+\item\hypertarget{li-286}{}%
 \begin{equation*}
 \Psi (Jv,Jw) =  \Psi(v,w) \text{ for } J = h(i)
 \end{equation*}
 %
-\item\hypertarget{li-282}{}%
+\item\hypertarget{li-287}{}%
 \begin{equation*}
 \Psi(v,Jw) \text{ is pos. def.}
 \end{equation*}
@@ -10470,10 +10478,10 @@ with\leavevmode%
 %
 %
 \typeout{************************************************}
-\typeout{Section 5.5 Variations of Hodge Structures}
+\typeout{Section 5.5 Variations of Hodge Structures (Sachi)}
 \typeout{************************************************}
 %
-\begin{sectionptx}{Variations of Hodge Structures}{}{Variations of Hodge Structures}{}{}\label{sec-buntes-vhs}
+\begin{sectionptx}{Variations of Hodge Structures (Sachi)}{}{Variations of Hodge Structures (Sachi)}{}{}\label{sec-buntes-vhs}
 %
 %
 \typeout{************************************************}
@@ -10525,8 +10533,8 @@ A \hyperref[def-hodge-str]{hodge structure} of weight \(n\) is the data \((H_\ZZ
 \hypertarget{p-1155}{}%
 Questions:\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-283}{}To what extent does the HS of \(X\) determine \(X\)? (Torelli problem)%
-\item\hypertarget{li-284}{}To what extent can we read off the geometric data of \(X\) from its \hyperref[def-hodge-str]{Hodge structure}.%
+\item\hypertarget{li-288}{}To what extent does the HS of \(X\) determine \(X\)? (Torelli problem)%
+\item\hypertarget{li-289}{}To what extent can we read off the geometric data of \(X\) from its \hyperref[def-hodge-str]{Hodge structure}.%
 \end{enumerate}
 %
 \end{subsectionptx}
@@ -10631,8 +10639,8 @@ by \(\pi_C \circ (\pi_W|_{W'})\inv\).%
 \hypertarget{p-1165}{}%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-285}{}\(\phi\colon B\to {\mathrm{Gr}}\) mapping \(b \mapsto F^k(X_b) \subseteq H_\CC\) is holomorphic.%
-\item\hypertarget{li-286}{}In terms of identifying the tangent space of the grassmanian to the hom set, the image under%
+\item\hypertarget{li-290}{}\(\phi\colon B\to {\mathrm{Gr}}\) mapping \(b \mapsto F^k(X_b) \subseteq H_\CC\) is holomorphic.%
+\item\hypertarget{li-291}{}In terms of identifying the tangent space of the grassmanian to the hom set, the image under%
 \begin{equation*}
 \diff \phi_k = \delta_k
 \end{equation*}
@@ -10658,7 +10666,7 @@ for all \(b\).%
 Q(\delta_v(v)(\alpha), \beta) + Q(\alpha, \delta_{n-k-1}(v)(\beta)) = 0
 \end{equation*}
 for all \(\alpha\in H^{n-k, k}(X)\), \(\beta \in H^{k+1, n-k - 1}(X)\) for \(v \in T\)%
-\begin{definition}{}{definition-114}%
+\begin{definition}{Infinitesimal variation of Hodge structures.}{def-ivhs}%
 \hypertarget{p-1167}{}%
 An \terminology{infinitesimal variation of \hyperref[def-hodge-str]{Hodge structures}} is%
 \begin{equation*}
@@ -10752,7 +10760,7 @@ F^1 V_{\lambda, \CC} = \langle \frac{\diff x}{y} \rangle \hookrightarrow V_{\lam
 \end{equation*}
 this induces a period map%
 \begin{equation*}
-S\supseteq U \to PP^1
+S\supseteq U \to \PP^1
 \end{equation*}
 sending \(s \mapsto F^1V_{s, \CC}\).%
 \end{example}
@@ -10886,7 +10894,7 @@ A VHS on \(V\) satisfies Griffiths transversality iff%
 %
 \end{theorem}
 \begin{paragraphs}{Background on Cartan involutions.}{paragraphs-46}%
-\begin{definition}{}{definition-115}%
+\begin{definition}{Real forms.}{def-real-forms}%
 \hypertarget{p-1201}{}%
 Let \(G\) be a real \hyperref[def-alg-gp]{algebraic group} with involution \(\sigma\). The \terminology{real form} associated to \(\sigma\) is%
 \begin{equation*}
@@ -10902,17 +10910,17 @@ G^\sigma = U(n)
 \end{equation*}
 observe that this is compact!%
 \end{example}
-\begin{definition}{}{definition-116}%
+\begin{definition}{Cartan involutions.}{def-cartan-inv}%
 \hypertarget{p-1203}{}%
 \(\sigma\) is called a \terminology{Cartan involution} if \(G^\sigma\) is compact, i.e. \(G^\sigma(\RR)\) is compact and meets every connected component of \(G^\sigma(\CC)\).%
 \end{definition}
 \begin{theorem}{}{}{theorem-80}%
 \hypertarget{p-1204}{}%
-Let \(G\) be connected, then \(G\) is reductive iff \(G\) admits a \hyperref[sec-buntes-ricky2]{Cartan involution}.%
+Let \(G\) be connected, then \(G\) is reductive iff \(G\) admits a \hyperref[def-cartan-inv]{Cartan involution}.%
 \end{theorem}
 \begin{lemma}{for next time.}{}{lemma-25}%
 \hypertarget{p-1205}{}%
-If \(K\) is a compact lie group then any \(\CC\)-representation \(V\) of it admits a \(K\)-invariant pos. def. \hyperref[sec-buntes-av-jac]{Hermitian form}%
+If \(K\) is a compact lie group then any \(\CC\)-representation \(V\) of it admits a \(K\)-invariant pos. def. \hyperref[def-herm-form]{Hermitian form}%
 \par
 \hypertarget{p-1206}{}%
 Conversely if \(K\) has a faithful representation admitting a \(K\)-inv pos. def. Herm. form. then \(K\) is compact.%

@@ -12,9 +12,20 @@ introduction#sec-shimura-intro
         | Outline:
         ol
             li
-                | 
+                | Modular curves/forms
+            li
+                | Abelian varieties
+            li
+                | Hodge structures
+            li
+                | Definition/construction of Shimura varieties
     p
-        | References: 
+        | References:
+        ul
+            li.
+                Weinstein, #[url(href="http://math.bu.edu/people/jsweinst/Teaching/MA843Fall13/index.html") Lecture Notes on Shimura varieties]
+            li.
+                Milne, #[url(href="https://www.jmilne.org/math/xnotes/svi.pdf") Introduction to Shimura Varieties]
 
 
 section#sec-buntes-modular-curves
@@ -319,7 +330,8 @@ section#sec-buntes-modular-forms
         me \CC/\Lambda \to \CC/\Lambda'
         |, studying degree #[m n] isogenies, is like studying index  #[m n ] sublattices
 
-    definition
+    definition#def-buntes-hecke-ops
+        title Hecke operators
         statement: p
             | #[m n \ge 1] then #[m T(n)] is the  #[m n]th #[term Hecke operator] acting on
             me \divisors (\mathcal L)
@@ -493,7 +505,8 @@ section#sec-buntes-av-jac
             | but this is not surjective.
             | Which lattices give AVs?
 
-        definition
+        definition#def-herm-form
+            title Hermitian forms
             statement: p
                 | Let #[m V] be a #[m \CC]-vector space and #[m \Lambda \subseteq V] be a full lattice.
 
@@ -708,9 +721,9 @@ section#sec-buntes-hs
                     me H(v,w) = E_\RR(iv, w) + i E_\RR(v,w)
                     | is a positive definite Hermitian form on #[m V].
             | A principal polarization corresponds to #[m E] being a perfect pairing.
-        definition
+        definition#def-princ-pol-av
             statement: p
-                | A PPAV (principally polarized abelian variety) is a pair #[m (A,\lambda)].
+                | A #[term PPAV] (#[term principally polarized abelian variety]) is a pair #[m (A,\lambda)].
 
         p
             | If #[m (\ZZ^{2g}, \Psi)] is the standard #[m 2g]-dim symplectic form #[m \Psi] then by linear algebra there is a symplectic isomorphism
@@ -719,7 +732,7 @@ section#sec-buntes-hs
         p
             | Recall the standard #[m \Psi] is
             me \Psi (v,w) = v^\transpose J w, J = \begin{pmatrix} 0 \amp I_g \\ -I_g \amp 0\end{pmatrix}
-        definition
+        definition#def-siegel-space
             statement: p
                 | The #[term Siegel upper half space] is
                 me \mathscr H_g = \{ Z = X+iY \in M_g(\CC) : Z^\transpose  = Z ; \, X,Y \in M_g(\RR); \, Y \gt 0\}
@@ -898,7 +911,7 @@ section#sec-buntes-hs
 
 
 section#sec-buntes-vhs
-    title Variations of Hodge Structures
+    title Variations of Hodge Structures (Sachi)
 
     subsection
         title
@@ -1022,7 +1035,8 @@ section#sec-buntes-vhs
                 me Q(\delta_v(v)(\alpha), \beta) + Q(\alpha, \delta_{n-k-1}(v)(\beta)) = 0
                 | for all #[m \alpha\in H^{n-k, k}(X)], #[m \beta \in H^{k+1, n-k - 1}(X)] for #[m v \in T]
 
-            definition
+            definition#def-ivhs
+                title Infinitesimal variation of Hodge structures
                 statement: p
                     | An #[term infinitesimal variation of Hodge structures] is
                     me (H_\ZZ, Q, H^{p,q}, T, \delta_q\colon T \to \Hom(H^{p,q}, H^{p-1, q+1}))
@@ -1087,7 +1101,7 @@ section#sec-buntes-ricky2
                 | Then the Hodge structure looks like:
                 me F^1 V_{\lambda, \CC} = \langle \frac{\diff x}{y} \rangle \hookrightarrow V_{\lambda, \CC}
                 | this induces a period map
-                me S\supseteq U \to PP^1
+                me S\supseteq U \to \PP^1
                 | sending #[m s \mapsto F^1V_{s, \CC}].
 
         p
@@ -1201,7 +1215,8 @@ section#sec-buntes-ricky2
         paragraphs
             title Background on Cartan involutions
 
-            definition
+            definition#def-real-forms
+                title Real forms
                 statement: p
                     | Let #[m G] be a real algebraic group with involution #[m \sigma].
                     | The #[term real form] associated to #[m \sigma] is
@@ -1214,7 +1229,8 @@ section#sec-buntes-ricky2
                     me G^\sigma = U(n)
                     | observe that this is compact!
 
-            definition
+            definition#def-cartan-inv
+                title Cartan involutions
                 statement: p
                     | #[m \sigma] is called a #[term Cartan involution] if #[m G^\sigma] is compact, i.e. #[m G^\sigma(\RR)] is compact and meets every connected component of #[m G^\sigma(\CC)].
 
@@ -1239,7 +1255,7 @@ section#sec-buntes-ricky2
                         | For the converse statement the conditions imply #[m K \hookrightarrow U(K)] hence #[m K] is compact.
 
             remark
-                statement: p
+                p
                     | One source of involutions on #[m G] come from #[m C\in G\smallsetminus Z] s.t. #[m C^2 \in Z] then
                     me g   \mapsto C g C\inv
                     | is such an involution.

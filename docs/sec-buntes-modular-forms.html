@@ -316,7 +316,7 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms" class="active">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
-<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
 <li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
@@ -440,14 +440,14 @@ G_k(z) = \sum'_{m,n\in \ZZ} \frac{1}{(mz+n)^k}
 <p>so the <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">width</a> of \(\infty\) is 1.</p>
 <p id="p-1065">What about \(\alpha = 1/p\text{?}\)</p>
 <ol class="decimal">
-<li id="li-263">Find an element \(\gamma \in \SL_2(\ZZ)\) s.t. \(\gamma(\infty) = \alpha\text{.}\)</li>
-<li id="li-264">Compute<div class="displaymath">
+<li id="li-268">Find an element \(\gamma \in \SL_2(\ZZ)\) s.t. \(\gamma(\infty) = \alpha\text{.}\)</li>
+<li id="li-269">Compute<div class="displaymath">
 \begin{equation*}
 \delta(x) = \gamma \begin{pmatrix} 1\amp x \\ 0 \amp 1 \end{pmatrix} \gamma\inv
 \end{equation*}
 </div>
 </li>
-<li id="li-265">Find the smallest \(x\) such that \(\delta(x) = \Gamma_0(pq)\)</li>
+<li id="li-270">Find the smallest \(x\) such that \(\delta(x) = \Gamma_0(pq)\)</li>
 </ol>
 <div class="displaymath">
 \begin{equation*}
@@ -527,8 +527,8 @@ E \to E'
 \end{equation*}
 </div>
 <p>studying degree \(n\) <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a>, is like studying index  \(n \) sublattices</p>
-<article class="definition-like" id="definition-100"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.2.11</span>
+<article class="definition-like" id="def-buntes-hecke-ops"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.2.11</span> <span class="title">Hecke operators</span>
 </h6>
 <p id="p-1072">\(n \ge 1\) then \(T(n)\) is the  \(n\)th <dfn class="terminology">Hecke operator</dfn> acting on</p>
 <div class="displaymath">
@@ -548,22 +548,22 @@ T(n) \Lambda = \sum_{\Lambda' \subseteq \Lambda,\,[\Lambda : \Lambda'] = n} (\La
 <span class="type">Theorem</span> <span class="codenumber">5.2.13</span>
 </h6>
 <ol id="p-1074" class="decimal">
-<li id="li-266"><div class="displaymath">
+<li id="li-271"><div class="displaymath">
 \begin{equation*}
 R_\lambda R_\mu = R_{\lambda\mu}
 \end{equation*}
 </div></li>
-<li id="li-267"><div class="displaymath">
+<li id="li-272"><div class="displaymath">
 \begin{equation*}
 R_\lambda T(n) = T(n) R_{\lambda}
 \end{equation*}
 </div></li>
-<li id="li-268"><div class="displaymath">
+<li id="li-273"><div class="displaymath">
 \begin{equation*}
 T(nm) = T(n) T(m),\,\gcd(n,m) =1
 \end{equation*}
 </div></li>
-<li id="li-269"><div class="displaymath">
+<li id="li-274"><div class="displaymath">
 \begin{equation*}
 T(p^e)T(p) = T(p^{e+1 }) + p T(p^{e-1}) R_p
 \end{equation*}
@@ -625,7 +625,7 @@ T(n) \Lambda =  \sum_{ ad= n,\, a,d\gt 0\, 0\le b \lt d} \ZZ(aw_1 + bw_2) + \ZZ 
 \begin{equation*}
 T(p) \Lambda = \ZZ pw_1 + \ZZ w_2 +\sum_{0 \le b \lt p} \ZZ(w_1 + bw_2) + \ZZ pw_2\text{.}
 \end{equation*}
-</div></article><p id="p-1080">The <a knowl="./knowl/def-buntes-cusp-forms.html" title="Definition 5.2.6: Cusp forms">Hecke operators</a> act on <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> \(f(\tau)\) by reinterpreting <a knowl="./knowl/def-buntes-weak-modular.html" title="Definition 5.2.1">weakly modular</a> functions of weight \(k\) as functions on <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> that have  a weight \(k\) action under homothety.</p>
+</div></article><p id="p-1080">The <a knowl="./knowl/def-buntes-hecke-ops.html" title="Definition 5.2.11: Hecke operators">Hecke operators</a> act on <a knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> \(f(\tau)\) by reinterpreting <a knowl="./knowl/def-buntes-weak-modular.html" title="Definition 5.2.1">weakly modular</a> functions of weight \(k\) as functions on <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> that have  a weight \(k\) action under homothety.</p>
 <p id="p-1081">This boils down to</p>
 <div class="displaymath">
 \begin{equation*}

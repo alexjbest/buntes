@@ -316,7 +316,7 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
-<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
 <li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2" class="active">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
@@ -358,7 +358,7 @@ F^1 V_{\lambda, \CC} = \langle \frac{\diff x}{y} \rangle \hookrightarrow V_{\lam
 <p>this induces a period map</p>
 <div class="displaymath">
 \begin{equation*}
-S\supseteq U \to PP^1
+S\supseteq U \to \PP^1
 \end{equation*}
 </div>
 <p>sending \(s \mapsto F^1V_{s, \CC}\text{.}\)</p></article><p id="p-1179">Today generalise the role of \(\PP^1\) in this.</p></section><section class="subsection" id="subsection-87"><h3 class="heading hide-type">
@@ -459,8 +459,8 @@ X \hookrightarrow \phi \mathcal F
 \text{the HS  on } L = \Lie(G) \text{ of type }\{(-1,1),(0,0),(1,-1)\}\text{.}\tag{5.6.2}
 \end{equation}
 </div></article><article class="paragraphs" id="paragraphs-46"><h5 class="heading"><span class="title">Background on Cartan involutions</span></h5>
-<article class="definition-like" id="definition-115"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.6.6</span>
+<article class="definition-like" id="def-real-forms"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.6.6</span> <span class="title">Real forms</span>
 </h6>
 <p id="p-1201">Let \(G\) be a real <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> with involution \(\sigma\text{.}\) The <dfn class="terminology">real form</dfn> associated to \(\sigma\) is</p>
 <div class="displaymath">
@@ -477,16 +477,16 @@ G^\sigma (A) = \{ g \in G(A \otimes \CC) : \sigma(g) = \bar g\}
 G^\sigma = U(n)
 \end{equation*}
 </div>
-<p>observe that this is compact!</p></article><article class="definition-like" id="definition-116"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.6.8</span>
+<p>observe that this is compact!</p></article><article class="definition-like" id="def-cartan-inv"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.6.8</span> <span class="title">Cartan involutions</span>
 </h6>
 <p id="p-1203">\(\sigma\) is called a <dfn class="terminology">Cartan involution</dfn> if \(G^\sigma\) is compact, i.e. \(G^\sigma(\RR)\) is compact and meets every connected component of \(G^\sigma(\CC)\text{.}\)</p></article><article class="theorem-like" id="theorem-80"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">5.6.9</span>
 </h6>
-<p id="p-1204">Let \(G\) be connected, then \(G\) is reductive iff \(G\) admits a <a href="sec-buntes-ricky2.html" class="xref" title="Section 5.6: Moduli of linearized \(\CC\)-structures (RICKY)">Cartan involution</a>.</p></article><article class="theorem-like" id="lemma-25"><h6 class="heading">
+<p id="p-1204">Let \(G\) be connected, then \(G\) is reductive iff \(G\) admits a <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.8: Cartan involutions">Cartan involution</a>.</p></article><article class="theorem-like" id="lemma-25"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">5.6.10</span> <span class="title">for next time</span>
 </h6>
-<p id="p-1205">If \(K\) is a compact lie group then any \(\CC\)-representation \(V\) of it admits a \(K\)-invariant pos. def. <a href="sec-buntes-av-jac.html" class="xref" title="Section 5.3: Abelian varieties and Jacobians (Angus)">Hermitian form</a></p>
+<p id="p-1205">If \(K\) is a compact lie group then any \(\CC\)-representation \(V\) of it admits a \(K\)-invariant pos. def. <a knowl="./knowl/def-herm-form.html" title="Definition 5.3.5: Hermitian forms">Hermitian form</a></p>
 <p id="p-1206">Conversely if \(K\) has a faithful representation admitting a \(K\)-inv pos. def. Herm. form. then \(K\) is compact.</p></article><article class="hiddenproof" id="proof-120"><a knowl="" class="id-ref" refid="hk-proof-120"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-120" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1207">\(K\) compact, take any \(H_0(u,v)\) a pos. def. herm. form on \(V\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
