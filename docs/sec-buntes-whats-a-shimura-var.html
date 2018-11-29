@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES What is ... a Shimura Variety? (Angus)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-ricky2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-ricky2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
+<ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
+<ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
+<ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
+<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
+<ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var" class="active">What is ... a Shimura Variety? (Angus)</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-buntes-whats-a-shimura-var"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.7</span> <span class="title">What is ... a Shimura Variety? (Angus)</span>
+</h2>
+<a href="sec-buntes-whats-a-shimura-var.html" class="permalink">¶</a><article class="paragraphs" id="paragraphs-47"><h5 class="heading"><span class="title">Motivation</span></h5>
+<p id="p-1209">We began by studying modular curves e.g. \(Y_0(N) =  \Gamma_0(N)\backslash \mathcal H\) Aash proved</p>
+<div class="displaymath">
+\begin{equation*}
+Y_0(N) = \Gamma_0(N) \backslash \SL_2(\RR) / \specialorthogonal_2(\RR)\text{.}
+\end{equation*}
+</div>
+<p id="p-1210">Consider \(\adeles =  \prod'_v \QQ_v\) the adele ring of \(\QQ\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+K_0(N) = \{ \begin{pmatrix} a\amp b \\ c \amp d \end{pmatrix} \in \GL_2(\widehat \ZZ) : c \equiv 0  p\mod N \}\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-81"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">5.7.1</span> <span class="title">Strong approximation</span>
+</h6>
+<div class="displaymath" id="p-1211">
+\begin{equation*}
+\GL_2(\adeles) = \GL_2(\QQ) \GL_2(\RR)^+ K_0(N)\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="corollary-39"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">5.7.2</span>
+</h6>
+<div class="displaymath" id="p-1212">
+\begin{equation*}
+Y_0(N) = \GL_2(\QQ)Z(\GL_2(\adeles)) \backslash \GL_2(\adeles) / K_0(N) \specialorthogonal_2(\RR)
+\end{equation*}
+</div></article><p id="p-1213">We will generalise this final viewpoint for general \(G\text{.}\)</p></article><p id="p-1214">Last time \(X = \) conjugacy classes of morphisms</p>
+<div class="displaymath">
+\begin{equation*}
+h \colon \mathbf S \to G\text{ for } G/\RR
+\end{equation*}
+</div>
+<p>an <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> s.t.</p>
+<ol class="decimal">
+<li id="li-292"><div class="displaymath">
+\begin{equation*}
+h(\RR^\times)  \subseteq Z(G(\RR))
+\end{equation*}
+</div></li>
+<li id="li-293">The <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> on \(\Lie(G)\) induced by \(\ad \circ h\) is of type \(\{(-1,1), (0,0), (1,-1)\}\text{.}\)</li>
+</ol>
+<p id="p-1215">We also began studying <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involutions</a>. Take an involution \(\sigma\) of \(G\) and define</p>
+<div class="displaymath">
+\begin{equation*}
+G^\sigma(A) = \{ g\in G(A \otimes \CC : \sigma(g) = \bar g\}
+\end{equation*}
+</div>
+<p>this \(G^\sigma\) is another <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> \(/\RR\text{.}\)</p>
+<article class="remark-like" id="remark-34"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">5.7.3</span>
+</h6>
+<p id="p-1216">\(G^\sigma\) is a real form of \(G\text{,}\) i.e. \(G^\sigma \otimes \CC \simeq G \otimes \CC\text{.}\)</p></article><article class="example-like" id="example-70"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.7.4</span>
+</h6>
+<p id="p-1217">\(G  =\GL_n\text{,}\) \(\sigma(g) = (g^\transpose)\inv\) then \(G^\sigma =  U(n)\text{.}\)</p></article><p id="p-1218">Recall the definition of a <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a>.</p>
+<p id="p-1219">For \(C \in G(\RR)\) s.t. \(C^2 \in Z(G(\RR))\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma \colon g \mapsto CgC\inv
+\end{equation*}
+</div>
+<p>is an involution.</p>
+<p id="p-1220">When is it Cartan?</p>
+<article class="definition-like" id="def-c-pol"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.7.5</span>
+</h6>
+<p id="p-1221">An \(\RR\)-representation \(V\) of \(G\) is \(C\)-<a knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> if there exists a \(G\)-invariant bilinear form</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi \colon V \times V \to \RR
+\end{equation*}
+</div>
+<p>s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi(x,Cy)
+\end{equation*}
+</div>
+<p>is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> and positive definite.</p></article><article class="theorem-like" id="theorem-82"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">5.7.6</span>
+</h6>
+<p id="p-1222">Let \(G/\RR\) be an <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a>. Let \(C  \in G(\RR)\) s.t. \(C^2 \in Z(G(\RR))\text{.}\) Let \(\sigma \colon g\mapsto Cg C\inv\)  then \(\sigma\) is a <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a> iff \(G\) admits a faithful \(C\)-<a knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> representation.</p></article><article class="hiddenproof" id="proof-121"><a knowl="" class="id-ref" refid="hk-proof-121"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-121" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1223">\(\Rightarrow\text{.}\) Assume \(G^\sigma \) is compact. Let \(V\) be a faithful \(\RR\)-representation of \(G^\sigma (\RR)\text{.}\) From last time, there exists a \(G^\sigma(\RR)\)-invariant positive definite <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> form</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi\colon V\times V\to \RR
+\end{equation*}
+</div>
+<p>consider \(\Phi(u,v) = \Psi(u, C\inv v)\text{.}\) Then \(\Phi(x,Cy)\) is positive definite and <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> so \(\Phi\) is a \(C\)-<a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a>.</p>
+<p id="p-1224">\(\Leftarrow\text{.}\) Let \(V\) be \(C\)-<a knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> so we have \(\Psi \colon V\times V \to  \RR\text{.}\) Then \(\Psi_\CC \colon V_\CC \times V_\CC \to \CC\) is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> bilinear \(G\)-invariant. Let \(H(u,v) = \Psi_\CC(u,\bar v)\) consider \(H^\sigma(u,v) = H(u,Cv)\text{.}\)</p>
+<p id="p-1225">\(H^\sigma\) is \(G^\sigma(\RR)\)-invariant positive definite, Hermitian. From last time \(G^\sigma\) is compact.</p></article></div>
+<p id="p-1226">Now introduce <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarizations</a> on <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a>.</p>
+<article class="definition-like" id="definition-117"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.7.7</span>
+</h6>
+<p id="p-1227">A <dfn class="terminology">polarization</dfn> on a weight \(k\) <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a></p>
+<div class="displaymath">
+\begin{equation*}
+h\colon \mathbf S \to \GL(V)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+V_\CC = \bigoplus_{p+q = k} V^{p,q}
+\end{equation*}
+</div>
+<p>is a bilinear form \(\Psi\colon V\times V \to \RR\) s.t.</p>
+<ol class="decimal">
+<li id="li-294">\(\Psi\) is (symmetric/alternating) if \(k\) is even / odd.</li>
+<li id="li-295">Letting<div class="displaymath">
+\begin{equation*}
+H\colon V_\CC \times V_\CC \to \CC
+\end{equation*}
+</div>be given by<div class="displaymath">
+\begin{equation*}
+H(u,v) = i^k \Psi(u, \bar v)
+\end{equation*}
+</div>then the<div class="displaymath">
+\begin{equation*}
+V^{p,q}
+\end{equation*}
+</div>are orthogonal with respect to \(H\) and \(H|_{V^{p,q}}\) has sign \(i^{p-q- k}\text{.}\)</li>
+</ol></article><p id="p-1228">Why polarize?</p>
+<p id="p-1229">Recall: the set of polarized <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a> on \(\RR^{2g}\) of type \(\{(-1,0), (0,-1)\}\) is the <a knowl="./knowl/def-siegel-space.html" title="Definition 5.4.2">Siegel upper half space</a> \(\mathcal H_g\text{.}\)</p>
+<article class="theorem-like" id="lemma-26"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">5.7.8</span>
+</h6>
+<p id="p-1230">Let \(\RR(n) \) be the vector space \(\RR\) with <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> \(z\mapsto |z|^n\text{.}\) A bilinear form \(\Psi\) on \(V\) (of weight \(k\)) is a <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> iff</p>
+<ol class="decimal">
+<li id="li-296">\(\Psi\colon V\times V \to \RR(-k)\) is a morphism of  <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a>.</li>
+<li id="li-297">\(\Psi(v, h(i) w)\) is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> and positive definite.</li>
+</ol></article><article class="hiddenproof" id="proof-122"><a knowl="" class="id-ref" refid="hk-proof-122"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-122" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1231">\(\Leftarrow\) in Jared's notes.</p>
+<p id="p-1232">\(\Rightarrow\text{,}\) we want to show</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi(h(z) v, h(z) w) = |z|^{-k} \Psi(v,w)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Psi(h(z) v, h(z) w) = i^{-k} H(h(z) v, \overline{h(z) w})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  i^{-k} H(h(z) \sum v_{p,q}, \overline { \sum h(z) w_{pq}})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \cdots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= |z|^{-k} \Psi(v,w)
+\end{equation*}
+</div>
+<p>using orthogonality.</p></article></div>
+<p id="p-1233">Let \(V \) be a faithful representation of \(G \) s.t. for all \(h\in X\) we get  a <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on \(V\text{.}\)</p>
+<p id="p-1234">Call \(V\) <a knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> if in the weight decomposition</p>
+<div class="displaymath">
+\begin{equation*}
+V = \bigoplus_k V_k
+\end{equation*}
+</div>
+<p>each \(V_k\) admits a bilinear form \(\Psi_k\) s.t. \(h \in X\) gives a polarized <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on \(V_k\text{.}\)</p>
+<p id="p-1235">To define the adjoint group, take the adjoint representation</p>
+<div class="displaymath">
+\begin{equation*}
+\ad \colon G_1^{\ad} = \ad(G_1)
+\end{equation*}
+</div>
+<p>if \(G_1\) is connected then \(G_1^{\ad} = G_1 /Z(G_1)\text{.}\)</p>
+<article class="theorem-like" id="theorem-83"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">5.7.9</span>
+</h6>
+<p id="p-1236">Let \(G_1\) be the smallest subgroup of \(G\) through  which all the \(h \in X\) factor. A faithful representation \(V\) is <a knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> iff</p>
+<ol class="decimal">
+<li id="li-298">\(G_1\) is reductive.</li>
+<li id="li-299">For some \(h \in X\) (equivalently for all \(h \in X\)) <a knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a> by \(h(i)\) is a <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a> on the adjoint group \(G_1^{\ad}\text{.}\)</li>
+</ol></article><article class="hiddenproof" id="proof-123"><a knowl="" class="id-ref" refid="hk-proof-123"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-123" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1237">\(\Rightarrow\) Let \(G_2 \subseteq G_1\) be the smallest subgroup containing \(h(U^1)\) for all \(h \in X\) where \(U^1 = \{|z| = 1\} \subseteq \CC^\times\text{.}\) Then \(G_1\) is generated by \(G_2\) and \(h(t)\) for all \(t \in \RR^\times, h \in X\text{.}\) Since \(h(t)\) is always central have \(G_1^{\ad}=  G_2^{\ad}\text{.}\) By the previous lemma, \(\forall z  \in U^1\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi(h(z), v, h(z) w) = \Psi(v,w)
+\end{equation*}
+</div>
+<p>so \(\Psi\) is \(G_2\) invariant. Father \(\Psi(v, h(i) w)\) is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> positive definite for all \(h \in X\text{.}\) So <a knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a> by \(h(i)\) is a <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a> on \(G_2\) so on \(G_2^{\ad} = G_1^{\ad}\text{.}\)</p></article></div>
+<article class="definition-like" id="def-shimura-datum"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.7.10</span> <span class="title">Shimura data</span>
+</h6>
+<p id="p-1238">A <dfn class="terminology">Shimura datum</dfn> is a pair \((G,X)\) where</p>
+<ol class="decimal">
+<li id="li-300">\(G/\QQ\) is a reductive <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a>.</li>
+<li id="li-301">
+<p id="p-1239">\(X\) is a \(G(\RR)\)-conjugacy class of morphisms \(h\colon \mathbf  S \to  G_\RR\) s.t.</p>
+<ol class="lower-alpha">
+<li id="li-302">\(\forall h \in X\) the <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on \(\Lie (G_\RR)\) induced by \(\ad \circ h\) is of type \(\{(-1,1), (0,0), (1,-1)\}\text{.}\)</li>
+<li id="li-303">The involution \(\ad h(i)\) (i.e. <a knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a> by \(h(i)\)) is a <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a> on \(G^{\ad}\text{.}\)</li>
+<li id="li-304">\(G\) has no \(\QQ\)-factor on which the projection of \(h\) is trivial.</li>
+</ol>
+</li>
+</ol></article><article class="definition-like" id="definition-119"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">5.7.11</span>
+</h6>
+<p id="p-1240">Let \(\adeles^\infty = \prod_{p\ne \infty}' \QQ_p\) be the ring of finite adeles of \(\QQ\text{.}\) Let \(K \subseteq G(\adeles^\infty)\) be a compact open subgroup. The shimura variety of level \(K\) then \({\operatorname{Sh}}_K(G,X)\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+{\operatorname{Sh}}_K(G,X) = G(\QQ)  \backslash X\times G(\adeles^\infty) / K
+\end{equation*}
+</div>
+<p>The shimura variety at infinite level is</p>
+<div class="displaymath">
+\begin{equation*}
+{\operatorname{Sh}}(G,X) = \varprojlim_K G(\QQ) \backslash  X \times G(\adeles^\infty) / K = G(\QQ) \backslash X \times G(\adeles^\infty)
+\end{equation*}
+</div></article><article class="example-like" id="example-71"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.7.12</span> <span class="title">\(\GL_2\)</span>
+</h6>
+<p id="p-1241">\(X = \) conj. class containing \(h \colon (a+bi) \mapsto \begin{pmatrix} a\amp b \\ -b \amp a\end{pmatrix}\) \(\leftrightarrow \CC \smallsetminus \RR\) \(\leftrightarrow \{\) complex structures on \(V = \QQ^2\}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+h \mapsto i
+\end{equation*}
+</div>
+<p>Let \(E/\CC\) be an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> We have the full Tate module</p>
+<div class="displaymath">
+\begin{equation*}
+TE = \varprojlim_N E[N]  \simeq \widehat\ZZ^2
+\end{equation*}
+</div>
+<p>We have the full rational Tate module</p>
+<div class="displaymath">
+\begin{equation*}
+V^\infty E = TE \otimes \adeles^\infty \simeq (\adeles^\infty)^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\simeq H^1(E,\QQ) \otimes \QQ \adeles^\infty
+\end{equation*}
+</div></article><article class="theorem-like" id="proposition-74"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">5.7.13</span>
+</h6>
+<p id="p-1242">\({\operatorname{Sh}}(\GL_2, X)\) classifiies isog classes of pairs \((E, \eta)\) where</p>
+<div class="displaymath">
+\begin{equation*}
+E/\CC \text{ an elliptic curve}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\eta \colon \adeles^\infty \times \adeles^\infty\xrightarrow{\sim} V^\infty(E)
+\end{equation*}
+</div>
+<p>an \(\adeles^\infty\) linear isom.</p></article><article class="remark-like" id="remark-35"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">5.7.14</span>
+</h6>
+<p id="p-1243">An <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> is \(f \in \Hom(E, E') \otimes \QQ\) sending \(\eta \mapsto \eta'\) \({\operatorname{Sh}}(\GL_2, X)\) has components indexed by \(\widehat \ZZ^\times\text{.}\)</p></article></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</body>
+</html>

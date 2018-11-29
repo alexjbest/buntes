@@ -46,6 +46,12 @@ MathJax.Hub.Config({
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
@@ -260,11 +266,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-vhs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-vhs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-buntes-whats-a-shimura-var.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-vhs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-vhs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-buntes-whats-a-shimura-var.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -318,6 +324,7 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
 <li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
 <li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2" class="active">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -459,17 +466,15 @@ X \hookrightarrow \phi \mathcal F
 \text{the HS  on } L = \Lie(G) \text{ of type }\{(-1,1),(0,0),(1,-1)\}\text{.}\tag{5.6.2}
 \end{equation}
 </div></article><article class="paragraphs" id="paragraphs-46"><h5 class="heading"><span class="title">Background on Cartan involutions</span></h5>
-<article class="definition-like" id="def-real-forms"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.6.6</span> <span class="title">Real forms</span>
-</h6>
-<p id="p-1201">Let \(G\) be a real <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> with involution \(\sigma\text{.}\) The <dfn class="terminology">real form</dfn> associated to \(\sigma\) is</p>
+<p id="p-1201">Let \(G\) be a real <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> with involution \(\sigma\text{.}\) Then a real form of \(G\)  associated to \(\sigma\) is</p>
 <div class="displaymath">
 \begin{equation*}
 G^\sigma (A) = \{ g \in G(A \otimes \CC) : \sigma(g) = \bar g\}
 \end{equation*}
 </div>
-<p>for all \(\RR\)-algebras \(A\text{.}\)</p></article><article class="example-like" id="example-69"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.6.7</span>
+<p>for all \(\RR\)-algebras \(A\text{.}\)</p>
+<article class="example-like" id="example-69"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.6.6</span>
 </h6>
 <p id="p-1202">\(G = \GL_n\text{,}\) \(\sigma(g) = (g^\perp)\inv\) then</p>
 <div class="displaymath">
@@ -478,13 +483,13 @@ G^\sigma = U(n)
 \end{equation*}
 </div>
 <p>observe that this is compact!</p></article><article class="definition-like" id="def-cartan-inv"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.6.8</span> <span class="title">Cartan involutions</span>
+<span class="type">Definition</span> <span class="codenumber">5.6.7</span> <span class="title">Cartan involutions</span>
 </h6>
 <p id="p-1203">\(\sigma\) is called a <dfn class="terminology">Cartan involution</dfn> if \(G^\sigma\) is compact, i.e. \(G^\sigma(\RR)\) is compact and meets every connected component of \(G^\sigma(\CC)\text{.}\)</p></article><article class="theorem-like" id="theorem-80"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.6.9</span>
+<span class="type">Theorem</span> <span class="codenumber">5.6.8</span>
 </h6>
-<p id="p-1204">Let \(G\) be connected, then \(G\) is reductive iff \(G\) admits a <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.8: Cartan involutions">Cartan involution</a>.</p></article><article class="theorem-like" id="lemma-25"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">5.6.10</span> <span class="title">for next time</span>
+<p id="p-1204">Let \(G\) be connected, then \(G\) is reductive iff \(G\) admits a <a knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a>.</p></article><article class="theorem-like" id="lemma-25"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">5.6.9</span> <span class="title">for next time</span>
 </h6>
 <p id="p-1205">If \(K\) is a compact lie group then any \(\CC\)-representation \(V\) of it admits a \(K\)-invariant pos. def. <a knowl="./knowl/def-herm-form.html" title="Definition 5.3.5: Hermitian forms">Hermitian form</a></p>
 <p id="p-1206">Conversely if \(K\) has a faithful representation admitting a \(K\)-inv pos. def. Herm. form. then \(K\) is compact.</p></article><article class="hiddenproof" id="proof-120"><a knowl="" class="id-ref" refid="hk-proof-120"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-120" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1207">\(K\) compact, take any \(H_0(u,v)\) a pos. def. herm. form on \(V\text{.}\) Then</p>
@@ -495,7 +500,7 @@ H(u,v) = \int_K H_0(Ku, Kv) \diff K
 </div>
 <p>is \(K\)-invariant with some properties. For the converse statement the conditions imply \(K \hookrightarrow U(K)\) hence \(K\) is compact.</p></article></div>
 <article class="remark-like" id="remark-33"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">5.6.11</span>
+<span class="type">Remark</span> <span class="codenumber">5.6.10</span>
 </h6>
 <p id="p-1208">One source of involutions on \(G\) come from \(C\in G\smallsetminus Z\) s.t. \(C^2 \in Z\) then</p>
 <div class="displaymath">
@@ -515,6 +520,7 @@ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code-->
+</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.1/login.js"></script>
 </body>
 </html>

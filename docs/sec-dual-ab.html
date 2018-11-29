@@ -46,6 +46,12 @@ MathJax.Hub.Config({
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
@@ -318,6 +324,7 @@ MathJax.Hub.Config({
 <li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
 <li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
 <li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
 <h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -367,14 +374,14 @@ L \amp\mapsto \phi_L\text{.}
 \phi_{t_a^* L}  = \phi_L
 \end{equation*}
 </div></li>
-</ol></article><article class="hiddenproof" id="proof-32"><a knowl="" class="id-ref" refid="hk-proof-32"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-32" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-5"><h6 class="heading">1.</h6>
+</ol></article><article class="hiddenproof" id="proof-32"><a knowl="" class="id-ref" refid="hk-proof-32"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-32" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-5"><h6 class="heading">1. </h6>
 <div class="displaymath" id="p-168">
 \begin{align*}
 \phi_{L\otimes M}(a) \amp = t_a^*(L\otimes M) \otimes(L\otimes M)^{-1}\\
 \amp = t_a^*L\otimes L^{-1} t_a^*M\otimes M^{-1}\\
 \amp = \phi_L\otimes \phi_M
 \end{align*}
-</div></article><article class="case" id="case-6"><h6 class="heading">2.</h6>
+</div></article><article class="case" id="case-6"><h6 class="heading">2. </h6>
 <div class="displaymath" id="p-169">
 \begin{align*}
 \phi_{t_b^*L}(a) \amp = t_a^*(t_b^*L) \otimes(t_b^*L)^{-1}\\
@@ -464,7 +471,7 @@ m^* L \cong p_1^* L\otimes p_2^* L
 \phi_L(A(k)) \subseteq \Pic^0(A)
 \end{equation*}
 </div>for \(L \in \Pic (A)\text{.}\)</li>
-</ol></article><article class="hiddenproof" id="proof-34"><a knowl="" class="id-ref" refid="hk-proof-34"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-34" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-7"><h6 class="heading">1.</h6>
+</ol></article><article class="hiddenproof" id="proof-34"><a knowl="" class="id-ref" refid="hk-proof-34"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-34" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-7"><h6 class="heading">1. </h6>
 <div class="displaymath" id="p-180">
 \begin{equation*}
 (m^*L\otimes (p_1^*l)^{-1} \otimes (p_2^*l)^{-1})|_{A\times\{a\}} = t_a^*L \otimes L^{-1} = \sheaf O_A
@@ -475,13 +482,13 @@ m^* L \cong p_1^* L\otimes p_2^* L
 (m^*L\otimes (p_1^*l)^{-1} \otimes (p_2^*l)^{-1})|_{\{a\}\times A} = t_a^*L \otimes L^{-1} = \sheaf O_A
 \end{equation*}
 </div>
-<p>by <a knowl="./knowl/thm-see-saw.html" title="Theorem 1.7.6: See-saw theorem">see-saw 1.7.6</a> whole thing is trivial on \(A\times A\text{.}\)</p></article><article class="case" id="case-8"><h6 class="heading">2.</h6>
+<p>by <a knowl="./knowl/thm-see-saw.html" title="Theorem 1.7.6: See-saw theorem">see-saw 1.7.6</a> whole thing is trivial on \(A\times A\text{.}\)</p></article><article class="case" id="case-8"><h6 class="heading">2. </h6>
 <div class="displaymath" id="p-181">
 \begin{equation*}
 (f+g)^*L\cong (f\times g)^* m^*L \cong (f\times g)^*(p_1^*L \otimes p_2^*L) \cong f^*L \otimes g^*L
 \end{equation*}
-</div></article><article class="case" id="case-9"><h6 class="heading">3.</h6>
-<p id="p-182">Induction of 3.</p></article><article class="case" id="case-10"><h6 class="heading">4.</h6>
+</div></article><article class="case" id="case-9"><h6 class="heading">3. </h6>
+<p id="p-182">Induction of 3.</p></article><article class="case" id="case-10"><h6 class="heading">4. </h6>
 <div class="displaymath" id="p-183">
 \begin{equation*}
 \phi_{\phi_L(a)} = \phi_{t^*_a L}\otimes L^{-1} = \phi _{t_a^*L}\otimes L^{-1} = \phi_L \otimes \phi_{L^{-1}} = 0
@@ -663,7 +670,7 @@ L\mapsto f^*L
 </h6>
 <p id="p-202">A morphism \(f\colon A \to \hat A\) is <dfn class="terminology">symmetric</dfn> if \(f = \hat f\circ \operatorname{can}_A\)</p>
 <p id="p-203">A <dfn class="terminology">polarization</dfn> is a <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(f\colon A \to \hat A\) s.t. \(f=  \phi_L\) for some ample <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L\) on \(A\text{.}\)</p>
-<p id="p-204">A <dfn class="terminology">principal <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a></dfn> is a <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">polarization</a> of degree 1, i.e. an isomorphism.</p></article><article class="remark-like" id="remark-6"><h6 class="heading">
+<p id="p-204">A <dfn class="terminology">principal <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a></dfn> is a <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> of degree 1, i.e. an isomorphism.</p></article><article class="remark-like" id="remark-6"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">1.7.22</span>
 </h6>
 <p id="p-205">Elliptic curves always admit <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarization</a>.</p>
@@ -679,6 +686,7 @@ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code-->
+</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.1/login.js"></script>
 </body>
 </html>

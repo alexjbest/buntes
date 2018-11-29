@@ -1215,13 +1215,11 @@ section#sec-buntes-ricky2
         paragraphs
             title Background on Cartan involutions
 
-            definition#def-real-forms
-                title Real forms
-                statement: p
-                    | Let #[m G] be a real algebraic group with involution #[m \sigma].
-                    | The #[term real form] associated to #[m \sigma] is
-                    me G^\sigma (A) = \{ g \in G(A \otimes \CC) : \sigma(g) = \bar g\}
-                    | for all #[m \RR]-algebras #[m A].
+            p
+                | Let #[m G] be a real algebraic group with involution #[m \sigma].
+                | Then a real form of #[m G]  associated to #[m \sigma] is
+                me G^\sigma (A) = \{ g \in G(A \otimes \CC) : \sigma(g) = \bar g\}
+                | for all #[m \RR]-algebras #[m A].
 
             example
                 statement: p
@@ -1260,3 +1258,230 @@ section#sec-buntes-ricky2
                     me g   \mapsto C g C\inv
                     | is such an involution.
                     | e.g. #[m  J]!!
+
+section#sec-buntes-whats-a-shimura-var
+    title What is ... a Shimura Variety? (Angus)
+
+    paragraphs
+        title Motivation
+        p
+            | We began by studying modular curves e.g. #[m Y_0(N) =  \Gamma_0(N)\backslash \mathcal H]
+
+            | Aash proved
+            me Y_0(N) = \Gamma_0(N) \backslash \SL_2(\RR) / \specialorthogonal_2(\RR)
+            | .
+        p
+            | Consider #[m \adeles =  \prod'_v \QQ_v] the adele ring of #[m \QQ].
+            | Let
+            me K_0(N) = \{ \begin{pmatrix} a\amp b \\ c \amp d \end{pmatrix} \in \GL_2(\widehat \ZZ) : c \equiv 0  p\mod N \}
+            | .
+        theorem
+            title Strong approximation
+            statement: p
+                me \GL_2(\adeles) = \GL_2(\QQ) \GL_2(\RR)^+ K_0(N)
+                | .
+
+        corollary
+            statement: p
+                me Y_0(N) = \GL_2(\QQ)Z(\GL_2(\adeles)) \backslash \GL_2(\adeles) / K_0(N) \specialorthogonal_2(\RR)
+
+        p
+            | We will generalise this final viewpoint for general #[m G].
+
+    p
+        | Last time #[m X = ] conjugacy classes of morphisms
+        me h \colon \mathbf S \to G\text{ for } G/\RR
+        | an algebraic group s.t.
+        ol
+            li
+                me h(\RR^\times)  \subseteq Z(G(\RR))
+            li
+                | The hodge structure on #[m \Lie(G)] induced by #[m \ad \circ h] is of type #[m \{(-1,1), (0,0), (1,-1)\}].
+
+    p
+        | We also began studying Cartan involutions.
+        | Take an involution #[m \sigma] of #[m G] and define
+        me G^\sigma(A) = \{ g\in G(A \otimes \CC : \sigma(g) = \bar g\}
+        | this #[m G^\sigma] is another algebraic group #[m /\RR].
+
+    remark
+        p
+            | #[m G^\sigma] is a real form of #[m G], i.e. #[m G^\sigma \otimes \CC \simeq G \otimes \CC].
+    example
+        statement: p
+            | #[m G  =\GL_n], #[m \sigma(g) = (g^\transpose)\inv] then #[m G^\sigma =  U(n)].
+
+    p
+        | Recall the definition of a Cartan involution.
+    p
+        | For #[m C \in G(\RR)] s.t. #[m C^2 \in Z(G(\RR))] then
+        me \sigma \colon g \mapsto CgC\inv
+        | is an involution.
+    p
+        | When is it Cartan?
+
+    definition#def-c-pol
+        statement: p
+            | An #[m \RR]-representation #[m V] of #[m G] is #[m C]-polarizable if there exists a #[m G]-invariant bilinear form
+            me \Psi \colon V \times V \to \RR
+            | s.t.
+            me \Psi(x,Cy)
+            | is symmetric and positive definite.
+
+
+    theorem
+        statement: p
+            | Let #[m G/\RR] be an algebraic group.
+            | Let #[m C  \in G(\RR)] s.t. #[m C^2 \in Z(G(\RR))].
+            | Let #[m \sigma \colon g\mapsto Cg C\inv]  then #[m \sigma] is a Cartan involution iff #[m G] admits a faithful #[m C]-polarizable representation.
+        proof
+            p
+                | #[m \Rightarrow].
+                | Assume #[m G^\sigma ] is compact.
+                | Let #[m V] be a faithful #[m \RR]-representation of #[m G^\sigma (\RR)].
+                | From last time, there exists a #[m G^\sigma(\RR)]-invariant positive definite symmetric form
+                me \Psi\colon V\times V\to \RR
+                | consider #[m \Phi(u,v) = \Psi(u, C\inv v)].
+                | Then #[m \Phi(x,Cy)] is positive definite and symmetric so #[m \Phi] is a #[m C]-polarization.
+            p
+                | #[m \Leftarrow].
+                | Let #[m V] be #[m C]-polarizable so we have #[m \Psi \colon V\times V \to  \RR].
+                | Then #[m \Psi_\CC \colon V_\CC \times V_\CC \to \CC] is symmetric bilinear #[m G]-invariant.
+                | Let #[m H(u,v) = \Psi_\CC(u,\bar v)] consider #[m H^\sigma(u,v) = H(u,Cv)].
+            p
+                | #[m H^\sigma] is #[m G^\sigma(\RR)]-invariant positive definite, Hermitian.
+                | From last time #[m G^\sigma] is compact.
+
+
+    p
+        | Now introduce polarizations on Hodge structures.
+
+    definition
+        statement: p
+            | A #[term polarization] on a weight #[m k] Hodge structure
+            me h\colon \mathbf S \to \GL(V)
+            me V_\CC = \bigoplus_{p+q = k} V^{p,q}
+            | is a bilinear form #[m \Psi\colon V\times V \to \RR] s.t.
+            ol
+                li
+                    | #[m \Psi] is (symmetric/alternating) if #[m k] is even / odd.
+                li
+                    | Letting
+                    me H\colon V_\CC \times V_\CC \to \CC
+                    | be given by
+                    me H(u,v) = i^k \Psi(u, \bar v)
+                    | then the
+                    me V^{p,q}
+                    | are orthogonal with respect to #[m H] and #[m H|_{V^{p,q}}] has sign #[m i^{p-q- k}].
+    p
+        | Why polarize?
+    p
+        | Recall: the set of polarized Hodge structures on #[m \RR^{2g}] of type #[m \{(-1,0), (0,-1)\}] is the Siegel upper half space #[m \mathcal H_g].
+
+    lemma
+        statement: p
+            | Let #[m \RR(n) ] be the vector space #[m \RR] with Hodge structure #[m z\mapsto |z|^n].
+            | A bilinear form #[m \Psi] on #[m V] (of weight #[m k]) is a polarization iff
+            ol
+                li
+                    | #[m \Psi\colon V\times V \to \RR(-k)] is a morphism of  Hodge structures.
+                li
+                    | #[m \Psi(v, h(i) w)] is symmetric and positive definite.
+        proof
+            p
+                | #[m \Leftarrow] in Jared's notes.
+            p
+                | #[m \Rightarrow], we want to show
+                me \Psi(h(z) v, h(z) w) = |z|^{-k} \Psi(v,w)
+                me \Psi(h(z) v, h(z) w) = i^{-k} H(h(z) v, \overline{h(z) w})
+                me =  i^{-k} H(h(z) \sum v_{p,q}, \overline { \sum h(z) w_{pq}})
+                me = \cdots
+                me = |z|^{-k} \Psi(v,w)
+
+                | using orthogonality.
+
+    p
+        | Let #[m V ] be a faithful representation of #[m G ] s.t. for all #[m h\in X] we get  a Hodge structure on #[m V].
+    p
+        | Call #[m V] polarizable if in the weight decomposition
+        me V = \bigoplus_k V_k
+        | each #[m V_k] admits a bilinear form #[m \Psi_k] s.t. #[m h \in X] gives a polarized Hodge structure on #[m V_k].
+
+
+    p
+        | To define the adjoint group, take the adjoint representation
+        me \ad \colon G_1^{\ad} = \ad(G_1)
+        | if #[m G_1] is connected then #[m G_1^{\ad} = G_1 /Z(G_1)].
+    theorem
+        statement
+            p
+                | Let #[m G_1] be the smallest subgroup of #[m G] through  which all the #[m h \in X] factor.
+                | A faithful representation #[m V] is polarizable iff
+                ol
+                    li
+                        | #[m G_1] is reductive.
+                    li
+                        | For some #[m h \in X] (equivalently for all #[m h \in X]) conjugation by #[m h(i)] is a Cartan involution on the adjoint group #[m G_1^{\ad}].
+        proof
+            p
+                | #[m \Rightarrow] Let #[m G_2 \subseteq G_1] be the smallest subgroup containing #[m h(U^1)] for all #[m h \in X] where #[m U^1 = \{|z| = 1\} \subseteq \CC^\times].
+                | Then #[m G_1] is generated by #[m G_2] and #[m h(t)] for all #[m t \in \RR^\times, h \in X].
+                | Since #[m h(t)] is always central have #[m G_1^{\ad}=  G_2^{\ad}].
+                | By the previous lemma, #[m \forall z  \in U^1]
+                me \Psi(h(z), v, h(z) w) = \Psi(v,w)
+                | so #[m \Psi] is #[m G_2] invariant.
+                | Father #[m \Psi(v, h(i) w)] is symmetric positive definite for all #[m h \in X].
+                | So conjugation by #[m h(i)] is a Cartan involution on #[m G_2] so on #[m G_2^{\ad} = G_1^{\ad}].
+
+    definition#def-shimura-datum
+        title Shimura data
+        statement: p
+            | A #[term Shimura datum] is a pair #[m (G,X)] where
+            ol
+                li
+                    | #[m G/\QQ] is a reductive algebraic group.
+                li: p
+                    | #[m X] is a #[m G(\RR)]-conjugacy class of morphisms #[m h\colon \mathbf  S \to  G_\RR] s.t.
+                    ol
+                        li
+                            | #[m \forall h \in X] the Hodge structure on #[m \Lie (G_\RR)] induced by #[m \ad \circ h] is of type #[m \{(-1,1), (0,0), (1,-1)\}].
+                        li
+                            | The involution #[m \ad h(i)] (i.e. conjugation by #[m h(i)]) is a Cartan involution on #[m G^{\ad}].
+                        li
+                            | #[m G] has no #[m \QQ]-factor on which the projection of #[m h] is trivial.
+
+    definition
+        statement: p
+            | Let #[m \adeles^\infty = \prod_{p\ne \infty}' \QQ_p] be the ring of finite adeles of #[m \QQ].
+            | Let #[m K \subseteq G(\adeles^\infty)] be a compact open subgroup.
+            | The shimura variety of level #[m K] then #[m {\operatorname{Sh}}_K(G,X)] is given by
+            me {\operatorname{Sh}}_K(G,X) = G(\QQ)  \backslash X\times G(\adeles^\infty) / K
+            | The shimura variety at infinite level is
+            me {\operatorname{Sh}}(G,X) = \varprojlim_K G(\QQ) \backslash  X \times G(\adeles^\infty) / K = G(\QQ) \backslash X \times G(\adeles^\infty)
+
+    example
+        title #[m \GL_2]
+        statement: p
+            | #[m X = ] conj. class containing #[m h \colon (a+bi) \mapsto \begin{pmatrix} a\amp b \\ -b \amp a\end{pmatrix}] #[m \leftrightarrow \CC \smallsetminus \RR] #[m \leftrightarrow \{] complex structures on #[m V = \QQ^2\}].
+            me h \mapsto i
+            | Let #[m E/\CC] be an elliptic curve
+            | We have the full Tate module
+            me TE = \varprojlim_N E[N]  \simeq \widehat\ZZ^2
+            | We have the full rational Tate module
+            me V^\infty E = TE \otimes \adeles^\infty \simeq (\adeles^\infty)^2
+            me \simeq H^1(E,\QQ) \otimes \QQ \adeles^\infty
+    proposition
+        statement: p
+            | #[m {\operatorname{Sh}}(\GL_2, X)] classifiies isog classes of pairs #[m (E, \eta)] where
+            me E/\CC \text{ an elliptic curve}
+            me \eta \colon \adeles^\infty \times \adeles^\infty\xrightarrow{\sim} V^\infty(E)
+            | an #[m \adeles^\infty] linear isom.
+
+    remark
+        p
+            | An isogeny is #[m f \in \Hom(E, E') \otimes \QQ]
+            | sending #[m \eta \mapsto \eta']
+            | #[m {\operatorname{Sh}}(\GL_2, X)] has components indexed by #[m \widehat \ZZ^\times].
+
+
+

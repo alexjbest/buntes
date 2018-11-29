@@ -111,8 +111,8 @@
             });
             //console.log(terms);
             //console.log(refs);
-            console.log(Object.keys(refs).length);
-            console.log(terms.length);
+            console.log("Keys: " + Object.keys(refs).length.toString());
+            console.log("Terms: " + terms.length.toString());
             console.log(count);
 
             return ou;
