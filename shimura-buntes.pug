@@ -1469,7 +1469,7 @@ section#sec-buntes-whats-a-shimura-var
             me TE = \varprojlim_N E[N]  \simeq \widehat\ZZ^2
             | We have the full rational Tate module
             me V^\infty E = TE \otimes \adeles^\infty \simeq (\adeles^\infty)^2
-            me \simeq H^1(E,\QQ) \otimes \QQ \adeles^\infty
+            me \simeq H^1(E,\QQ) \otimes_\QQ \adeles^\infty
     proposition
         statement: p
             | #[m {\operatorname{Sh}}(\GL_2, X)] classifies isogeny classes of pairs #[m (E, \eta)] where
@@ -1484,4 +1484,312 @@ section#sec-buntes-whats-a-shimura-var
             | #[m {\operatorname{Sh}}(\GL_2, X)] has components indexed by #[m \widehat \ZZ^\times].
 
 
+
+section#sec-buntes-canonical-models
+    title Canonical models (Alex)
+
+    introduction
+
+        p
+            | Recall we defined Shimura varieties given a Shimura datum #[m (G,X)] and a compact open #[m K \subseteq G(\adeles^\infty)] as
+            me {\operatorname{Sh}}_K (G,X) = G(\QQ) \backslash (X \times G(\adeles^\infty)) / K
+            | a quasi-projective variety, and more generally the infinite level version
+            me {\operatorname{Sh}}_K (G,X) = \varprojlim_K {\operatorname{Sh}}_K(G,X) = G(\QQ) \backslash (X\times G(\adeles^\infty))
+            | which is a pro-variety a scheme.
+
+        p
+            | These are varieties over #[m \CC], we might hope to define them over a #[em number field] or even a #[em ring of integers], so that we can do number theoretic things (look locally prime by prime for instance, or identify special rational points).
+
+        p
+            | In the case where our Shimura variety is a natural moduli space (modular curves) might expect that this is indeed possible.
+        p
+            | There will be two words in this talk, special and canonical that already have a vague meaning, we will be giving them a precise meaning in this talk for once!
+
+    subsection
+        title Galois descent
+
+        p Say you have a variety over #[m \CC]. Is it really a #[m \CC]-variety, or is it a #[m k] variety for #[m k \subseteq \CC] that has been base-changed to #[m \CC]?
+
+        question
+            statement: p
+                | Given #[m X/\CC] a variety, is there a subfield #[m k \subseteq \CC] and an #[m X_0/k] with
+                me X \simeq X_0 \times_k \CC
+                | we then say #[m X] descends to #[m k], and that #[m X_0] is a model of #[m X] over #[m k].
+
+        paragraphs
+            title Preview: some examples of curves
+
+            example
+                statement: p
+                    | Let
+                    me C \colon x^2+ y^2 = \pi/\CC
+                    | is there #[m C_0/\QQ] s.t. #[m C_0\times_\QQ \CC \simeq C].
+                    | Yes, we have
+                    me C \simeq x^2 + y^2 = 1/\CC \simeq (x^2 + y^2 = 1/\QQ )\times_{\QQ} \CC
+                    | .
+
+
+            example
+                statement: p
+                    | Let now
+                    me E \colon y^2 = x^3 + ix + 1/\CC
+                    | is there some #[m E_0/\QQ] such that
+                    me E_0\times_{\QQ} \CC  \simeq E\text ?
+                    | If there was such the following would be true:
+                    | For any #[m \sigma\in \Gal{\CC}{\QQ}] we have
+                    me  \underbrace{E^\sigma}_{y^2 = x^3 + \sigma(i)x + 1} \xleftarrow{f^\sigma, \sim} E_0 \times_\QQ \CC \xrightarrow{f,\sim} E
+                    | but two elliptic curves are isomorphic (over #[m \CC]) if and only if they have the same #[m j]-invariant.
+                    me j(E) = 1728 \frac{4i^3}{4i^3 + 27\cdot 1^2} = 1728\left(1+ \frac{ - 27}{-4i + 27}\right)
+                    me j(E^\sigma) = 1728 \frac{4\sigma(i)^3}{4\sigma(i)^3 + 27\cdot 1^2} = \sigma(j(E))
+                    | so these curves are not isomorphic over #[m \QQ], no way does it come from a #[m \QQ]-curve.
+
+
+            p
+                | This example suggests another interesting behaviour, the curve over #[m \CC] could come from  a #[m k]-curve in multiple ways, which are non-isomorphic over the base.
+
+            example
+                statement: p
+                    | Let now
+                    me E \colon y^2 = x^3 + x + 1/\CC
+                    | we have
+                    me E_0 \colon y^2 = x^3 + x + 1/\QQ
+                    | duh... but also
+                    me E_0' \colon 2 y^2 = x^3 + x + 1 \simeq y^2 = x^3 + 4 x + 8/\QQ
+                    | , both are isomorphic to #[m E] over #[m \CC] but are not isomorphic to each other over #[m \QQ].
+
+            p
+                | Coming back to our necessary condition:
+
+            question
+                statement: p
+                    | If for all #[m \sigma \in \Gal{\CC}{k}] we have some
+                    me f_\sigma \colon X\xrightarrow{\sim} X^\sigma
+                    | does #[m  X] descend to #[m k]?
+
+            p
+                | For elliptic curves we have #[m j(E^\sigma) = \sigma(j(E))] so #[m E \simeq E^\sigma] for all #[m \sigma] implies #[m j(E) \in k] and hence there is an elliptic curve #[m E_0/ k] with #[m j(E_0) = j(E)] hence they are isomorphic over #[m \CC], explicitly:
+                me y^2 + xy = x^3 - \frac{36}{j(E) - 1728} x - \frac{1}{j(E) - 1728}
+                | when #[m j\ne 0,1728].
+            p
+                | So our necessary condition is sufficient for genus 1 (exercise: genus 0).
+
+        p
+            | Now I will subtly switch to quasiprojective-variety-land.
+        p
+            | Notice however that given
+            me X_0/k
+            | so that we have natural
+            me (X_0 \times_k \CC) \xrightarrow{f_\sigma,\sim} (X_0 \times_k \CC)^\sigma
+            | various isomorphic curves, we have the relation
+            me f_\sigma^\tau f_\tau = f_{\sigma\tau}
+            | .
+
+        theorem#thm-weil-descent
+            title Weil 1956
+            statement: p
+                |  #[m X/\CC] descends to #[m k] if and only if we can find #[m f_\sigma] as above satisfying a cocycle condition
+                me f_{\sigma\tau} = (f_\tau)^\sigma f_\sigma\colon X \to X^\sigma \to X^{\sigma\tau}
+                | , such a system is called a #[term Weil descent datum].
+
+
+        p
+            | This condition sounds like it could be irritating to check, fortunately we have the following:
+
+        remark
+            p
+                | If #[m X/\CC] has no automorphisms (i.e. a generic genus #[m g \ge 3] curve) then the cocycle condition is trivial and we just need the isomorphisms as in our first necessary condition.
+                | This is as #[m f_{\sigma\tau}\inv f_\tau ^\sigma f_\sigma] is just some automorphism, we want it to be the identity.
+            p
+                | Unfortunately many curves of interest have a lot of automorphisms however.
+                | Like superelliptic curves/cyclic covers.
+
+
+        p
+            | This motivates the following definition:
+
+        definition#def-field-of-mod
+            title Field of moduli
+            statement: p
+                | The #[term field of moduli] of #[m X/\CC] is the fixed field of
+                me \{\sigma \in \Gal{\CC}{\QQ} : X^\sigma \simeq X\}
+                | .
+
+        p
+            | It would be great if every curve could be defined over its field of moduli.
+        p
+            | #[q You can't always get what you want, but if you try sometimes, you might find, you get what you need] - The philosopher Jagger.
+
+
+        example
+            title Shimura
+            statement: p
+                | Let #[m m] be odd and define a hyperelliptic curve of genus #[m m - 1] (which is even) as
+                me X\colon y^2 = a_0 x^m + \sum_{r= 1}^m (a_r x^{m+r} + (-1)^r a_r^\rho x^{m-r}),\,a_i \in \CC,\,a_m = 1,\,a_0 \in \RR
+                | #[m \rho] is complex conjugation, then we have an isomorphism
+                me \mu\colon X \to X^\rho,\,\mu(x,y) = (-x\inv, i x^{-m} y)
+                me \mu^\rho \mu \colon (x,y)\mapsto (x,-y)
+                | so the field of moduli is contained in #[m \RR].
+                | As long as we pick all #[m a_i,a_i^\rho] algebraically independent over #[m \QQ] there are no automorphisms except #[m \pm 1].
+                | Exercise, in this case #[m X] has no model over #[m \RR].
+
+        p
+            | Warning even though trivial automorphism group is best, it is not really the case that more automorphisms is worse for you.
+
+        p
+            | What does help is points
+
+        theorem
+            title Weil 1956, Milne 14.6
+            statement: p
+                | #[m X/\CC] descends to #[m k] if all #[m X^\sigma \simeq X] and there exists a set of points #[m P_1,\ldots, P_n\in  X(\CC)] s.t.
+                ol
+                    li
+                        | The only automorphism of #[m X] fixing each #[m P_i] is the identity.
+                    li
+                        | There exists a subfield #[m  L \subseteq \CC] finitely generated #[m /k] s.t. #[m \sigma P_i = P_i] for all #[m \sigma] fixing #[m L].
+
+        paragraphs
+            title Goal
+            p
+                | Identify a special set of points, and some field #[m L] as above where we #[q know] the galois action.
+
+    subsection
+        title Reflex fields
+
+        p
+            | First we define a field based on a Shimura datum, this will (eventually) be the field we hope to descend the shimura variety.
+
+        definition#def-alg-torus
+            title Algebraic tori
+            statement: p
+                | An #[term algebraic torus] over a field  #[m k ] is an algebraic group #[m T] such that #[m T_{\bar k} \simeq (\mathbf G_m)^n].
+
+        p
+            | Let #[m G/\QQ] be reductive, #[m k \subseteq \CC] and let
+            me C(k) = G(K) \backslash \Hom(\mathbf G_m, G_k)
+            | be the set of conj. classes of cocharacters #[m /k].
+
+        p
+            | For #[m (G,X)] a Shimura datum we can take
+            me X \ni x \mapsto \mu_x(z) = h_{x\CC} (z,1) \in C(\QQ^\alg) \subseteq C(\CC)
+            | .
+        p
+            | So think of #[m c(X) \in C(\QQ^\alg)]
+
+        definition#def-reflex-field
+            title Reflex fields
+            statement: p
+                | The #[term reflex field], denoted #[m E(G,X)] is the field of definition of #[m c(X)] inside #[m \QQ^\alg].
+
+        fact: statement: p
+            | Any field of definition of #[m G] contained in #[m \QQ^\alg] is contained in #[m E(G,X)].
+
+    subsection
+        title Special points
+
+        p
+            | In the theory of modular curves and the upper half plane there are certain points that play an important role, imaginary quadratic integers in #[m \mathbf H].
+        p
+            | Why are these points special?
+            | They are fixed points: if we try and solve for #[m z \in \mathbf H]
+            me z=  \overbrace{\begin{pmatrix} a\amp b \\ c \amp d\end{pmatrix}}^{\in \GL_2(\RR)^+} z = \frac{az + b}{cz+d}
+            | we get
+            me cz^2 + (d - a) z - b = 0
+            | which has discriminant #[m (d-a)^2 + 4cb = d^2 - 2ad + a^2 + 4bc =  (a+d)^2 - 4(ad - bc) = \trace^2 - 4\det] so #[m z] is an eigenvalue of this matrix.
+            | (note that a matrix must be elliptic to have fixed points in the upper half plane).
+        p
+            | In fact this is a general phenomenon:
+
+        definition#def-special-pt
+            title Special points
+            statement: p
+                | #[m x \in X] is a #[term special point] if there is a #[m \QQ]-torus #[m T \subseteq G] s.t.
+                me h_x(\CC^\times) \subseteq T(\RR)
+                |  we also say #[m (T,x)] is a special pair.
+
+        remark
+            p
+                | #[m (T,x)] special means #[m T(\RR)] fixes #[m x].
+            p
+                | Conversely if #[m T] is a maximal torus of #[m G] with #[m T(\RR)] fixing #[m x] then #[m h_x(\CC^\times)] is in the centraliser of #[m T(\RR)] inside #[m G(\RR)] which is itself #[m \implies (T,x)] is special.
+
+        p
+            | I said this generalises CM points, how?
+
+        example
+            statement
+                p
+                    | Let #[m G = \GL_2] and #[m \mathbf H_1^\pm = \CC \smallsetminus \RR] then we have our old friend the #[m G(\RR)] action
+                    me \begin{pmatrix} a\amp b \\ c \amp d\end{pmatrix} z = \frac{az + b}{cz+d}
+                    | so if #[m z \in \CC \smallsetminus \RR] generates an imaginary quadratic field #[m E/\QQ] (which is a 2-d #[m \QQ]-vector space) we can embed
+                    me E \hookrightarrow \Mat_2(\QQ)
+                    | using basis #[m \langle 1, -z\rangle] for #[m E].
+                p
+                    | So we get a maximal subtorus #[m T = \Res_{E/\QQ}(\mathbf G_m) \subseteq G].
+                p
+                    | Now
+                    me E\otimes \CC = \langle 1\otimes 1, 1 \otimes (-z)\rangle
+                    | and we can map
+                    me E\otimes \CC \to \CC
+                    me e\otimes z \mapsto ez
+                    | we have a kernel of dimension 1
+                    me \langle z \otimes 1 + 1\otimes (-z) \rangle = \langle \begin{pmatrix} z \\ 1 \end{pmatrix}\rangle
+                    | exercise check #[m \Res_{E/\QQ}(\mathbf G_m)(\RR)].
+
+
+    subsection
+        title Canonical models
+
+        p
+            | Given a special pair #[m (T,x) \subset (G,X)] we have a cocharacter #[m \mu_x] of #[m T] defined over #[m E(x)] we can form the map
+
+            me r_x \colon \adeles^\times_{E(x)} \xrightarrow{ P \mapsto \prod_{\rho \colon E(x) \to \QQ^\alg} \rho(\mu_x(P)) } T(\adeles_\QQ) \to T(\adeles_f)
+            | the last map just forgets the infinite components.
+
+        p
+            | We have the artin map from CFT
+            me {\operatorname{art}}_{E(x)} \colon \adeles^\times_{E(x)} \twoheadrightarrow \Gal{E(x)^\ab}{E(x)}
+            me r_x \colon \adeles^\times_{E(x)} \to T(\adeles_f)
+            | .
+        p
+            | Call #[m \lb x,a\rb_K] the point of #[m {\operatorname{Sh}}_K(G,X)] represented by #[m (x,a)].
+
+        definition#def-canonical-model
+            title Milne 12.8
+            statement
+                p
+                    | Let #[m (G,X)] be a Shimura datum, and let #[m K] be a compact open subgroup of #[m G(\adeles_f)]. A model #[m M_K(G,X)] of #[m {\operatorname{Sh}}_K(G,X)] over #[m E(G,X)] is a #[term canonical model] if, for every special pair #[m (T, x) \subseteq (G,X)] and #[m a \in G(\adeles_f)], #[m \lb x,a\rb _K] has coordinates in #[m E(x)^\ab] and
+                    me \sigma [x,a]_K = [x, r_x(s) a]_K
+                    | for all
+                    me \sigma \in \Gal{E(x)^\ab}{E(x)}
+                    me s\in \adeles^\times_{E(x)}
+                    me {\operatorname{art}}_{E(x)}(s) = \sigma
+                    | In other words, #[m M_K(G,X)] is canonical if every automorphism #[m \sigma] of C fixing #[m E(x)] acts on #[m \lb x,a\rb_K] according to the above rule, where #[m s] is any idele such that
+                    me {\operatorname{art}}_{E(x)}(s) = \sigma| E(x)^{\ab}
+                    |.
+
+        example
+            statement: p
+                | #[m T ] an algebraic torus over #[m \QQ] and
+                me h \colon \mathbf S \to T_\RR
+                | then  #[m (T,h)] is a Shimura datum #[m E = E(T,h)] is the field of definition #[m \mu_h] in this case
+                me {\operatorname{Sh}}_K(T,h) = T(\QQ) \backslash \{h\}  \times T(\adeles_f) / K
+                | is a finite set, defines a continuous action of
+                me \Gal{E^\ab}{E} \acts {\operatorname{Sh}}_K(T,h)
+                | , this action defines a model of #[m {\operatorname{Sh}}_K(T, h)] over #[m E] which by definition is canonical.
+
+        theorem
+            title Langlands conjecture, Milne 1983
+            statement: p
+                | Let #[m (G,X)] be a shimura datum, #[m \sigma] an automorphism of #[m \CC]. Langlands defined
+                me (G^\sigma, X^\sigma)
+                | and conjectured a unique isomorphism
+                me f_\sigma \colon {\operatorname{Sh}}(G^\sigma, X^\sigma) \to {\operatorname{Sh}}(G,X)
+                | satisfying some conditions.
+                | Then the #[m f_\sigma] for #[m \sigma\in \Gal{\CC}{E(G,X)}] are a descent datum, and the model is canonical.
+
+        theorem
+            statement: p
+                | For any Shimura datum #[m (G,X)], #[m {\operatorname{Sh}}_K(G,X)] has a canonical model (defined to be a compatible system of canonical models for #[m {\operatorname{Sh}}_K]).
+                | The canonical model is unique up to unique isomorphism.
 
