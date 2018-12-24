@@ -1495,7 +1495,7 @@ section#sec-buntes-canonical-models
             me {\operatorname{Sh}}_K (G,X) = G(\QQ) \backslash (X \times G(\adeles^\infty)) / K
             | a quasi-projective variety, and more generally the infinite level version
             me {\operatorname{Sh}}_K (G,X) = \varprojlim_K {\operatorname{Sh}}_K(G,X) = G(\QQ) \backslash (X\times G(\adeles^\infty))
-            | which is a pro-variety a scheme.
+            | which is a pro-variety and in fact a scheme.
 
         p
             | These are varieties over #[m \CC], we might hope to define them over a #[em number field] or even a #[em ring of integers], so that we can do number theoretic things (look locally prime by prime for instance, or identify special rational points).
@@ -1657,7 +1657,7 @@ section#sec-buntes-canonical-models
         title Reflex fields
 
         p
-            | First we define a field based on a Shimura datum, this will (eventually) be the field we hope to descend the shimura variety.
+            | First we define a field based on a Shimura datum, this will (eventually) be the field we hope to descend the associated Shimura variety to.
 
         definition#def-alg-torus
             title Algebraic tori
@@ -1692,7 +1692,7 @@ section#sec-buntes-canonical-models
         p
             | Why are these points special?
             | They are fixed points: if we try and solve for #[m z \in \mathbf H]
-            me z=  \overbrace{\begin{pmatrix} a\amp b \\ c \amp d\end{pmatrix}}^{\in \GL_2(\RR)^+} z = \frac{az + b}{cz+d}
+            me z=  \overbrace{\begin{pmatrix} a\amp b \\ c \amp d\end{pmatrix}}^{\in \SL_2(\ZZ)} z = \frac{az + b}{cz+d}
             | we get
             me cz^2 + (d - a) z - b = 0
             | which has discriminant #[m (d-a)^2 + 4cb = d^2 - 2ad + a^2 + 4bc =  (a+d)^2 - 4(ad - bc) = \trace^2 - 4\det] so #[m z] is an eigenvalue of this matrix.
@@ -1792,4 +1792,18 @@ section#sec-buntes-canonical-models
             statement: p
                 | For any Shimura datum #[m (G,X)], #[m {\operatorname{Sh}}_K(G,X)] has a canonical model (defined to be a compatible system of canonical models for #[m {\operatorname{Sh}}_K]).
                 | The canonical model is unique up to unique isomorphism.
+
+        p
+            | Some references:
+            ol
+                li Weil’s Galois Descent Theorem; A Computational Point Of View - Ruben A. Hidalgo And Sebastian Reyes-carocca
+                li On the field of moduli of superelliptic curves - Ruben Hidalgo and Tony Shaska
+                li Varieties Without Extra Automorphisms I: Curves - Bjorn Poonen
+                li Lecture On Shimura Curves 6: Special Points And Canonical Models Pete L. Clark #[url(href="http://math.uga.edu/~pete/SC7-CMpoints.pdf")/] (Shimura curves only but still)
+                li Shimura Varieties and Canonical models (slides) - Brian Smithling #[url(href="http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf")/].
+                li #[url(href="https://tlovering.wordpress.com/2014/09/03/galois-descent-for-transcendental-extensions/")/].
+
+
+                li
+                    |Canonical models of Shimura curves -  J.S. Milne (a great article I found after the talk...)
 
