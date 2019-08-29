@@ -6,9 +6,9 @@ MATHBOOK_ROOT = ../mathbook/ # TODO implement this everywhere
 
 docs/:	docs/buntes.pdf buntes-pretty.xml buntes.xsl filter.xsl
 	mkdir -p docs
-	cp index.html docs/
 	cd docs/; \
 	$(XSLTPROC) ../buntes.xsl ../buntes-pretty.xml
+	cp index.html docs/
 
 buntes.tex:	buntes-pretty.xml buntes-latex.xsl filter.xsl
 	$(XSLTPROC) -o buntes.tex buntes-latex.xsl buntes-pretty.xml
