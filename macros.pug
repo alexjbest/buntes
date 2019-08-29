@@ -1,4 +1,5 @@
 macros.
+    % TODO consider \lbrak?
 
     % \linespread{2.5}
 
@@ -8,15 +9,21 @@ macros.
     \array{#1}}
     {\endarray}
 
+    \def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+    \def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
 
     % allow     \floor*{\frac{x}{2}} \lt \frac{x}{2} \lt \ceil*{\frac{x}{2}}  e.g https://tex.stackexchange.com/questions/118173/how-to-write-ceil-and-floor-in-latex
+    % TODO use these everywhere!
     \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
     \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
     \newcommand{\ideal}[1]{\mathfrak{#1}}
     \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
     \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-    \newcommand{\Lie}{\operatorname{Lie}}
+    \DeclareMathOperator{\Lie}{Lie}
 
     \newcommand{\diff}{\mathop{}\!\mathrm{d}}
     \newcommand{\cinf}{C^\infty}
@@ -74,7 +81,9 @@ macros.
     \newcommand{\cris}{\mathrm{cris}}
     % etale
     \newcommand{\et}{\mathrm{\acute{e}t}}
-    % etale
+    % rigid
+    \newcommand{\rig}{\mathrm{rig}}
+    % singular
     \newcommand{\sing}{\mathrm{sing}}
     % Petersson
     \newcommand{\Pet}{\mathrm{Pet}}
@@ -103,6 +112,8 @@ macros.
     \newcommand{\alt}{\mathrm{alt}}
     % cyclotomic
     \newcommand{\cyc}{\mathrm{cyc}}
+    % divisible sub
+    \newcommand{\divisible}{\mathrm{div}}
     % identity
     \newcommand{\id}{\mathrm{id}}
     % unipotent
@@ -146,8 +157,11 @@ macros.
     \DeclareMathOperator{\Diff}{Diff}
     % Homomorphisms
     \DeclareMathOperator{\Hom}{Hom}
+    \newcommand{\sheafHom}{\mathscr{Hom}}
     % natural transformations
     \DeclareMathOperator{\Nat}{Nat}
+    % Brauer gp
+    \DeclareMathOperator{\Br}{Br}
     % Sylow
     \DeclareMathOperator{\Syl}{Syl}
     % Tangent
@@ -160,8 +174,9 @@ macros.
     % divisors
     \DeclareMathOperator{\divisor}{div}
     \DeclareMathOperator{\divisors}{Div}
+    \DeclareMathOperator{\Div}{Div} %TODO merge these
+    % class group
     \DeclareMathOperator{\Cl}{Cl}
-    \DeclareMathOperator{\Div}{Div}
     \DeclareMathOperator{\Pic}{Pic}
     \DeclareMathOperator{\Jac}{Jac}
     \DeclareMathOperator{\Princ}{Princ}
@@ -193,7 +208,7 @@ macros.
     % selmer
     \DeclareMathOperator{\Sel}{Sel}
     % reduction
-    \DeclareMathOperator{\red}{red}
+    \DeclareMathOperator{\redu}{red}
     % regulator
     \DeclareMathOperator{\Reg}{Reg}
     % representations
@@ -205,7 +220,6 @@ macros.
     \DeclareMathOperator{\rank}{rank}
     % image
     \DeclareMathOperator{\im}{im}
-    \DeclareMathOperator{\image}{im}
     % coimage
     \DeclareMathOperator{\coim}{coim}
     % codimension
@@ -232,6 +246,8 @@ macros.
 
     % spectrum of a ring
     \DeclareMathOperator{\Spec}{Spec}
+    % proj of a graded ring
+    \DeclareMathOperator{\Proj}{Proj}
     % formal spec
     \DeclareMathOperator{\Spf}{Spf}
     \DeclareMathOperator{\Spv}{Spv}
@@ -244,7 +260,6 @@ macros.
     \newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
     \newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
     \newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
-    % \DeclareMathOperator{\Gal}{Gal}
     % induction
     \DeclareMathOperator{\Ind}{Ind}
     % restriction
@@ -278,8 +293,6 @@ macros.
     \DeclareMathOperator{\trdeg}{trdeg}
     % fraction field
     \DeclareMathOperator{\Frac}{Frac}
-    % class group
-    \DeclareMathOperator{\cl}{cl}
     % probability
     \DeclareMathOperator{\Prob}{Prob}
 
@@ -291,6 +304,7 @@ macros.
     \DeclareMathOperator{\PGL}{PGL}
     \DeclareMathOperator{\specialorthogonal}{SO}
     \DeclareMathOperator{\Sp}{Sp}
+    \DeclareMathOperator{\USp}{USp}
     \DeclareMathOperator{\orth}{O}
     \DeclareMathOperator{\unitary}{U}
     \DeclareMathOperator{\specialunitary}{SU}

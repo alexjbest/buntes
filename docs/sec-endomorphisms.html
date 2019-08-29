@@ -11,7 +11,7 @@
 <title>BUNTES Endomorphisms and the Tate module (Berke)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-dual-ab.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-polarizations-etale.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-dual-ab.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-polarizations-etale.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,13 +345,22 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-endomorphisms"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-endomorphisms"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.8</span> <span class="title">Endomorphisms and the Tate module (Berke)</span>
 </h2>
-<a href="sec-endomorphisms.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><h6 class="heading">Motivation<span></span>
+<a href="sec-endomorphisms.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><h6 class="heading">Motivation.<span></span>
 </h6>
 <div class="displaymath" id="p-207">
 \begin{align*}
@@ -346,19 +373,19 @@ P\amp \mapsto \cdots
 f = \lb f_1 : \cdots : f_m\rb ,\,f_i\in \overline K (V_1)
 \end{equation*}
 </div>
-<p>this feels quite restrictive, an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> is even more so, rational, regular, homomorphism, surjective, finite kernel. It feels like there won't be too many but we have multiplication by \(n\) etc. so we should ask how many are there that will surprise us? I.e. what is</p>
+<p>this feels quite restrictive, an isogeny is even more so, rational, regular, homomorphism, surjective, finite kernel. It feels like there won't be too many but we have multiplication by \(n\) etc. so we should ask how many are there that will surprise us? I.e. what is</p>
 <div class="displaymath">
 \begin{equation*}
 \rank_\ZZ \Hom(A,B) = ?
 \end{equation*}
 </div>
-<p id="p-208">Notation: \(A,B,C , A_i,  B_i\) are all <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. \(l \ne \characteristic k\text{,}\) \(\sim\) is <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>.</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
+<p id="p-208">Notation: \(A,B,C , A_i,  B_i\) are all abelian varieties. \(l \ne \characteristic k\text{,}\) \(\sim\) is isogeny.</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.8.1</span> <span class="title">Poincaré's complete reducibility theorem</span>
 </h3>
 <article class="theorem-like" id="thm-poincare-reducibility"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.8.1</span> <span class="title">Poincaré's complete reducibility theorem</span>
+<span class="type">Theorem</span> <span class="codenumber">1.8.1</span>. <span class="title">Poincaré's complete reducibility theorem.</span>
 </h6>
-<p id="p-209">Let \(B\subseteq A\) then there is \(C\subseteq A\) s.t. \(B \cap C\) is finite and \(B+C = A\text{.}\) I.e. \(B\times C \to A,\,(b,c) \mapsto b+c\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>.</p></article><article class="hiddenproof" id="proof-38"><a knowl="" class="id-ref" refid="hk-proof-38"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-38" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-210">Choose \(\sheaf L\) ample on \(A\)</p>
+<p id="p-209">Let \(B\subseteq A\) then there is \(C\subseteq A\) s.t. \(B \cap C\) is finite and \(B+C = A\text{.}\) I.e. \(B\times C \to A,\,(b,c) \mapsto b+c\) is an isogeny.</p></article><article class="hiddenproof" id="proof-38"><a data-knowl="" class="id-ref" data-refid="hk-proof-38"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-38" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-210">Choose \(\sheaf L\) ample on \(A\)</p>
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
@@ -379,36 +406,31 @@ B\ar[r]^i \ar[d]_{\phi_{i*\sheaf L}} &amp; A \ar[d]_\sim^{\phi_{\sheaf L}} \\
 \dim (B\times C) = \dim B + \dim C \ge \dim A
 \end{equation*}
 </div>
-<p>and surjective implies its an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>.</p></article></div>
+<p>and surjective implies its an isogeny.</p></article></div>
 <article class="definition-like" id="def-simple-av"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.8.2</span> <span class="title">Simple abelian varieties</span>
+<span class="type">Definition</span> <span class="codenumber">1.8.2</span>. <span class="title">Simple abelian varieties.</span>
 </h6>
 <p id="p-212">\(A\) is called <dfn class="terminology">simple</dfn> if there does not exists \(B\subseteq A\) other than \(B = 0,A\text{.}\)</p></article><article class="theorem-like" id="cor-ab-var-product-simple"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.8.3</span>
-</h6>
+<span class="type">Corollary</span> <span class="codenumber">1.8.3</span>.</h6>
 <div class="displaymath" id="p-213">
 \begin{equation*}
 A \sim A_1^{n_1} \times \cdots \times A_k^{n_k}
 \end{equation*}
 </div>
-<p>\(A_i \not\sim A_j\) for \(i\ne j\) and \(A_i\) <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a>.</p></article><article class="theorem-like" id="corollary-13"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.8.4</span>
-</h6>
-<p id="p-214">\(\alpha \in \Hom(A,B)\) for \(A,B\) <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> then \(\alpha\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> or \(0\text{.}\)</p></article><article class="hiddenproof" id="proof-39"><a knowl="" class="id-ref" refid="hk-proof-39"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-39" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-215">\(\alpha(A) \subseteq B\) which implies \(\alpha(A)  = B\) or \(0\text{.}\) The connected component of 0 of \(\ker \alpha\) will be an abelian subvariety of \(A\text{,}\) denote it \(C\) If \(C = 0\) then \(\ker \alpha\) is finite, if \(C = A\) then \(\alpha = 0\text{.}\) So \(\alpha\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> or \(0\text{.}\)</p></article></div>
+<p>\(A_i \not\sim A_j\) for \(i\ne j\) and \(A_i\) simple.</p></article><article class="theorem-like" id="corollary-13"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">1.8.4</span>.</h6>
+<p id="p-214">\(\alpha \in \Hom(A,B)\) for \(A,B\) simple then \(\alpha\) is an isogeny or \(0\text{.}\)</p></article><article class="hiddenproof" id="proof-39"><a data-knowl="" class="id-ref" data-refid="hk-proof-39"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-39" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-215">\(\alpha(A) \subseteq B\) which implies \(\alpha(A)  = B\) or \(0\text{.}\) The connected component of 0 of \(\ker \alpha\) will be an abelian subvariety of \(A\text{,}\) denote it \(C\) If \(C = 0\) then \(\ker \alpha\) is finite, if \(C = A\) then \(\alpha = 0\text{.}\) So \(\alpha\) is an isogeny or \(0\text{.}\)</p></article></div>
 <article class="theorem-like" id="corollary-14"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.8.5</span>
-</h6>
-<p id="p-216">If \(A,B\) are <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> and  \(A\not\sim B\) then \(\Hom(A,B) = 0\text{.}\)</p></article><article class="definition-like" id="definition-29"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.8.6</span>
-</h6>
+<span class="type">Corollary</span> <span class="codenumber">1.8.5</span>.</h6>
+<p id="p-216">If \(A,B\) are simple and  \(A\not\sim B\) then \(\Hom(A,B) = 0\text{.}\)</p></article><article class="definition-like" id="definition-29"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.8.6</span>.</h6>
 <div class="displaymath" id="p-217">
 \begin{equation*}
 \End^0(A) = \End(A) \otimes \QQ\text{.}
 \end{equation*}
 </div></article><article class="theorem-like" id="lemma-4"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">1.8.7</span>
-</h6>
-<p id="p-218">If \(\alpha \colon A\to B\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>, then there exists \(\beta \colon B\to A\) s.t. \(\beta \circ \alpha = n_A\) for some \(n \ge 1\text{.}\)</p></article><article class="hiddenproof" id="proof-40"><a knowl="" class="id-ref" refid="hk-proof-40"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-40" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-219">\(\alpha\) an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> implies \(\ker \alpha\) is finite. So there exists \(n\) with \(n \ker \alpha = 0\text{.}\) \(\ker\alpha \subseteq \ker n_A\)</p>
+<span class="type">Lemma</span> <span class="codenumber">1.8.7</span>.</h6>
+<p id="p-218">If \(\alpha \colon A\to B\) is an isogeny, then there exists \(\beta \colon B\to A\) s.t. \(\beta \circ \alpha = n_A\) for some \(n \ge 1\text{.}\)</p></article><article class="hiddenproof" id="proof-40"><a data-knowl="" class="id-ref" data-refid="hk-proof-40"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-40" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-219">\(\alpha\) an isogeny implies \(\ker \alpha\) is finite. So there exists \(n\) with \(n \ker \alpha = 0\text{.}\) \(\ker\alpha \subseteq \ker n_A\)</p>
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
@@ -420,10 +442,9 @@ B\ar[r]_\sim \ar@/_3.0pc/[urr]_{\exists | \beta} &amp; A/\ker\alpha \ar[d]\ar[ur
 </div>
 <p>so \(\beta\circ \alpha = n_A\text{,}\) also \(\alpha \circ \beta = n_B\text{.}\)</p></article></div>
 <article class="theorem-like" id="corollary-15"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.8.8</span>
-</h6>
-<p id="p-220">\(A\) is <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> then \(\End^0(A)\) is a division ring, \(\alpha^{-1} = \beta \otimes \frac 1n\text{.}\)</p></article><article class="theorem-like" id="corollary-16"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.8.9</span> <span class="title">to Poincaré reducibility theorem</span>
+<span class="type">Corollary</span> <span class="codenumber">1.8.8</span>.</h6>
+<p id="p-220">\(A\) is simple then \(\End^0(A)\) is a division ring, \(\alpha^{-1} = \beta \otimes \frac 1n\text{.}\)</p></article><article class="theorem-like" id="corollary-16"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">1.8.9</span>. <span class="title">to Poincaré reducibility theorem.</span>
 </h6>
 <p id="p-221">If</p>
 <div class="displaymath">
@@ -436,7 +457,7 @@ A\sim A_1^{n_1} \times \cdots \times A_k^{n_k}
 \begin{equation*}
 \End^0(A) \simeq \prod \End^0(A_i)^{n_i^2}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-41"><a knowl="" class="id-ref" refid="hk-proof-41"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-41" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-222">
+</div></article><article class="hiddenproof" id="proof-41"><a data-knowl="" class="id-ref" data-refid="hk-proof-41"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-41" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-222">
 \begin{align*}
 \End(A) \otimes \QQ \amp \simeq \prod_{i,j} \Hom(A_i^{n_i}, A_j^{n_j}) \otimes \QQ\\
 \amp \simeq \prod_{i} \End(A_i)^{n_i^2} \otimes \QQ\\
@@ -444,12 +465,11 @@ A\sim A_1^{n_1} \times \cdots \times A_k^{n_k}
 \end{align*}
 </div></article></div>
 <article class="theorem-like" id="theorem-19"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.8.10</span> <span class="title">7.2</span>
+<span class="type">Theorem</span> <span class="codenumber">1.8.10</span>. <span class="title">7.2.</span>
 </h6>
 <p id="p-223">If \(\dim A = g\) then \(\deg n_A  =n^{2g}\text{.}\)</p></article><article class="theorem-like" id="corollary-17"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.8.11</span>
-</h6>
-<p id="p-224">\(\characteristic k \nmid n\) implies \(\ker(n_A) \simeq (\ZZ/n\ZZ)^{2g}\text{.}\)</p></article><article class="hiddenproof" id="proof-42"><a knowl="" class="id-ref" refid="hk-proof-42"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-42" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-225">If  \(m | n\) then \(|\ker (m_A)| = m^{2g}\text{,}\) then use structure theorem.</p></article></div>
+<span class="type">Corollary</span> <span class="codenumber">1.8.11</span>.</h6>
+<p id="p-224">\(\characteristic k \nmid n\) implies \(\ker(n_A) \simeq (\ZZ/n\ZZ)^{2g}\text{.}\)</p></article><article class="hiddenproof" id="proof-42"><a data-knowl="" class="id-ref" data-refid="hk-proof-42"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-42" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-225">If  \(m | n\) then \(|\ker (m_A)| = m^{2g}\text{,}\) then use structure theorem.</p></article></div>
 <p id="p-226">In particular if we let \(A\lb l^n\rb = A(k^\sep) \lb l^n\rb\text{,}\) then \(A\lb l^n\rb \simeq (\ZZ/l^n)^{2g}\) Define</p>
 <div class="displaymath">
 \begin{equation*}
@@ -457,8 +477,7 @@ T_l(A) = \varprojlim_n A[l^n],\, A[l^{n+1}] \xrightarrow{l} A[l]
 \end{equation*}
 </div>
 <article class="theorem-like" id="proposition-20"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.8.12</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">1.8.12</span>.</h6>
 <div class="displaymath" id="p-227">
 \begin{equation*}
 T_l \simeq (\ZZ_l)^{2g}
@@ -475,22 +494,20 @@ T_l\alpha\colon T_l(A) \to T_l(B)
 \end{equation*}
 </div>
 <article class="theorem-like" id="lemma-5"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">1.8.13</span>
-</h6>
+<span class="type">Lemma</span> <span class="codenumber">1.8.13</span>.</h6>
 <div class="displaymath" id="p-229">
 \begin{equation*}
 \Hom(A,B) \hookrightarrow \Hom(T_l(A), T_l(B))
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-43"><a knowl="" class="id-ref" refid="hk-proof-43"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-43" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-230">Let \(\alpha \in \Hom(A,B)\) and assume \(T_l \alpha = 0\) then</p>
+</div></article><article class="hiddenproof" id="proof-43"><a data-knowl="" class="id-ref" data-refid="hk-proof-43"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-43" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-230">Let \(\alpha \in \Hom(A,B)\) and assume \(T_l \alpha = 0\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \ker (\alpha|_{A_i}) \supseteq A_i[l^n] \forall n
 \end{equation*}
 </div>
-<p>for any <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> component \(A_i\) of \(A\) so \(\alpha =0\) on each \(A_i\) and hence \(\alpha = 0\) on \(A\text{.}\)</p></article></div>
+<p>for any simple component \(A_i\) of \(A\) so \(\alpha =0\) on each \(A_i\) and hence \(\alpha = 0\) on \(A\text{.}\)</p></article></div>
 <article class="theorem-like" id="corollary-18"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.8.14</span>
-</h6>
+<span class="type">Corollary</span> <span class="codenumber">1.8.14</span>.</h6>
 <p id="p-231">\(\Hom(A,B)\) is torsion free.</p></article><p id="p-232">Recall we are interested in knowing about \(\rank_\ZZ\Hom(A,B) = ?\text{,}\) can we bound this? If we could show that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -507,10 +524,9 @@ T_l\alpha\colon T_l(A) \to T_l(B)
 }
 \end{equation*}
 </div>
-<p>\(A_i + B_j = 0\text{,}\) \(A_i\sim B_j\) \(\Hom(A_i, B_j) \hookrightarrow \End(A_i)\text{.}\) Assume \(A= B\) and \(A\) <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a>, then \(\End(A) \otimes \ZZ_l \hookrightarrow \End(T_l(A))\text{.}\)</p>
+<p>\(A_i + B_j = 0\text{,}\) \(A_i\sim B_j\) \(\Hom(A_i, B_j) \hookrightarrow \End(A_i)\text{.}\) Assume \(A= B\) and \(A\) simple, then \(\End(A) \otimes \ZZ_l \hookrightarrow \End(T_l(A))\text{.}\)</p>
 <article class="definition-like" id="definition-30"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.8.15</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">1.8.15</span>.</h6>
 <p id="p-234">\(V/k\) then \(f\colon V \to k\) is called a (homogenous) polynomial function of degree \(d\) if \(\forall \{v_1,\cdots, v_m\}\subseteq V\) linearly independent.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -528,17 +544,16 @@ f(\lambda_1 v_1 + \lambda_2 v_2 +\cdots + \lambda_m v_m) = P(\lambda_1,\ldots, \
 \deg\colon \End(A) \to \ZZ
 \end{equation*}
 </div>
-<p>\(\alpha\) an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> iff \(\deg \alpha\text{,}\) \(\alpha\) not an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> iff \(0\text{.}\)</p>
+<p>\(\alpha\) an isogeny iff \(\deg \alpha\text{,}\) \(\alpha\) not an isogeny iff \(0\text{.}\)</p>
 <article class="theorem-like" id="theorem-20"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.8.16</span>
-</h6>
-<p id="p-236">\(\deg\) uniquely extends to a polynomial function of degree \(2g\) on \(\End^0(A) \to \QQ\text{.}\)</p></article><article class="hiddenproof" id="proof-44"><a knowl="" class="id-ref" refid="hk-proof-44"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-44" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-237">(of above continued)</p>
+<span class="type">Theorem</span> <span class="codenumber">1.8.16</span>.</h6>
+<p id="p-236">\(\deg\) uniquely extends to a polynomial function of degree \(2g\) on \(\End^0(A) \to \QQ\text{.}\)</p></article><article class="hiddenproof" id="proof-44"><a data-knowl="" class="id-ref" data-refid="hk-proof-44"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-44" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-237">(of above continued)</p>
 <div class="displaymath" id="p-238">
 \begin{equation*}
 \End(A) \otimes \ZZ_l \hookrightarrow\End(T_l(A))
 \end{equation*}
 </div>
-<p>for \(A\) <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> iff for any finitely generated \(M \subseteq \End(A)\)</p>
+<p>for \(A\) simple iff for any finitely generated \(M \subseteq \End(A)\)</p>
 <div class="displaymath">
 \begin{equation*}
 M \otimes \ZZ_l \hookrightarrow \End(T_l(A))
@@ -583,17 +598,19 @@ f = \sum a_i' T_lf_i
 \end{equation*}
 </div></article></div></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

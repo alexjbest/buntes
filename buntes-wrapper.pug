@@ -1,6 +1,6 @@
 doctype xml
 
-mathbook
+pretext
 
     docinfo
         latex-preamble
@@ -17,12 +17,10 @@ mathbook
 
         initialism BUNTES
 
-        analytics: google: tracking UA-48250536-1
-
-        rename(element="inlineexercise" lang="en-US") Exercise
+        rename(element="inlineexercise") Exercise
 
         latex-image-preamble.
-            \usepackage{tikz,tkz-graph,tkz-berge}
+            \usepackage{tikz,tkz-graph,tkz-berge,tikz-cd,pstricks,auto-pst-pdf}
 
 
     book#buntes
@@ -49,6 +47,9 @@ mathbook
 
         chapter#chapter-buntes-shimura
             include ./shimura-buntes.pug
+
+        chapter#chapter-buntes-flt
+            include ./flt.pug
 
         backmatter
             include ./references.pug

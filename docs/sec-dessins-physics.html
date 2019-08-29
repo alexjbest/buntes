@@ -11,7 +11,7 @@
 <title>BUNTES Dessins in Physics (Jim)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-three-short-stories-belyi.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-supersing-isog.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-three-short-stories-belyi.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-supersing-isog.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics" class="active">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,13 +345,22 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-dessins-physics"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-dessins-physics"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.12</span> <span class="title">Dessins in Physics (Jim)</span>
 </h2>
-<a href="sec-dessins-physics.html" class="permalink">¶</a><article class="paragraphs" id="paragraphs-21"><h5 class="heading"><span class="title">Physics</span></h5>
+<a href="sec-dessins-physics.html" class="permalink">¶</a><article class="paragraphs" id="paragraphs-21"><h5 class="heading"><span class="title">Physics.</span></h5>
 <p id="p-770">Let  \(M\)  be a manifold with  a metric \(g\text{.}\) We call the pair \((M,g)\) a “spacetime manifold”. Let \(\mathcal E\) be  a “space of fields”, either \(\cinf (M)\text{,}\) sections of some \(E\to M\text{,}\) connections, or similar.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -348,7 +375,7 @@ S(\phi_1, \phi_2) = \int_M \mathcal L(\phi_1,\phi_2)
 </div>
 <p>the \(W\) might satisfy \(W(\phi_1, \phi_2) = W(\phi_2, \phi_1)\text{.}\)</p>
 <article class="definition-like" id="def-gauge-transformations"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.12.1</span> <span class="title">Gauge transformations</span>
+<span class="type">Definition</span> <span class="codenumber">2.12.1</span>. <span class="title">Gauge transformations.</span>
 </h6>
 <p id="p-771">Let \(G \acts E \xrightarrow p M\) be an action s.t. each fibre \(E_x = p \inv(x)\) is a representation of \(G\text{.}\) A <dfn class="terminology">gauge</dfn> is a section \(s(x)\) of \(E \to M\text{.}\) A <dfn class="terminology">gauge transformation</dfn> is a map \(g\colon M \to G\) s.t.</p>
 <div class="displaymath">
@@ -356,15 +383,14 @@ S(\phi_1, \phi_2) = \int_M \mathcal L(\phi_1,\phi_2)
 g(x) s(x)
 \end{equation*}
 </div>
-<p>is another section, call \(G\) the <dfn class="terminology">gauge group</dfn>. The important <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge transformations</a> are the ones that fix the set of physically realisable states (i.e. fixes the subset of \(\mathcal E\) that minimise \(S\)).</p></article></article><article class="paragraphs" id="paragraphs-22"><h5 class="heading"><span class="title">Quivers and dessins</span></h5>
-<p id="p-772">Let's now study the relationship between quivers and <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessins</a>.</p>
+<p>is another section, call \(G\) the <dfn class="terminology">gauge group</dfn>. The important gauge transformations are the ones that fix the set of physically realisable states (i.e. fixes the subset of \(\mathcal E\) that minimise \(S\)).</p></article></article><article class="paragraphs" id="paragraphs-22"><h5 class="heading"><span class="title">Quivers and dessins.</span></h5>
+<p id="p-772">Let's now study the relationship between quivers and dessins.</p>
 <article class="example-like" id="example-39"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.12.2</span>
-</h6>
-<p id="p-773">\(\mathcal N = 4\) SYM (supersymmetric Yang-Mills) (Gauge symmetries given by some product of \(\specialunitary (N)\)) .</p></article><p id="p-774">A quiver is a directed graph, possibly with self-loops. Here we think of the nodes as corresponding to factors of the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a>. And the arrows as fields, so in a bouquet with 3 petals we have three fields, and only \(G = \specialunitary (N)\text{.}\)</p>
-<p id="p-775">There is also the notion of a periodic quiver (a tiling of the plane). We can take the triangular <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> and consider its dual, this is a hexagonal tiling with a bicolouring corresponding to the fact we had upwards pointing and downwards pointing triangles. This is a Dimer model.</p>
-<p id="p-776">Relating the Dimer model back to physics: We have hexagonal faces in correspondence with factors of the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">Gauge group</a>, and edges fields, with vertices terms in \(W\text{.}\)</p>
-<p id="p-777">So one distinct face gives one factor in the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a> so \(G = \specialunitary (N)\text{.}\) 3 distinct edges give 3 fields \(X_1, X_2, X_3\text{.}\) To recover \(W\) consider the permutation arising from reading the edges around the vertices counterclockwise. A black vertex \((1,2,3)\) gives \(\sigma_B\) corresponding to a positive term in \(W\text{.}\) A white vertex \((1,2,3)\) gives \(\sigma_W\) corresponding to a negative term in \(W\text{.}\) Then \(\sigma_\infty = (\sigma_B\sigma_W)\inv = (123)\) \(\sigma_i\) gives a term for each cycle. Each cycle in \(\sigma_B\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_B\) gives \(X_1X_2X_3\text{.}\) Each cycle in \(\sigma_W\inv\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_W\) gives \(X_1X_3X_2\text{.}\) Then</p>
+<span class="type">Example</span> <span class="codenumber">2.12.2</span>.</h6>
+<p id="p-773">\(\mathcal N = 4\) SYM (supersymmetric Yang-Mills) (Gauge symmetries given by some product of \(\specialunitary (N)\)) .</p></article><p id="p-774">A quiver is a directed graph, possibly with self-loops. Here we think of the nodes as corresponding to factors of the gauge group. And the arrows as fields, so in a bouquet with 3 petals we have three fields, and only \(G = \specialunitary (N)\text{.}\)</p>
+<p id="p-775">There is also the notion of a periodic quiver (a tiling of the plane). We can take the triangular lattice and consider its dual, this is a hexagonal tiling with a bicolouring corresponding to the fact we had upwards pointing and downwards pointing triangles. This is a Dimer model.</p>
+<p id="p-776">Relating the Dimer model back to physics: We have hexagonal faces in correspondence with factors of the Gauge group, and edges fields, with vertices terms in \(W\text{.}\)</p>
+<p id="p-777">So one distinct face gives one factor in the gauge group so \(G = \specialunitary (N)\text{.}\) 3 distinct edges give 3 fields \(X_1, X_2, X_3\text{.}\) To recover \(W\) consider the permutation arising from reading the edges around the vertices counterclockwise. A black vertex \((1,2,3)\) gives \(\sigma_B\) corresponding to a positive term in \(W\text{.}\) A white vertex \((1,2,3)\) gives \(\sigma_W\) corresponding to a negative term in \(W\text{.}\) Then \(\sigma_\infty = (\sigma_B\sigma_W)\inv = (123)\) \(\sigma_i\) gives a term for each cycle. Each cycle in \(\sigma_B\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_B\) gives \(X_1X_2X_3\text{.}\) Each cycle in \(\sigma_W\inv\) gives a product of fields indexed by the cycle, e.g. in this example \(\sigma_W\) gives \(X_1X_3X_2\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 W = \trace((\text{sim of }\sigma_B\text{ terms}) - (\text{sim of }\sigma_W\text{ terms}))
@@ -390,7 +416,7 @@ W = \trace((\text{sim of }\sigma_B\text{ terms}) - (\text{sim of }\sigma_W\text{
 = \ZZ/3\ZZ\text{.}
 \end{equation*}
 </div>
-<p id="p-779">The fundamental domain of the Dimer gives a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">dessin</a> on the torus with two vertices of degree 3. This corresponds to the Belyi pair \((\Sigma, \beta)\) where</p>
+<p id="p-779">The fundamental domain of the Dimer gives a dessin on the torus with two vertices of degree 3. This corresponds to the Belyi pair \((\Sigma, \beta)\) where</p>
 <div class="displaymath">
 \begin{equation*}
 \Sigma \colon y^2 = x^3 + 1
@@ -419,9 +445,8 @@ W = \trace((\text{sim of }\sigma_B\text{ terms}) - (\text{sim of }\sigma_W\text{
 </div>
 <p>where \(w^3 = 1\text{.}\)</p>
 <article class="example-like" id="example-40"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.12.3</span>
-</h6>
-<p id="p-780">Take the quiver with two vertices and two edges in each direction connecting them. This has 4 fields and two factors of \(G\) (i.e. \(G = \specialunitary (N) \times \specialunitary (N)\)). The dimer is a square <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> alternately coloured, with \(\sigma_B = \sigma_W = (1234), \sigma_\infty = (13)(24)\text{.}\)</p>
+<span class="type">Example</span> <span class="codenumber">2.12.3</span>.</h6>
+<p id="p-780">Take the quiver with two vertices and two edges in each direction connecting them. This has 4 fields and two factors of \(G\) (i.e. \(G = \specialunitary (N) \times \specialunitary (N)\)). The dimer is a square lattice alternately coloured, with \(\sigma_B = \sigma_W = (1234), \sigma_\infty = (13)(24)\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 W = \trace (X_1X_2X_3X_4 - X_1 X_4 X_3 X_2)\text{.}
@@ -484,10 +509,10 @@ W = \trace (X_1X_2X_3X_4 - X_1 X_4 X_3 X_2)\text{.}
 \beta\inv(\infty)= \{(\frac 12,0), (\infty,\infty)\}
 \end{equation*}
 </div>
-<p>on the Dimer we have the square <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> so taking a fundamental domain containing  of the vertices we see the torus as a topology.</p></article><article class="example-like" id="example-41"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.12.4</span> <span class="title">Final example</span>
+<p>on the Dimer we have the square lattice so taking a fundamental domain containing  of the vertices we see the torus as a topology.</p></article><article class="example-like" id="example-41"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.12.4</span>. <span class="title">Final example.</span>
 </h6>
-<p id="p-781">Let's jump straight to the Dimer the hexagonal <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> with fundamental domain containing 6 vertices. We have 9 fields and three factors in the <a knowl="./knowl/def-gauge-transformations.html" title="Definition 2.12.1: Gauge transformations">gauge group</a> \(G = \specialunitary (N)^2\text{.}\)</p>
+<p id="p-781">Let's jump straight to the Dimer the hexagonal lattice with fundamental domain containing 6 vertices. We have 9 fields and three factors in the gauge group \(G = \specialunitary (N)^2\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma_B = (147)(258)(369)
@@ -548,17 +573,19 @@ w_i^3 = 1\text{.}
 \end{equation*}
 </div></article></article></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

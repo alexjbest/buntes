@@ -11,7 +11,7 @@
 <title>BUNTES The Honda Tate Theorem (Angus)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-tate-thm.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-dessins.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-tate-thm.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-dessins.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate" class="active">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,22 +345,30 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-honda-tate"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-honda-tate"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.14</span> <span class="title">The Honda Tate Theorem (Angus)</span>
 </h2>
-<a href="sec-honda-tate.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-402">\(q = p^n\text{,}\) \(A\) a <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\FF_q\text{,}\) \(\pi_A\) the frobenius on \(A\text{,}\) \(\End^0(A) = \QQ\otimes \End(A)\text{,}\) \(f_A\) is the charpoly of \(A\) (i.e. of \(\pi_A\)).</p>
+<a href="sec-honda-tate.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-402">\(q = p^n\text{,}\) \(A\) a simple abelian variety over \(\FF_q\text{,}\) \(\pi_A\) the frobenius on \(A\text{,}\) \(\End^0(A) = \QQ\otimes \End(A)\text{,}\) \(f_A\) is the charpoly of \(A\) (i.e. of \(\pi_A\)).</p>
 <article class="theorem-like" id="fact-3"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">1.14.1</span>
-</h6>
+<span class="type">Fact</span> <span class="codenumber">1.14.1</span>.</h6>
 <ul id="p-403" class="disc">
 <li id="li-81">\(\End^0(A)\) is a division ring.</li>
 <li id="li-82">\(\QQ\lb \pi\rb\) is a field.</li>
 <li id="li-83">\(Z(\End^0(A)) = \QQ\lb \pi_A\rb\)</li>
 </ul></article><article class="theorem-like" id="lemma-10"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">1.14.2</span> <span class="title">The Weil Conjectures</span>
+<span class="type">Lemma</span> <span class="codenumber">1.14.2</span>. <span class="title">The Weil Conjectures.</span>
 </h6>
 <p id="p-404">The roots of \(f_A\) all have absolute value \(\sqrt q\text{.}\) Alternatively, under all embeddings</p>
 <div class="displaymath">
@@ -350,7 +376,7 @@ var login_required = false;
 \iota \colon \QQ\lb \pi_A\rb \hookrightarrow \CC,\,|\iota(\pi_A)| = \sqrt q\text{.}
 \end{equation*}
 </div></article><article class="definition-like" id="definition-39"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.14.3</span> <span class="title">\(q\)-Weil numbers</span>
+<span class="type">Definition</span> <span class="codenumber">1.14.3</span>. <span class="title">\(q\)-Weil numbers.</span>
 </h6>
 <p id="p-405">A \(q\)-<dfn class="terminology">Weil number</dfn> is an algebraic integer \(\pi\) s.t.</p>
 <div class="displaymath">
@@ -358,7 +384,7 @@ var login_required = false;
 \forall \iota \colon \QQ\lb \pi\rb \hookrightarrow \CC,\,|\iota(\pi)| = \sqrt q
 \end{equation*}
 </div>
-<p>we say that two \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil numbers</a> are conjugate if they have the same minimal polynomial over \(\QQ\text{,}\) and write \(\pi \sim \pi'\text{.}\)</p></article><p id="p-406">From the facts so far we have a map</p>
+<p>we say that two \(q\)-Weil numbers are conjugate if they have the same minimal polynomial over \(\QQ\text{,}\) and write \(\pi \sim \pi'\text{.}\)</p></article><p id="p-406">From the facts so far we have a map</p>
 <div class="displaymath">
 \begin{equation*}
 \{\text{simple AVs}/\FF_q\}\to \{q\text{-Weil numbers}\}
@@ -370,8 +396,7 @@ A \mapsto \pi_A
 \end{equation*}
 </div>
 <article class="theorem-like" id="theorem-34"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14.4</span>
-</h6>
+<span class="type">Theorem</span> <span class="codenumber">1.14.4</span>.</h6>
 <p id="p-407">We have a bijection</p>
 <div class="displaymath">
 \begin{equation*}
@@ -387,21 +412,19 @@ A \mapsto \pi_A\text{.}
 </h3>
 <p id="p-409">Recall:</p>
 <article class="theorem-like" id="corollary-26"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.14.5</span>
-</h6>
-<p id="p-410">Let \(A,B\) be <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> over \(\FF_q\) with rational Tate modules \(V_l A, V_lB\) then</p>
+<span class="type">Corollary</span> <span class="codenumber">1.14.5</span>.</h6>
+<p id="p-410">Let \(A,B\) be abelian varieties over \(\FF_q\) with rational Tate modules \(V_l A, V_lB\) then</p>
 <div class="displaymath">
 \begin{equation*}
 A\sim_{\text{isog}} B \iff V_l A \simeq V_l B \forall l \ne p\text{.}
 \end{equation*}
 </div></article><article class="theorem-like" id="corollary-27"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.14.6</span>
-</h6>
+<span class="type">Corollary</span> <span class="codenumber">1.14.6</span>.</h6>
 <div class="displaymath" id="p-411">
 \begin{equation*}
 A\sim_{\text{isog}} B \iff f_A = f_B
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-70"><a knowl="" class="id-ref" refid="hk-proof-70"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-70" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-412">By above \(V_l A \simeq V_lB\) for all \(l \ne p\) but \(f_A\) (resp. \(f_B\)) is the charpoly of \(\pi_a\) (\(\pi_B\)) on \(V_l A\) (\(V_l(B)\)).</p>
+</div></article><article class="hiddenproof" id="proof-70"><a data-knowl="" class="id-ref" data-refid="hk-proof-70"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-70" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-412">By above \(V_l A \simeq V_lB\) for all \(l \ne p\) but \(f_A\) (resp. \(f_B\)) is the charpoly of \(\pi_a\) (\(\pi_B\)) on \(V_l A\) (\(V_l(B)\)).</p>
 <p id="p-413">The Galois modules \(V_lA\) and \(V_l B\) are semisimple. The Brauer-Nesbitt theorem says \(f_A = f_B \implies V_lA \simeq V_lB \) for \(l\ne p\text{.}\)</p></article></div>
 <p id="p-414">Recalling that \(f_A\) is a power of the minimal polynomial of \(\pi_A\text{,}\)</p>
 <div class="displaymath">
@@ -415,33 +438,30 @@ A \sim_{\text{isog}} B\implies  f_A =f_B \implies \pi_A \sim \pi_B\text{.}
 </h3>
 <p id="p-416">From last time:</p>
 <article class="theorem-like" id="proposition-35"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.14.7</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">1.14.7</span>.</h6>
 <p id="p-417">There exists a certain quantity \(r(f_A, f_B)\) such that</p>
 <div class="displaymath">
 \begin{equation*}
 r(f_A, f_B) = \rank \Hom(A,B)\text{.}
 \end{equation*}
 </div></article><article class="theorem-like" id="corollary-28"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.14.8</span>
-</h6>
-<p id="p-418">Let \(d = \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}\text{,}\) let \(h_A = \operatorname{minpoly}_\QQ(\pi_A)\) then \(f_A = h_A^d\text{.}\)</p></article><article class="hiddenproof" id="proof-71"><a knowl="" class="id-ref" refid="hk-proof-71"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-71" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-419">Study the formula for \(r(f_A, f_A)\) Edixhoven-van der Geer-Moonen 16.22.</p></article></div>
+<span class="type">Corollary</span> <span class="codenumber">1.14.8</span>.</h6>
+<p id="p-418">Let \(d = \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}\text{,}\) let \(h_A = \operatorname{minpoly}_\QQ(\pi_A)\) then \(f_A = h_A^d\text{.}\)</p></article><article class="hiddenproof" id="proof-71"><a data-knowl="" class="id-ref" data-refid="hk-proof-71"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-71" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-419">Study the formula for \(r(f_A, f_A)\) Edixhoven-van der Geer-Moonen 16.22.</p></article></div>
 <p id="p-420">So the next step is to try and recover \(\End^0(A)\) from \(\pi\text{.}\)</p>
 <article class="definition-like" id="def-abvar-csa"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.14.9</span> <span class="title">Central simple algebras</span>
+<span class="type">Definition</span> <span class="codenumber">1.14.9</span>. <span class="title">Central simple algebras.</span>
 </h6>
-<p id="p-421">A <dfn class="terminology">central <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> algebra</dfn> \(B/k\) is a \(k\)-algebra \(B\) with no two-sided ideals and \(Z(B) = k\text{.}\)</p></article><article class="theorem-like" id="theorem-35"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14.10</span> <span class="title">Artin-Wedderburn</span>
+<p id="p-421">A <dfn class="terminology">central simple algebra</dfn> \(B/k\) is a \(k\)-algebra \(B\) with no two-sided ideals and \(Z(B) = k\text{.}\)</p></article><article class="theorem-like" id="theorem-35"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.14.10</span>. <span class="title">Artin-Wedderburn.</span>
 </h6>
 <p id="p-422">Any such algebra is isomorphic to \(M_n(D)\) for \(D\) a division ring over \(k\text{.}\)</p></article><article class="definition-like" id="def-brauer-gp"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.14.11</span> <span class="title">Brauer groups</span>
+<span class="type">Definition</span> <span class="codenumber">1.14.11</span>. <span class="title">Brauer groups.</span>
 </h6>
-<p id="p-423">The <dfn class="terminology">Brauer group</dfn> of \(k\) \(\operatorname{Br}(k)\) is the set of <a knowl="./knowl/def-abvar-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebras</a> under \(\otimes\) modulo the algebras \(M_n(k)\text{.}\)</p></article><article class="theorem-like" id="fact-4"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">1.14.12</span>
-</h6>
+<p id="p-423">The <dfn class="terminology">Brauer group</dfn> of \(k\) \(\operatorname{Br}(k)\) is the set of central simple algebras under \(\otimes\) modulo the algebras \(M_n(k)\text{.}\)</p></article><article class="theorem-like" id="fact-4"><h6 class="heading">
+<span class="type">Fact</span> <span class="codenumber">1.14.12</span>.</h6>
 <ul id="p-424" class="disc">
 <li id="li-84">If \(k = \overline k\text{,}\) \(\operatorname{Br}(k) = 0\text{.}\)</li>
-<li id="li-85">\(k\) <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> nonarchimidean \(\operatorname{Br}(k) = \QQ/\ZZ\)</li>
+<li id="li-85">\(k\) complete nonarchimidean \(\operatorname{Br}(k) = \QQ/\ZZ\)</li>
 <li id="li-86">\(\operatorname{Br}(\RR) = \ZZ/2\ZZ\)</li>
 </ul>
 <p>Given a place \(v\) of \(k\) we get a map</p>
@@ -467,37 +487,32 @@ D\mapsto (\operatorname{inv}_v(D))_v
 \end{equation*}
 </div>
 <p>these \(\operatorname{inv}_v(D)\) are called the <dfn class="terminology">local invariants</dfn>.</p></article><article class="theorem-like" id="prop-elem-av-local-invs"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.14.13</span>
-</h6>
-<p id="p-425">Let \(A/\FF_q\) be an elementary <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>. Let \(K = \QQ(\pi_A)\) then</p>
+<span class="type">Proposition</span> <span class="codenumber">1.14.13</span>.</h6>
+<p id="p-425">Let \(A/\FF_q\) be an elementary abelian variety. Let \(K = \QQ(\pi_A)\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{inv}_v(\End^0(A)) = \begin{cases} \frac{v(\pi_A)}{v(q)} [k_v: \QQ_p], \amp v|p\\ \frac 12,\amp v\text{ real}\\ 0, \amp \text{else}\end{cases}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-72"><a knowl="" class="id-ref" refid="hk-proof-72"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-72" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-426">Edixhoven-van der Geer-Moonen 16.30.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-72"><a data-knowl="" class="id-ref" data-refid="hk-proof-72"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-72" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-426">Edixhoven-van der Geer-Moonen 16.30.</p></article></div>
 <article class="theorem-like" id="proposition-37"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.14.14</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">1.14.14</span>.</h6>
 <p id="p-427">Let \(d= \lb \End^0(A) : \QQ(\pi_A) \rb^{1/2}\) then \(d\) is the least common denominator of all the \(\operatorname{inv}_v(\End^0(A))\text{.}\)</p></article><article class="theorem-like" id="corollary-29"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.14.15</span>
-</h6>
+<span class="type">Corollary</span> <span class="codenumber">1.14.15</span>.</h6>
 <div class="displaymath" id="p-428">
 \begin{equation*}
 \pi_A\sim \pi_B \iff f_A = f_B\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-73"><a knowl="" class="id-ref" refid="hk-proof-73"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-73" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-429">\(\Leftarrow\) done.</p>
-<p id="p-430">\(\Rightarrow\) Let \(D_{\pi_A} , D_{\pi_B}\) be the division rings with invariants specified as in <a knowl="./knowl/prop-elem-av-local-invs.html" title="Proposition 1.14.13">Proposition 1.14.13</a>. \(\pi_A\sim \pi_B \implies D_{\pi_A} \simeq D_{\pi_B} \implies f_A = \operatorname{minpoly}(\pi_A) ^d = f_B\text{.}\)</p></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+</div></article><article class="hiddenproof" id="proof-73"><a data-knowl="" class="id-ref" data-refid="hk-proof-73"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-73" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-429">\(\Leftarrow\) done.</p>
+<p id="p-430">\(\Rightarrow\) Let \(D_{\pi_A} , D_{\pi_B}\) be the division rings with invariants specified as in <a data-knowl="./knowl/prop-elem-av-local-invs.html" title="Proposition 1.14.13">Proposition 1.14.13</a>. \(\pi_A\sim \pi_B \implies D_{\pi_A} \simeq D_{\pi_B} \implies f_A = \operatorname{minpoly}(\pi_A) ^d = f_B\text{.}\)</p></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.14.3</span> <span class="title">Surjectivity and CM theory</span>
 </h3>
-<p id="p-431">We need to show that for \(\pi\) a \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\FF_q\) such that \(\pi_A \sim \pi\text{.}\)</p>
+<p id="p-431">We need to show that for \(\pi\) a \(q\)-Weil number there exists an abelian variety \(A/\FF_q\) such that \(\pi_A \sim \pi\text{.}\)</p>
 <article class="definition-like" id="definition-42"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.14.16</span>
-</h6>
-<p id="p-432">Such a \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> \(\pi\) is called effective.</p></article><article class="theorem-like" id="proposition-38"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.14.17</span>
-</h6>
-<p id="p-433">A \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> \(\pi\) is effective if and only if \(\pi^N\) is effective for some \(N\in \ZZ_{\ge 1}\text{.}\)</p></article><article class="hiddenproof" id="proof-74"><a knowl="" class="id-ref" refid="hk-proof-74"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-74" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-434">\(\Rightarrow\) clear.</p>
-<p id="p-435">\(\Leftarrow\) By assumption we have \(A'/k\) a <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> s.t. \(\pi_{A'} \sim  \pi^N\) for \(k\) a degree \(N\) extension of \(\FF_q\text{.}\) Let</p>
+<span class="type">Definition</span> <span class="codenumber">1.14.16</span>.</h6>
+<p id="p-432">Such a \(q\)-Weil number \(\pi\) is called effective.</p></article><article class="theorem-like" id="proposition-38"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.14.17</span>.</h6>
+<p id="p-433">A \(q\)-Weil number \(\pi\) is effective if and only if \(\pi^N\) is effective for some \(N\in \ZZ_{\ge 1}\text{.}\)</p></article><article class="hiddenproof" id="proof-74"><a data-knowl="" class="id-ref" data-refid="hk-proof-74"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-74" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-434">\(\Rightarrow\) clear.</p>
+<p id="p-435">\(\Leftarrow\) By assumption we have \(A'/k\) a simple abelian variety s.t. \(\pi_{A'} \sim  \pi^N\) for \(k\) a degree \(N\) extension of \(\FF_q\text{.}\) Let</p>
 <div class="displaymath">
 \begin{equation*}
 A = \Res_{k/\FF_q}(A')
@@ -526,13 +541,13 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 \Ind_{G_k}^{G_{\FF_q}} (\pi_{A'}) = \pi_A^N
 \end{equation*}
 </div>
-<p>in particular \(f_A(T) = f_{A'}(T^N)\text{.}\) Choosing a <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> factor \(A_i\) one gets \(\pi_{A_i} \sim \pi\text{.}\)</p></article></div>
+<p>in particular \(f_A(T) = f_{A'}(T^N)\text{.}\) Choosing a simple factor \(A_i\) one gets \(\pi_{A_i} \sim \pi\text{.}\)</p></article></div>
 <p id="p-436">So it is sufficient to show \(\pi^N\) is effective.</p>
 <p id="p-437">Strategy for proving surjectivity</p>
 <ol class="decimal">
 <li id="li-87">Construct a division algebra \(D_\pi\text{.}\)</li>
 <li id="li-88">Choose a CM field \(L\) splitting \(D_\pi\text{.}\)</li>
-<li id="li-89">Find an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\CC\) of type \((L, \Phi)\text{.}\)</li>
+<li id="li-89">Find an abelian variety \(A/\CC\) of type \((L, \Phi)\text{.}\)</li>
 <li id="li-90">In fact \(A\) is defined over  a number field \(K\) and has good reduction at \(v|p\text{.}\)</li>
 <li id="li-91">Apply the Shimura-Taniyama formula to relate \(\pi_A\) to \(\Phi\text{.}\)</li>
 <li id="li-92">Choose \(\Phi\) wisely (in retrospect in 3) to relate \(\pi\) to \(\pi_A\text{.}\)</li>
@@ -540,14 +555,13 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 </ol>
 <p id="p-438">\(D_\pi\) is given by the invariants described by \(\pi\) (and \(K = \QQ(\pi)\)).</p>
 <article class="theorem-like" id="proposition-39"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.14.18</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">1.14.18</span>.</h6>
 <p id="p-439">There exists a CM field \(L/\QQ(\pi)\) such that \(L\) splits \(D_\pi\) and further</p>
 <div class="displaymath">
 \begin{equation*}
 [L:\QQ(\pi) ] = [ D_\pi: \QQ(\pi)]^{1/2}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-75"><a knowl="" class="id-ref" refid="hk-proof-75"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-75" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-440">Two cases:</p>
+</div></article><article class="hiddenproof" id="proof-75"><a data-knowl="" class="id-ref" data-refid="hk-proof-75"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-75" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-440">Two cases:</p>
 <ol class="decimal">
 <li id="li-94">\(\QQ(\pi)\) is totally real, in which case \(\QQ(\pi) = \QQ\) or \(\QQ(\sqrt{p})\text{.}\)</li>
 <li id="li-95">\(\QQ(\pi)\) is a CM field with totally real subfield \(\QQ(\pi + q/\pi)\text{.}\)</li>
@@ -558,7 +572,7 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 <li id="li-97">Let \(d= \lb D_\pi: \QQ(\pi)\rb^{1/2}\text{.}\) This \(L\) splits \(D_\pi\text{.}\)</li>
 </ol></article></div>
 <article class="definition-like" id="def-cm-type"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.14.19</span> <span class="title">CM types</span>
+<span class="type">Definition</span> <span class="codenumber">1.14.19</span>. <span class="title">CM types.</span>
 </h6>
 <p id="p-441">For a CM field \(L\) all the embeddings</p>
 <div class="displaymath">
@@ -577,7 +591,7 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 \Phi \cap \overline \Phi = \emptyset
 \end{equation*}
 </div>
-<p>such a choice of \(\Phi \) is called a <dfn class="terminology">CM type</dfn>.</p></article><p id="p-442">Let \(A/\CC\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> with CM by \(L\) i.e.</p>
+<p>such a choice of \(\Phi \) is called a <dfn class="terminology">CM type</dfn>.</p></article><p id="p-442">Let \(A/\CC\) be an abelian variety with CM by \(L\) i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 L\hookrightarrow \End^0(A)
@@ -591,17 +605,14 @@ L\hookrightarrow \End^0(A)
 </div>
 <p>acts on the tangent space at the origin \(\Lie(A)\text{.}\)</p>
 <article class="theorem-like" id="proposition-40"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.14.20</span>
-</h6>
-<p id="p-443">The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \(\Phi\text{.}\) We then say \(A/\CC\) is of type \((L,\Phi)\text{.}\)</p></article><article class="theorem-like" id="theorem-36"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14.21</span>
-</h6>
-<p id="p-444">For any <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \((L,\Phi)\) there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\CC\) of type \((L, \Phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-76"><a knowl="" class="id-ref" refid="hk-proof-76"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-76" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-445">Found in Shimura-Taniyama.</p></article></div>
+<span class="type">Proposition</span> <span class="codenumber">1.14.20</span>.</h6>
+<p id="p-443">The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some CM type \(\Phi\text{.}\) We then say \(A/\CC\) is of type \((L,\Phi)\text{.}\)</p></article><article class="theorem-like" id="theorem-36"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.14.21</span>.</h6>
+<p id="p-444">For any CM type \((L,\Phi)\) there exists an abelian variety \(A/\CC\) of type \((L, \Phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-76"><a data-knowl="" class="id-ref" data-refid="hk-proof-76"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-76" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-445">Found in Shimura-Taniyama.</p></article></div>
 <p id="p-446">The fact that \(A\) is in fact defined over  a number field \(K\) is also in Shimura-Taniyama.</p>
 <article class="theorem-like" id="theorem-37"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14.22</span>
-</h6>
-<p id="p-447">Let \(A/K\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> which admits CM. Then \(A/K\) admits potentially good reduction at all places \(v\) of \(K\text{.}\)</p></article><article class="hiddenproof" id="proof-77"><a knowl="" class="id-ref" refid="hk-proof-77"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-77" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-448">Highly nontrivial, Neron models, Chevalley decomposition, Neron-Ogg-Shafarevich criterion, result of Grothendieck on potentially stable reduction.</p></article></div>
+<span class="type">Theorem</span> <span class="codenumber">1.14.22</span>.</h6>
+<p id="p-447">Let \(A/K\) be an abelian variety which admits CM. Then \(A/K\) admits potentially good reduction at all places \(v\) of \(K\text{.}\)</p></article><article class="hiddenproof" id="proof-77"><a data-knowl="" class="id-ref" data-refid="hk-proof-77"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-77" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-448">Highly nontrivial, Neron models, Chevalley decomposition, Neron-Ogg-Shafarevich criterion, result of Grothendieck on potentially stable reduction.</p></article></div>
 <p id="p-449">After passing to a finite extension we will assume \(A/K\) has good reduction at places \(v|p\text{.}\) So we have a reduction \(A_{\FF_{q'}}/\FF_{q'}\text{.}\) For a place \(w|p\) of \(L\) let</p>
 <div class="displaymath">
 \begin{equation*}
@@ -614,24 +625,23 @@ L\hookrightarrow \End^0(A)
 \end{equation*}
 </div>
 <article class="theorem-like" id="theorem-38"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14.23</span> <span class="title">Shimura-Taniyama formula</span>
+<span class="type">Theorem</span> <span class="codenumber">1.14.23</span>. <span class="title">Shimura-Taniyama formula.</span>
 </h6>
 <p id="p-450">For all places \(w|p\) of \(L\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{w(\pi_{A_{\FF_{q'}}})}{w(q')} = \frac{\#\Phi_w}{\#\Sigma_w}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-78"><a knowl="" class="id-ref" refid="hk-proof-78"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-78" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-451">Tate has a proof using CM theory of \(p\)-divisible groups.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-78"><a data-knowl="" class="id-ref" data-refid="hk-proof-78"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-78" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-451">Tate has a proof using CM theory of \(p\)-divisible groups.</p></article></div>
 <p id="p-452">Recall we fixed \(\pi\) and from this we deterministically formed \(\QQ(\pi), D_{\pi}, L\) however we have no restriction on our choice of \(\Phi\text{.}\)</p>
 <article class="theorem-like" id="lemma-11"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">1.14.24</span>
-</h6>
+<span class="type">Lemma</span> <span class="codenumber">1.14.24</span>.</h6>
 <p id="p-453">We can choose \(\Phi\) such that for all places \(w|p\) of \(L\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{w(\pi)}{w(q)} = \frac{\#\Phi_w}{\#\Sigma_w}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-79"><a knowl="" class="id-ref" refid="hk-proof-79"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-79" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-454">Let \(v = w|_{\QQ(\pi)}\) be the place of \(\QQ(\pi)\) below \(w\text{.}\) Let</p>
+</div></article><article class="hiddenproof" id="proof-79"><a data-knowl="" class="id-ref" data-refid="hk-proof-79"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-79" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-454">Let \(v = w|_{\QQ(\pi)}\) be the place of \(\QQ(\pi)\) below \(w\text{.}\) Let</p>
 <div class="displaymath">
 \begin{equation*}
 n_w = \frac{w(\pi)}{w(q)}\#\Sigma_w = \frac{w(\pi)}{w(q)}[L_w :\QQ_p]
@@ -642,7 +652,7 @@ n_w = \frac{w(\pi)}{w(q)}\#\Sigma_w = \frac{w(\pi)}{w(q)}[L_w :\QQ_p]
 = \frac{w(\pi)}{w(q)}[L_w :\QQ(\pi)_v ][ \QQ(\pi)_v:\QQ_p]
 \end{equation*}
 </div>
-<p>by recalling the formula for the <a knowl="./knowl/def-brauer-gp.html" title="Definition 1.14.11: Brauer groups">local invariants</a> of \(D_\pi\) we get</p>
+<p>by recalling the formula for the local invariants of \(D_\pi\) we get</p>
 <div class="displaymath">
 \begin{equation*}
 n_w = \operatorname{inv}_w(D_\pi\otimes_{\QQ(\pi)} L)\text{.}
@@ -659,7 +669,7 @@ n_w + n_{\overline w} = \left( \frac{w(\pi)}{w(q)}  + \frac{\overline w(\pi)}{\o
 = \left( \frac{w(\pi\overline \pi)}{w(q)} \right) \#\Sigma_w = \#\Sigma_w
 \end{equation*}
 </div>
-<p>check the <a knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \(\Phi = \bigcup_w \Phi_w\) where for each \(w\) \(\# \Phi_w = n_w\text{.}\) Then the formula follows.</p></article></div>
+<p>check the CM type \(\Phi = \bigcup_w \Phi_w\) where for each \(w\) \(\# \Phi_w = n_w\text{.}\) Then the formula follows.</p></article></div>
 <p id="p-455">Combining the previous result with the Shimura-Taniyama formula we get that for all places \(w|p\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -690,17 +700,19 @@ w\left( \frac {\pi^m_{A_{\FF_{q'}}}}{\pi^{m'}}\right) = 0 \forall w|p
 </div>
 <p>is a root of unity \(\pi^N_{A_{\FF_{q'}}} = \pi^{N'}\text{.}\)</p></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

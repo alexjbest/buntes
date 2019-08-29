@@ -27,7 +27,7 @@ section#sec-dessins-overview
                 p
                     | (AG) A morphism #[m f \colon X \to Y] is #[term ramified] at #[m x \in X] if on local rings the induced map #[m f^\# \colon \sheaf O_{Y,f(x)} \to \sheaf O_{X,x}] descended to
                     me \sheaf O_{Y,f(x)}/\ideal m \to \sheaf O_{X,x}/ f^\#(\ideal m)
-                    | is not a finite inseparable field extension.
+                    | is not a finite separable field extension.
                 p
                     | (RS) A morphism #[m f \colon X \to Y] is ramified at #[m x \in X] if there are charts around #[m x] and #[m f(x)] such that #[m f(x) = x^n].
                     | This #[m n] is the #[term ramification index].
@@ -852,7 +852,7 @@ section#sec-rs-discrete-groups-ii
 
         definition
             statement: p
-                | A covering #[m f\colon S_1,\to S_2] is Galois (or regular, or normal) if the covering group
+                | A covering #[m f\colon S_1\to S_2] is Galois (or regular, or normal) if the covering group
                 me \Aut(S,f) =  \{ h\in \Aut(S_1) : f\circ h= f\} = G
                 | acts transitively on each fibre.
                 | With this notion we can think of #[m S_1 \to S_1/G].
@@ -1755,7 +1755,7 @@ section#sec-dessins-integer-pts-abc
                     | The second statement is less obviously invariant but note that #[m \phi] is  a Belyi function is equivalent to #[m 1-\phi] and #[m 1/\phi] being Belyi also and this preserves #[m \phi(\infty) \in \{0,1,\infty\}], so rearranging does not change the truth of the second statement either.
                     | Let #[m \phi = f/g] so #[m \deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)], we will denote this by #[m h] now.
 
-                    | Apply Riemann-Hurwitz (suprise-suprise)
+                    | Apply Riemann-Hurwitz (surprise-surprise)
                     me -2 = -2h + \sum_{x\in \PP^1} e_\phi(x) - 1
                     | . Let
                     me R_y = \sum_{x : f(x) = y} e_\phi(x) - 1
@@ -2173,7 +2173,7 @@ section#sec-three-short-stories-belyi
             p
                 | #[m \PP^1 \smallsetminus \{0,1,\infty\}] is the moduli space of genus 0 curves with four (ordered) marked points.
 
-                me (\PP^1, \alpha_1,\alpha_2,\alpha_3,\alpha_4) \mapsto \image(\alpha_4) \text{ when } \alpha_1 \mapsto 0,\alpha_2\mapsto 1, \alpha_3 \mapsto \infty
+                me (\PP^1, \alpha_1,\alpha_2,\alpha_3,\alpha_4) \mapsto \im(\alpha_4) \text{ when } \alpha_1 \mapsto 0,\alpha_2\mapsto 1, \alpha_3 \mapsto \infty
                 | .
 
         definition

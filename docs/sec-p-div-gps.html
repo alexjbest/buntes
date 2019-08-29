@@ -11,7 +11,7 @@
 <title>BUNTES \(p\)-divisible groups (Sachi)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-p-div.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-p-div.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-buntes-shimura.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-p-div.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-p-div.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-buntes-shimura.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps" class="active">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps" class="active">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,25 +345,34 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-p-div-gps"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-p-div-gps"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">\(p\)-divisible groups (Sachi)</span>
 </h2>
 <a href="sec-p-div-gps.html" class="permalink">¶</a><p id="p-987">Why study  \(p\)-divisible groups (Jacob Stix).</p>
 <ol class="decimal">
-<li id="li-251">Analyse local \(p\)-adic galois action on \(p\)-torsion of <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, Serre's open image theorem.<div class="displaymath">
+<li id="li-251">Analyse local \(p\)-adic galois action on \(p\)-torsion of elliptic curves, Serre's open image theorem.<div class="displaymath">
 \begin{equation*}
 \phi_l \colon G_K \to \Aut \lb l \rb
 \end{equation*}
 </div>Surjective for almost all \(l\text{.}\)</li>
 <li id="li-252">Tool for representing \(p\)-adic cohomology, e.g \(p\)-adic hodge theory.</li>
-<li id="li-253">Describe local properties of moduli spaces of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> which map to moduli spaces of \(p\)-divisible groups which can be described by semilinear algebra (Serre-Tate).</li>
-<li id="li-254">Explicit local CFT via Lubin-Tate formal groups describing wildly <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> abelian extensions.</li>
+<li id="li-253">Describe local properties of moduli spaces of abelian varieties which map to moduli spaces of \(p\)-divisible groups which can be described by semilinear algebra (Serre-Tate).</li>
+<li id="li-254">Explicit local CFT via Lubin-Tate formal groups describing wildly ramified abelian extensions.</li>
 <li id="li-255">The true fundamental group in characteristic \(p\) must include infinitesimal group schemes, \(p\)-divisible groups enter through their tate modules.</li>
 </ol>
-<article class="paragraphs" id="paragraphs-39"><h5 class="heading"><span class="title">Detour, schemes</span></h5>
+<article class="paragraphs" id="paragraphs-39"><h5 class="heading"><span class="title">Detour, schemes.</span></h5>
 <p id="p-988">There is an (anti)-equivalence of categories</p>
 <div class="displaymath">
 \begin{equation*}
@@ -379,11 +406,9 @@ R\lb T_1, \ldots ,T_n] /(f_i) \to A
 </div>
 <p>functor \(A\) to this is a functor from \(R\)-algs to sets.</p>
 <article class="definition-like" id="definition-93"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">4.1.1</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">4.1.1</span>.</h6>
 <p id="p-991">For any affine scheme \(A = \Spec B\) we attach a functor \(h_X\) from \(\mathrm{Sch}^\op\) to sets, sending \(\Spec S \mapsto \Hom_{\mathrm{Sch}} (\Spec S, X) = \Hom_{Ring} (B,S) = h_X(\Spec S)\text{.}\) spec S points of X</p></article><article class="example-like" id="example-51"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.2</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">4.1.2</span>.</h6>
 <div class="displaymath" id="p-992">
 \begin{equation*}
 \aff^n = \Spec \ZZ \lb T_1,\ldots, T_n\rb
@@ -394,8 +419,7 @@ R\lb T_1, \ldots ,T_n] /(f_i) \to A
 \aff^n(T) = \Hom_{\mathrm{Sch}} (T, \aff^n) = \Hom_{Ring}(\ZZ[T_1,\ldots, T_n], S)\cong S^n
 \end{equation*}
 </div></article><article class="example-like" id="example-52"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.3</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">4.1.3</span>.</h6>
 <div class="displaymath" id="p-993">
 \begin{equation*}
 E \colon \Spec k[x,y] / (y^2 - (x^3 + ax +b)),\,k = \QQ
@@ -403,8 +427,7 @@ E \colon \Spec k[x,y] / (y^2 - (x^3 + ax +b)),\,k = \QQ
 </div>
 <p>\(E(\QQ(i)) = \QQ(i)\) points, choosing \(x,y\) satisfying weierstrass equation.</p></article><p id="p-994">Suppose \(h_X \colon \mathrm{Sch}^\op \to R\) factors through \(\mathrm{Grp} \to \mathrm{Set}\) then this is a group scheme.</p>
 <article class="example-like" id="example-53"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.4</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">4.1.4</span>.</h6>
 <div class="displaymath" id="p-995">
 \begin{equation*}
 \mathbf G_a = \Spec k[t]
@@ -415,8 +438,7 @@ E \colon \Spec k[x,y] / (y^2 - (x^3 + ax +b)),\,k = \QQ
 S\mapsto \Hom(k[t], S) \cong (S,+)
 \end{equation*}
 </div></article><article class="example-like" id="example-54"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.5</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">4.1.5</span>.</h6>
 <div class="displaymath" id="p-996">
 \begin{equation*}
 \mathbf G_m = \Spec k[t,t\inv]
@@ -427,15 +449,13 @@ S\mapsto \Hom(k[t], S) \cong (S,+)
 S\mapsto \Hom(k[t,t\inv], S) \cong (S^\times,\cdot)
 \end{equation*}
 </div></article><article class="example-like" id="example-55"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.6</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">4.1.6</span>.</h6>
 <div class="displaymath" id="p-997">
 \begin{equation*}
 \mu_n = \Spec k[t]/(t^n -1)
 \end{equation*}
 </div></article><article class="example-like" id="example-56"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.7</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">4.1.7</span>.</h6>
 <div class="displaymath" id="p-998">
 \begin{equation*}
 \alpha_{p^n} = \Spec k[t]/(t^{p^n})
@@ -454,15 +474,13 @@ G \cong (G^*)^*
 \end{equation*}
 </div>
 <article class="example-like" id="example-57"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.8</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">4.1.8</span>.</h6>
 <div class="displaymath" id="p-1000">
 \begin{equation*}
 \mu_{p^n} \leftrightarrow \ZZ/p^n
 \end{equation*}
 </div></article><article class="definition-like" id="definition-94"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">4.1.9</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">4.1.9</span>.</h6>
 <p id="p-1001">Let \(p\) be a prime and \(h\) a non-negative integer. A \(p\)-divisible group of height \(h\) is an inductive system</p>
 <div class="displaymath">
 \begin{equation*}
@@ -481,8 +499,7 @@ i_v \colon G_v \to G_{v+1}
 0 \to G_v \xrightarrow{i_v} G_{v+1} \xrightarrow{[p^v]} G_{v+1}
 \end{equation*}
 </div></article><article class="remark-like" id="remark-25"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">4.1.10</span>
-</h6>
+<span class="type">Remark</span> <span class="codenumber">4.1.10</span>.</h6>
 <p id="p-1002">We can show that \(G_\mu,G_v\) are two levels then</p>
 <div class="displaymath">
 \begin{equation*}
@@ -504,8 +521,7 @@ i_v \colon G_v \to G_{v+1}
 <p>connected and etale</p>
 <p id="p-1005">There is an equivalence of categories between finite etale gp scheme \(/R\) and its continuous \(\absgal k\) modules when \(R = k\) is a field.</p>
 <article class="definition-like" id="definition-95"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">4.1.11</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">4.1.11</span>.</h6>
 <p id="p-1006">An \(n\)-dimensional formal lie group \(/R\) is the formal power series ring</p>
 <div class="displaymath">
 \begin{equation*}
@@ -540,26 +556,23 @@ F(X,F(Y,Z)) = F(F(Y,Z),X) = X
 F(Y,Z) = F(Z,Y)
 \end{equation*}
 </div></li>
-</ol></article><p id="p-1007">Let \(\psi\) denote multiplication by \(p\) in \(A\) then \(A\) is divisible if \(\psi\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> (surj. with finite kernel). Alternatively \(A\) is a finite free \(\psi (A)\)-module.</p>
+</ol></article><p id="p-1007">Let \(\psi\) denote multiplication by \(p\) in \(A\) then \(A\) is divisible if \(\psi\) is an isogeny (surj. with finite kernel). Alternatively \(A\) is a finite free \(\psi (A)\)-module.</p>
 <article class="theorem-like" id="theorem-71"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">4.1.12</span>
-</h6>
-<p id="p-1008">Let \(R\) be a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> noetherian local ring with residue characteristic \(p \gt 0\text{.}\) We have an equiv of cats</p>
+<span class="type">Theorem</span> <span class="codenumber">4.1.12</span>.</h6>
+<p id="p-1008">Let \(R\) be a complete noetherian local ring with residue characteristic \(p \gt 0\text{.}\) We have an equiv of cats</p>
 <div class="displaymath">
 \begin{equation*}
 \text{conn. p-div gps} \leftrightarrow \text{div. formal lie groups /R}
 \end{equation*}
 </div></article><article class="example-like" id="example-58"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.13</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">4.1.13</span>.</h6>
 <div class="displaymath" id="p-1009">
 \begin{equation*}
 \mathbf G_m(p) , \, F(X)= Y+Z+YZ
 \end{equation*}
 </div></article><article class="example-like" id="example-59"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.14</span>
-</h6>
-<p id="p-1010">\(E\) ordinary <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(/\overline{\FF}_p\)</p>
+<span class="type">Example</span> <span class="codenumber">4.1.14</span>.</h6>
+<p id="p-1010">\(E\) ordinary elliptic curve \(/\overline{\FF}_p\)</p>
 <div class="displaymath" id="p-1011">
 \begin{equation*}
 E[p] (\overline \FF_p)
@@ -583,7 +596,7 @@ E = E[p]^\circ \times A
 |E\lb p \rb | =  p^2
 \end{equation*}
 </div>
-<p>so each <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> \(p\text{.}\)</p>
+<p>so each order \(p\text{.}\)</p>
 <div class="displaymath" id="p-1015">
 \begin{equation*}
 A = \ZZ/p
@@ -597,17 +610,19 @@ A^* = \mu_p = E[p]^\circ
 </div>
 <p id="p-1017">Induct for \(E\lb p^n\rb \text{.}\)</p></article></article></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

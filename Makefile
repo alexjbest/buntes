@@ -1,22 +1,20 @@
 .PHONY:	clean clean-html all check deploy debug
 
-XSLTPROC = xsltproc --timing --stringparam debug.datedfiles no # -v
+XSLTPROC = xsltproc --timing --stringparam debug.datedfiles no --stringparam html.google-classic UA-48250536-1 # -v
 
 MATHBOOK_ROOT = ../mathbook/ # TODO implement this everywhere
 
 docs/:	docs/buntes.pdf buntes-pretty.xml buntes.xsl filter.xsl
 	mkdir -p docs
+	cp index.html docs/
 	cd docs/; \
 	$(XSLTPROC) ../buntes.xsl ../buntes-pretty.xml
 
 buntes.tex:	buntes-pretty.xml buntes-latex.xsl filter.xsl
-	$(XSLTPROC) buntes-latex.xsl buntes-pretty.xml
-
-buntes.md:	buntes-pretty.xml filter.xsl
-	$(XSLTPROC) ../mathbook/xsl/mathbook-markdown-common.xsl buntes-wrapper.xml > buntes.md
+	$(XSLTPROC) -o buntes.tex buntes-latex.xsl buntes-pretty.xml
 
 docs/buntes.pdf:	buntes.tex
-	latexmk -pdf -output-directory=docs -pdflatex="pdflatex -interaction=nonstopmode"  buntes.tex
+	latexmk -pdf -output-directory=docs -pdflatex="pdflatex --shell-escape -interaction=nonstopmode"  buntes.tex
 
 buntes-wrapper.xml:	*.pug pug-plugin.json
 	pug -O pug-plugin.json --extension xml buntes-wrapper.pug

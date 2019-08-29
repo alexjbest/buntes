@@ -11,7 +11,7 @@
 <title>BUNTES Riemann Surfaces and Discrete Groups II (Jim)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-rs-discrete-groups.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-belyi-thm.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-rs-discrete-groups.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-belyi-thm.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,25 +345,34 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-rs-discrete-groups-ii"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-rs-discrete-groups-ii"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Riemann Surfaces and Discrete Groups II (Jim)</span>
 </h2>
 <a href="sec-rs-discrete-groups-ii.html" class="permalink">¶</a><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Moduli space of compact Riemann surfaces with genus \(g\)</span>
 </h3>
-<p id="p-573">\(g =0\text{.}\) Uniformization tells us that up to isomorphisms all <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> of <a knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> \(0\) are \(\PP^1\) hence the moduli space \(\mathcal M _0  = \{\text{pt}\}\text{.}\)</p>
-<p id="p-574">\(g = 1\text{.}\) Uniformization tells us that each <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> of <a knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> \(1\) is a torus and can be written as \(\CC/ \omega_1\ZZ+ \omega_2\ZZ \to \CC/(\ZZ \oplus \tau \ZZ)\text{,}\) with \(\tau = \pm \omega_1/\omega_2\text{.}\)</p>
+<p id="p-573">\(g =0\text{.}\) Uniformization tells us that up to isomorphisms all Riemann surfaces of genus \(0\) are \(\PP^1\) hence the moduli space \(\mathcal M _0  = \{\text{pt}\}\text{.}\)</p>
+<p id="p-574">\(g = 1\text{.}\) Uniformization tells us that each Riemann surface of genus \(1\) is a torus and can be written as \(\CC/ \omega_1\ZZ+ \omega_2\ZZ \to \CC/(\ZZ \oplus \tau \ZZ)\text{,}\) with \(\tau = \pm \omega_1/\omega_2\text{.}\)</p>
 <article class="theorem-like" id="proposition-45"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.5.1</span> <span class="title">2.54</span>
+<span class="type">Proposition</span> <span class="codenumber">2.5.1</span>. <span class="title">2.54.</span>
 </h6>
 <div class="displaymath" id="p-575">
 \begin{equation*}
 \mathcal M_1 \simeq \HH/ \PSL_2(\ZZ) \simeq \CC\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-90"><a knowl="" class="id-ref" refid="hk-proof-90"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-90" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-576">Idea: Existence of</p>
+</div></article><article class="hiddenproof" id="proof-90"><a data-knowl="" class="id-ref" data-refid="hk-proof-90"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-90" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-576">Idea: Existence of</p>
 <div class="displaymath">
 \begin{equation*}
 \CC/ \Lambda_{\tau_1} \xrightarrow{\sim} \CC/\Lambda_{\tau_2}
@@ -375,14 +402,14 @@ A,A' \in \GL_2(\ZZ)
 \end{equation*}
 </div>
 <p>isomorphism is induced by \(T(z) = (c\tau_2 + d) z\text{.}\)</p></article></div>
-<p id="p-577">\(g \gt 1\) \(\mathcal M_g\) is a complex variety of dimension \(3g-3\text{.}\) Uniformization tells us that describing a <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> amounts to specifying \(2g\) real \(2\times 2\) matrices \(\{\gamma_i\}_{i=1}^{2g}\) such that</p>
+<p id="p-577">\(g \gt 1\) \(\mathcal M_g\) is a complex variety of dimension \(3g-3\text{.}\) Uniformization tells us that describing a Riemann surface amounts to specifying \(2g\) real \(2\times 2\) matrices \(\{\gamma_i\}_{i=1}^{2g}\) such that</p>
 <ol class="decimal">
 <li id="li-109">\(\det(\gamma_i) = 1\) which implies that \(\gamma_i\) depends on 3 real parameters so we have a total of \(6g\text{.}\)</li>
-<li id="li-110">\(\prod_{i=1}^g \lb \gamma_i, \gamma_{g+i}\rb = \begin{pmatrix} 1\amp 0 \\ 0\amp 1\end{pmatrix}\) 3 relations, so \(6g- 3\text{.}\) Since for any \(\gamma \in \PSL_2(\RR)\) \(\Gamma = \langle \gamma_i \rangle\) and \(\gamma\Gamma \gamma\inv\) uniformize isomorphic <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> implies \(6g-6\) real parameters, so \(3g-3\) complex parameters.</li>
+<li id="li-110">\(\prod_{i=1}^g \lb \gamma_i, \gamma_{g+i}\rb = \begin{pmatrix} 1\amp 0 \\ 0\amp 1\end{pmatrix}\) 3 relations, so \(6g- 3\text{.}\) Since for any \(\gamma \in \PSL_2(\RR)\) \(\Gamma = \langle \gamma_i \rangle\) and \(\gamma\Gamma \gamma\inv\) uniformize isomorphic Riemann surfaces implies \(6g-6\) real parameters, so \(3g-3\) complex parameters.</li>
 </ol></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.2</span> <span class="title">Monodromy</span>
 </h3>
-<p id="p-578">Let \(f\colon S_1 \to S\) be a morphism of degree \(d\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> over \(y_1,\ldots, y_n \in S\text{.}\) For \(y\in S\smallsetminus \{y_1,\ldots, y_n\}\) we have a group homomorphism</p>
+<p id="p-578">Let \(f\colon S_1 \to S\) be a morphism of degree \(d\) ramified over \(y_1,\ldots, y_n \in S\text{.}\) For \(y\in S\smallsetminus \{y_1,\ldots, y_n\}\) we have a group homomorphism</p>
 <div class="displaymath">
 \begin{equation*}
 M_f\colon \pi_1(S \smallsetminus \{y_1, \ldots, y_n\} )\to \operatorname{Bij} (f\inv (y))
@@ -400,14 +427,14 @@ M_f\colon \pi_1(S \smallsetminus \{y_1, \ldots, y_n\} )\to \operatorname{Bij} (f
 \end{equation*}
 </div>
 <p>lifts to a path \(\widetilde \gamma\) from \(x\in f\inv(y)\) to another \(x' \in f\inv(y)\) set \(\sigma_\gamma(x) =x'\text{.}\) If we number the points in \(f\inv (y)\) we may think of \(M_f(\pi_1)\subseteq \Sigma_d\text{,}\) via some \(\phi\colon \{1,\ldots, d\}\to f\inv (y)\text{.}\) \(\operatorname{Mon}(f)\) is the image of \(M_f(\pi_1)\) in \(\Sigma_d\text{.}\)</p>
-<article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Monodromy and Fuchsian groups</span></h5>
+<article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Monodromy and Fuchsian groups.</span></h5>
 <p id="p-579">Let</p>
 <div class="displaymath">
 \begin{equation*}
 \pi \colon \HH/\Gamma_1 \to \HH/ \Gamma
 \end{equation*}
 </div>
-<p>be the <a knowl="./knowl/def-fuchsian-group.html" title="Definition 2.4.5: Fuchsian groups">Fuchsian group</a> representation of the map</p>
+<p>be the Fuchsian group representation of the map</p>
 <div class="displaymath">
 \begin{equation*}
 f\colon S_1 \to S\ni y\text{.}
@@ -442,7 +469,7 @@ M_f \colon \Gamma \to \operatorname{Bij} (\Gamma_1\backslash \Gamma)
 </div>
 <p>where \(\lb z_0, \gamma(z_0) \rb\) is a path in \(\HH\text{.}\) Lift this loop to \(\HH/\Gamma_1\) is the path \(\pi_{\Gamma_1}(\beta \lb z_0, \gamma_0(z_0)\rb)\text{.}\) which corresponds to \(\Gamma_1 \beta \gamma\text{,}\) this implies \(\sigma_\gamma(\Gamma_1\beta)  = \Gamma_1 \beta\gamma\text{.}\)</p>
 <article class="theorem-like" id="corollary-33"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">2.5.2</span> <span class="title">2.59</span>
+<span class="type">Corollary</span> <span class="codenumber">2.5.2</span>. <span class="title">2.59.</span>
 </h6>
 <div class="displaymath" id="p-581">
 \begin{equation*}
@@ -456,15 +483,15 @@ M_\pi \colon \Gamma \to \operatorname{Bij} (\Gamma_1 \backslash \Gamma)
 \end{equation*}
 </div></article><p id="p-582">characterize morphisms by monodromy. Let \(f_i\) have degree 2, non conjugate.</p>
 <article class="theorem-like" id="proposition-46"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.5.3</span> <span class="title">2.63</span>
+<span class="type">Proposition</span> <span class="codenumber">2.5.3</span>. <span class="title">2.63.</span>
 </h6>
-<p id="p-583">For \(S\) a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> and \(\beta = \{ a_1, \ldots, a_n\} \subset S\) for some \(d \ge 1\) there are only finitely many pairs \((\tilde S, f)\) where \(\tilde S\) is a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> and</p>
+<p id="p-583">For \(S\) a compact Riemann surface and \(\beta = \{ a_1, \ldots, a_n\} \subset S\) for some \(d \ge 1\) there are only finitely many pairs \((\tilde S, f)\) where \(\tilde S\) is a compact Riemann surface and</p>
 <div class="displaymath">
 \begin{equation*}
 f\colon \tilde S \to S
 \end{equation*}
 </div>
-<p>is a degree \(d\) morphism with branching  value set \(\beta\text{.}\)</p></article><article class="hiddenproof" id="proof-91"><a knowl="" class="id-ref" refid="hk-proof-91"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-91" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-584">Special case: Assume \(S = \PP^1\) and \(n=3\text{.}\)</p>
+<p>is a degree \(d\) morphism with branching  value set \(\beta\text{.}\)</p></article><article class="hiddenproof" id="proof-91"><a data-knowl="" class="id-ref" data-refid="hk-proof-91"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-91" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-584">Special case: Assume \(S = \PP^1\) and \(n=3\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \Gamma = \Gamma(2) = \{ A \in \PSL_2(\ZZ) : A = \id \pmod 2\}
@@ -479,16 +506,15 @@ f\colon \tilde S \to S
 <span class="type">Subsection</span> <span class="codenumber">2.5.3</span> <span class="title">Galois coverings</span>
 </h3>
 <article class="definition-like" id="definition-54"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.5.4</span>
-</h6>
-<p id="p-585">A covering \(f\colon S_1,\to S_2\) is Galois (or regular, or normal) if the covering group</p>
+<span class="type">Definition</span> <span class="codenumber">2.5.4</span>.</h6>
+<p id="p-585">A covering \(f\colon S_1\to S_2\) is Galois (or regular, or normal) if the covering group</p>
 <div class="displaymath">
 \begin{equation*}
 \Aut(S,f) =  \{ h\in \Aut(S_1) : f\circ h= f\} = G
 \end{equation*}
 </div>
 <p>acts transitively on each fibre. With this notion we can think of \(S_1 \to S_1/G\text{.}\)</p></article><article class="theorem-like" id="proposition-47"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.5.5</span> <span class="title">2.65</span>
+<span class="type">Proposition</span> <span class="codenumber">2.5.5</span>. <span class="title">2.65.</span>
 </h6>
 <div class="displaymath" id="p-586">
 \begin{equation*}
@@ -502,8 +528,7 @@ f^* \colon M(S_2 ) \to M(S_1)
 \end{equation*}
 </div>
 <p>is a Galois extension. In this case \(\Aut(S_1, f)  \simeq \Gal{M(S_1)}{M(S_2)}\text{.}\)</p></article><article class="example-like" id="example-28"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.5.6</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">2.5.6</span>.</h6>
 <p id="p-587">Hyperelliptic covers of \(\PP^1\) given by</p>
 <div class="displaymath">
 \begin{equation*}
@@ -515,8 +540,8 @@ S = \{ y^2 = \prod_{i=1}^N (x- a_i)\} \to \PP^1
 (x,y) \to x
 \end{equation*}
 </div>
-<p>covering group \(G\) is <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> 2 generated by the involution  \(J(x,y) = (x,-y)\text{.}\)</p></article><article class="theorem-like" id="proposition-48"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.5.7</span> <span class="title">2.66</span>
+<p>covering group \(G\) is order 2 generated by the involution  \(J(x,y) = (x,-y)\text{.}\)</p></article><article class="theorem-like" id="proposition-48"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.5.7</span>. <span class="title">2.66.</span>
 </h6>
 <p id="p-588">A covering</p>
 <div class="displaymath">
@@ -547,28 +572,25 @@ f^* \colon M(\PP^1 ) \hookrightarrow M(S)
 </div>
 <p id="p-591">Normalization of extensions \(K \hookrightarrow L\) is a Galois extension of \(K \) of lowest possible degree containing \(L\text{.}\)</p>
 <article class="definition-like" id="definition-55"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.5.8</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">2.5.8</span>.</h6>
 <p id="p-592">Normalization of \(f\colon S\to \PP^1\) \(\deg d \gt 0 \) is a Galois covering \(\tilde f \colon \tilde S \to \PP^1 \) of  lowest possible degree s.t. \(\exists \pi \colon \tilde S \to S\) with  the diagram commuting.</p></article><article class="theorem-like" id="corollary-34"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">2.5.9</span> <span class="title">2.73</span>
+<span class="type">Corollary</span> <span class="codenumber">2.5.9</span>. <span class="title">2.73.</span>
 </h6>
 <div class="displaymath" id="p-593">
 \begin{equation*}
 \operatorname{Mon}(f)  \simeq \Aut(\tilde S, \tilde f)
 \end{equation*}
-</div></article><p id="p-594">Interpretation in terms of <a knowl="./knowl/def-fuchsian-group.html" title="Definition 2.4.5: Fuchsian groups">Fuchsian groups</a>:</p>
+</div></article><p id="p-594">Interpretation in terms of Fuchsian groups:</p>
 <article class="theorem-like" id="proposition-49"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.5.10</span>
-</h6>
-<p id="p-595">Let \(f\colon S_1 \to S\) be a covering of <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a> \(S_1\smallsetminus f\inv \{ y_1, \ldots, y_n \} \to S \smallsetminus\{ y_1, \ldots, y_n \}\text{.}\) The unramified cover and \(\pi \colon \HH/ \Gamma_1 \to \HH/ \Gamma\) the <a knowl="./knowl/def-fuchsian-group.html" title="Definition 2.4.5: Fuchsian groups">Fuchsian group</a> representatives. The normalisation of \(f\) can be represented as the compactification of</p>
+<span class="type">Proposition</span> <span class="codenumber">2.5.10</span>.</h6>
+<p id="p-595">Let \(f\colon S_1 \to S\) be a covering of Riemann surfaces \(S_1\smallsetminus f\inv \{ y_1, \ldots, y_n \} \to S \smallsetminus\{ y_1, \ldots, y_n \}\text{.}\) The unramified cover and \(\pi \colon \HH/ \Gamma_1 \to \HH/ \Gamma\) the Fuchsian group representatives. The normalisation of \(f\) can be represented as the compactification of</p>
 <div class="displaymath">
 \begin{equation*}
 \HH/ \bigcap_{\gamma \in \Gamma} \gamma \inv \Gamma_1 \gamma \to \HH/\Gamma_1 \to \HH/\Gamma
 \end{equation*}
 </div>
 <p>so the covering group is isomorphic to \(\Gamma/ \bigcap \gamma \inv \Gamma_1 \gamma \simeq \operatorname{Mon}(f)\text{.}\)</p></article><article class="example-like" id="example-29"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.5.11</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">2.5.11</span>.</h6>
 <p id="p-596">Let \(F(x,y) = y^2x - (y-1)^3\) consider</p>
 <div class="displaymath">
 \begin{equation*}
@@ -580,24 +602,26 @@ S_F \to \PP^1
 (x,y) \to x
 \end{equation*}
 </div>
-<p>\(S_F\) has <a knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> 0. \(S_F \to \PP^1\) is of degree 3 and <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at most over \(0, \frac{-27}{4}, \infty\text{.}\) \(\operatorname{Mon}(x)  \simeq \Sigma_3\) so not a normal covering. Normalization of \((S_F, x)\) is \(S_{\tilde F} , \tilde x)\) where</p>
+<p>\(S_F\) has genus 0. \(S_F \to \PP^1\) is of degree 3 and ramified at most over \(0, \frac{-27}{4}, \infty\text{.}\) \(\operatorname{Mon}(x)  \simeq \Sigma_3\) so not a normal covering. Normalization of \((S_F, x)\) is \(S_{\tilde F} , \tilde x)\) where</p>
 <div class="displaymath">
 \begin{equation*}
 \tilde F (x,y) = y^2 ( 1-y)^2 x +  (1-y + y^2)
 \end{equation*}
 </div></article></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <title>BUNTES Belyi's theorem (Maria)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-rs-discrete-groups-ii.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-dessins.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-rs-discrete-groups-ii.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-dessins.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,30 +345,37 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-belyi-thm"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-belyi-thm"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Belyi's theorem (Maria)</span>
 </h2>
 <a href="sec-belyi-thm.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><article class="theorem-like" id="theorem-48"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">2.6.1</span>
-</h6>
-<p id="p-597">Let \(S \) be a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">riemann surface</a>, then the following are equivalent.</p>
+<span class="type">Theorem</span> <span class="codenumber">2.6.1</span>.</h6>
+<p id="p-597">Let \(S \) be a compact riemann surface, then the following are equivalent.</p>
 <ol class="decimal">
 <li id="li-111">\(S\) is defined over \(\overline\QQ\) (iff over  a number field)</li>
 <li id="li-112">\(S\) admits a morphism \(f \colon S \to \PP^1\) with at most 3 branching values.</li>
 </ol></article><article class="definition-like" id="def-belyi-function"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.6.2</span> <span class="title">Belyi functions</span>
+<span class="type">Definition</span> <span class="codenumber">2.6.2</span>. <span class="title">Belyi functions.</span>
 </h6>
-<p id="p-598">A <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic function</a> with less than 4 branching values is a <dfn class="terminology">Belyi function</dfn>.</p></article><article class="remark-like" id="remark-12"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">2.6.3</span>
-</h6>
+<p id="p-598">A meromorphic function with less than 4 branching values is a <dfn class="terminology">Belyi function</dfn>.</p></article><article class="remark-like" id="remark-12"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.6.3</span>.</h6>
 <ol id="p-599" class="decimal">
 <li id="li-113">Branching values can be taken to be in \(\{0,1,\infty\}\text{.}\)</li>
 <li id="li-114">If \(S \ne \PP^1\text{,}\) then \(f \colon S \to \PP^1\) has at least 3 branching values</li>
 </ol></article><article class="definition-like" id="def-belyi-poly"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.6.4</span> <span class="title">Belyi polynomials</span>
+<span class="type">Definition</span> <span class="codenumber">2.6.4</span>. <span class="title">Belyi polynomials.</span>
 </h6>
 <p id="p-600">Let \(m,n \in \NN\text{,}\) \(\lambda = m/(m+n)\text{,}\) define</p>
 <div class="displaymath">
@@ -359,15 +384,13 @@ P_\lambda(x) = P_{m,n}(x) = \frac{(m+1)^{m+n}}{m^mn^n} x^m(1-x)^n
 \end{equation*}
 </div>
 <p><dfn class="terminology">Belyi polynomials</dfn>.</p></article><article class="theorem-like" id="proposition-50"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.6.5</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">2.6.5</span>.</h6>
 <p id="p-601">\(P_\lambda\) satisfies</p>
 <ol class="decimal">
 <li id="li-115">\(P_\lambda\) ramifies at exactly \(0,1,\lambda, \infty\text{.}\)</li>
 <li id="li-116">\(P_\lambda(0) = P_\lambda(1) = 0, P_\lambda(\lambda) = 1, P_\lambda(\infty) = \infty\text{.}\)</li>
 </ol></article><article class="example-like" id="example-30"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.6.6</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">2.6.6</span>.</h6>
 <div class="displaymath" id="p-602">
 \begin{equation*}
 S_\lambda : y^2 = x(x-1)(x-\lambda)
@@ -389,13 +412,12 @@ x\colon S_\lambda \to \PP^1
 \infty \mapsto \infty
 \end{equation*}
 </div>
-<p>ramifies over \(0,1,\lambda,\infty\text{.}\) Then \(f = P_\lambda \circ x \colon S_\lambda \to \PP^1\) ramifies exactly at \((0,0), (1,0), (\lambda,0), \infty\text{.}\) With branching values \(0,0,1,\infty\) so that \(f\) is a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a>.</p></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<p>ramifies over \(0,1,\lambda,\infty\text{.}\) Then \(f = P_\lambda \circ x \colon S_\lambda \to \PP^1\) ramifies exactly at \((0,0), (1,0), (\lambda,0), \infty\text{.}\) With branching values \(0,0,1,\infty\) so that \(f\) is a Belyi function.</p></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Proof of a) implies b)</span>
 </h3>
 <article class="remark-like" id="note-7"><h6 class="heading">
-<span class="type">Note</span> <span class="codenumber">2.6.7</span>
-</h6>
-<p id="p-603">Its enough to show \(\exists f\colon S\to \PP^1\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> over \(\{0,1,\infty, \lambda_1, \ldots, \lambda_n\} \subseteq \QQ \cup \{\infty\}\text{.}\) Given this we can repeatedly use <a knowl="./knowl/def-belyi-poly.html" title="Definition 2.6.4: Belyi polynomials">Belyi polynomials</a> to obtain \(g\colon S \to \PP^1\) <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> over \(\{0,1, \infty\}\text{.}\)</p></article><p id="p-604">Write \(S = S_F\)</p>
+<span class="type">Note</span> <span class="codenumber">2.6.7</span>.</h6>
+<p id="p-603">Its enough to show \(\exists f\colon S\to \PP^1\) ramified over \(\{0,1,\infty, \lambda_1, \ldots, \lambda_n\} \subseteq \QQ \cup \{\infty\}\text{.}\) Given this we can repeatedly use Belyi polynomials to obtain \(g\colon S \to \PP^1\) ramified over \(\{0,1, \infty\}\text{.}\)</p></article><p id="p-604">Write \(S = S_F\)</p>
 <div class="displaymath">
 \begin{equation*}
 F(x,y) = p_0(x)y^n + \cdots + p_n(x)
@@ -415,8 +437,7 @@ S\xrightarrow x \PP^1 \xrightarrow{m_1} \PP^1
 <span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Algebraic characterization of morphisms</span>
 </h3>
 <article class="theorem-like" id="proposition-51"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.6.8</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">2.6.8</span>.</h6>
 <p id="p-609">Defining a morphism \(f \colon S_F\to S_G\) is equivalent to giving a pair of rational functions</p>
 <div class="displaymath">
 \begin{equation*}
@@ -424,8 +445,7 @@ f=  (R_1, R_2),\,R_i= \frac{P_i}{Q_i},\,    P_i,Q_i\in \CC[x,y],\,Q_i\not\in (F)
 \end{equation*}
 </div>
 <p>such that \(Q_1^{\deg_x(G)}Q_2^{\deg_y(G)} G(R_1, R_2) = HF\) for some \(H \in \CC\lb x, y\rb\text{.}\) \(f(R_1, R_2)\) is an isomorphism if there exists an inverse morphism \(h\colon S_G\to S_F\text{.}\)</p></article><article class="remark-like" id="remark-13"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">2.6.9</span>
-</h6>
+<span class="type">Remark</span> <span class="codenumber">2.6.9</span>.</h6>
 <div class="displaymath" id="p-610">
 \begin{equation*}
 \xymatrix{
@@ -439,8 +459,7 @@ S_f \ar[r]^f \ar[dr]_m &amp; S_G \ar[d]_h \\
 </h3>
 <p id="p-611">Let \(\operatorname{Gal}(\CC) = \Gal{\CC}{\QQ}\text{.}\)</p>
 <article class="definition-like" id="definition-58"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.6.10</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">2.6.10</span>.</h6>
 <p id="p-612">For \(\sigma \in \operatorname{Gal}(\CC)\text{,}\) \(a\in \CC\) denote \(a^\sigma = \sigma(a)\text{,}\)</p>
 <ol class="decimal">
 <li id="li-117">If \(P = \sum a_{ij} x^iy^j \in \CC\lb x,y\rb\) set<div class="displaymath">
@@ -450,16 +469,14 @@ P^\sigma = \sum a^\sigma_{ij} x^iy^j \in \CC\lb x,y\rb
 </div>if \(R = P/Q\) set \(R^\sigma = P^\sigma / Q^\sigma\text{.}\)</li>
 <li id="li-118">If \(S \simeq S_F\text{,}\) \(S^\sigma = S_{F^\sigma}\text{.}\)</li>
 <li id="li-119">If \(\Psi = (R_1, R_2)\) \(S_F\to S_G\) is a morphism, set \(\Psi^ \sigma = (R_1^\sigma , R_2 ^\sigma) \colon S_{F^\sigma} \to S_{G^\sigma}\text{.}\)</li>
-<li id="li-120">For an equivalence class \((S,f) = (S_F, R(x,y))\) of <a knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> covers of \(\PP^1\) set \((S,f)^\sigma = (S^\sigma, f^\sigma) = (S_{F^\sigma}, R^\sigma (x,y))\text{.}\)</li>
-</ol></article><article class="exercise-like" id="exercise-16"><a knowl="" class="id-ref" refid="hk-exercise-16"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.6.11</span>
-</h6></a></article><div id="hk-exercise-16" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-613">Verify this Galois action is well-defined (lemma 3.12).</p></article></div>
-<p id="p-614">Recall: \(S_F\) is    constructed from a noncompact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> \(S_F^\times \subseteq \CC^2\) by adding finitely many points, (theorem 1.86). If \(P=  (a,b) \in S_F^\times\) then \(P^\sigma = (a^\sigma, b^\sigma)\text{.}\) What about the other points?</p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
+<li id="li-120">For an equivalence class \((S,f) = (S_F, R(x,y))\) of ramified covers of \(\PP^1\) set \((S,f)^\sigma = (S^\sigma, f^\sigma) = (S_{F^\sigma}, R^\sigma (x,y))\text{.}\)</li>
+</ol></article><article class="exercise-like" id="exercise-16"><a data-knowl="" class="id-ref" data-refid="hk-exercise-16"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">2.6.11</span>.</h6></a></article><div id="hk-exercise-16" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-613">Verify this Galois action is well-defined (lemma 3.12).</p></article></div>
+<p id="p-614">Recall: \(S_F\) is    constructed from a noncompact Riemann surface \(S_F^\times \subseteq \CC^2\) by adding finitely many points, (theorem 1.86). If \(P=  (a,b) \in S_F^\times\) then \(P^\sigma = (a^\sigma, b^\sigma)\text{.}\) What about the other points?</p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.4</span> <span class="title">Points and valuations</span>
 </h3>
 <article class="definition-like" id="definition-59"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.6.12</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">2.6.12</span>.</h6>
 <p id="p-615">Let \(\mathcal M\) be a function field. A (discrete) valuation of \(\mathcal M\) is \(v \colon \mathcal M^* \to \ZZ\) s.t.</p>
 <ol class="decimal">
 <li id="li-121">\(v(\phi\psi) = v(\phi)  + v(\psi)\)</li>
@@ -482,36 +499,35 @@ M_v = \{ \phi\in \mathcal M : v(\phi) \gt 0\} = (\phi)
 <p>for some \(\phi\) a uniformizer.</p>
 <p id="p-617">If \(v(\phi) = 1\) \(v\) is normalised.</p>
 <article class="theorem-like" id="proposition-52"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.6.13</span> <span class="title">3.15</span>
+<span class="type">Proposition</span> <span class="codenumber">2.6.13</span>. <span class="title">3.15.</span>
 </h6>
-<p id="p-618">Every point \(P \in S\) a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> defines a valuation on \(\mathcal M(S)\) by \(v_P(\phi) = \ord_P(\phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-92"><a knowl="" class="id-ref" refid="hk-proof-92"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-92" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-619">Easy exercise.</p></article></div>
+<p id="p-618">Every point \(P \in S\) a compact Riemann surface defines a valuation on \(\mathcal M(S)\) by \(v_P(\phi) = \ord_P(\phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-92"><a data-knowl="" class="id-ref" data-refid="hk-proof-92"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-92" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-619">Easy exercise.</p></article></div>
 <article class="theorem-like" id="theorem-49"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">2.6.14</span> <span class="title">3.23</span>
+<span class="type">Theorem</span> <span class="codenumber">2.6.14</span>. <span class="title">3.23.</span>
 </h6>
-<p id="p-620">For any compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> \(S\)</p>
+<p id="p-620">For any compact Riemann surface \(S\)</p>
 <div class="displaymath">
 \begin{equation*}
 P\in S \mapsto v_P = \ord_P
 \end{equation*}
 </div>
-<p>gives a 1-1 correspondence between points of \(S\) and normalised valuations on \(\mathcal M(S)\text{.}\)</p></article><article class="hiddenproof" id="proof-93"><a knowl="" class="id-ref" refid="hk-proof-93"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-93" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-621">Sketch: First prove it for \(S = \PP^1\text{.}\)</p>
-<p id="p-622">Inductively <a knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> separate points.</p>
+<p>gives a 1-1 correspondence between points of \(S\) and normalised valuations on \(\mathcal M(S)\text{.}\)</p></article><article class="hiddenproof" id="proof-93"><a data-knowl="" class="id-ref" data-refid="hk-proof-93"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-93" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-621">Sketch: First prove it for \(S = \PP^1\text{.}\)</p>
+<p id="p-622">Inductively meromorphic functions separate points.</p>
 <p id="p-623">Surjectivity study behaviour of valuations in finite extensions of fields and use a nonconstant morphism \(f\colon S \to \PP^1\) to reduce to the case of \(\PP^1\text{.}\)</p></article></div>
-<article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Galois action on points</span></h5>
+<article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Galois action on points.</span></h5>
 <article class="definition-like" id="definition-60"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.6.15</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">2.6.15</span>.</h6>
 <ol id="p-624" class="decimal">
 <li id="li-125">Given a valuation \(v\) on \(\mathcal M(S)\) define a valuation \(v^\sigma\) on \(\mathcal M(S^\sigma)\) by \(v^\sigma = v\circ \sigma^{-1}\) i.e. \(v^\sigma(\psi^\sigma) = v(\psi)\) for all \(\psi \in \mathcal M(S)\text{.}\)</li>
 <li id="li-126">For \(P \in S\) define \(P^\sigma \in S^\sigma\) as the unique point in \(S^\sigma\) s.t. \(v_{P^\sigma} = (v_P)^\sigma\text{.}\)</li>
 </ol></article><article class="theorem-like" id="proposition-53"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.6.16</span> <span class="title">3.25</span>
+<span class="type">Proposition</span> <span class="codenumber">2.6.16</span>. <span class="title">3.25.</span>
 </h6>
 <ol id="p-625" class="decimal">
 <li id="li-127">For \(\sigma\in \operatorname{Gal}(\CC)\text{,}\) \(P\mapsto P^\sigma\) is a bijection \(S\to S^\sigma\text{.}\)</li>
 <li id="li-128">On \(P \in S_F^\times\) this agrees with the previous definition of \(P^\sigma\text{.}\)</li>
 <li id="li-129">\(a^\sigma = a\) for all \(a\in \QQ \cup \{\infty\}\) for all \(\sigma \in \operatorname{Gal}(\CC)\text{.}\)</li>
-</ol></article><article class="hiddenproof" id="proof-94"><a knowl="" class="id-ref" refid="hk-proof-94"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-94" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-626">Sketch</p>
+</ol></article><article class="hiddenproof" id="proof-94"><a data-knowl="" class="id-ref" data-refid="hk-proof-94"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-94" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-626">Sketch</p>
 <ol class="decimal">
 <li id="li-130">\(a \mapsto a^{\sigma^{-1}}\text{.}\)</li>
 <li id="li-131">Follows as in proof of 3.22</li>
@@ -524,11 +540,9 @@ P\in S \mapsto v_P = \ord_P
 <span class="type">Subsection</span> <span class="codenumber">2.6.5</span> <span class="title">Elementary invariants of the action of \(\operatorname{Gal}(\CC)\text{.}\)</span>
 </h3>
 <article class="remark-like" id="remark-14"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">2.6.17</span>
-</h6>
+<span class="type">Remark</span> <span class="codenumber">2.6.17</span>.</h6>
 <p id="p-627">The bijection \(S \leftrightarrow S^\sigma\) is not holomorphic. In general \(S\) and \(S^\sigma\) are not isomorphic.</p></article><article class="theorem-like" id="theorem-50"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">2.6.18</span>
-</h6>
+<span class="type">Theorem</span> <span class="codenumber">2.6.18</span>.</h6>
 <p id="p-628">The action of \(\operatorname{Gal}(\CC)\) on pairs \((S,f)\) satisfies</p>
 <ol class="decimal">
 <li id="li-133"><div class="displaymath">
@@ -552,20 +566,20 @@ P\in S \mapsto v_P = \ord_P
 <li id="li-139">The monodromy group \(\operatorname{Mon}(f)\) of \((S,f)\) is isomorphic to \(\operatorname{Mon}(f^\sigma)\) of \((S^\sigma , f^\sigma)\text{.}\)</li>
 </ol></article><p id="p-629">We will use properties 1 and 4 at least.</p>
 <article class="theorem-like" id="proposition-54"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.6.19</span> <span class="title">Criterion 3.29</span>
+<span class="type">Proposition</span> <span class="codenumber">2.6.19</span>. <span class="title">Criterion 3.29.</span>
 </h6>
-<p id="p-630">For a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> \(S\) the following are equivalent</p>
+<p id="p-630">For a compact Riemann surface \(S\) the following are equivalent</p>
 <ol class="decimal">
 <li id="li-140">\(S\) is defined over \(\overline \QQ\text{.}\)</li>
-<li id="li-141">\(\{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}\) contains only finitely many isomorphism classes of <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>.</li>
-</ol></article><article class="hiddenproof" id="proof-95"><a knowl="" class="id-ref" refid="hk-proof-95"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-95" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-631">1 implies 2: \(S =S_F\text{,}\) \(F = K\lb x,y\rb\) for \(K\) a number field then</p>
+<li id="li-141">\(\{S^\sigma\}_{\sigma \in \operatorname{Gal}(\CC)}\) contains only finitely many isomorphism classes of Riemann surfaces.</li>
+</ol></article><article class="hiddenproof" id="proof-95"><a data-knowl="" class="id-ref" data-refid="hk-proof-95"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-95" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-631">1 implies 2: \(S =S_F\text{,}\) \(F = K\lb x,y\rb\) for \(K\) a number field then</p>
 <div class="displaymath">
 \begin{equation*}
 | \{F^\sigma \}_{\sigma \in \operatorname{Gal}(\CC)} | \le [K : \QQ]
 \end{equation*}
 </div>
 <p id="p-632">2 implies 1 is section 3.7.</p></article></div>
-<article class="paragraphs" id="paragraphs-16"><h5 class="heading"><span class="title">Proof of b implies a in Belyi's theorem (3.61)</span></h5>
+<article class="paragraphs" id="paragraphs-16"><h5 class="heading"><span class="title">Proof of b implies a in Belyi's theorem (3.61).</span></h5>
 <p id="p-633">Suppose \(f \colon S\to \PP^1\) is a morphism of degree \(d\) with branching values \(\{0,1,\infty\}\text{.}\) By theorem 3.28 \(\forall \sigma \in \operatorname{Gal}(\CC)\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -588,21 +602,22 @@ F_{f^\sigma}\colon \pi_1(\PP^1 \smallsetminus \{0,1,\infty\}) \to \Sigma_d
 <span class="type">Subsection</span> <span class="codenumber">2.6.6</span> <span class="title">The field of definition of Belyi functions (3.8)</span>
 </h3>
 <article class="theorem-like" id="proposition-55"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.6.20</span>
-</h6>
-<p id="p-634">Belyi functions are defined over \(\overline \QQ\text{.}\)</p></article><article class="hiddenproof" id="proof-96"><a knowl="" class="id-ref" refid="hk-proof-96"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-96" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-635">Use the same methods as in 3.7.</p></article></div></section></section></div></main>
+<span class="type">Proposition</span> <span class="codenumber">2.6.20</span>.</h6>
+<p id="p-634">Belyi functions are defined over \(\overline \QQ\text{.}\)</p></article><article class="hiddenproof" id="proof-96"><a data-knowl="" class="id-ref" data-refid="hk-proof-96"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-96" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-635">Use the same methods as in 3.7.</p></article></div></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

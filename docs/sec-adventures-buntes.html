@@ -11,7 +11,7 @@
 <title>BUNTES The Adventures of BUNTES (Sachi)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-thm-cube.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-dual-ab.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-thm-cube.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-dual-ab.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,40 +345,46 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-adventures-buntes"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-adventures-buntes"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">The Adventures of BUNTES (Sachi)</span>
 </h2>
 <a href="sec-adventures-buntes.html" class="permalink">¶</a><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.6.1</span> <span class="title">In which we are introduced to an important homomorphism, review some concepts and our story begins</span>
 </h3>
-<p id="p-133">Abelian variety  \(X\text{,}\) we know this is a <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> group variety, our goal is to give an embedding \(X\to \PP^N\) for some \(N\text{.}\) This motivates the study of <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a>.</p>
-<p id="p-134">Last time Ricky proved theorem of <a knowl="./knowl/thm-cube.html" title="Theorem 1.5.11: Theorem of the cube">cube 1.5.11</a> and <a knowl="./knowl/thm-square.html" title="Theorem 1.5.15: Theorem of the square (Milne 5.5)">square 1.5.15</a>. For any <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a>  \(L\) on \(X\text{,}\) there is a group homomorphism \(\Phi_L\colon X \to \Pic(X)\) via \(x\mapsto T_x^* L\otimes L^{-1}\text{.}\) Be careful \(T_x^*\) is \(-x\text{,}\) convention, who knows why.</p>
+<p id="p-133">Abelian variety  \(X\text{,}\) we know this is a complete group variety, our goal is to give an embedding \(X\to \PP^N\) for some \(N\text{.}\) This motivates the study of line bundles.</p>
+<p id="p-134">Last time Ricky proved theorem of <a data-knowl="./knowl/thm-cube.html" title="Theorem 1.5.11: Theorem of the cube">cube 1.5.11</a> and <a data-knowl="./knowl/thm-square.html" title="Theorem 1.5.15: Theorem of the square (Milne 5.5)">square 1.5.15</a>. For any line bundle  \(L\) on \(X\text{,}\) there is a group homomorphism \(\Phi_L\colon X \to \Pic(X)\) via \(x\mapsto T_x^* L\otimes L^{-1}\text{.}\) Be careful \(T_x^*\) is \(-x\text{,}\) convention, who knows why.</p>
 <article class="example-like" id="example-9"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.6.1</span>
-</h6>
-<p id="p-135">Let \(X =E\) an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>, \(L = L((0))\text{,}\) \(x\mapsto (x) - (0)\text{,}\) in this case this is in \(\Pic^0(E) \cong E \cong \widehat E\text{,}\)</p></article><article class="theorem-like" id="proposition-13"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.6.2</span>
-</h6>
-<p id="p-136">This is translation invariant.</p></article><article class="hiddenproof" id="proof-23"><a knowl="" class="id-ref" refid="hk-proof-23"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-23" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-137">Translate by \(q\in E\text{.}\) \((x+q) - (q)\) take \(p\) to be the third point on the line with \(x,q\text{,}\) \((x) + (q) + (p) \cong 3(0)\) and \((x+q) + (p) \cong 2 (0)\) subtracting these gives \((x) - (x+q) +(q) \cong (0)\) or \((x) - (0) \cong (x+q) -(q)\text{.}\)</p></article></div>
-<p id="p-138">What about the converse of this, what can we say about translation invariant <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a></p>
+<span class="type">Example</span> <span class="codenumber">1.6.1</span>.</h6>
+<p id="p-135">Let \(X =E\) an elliptic curve, \(L = L((0))\text{,}\) \(x\mapsto (x) - (0)\text{,}\) in this case this is in \(\Pic^0(E) \cong E \cong \widehat E\text{,}\)</p></article><article class="theorem-like" id="proposition-13"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.6.2</span>.</h6>
+<p id="p-136">This is translation invariant.</p></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-23" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-137">Translate by \(q\in E\text{.}\) \((x+q) - (q)\) take \(p\) to be the third point on the line with \(x,q\text{,}\) \((x) + (q) + (p) \cong 3(0)\) and \((x+q) + (p) \cong 2 (0)\) subtracting these gives \((x) - (x+q) +(q) \cong (0)\) or \((x) - (0) \cong (x+q) -(q)\text{.}\)</p></article></div>
+<p id="p-138">What about the converse of this, what can we say about translation invariant line bundles</p>
 <div class="displaymath">
 \begin{equation*}
 K(L) = \{x\in X : T_x^* L \cong L\}\text{?}
 \end{equation*}
 </div>
 <article class="theorem-like" id="proposition-14"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.6.3</span>
-</h6>
-<p id="p-139">\(K(L)\) is Zariski closed in \(X\text{.}\)</p></article><article class="hiddenproof" id="proof-24"><a knowl="" class="id-ref" refid="hk-proof-24"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-24" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-140">Consider \(m^* L \otimes p_2^*L^{-1}\) on \(X\times X\text{,}\) then</p>
+<span class="type">Proposition</span> <span class="codenumber">1.6.3</span>.</h6>
+<p id="p-139">\(K(L)\) is Zariski closed in \(X\text{.}\)</p></article><article class="hiddenproof" id="proof-24"><a data-knowl="" class="id-ref" data-refid="hk-proof-24"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-24" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-140">Consider \(m^* L \otimes p_2^*L^{-1}\) on \(X\times X\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \{x : \text{this is trivial on }\{x\}\times X\}
 \end{equation*}
 </div>
-<p>is closed. <a knowl="./knowl/thm-see-saw.html" title="Theorem 1.7.6: See-saw theorem">See-saw 1.7.6</a> implies restriction is pullback</p>
+<p>is closed. <a data-knowl="./knowl/thm-see-saw.html" title="Theorem 1.7.6: See-saw theorem">See-saw 1.7.6</a> implies restriction is pullback</p>
 <div class="displaymath">
 \begin{equation*}
 T_x^*L \otimes L^{-1}
@@ -370,22 +394,21 @@ T_x^*L \otimes L^{-1}
 <span class="type">Subsection</span> <span class="codenumber">1.6.2</span> <span class="title">In which Pooh discovers our main theorem</span>
 </h3>
 <article class="theorem-like" id="proposition-15"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.6.4</span>
-</h6>
-<p id="p-141">Let \(X\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> and \(L\) a <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a>, \(L = L(D)\) then TFAE:</p>
+<span class="type">Proposition</span> <span class="codenumber">1.6.4</span>.</h6>
+<p id="p-141">Let \(X\) be an abelian variety and \(L\) a line bundle, \(L = L(D)\) then TFAE:</p>
 <ol class="decimal">
 <li id="li-23">\(H(D) = \{x\in X: T_x^*D  = D \}\) is finite.</li>
 <li id="li-24">\(K(L) = \{x\in X: T_x^*L  \cong L \}\) is finite.</li>
 <li id="li-25">\(|2D|\) is basepoint free and defines a finite morphism \(X\to \PP^N\text{.}\)</li>
 <li id="li-26">\(L\) is ample.</li>
-</ol></article><article class="hiddenproof" id="proof-25"><a knowl="" class="id-ref" refid="hk-proof-25"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-25" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-1"><h6 class="heading">3. to 4.. </h6>
-<p id="p-142">Is algebraic geometry.</p></article><article class="case" id="case-2"><h6 class="heading">2. to 1.. </h6>
-<p id="p-143">Follows as being equal is stronger than being linearly equivalent.</p></article><article class="case" id="case-3"><h6 class="heading">4. to 2.. </h6>
-<p id="p-144"><a href="sec-adventures-buntes.html#sec-ample-L-finite-KL" class="xref" title="Subsection 1.6.3: In which Owl proves the ampleness of \(L\) implies finiteness of \(K(L)\)">Section 1.6.3</a></p></article><article class="case" id="case-4"><h6 class="heading">3. to 4.. </h6>
-<p id="p-145"><a href="sec-adventures-buntes.html#sec-finite-HD-finite-PN" class="xref" title="Subsection 1.6.4: In which Rabbbit sets out on a long journey to prove finiteness of \(H(D)\) implies \(|2D|\) is basepoint free and gives a finite map \(X \to \PP^N\)">Section 1.6.4</a></p></article></article></div></section><section class="subsection" id="sec-ample-L-finite-KL"><h3 class="heading hide-type">
+</ol></article><article class="hiddenproof" id="proof-25"><a data-knowl="" class="id-ref" data-refid="hk-proof-25"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-25" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-1"><h6 class="heading">3. to 4..</h6>
+<p id="p-142">Is algebraic geometry.</p></article><article class="case" id="case-2"><h6 class="heading">2. to 1..</h6>
+<p id="p-143">Follows as being equal is stronger than being linearly equivalent.</p></article><article class="case" id="case-3"><h6 class="heading">4. to 2..</h6>
+<p id="p-144"><a href="sec-adventures-buntes.html#sec-ample-L-finite-KL" class="internal" title="Subsection 1.6.3: In which Owl proves the ampleness of \(L\) implies finiteness of \(K(L)\)">Section 1.6.3</a></p></article><article class="case" id="case-4"><h6 class="heading">3. to 4..</h6>
+<p id="p-145"><a href="sec-adventures-buntes.html#sec-finite-HD-finite-PN" class="internal" title="Subsection 1.6.4: In which Rabbbit sets out on a long journey to prove finiteness of \(H(D)\) implies \(|2D|\) is basepoint free and gives a finite map \(X \to \PP^N\)">Section 1.6.4</a></p></article></article></div></section><section class="subsection" id="sec-ample-L-finite-KL"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.6.3</span> <span class="title">In which Owl proves the ampleness of \(L\) implies finiteness of \(K(L)\)</span>
 </h3>
-<a href="sec-adventures-buntes.html#sec-ample-L-finite-KL" class="permalink">¶</a><p id="p-146">4. to 2. Assume \(L\) ample and \(K(L)\) is infinite. Let \(Y\) be the connected component at 0 of \(K(L)\text{,}\) \(\dim Y \gt 0\text{.}\) Show trivial bundle is ample on \(Y\) implies \(Y\) is affine, But \(Y\) is closed and therefore <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> so this is a contradiction. \(L|_Y\) ample \(\lb-1\rb^* L|_Y\) is ample. \(L|_Y\otimes \lb -1\rb^*L|_Y\) is ample, consider</p>
+<a href="sec-adventures-buntes.html#sec-ample-L-finite-KL" class="permalink">¶</a><p id="p-146">4. to 2. Assume \(L\) ample and \(K(L)\) is infinite. Let \(Y\) be the connected component at 0 of \(K(L)\text{,}\) \(\dim Y \gt 0\text{.}\) Show trivial bundle is ample on \(Y\) implies \(Y\) is affine, But \(Y\) is closed and therefore complete so this is a contradiction. \(L|_Y\) ample \(\lb-1\rb^* L|_Y\) is ample. \(L|_Y\otimes \lb -1\rb^*L|_Y\) is ample, consider</p>
 <div class="displaymath">
 \begin{align*}
 d\colon \amp Y \to Y\times Y\\
@@ -396,9 +419,8 @@ d\colon \amp Y \to Y\times Y\\
 <span class="type">Subsection</span> <span class="codenumber">1.6.4</span> <span class="title">In which Rabbbit sets out on a long journey to prove finiteness of \(H(D)\) implies \(|2D|\) is basepoint free and gives a finite map \(X \to \PP^N\)</span>
 </h3>
 <a href="sec-adventures-buntes.html#sec-finite-HD-finite-PN" class="permalink">¶</a><article class="remark-like" id="note-3"><h6 class="heading">
-<span class="type">Note</span> <span class="codenumber">1.6.5</span>
-</h6>
-<p id="p-147">\(|2D|\) is always basepoint free.</p></article><p id="p-148">Apply the <a knowl="./knowl/thm-square.html" title="Theorem 1.5.15: Theorem of the square (Milne 5.5)">theorem of the square 1.5.15</a>: \(T_{x+y}^*D + D \cong T_x^* D + T_y^*D\text{,}\) let \(y = -x\text{,}\) \(2D \cong T_x^* D + T_{-x}^*D\text{.}\) (\(D\) effective) For any \(y\in X\text{,}\) choose some \(x\) s.t. RHS doesn't contain \(y\text{.}\) \(E = 2D\)</p>
+<span class="type">Note</span> <span class="codenumber">1.6.5</span>.</h6>
+<p id="p-147">\(|2D|\) is always basepoint free.</p></article><p id="p-148">Apply the <a data-knowl="./knowl/thm-square.html" title="Theorem 1.5.15: Theorem of the square (Milne 5.5)">theorem of the square 1.5.15</a>: \(T_{x+y}^*D + D \cong T_x^* D + T_y^*D\text{,}\) let \(y = -x\text{,}\) \(2D \cong T_x^* D + T_{-x}^*D\text{.}\) (\(D\) effective) For any \(y\in X\text{,}\) choose some \(x\) s.t. RHS doesn't contain \(y\text{.}\) \(E = 2D\)</p>
 <div class="displaymath">
 \begin{equation*}
 \psi_E\colon X \to \PP^N
@@ -406,25 +428,21 @@ d\colon \amp Y \to Y\times Y\\
 </div>
 <p>can we make this finite? If \(\psi_E\) is not finite then \(\psi(C) = \text{pt}\) for some irreducible curve \(C\) (Zariski's main theorem). For each divisor in \(|E|\) either it contains \(C\) or fails to intersect \(C\) by changing \(E\) if necessary, assume \(E \cap C = \emptyset\text{.}\)</p>
 <article class="theorem-like" id="claim-1"><h6 class="heading">
-<span class="type">Claim</span> <span class="codenumber">1.6.6</span>
-</h6>
-<p id="p-149">\(T_x^*E\cap C= \emptyset\) or all of \(C\) for all \(x\in X\text{.}\)</p></article><article class="hiddenproof" id="proof-26"><a knowl="" class="id-ref" refid="hk-proof-26"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-26" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-150">Intersection numbers are constant.</p></article></div>
-<article class="hiddenproof" id="proof-27"><a knowl="" class="id-ref" refid="hk-proof-27"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-27" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-151">\(\sheaf O(T_x^*E)|_{\widetilde C}\text{,}\) when \(x=0\) this is trivial so \(\deg =0\text{.}\) So \(\deg = 0\) for all <a knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a>. \(E\) effective implies \(C\cap T_x^* E = \emptyset\) for all \(x\) s.t. \(\cap\) is not in \(C\text{.}\)</p></article></div>
+<span class="type">Claim</span> <span class="codenumber">1.6.6</span>.</h6>
+<p id="p-149">\(T_x^*E\cap C= \emptyset\) or all of \(C\) for all \(x\in X\text{.}\)</p></article><article class="hiddenproof" id="proof-26"><a data-knowl="" class="id-ref" data-refid="hk-proof-26"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-26" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-150">Intersection numbers are constant.</p></article></div>
+<article class="hiddenproof" id="proof-27"><a data-knowl="" class="id-ref" data-refid="hk-proof-27"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-27" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-151">\(\sheaf O(T_x^*E)|_{\widetilde C}\text{,}\) when \(x=0\) this is trivial so \(\deg =0\text{.}\) So \(\deg = 0\) for all line bundles. \(E\) effective implies \(C\cap T_x^* E = \emptyset\) for all \(x\) s.t. \(\cap\) is not in \(C\text{.}\)</p></article></div>
 <article class="theorem-like" id="claim-2"><h6 class="heading">
-<span class="type">Claim</span> <span class="codenumber">1.6.7</span>
-</h6>
-<p id="p-152">\(E\) is invariant by translation by \(x - y\) for \(x,y \in C\text{.}\)</p></article><article class="hiddenproof" id="proof-28"><a knowl="" class="id-ref" refid="hk-proof-28"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-28" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-153">If \(e \in E\text{,}\) \(T_{x-e}^*(E) \cap C \ne \emptyset\text{.}\) This is as \(x\) is in it, \(x-(x-e) =e\text{,}\) because it is nonempty it's all of \(C\text{.}\) So \(y\) is in it. So \(y- (x-e) \in E\text{.}\) This is also \(e - (x-y) \in E\text{,}\) so \(E\) is invariant under \(T^*_{x-y}\)</p></article></div>
+<span class="type">Claim</span> <span class="codenumber">1.6.7</span>.</h6>
+<p id="p-152">\(E\) is invariant by translation by \(x - y\) for \(x,y \in C\text{.}\)</p></article><article class="hiddenproof" id="proof-28"><a data-knowl="" class="id-ref" data-refid="hk-proof-28"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-28" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-153">If \(e \in E\text{,}\) \(T_{x-e}^*(E) \cap C \ne \emptyset\text{.}\) This is as \(x\) is in it, \(x-(x-e) =e\text{,}\) because it is nonempty it's all of \(C\text{.}\) So \(y\) is in it. So \(y- (x-e) \in E\text{.}\) This is also \(e - (x-y) \in E\text{,}\) so \(E\) is invariant under \(T^*_{x-y}\)</p></article></div>
 <p id="p-154">Now assume \(H(E) = \{x\in X: T_x^*E  = E \}\) is finite. But if \(\psi_E(C) = \text{pt}\) then \(T_{x-y}^*(E)  = E\) for all \(x,y\in C\text{.}\) So \(H\) is not finite, a contradiction. So \(\psi_E\) can't collapse a curve so \(\psi_E\) is finite.</p></section><section class="subsection" id="subsection-17"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.6.5</span> <span class="title">In which Piglet discovers a corollary</span>
 </h3>
 <article class="theorem-like" id="corollary-8"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.6.8</span>
-</h6>
-<p id="p-155">Abelian varieties are projective.</p></article><article class="hiddenproof" id="proof-29"><a knowl="" class="id-ref" refid="hk-proof-29"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-29" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-156">Let \(X\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>, \(U \subseteq X\) be an open affine set, \(0\in U\text{,}\) \(X\smallsetminus U = D_1 \cup \cdots \cup D_t\) irreducible divisors. Let \(D = \sum D_i\text{,}\) then claim: \(H(D) = \{x\in X: T_x^*D  = D \}\) is finite. If \(H\subseteq U\text{,}\) \(U\) affine, then \(H\) closed subvariety of an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>, hence <a knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a>, so its finite. If \(x\in H\) then \(-x \in H\text{.}\) Now claim that if \(x\in H\) then \(T_x^*\) preserves \(U\text{,}\) if not let \(u\in U\text{.}\) Suppose \(u-x = d\) for some \(d\in D\) then \(u = d+x\) which is \(d\) translated by \(-x\) so \(d+x \in D\) so \(u\in D\text{.}\) But contradiction, oh no! So \(T_x^*\) preserves \(U\text{,}\) for all \(x\in H\text{,}\) as \(0 \in U\text{,}\) for all \(x\in H\) we have \(0-x \in U\) and  \(0+x\in U\) so \(H\subseteq U\text{.}\)</p></article></div>
+<span class="type">Corollary</span> <span class="codenumber">1.6.8</span>.</h6>
+<p id="p-155">Abelian varieties are projective.</p></article><article class="hiddenproof" id="proof-29"><a data-knowl="" class="id-ref" data-refid="hk-proof-29"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-29" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-156">Let \(X\) be an abelian variety, \(U \subseteq X\) be an open affine set, \(0\in U\text{,}\) \(X\smallsetminus U = D_1 \cup \cdots \cup D_t\) irreducible divisors. Let \(D = \sum D_i\text{,}\) then claim: \(H(D) = \{x\in X: T_x^*D  = D \}\) is finite. If \(H\subseteq U\text{,}\) \(U\) affine, then \(H\) closed subvariety of an abelian variety, hence complete, so its finite. If \(x\in H\) then \(-x \in H\text{.}\) Now claim that if \(x\in H\) then \(T_x^*\) preserves \(U\text{,}\) if not let \(u\in U\text{.}\) Suppose \(u-x = d\) for some \(d\in D\) then \(u = d+x\) which is \(d\) translated by \(-x\) so \(d+x \in D\) so \(u\in D\text{.}\) But contradiction, oh no! So \(T_x^*\) preserves \(U\text{,}\) for all \(x\in H\text{,}\) as \(0 \in U\text{,}\) for all \(x\in H\) we have \(0-x \in U\) and  \(0+x\in U\) so \(H\subseteq U\text{.}\)</p></article></div>
 <article class="theorem-like" id="corollary-9"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.6.9</span>
-</h6>
-<p id="p-157">Abelian varieties are divisible. \(X[n]\) is finite for \(n\ge 1\text{.}\)</p></article><article class="hiddenproof" id="proof-30"><a knowl="" class="id-ref" refid="hk-proof-30"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-30" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-158">\([n]\colon X \to X\) and \(X[n]\) is the kernel of this. Note that for \(x\in X[n]\)</p>
+<span class="type">Corollary</span> <span class="codenumber">1.6.9</span>.</h6>
+<p id="p-157">Abelian varieties are divisible. \(X[n]\) is finite for \(n\ge 1\text{.}\)</p></article><article class="hiddenproof" id="proof-30"><a data-knowl="" class="id-ref" data-refid="hk-proof-30"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-30" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-158">\([n]\colon X \to X\) and \(X[n]\) is the kernel of this. Note that for \(x\in X[n]\)</p>
 <div class="displaymath">
 \begin{equation*}
 [n]\circ T_x = [n]
@@ -442,7 +460,7 @@ T_x^*([n]^* L ) \cong ([n]^* L)
 K([n]^* L ) \supseteq X[n]
 \end{equation*}
 </div>
-<p>and we just need to find \(L\) s.t. this is finite. \(X\) projective implies there exists an ample \(L\text{.}\) The <a knowl="./knowl/thm-cube.html" title="Theorem 1.5.11: Theorem of the cube">theorem of the cube 1.5.11</a> implies</p>
+<p>and we just need to find \(L\) s.t. this is finite. \(X\) projective implies there exists an ample \(L\text{.}\) The <a data-knowl="./knowl/thm-cube.html" title="Theorem 1.5.11: Theorem of the cube">theorem of the cube 1.5.11</a> implies</p>
 <div class="displaymath">
 \begin{equation*}
 [n]^*L \cong L^{\frac{n^2 + n}{2}} \otimes L^{\frac{n^2 - n}{2}}
@@ -452,15 +470,12 @@ K([n]^* L ) \supseteq X[n]
 <span class="type">Subsection</span> <span class="codenumber">1.6.6</span> <span class="title">Epilogue: In which we might discuss isogenies</span>
 </h3>
 <article class="definition-like" id="definition-21"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.6.10</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">1.6.10</span>.</h6>
 <p id="p-159">\(f\colon X \to Y\) a morphism of varieties, get a field extension \(k(X)/f^*k(Y)\text{,}\) if \(\dim X = \dim Y\) and \(f\) is surjective. Then this is a finite field extension and \(\deg f\) is \(d = \lb k(X) : f^*k(Y)\rb\) and \(d = \#f^{-1}(y)\) for almost all \(y\text{.}\)</p></article><article class="definition-like" id="def-isogenies-avs"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.6.11</span>
-</h6>
-<p id="p-160">A homomorphism of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> \(f\colon X \to Y\) is an <dfn class="terminology">isogeny</dfn> if \(f\) is surjective with finite kernel.</p></article><article class="theorem-like" id="corollary-10"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">1.6.12</span>
-</h6>
-<p id="p-161">Degree of \(\lb n\rb\) is \(n^{2g}\text{,}\) if \(n\) is prime to the characteristic of \(k\text{,}\) \(k = \overline k\text{,}\) \(g = \dim X\text{.}\)</p></article><article class="hiddenproof" id="proof-31"><a knowl="" class="id-ref" refid="hk-proof-31"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-31" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-162">Let \(D\) be an ample <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> divisor, e.g.</p>
+<span class="type">Definition</span> <span class="codenumber">1.6.11</span>.</h6>
+<p id="p-160">A homomorphism of abelian varieties \(f\colon X \to Y\) is an <dfn class="terminology">isogeny</dfn> if \(f\) is surjective with finite kernel.</p></article><article class="theorem-like" id="corollary-10"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">1.6.12</span>.</h6>
+<p id="p-161">Degree of \(\lb n\rb\) is \(n^{2g}\text{,}\) if \(n\) is prime to the characteristic of \(k\text{,}\) \(k = \overline k\text{,}\) \(g = \dim X\text{.}\)</p></article><article class="hiddenproof" id="proof-31"><a data-knowl="" class="id-ref" data-refid="hk-proof-31"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-31" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-162">Let \(D\) be an ample symmetric divisor, e.g.</p>
 <div class="displaymath">
 \begin{equation*}
 D = D' + [-1]^* D'
@@ -473,17 +488,19 @@ D = D' + [-1]^* D'
 \end{equation*}
 </div></article></div></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

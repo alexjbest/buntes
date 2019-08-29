@@ -11,7 +11,7 @@
 <title>BUNTES Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-beyi-abc.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-three-short-stories-belyi.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-beyi-abc.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-dessins.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-three-short-stories-belyi.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,10 +345,19 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-dessins-integer-pts-abc"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-dessins-integer-pts-abc"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.10</span> <span class="title">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</span>
 </h2>
 <a href="sec-dessins-integer-pts-abc.html" class="permalink">¶</a><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
@@ -352,7 +379,7 @@ var login_required = false;
 <p>but we do so to emphasise the link with ABC.</p>
 <p id="p-700">The result is then</p>
 <article class="theorem-like" id="theorem-54"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">2.10.1</span> <span class="title">Mason-Stothers</span>
+<span class="type">Theorem</span> <span class="codenumber">2.10.1</span>. <span class="title">Mason-Stothers.</span>
 </h6>
 <p id="p-701">Let</p>
 <div class="displaymath">
@@ -366,7 +393,7 @@ e,f,g\in K[x],\,e + f = g
 h(e,f,g) \lt r(efg) = r(e) + r(f)  + r(g)\text{.}
 \end{equation*}
 </div>
-<p id="p-702">We have sharpness if and only if \(f/g\) is a Belyi map for \(\PP^1 \to \PP^1\) with \((f/g)(\infty) \in \{0,1,\infty\}\text{.}\) Another way of saying this is that if \(\deg f = \deg g\) then their leading coefficients are equal, and hence \(\deg (e) \lt \deg (f)\text{.}\)</p></article><article class="hiddenproof" id="proof-100"><a knowl="" class="id-ref" refid="hk-proof-100"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-100" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-703">First of all we note that the statement is <a knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> in \(e,f,g\text{,}\) so we may arrange that \(h(g) \le h(e,f)\) which implies that \(h(e) = h(f) = h(e,f,g)\text{.}\) The second statement is less obviously invariant but note that \(\phi\) is  a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a> is equivalent to \(1-\phi\) and \(1/\phi\) being Belyi also and this preserves \(\phi(\infty) \in \{0,1,\infty\}\text{,}\) so rearranging does not change the truth of the second statement either. Let \(\phi = f/g\) so \(\deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)\text{,}\) we will denote this by \(h\) now. Apply Riemann-Hurwitz (suprise-suprise)</p>
+<p id="p-702">We have sharpness if and only if \(f/g\) is a Belyi map for \(\PP^1 \to \PP^1\) with \((f/g)(\infty) \in \{0,1,\infty\}\text{.}\) Another way of saying this is that if \(\deg f = \deg g\) then their leading coefficients are equal, and hence \(\deg (e) \lt \deg (f)\text{.}\)</p></article><article class="hiddenproof" id="proof-100"><a data-knowl="" class="id-ref" data-refid="hk-proof-100"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-100" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-703">First of all we note that the statement is symmetric in \(e,f,g\text{,}\) so we may arrange that \(h(g) \le h(e,f)\) which implies that \(h(e) = h(f) = h(e,f,g)\text{.}\) The second statement is less obviously invariant but note that \(\phi\) is  a Belyi function is equivalent to \(1-\phi\) and \(1/\phi\) being Belyi also and this preserves \(\phi(\infty) \in \{0,1,\infty\}\text{,}\) so rearranging does not change the truth of the second statement either. Let \(\phi = f/g\) so \(\deg(\phi) = \max\{\deg (f), \deg(g)\} = h(e,f,g)\text{,}\) we will denote this by \(h\) now. Apply Riemann-Hurwitz (surprise-surprise)</p>
 <div class="displaymath">
 \begin{equation*}
 -2 = -2h + \sum_{x\in \PP^1} e_\phi(x) - 1\text{.}
@@ -437,8 +464,7 @@ E_k\colon y^2 = x^3 + k\text{.}
 \end{equation*}
 </div>
 <article class="example-like" id="example-33"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.10.2</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">2.10.2</span>.</h6>
 <div class="displaymath" id="p-707">
 \begin{equation*}
 1001^2 = 5009^3 - (5009^3 - 1001^2)
@@ -467,7 +493,7 @@ y^2 = x^3 - (5009^3 - 1001^2) = x^3 - 125675213728
 <p id="p-710">If we want to study more realistic bounds we can instead reverse the problem. Can we minimise \(x^3 - y^2\) for integer \(x,y\text{,}\) how close can the square of a large integer and the cube of a large integer be? Euler showed that \(|x^3 - y^2| = 1\) has only 1 (interesting) solution, for example.</p>
 <p id="p-711">Marshall Hall was interested in this, did some nice computations and conjectured:</p>
 <article class="theorem-like" id="conjecture-2"><h6 class="heading">
-<span class="type">Conjecture</span> <span class="codenumber">2.10.3</span> <span class="title">Mashall Hall's conjecture, 1970</span>
+<span class="type">Conjecture</span> <span class="codenumber">2.10.3</span>. <span class="title">Mashall Hall's conjecture, 1970.</span>
 </h6>
 <p id="p-712">If</p>
 <div class="displaymath">
@@ -483,7 +509,7 @@ x^3 - y^2 = k
 </div>
 <p>(or \(k =0\text{...}\)).</p></article><p id="p-713">This is false!</p>
 <article class="example-like" id="example-34"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.10.4</span> <span class="title">Elkies (who else?)</span>
+<span class="type">Example</span> <span class="codenumber">2.10.4</span>. <span class="title">Elkies (who else?).</span>
 </h6>
 <p id="p-714">If</p>
 <div class="displaymath">
@@ -504,7 +530,7 @@ y^2 = x^3 - 1641843
 \end{equation*}
 </div></article><p id="p-715">This is far larger than the previous best known, but still remains the record as far as I can tell. It seems Hall's conjecture is unlikely to be true for any fixed constant, but the following of Stark-Trotter is more believable.</p>
 <article class="theorem-like" id="conjecture-3"><h6 class="heading">
-<span class="type">Conjecture</span> <span class="codenumber">2.10.5</span> <span class="title">Stark-Trotter/Weak Hall</span>
+<span class="type">Conjecture</span> <span class="codenumber">2.10.5</span>. <span class="title">Stark-Trotter/Weak Hall.</span>
 </h6>
 <p id="p-716">For any  \(\epsilon \gt 0\) there is some \(C(\epsilon)\) such that for any \(x,y\) integers</p>
 <div class="displaymath">
@@ -541,7 +567,7 @@ X(t)^3 - Y(t)^2 = K(t)
 <p>or \(m \lt r(K)\text{.}\) So we have lower-bounded the degree of \(K\) in terms of \(\frac 12 \deg(X)\) for example.</p>
 <p id="p-720">We just proved:</p>
 <article class="theorem-like" id="conjecture-4"><h6 class="heading">
-<span class="type">Conjecture</span> <span class="codenumber">2.10.6</span> <span class="title">Birch B. J., Chowla S., Hall M., Jr., Schinzel A. On the difference \(x^3 - y^2\text{,}\) 1965.</span>
+<span class="type">Conjecture</span> <span class="codenumber">2.10.6</span>. <span class="title">Birch B. J., Chowla S., Hall M., Jr., Schinzel A. On the difference \(x^3 - y^2\text{,}\) 1965..</span>
 </h6>
 <p id="p-721">Let \(X, Y\) be two coprime polynomials with \(X^3,Y^2\) of equal degree (\(6m\)) and equal leading coefficient, then</p>
 <div class="displaymath">
@@ -550,12 +576,12 @@ K = X^3 - Y^2
 \end{equation*}
 </div>
 <p>is of degree \(\gt m\text{.}\)</p>
-<p id="p-722">(Now the speaker has just given a theorem with an inequality, so in <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> to appear smart one of you should ask is this bound sharp.)</p>
+<p id="p-722">(Now the speaker has just given a theorem with an inequality, so in order to appear smart one of you should ask is this bound sharp.)</p>
 <p id="p-723">The bound is sharp, this can mean several things in general, originally it was asked that for infinity many \(m\) there is an example where \(\deg K = m + 1\text{.}\)</p></article><p id="p-724">The first part was proved initially by Davenport (in the same year, and journal). The second part had to wait until '81 for Stothers to prove it.</p>
-<p id="p-725">Someone else should probably also ask, how is any of this related to <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a>?</p>
-<p id="p-726">To prove sharpness we have to exhibit for each \(m\) triple of polynomials \(X,Y,K\) of degrees \(2m,3m,m+1\text{.}\) Coming up with polynomial families is hard, drawing stupid pictures is easy, can <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a> aid us here?</p>
+<p id="p-725">Someone else should probably also ask, how is any of this related to Dessins?</p>
+<p id="p-726">To prove sharpness we have to exhibit for each \(m\) triple of polynomials \(X,Y,K\) of degrees \(2m,3m,m+1\text{.}\) Coming up with polynomial families is hard, drawing stupid pictures is easy, can Dessins aid us here?</p>
 <p id="p-727">Lets back-track, when we proved Mason-Stothers we also said that sharpness was equivalent to \(f/g\) being Belyi, so \(X(t)^3/K(t) = (K(t) + Y(t)^2) / K(t) = Y(t)^2/K(t) + 1\) should be a Belyi map of degree \(6m\) from \(\PP^1\to \PP^1\text{.}\) What does its ramification look like? We should have all preimages of \(0\) degree 3, preimages of \(1\) degree 2, and above infinity \(m + 1\) points of degree \(1\) and the remaining of degree \(6m - (m + 1) = 5m - 1\text{.}\)</p>
-<p id="p-728">How can we draw a <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessin</a> like this? Begin with a tree with all internal vertices degree 3, with \(2m\) vertices, this will have \(2m - 1\) edges, and as it is trivalent by the handshake lemma</p>
+<p id="p-728">How can we draw a Dessin like this? Begin with a tree with all internal vertices degree 3, with \(2m\) vertices, this will have \(2m - 1\) edges, and as it is trivalent by the handshake lemma</p>
 <div class="displaymath">
 \begin{equation*}
 3 \#\{\text{internal}\} + \#\{\text{leaves}\} =  4m - 2
@@ -583,10 +609,9 @@ K = X^3 - Y^2
 \#\{\text{leaves}\} =  m + 1
 \end{equation*}
 </div>
-<p>Add loops to the leaves, you now have a <a knowl="./knowl/def-clean-dessin.html" title="Definition 2.1.7: Clean dessins">clean Dessin</a> as above. It has \(2m- 1 + m + 1 = 3m\) edges. We have a face for every loop of degree 1, and one on the outside of degree \(m+ 1 +2(2m-1)  = 5m - 1\) as each internal edge is traversed twice if you walk around the outside. So this works!</p>
+<p>Add loops to the leaves, you now have a clean Dessin as above. It has \(2m- 1 + m + 1 = 3m\) edges. We have a face for every loop of degree 1, and one on the outside of degree \(m+ 1 +2(2m-1)  = 5m - 1\) as each internal edge is traversed twice if you walk around the outside. So this works!</p>
 <article class="example-like" id="example-35"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.10.7</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">2.10.7</span>.</h6>
 <p id="p-729">For \(m= 1\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -599,8 +624,7 @@ K = X^3 - Y^2
 (x^4 - 4x)^3 - (x^6 -6x^3+6)^2  = 8x^3 - 36\text{.}
 \end{equation*}
 </div></article><article class="example-like" id="example-36"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.10.8</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">2.10.8</span>.</h6>
 <p id="p-730">For \(m =5\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -642,7 +666,7 @@ K(t) = -\frac{1}{108} (3t^{6} + 14t^3 +27)
 </div>
 <p>these get lower as we increase \(t\) though.</p></article><p id="p-731">We should expect this decrease from this method as if \(\deg X = 2m\) and \(\deg K = m + 1\) then \(\sqrt{X(t)}/K(t)\) grows like \(t^{m}/t^{m+1} = t\inv\text{.}\)</p>
 <p id="p-732">Can we do the same for abc?</p>
-<p id="p-733">Take the <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessin</a> with a deg 1 vertex at infinity, degree 3 at 0 with an edge surrounding 1, we get a <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi function</a></p>
+<p id="p-733">Take the Dessin with a deg 1 vertex at infinity, degree 3 at 0 with an edge surrounding 1, we get a Belyi function</p>
 <div class="displaymath">
 \begin{equation*}
 f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^3(x+1)}
@@ -654,7 +678,7 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 64a^3 b + (a^2 - 18ab - 27b^2)^2 = (a+9b)^3(a+b)
 \end{equation*}
 </div>
-<p>which could of course be verified independently, but how would you find this identity without <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a>? Now for \(a = -32, b= 23\) we get</p>
+<p>which could of course be verified independently, but how would you find this identity without Dessins? Now for \(a = -32, b= 23\) we get</p>
 <div class="displaymath">
 \begin{equation*}
 - 2^{21} \cdot 23 +  11^2 =  -1 \cdot 3^2 \cdot 5^6 \cdot 7^3
@@ -673,8 +697,8 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 \end{equation*}
 </div>
 <p>(the current winner has quality \(1.6299\)).</p>
-<article class="paragraphs" id="paragraphs-20"><h5 class="heading"><span class="title">References</span></h5>
-<p id="p-734">A semi-random <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a>, maybe starting at the top is nice though. If you have trouble finding something let me know.</p>
+<article class="paragraphs" id="paragraphs-20"><h5 class="heading"><span class="title">References.</span></h5>
+<p id="p-734">A semi-random order, maybe starting at the top is nice though. If you have trouble finding something let me know.</p>
 <ol class="decimal">
 <li id="li-150">On Computing Belyi Maps - J. Sijsling, J. Voight</li>
 <li id="li-151">Belyi Functions: Examples, Properties, and Applications - Zvonkin (really nice survey)</li>
@@ -690,31 +714,33 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 <li id="li-161">Davenport-Zannier polynomials over \(\QQ\) - Fedor Pakovich, Alexander K. Zvonkin (a nice extension perhaps?)</li>
 <li id="li-162">Minimum Degree of the Difference of Two Polynomials over Q, and Weighted Plane Trees -  Fedor Pakovich,  Alexander K. Zvonkin (as above)</li>
 <li id="li-163">The ABC-conjecture for polynomials - Abhishek Parab</li>
-<li id="li-164">On Marshall Hall's Conjecture and Gaps Between Integer Points on Mordell <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">Elliptic Curves</a> - Ryan D'Mello</li>
+<li id="li-164">On Marshall Hall's Conjecture and Gaps Between Integer Points on Mordell Elliptic Curves - Ryan D'Mello</li>
 <li id="li-165">Neighboring powers - F. Beukers, C. L. Stewart (a more general problem, but nice history and examples)</li>
-<li id="li-166">Rational Points Near Curves and Small Nonzero \(| x^3 - y^2|\) via <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">Lattice</a> Reduction - Elkies</li>
+<li id="li-166">Rational Points Near Curves and Small Nonzero \(| x^3 - y^2|\) via Lattice Reduction - Elkies</li>
 <li id="li-167">ABC implies Mordell - Elkies</li>
 <li id="li-168">Dessins d'enfant -  Jeroen Sijsling (master thesis)</li>
-<li id="li-169">Algorithms and differential relations for <a knowl="./knowl/def-belyi-function.html" title="Definition 2.6.2: Belyi functions">Belyi functions</a> - Mark van Hoeij, Raimundas Vidunas.</li>
+<li id="li-169">Algorithms and differential relations for Belyi functions - Mark van Hoeij, Raimundas Vidunas.</li>
 <li id="li-170">Belyi functions for hyperbolic hypergeometric-to-Heun transformations -  Mark van Hoeij, Raimundas Vidunas (has application to ABC over number fields at the end)</li>
 <li id="li-171">Some remarks on the S-unit equation in function fields  - Umberto Zannier</li>
-<li id="li-172">A note on integral points on <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> - Mark Watkins</li>
+<li id="li-172">A note on integral points on elliptic curves - Mark Watkins</li>
 <li id="li-173">On Hall’s conjecture - Andrej Dujella (more recent progress)</li>
-<li id="li-174">Hecke Groups, <a knowl="./knowl/def-dessin-denfant.html" title="Definition 2.1.5">Dessins</a> d'Enfants and the Archimedean Solids -  Yang-Hui He, and James Read</li>
+<li id="li-174">Hecke Groups, Dessins d'Enfants and the Archimedean Solids -  Yang-Hui He, and James Read</li>
 <li id="li-175">Belyi functions for Archimedean solids - Nicolas Magot, Alexander Zvonkin (didn't really use this but it's nice!)</li>
 </ol></article></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

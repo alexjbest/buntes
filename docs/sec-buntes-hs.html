@@ -11,7 +11,7 @@
 <title>BUNTES Ricky Show</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-av-jac.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-buntes-vhs.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-av-jac.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-buntes-vhs.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,16 +345,25 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-buntes-hs"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-buntes-hs"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Ricky Show</span>
 </h2>
 <a href="sec-buntes-hs.html" class="permalink">¶</a><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.4.1</span> <span class="title">Moduli of PPAVs</span>
 </h3>
-<p id="p-1124">Recall if \(A/ \CC\) is an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>,  then</p>
+<p id="p-1124">Recall if \(A/ \CC\) is an abelian variety,  then</p>
 <div class="displaymath">
 \begin{equation*}
 A = A(\CC) =  \CC^g/ \Lambda, \,g = \dim (A)
@@ -347,7 +374,7 @@ A = A(\CC) =  \CC^g/ \Lambda, \,g = \dim (A)
 \Lambda \cong H_1(A,\ZZ)
 \end{equation*}
 </div>
-<p>Also a <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> \(\lambda \colon A \to A^\vee\) is equivalent to choosing a <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a></p>
+<p>Also a polarization \(\lambda \colon A \to A^\vee\) is equivalent to choosing a Riemann form</p>
 <div class="displaymath">
 \begin{equation*}
 E \colon \Lambda \times \Lambda \to \ZZ
@@ -362,13 +389,12 @@ E \colon \Lambda \times \Lambda \to \ZZ
 \begin{equation*}
 H(v,w) = E_\RR(iv, w) + i E_\RR(v,w)
 \end{equation*}
-</div>is a positive definite <a knowl="./knowl/def-herm-form.html" title="Definition 5.3.5: Hermitian forms">Hermitian form</a> on \(V\text{.}\)</li>
+</div>is a positive definite Hermitian form on \(V\text{.}\)</li>
 </ol>
-<p>A <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarization</a> corresponds to \(E\) being a perfect pairing.</p>
+<p>A principal polarization corresponds to \(E\) being a perfect pairing.</p>
 <article class="definition-like" id="def-princ-pol-av"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.4.1</span>
-</h6>
-<p id="p-1125">A <dfn class="terminology">PPAV</dfn> (<dfn class="terminology">principally polarized <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a></dfn>) is a pair \((A,\lambda)\text{.}\)</p></article><p id="p-1126">If \((\ZZ^{2g}, \Psi)\) is the standard \(2g\)-dim symplectic form \(\Psi\) then by linear algebra there is a symplectic isomorphism</p>
+<span class="type">Definition</span> <span class="codenumber">5.4.1</span>.</h6>
+<p id="p-1125">A <dfn class="terminology">PPAV</dfn> (<dfn class="terminology">principally polarized abelian variety</dfn>) is a pair \((A,\lambda)\text{.}\)</p></article><p id="p-1126">If \((\ZZ^{2g}, \Psi)\) is the standard \(2g\)-dim symplectic form \(\Psi\) then by linear algebra there is a symplectic isomorphism</p>
 <div class="displaymath">
 \begin{equation*}
 \alpha \colon \ZZ^{2g} \xrightarrow\sim \Lambda
@@ -382,8 +408,7 @@ H(v,w) = E_\RR(iv, w) + i E_\RR(v,w)
 \end{equation*}
 </div>
 <article class="definition-like" id="def-siegel-space"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.4.2</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">5.4.2</span>.</h6>
 <p id="p-1128">The <dfn class="terminology">Siegel upper half space</dfn> is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -392,14 +417,13 @@ H(v,w) = E_\RR(iv, w) + i E_\RR(v,w)
 </div>
 <p>i.e. \(Y\) is pos. def.</p></article><p id="p-1129">Check: \(\mathscr H_1\) is the usual upper half plane.</p>
 <article class="theorem-like" id="proposition-71"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">5.4.3</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">5.4.3</span>.</h6>
 <p id="p-1130">\(\mathscr H_g \cong \Sp_{2g}(\RR)/U(g)\) where \(\Sp_{2g} (R) = \{ M \in \GL_{2g}(R) : M^\transpose J M = J\}\)</p>
 <div class="displaymath">
 \begin{equation*}
 U(g) = O(2g) \cap \Sp_{2g}(\RR) \cap \GL_{g}(\CC)\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-115"><a knowl="" class="id-ref" refid="hk-proof-115"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-115" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1131">(Sketch) First one can show that \(\Sp_{2g}(\RR)\) acts transitively on \(\mathscr H_g\) via linear fractional transformations:</p>
+</div></article><article class="hiddenproof" id="proof-115"><a data-knowl="" class="id-ref" data-refid="hk-proof-115"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-115" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1131">(Sketch) First one can show that \(\Sp_{2g}(\RR)\) acts transitively on \(\mathscr H_g\) via linear fractional transformations:</p>
 <div class="displaymath">
 \begin{equation*}
 M = \begin{pmatrix} A\amp B\\ C\amp D\end{pmatrix} \in \Sp_{2g}(\RR),\, Z\in \mathscr H_g
@@ -425,8 +449,7 @@ M\cdot Z = (AZ+B)(CZ+D)\inv \in \mathscr H_g
 </div>
 <p>then \(ai + b = -c + di\) so \(M= \begin{pmatrix} a\amp b\\ -b \amp a \end{pmatrix}\in \specialorthogonal(2)\text{.}\)</p></article></div>
 <article class="theorem-like" id="proposition-72"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">5.4.4</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">5.4.4</span>.</h6>
 <p id="p-1133">There is a natural bijection between</p>
 <div class="displaymath">
 \begin{equation*}
@@ -438,7 +461,7 @@ M\cdot Z = (AZ+B)(CZ+D)\inv \in \mathscr H_g
 \begin{equation*}
 \{(A,\lambda) \} \xrightarrow \sim \Sp_{2g}(\ZZ) \backslash \mathscr H_g = \Sp_{2g}(\ZZ) \backslash \Sp_{2g} (\RR) / U(g)\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-116"><a knowl="" class="id-ref" refid="hk-proof-116"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-116" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1134">We will construct a map</p>
+</div></article><article class="hiddenproof" id="proof-116"><a data-knowl="" class="id-ref" data-refid="hk-proof-116"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-116" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1134">We will construct a map</p>
 <div class="displaymath">
 \begin{equation*}
 \{(A,\lambda ,\alpha)\} \xrightarrow\sim\Sp_{2g} (\RR)/U(g)
@@ -539,9 +562,9 @@ H^i_\dR(X) \cong H^i(X, \underline \CC) \cong H^i_{\mathrm{sing}}(X, \CC)
 \bar \partial \colon \Omega^{p,q} \to \Omega^{p,q+1}
 \end{equation*}
 </div>
-<p>satisfying \(\bar \partial ^2 = 0\text{.}\) So we can define \(H^{p,q}(X) = \ker \bar \partial/ \image \bar \partial\) (Dolbeaut cohomology).</p>
+<p>satisfying \(\bar \partial ^2 = 0\text{.}\) So we can define \(H^{p,q}(X) = \ker \bar \partial/ \im \bar \partial\) (Dolbeaut cohomology).</p>
 <article class="theorem-like" id="theorem-77"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.4.5</span> <span class="title">Hodge decomposition</span>
+<span class="type">Theorem</span> <span class="codenumber">5.4.5</span>. <span class="title">Hodge decomposition.</span>
 </h6>
 <p id="p-1140">For a compact Kahler manifold (e.g. \(X\) a projective variety) we have</p>
 <div class="displaymath">
@@ -549,17 +572,15 @@ H^i_\dR(X) \cong H^i(X, \underline \CC) \cong H^i_{\mathrm{sing}}(X, \CC)
 H^n_\dR(X) \cong \bigoplus _{p+q =n} H^{p,q}(X)\text{.}
 \end{equation*}
 </div></article><article class="remark-like" id="remark-31"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">5.4.6</span>
-</h6>
+<span class="type">Remark</span> <span class="codenumber">5.4.6</span>.</h6>
 <div class="displaymath" id="p-1141">
 \begin{equation*}
 H^{p,q} (X) \cong H^q( X, \Omega^p)
 \end{equation*}
 </div>
 <p>using \(\bar \partial\) Poincaré lemma</p></article><article class="example-like" id="example-65"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.4.7</span>
-</h6>
-<p id="p-1142">\(E/\CC\) <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>.</p>
+<span class="type">Example</span> <span class="codenumber">5.4.7</span>.</h6>
+<p id="p-1142">\(E/\CC\) elliptic curve.</p>
 <div class="displaymath">
 \begin{equation*}
 H^0_\dR = H^{0,0}
@@ -576,7 +597,7 @@ H^2_\dR = H^{2,0} \oplus H^{1,1} \oplus H^{0,2}
 \end{equation*}
 </div>
 <p>outer terms 0, diamond is  1 , 1 , 1, 1.</p></article><article class="definition-like" id="def-hodge-str"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.4.8</span> <span class="title">Hodge structures</span>
+<span class="type">Definition</span> <span class="codenumber">5.4.8</span>. <span class="title">Hodge structures.</span>
 </h6>
 <p id="p-1143">A <dfn class="terminology">Hodge structure</dfn> on \(V/\RR\) is a \(\ZZ\)-bigrading on \(V_\CC = V \otimes \CC\) such that</p>
 <div class="displaymath">
@@ -585,17 +606,15 @@ H^2_\dR = H^{2,0} \oplus H^{1,1} \oplus H^{0,2}
 \end{equation*}
 </div>
 <p>its of <dfn class="terminology">Hodge type</dfn> \(S\subseteq \ZZ^2\) if \(V^{pq} \ne 0 \) iff \((p,q) \in S\text{,}\)</p></article><article class="example-like" id="example-66"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.4.9</span>
-</h6>
-<p id="p-1144">the Hodge decomposition gives a <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> on \(H^n_{\mathrm{sing}}(X, \RR)\text{.}\)</p></article><p id="p-1145">If \(V\) has a <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> of weight \(n\) (i.e. \(V^{pq} \ne 0\) iff \(p,q = n\)). Then we can recover the <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> from the associated hodge filtration</p>
+<span class="type">Example</span> <span class="codenumber">5.4.9</span>.</h6>
+<p id="p-1144">the Hodge decomposition gives a hodge structure on \(H^n_{\mathrm{sing}}(X, \RR)\text{.}\)</p></article><p id="p-1145">If \(V\) has a hodge structure of weight \(n\) (i.e. \(V^{pq} \ne 0\) iff \(p,q = n\)). Then we can recover the hodge structure from the associated hodge filtration</p>
 <div class="displaymath">
 \begin{equation*}
 \Fil^p V_\CC = \bigoplus_{p' \ge p} V^{p' q}
 \end{equation*}
 </div>
 <article class="example-like" id="example-67"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.4.10</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">5.4.10</span>.</h6>
 <div class="displaymath" id="p-1146">
 \begin{equation*}
 \Fil^0(H^1(E)) = H^{1,0} \oplus H^{0,1}
@@ -610,15 +629,14 @@ H^2_\dR = H^{2,0} \oplus H^{1,1} \oplus H^{0,2}
 \begin{equation*}
 \Fil^2(H^1(E)) = 0
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-26"><a knowl="" class="id-ref" refid="hk-exercise-26"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">5.4.11</span>
-</h6></a></article><div id="hk-exercise-26" class="hidden-content tex2jax_ignore"><article class="exercise-like"><div class="displaymath" id="p-1147">
+</div></article><article class="exercise-like" id="exercise-26"><a data-knowl="" class="id-ref" data-refid="hk-exercise-26"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">5.4.11</span>.</h6></a></article><div id="hk-exercise-26" class="hidden-content tex2jax_ignore"><article class="exercise-like"><div class="displaymath" id="p-1147">
 \begin{equation*}
 V^{p,q} = \Fil^p V \cap \overline {\Fil^q V}
 \end{equation*}
 </div>
 <p>in weight \(n\text{.}\)</p></article></div>
-<article class="paragraphs" id="paragraphs-44"><h5 class="heading"><span class="title">Alternative definition</span></h5>
+<article class="paragraphs" id="paragraphs-44"><h5 class="heading"><span class="title">Alternative definition.</span></h5>
 <div class="displaymath" id="p-1148">
 \begin{equation*}
 \mathbf S = \Res_\RR^\CC \mathbf G_m
@@ -635,25 +653,23 @@ V^{p,q} = \Fil^p V \cap \overline {\Fil^q V}
 \end{equation*}
 </div>
 <article class="theorem-like" id="proposition-73"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">5.4.12</span>
-</h6>
-<p id="p-1149">There is  a natural bijection between morphisms of <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic groups</a></p>
+<span class="type">Proposition</span> <span class="codenumber">5.4.12</span>.</h6>
+<p id="p-1149">There is  a natural bijection between morphisms of algebraic groups</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf S \to \GL(V)
 \end{equation*}
 </div>
-<p>and <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a> on \(V\text{.}\)</p></article><p id="p-1150">Hence for any lie group \(G\) we can define a <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> on \(G\) as a morphism of <a knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic groups</a></p>
+<p>and Hodge structures on \(V\text{.}\)</p></article><p id="p-1150">Hence for any lie group \(G\) we can define a hodge structure on \(G\) as a morphism of algebraic groups</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf S \to G
 \end{equation*}
 </div>
-<p>If \(G \to \GL(V)\) is a faithful rep this induces a <a knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> on \(V\text{.}\)</p>
+<p>If \(G \to \GL(V)\) is a faithful rep this induces a hodge structure on \(V\text{.}\)</p>
 <article class="definition-like" id="definition-113"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.4.13</span>
-</h6>
-<p id="p-1151">A <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> of a HS \(h\colon \mathbf S \to \GL(v)\) is an alternating bilinear form</p>
+<span class="type">Definition</span> <span class="codenumber">5.4.13</span>.</h6>
+<p id="p-1151">A polarization of a HS \(h\colon \mathbf S \to \GL(v)\) is an alternating bilinear form</p>
 <div class="displaymath">
 \begin{equation*}
 \Psi \colon V\times V \to \RR
@@ -673,17 +689,19 @@ V^{p,q} = \Fil^p V \cap \overline {\Fil^q V}
 </div></li>
 </ol></article></article></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

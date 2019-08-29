@@ -11,10 +11,10 @@
 
 <xsl:template match="chapter[not(title='Abelian Varieties')][.|*]" />
 <xsl:template match="chapter[not(title='Rigid Cohomology')][.|*]" />
-<xsl:template match="section[@xml:id='sec-coleman-tannakian'][.|*]" />
 <xsl:template match="chapter[not(@xml:id='chapter-explicit-coleman-larger-characteristic')][.|*]" />
 <xsl:template match="chapter[not(@xml:id='chapter-elementary-nt')][.|*]" />
 <xsl:template match="frontmatter[.|*]" />
 <xsl:template match="backmatter[.|*]" />
+<xsl:template match="section[not(@xml:id='sec-explicit-deformations')][.|*]" />
 -->
 </xsl:stylesheet>

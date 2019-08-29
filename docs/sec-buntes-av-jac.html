@@ -11,7 +11,7 @@
 <title>BUNTES Abelian varieties and Jacobians (Angus)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-buntes-modular-forms.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-buntes-hs.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-buntes-modular-forms.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-shimura.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-buntes-hs.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac" class="active">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,21 +345,29 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-buntes-av-jac"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-buntes-av-jac"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Abelian varieties and Jacobians (Angus)</span>
 </h2>
 <a href="sec-buntes-av-jac.html" class="permalink">¶</a><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Background</span>
 </h3>
 <article class="definition-like" id="definition-103"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.1</span>
-</h6>
-<p id="p-1089">An <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> is any one of the following</p>
+<span class="type">Definition</span> <span class="codenumber">5.3.1</span>.</h6>
+<p id="p-1089">An elliptic curve is any one of the following</p>
 <ol class="decimal">
-<li id="li-275">Smooth projective curve of <a knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> 1 with  a marked rational point.</li>
+<li id="li-275">Smooth projective curve of genus 1 with  a marked rational point.</li>
 <li id="li-276">A smooth projective curve with a group law</li>
 <li id="li-277">if \(k \subseteq \CC\) we have<div class="displaymath">
 \begin{equation*}
@@ -373,17 +399,15 @@ P \mapsto [P] - [0]\text{.}
 \end{equation*}
 </div>
 <article class="definition-like" id="definition-104"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.2</span>
-</h6>
-<p id="p-1092">An <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> is a proper irreducible variety with a group law given by regular functions.</p></article><article class="remark-like" id="remark-27"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">5.3.3</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">5.3.2</span>.</h6>
+<p id="p-1092">An abelian variety is a proper irreducible variety with a group law given by regular functions.</p></article><article class="remark-like" id="remark-27"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">5.3.3</span>.</h6>
 <ol id="p-1093" class="decimal">
 <li id="li-279">In this definition proper is equivalent to projective.</li>
 <li id="li-280">
 <p id="p-1094">The rigidity theorem tells us:</p>
 <ol class="lower-alpha">
-<li id="li-281">Any morphism of <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> that preserves the identity is a homomorphism.</li>
+<li id="li-281">Any morphism of abelian varieties that preserves the identity is a homomorphism.</li>
 <li id="li-282">Abelian varieties are abelian</li>
 </ol>
 </li>
@@ -391,21 +415,20 @@ P \mapsto [P] - [0]\text{.}
 <span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Ablelian varieties over \(\CC\)</span>
 </h3>
 <article class="theorem-like" id="proposition-69"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">5.3.4</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">5.3.4</span>.</h6>
 <p id="p-1095">Let \(A/k\subseteq \CC\) then</p>
 <div class="displaymath">
 \begin{equation*}
 A(\CC) = \CC^g/\Lambda
 \end{equation*}
 </div>
-<p>where \(g = \dim A\) and \(\Lambda \subseteq \CC^g\) is a rank \(2g\) <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>.</p></article><article class="hiddenproof" id="proof-111"><a knowl="" class="id-ref" refid="hk-proof-111"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-111" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1096">The lie algebra \(\Lie(A(\CC))\) is a complex vector space of dimension \(g\text{.}\) We have the exponential</p>
+<p>where \(g = \dim A\) and \(\Lambda \subseteq \CC^g\) is a rank \(2g\) lattice.</p></article><article class="hiddenproof" id="proof-111"><a data-knowl="" class="id-ref" data-refid="hk-proof-111"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-111" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1096">The lie algebra \(\Lie(A(\CC))\) is a complex vector space of dimension \(g\text{.}\) We have the exponential</p>
 <div class="displaymath">
 \begin{equation*}
 \exp \colon \Lie(A(\CC)) \to A(\CC)
 \end{equation*}
 </div>
-<p>which is surjective onto the connected component of the identity, and locally at \(0\) a diffeomorphism. So \(\exp\) surjects. Since its locally isomorphic at \(0\) we have \(\ker(\exp)\) discrete and hence a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>. \(A \) proper means \(A(\CC)\) is compact so</p>
+<p>which is surjective onto the connected component of the identity, and locally at \(0\) a diffeomorphism. So \(\exp\) surjects. Since its locally isomorphic at \(0\) we have \(\ker(\exp)\) discrete and hence a lattice. \(A \) proper means \(A(\CC)\) is compact so</p>
 <div class="displaymath">
 \begin{equation*}
 \rank \ker (\exp) = 2g\text{.}
@@ -417,11 +440,11 @@ A(\CC) = \CC^g/\Lambda
 \{\text{AVs}/\CC\} \to \{\text{complex tori}\}
 \end{equation*}
 </div>
-<p>but this is not surjective. Which <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> give AVs?</p>
+<p>but this is not surjective. Which lattices give AVs?</p>
 <article class="definition-like" id="def-herm-form"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.5</span> <span class="title">Hermitian forms</span>
+<span class="type">Definition</span> <span class="codenumber">5.3.5</span>. <span class="title">Hermitian forms.</span>
 </h6>
-<p id="p-1098">Let \(V\) be a \(\CC\)-vector space and \(\Lambda \subseteq V\) be a full <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>. A <dfn class="terminology">Hermitian form</dfn> on \(V\) is a function</p>
+<p id="p-1098">Let \(V\) be a \(\CC\)-vector space and \(\Lambda \subseteq V\) be a full lattice. A <dfn class="terminology">Hermitian form</dfn> on \(V\) is a function</p>
 <div class="displaymath">
 \begin{equation*}
 H \colon V\times V \to \CC
@@ -433,19 +456,17 @@ H \colon V\times V \to \CC
 H(u,v) = \overline{H(v,u)}
 \end{equation*}
 </div>
-<p>A <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a> on \((V,\Lambda)\) is a positive definite <a knowl="./knowl/def-herm-form.html" title="Definition 5.3.5: Hermitian forms">Hermitian form</a> on \(V\) s.t. \(\im(H|_V) \colon \Lambda \to \ZZ\text{.}\)</p></article><article class="theorem-like" id="proposition-70"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">5.3.6</span>
-</h6>
+<p>A Riemann form on \((V,\Lambda)\) is a positive definite Hermitian form on \(V\) s.t. \(\im(H|_V) \colon \Lambda \to \ZZ\text{.}\)</p></article><article class="theorem-like" id="proposition-70"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">5.3.6</span>.</h6>
 <p id="p-1099">We have a bijection</p>
 <div class="displaymath">
 \begin{equation*}
 \{\text{AVs}/\CC\} \leftrightarrow \{(V,\Lambda)\text{ s.t. there is a Riemann form on } (V, \Lambda)\}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-112"><a knowl="" class="id-ref" refid="hk-proof-112"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-112" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1100">Swinnerton-Dyer analytic theory of AVs ch.2.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-112"><a data-knowl="" class="id-ref" data-refid="hk-proof-112"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-112" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1100">Swinnerton-Dyer analytic theory of AVs ch.2.</p></article></div>
 <article class="example-like" id="example-64"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.3.7</span>
-</h6>
-<p id="p-1101">For an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E(\CC) = \CC/ \ZZ \omega_1 + \ZZ \omega_2\)</p>
+<span class="type">Example</span> <span class="codenumber">5.3.7</span>.</h6>
+<p id="p-1101">For an elliptic curve \(E(\CC) = \CC/ \ZZ \omega_1 + \ZZ \omega_2\)</p>
 <div class="displaymath">
 \begin{equation*}
 H(u,v) = u\bar v/ \im(\omega_1 \bar \omega_2)\text{.}
@@ -454,8 +475,7 @@ H(u,v) = u\bar v/ \im(\omega_1 \bar \omega_2)\text{.}
 <span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">Jacobian varieties</span>
 </h3>
 <article class="definition-like" id="definition-106"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.8</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">5.3.8</span>.</h6>
 <p id="p-1102">Given \(X\) a curve</p>
 <div class="displaymath">
 \begin{equation*}
@@ -463,17 +483,15 @@ H(u,v) = u\bar v/ \im(\omega_1 \bar \omega_2)\text{.}
 \end{equation*}
 </div>
 <p>this is some abelian group.</p></article><article class="theorem-like" id="theorem-74"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.3.9</span>
-</h6>
-<p id="p-1103">Let \(X\) be a <a knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> \(g\) curve \(/k\text{.}\) Then there exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(\Jac(X)/k\) of \(\dim = g\) s.t.</p>
+<span class="type">Theorem</span> <span class="codenumber">5.3.9</span>.</h6>
+<p id="p-1103">Let \(X\) be a genus \(g\) curve \(/k\text{.}\) Then there exists an abelian variety \(\Jac(X)/k\) of \(\dim = g\) s.t.</p>
 <div class="displaymath">
 \begin{equation*}
 \Jac(X)(L) = \Pic^0(X\otimes L)
 \end{equation*}
 </div></article><article class="remark-like" id="remark-28"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">5.3.10</span>
-</h6>
-<p id="p-1104">This is false as stated unless \(X(k) \ne \emptyset\text{.}\)</p></article><article class="hiddenproof" id="proof-113"><a knowl="" class="id-ref" refid="hk-proof-113"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-113" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1105">Idea: Pick \(P_0 \in X(k)\) we have a bijection</p>
+<span class="type">Remark</span> <span class="codenumber">5.3.10</span>.</h6>
+<p id="p-1104">This is false as stated unless \(X(k) \ne \emptyset\text{.}\)</p></article><article class="hiddenproof" id="proof-113"><a data-knowl="" class="id-ref" data-refid="hk-proof-113"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-113" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1105">Idea: Pick \(P_0 \in X(k)\) we have a bijection</p>
 <div class="displaymath">
 \begin{equation*}
 \divisors^0(X) \to \divisors^r(X)
@@ -491,8 +509,8 @@ X^r \to X^r/ S_r = X^{(r)} \to \divisors^r(X)
 \end{equation*}
 </div>
 <p>we can construct \(\Jac(X)\) as a quotient of \(X^{(r)}\) full details Milne AVs ch. 2.</p></article></div>
-<article class="paragraphs" id="paragraphs-41"><h5 class="heading"><span class="title">Jacobians over \(\CC\)</span></h5>
-<p id="p-1106">Given \(X\) a compact <a knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a> of <a knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> \(g\) then</p>
+<article class="paragraphs" id="paragraphs-41"><h5 class="heading"><span class="title">Jacobians over \(\CC\).</span></h5>
+<p id="p-1106">Given \(X\) a compact Riemann surface of genus \(g\) then</p>
 <div class="displaymath">
 \begin{equation*}
 H^0(X, \Omega_X^1) \simeq \CC^g
@@ -528,9 +546,8 @@ J(X) = H^0(X, \Omega_X^1) ^\vee/H_1(X,\ZZ)
 \end{equation*}
 </div>
 <article class="theorem-like" id="theorem-75"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.3.11</span>
-</h6>
-<p id="p-1107">\(J(X) \) is the \(\CC\) points of an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\CC\text{.}\) Further the map</p>
+<span class="type">Theorem</span> <span class="codenumber">5.3.11</span>.</h6>
+<p id="p-1107">\(J(X) \) is the \(\CC\) points of an abelian variety over \(\CC\text{.}\) Further the map</p>
 <div class="displaymath">
 \begin{equation*}
 \Pic^0(X) \to J(X)
@@ -541,7 +558,7 @@ J(X) = H^0(X, \Omega_X^1) ^\vee/H_1(X,\ZZ)
 [P] - [Q] \mapsto (\omega \mapsto \int^P_Q \omega)
 \end{equation*}
 </div>
-<p>is an isomorphism of abelian groups.</p></article><article class="hiddenproof" id="proof-114"><a knowl="" class="id-ref" refid="hk-proof-114"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-114" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1108">For the first claim we need a <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a> on</p>
+<p>is an isomorphism of abelian groups.</p></article><article class="hiddenproof" id="proof-114"><a data-knowl="" class="id-ref" data-refid="hk-proof-114"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-114" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1108">For the first claim we need a Riemann form on</p>
 <div class="displaymath">
 \begin{equation*}
 (H^0(X, \Omega_X^1)^\vee , H_1(X,\ZZ))
@@ -559,8 +576,7 @@ H_1(X, \ZZ) \times H_1(X, \ZZ) \to \ZZ
 \end{equation*}
 </div></article></div>
 <article class="remark-like" id="remark-29"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">5.3.12</span>
-</h6>
+<span class="type">Remark</span> <span class="codenumber">5.3.12</span>.</h6>
 <p id="p-1109">In this case we see</p>
 <div class="displaymath">
 \begin{equation*}
@@ -570,7 +586,7 @@ H_1(X, \ZZ) \times H_1(X, \ZZ) \to \ZZ
 <p>this is true in general.</p></article></article></section><section class="subsection" id="subsection-81"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.4</span> <span class="title">Some constructions/properties of AVs</span>
 </h3>
-<p id="p-1110">Let \(A,B\) be AVs\(/k\text{.}\) Any identity preserving morphism \(\phi \colon A \to B\) is a homomorphism. Such a homomorphism is called an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> if it surjective with finite kernel. i.e. \(\lb n \rb \colon A \to A\) is an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> and for \(\characteristic(k) \nmid n\text{.}\)</p>
+<p id="p-1110">Let \(A,B\) be AVs\(/k\text{.}\) Any identity preserving morphism \(\phi \colon A \to B\) is a homomorphism. Such a homomorphism is called an isogeny if it surjective with finite kernel. i.e. \(\lb n \rb \colon A \to A\) is an isogeny and for \(\characteristic(k) \nmid n\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 A[n] \simeq (\ZZ/n)^{2g}
@@ -588,7 +604,7 @@ T_lA = \varprojlim_n A[l^n] \simeq \ZZ_l^{2g}
 H^1_{\et} (A, \ZZ_l) \simeq T_lA ^\vee
 \end{equation*}
 </div>
-<p>we can also consider \(\Pic^0(A)\text{.}\) There exists an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a></p>
+<p>we can also consider \(\Pic^0(A)\text{.}\) There exists an abelian variety</p>
 <div class="displaymath">
 \begin{equation*}
 \hat A/l
@@ -600,7 +616,7 @@ H^1_{\et} (A, \ZZ_l) \simeq T_lA ^\vee
 \hat A (L) = \Pic^0(A \otimes L)
 \end{equation*}
 </div>
-<p>this is called the <a knowl="./knowl/def-dual-abvar.html" title="Definition 1.7.13: Dual abelian varieties">dual abelian variety</a>. So earlier we saw \(\hat E \simeq E\text{.}\) in general \(\hat A \not \simeq  A\text{.}\)</p>
+<p>this is called the dual abelian variety. So earlier we saw \(\hat E \simeq E\text{.}\) in general \(\hat A \not \simeq  A\text{.}\)</p>
 <p id="p-1111">However for an ample divisor \(D\) we get an isog</p>
 <div class="displaymath">
 \begin{equation*}
@@ -612,14 +628,14 @@ H^1_{\et} (A, \ZZ_l) \simeq T_lA ^\vee
 P \mapsto t_P^* D -D
 \end{equation*}
 </div>
-<p>an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi\colon A\to \hat A\) is a <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> if</p>
+<p>an isogeny \(\phi\colon A\to \hat A\) is a polarization if</p>
 <div class="displaymath">
 \begin{equation*}
 \phi =  \phi_D /\bar k
 \end{equation*}
 </div>
-<p>over \(\CC\)  a <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> is equivalent to a choice of <a knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a>.</p>
-<p id="p-1112">A <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarization</a> is a <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> which is an isomorphism. e.g.</p>
+<p>over \(\CC\)  a polarization is equivalent to a choice of Riemann form.</p>
+<p id="p-1112">A principal polarization is a polarization which is an isomorphism. e.g.</p>
 <div class="displaymath">
 \begin{equation*}
 \phi_{[0]} \colon E \to \hat E
@@ -631,19 +647,17 @@ P \mapsto [P] - [0]
 \end{equation*}
 </div>
 <article class="remark-like" id="remark-30"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">5.3.13</span>
-</h6>
-<p id="p-1113">Jacobian varieties always admit <a knowl="./knowl/def-polarization.html" title="Definition 1.9.1: Polarizations">principal polarizations</a>.</p></article><p id="p-1114">On \(T_lA \) we have  a <a knowl="./knowl/prop-weil-pair.html" title="Proposition 1.3.20: Existence of Weil pairing">Weil pairing</a></p>
+<span class="type">Remark</span> <span class="codenumber">5.3.13</span>.</h6>
+<p id="p-1113">Jacobian varieties always admit principal polarizations.</p></article><p id="p-1114">On \(T_lA \) we have  a Weil pairing</p>
 <div class="displaymath">
 \begin{equation*}
 T_lA \times T_lA^\vee \to \ZZ_l
 \end{equation*}
 </div>
-<article class="paragraphs" id="paragraphs-42"><h5 class="heading"><span class="title">Maps between Jacobians</span></h5>
+<article class="paragraphs" id="paragraphs-42"><h5 class="heading"><span class="title">Maps between Jacobians.</span></h5>
 <p id="p-1115">Let \(X,Y/k\) be curves and \(f\colon X \to Y\) a morphism.</p>
 <article class="definition-like" id="definition-107"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.14</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">5.3.14</span>.</h6>
 <p id="p-1116">We have a pushforward map</p>
 <div class="displaymath">
 \begin{equation*}
@@ -666,10 +680,9 @@ f^* \colon \Pic^0(Y) \to \Pic^0(X)
 \sum n_y[y] \mapsto \sum n_y [f\inv (y)]
 \end{equation*}
 </div>
-<p>(with <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a>).</p></article><p id="p-1117">We want further maps between jacobians</p>
+<p>(with multiplicity).</p></article><p id="p-1117">We want further maps between jacobians</p>
 <article class="definition-like" id="definition-108"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.15</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">5.3.15</span>.</h6>
 <p id="p-1118">A correspondence between \(X,Y\) is a curve \(Z\) and a pair of finite morphisms.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -686,7 +699,7 @@ T_* = g_* f^* \colon \Pic^0(X) \to \Pic^0(Y)
 \begin{equation*}
 T^* = f_* g^* \colon \Pic^0(Y) \to \Pic^0(X)
 \end{equation*}
-</div></article></article><article class="paragraphs" id="paragraphs-43"><h5 class="heading"><span class="title">Modular jacobians and Hecke correspondences</span></h5>
+</div></article></article><article class="paragraphs" id="paragraphs-43"><h5 class="heading"><span class="title">Modular jacobians and Hecke correspondences.</span></h5>
 <p id="p-1119">Consider \(p\nmid N\) we have</p>
 <div class="displaymath">
 \begin{equation*}
@@ -700,8 +713,7 @@ X_0(pN) = \{(E,C_{pN})\} = \{(E,C_N,C_p)\}
 </div>
 <p>so we have</p>
 <article class="definition-like" id="definition-109"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">5.3.16</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">5.3.16</span>.</h6>
 <p id="p-1120">the Hecke correspondence \(T_p\) on \(X_0(N)\) is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -725,21 +737,23 @@ T_p \colon J_0(N) \to J_0(N)
 </div>
 <p id="p-1122">One can consider \(J_0(N)_{\FF_p}\)</p>
 <article class="theorem-like" id="theorem-76"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">5.3.17</span> <span class="title">Eichler-Shimura</span>
+<span class="type">Theorem</span> <span class="codenumber">5.3.17</span>. <span class="title">Eichler-Shimura.</span>
 </h6>
 <p id="p-1123">\(T_{p*} = \Frob_p + p \Frob_p\inv \in \End(J_0(N)_{\FF_p})\text{.}\)</p></article></article></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

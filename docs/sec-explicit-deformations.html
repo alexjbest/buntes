@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Explicit deformation spaces (Alex)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gp-reps-buntes.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-flt.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gp-reps-buntes.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-flt.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations" class="active">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-explicit-deformations"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">Explicit deformation spaces (Alex)</span>
+</h2>
+<a href="sec-explicit-deformations.html" class="permalink">¶</a><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.1</span> <span class="title">Set-up</span>
+</h3>
+<p id="p-1314">References, Gouvea chapter 5. [<a data-knowl="./knowl/bib-arith-alg-geom.html" title="Bibliographic Entry 1: Arithmetic algebraic geometry">1</a>, <a data-knowl="./knowl/bib-boston-explicit.html" title="Bibliographic Entry 25: Explicit deformation of Galois representations">25</a>, <a data-knowl="./knowl/bib-boston-mazur.html" title="Bibliographic Entry 26: Explicit universal deformations of Galois representations">26</a>].</p>
+<p id="p-1315">We have so far discussed the existence of the universal deformation and some of its properties, now we want to really get our hands on this functor. We do this by relating the residual representation to field extensions.</p>
+<p id="p-1316">As usual, \(S\ni p, \infty\) a finite set of places and \(\QQ_S/\QQ\) the maximal extension unramified outside of \(S\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+\Pi = G_{\QQ,S} = \Gal{\QQ_S}{\QQ}\text{.}
+\end{equation*}
+</div>
+<p id="p-1317">We assume that \(C(\bar\rho )= k\) (or that \(\bar\rho\) is absolutely irreducible).</p>
+<p id="p-1318">We can let \(\Pi_0 = \ker(\bar \rho) \subseteq \Pi\) and \(K  = \ker(\Pi_0)\) so that we have</p>
+<figure class="figure-like" id="figure-2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-2.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">6.3.1.</span> </figcaption></figure><p id="p-1319">If</p>
+<div class="displaymath">
+\begin{equation*}
+\rho \colon \Pi \to \GL_n(\mathcal R)
+\end{equation*}
+</div>
+<p>is the universal deformation of \(\bar\rho\) then we can consider</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma_n(\mathcal R) = \ker (\GL_n(\mathcal R) \to \GL_n(k))
+\end{equation*}
+</div>
+<p>which has the property that</p>
+<div class="displaymath">
+\begin{equation*}
+\rho(\gamma) \in \Gamma_n(\mathcal R),\,\forall \gamma \in \Pi_0\text{.}
+\end{equation*}
+</div>
+<p>So we can restrict</p>
+<div class="displaymath">
+\begin{equation*}
+\rho|_{\Pi_0} \colon \Pi_0 \to \Gamma_n(\mathcal R)\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="proposition-76"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">6.3.2</span>.</h6>
+<p id="p-1320">Group theoretically \(\Gamma_n(\mathcal R)\) is a pro-\(p\)-group.</p></article><article class="hiddenproof" id="proof-124"><a data-knowl="" class="id-ref" data-refid="hk-proof-124"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-124" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1321">This is as</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal R = \varprojlim_k \mathcal R/ \ideal m ^k
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma_n(\mathcal R) = \varprojlim_k \Gamma_n(\mathcal R/ \ideal m ^k)
+\end{equation*}
+</div>
+<p>now we can induct using that</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma_n(R/\ideal m)  = \Gamma_n(k) = \{1\}
+\end{equation*}
+</div>
+<p>is trivially a \(p\)-group.</p>
+<p id="p-1322">Now each transition map</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma_n(R/\ideal m ^k) \to \Gamma_ n( R/\ideal  m^{k-1})
+\end{equation*}
+</div>
+<p>has image a \(p\)-group and the kernel is</p>
+<div class="displaymath">
+\begin{equation*}
+G_r \coloneqq 1 + M_n(\ideal m^{k-1}/\ideal m^{k})
+\end{equation*}
+</div>
+<p>which is isomorphic to</p>
+<div class="displaymath">
+\begin{equation*}
+M_n(\ideal m^{k-1}/\ideal m^{k})\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-1323">So in fact the map</p>
+<div class="displaymath">
+\begin{equation*}
+\rho|_{\Pi_0} \colon \Pi_0 \to \Gamma_n(\mathcal R)
+\end{equation*}
+</div>
+<p>factors through the maximal (continuous) pro-\(p\) quotient of \(\Pi_0\text{,}\) call this \(P\text{.}\)</p>
+<p id="p-1324">This quotient is the galois group of, \(L\text{,}\) the maximal pro-\(p\)-extension of \(K\text{,}\) which is unramified above all primes of \(K\) above \(S\text{,}\) call this set \(S_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+P = \Gal L K\text{.}
+\end{equation*}
+</div>
+<p id="p-1325">Now letting</p>
+<div class="displaymath">
+\begin{equation*}
+\tilde \Pi = \Gal L \QQ
+\end{equation*}
+</div>
+<p>we have the exact sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to P \to \tilde \Pi \to  \im (\bar \rho)  \to 0\text{.}
+\end{equation*}
+</div>
+<p id="p-1326">So to understand deformations of \(\bar \rho\) we have to understand maps</p>
+<div class="displaymath">
+\begin{equation*}
+P \to \Gamma_n(R)
+\end{equation*}
+</div>
+<p>and then how to extend to \(\tilde \Pi\) so that they deform \(\bar\rho\text{.}\)</p>
+<p id="p-1327">In order to get a handle on this we make the following assumption:</p>
+<article class="definition-like" id="def-tame-rep"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.3.3</span>. <span class="title">Tame residual representations.</span>
+</h6>
+<p id="p-1328">A residual representation is <dfn class="terminology">tame</dfn> if</p>
+<div class="displaymath">
+\begin{equation*}
+p \nmid \# \im(\bar\rho)\text{.}
+\end{equation*}
+</div></article><p id="p-1329">The significance of this is that</p>
+<div class="displaymath">
+\begin{equation*}
+\tilde \Pi
+\end{equation*}
+</div>
+<p>is a profinite group with a normal \(p\)-Sylow subgroup \(P\text{.}\)</p></section><section class="subsection" id="subsection-95"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.2</span> <span class="title">Some group theory</span>
+</h3>
+<p id="p-1330">Now we recall / learn for the first time some group theoretic results that will be our workhorses today.</p>
+<p id="p-1331">If \(G\) is a profinite group with a normal Sylow \(p\)-subgroup \(P\) of finite index that is topologically finitely generated.</p>
+<article class="theorem-like" id="proposition-77"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">6.3.4</span>. <span class="title">Schur-Zassenhaus.</span>
+</h6>
+<p id="p-1332">With the above notation \(G\) contains a subgroup \(A\) mapping isomorphically onto \(G/P\) (any two such subgroups are conjugate by an element of \(P\)).</p></article><p id="p-1333">This says that for Sylow \(p\)-subgroups all extensions are split (i.e. semidirect products).</p>
+<p id="p-1334">Moreover if we let \(\overline P\) be the #</p>
+<article class="definition-like" id="definition-128"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.3.5</span>. <span class="title">Frattini quotient.</span>
+</h6>
+<p id="p-1335">Let \(P\) be a pro-\(p\)-group, then</p>
+<div class="displaymath">
+\begin{equation*}
+\overline P
+\end{equation*}
+</div>
+<p>is the maximal elementary abelian \(p\)-group quotient (recall this is the additive group of a (possibly infinite) vector space over \(\FF_p\)).</p></article><p id="p-1336">This can equivalently be defined as the quotient by the Frattini subgroup, \(\Phi(P)\) of \(P\text{,}\) which is the intersection of all maximal subgroups, and can be obtained as the set of all non-generators (the elements that can be removed from any generating set).</p>
+<article class="example-like" id="example-78"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.3.6</span>.</h6>
+<p id="p-1337">If \(P\) is the cyclic group \(\ZZ/p^2\) we have the maximal sub \(p\ZZ/p^2\) and the quotient \(\ZZ/p\text{.}\) Or the Heisenberg group</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{pmatrix} 1 \amp a \amp b \\ 0 \amp 1 \amp c \\ 0 \amp 0 \amp 1\end{pmatrix}
+\end{equation*}
+</div>
+<p>we get Frattini subgroup</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{pmatrix} 1 \amp 0 \amp b \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1\end{pmatrix}
+\end{equation*}
+</div>
+<p>and quotient</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{pmatrix} 1 \amp a \amp 0 \\ 0 \amp 1 \amp c \\ 0 \amp 0 \amp 1\end{pmatrix}\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="proposition-78"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">6.3.7</span>. <span class="title">Burnside's basis theorem.</span>
+</h6>
+<p id="p-1338">If \(x_1, \ldots, x_d \in P\) generate the quotient \(\overline P\) then they generate \(P\text{.}\)</p></article><p id="p-1339">So we can understand generators of \(P\) by understanding those of \(\overline P\text{!}\)</p>
+<p id="p-1340">In fact Boston has strengthened this to</p>
+<article class="theorem-like" id="thm-boston-strengthening"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.3.8</span>.</h6>
+<p id="p-1341">Let \(G\) be a profinite group with  a normal \(p\)-Sylow subgroup \(P\) of finite index in \(G\) and \(A\) a subgroup of \(G\) that maps isomorphically to \(G/P\) (note \(A\) is finite). Then if \(A\) acts on \(P\) and \(\overline P\) by conjugation (so that \(\overline P\) is a \(\FF_p\lb A \rb\)-module) and</p>
+<div class="displaymath">
+\begin{equation*}
+\overline V \subset \overline P
+\end{equation*}
+</div>
+<p>is an \(\FF_p\lb A \rb\)-submodule. Then there is an \(A\)-invariant subgroup \(V\subseteq P\) which maps onto \(\overline V\) and has \(\dim _{\FF_p}\overline V\) generators.</p></article><article class="example-like" id="example-79"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.3.9</span>.</h6>
+<p id="p-1342">If \(\overline V\) is just \(\FF_p\) (written multiplicatively) then an invariant submodule is an</p>
+<div class="displaymath">
+\begin{equation*}
+\overline x \in \overline P
+\end{equation*}
+</div>
+<p>for which</p>
+<div class="displaymath">
+\begin{equation*}
+a\inv \overline x a =  \overline x ^{\phi(a)}
+\end{equation*}
+</div>
+<p>for some character</p>
+<div class="displaymath">
+\begin{equation*}
+\phi \colon A \to  \FF_p^\times
+\end{equation*}
+</div>
+<p>this then lifts to</p>
+<div class="displaymath">
+\begin{equation*}
+x\in P : a\inv x a =  x ^{\phi'(a)}
+\end{equation*}
+</div>
+<p>where \(\phi' = \text{teich}\circ \phi\colon A \to \ZZ_p^\times\) .</p></article><p id="p-1343">and also shows</p>
+<article class="theorem-like" id="lemma-27"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">6.3.10</span>.</h6>
+<p id="p-1344">Up to isomorphism there is precisely one semidirect product of \(P\) and \(A\) with given \(A\) action on \(\overline P\text{.}\)</p></article><p id="p-1345">Let \(H \subseteq \GL_n(k)\text{.}\)</p>
+<article class="definition-like" id="definition-129"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.3.11</span>.</h6>
+<p id="p-1346">A \(k\lb H\rb\)-module \(V\) is prime to adjoint if \(\Ad(H) = M_n(k)\) and \(V\) have no irreducible subrepresentations in common.</p></article><p id="p-1347">Let</p>
+<div class="displaymath">
+\begin{equation*}
+Z_S = \left\{ x \in K^\times : (x) = I^p \text{ for some }I,x_v = y_v^p \in K_v\forall v\in S_1\right\}
+\end{equation*}
+</div>
+<p>a group for which</p>
+<div class="displaymath">
+\begin{equation*}
+Z_S\supseteq {K^\times}^p
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+B_S = Z_S/ {K^\times}^p
+\end{equation*}
+</div>
+<p>which is an elementary abelian \(p\)-group.</p>
+<p id="p-1348">As Galois \(H\) acts on \(Z_S, {K^\times}^p\) we have that \(B_S\) is a \(\FF_p\lb H \rb\)-module.</p>
+<p id="p-1349">For a pro-\(p\)-group \(P\) Let \(d(P),r(P)\) be ranks of minimal sets of generators and relations for \(P\text{,}\) i.e. the cardinality of a minimal set of generators of \(P\) and relations when viewing \(P\) as a quotient of a free pro-\(p\)-group.</p>
+<p id="p-1350">Write \(\delta(F) = 1\) if \(\mu_p \subseteq F\text{,}\) \(\delta(F) = 0\) otw. The significance of these is related to the fact that for certain local fields this is exactly the relation rank!</p>
+<article class="theorem-like" id="theorem-90"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.3.12</span>. <span class="title">Koch, H., Galoissche Theorie der p-Erweiterungen..</span>
+</h6>
+<div class="displaymath" id="p-1351">
+\begin{equation*}
+r(P) =  \left(\sum_{v\in S_1} \delta(K_v) \right) - \delta (K) + \dim_{\FF_p} B_S
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+d(P) = r_2(K) + 1 + r(P)
+\end{equation*}
+</div>
+<p>so \(P\) is topologically f.g.</p></article><p id="p-1352">If \(p \nmid h_K\) global class field theory gives a map from the idele class group of \(L\) to \(P\) which induces a map on Frattini quotients and leads to: the exact sequence of \(\FF_p\lb H \rb\)-modules</p>
+<div class="displaymath">
+\begin{equation*}
+0  \to B_S \to \overline{\ints_K^\times}  \to \bigoplus_{v\in S_1}\overline{\ints_{K_v}^\times} \to \overline P \to 0\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="thm-boston-mazur"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.3.13</span>. <span class="title">Boston-Mazur.</span>
+</h6>
+<p id="p-1353">If \(p\nmid \# H\) then as \(\FF_p\lb H \rb\)-modules</p>
+<div class="displaymath">
+\begin{equation*}
+\bigoplus_{v\in S_1} \overline \ints^\times_v  \cong \FF_p\lb H \rb \oplus \left( \bigoplus_{l\in S} \Ind_{H_l}^H \mu_p \right)
+\end{equation*}
+</div>
+<p>sum over decomposition subgroups</p>
+<div class="displaymath">
+\begin{equation*}
+\overline \ints_K^\times \oplus \FF_p \cong \mu_p \oplus \Ind_{H_\infty}^H \FF_p
+\end{equation*}
+</div>
+<p>\(H_\infty = \langle \overline \cdot \rangle\text{.}\)</p></article><p id="p-1354">Assume \(\bar \rho\) tame now. \(P\) is normal pro-\(p\)-Sylow subgroup of \(\tilde \Pi\text{,}\) and some \(A \twoheadrightarrow G/P = H\) so \(\tilde \Pi = H \rtimes P\) . As \(\Gamma_n(W(k))\) is pro-\(p\) by Schur-Zassenhaus we have</p>
+<div class="displaymath">
+\begin{equation*}
+H_1 \subseteq \GL_n(W(k))
+\end{equation*}
+</div>
+<p>with \(H \cong H_1\) so we can find a lift</p>
+<div class="displaymath">
+\begin{equation*}
+\rho_1 \colon \tilde H \to \GL_n(W(k))
+\end{equation*}
+</div>
+<p>which induces an isomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+A \xrightarrow\sim H_1
+\end{equation*}
+</div>
+<p>we denote</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma \colon A \to \GL_n(W(k))\text{.}
+\end{equation*}
+</div>
+<p id="p-1355">Given a coefficient ring \(R\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+W(k) \to R
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_R \colon A \to \GL_n(R) \supseteq \Gamma_n(R)
+\end{equation*}
+</div>
+<p>and \(A\) acts on \(\Gamma_n(R)\) via conjugation.</p>
+<p id="p-1356">Let</p>
+<div class="displaymath">
+\begin{equation*}
+E_{\bar \rho} \colon \mathcal C \to \Set
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+E_{\bar \rho} (R) = \Hom_A(P, \Gamma_n(R))\text{.}
+\end{equation*}
+</div>
+<p id="p-1357">Then we have a natural morphism</p>
+<div class="displaymath">
+\begin{equation*}
+E_{\bar \rho} \to D_{\bar \rho}
+\end{equation*}
+</div>
+<p>given by</p>
+<div class="displaymath">
+\begin{equation*}
+\phi\in E_{\bar \rho}(R) \mapsto\tilde \Pi = A \rtimes P \xrightarrow{\sigma_R, \phi} \GL_n(R)\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-92"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.3.14</span>. <span class="title">Boston.</span>
+</h6>
+<p id="p-1358">\(R_{\bar \rho}\) is representable.</p>
+<ol class="decimal">
+<li id="li-317">If \(C(\bar \rho) = k\) then<div class="displaymath">
+\begin{equation*}
+E_{\bar \rho} \xrightarrow \sim D_{\bar \rho}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-318">Otherwise this morphism is smooth and induces an isomorphism of tangent spaces.</li>
+</ol></article><article class="theorem-like" id="theorem-93"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.3.15</span>. <span class="title">Boston.</span>
+</h6>
+<p id="p-1359">Let \(p\) be odd, and</p>
+<div class="displaymath">
+\begin{equation*}
+\bar \rho \colon G_{\QQ, S} \to \GL_2(\FF_p)
+\end{equation*}
+</div>
+<p>odd, absolutely irreducible and tame, \(H  = \im(\bar\rho)\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+K = \QQ_{S}^{\ker \bar \rho}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+V = \coker\left( \mu_p(K) \to \prod_{v \in S_1} \mu_p(K_v)\right)
+\end{equation*}
+</div>
+<p>both \(V, B_S\) are \(\FF_p\lb H \rb\) modules, suppose \(p\nmid h_K\) and \(V,B_S\) are relatively prime to \(\Ad(\bar \rho)\) as \(\FF_p\lb H \rb\)-modules, then</p>
+<div class="displaymath">
+\begin{equation*}
+R(\bar\rho) \cong \ZZ_p \lb\lb T_1, T_2, T_3\rb\rb\text{,}
+\end{equation*}
+</div>
+<p>moreover \(\rho\) can be described explicitly.</p></article><article class="hiddenproof" id="proof-125"><a data-knowl="" class="id-ref" data-refid="hk-proof-125"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-125" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1360">Using <a data-knowl="./knowl/thm-boston-mazur.html" title="Theorem 6.3.13: Boston-Mazur">Theorem 6.3.13</a> we have that \(\overline P\) is generated by</p>
+<ol class="decimal">
+<li id="li-319">\(\overline x\) fixed by \(H\)</li>
+<li id="li-320">\(\overline y\) with \(\overline y ^c = \overline y \inv\)</li>
+<li id="li-321">other elements generating a prime-to-adjoint \(\FF_p\lb H \rb\)-module.</li>
+</ol>
+<p>by <a data-knowl="./knowl/thm-boston-strengthening.html" title="Theorem 6.3.8">Theorem 6.3.8</a> we get that \(P\) is generated by some \(x\) fixed by \(H\) and \(y\) s.t. \(y^c = y\inv\) and other prime-to-adjoint gens. So the dimension of the tangent space is 3 and we the universal deformation to</p>
+<div class="displaymath">
+\begin{equation*}
+\ZZ_p\lb \lb T_1, T_2, T_3\rb \rb
+\end{equation*}
+</div>
+<p>via</p>
+<div class="displaymath">
+\begin{equation*}
+x\mapsto \begin{pmatrix} 1+ T_1\amp 0 \\ 0 \amp 1 + T_1\end{pmatrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+y\mapsto \begin{pmatrix} (1+ T_2T_3)^{\frac12}\amp T_2 \\ T_3 \amp (1+ T_2T_3)^{\frac12}\end{pmatrix}
+\end{equation*}
+</div>
+<p>other generators mapping to 0.</p></article></div>
+<p id="p-1361">Where do these matrices come from? We are trying to write down the universal matrices which are fixed by conjugation by any element, or are inverted after conjugation by complex conjugation.</p>
+<p id="p-1362">For the first the only matrices in the center are multiples of the identity which gives the form of \(x\text{.}\) For the second if we take</p>
+<div class="displaymath">
+\begin{equation*}
+c = \begin{pmatrix} 1 \amp 0 \\ 0 \amp  -1\end{pmatrix}
+\end{equation*}
+</div>
+<p>then \(c y c\inv = y\inv\) has the following consequence. The condition gives \(\det y = \pm 1\text{.}\) As \(cyc\inv\) is \(y\) with the off diagonal elements negated assuming \(\det = 1\) the inverse is the same with the diagonal terms swapped: we see that the two terms on the diagonal must be equal and we can choose the off diagonal terms to be whatever we like, call them \(T_2, T_3\text{.}\) Writing out what \(\det = 1\) means for equal diagonal terms shows both are \((1+ T_2 T_3)^{\frac 12}\text{.}\)</p>
+<p id="p-1363">I'm confused about why we have \(\det = 1\) though.</p></section></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@
 <title>BUNTES The Deuring Correspondence (Maria Ines)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-quaternion-algebras.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-supersing-isog.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-p-div.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-quaternion-algebras.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-supersing-isog.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-p-div.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring" class="active">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,34 +345,42 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-deuring"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-deuring"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">The Deuring Correspondence (Maria Ines)</span>
 </h2>
 <a href="sec-deuring.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-936">References:</p>
 <ol id="p-937" class="decimal">
 <li id="li-234">Voight ch. 16,17,42</li>
-<li id="li-235">Hard and Easy Problems for Supersingular <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">Isogeny</a> Graphs - Christophe Petit and Kristin Lauter <a class="url" href="https://eprint.iacr.org/2017/962.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://eprint.iacr.org/2017/962.pdf</code></a>
+<li id="li-235">Hard and Easy Problems for Supersingular Isogeny Graphs - Christophe Petit and Kristin Lauter <a class="external" href="https://eprint.iacr.org/2017/962.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://eprint.iacr.org/2017/962.pdf</code></a>
 </li>
 </ol></section><section class="subsection" id="subsection-75"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Background: Ideals and Ideal classes</span>
 </h3>
-<p id="p-938">Let \(B/\QQ\) be a quaternion algebra and  \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a>. If \(I \subseteq B \) is a  <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>, we can define \(\ints_L (I) = \{ \alpha\in  B :  \alpha I  \subseteq I \}\text{.}\) This is an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> , it's the left <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> of  \(I\) similarly can define \(\ints_R (I) \text{.}\)</p>
+<p id="p-938">Let \(B/\QQ\) be a quaternion algebra and  \(\ints \subseteq B\) be an order. If \(I \subseteq B \) is a  lattice, we can define \(\ints_L (I) = \{ \alpha\in  B :  \alpha I  \subseteq I \}\text{.}\) This is an order , it's the left order of  \(I\) similarly can define \(\ints_R (I) \text{.}\)</p>
 <article class="definition-like" id="definition-84"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.1</span>
+<span class="type">Definition</span> <span class="codenumber">3.4.1</span>.</h6>
+<p id="p-939">A left (resp. right) fractional ideal is a lattice \(I \subseteq B\) s.t. \(\ints \subseteq       \ints_L (I) \) resp \(\ints \subseteq \ints_R (I) \)</p></article><article class="definition-like" id="def-buntes-compat"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.4.2</span>. <span class="title">Compatibility.</span>
 </h6>
-<p id="p-939">A left (resp. right) fractional ideal is a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(I \subseteq B\) s.t. \(\ints \subseteq       \ints_L (I) \) resp \(\ints \subseteq \ints_R (I) \)</p></article><article class="definition-like" id="def-buntes-compat"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.2</span> <span class="title">Compatibility</span>
-</h6>
-<p id="p-940">For <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> \(I,J \subseteq B\) we say \(I\) is <dfn class="terminology">compatible</dfn> with \(J\) if</p>
+<p id="p-940">For lattices \(I,J \subseteq B\) we say \(I\) is <dfn class="terminology">compatible</dfn> with \(J\) if</p>
 <div class="displaymath">
 \begin{equation*}
 \ints_R(I)= \ints_L(J)\text{.}
 \end{equation*}
 </div>
-<p>A <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(I \) is invertible if there is a <a knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(I' \subseteq B\) s.t.</p>
+<p>A lattice \(I \) is invertible if there is a lattice \(I' \subseteq B\) s.t.</p>
 <div class="displaymath">
 \begin{equation*}
 II' = \ints_L(I) =  \ints_R(I')
@@ -365,11 +391,10 @@ II' = \ints_L(I) =  \ints_R(I')
 I'I = \ints_L(I') =  \ints_R(I)
 \end{equation*}
 </div>
-<p>with both products <a knowl="./knowl/def-buntes-compat.html" title="Definition 3.4.2: Compatibility">compatible</a></p></article><article class="theorem-like" id="proposition-64"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">3.4.3</span>
-</h6>
-<p id="p-941">Let \(\ints \subseteq B\) be a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> then every left or right fractional \(\ints\)-ideal is invertible.</p></article><article class="definition-like" id="definition-86"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.4</span> <span class="title">Principal ideals</span>
+<p>with both products compatible</p></article><article class="theorem-like" id="proposition-64"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">3.4.3</span>.</h6>
+<p id="p-941">Let \(\ints \subseteq B\) be a maximal order then every left or right fractional \(\ints\)-ideal is invertible.</p></article><article class="definition-like" id="definition-86"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.4.4</span>. <span class="title">Principal ideals.</span>
 </h6>
 <p id="p-942">An ideal of the form</p>
 <div class="displaymath">
@@ -378,10 +403,9 @@ I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
 \end{equation*}
 </div>
 <p>is a principal ideal.</p></article><article class="theorem-like" id="fact-10"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">3.4.5</span>
-</h6>
+<span class="type">Fact</span> <span class="codenumber">3.4.5</span>.</h6>
 <p id="p-943">\(I \) is invertible with \(I\inv = \alpha \inv \ints_L(I) =  \ints_R(I) \alpha \inv\text{.}\)</p></article><article class="definition-like" id="def-nrd"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.6</span> <span class="title">Reduced norms</span>
+<span class="type">Definition</span> <span class="codenumber">3.4.6</span>. <span class="title">Reduced norms.</span>
 </h6>
 <p id="p-944">Let \(I \subseteq B\) be a fractional ideal the <dfn class="terminology">reduced norm</dfn> of \(I \) is the positive generator of the fractional ideal generated by</p>
 <div class="displaymath">
@@ -389,9 +413,9 @@ I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
 \{ \operatorname{nrd} (\alpha) :  \alpha \in I \}
 \end{equation*}
 </div>
-<p>in \(\QQ\text{.}\) We denote it \(\operatorname{nrd}(I)\text{.}\)</p></article><article class="paragraphs" id="paragraphs-37"><h5 class="heading"><span class="title">Ideal classes</span></h5>
+<p>in \(\QQ\text{.}\) We denote it \(\operatorname{nrd}(I)\text{.}\)</p></article><article class="paragraphs" id="paragraphs-37"><h5 class="heading"><span class="title">Ideal classes.</span></h5>
 <article class="definition-like" id="def-ideal-class"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.7</span> <span class="title">Ideal classes</span>
+<span class="type">Definition</span> <span class="codenumber">3.4.7</span>. <span class="title">Ideal classes.</span>
 </h6>
 <p id="p-945">Two left fractional ideals \(I,J \subseteq B\) are in the same left class</p>
 <div class="displaymath">
@@ -399,37 +423,32 @@ I =  \ints_L(I) \alpha =  \alpha\ints_R(I)
 I\sim_L J
 \end{equation*}
 </div>
-<p>if \(\exists  \alpha \in B^\times\) s.t. \(I\alpha = J\text{.}\) Equivalently if \(\ints_L(I)  = \ints_L(J)\) and \(I \sim J\) as left modules over this <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a>. \(\sim_L\) is an equivalence relation \(\lb I \rb\) is the class of \(I\text{.}\) If \(I \) is invertible then every \(J \in \lb I \rb_L\) is invertible, and then we say \(\lb I \rb_L \) is invertible.</p></article><article class="definition-like" id="def-class-set"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.8</span> <span class="title">Class sets</span>
+<p>if \(\exists  \alpha \in B^\times\) s.t. \(I\alpha = J\text{.}\) Equivalently if \(\ints_L(I)  = \ints_L(J)\) and \(I \sim J\) as left modules over this order. \(\sim_L\) is an equivalence relation \(\lb I \rb\) is the class of \(I\text{.}\) If \(I \) is invertible then every \(J \in \lb I \rb_L\) is invertible, and then we say \(\lb I \rb_L \) is invertible.</p></article><article class="definition-like" id="def-class-set"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.4.8</span>. <span class="title">Class sets.</span>
 </h6>
-<p id="p-946">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a>. The <dfn class="terminology">left class set</dfn> of \(\ints\) is</p>
+<p id="p-946">Let \(\ints \subseteq B\) be an order. The <dfn class="terminology">left class set</dfn> of \(\ints\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{Cls}_L \ints   = \{ \lb I \rb_L : I \subseteq B \text{ is invertible  and } \ints_L(I) = \ints\}
 \end{equation*}
 </div>
 <p>its a pointed set with distinguished element \(\lb \ints \rb_L\text{.}\)</p></article><article class="theorem-like" id="theorem-68"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.4.9</span>
-</h6>
-<p id="p-947">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a>. then \(\operatorname{Cls} _L \ints\) is finite. We call \(\# \operatorname{Cls}_L\ints \) the <dfn class="terminology">left class number</dfn> of \(\ints\text{.}\)</p></article></article><article class="paragraphs" id="paragraphs-38"><h5 class="heading"><span class="title">Types of orders</span></h5>
-<p id="p-948">Let \(\ints ,\ints'  \subseteq B\) be <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">orders</a>.</p>
+<span class="type">Theorem</span> <span class="codenumber">3.4.9</span>.</h6>
+<p id="p-947">Let \(\ints \subseteq B\) be an order. then \(\operatorname{Cls} _L \ints\) is finite. We call \(\# \operatorname{Cls}_L\ints \) the <dfn class="terminology">left class number</dfn> of \(\ints\text{.}\)</p></article></article><article class="paragraphs" id="paragraphs-38"><h5 class="heading"><span class="title">Types of orders.</span></h5>
+<p id="p-948">Let \(\ints ,\ints'  \subseteq B\) be orders.</p>
 <article class="definition-like" id="definition-90"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.10</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">3.4.10</span>.</h6>
 <p id="p-949">We say \(\ints,\ints' \) are of the same type if \(\exists \alpha \in B^\times\) s.t. \(\ints ' = \alpha \inv \ints \alpha\text{.}\) \(\ints,\ints'\) are locally of the same type if \(\ints_p, \ints_p'\) are of the same type for all primes in \(\ZZ\cup\{\infty\}\text{.}\) \(\ints\) is connected to  \(\ints'\) if there exists an invertible fractional \(\ints,\ints'\)-ideal \(J \subseteq B\) called a connecting ideal.</p></article><article class="theorem-like" id="lemma-19"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">3.4.11</span>
-</h6>
+<span class="type">Lemma</span> <span class="codenumber">3.4.11</span>.</h6>
 <p id="p-950">\(\ints,\ints'\) are of the same type iff they are isomorphic as \(\ZZ\)-algebras.</p>
 <p id="p-951">\(\ints,\ints'\) are connected iff they are locally of the same type.</p></article><article class="definition-like" id="def-genus-order"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.12</span>
-</h6>
-<p id="p-952">Let \(\ints \subseteq B\) be an <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a>.</p>
+<span class="type">Definition</span> <span class="codenumber">3.4.12</span>.</h6>
+<p id="p-952">Let \(\ints \subseteq B\) be an order.</p>
 <ol class="decimal">
-<li id="li-236">The <dfn class="terminology">genus</dfn> \(\operatorname{Gen}(\ints)\) of \(\ints \) is the set of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">orders</a> in \(B \) connected to \(\ints\text{.}\)</li>
-<li id="li-237">The type set \(\operatorname{Typ}(\ints)\) of \(\ints\) is the set of \(\ZZ\)-algebra isomorphism classes of <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">orders</a> in \(\operatorname{Gen} (\ints)\text{.}\)</li>
+<li id="li-236">The <dfn class="terminology">genus</dfn> \(\operatorname{Gen}(\ints)\) of \(\ints \) is the set of orders in \(B \) connected to \(\ints\text{.}\)</li>
+<li id="li-237">The type set \(\operatorname{Typ}(\ints)\) of \(\ints\) is the set of \(\ZZ\)-algebra isomorphism classes of orders in \(\operatorname{Gen} (\ints)\text{.}\)</li>
 </ol></article><article class="theorem-like" id="lemma-20"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">3.4.13</span>
-</h6>
+<span class="type">Lemma</span> <span class="codenumber">3.4.13</span>.</h6>
 <p id="p-953">The set map \(\operatorname{Cls}_L(\ints) \to \operatorname{Typ}(\ints)\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -437,13 +456,12 @@ I\sim_L J
 \end{equation*}
 </div>
 <p>is surjective.</p></article><article class="remark-like" id="remark-22"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">3.4.14</span>
-</h6>
+<span class="type">Remark</span> <span class="codenumber">3.4.14</span>.</h6>
 <ol id="p-954" class="decimal">
-<li id="li-238">Any two maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">orders</a> in \(B\) are connected.</li>
-<li id="li-239">In particular there are only finitely many conjugacy classes of maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">orders</a> in \(B\text{.}\)</li>
+<li id="li-238">Any two maximal orders in \(B\) are connected.</li>
+<li id="li-239">In particular there are only finitely many conjugacy classes of maximal orders in \(B\text{.}\)</li>
 </ol></article><article class="example-like" id="example-50"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.4.15</span> <span class="title">Voight 17.6.3</span>
+<span class="type">Example</span> <span class="codenumber">3.4.15</span>. <span class="title">Voight 17.6.3.</span>
 </h6>
 <p id="p-955">Let</p>
 <div class="displaymath">
@@ -451,7 +469,7 @@ I\sim_L J
 B = \legendre{-1,-23}{\QQ}
 \end{equation*}
 </div>
-<p>Then \(\ints=  \ZZ +  \ZZ i + \ZZ \frac{i+j}{2} + \ZZ i \frac{i+j}{2}\) is a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> and</p>
+<p>Then \(\ints=  \ZZ +  \ZZ i + \ZZ \frac{i+j}{2} + \ZZ i \frac{i+j}{2}\) is a maximal order and</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{Typ}(\ints) =  \left\{ \lb \ints \rb , \lb \ints_2 \rb , \lb \ints_3 \rb \right\}\text{.}
@@ -459,14 +477,13 @@ B = \legendre{-1,-23}{\QQ}
 </div></article></article></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">The Deuring Correspondence</span>
 </h3>
-<p id="p-956">Fix a prime \(p\text{,}\) let \(E\) be an <a knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> over \(\FF_q = \FF_{p^n}\text{.}\)</p>
+<p id="p-956">Fix a prime \(p\text{,}\) let \(E\) be an elliptic curve over \(\FF_q = \FF_{p^n}\text{.}\)</p>
 <article class="theorem-like" id="lemma-21"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">3.4.16</span>
+<span class="type">Lemma</span> <span class="codenumber">3.4.16</span>.</h6>
+<p id="p-957">The endomorphism algebra  \(\End(E)_\QQ = \End(E) \otimes \QQ\) of \(E\) is either \(\QQ\) an imaginary quadratic field or a definite quaternion algebra \(/\QQ\text{.}\)</p></article><article class="theorem-like" id="theorem-69"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">3.4.17</span>. <span class="title">Deuring, this proof by Lenstra.</span>
 </h6>
-<p id="p-957">The <a knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebra  \(\End(E)_\QQ = \End(E) \otimes \QQ\) of \(E\) is either \(\QQ\) an imaginary quadratic field or a definite quaternion algebra \(/\QQ\text{.}\)</p></article><article class="theorem-like" id="theorem-69"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.4.17</span> <span class="title">Deuring, this proof by Lenstra</span>
-</h6>
-<p id="p-958">Let \(E/\FF_q\) be a s.s. e.c. (i.e. assume \(\End(E) \otimes \QQ\) is a quaternion algebra). Then \(\operatorname{Ram}(B)  =    \{p, \infty\}\) and \(\ints = \End(E) \) is a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> in \(B\text{.}\)</p></article><article class="hiddenproof" id="proof-107"><a knowl="" class="id-ref" refid="hk-proof-107"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-107" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-959">Let \(n \gt 0\)  be prime to \(p \text{.}\) Then</p>
+<p id="p-958">Let \(E/\FF_q\) be a s.s. e.c. (i.e. assume \(\End(E) \otimes \QQ\) is a quaternion algebra). Then \(\operatorname{Ram}(B)  =    \{p, \infty\}\) and \(\ints = \End(E) \) is a maximal order in \(B\text{.}\)</p></article><article class="hiddenproof" id="proof-107"><a data-knowl="" class="id-ref" data-refid="hk-proof-107"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-107" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-959">Let \(n \gt 0\)  be prime to \(p \text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
@@ -475,7 +492,7 @@ E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
 <p>as groups so \(\End(E\lb n\rb ) \simeq M_2(\ZZ/n)\text{.}\)</p>
 <p id="p-960">Claim: The structure map \(\ints/n\ints  \to \End(E\lb n \rb)\) is an isomorphism.</p>
 <p id="p-961">Check: suppose \(\phi \in  \ints\) kills \(E\lb n \rb\text{,}\) then since \(\phi\) is separable then \(\exists\) \(\psi \in \ints\) s.t. \(\phi = n \psi\text{.}\) Hence \(\phi = 0 \in \ints/n\text{.}\) This gives injectivity.</p>
-<p id="p-962">As both rings are finite with the same <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> \(n^4\) we have an isomorphism.</p>
+<p id="p-962">As both rings are finite with the same order \(n^4\) we have an isomorphism.</p>
 <p id="p-963">Since \(\ints\) is a free \(\ZZ\) module</p>
 <div class="displaymath">
 \begin{equation*}
@@ -497,62 +514,57 @@ E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
 <p id="p-965">Fact: \(\ints_p\) is maximal in \(B_p\) (thm 42.1.9 of voight).</p>
 <p id="p-966">\(\ints\) is maximal in \(B\) because it is locally maximal.</p></article></div>
 <article class="theorem-like" id="theorem-70"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.4.18</span> <span class="title">Deuring correspondence</span>
+<span class="type">Theorem</span> <span class="codenumber">3.4.18</span>. <span class="title">Deuring correspondence.</span>
 </h6>
 <div class="displaymath" id="p-967">
 \begin{equation*}
 \left\{ \text{maximal orders }\ints \subseteq B_{p,\infty}\right\}/\sim \leftrightarrow \left\{ j \text{ s.s. }\in \FF_{p^2}\right\}/\Gal{\FF_{p^2}}{\FF_p}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-108"><a knowl="" class="id-ref" refid="hk-proof-108"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-108" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-968">Voight 42.4.7.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-108"><a data-knowl="" class="id-ref" data-refid="hk-proof-108"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-108" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-968">Voight 42.4.7.</p></article></div>
 <article class="definition-like" id="definition-92"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.19</span>
-</h6>
+<span class="type">Definition</span> <span class="codenumber">3.4.19</span>.</h6>
 <p id="p-969">Let \(I \subseteq \ints = \End(E)\) be an integral left \(\ints\)-ideal with \((\operatorname{nrd}(I), p) = 1\text{.}\) Define</p>
 <div class="displaymath">
 \begin{equation*}
 E\lb I \rb = \{ P \in E(\overline \FF_q) :  \alpha(P) = 0 \forall \alpha \in I\}
 \end{equation*}
 </div>
-<p>Then there is a separable <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a></p>
+<p>Then there is a separable isogeny</p>
 <div class="displaymath">
 \begin{equation*}
 \Phi_I  \colon E \to E / E \lb I \rb
 \end{equation*}
 </div>
 <p>with \(\ker \Phi_I = E \lb I \rb\text{.}\)</p></article><article class="theorem-like" id="fact-11"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">3.4.20</span>
-</h6>
+<span class="type">Fact</span> <span class="codenumber">3.4.20</span>.</h6>
 <div class="displaymath" id="p-970">
 \begin{equation*}
 \deg (\Phi_I)  = \operatorname{nrd}(I)
 \end{equation*}
 </div></article><article class="theorem-like" id="proposition-65"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">3.4.21</span>
-</h6>
+<span class="type">Proposition</span> <span class="codenumber">3.4.21</span>.</h6>
 <p id="p-971">The association \(I \mapsto \phi_I\) is a 1-1 correspondence provided that \((\deg \phi_I, p) = 1\text{.}\)</p></article></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">Applications to SIG crypto</span>
 </h3>
 <article class="example-like" id="problem-1"><h6 class="heading">
-<span class="type">Problem</span> <span class="codenumber">3.4.22</span> <span class="title">Constructive Deuring correspondence</span>
+<span class="type">Problem</span> <span class="codenumber">3.4.22</span>. <span class="title">Constructive Deuring correspondence.</span>
 </h6>
-<p id="p-972">Given a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> \(\ints \subseteq B_{p,\infty}\) return a s.s. \(j\)-invariant \(j\) s.t. \(\ints \simeq \End(E_j)\text{.}\)</p></article><article class="example-like" id="problem-2"><h6 class="heading">
-<span class="type">Problem</span> <span class="codenumber">3.4.23</span> <span class="title">Inverse Deuring correspondence</span>
+<p id="p-972">Given a maximal order \(\ints \subseteq B_{p,\infty}\) return a s.s. \(j\)-invariant \(j\) s.t. \(\ints \simeq \End(E_j)\text{.}\)</p></article><article class="example-like" id="problem-2"><h6 class="heading">
+<span class="type">Problem</span> <span class="codenumber">3.4.23</span>. <span class="title">Inverse Deuring correspondence.</span>
 </h6>
-<p id="p-973">Given a supersingular \(j\) invariant \(j\text{,}\) compute a maximal <a knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> \(\ints \subseteq B_{p,\infty}\)  s.t. \(\ints \simeq \End(E_j)\text{.}\) \(\ints\) is described by a \(\ZZ\)-basis.</p></article><article class="example-like" id="problem-3"><h6 class="heading">
-<span class="type">Problem</span> <span class="codenumber">3.4.24</span> <span class="title">Endomorphism ring computation problem</span>
+<p id="p-973">Given a supersingular \(j\) invariant \(j\text{,}\) compute a maximal order \(\ints \subseteq B_{p,\infty}\)  s.t. \(\ints \simeq \End(E_j)\text{.}\) \(\ints\) is described by a \(\ZZ\)-basis.</p></article><article class="example-like" id="problem-3"><h6 class="heading">
+<span class="type">Problem</span> <span class="codenumber">3.4.24</span>. <span class="title">Endomorphism ring computation problem.</span>
 </h6>
-<p id="p-974">Given a supersingular \(j\) invariant \(j\text{,}\) \(\End(E_j)\text{.}\) \(\End(E_j)\) should be returned as \(4\) or \(3\) <a knowl="./knowl/def-rational-map.html" title="Definition 1.4.1: Rational maps">rational maps</a> that form a \(\ZZ\)-basis. Their representation should be efficient in storage and in evaluation time at points.</p></article><article class="remark-like" id="remark-23"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">3.4.25</span>
-</h6>
+<p id="p-974">Given a supersingular \(j\) invariant \(j\text{,}\) \(\End(E_j)\text{.}\) \(\End(E_j)\) should be returned as \(4\) or \(3\) rational maps that form a \(\ZZ\)-basis. Their representation should be efficient in storage and in evaluation time at points.</p></article><article class="remark-like" id="remark-23"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">3.4.25</span>.</h6>
 <ol id="p-975" class="decimal">
 <li id="li-240">Problem 1 can be solved in polynomial time, (Prop. 14 in Petit-Lauter).</li>
 <li id="li-241">P2 and P3 are polynomially equivalent but this isn't obvious (P-L sec.3.1 and 3.2)</li>
 <li id="li-242">There is no known efficient algorithm to solve P3.</li>
-</ol></article><p id="p-976">Recall: the (Charles-Goren-Lauter) CGL <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a> is <a knowl="./knowl/def-preimage-resistance.html" title="Definition 3.2.4: Preimage resistance">preimage resistant</a> iff given 2 s.s. \(j\)-invariants \(j_1,j_2\) its computationally hard to compute a  positive integer \(e\) and an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi \colon E_{j_1} \to E_{j_2}\) of degree \(l^e\text{.}\)</p>
+</ol></article><p id="p-976">Recall: the (Charles-Goren-Lauter) CGL hash function is preimage resistant iff given 2 s.s. \(j\)-invariants \(j_1,j_2\) its computationally hard to compute a  positive integer \(e\) and an isogeny \(\phi \colon E_{j_1} \to E_{j_2}\) of degree \(l^e\text{.}\)</p>
 <article class="theorem-like" id="proposition-66"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">3.4.26</span>
-</h6>
-<p id="p-977">Assume there's an efficient algorithm to solve P3. Then there is an efficient algorithm to solve the preimage problem for the CGL <a knowl="./knowl/def-hash-function.html" title="Definition 3.2.2: Hash functions">hash function</a></p></article><article class="hiddenproof" id="proof-109"><a knowl="" class="id-ref" refid="hk-proof-109"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-109" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-978">Algorithm</p>
+<span class="type">Proposition</span> <span class="codenumber">3.4.26</span>.</h6>
+<p id="p-977">Assume there's an efficient algorithm to solve P3. Then there is an efficient algorithm to solve the preimage problem for the CGL hash function</p></article><article class="hiddenproof" id="proof-109"><a data-knowl="" class="id-ref" data-refid="hk-proof-109"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-109" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-978">Algorithm</p>
 <p id="p-979">Input: two s.s. \(j\)-invariants \(j_s,j_t \in \FF_{p^2}\text{.}\)</p>
 <p id="p-980">Output: sequence of \(j\)-invariants</p>
 <div class="displaymath">
@@ -565,7 +577,7 @@ j_s,\ldots,j_0,\ldots, j_t\text{.}
 <li id="li-244">Compute \(\ints_s \simeq \End(E_{j_s})\text{,}\) \(\ints_t \simeq \End(E_{j_t})\)</li>
 <li id="li-245">Compute ideals \(I_s\) and \(I_t\) connecting \(\ints_0 \) to \(\ints_s\text{,}\) \(\ints_t\)</li>
 <li id="li-246">Compute ideals \(J_s \in \lb I_s \rb\text{,}\)\(J_t \in \lb I_t \rb\text{,}\) with norms \(l^{e_s},l^{e_t}\text{.}\)</li>
-<li id="li-247">For \(J \in \{J_s,J_t\}\) and corresponding \(E \in \{E_s,E_t\}\) and \(e\in \{e_s, e_t\}\) compute \(J_i = \ints_0 p^2 + \ints_0 l^i\) for \(i = 0,\ldots, e\text{.}\) For \(i = 0,\ldots, e\) compute \(K_i \in \lb J_i \rb_L\) with powersmooth norm. Translate \(K_i\) into an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a><div class="displaymath">
+<li id="li-247">For \(J \in \{J_s,J_t\}\) and corresponding \(E \in \{E_s,E_t\}\) and \(e\in \{e_s, e_t\}\) compute \(J_i = \ints_0 p^2 + \ints_0 l^i\) for \(i = 0,\ldots, e\text{.}\) For \(i = 0,\ldots, e\) compute \(K_i \in \lb J_i \rb_L\) with powersmooth norm. Translate \(K_i\) into an isogeny<div class="displaymath">
 \begin{equation*}
 \phi\colon E_0 \to E_i
 \end{equation*}
@@ -574,21 +586,22 @@ j_s,\ldots,j_0,\ldots, j_t\text{.}
 </ol>
 <p id="p-982">Except for step 1 everything can be done efficiently.</p></article></div>
 <article class="remark-like" id="remark-24"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">3.4.27</span>
-</h6>
+<span class="type">Remark</span> <span class="codenumber">3.4.27</span>.</h6>
 <p id="p-983">The converse is also true.</p></article></section></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <title>BUNTES Abelian Varieties over finite fields (Ricky)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
 MathJax.Hub.Config({
     tex2jax: {
@@ -42,23 +42,33 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-4.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.1/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/mathbook-4.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
 {\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -67,7 +77,7 @@ var login_required = false;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -112,6 +122,7 @@ var login_required = false;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -130,6 +141,7 @@ var login_required = false;
 \newcommand{\an}{\mathrm{an}}
 \newcommand{\alt}{\mathrm{alt}}
 \newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
@@ -153,7 +165,9 @@ var login_required = false;
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -161,8 +175,8 @@ var login_required = false;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -185,14 +199,13 @@ var login_required = false;
 \DeclareMathOperator{\Sing}{Sing}
 
 \DeclareMathOperator{\Sel}{Sel}
-\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\redu}{red}
 \DeclareMathOperator{\Reg}{Reg}
 \DeclareMathOperator{\Rep}{Rep}
 
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\image}{im}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Span}{span}
@@ -207,6 +220,7 @@ var login_required = false;
 \DeclareMathOperator{\Ad}{Ad}
 
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\Spf}{Spf}
 \DeclareMathOperator{\Spv}{Spv}
 \DeclareMathOperator{\Spa}{Spa}
@@ -236,7 +250,6 @@ var login_required = false;
 \DeclareMathOperator{\krulldim}{krulldim}
 \DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Prob}{Prob}
 
 \DeclareMathOperator{\Mat}{Mat}
@@ -246,6 +259,7 @@ var login_required = false;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -260,23 +274,23 @@ var login_required = false;
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES</span><span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
 <p class="byline">BUNTES Attendees (notes by Alex)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-rosati.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-tate-thm.html" title="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-rosati.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-abelian-varieties.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-tate-thm.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a></h2>
-<ul>
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
 <li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
 <li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
 <li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
@@ -292,8 +306,9 @@ var login_required = false;
 <li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
 <li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
 <li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
 <li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
 <li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
@@ -307,17 +322,20 @@ var login_required = false;
 <li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
 <li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
 <li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
 <li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
 <li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
 <li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
 </ul>
-<h2 class="link"><a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a></h2>
-<ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
-<h2 class="link"><a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
 <li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
 <li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
 <li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
@@ -327,16 +345,24 @@ var login_required = false;
 <li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
-<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
-<h2 class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</li>
+<li class="link">
+<a href="chapter-buntes-flt.html" data-scroll="chapter-buntes-flt"><span class="codenumber">6</span> <span class="title">Tools for Fermat's Last Theorem</span></a><ul>
+<li><a href="sec-flt-overview.html" data-scroll="sec-flt-overview">Overview (Maria)</a></li>
+<li><a href="sec-gp-reps-buntes.html" data-scroll="sec-gp-reps-buntes">Cool maths stuff (Aash)</a></li>
+<li><a href="sec-explicit-deformations.html" data-scroll="sec-explicit-deformations">Explicit deformation spaces (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-avs-over-ffs"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-avs-over-ffs"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.12</span> <span class="title">Abelian Varieties over finite fields (Ricky)</span>
 </h2>
 <a href="sec-avs-over-ffs.html" class="permalink">¶</a><p id="p-356">Set \(q = p^m\text{,}\) \(p\) prime. Given \(X/\FF_q\) have  geometric Frobenius \(\pi_X\colon X \to X\) which acts as \(\id\) on \(|X|\) and sends \(f\to f^q\) for \(f\in \sheaf O_X(U)\text{.}\)</p>
 <article class="example-like" id="example-13"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.12.1</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">1.12.1</span>.</h6>
 <p id="p-357">\(X \hookrightarrow \PP^n\) then \(\pi_X(a_0:\cdots :a_n) = (a_0^q : \cdots :a_n^q)\text{.}\)</p></article><p id="p-358">We also have absolute Frobenius</p>
 <div class="displaymath">
 \begin{equation*}
@@ -344,8 +370,7 @@ F\colon X\to X^{(p)}\text{.}
 \end{equation*}
 </div>
 <article class="example-like" id="example-14"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.12.2</span>
-</h6>
+<span class="type">Example</span> <span class="codenumber">1.12.2</span>.</h6>
 <div class="displaymath" id="p-359">
 \begin{equation*}
 X \colon y^2 = x^3 + i / \FF_q
@@ -365,7 +390,7 @@ X \ar[drr] \ar[dr]\ar[ddr] &amp; &amp;\\
 }
 \end{equation*}
 </div>
-<p id="p-361">If \(f\colon X \to Y\) of \(\FF_q\)-schemes then \(\pi_Y \circ f = f\circ \pi_X\text{.}\) Now let \(X\) be an <a knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\FF_q\text{.}\) From above, we have \(\pi_X\) commutes with all elements of \(\End^0(X) = \End^0(X)\otimes \QQ\text{.}\) Let \(f_X\) be the characteristic polynomial of \(T_l(\pi_X) \colon V_l(X) \to V_l(X)\) for \(l \ne p\text{.}\)</p>
+<p id="p-361">If \(f\colon X \to Y\) of \(\FF_q\)-schemes then \(\pi_Y \circ f = f\circ \pi_X\text{.}\) Now let \(X\) be an abelian variety over \(\FF_q\text{.}\) From above, we have \(\pi_X\) commutes with all elements of \(\End^0(X) = \End^0(X)\otimes \QQ\text{.}\) Let \(f_X\) be the characteristic polynomial of \(T_l(\pi_X) \colon V_l(X) \to V_l(X)\) for \(l \ne p\text{.}\)</p>
 <p id="p-362">An alternative definition is to take \(f_X\in \ZZ\lb X\rb\) monic of degree \(2g \text{,}\) \(g = \dim X\) s.t.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -374,16 +399,16 @@ f_X(n) = \deg([n] -\pi_X)\text{,}
 </div>
 <p>see 12.8.</p>
 <article class="theorem-like" id="proposition-34"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.12.3</span> <span class="title">16.3</span>
+<span class="type">Proposition</span> <span class="codenumber">1.12.3</span>. <span class="title">16.3.</span>
 </h6>
-<p id="p-363">Assume \(X\) is elementary, (i.e. its isogenous to \(A^n\) for some \(A\) <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a>). Then  \(\QQ\lb \pi_X\rb\subseteq \End^0(X)\) is a field and \(f_X\) is a power of the minimal polynomial of \(\pi_X\) over \(\QQ\text{.}\)</p></article><article class="hiddenproof" id="proof-61"><a knowl="" class="id-ref" refid="hk-proof-61"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-61" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-364">Since \(X\) is elementary \(Z(\End^0(X))\) is  a field containing \(\QQ\lb \pi_X\rb\text{.}\) Let \(g\) be the minimal polynomial of \(\pi_X\) over \(\QQ\text{.}\) Let \(\alpha\) be a root of \(f\text{.}\) Then \(g(\alpha)\) is an eigenvalue of \(g(V_l(\pi_X)) = V_l(g(\pi_X)) = V_l(0) = 0\text{.}\) Hence \(g(\alpha) = 0\text{.}\)</p></article></div>
+<p id="p-363">Assume \(X\) is elementary, (i.e. its isogenous to \(A^n\) for some \(A\) simple). Then  \(\QQ\lb \pi_X\rb\subseteq \End^0(X)\) is a field and \(f_X\) is a power of the minimal polynomial of \(\pi_X\) over \(\QQ\text{.}\)</p></article><article class="hiddenproof" id="proof-61"><a data-knowl="" class="id-ref" data-refid="hk-proof-61"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-61" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-364">Since \(X\) is elementary \(Z(\End^0(X))\) is  a field containing \(\QQ\lb \pi_X\rb\text{.}\) Let \(g\) be the minimal polynomial of \(\pi_X\) over \(\QQ\text{.}\) Let \(\alpha\) be a root of \(f\text{.}\) Then \(g(\alpha)\) is an eigenvalue of \(g(V_l(\pi_X)) = V_l(g(\pi_X)) = V_l(0) = 0\text{.}\) Hence \(g(\alpha) = 0\text{.}\)</p></article></div>
 <article class="theorem-like" id="thm-milne-16-4"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.12.4</span> <span class="title">16.4</span>
+<span class="type">Theorem</span> <span class="codenumber">1.12.4</span>. <span class="title">16.4.</span>
 </h6>
 <p id="p-365">Let \(g= \dim (X)\text{.}\)</p>
 <ol class="decimal">
 <li id="li-60">Every root of \(f_X\) \(\alpha \in \CC\) satisfies \(|\alpha| = q^{1/2}\text{.}\)</li>
-<li id="li-61">If \(\alpha\) is  a root of \(f_X\text{,}\) then \(\bar \alpha\) with the same <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a>. In particular if \(\alpha = \pm \sqrt q\) then it occurs with even <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a>.</li>
+<li id="li-61">If \(\alpha\) is  a root of \(f_X\text{,}\) then \(\bar \alpha\) with the same multiplicity. In particular if \(\alpha = \pm \sqrt q\) then it occurs with even multiplicity.</li>
 </ol></article><p id="p-366">We need some facts before proving this: Ref 5.20, 5.21</p>
 <ul class="disc">
 <li id="li-62">There exists<div class="displaymath">
@@ -408,26 +433,26 @@ F_X^\vee = V_{X^\vee} \colon (X^\vee)^{(p)} \to X^\vee
 \end{equation*}
 </div>
 <p>identifying \((X^\vee)^{(p)} = (X^{(p)})^\vee\text{,}\) Ref 7.33, 7.34.</p>
-<article class="hiddenproof" id="proof-62"><a knowl="" class="id-ref" refid="hk-proof-62"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-62" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-368">Reduce to the case where \(X\) is <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a>, we have</p>
+<article class="hiddenproof" id="proof-62"><a data-knowl="" class="id-ref" data-refid="hk-proof-62"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-62" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-368">Reduce to the case where \(X\) is simple, we have</p>
 <div class="displaymath">
 \begin{equation*}
 h\colon X\to X_1 \times X_2 \times \cdots \times X_s
 \end{equation*}
 </div>
-<p>an <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> with \(X_i\) <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a>, then \(h\) induces an isomorphism</p>
+<p>an isogeny with \(X_i\) simple, then \(h\) induces an isomorphism</p>
 <div class="displaymath">
 \begin{equation*}
 h\colon V_l(X)\xrightarrow{\sim} \bigoplus_i V_l(X_i)
 \end{equation*}
 </div>
-<p>so \(f_X = f_{X_1} \cdots f_{X_s}\text{.}\) Hence we can assume \(X\) is <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a>.</p>
-<p id="p-369">Let \(\lambda \colon X \to X^\vee\) be a <a knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> of \(X\) and \(\dagger\) be the corresponding <a href="sec-rosati.html" class="xref" title="Section 1.11: The Rosati involution (Alex)">Rosati involution</a> on \(\End^0(X)\) we will show that \(\pi_X\pi_X^\dagger = q\text{.}\)</p>
+<p>so \(f_X = f_{X_1} \cdots f_{X_s}\text{.}\) Hence we can assume \(X\) is simple.</p>
+<p id="p-369">Let \(\lambda \colon X \to X^\vee\) be a polarization of \(X\) and \(\dagger\) be the corresponding Rosati involution on \(\End^0(X)\) we will show that \(\pi_X\pi_X^\dagger = q\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \pi_X \pi_X^\dagger = \pi_X \lambda^{-1} \pi_X^\vee \lambda = \lambda^{-1} \pi_{X^\vee} \pi_X^\vee \lambda = \lambda^{-1} \lb q \rb \lambda = \lb q \rb
 \end{equation*}
 </div>
-<p>To see \(\pi_{X^\vee} = \pi_X^\vee = q\) we use \(\pi_X = F^m\) and \(\pi_X^\vee = V^m \text{.}\) So \(\pi_{X^\vee} \pi_X^\vee = F^MV^M = p^m = q\text{.}\) As \(X\) is <a knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> \(\QQ\lb \pi_X\rb\) is a field. Thus \(f_X\) is a power of \(g\text{,}\) the minimal polynomial of \(\pi_X/\QQ\text{.}\) So the complex roots of \(f_X\) are \(\iota(\pi_X)\)  for every embedding \(\QQ\lb \pi_X\rb\hookrightarrow \CC\text{.}\) since \(\pi_X^\dagger = q/ \pi_X\text{,}\) we see that</p>
+<p>To see \(\pi_{X^\vee} = \pi_X^\vee = q\) we use \(\pi_X = F^m\) and \(\pi_X^\vee = V^m \text{.}\) So \(\pi_{X^\vee} \pi_X^\vee = F^MV^M = p^m = q\text{.}\) As \(X\) is simple \(\QQ\lb \pi_X\rb\) is a field. Thus \(f_X\) is a power of \(g\text{,}\) the minimal polynomial of \(\pi_X/\QQ\text{.}\) So the complex roots of \(f_X\) are \(\iota(\pi_X)\)  for every embedding \(\QQ\lb \pi_X\rb\hookrightarrow \CC\text{.}\) since \(\pi_X^\dagger = q/ \pi_X\text{,}\) we see that</p>
 <div class="displaymath">
 \begin{equation*}
 \QQ[\pi_X] \subseteq \End^0(X)
@@ -445,18 +470,18 @@ h\colon V_l(X)\xrightarrow{\sim} \bigoplus_i V_l(X_i)
 \end{equation*}
 </div>
 <p>for any \(\iota\colon K \to \CC\text{.}\)</p>
-<p id="p-370">If \(\pm \sqrt q\) is  a root  of  \(f_X\) then we are in the case of \(K\) totally real. If \(\sqrt q\) has <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a> \(n\text{.}\) Then \(-\sqrt q\) has <a knowl="./knowl/def-riem-order-vanish.html" title="Definition 2.2.11: Orders of vanishing">multiplicity</a> \(2g-n\text{.}\) Thus \(f_X(0) = (-1)^n   q^g\text{.}\) But also \(f_X(0 ) = \deg(0 - \pi_X) = q^g\text{.}\) Hence \(n \) is even.</p></article></div>
-<article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Honda-Tate</span></h5>
-<p id="p-371">The correspondence between <a knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> classes of \(X/\FF_q\) and conjugacy classes of \(q\)-<a href="sec-honda-tate.html" class="xref" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil numbers</a> is a bijection. (i.e. algebraic integers \(\alpha\) s.t. \(|\iota \alpha| = \sqrt q\) for all \(\iota \colon \QQ(\alpha) \hookrightarrow \CC\)).</p></article><p id="p-372">Using relations between a curve \(C/\FF_q\) and its Jacobian \(J(C) \text{,}\) one can show:</p>
+<p id="p-370">If \(\pm \sqrt q\) is  a root  of  \(f_X\) then we are in the case of \(K\) totally real. If \(\sqrt q\) has multiplicity \(n\text{.}\) Then \(-\sqrt q\) has multiplicity \(2g-n\text{.}\) Thus \(f_X(0) = (-1)^n   q^g\text{.}\) But also \(f_X(0 ) = \deg(0 - \pi_X) = q^g\text{.}\) Hence \(n \) is even.</p></article></div>
+<article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Honda-Tate.</span></h5>
+<p id="p-371">The correspondence between isogeny classes of \(X/\FF_q\) and conjugacy classes of \(q\)-Weil numbers is a bijection. (i.e. algebraic integers \(\alpha\) s.t. \(|\iota \alpha| = \sqrt q\) for all \(\iota \colon \QQ(\alpha) \hookrightarrow \CC\)).</p></article><p id="p-372">Using relations between a curve \(C/\FF_q\) and its Jacobian \(J(C) \text{,}\) one can show:</p>
 <article class="theorem-like" id="theorem-32"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.12.5</span> <span class="title">Hasse-Weil-Serre bound</span>
+<span class="type">Theorem</span> <span class="codenumber">1.12.5</span>. <span class="title">Hasse-Weil-Serre bound.</span>
 </h6>
 <div class="displaymath" id="p-373">
 \begin{equation*}
 q + 1 - g\lfloor 2\sqrt q\rfloor \le \#C(\FF_{q}) \le q + 1 + g\lfloor 2\sqrt q\rfloor
 \end{equation*}
 </div>
-<p>where \(g=  g(C)\text{.}\)</p></article><article class="hiddenproof" id="proof-63"><a knowl="" class="id-ref" refid="hk-proof-63"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-63" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-374">Hint: Use Lefschetz trace and \(H^1(C, \QQ_l) \simeq H^1(J(C) , \QQ_l)\text{.}\)</p></article></div>
+<p>where \(g=  g(C)\text{.}\)</p></article><article class="hiddenproof" id="proof-63"><a data-knowl="" class="id-ref" data-refid="hk-proof-63"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-63" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-374">Hint: Use Lefschetz trace and \(H^1(C, \QQ_l) \simeq H^1(J(C) , \QQ_l)\text{.}\)</p></article></div>
 <p id="p-375">Application: Let \(J = J_0(103) = J(X_0(103))\text{.}\) \(J\sim J_+ \times J_-\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -477,17 +502,19 @@ f=\sum_{n\ge 1} a_n q^n
 </div>
 <p>similar thing at 17.</p></section></div></main>
 </div>
-<!--Start: Google code--><script>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

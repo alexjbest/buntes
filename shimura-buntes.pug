@@ -403,7 +403,7 @@ section#sec-buntes-modular-forms
         | We have an action on fourier expansions
         me f(\psi) = \sum_{m\in \ZZ} a_m q^m
         me T_k(p)f(\tau) = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p} \sum_{b=0}^{p-1}  \left( \sum_{m\in \ZZ} a_m e^{2\pi i m (z+b)/p}\right)
-        me               = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p}  \sum_{m\in \ZZ} a_me^{2\pi i m z/p} \sum_{b=0}^{p-1} \underbrace{e^{2\pi i m b/p}}_{p\text{ if }p|m,0\text{otw}}
+        me               = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} + \frac{1}{p}  \sum_{m\in \ZZ} a_me^{2\pi i m z/p} \sum_{b=0}^{p-1} \underbrace{e^{2\pi i m b/p}}_{p\text{ if }p|m,0\text{ otw}}
         me               = p^{k-1} \sum_{m\in \ZZ} a_m q^{pm} +\sum_{m\in \ZZ} a_{pm}q^m
 
     corollary: statement: p: me a_1(T_p(f)) = a_p(f)
@@ -835,7 +835,7 @@ section#sec-buntes-hs
             | . We have
             me \bar \partial \colon \Omega^{p,q} \to \Omega^{p,q+1}
             | satisfying #[m \bar \partial ^2 = 0].
-            | So we can define #[m H^{p,q}(X) = \ker \bar \partial/ \image \bar \partial] (Dolbeaut cohomology).
+            | So we can define #[m H^{p,q}(X) = \ker \bar \partial/ \im \bar \partial] (Dolbeaut cohomology).
         theorem
             title Hodge decomposition
             statement: p
@@ -1433,7 +1433,7 @@ section#sec-buntes-whats-a-shimura-var
                 | Father #[m \Psi(v, h(i) w)] is symmetric positive definite for all #[m h \in X].
                 | So conjugation by #[m h(i)] is a Cartan involution on #[m G_2] so on #[m G_2^{\ad} = G_1^{\ad}].
 
-    definition#def-shimura-datum
+    definition#def-buntes-shimura-datum
         title Shimura data
         statement: p
             | A #[term Shimura datum] is a pair #[m (G,X)] where
@@ -1464,7 +1464,7 @@ section#sec-buntes-whats-a-shimura-var
         statement: p
             | #[m X = ] conj. class containing #[m h \colon (a+bi) \mapsto \begin{pmatrix} a\amp b \\ -b \amp a\end{pmatrix}] #[m \leftrightarrow \CC \smallsetminus \RR] #[m \leftrightarrow \{] complex structures on #[m V = \QQ^2\}].
             me h \mapsto i
-            | Let #[m E/\CC] be an elliptic curve
+            | Let #[m E/\CC] be an elliptic curve.
             | We have the full Tate module
             me TE = \varprojlim_N E[N]  \simeq \widehat\ZZ^2
             | We have the full rational Tate module

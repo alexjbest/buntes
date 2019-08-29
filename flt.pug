@@ -1,0 +1,412 @@
+title Tools for Fermat's Last Theorem
+
+introduction
+    p
+        | These are notes for BUNTES Spring 2019, the topic is Tools for Fermat's Last Theorem, they were last updated #[today/].
+        | For more details see #[url(href="http://math.bu.edu/people/midff/buntes/spring2019.html") the webpage].
+        | These notes are by Alex, feel free to email me at #[email alex.j.best@gmail.com] to report typos/suggest improvements, I'll be forever grateful.
+
+section#sec-flt-overview
+    title Overview (Maria)
+
+    subsection
+        title An Overview of the proof of Fermat's last theorem
+
+        p
+            | We will sketch the proof of the following assertion:
+
+        theorem
+            title Fermat's last theorem
+            statement: p
+                | For #[m n \gt 2] we have
+                me FLT(n) : \, a^n + b^n = c^n,\, a,b,c\in \ZZ \implies abc = 0
+                | .
+
+        paragraphs
+            title History of the proof
+
+            p: ul
+                li
+                    | Fermat (~ 1640) proved #[m FLT(4)].
+                li
+                    | Euler (~ 1758-1770) proved #[m FLT(3)].
+
+            note
+                p
+                    | Since #[m FLT(d) \implies FLT(n)] whenever #[m d|n ] it suffices to prove #[m FLT(p)] for all primes #[m p \ge 5].
+
+            p
+                | The proof uses the rich arithmetic theory of elliptic curves, modular forms and Galois representations. We emphasise the contributions of
+                ul
+                    li
+                        | Gerhard Frey
+
+
+section#sec-gp-reps-buntes
+    title Cool maths stuff (Aash)
+
+    p
+        | Same conventions as before.
+
+    definition
+        statement: p
+            me \rho \colon G_K \to \GL_n(k)
+            | is #[term odd] if the image of all complex conjugations has determinant 1.
+
+    p
+        | c.c's are from various embeddings to #[m \CC].
+
+    definition
+        title Dirichlet density
+        statement: p
+            | .
+    p
+        | Also natural density.
+
+    p
+        | Chebotarev.
+    p
+        | So for any global rep, the set of frobs unramified primes has dense image in the image.
+
+    p
+        | Group ring, completed group ring corresp to reps #[m \pi \colon A\lb\lb\Pi\rb\rb \to M_n(A)].
+        | Example of #[m \ZZ_p^r].
+
+    p
+        | Get residual rep
+    proposition
+        statement: p
+            | #[m \bar \rho \colon \Pi \to \GL_n(k)] is abs irred iff #[m \pi] is surjective.
+
+section#sec-explicit-deformations
+    title Explicit deformation spaces (Alex)
+
+    subsection
+        title Set-up
+
+        p
+            | References, Gouvea chapter 5. #[xref(ref="bib-arith-alg-geom,bib-boston-explicit,bib-boston-mazur")/].
+
+        p
+            | We have so far discussed the existence of the universal deformation and some of its properties, now we want to really get our hands on this functor.
+            | We do this by relating the residual representation to field extensions.
+
+        p
+            | As usual, #[m S\ni p, \infty] a finite set of places and #[m \QQ_S/\QQ] the maximal extension unramified outside of #[m S].
+            | Let
+            me \Pi = G_{\QQ,S} = \Gal{\QQ_S}{\QQ}
+            | .
+
+        p
+            | We assume that #[m C(\bar\rho )= k] (or that #[m \bar\rho] is absolutely irreducible).
+        p
+            | We can let #[m  \Pi_0 = \ker(\bar \rho) \subseteq \Pi] and #[m K  = \ker(\Pi_0)] so that we have
+        figure
+            caption/
+            image: latex-image.
+                <![CDATA[
+                \begin{tikzcd}
+                \QQ_{S}                                                                             \\
+                K \arrow[u, "\Pi_0", no head]                                                       \\
+                \QQ \arrow[u, "\Pi/\Pi_0\to \im \bar \rho", no head] \arrow[uu, "{G_{\QQ,S}}"', no head, bend right]
+                \end{tikzcd}
+                ]]>
+        p
+            | If
+            me \rho \colon \Pi \to \GL_n(\mathcal R)
+            | is the universal deformation of #[m \bar\rho] then we can consider
+
+            me \Gamma_n(\mathcal R) = \ker (\GL_n(\mathcal R) \to \GL_n(k))
+            | which has the property that
+            me \rho(\gamma) \in \Gamma_n(\mathcal R),\,\forall \gamma \in \Pi_0
+            | .
+            | So we can restrict
+            me \rho|_{\Pi_0} \colon \Pi_0 \to \Gamma_n(\mathcal R)
+            | .
+
+        proposition
+            statement: p
+                | Group theoretically #[m \Gamma_n(\mathcal R)] is a pro-#[m p]-group.
+            proof
+                p
+                    |This is as
+                    me \mathcal R = \varprojlim_k \mathcal R/ \ideal m ^k
+                    |so
+                    me \Gamma_n(\mathcal R) = \varprojlim_k \Gamma_n(\mathcal R/ \ideal m ^k)
+                    | now we can induct using that
+                    me \Gamma_n(R/\ideal m)  = \Gamma_n(k) = \{1\}
+                    | is trivially a #[m p]-group.
+                p
+                    | Now each transition map
+                    me \Gamma_n(R/\ideal m ^k) \to \Gamma_ n( R/\ideal  m^{k-1})
+                    | has image a #[m p]-group and the kernel is
+                    me G_r \coloneqq 1 + M_n(\ideal m^{k-1}/\ideal m^{k})
+                    | which is isomorphic to
+                    me M_n(\ideal m^{k-1}/\ideal m^{k})
+                    | .
+
+        p
+            | So in fact the map
+            me \rho|_{\Pi_0} \colon \Pi_0 \to \Gamma_n(\mathcal R)
+            | factors through the maximal (continuous) pro-#[m p] quotient of #[m \Pi_0], call this #[m P].
+        p
+            | This quotient is the galois group of, #[m L], the maximal pro-#[m p]-extension of #[m K], which is unramified above all primes of #[m K] above #[m S], call this set #[m S_1].
+            me P = \Gal L K
+            | .
+
+        p
+            | Now letting
+            me \tilde \Pi = \Gal L \QQ
+            | we have the exact sequence
+            me 0 \to P \to \tilde \Pi \to  \im (\bar \rho)  \to 0
+            | .
+        p
+            | So to understand deformations of #[m \bar \rho] we have to understand maps
+            me P \to \Gamma_n(R)
+            | and then how to extend to #[m \tilde \Pi] so that they deform #[m \bar\rho].
+
+
+        p
+            | In order to get a handle on this we make the following assumption:
+
+        definition#def-tame-rep
+            title Tame residual representations
+            statement: p
+                | A residual representation is #[term tame] if
+                me p \nmid \# \im(\bar\rho)
+                | .
+
+        p
+            | The significance of this is that
+            me \tilde \Pi
+            | is a profinite group with a normal #[m p]-Sylow subgroup #[m P].
+
+
+    subsection
+        title Some group theory
+        p
+            | Now we recall / learn for the first time some group theoretic results that will be our workhorses today.
+
+        p
+            | If #[m G] is a profinite group with a normal Sylow #[m p]-subgroup #[m P] of finite index that is topologically finitely generated.
+
+        proposition
+            title Schur-Zassenhaus
+            statement: p
+                | With the above notation
+                | #[m G] contains a subgroup #[m A] mapping isomorphically onto #[m G/P] (any two such subgroups are conjugate by an element of #[m P]).
+        p
+            | This says that for Sylow #[m p]-subgroups all extensions are split (i.e. semidirect products).
+
+        p
+            | Moreover if we let #[m \overline P] be the #
+
+        definition
+            title Frattini quotient
+            statement: p
+                | Let #[m P] be a pro-#[m p]-group, then
+                me \overline P
+                | is the maximal elementary abelian #[m p]-group quotient (recall this is the additive group of a (possibly infinite) vector space over #[m \FF_p]).
+
+
+        p
+            | This can equivalently be defined as the quotient by the Frattini subgroup, #[m \Phi(P)] of #[m P], which is the intersection of all maximal subgroups, and can be obtained as the set of all non-generators (the elements that can be removed from any generating set).
+
+        example
+            statement: p
+                | If #[m P] is the cyclic group #[m \ZZ/p^2] we have the maximal sub #[m p\ZZ/p^2] and the quotient #[m \ZZ/p].
+                | Or the Heisenberg group
+                me \begin{pmatrix} 1 \amp a \amp b \\ 0 \amp 1 \amp c \\ 0 \amp 0 \amp 1\end{pmatrix}
+                |  we get Frattini subgroup
+                me \begin{pmatrix} 1 \amp 0 \amp b \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1\end{pmatrix}
+                | and quotient
+                me \begin{pmatrix} 1 \amp a \amp 0 \\ 0 \amp 1 \amp c \\ 0 \amp 0 \amp 1\end{pmatrix}
+                | .
+
+        proposition
+            title Burnside's basis theorem
+            statement: p
+                | If #[m x_1, \ldots, x_d \in P] generate the quotient #[m \overline P] then they generate #[m P].
+
+
+        p
+            | So we can understand generators of #[m P] by understanding those of #[m \overline P]!
+
+        p
+            |In fact Boston has strengthened this to
+        theorem#thm-boston-strengthening
+            statement: p
+                | Let #[m G] be a profinite group with  a normal #[m p]-Sylow subgroup #[m P] of finite index in #[m G] and #[m A] a subgroup of #[m G] that maps isomorphically to #[m G/P] (note #[m A] is finite).
+                | Then if #[m  A] acts on #[m P] and #[m \overline P] by conjugation (so that #[m \overline P] is a #[m \FF_p\lb A \rb]-module) and
+                me \overline V \subset \overline P
+                | is an #[m \FF_p\lb A \rb]-submodule.
+                | Then there is an #[m A]-invariant subgroup #[m V\subseteq P] which maps onto #[m \overline V] and has #[m \dim _{\FF_p}\overline V] generators.
+
+
+        example
+            statement: p
+                | If #[m \overline V] is just #[m \FF_p] (written multiplicatively) then an invariant submodule is an
+                me \overline x \in \overline P
+                | for which
+                me a\inv \overline x a =  \overline x ^{\phi(a)}
+                | for some character
+                me \phi \colon A \to  \FF_p^\times
+                | this then lifts to
+                me x\in P : a\inv x a =  x ^{\phi'(a)}
+                | where #[m \phi' = \text{teich}\circ \phi\colon A \to \ZZ_p^\times]
+                | .
+
+
+        p
+            | and also shows
+
+        lemma
+            statement: p
+                | Up to isomorphism there is precisely one semidirect product of #[m P] and #[m A] with given #[m A] action on #[m \overline P].
+        p
+            | Let #[m H \subseteq \GL_n(k)].
+        definition
+            statement: p
+                | A #[m k\lb H\rb]-module #[m V] is prime to adjoint if
+                | #[m \Ad(H) = M_n(k)] and #[m V] have no irreducible subrepresentations in common.
+
+
+        p
+            | Let
+            me Z_S = \left\{ x \in K^\times : (x) = I^p \text{ for some }I,x_v = y_v^p \in K_v\forall v\in S_1\right\}
+            | a group for which
+            me Z_S\supseteq {K^\times}^p
+            | so
+            me B_S = Z_S/ {K^\times}^p
+            | which is an elementary abelian #[m p]-group.
+
+        p
+            | As Galois #[m H] acts on #[m Z_S, {K^\times}^p] we have that #[m B_S] is a #[m \FF_p\lb H \rb]-module.
+
+        p
+            | For a pro-#[m p]-group #[m P]
+            | Let #[m d(P),r(P)] be ranks of minimal sets of generators and relations for #[m P], i.e. the cardinality of a minimal set of generators of #[m P] and relations when viewing #[m P] as a quotient of a free pro-#[m p]-group.
+
+        p
+            | Write #[m \delta(F) = 1] if #[m \mu_p \subseteq F], #[m \delta(F) = 0] otw.
+            | The significance of these is related to the fact that for certain local fields this is exactly the relation rank!
+
+        theorem
+            title Koch, H., Galoissche Theorie der p-Erweiterungen.
+            statement: p
+                me r(P) =  \left(\sum_{v\in S_1} \delta(K_v) \right) - \delta (K) + \dim_{\FF_p} B_S
+                me d(P) = r_2(K) + 1 + r(P)
+                | so #[m P] is topologically f.g.
+
+
+        p
+            | If #[m p \nmid h_K] global class field theory gives a map from the idele class group of #[m L] to #[m P] which induces a map on Frattini quotients and leads to: the exact sequence of #[m \FF_p\lb H \rb]-modules
+            me 0  \to B_S \to \overline{\ints_K^\times}  \to \bigoplus_{v\in S_1}\overline{\ints_{K_v}^\times} \to \overline P \to 0
+            | .
+
+        theorem#thm-boston-mazur
+            title Boston-Mazur
+            statement: p
+                | If #[m p\nmid \# H] then as #[m \FF_p\lb H \rb]-modules
+                me \bigoplus_{v\in S_1} \overline \ints^\times_v  \cong \FF_p\lb H \rb \oplus \left( \bigoplus_{l\in S} \Ind_{H_l}^H \mu_p \right)
+                | sum over decomposition subgroups
+                me \overline \ints_K^\times \oplus \FF_p \cong \mu_p \oplus \Ind_{H_\infty}^H \FF_p
+                | #[m H_\infty = \langle \overline \cdot \rangle].
+
+        p
+            | Assume #[m \bar \rho] tame now.
+
+            | #[m P] is normal pro-#[m p]-Sylow subgroup of #[m \tilde \Pi], and some #[m A \twoheadrightarrow G/P = H]
+            | so #[m \tilde \Pi = H \rtimes P]
+            | . As #[m \Gamma_n(W(k))] is pro-#[m p] by Schur-Zassenhaus we have
+            me H_1 \subseteq \GL_n(W(k))
+            | with #[m H \cong H_1] so we can find a lift
+            me \rho_1 \colon \tilde H \to \GL_n(W(k))
+            | which induces an isomorphism
+            me A \xrightarrow\sim H_1
+            | we denote
+            me \sigma \colon A \to \GL_n(W(k))
+            | .
+        p
+            | Given a coefficient ring #[m R] we have
+            me W(k) \to R
+            | so
+            me \sigma_R \colon A \to \GL_n(R) \supseteq \Gamma_n(R)
+            | and #[m A] acts on #[m \Gamma_n(R)] via conjugation.
+
+        p
+            | Let
+            me E_{\bar \rho} \colon \mathcal C \to \Set
+            me E_{\bar \rho} (R) = \Hom_A(P, \Gamma_n(R))
+            |.
+        p
+            | Then we have a natural morphism
+            me E_{\bar \rho} \to D_{\bar \rho}
+            | given by
+            me \phi\in E_{\bar \rho}(R) \mapsto\tilde \Pi = A \rtimes P \xrightarrow{\sigma_R, \phi} \GL_n(R)
+            |.
+        theorem
+            title Boston
+            statement: p
+                | #[m R_{\bar \rho}] is representable.
+                ol
+                    li
+                        |  If #[m C(\bar \rho) = k] then
+                        me E_{\bar \rho} \xrightarrow \sim D_{\bar \rho}
+                        |.
+                    li
+                        | Otherwise this morphism is smooth and induces an isomorphism of tangent spaces.
+
+
+        theorem
+            title Boston
+            statement: p
+                | Let #[m p] be odd, and
+                me \bar \rho \colon G_{\QQ, S} \to \GL_2(\FF_p)
+                | odd, absolutely irreducible and tame, #[m H  = \im(\bar\rho)].
+                | Let
+                me K = \QQ_{S}^{\ker \bar \rho}
+                me V = \coker\left( \mu_p(K) \to \prod_{v \in S_1} \mu_p(K_v)\right)
+                | both #[m V, B_S] are #[m \FF_p\lb H \rb] modules, suppose #[m p\nmid h_K] and #[m V,B_S] are relatively prime to #[m \Ad(\bar \rho)] as #[m \FF_p\lb H \rb]-modules, then
+                me R(\bar\rho) \cong \ZZ_p \lb\lb T_1, T_2, T_3\rb\rb
+                |, moreover #[m \rho] can be described explicitly.
+
+            proof: p
+                | Using #[xref(ref="thm-boston-mazur")/] we have that #[m \overline P] is generated by
+                ol
+                    li #[m \overline x] fixed by #[m H]
+                    li #[m \overline y] with #[m \overline y ^c = \overline y \inv]
+                    li other elements generating a prime-to-adjoint #[m \FF_p\lb H \rb]-module.
+
+                | by #[xref(ref="thm-boston-strengthening")/] we get that #[m P] is generated by some #[m x] fixed by #[m H] and #[m y] s.t. #[m y^c = y\inv] and other prime-to-adjoint gens.
+                | So the dimension of the tangent space is 3 and we the universal deformation to
+                me \ZZ_p\lb \lb T_1, T_2, T_3\rb \rb
+                | via
+                me x\mapsto \begin{pmatrix} 1+ T_1\amp 0 \\ 0 \amp 1 + T_1\end{pmatrix}
+                me y\mapsto \begin{pmatrix} (1+ T_2T_3)^{\frac12}\amp T_2 \\ T_3 \amp (1+ T_2T_3)^{\frac12}\end{pmatrix}
+                | other generators mapping to 0.
+
+
+        p
+            | Where do these matrices come from?
+            | We are trying to write down the universal matrices which are fixed by conjugation by any element, or are inverted after conjugation by complex conjugation.
+        p
+            | For the first the only matrices in the center are multiples of the identity which gives the form of #[m x].
+            | For the second if we take
+            me c = \begin{pmatrix} 1 \amp 0 \\ 0 \amp  -1\end{pmatrix}
+            | then #[m c y c\inv = y\inv] has the following consequence.
+            | The condition gives #[m \det y = \pm 1].
+            | As #[m cyc\inv] is #[m y] with the off diagonal elements negated assuming #[m \det = 1] the inverse is the same with the diagonal terms swapped: we see that the two terms on the diagonal must be equal and we can choose the off diagonal terms to be whatever we like, call them #[m T_2, T_3].
+            | Writing out what #[m \det = 1] means for equal diagonal terms shows both are #[m (1+ T_2 T_3)^{\frac 12}].
+        p
+            | I'm confused about why we have #[m \det = 1] though.
+
+
+//section#sec-inf-ferns
+    title Infinite fern
+
+    p
+        figure
+            caption/
+            image: latex-image.
+                \include{fern}
