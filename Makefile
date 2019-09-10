@@ -51,6 +51,3 @@ clean:	clean-html
 	rm -f buntes*.tex
 	rm -f buntes*.xml
 
-docs/images/:	docs buntes-wrapper.xml
-	mkdir -p docs/images
-	../mathbook/script/mbx -vv -c latex-image -f svg -d ~/buntes/docs/images ~/buntes/buntes-wrapper.xml
