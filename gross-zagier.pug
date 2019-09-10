@@ -1,0 +1,208 @@
+title Gross-Zagier
+
+introduction
+    p
+        | These are notes for BUNTES Fall 2019, the topic is Gross-Zagier, they were last updated #[today/].
+        | For more details see #[url(href="http://math.bu.edu/people/svh/GrossZagier.html") the webpage].
+        | These notes are by Alex, feel free to email me at #[email alex.j.best@gmail.com] to report typos/suggest improvements, I'll be forever grateful.
+
+section#sec-gz-overview
+    title An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)
+
+    introduction
+        p
+            | Goal today is to motivate and give some high level overview of the objects in Gross-Zagier.
+            | It involves many things #[m  L]-functions, elliptic curves, modular forms.
+        p
+            | Main reference: #[xref(ref="bib-zagier-modular")/].
+    subsection
+        title A big example
+        p
+            | Today we will study
+            me E\colon y^2 + y=  x^3 + x^2
+            | LMFDB label 43.a1, #[url(href="http://lmfdb.xyz/EllipticCurve/Q/43.a1/")/].
+        figure
+            caption/
+            image: latex-image.
+                \begin{tikzpicture}
+                    \begin{axis}[hide axis]
+                    \addplot +[no markers,
+                      raw gnuplot,
+                      thick,
+                      empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                      id = 43a1,
+                      ] gnuplot {
+                      set contour base;
+                      set cntrparam levels discrete 0.002;
+                      unset surface;
+                      unset border;
+                      unset xtics;
+                      unset ytics;
+                      set view map;
+                      set samples 900;
+                      set isosamples 900;
+                      splot y^2  + y - x^3 - x^2;
+                    };
+                  \end{axis}
+                \end{tikzpicture}
+
+        p
+            | One fundamental invariant we can compute is the conductor, in this case 43, we only have bad reduction at 43 and no other prime.
+
+        p
+            | To compute the real period we can transform to short Weierstrass form.
+            me y^2 = x^3 - 432 x + 15120
+            | then we have invariant differential
+            me \frac{\diff x}{2y } = \frac{\diff x}{2\sqrt{x^3 - 432 x + 15120}}
+            | .
+        p
+            | Real period is then
+            me \omega _1 = \int_{E(\RR)} \frac{\diff x}{2y} \approx 5.4687\ldots
+            | .
+        p
+            | For #[m E/\CC] fix a complex conjugate root of #[m E], #[m \alpha ], and #[m \beta  =] real root.
+            me \omega _2 = \int_\alpha ^\beta  \frac{\diff x}{2y}
+            me = 2.73434476498379 + 1.36318241817043i
+
+        p
+            | We can look at #[m E/\FF_p] for various #[m p].
+            | Obtained by looking at the equation #[m y^2 + y =x^3 +x^2 \pmod p] for various #[m p].
+        p
+            | At 43 we have non-split  multiplicative reduction, which means that we have a singular curve with tangent slopes not defined over #[m \FF_{43}].
+        figure
+            caption/
+            image: latex-image.
+                \begin{tikzpicture}
+                    \begin{axis}[hide axis]
+                    \addplot +[no markers,
+                      raw gnuplot,
+                      thick,
+                      empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                      id = singularec,
+                      ] gnuplot {
+                      set contour base;
+                      set cntrparam levels discrete 0.002;
+                      unset surface;
+                      unset border;
+                      unset xtics;
+                      unset ytics;
+                      set view map;
+                      set samples 900;
+                      set isosamples 900;
+                      splot y^2 - x^3 - x^2;
+                    };
+                  \end{axis}
+                \end{tikzpicture}
+        p
+            me N_p = \# E(\FF_p)
+            me L_E = \left(\frac 1 {1+43^{-s}} \right)\prod_{p\ne 43} \frac{1}{1- (N_p - p - 1)p^{-s} + p p^{-2s}}
+            me  = \sum_{n\ge 1} \frac{a_n}{n^{-s}}
+        p
+            | We can tabulate the #[m a_n]
+            //tabular
+                table
+                    row n 1,2,3,4,5,6,7,8,9
+                    row a_n  1, -2, -2, 2, -4, 4, 0, 0, 1
+
+        p
+            | As we have #[m E/\QQ] we know that
+            me E(\QQ) \simeq \ZZ \cdot \underbrace{P}_{=(0,0)}
+            | .
+
+        p
+            | Next up the Néron-Tate canonical height:
+            me \hat h(P) = \lim_{n\to \infty } \frac{\log(h_{\text{naive}}(2^nP))}{4^n}
+            | naive height is the max of the absolute values of the numerator and denominator of the #[m  x]-coordinate.
+            | In our case this is
+            me \hat h(P) \approx 0.0628165070875
+            | .
+
+        p
+            | We have the Hasse-Weil bound:
+            me | N_p - p  + 1 | \lt 2 \sqrt p
+            | so the #[m L]-function converges for #[m  \Re (s ) \gt 3/2].
+            | So modularity implies that #[m L_E(s)] extends to an entire function #[m \widetilde L_E] satisfying a functional equation
+            me \widetilde L_E(s) = - \widetilde L_E(2-s)
+            | in particular #[m \widetilde L_E(s)] vanishes at #[m s=1].
+
+        p
+            | BSD for rank 1 then says:
+            ol
+                li
+                    me \ord_{s=1} \widetilde L_E(s) = \rank E(\QQ) = 1
+                li
+                    me \frac{\diff}{\diff s} \widetilde L_E(s)|_{s=1} = \underbrace{\hat h ( P) \omega _1}_{\approx 0.34352397} |\Sha|
+                    | #[m |\Sha|] is predicted to be finite (in which case the order is a square).
+                    | the LHS can be computed using
+                    me 2\sum_{n=1}^\infty  a_n \int_1^\infty  \log t \exp\left(- \frac{-2 n  \pi  t  }{\sqrt{43}}\right) \diff t
+                    | .
+
+        paragraphs
+            title Modularity
+            p
+                | Goal: Verify #[m E] is modular.
+                | Two definitions today:
+                ol
+                    li
+                        | There exists a newform #[m f \in S_2(\Gamma _0(N))] with fourier coefficients the same as the #[m L]-series:
+                        me a_p(f) = a_p(E)
+                        | for all #[m p\nmid N].
+                    li
+                        | There exists #[m X_0(N) \to E] finite define over #[m \QQ].
+            p
+                | consider
+                me X_0(43)
+                | the modular curve for the congruence subgroup generated by #[m \Gamma _0(43) = \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}] with #[m c \equiv  0 \pmod{43}].
+                me w_{43} =  \begin{pmatrix} 0 \amp \frac{-1}{\sqrt{43}} \\ \sqrt{43} \amp 0\end{pmatrix}
+                me \Gamma _0(43)^+ \backslash \HH \simeq \text{genus 1 curve}
+                | which is potentially equal to #[m E].
+            p
+                | Strategy: Find #[m \eta ,\xi ] s.t.
+                me \eta(\tau )^2 + \eta(\tau ) = \xi (\tau )^3 + \xi (\tau )^2
+                | and
+                me \frac{\diff \eta}{2\xi  + 1} = f(q) \frac{\diff q}{q}
+                me \xi f^2, \eta f^3
+                | should be holomorphic modular forms in #[m M_4(\Gamma _0(43))] and #[m M_6(\Gamma _0(43))].
+                | we can compute #[m q]-series expansions and use modular symbols to prove they exist.
+
+        paragraphs
+            title Quadratic twists of #[m E]
+            p
+                | Let #[m \Delta \lt  0] be a fundamental discriminant.
+                me E\colon y^2 = f(x)
+                | then
+                me E_{\Delta }\colon \Delta y^2 = f(x)
+                | these are not isomorphic over #[m \QQ].
+            p
+                | The #[m L]-function of #[m E_\Delta ].
+                | For any #[m \Delta ] coprime to 43
+                me L_{E_\Delta } (s) = \sum_{n\ge 1} \legendre \Delta  n \frac{a_n}{n^s}
+                | can prove that for #[m p\nmid 6\cdot 43 \cdot \Delta ].
+                me a_p(E) \leftrightarrow a_p(E_\Delta )
+                | are related by considering
+                me E\colon  y^2 = f(x)
+                me E_\Delta \colon  \Delta y^2= f(x)
+                | mod #[m p], so if #[m \Delta ] is a square we have isomorphisms locally and the #[m a_p] are equal, otherwise all non-square and squares are swapped.
+
+            p
+                | BSD says
+                me L_{E,\Delta } (1) = \Omega _{E,\Delta }^+  \prod_p c_p A_\Delta
+                | if #[m \rank = 0].
+            p
+                | Waldspurger's implies that #[m A_\Delta ] is a square.
+
+        theorem#thm-gross-zagier-1
+            title Gross-Zagier
+            statement: p
+                | If #[m \Delta \lt  0 ] is a fundamental discriminant which is a square mod 43, then
+                me \hat h(P_\Delta ) = \frac{\sqrt{|\Delta |}}{8\pi ^2 \| f\|} L_E'(1) L_{E_\Delta }(1)
+                |.
+        p
+            | Adding in Waldspurger we get
+            me A(\Delta ) = c_\Delta ^2
+            me \hat h(P_\Delta )= \hat h(b_\Delta  P) = b_\Delta ^2\hat h(P)
+            | but also
+            me \hat h(P_\Delta ) = \frac{\sqrt{|\Delta |}}{8\pi ^2 \| f\|} L_E'(1) \Omega _{E,\Delta }^+ \prod_p c_p c_\Delta^2
+            | as #[m \Omega _{E,\Delta }^+ = \Omega _E^-  / \sqrt \Delta ] we have cancellation and #[m c_\Delta ^2 = b_\Delta ^2] for all #[m \Delta ].
+
+

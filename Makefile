@@ -15,7 +15,11 @@ buntes.tex:	buntes-pretty.xml buntes-latex.xsl filter.xsl
 	$(XSLTPROC) -o buntes.tex buntes-latex.xsl buntes-pretty.xml
 
 docs/buntes.pdf:	buntes.tex
-	latexmk -pdf -output-directory=docs -pdflatex="pdflatex --shell-escape -interaction=nonstopmode"  buntes.tex
+	cd docs/ && latexmk -pdf -pdflatex="pdflatex --shell-escape -interaction=nonstopmode"  ../buntes.tex
+
+docs/images/:	docs buntes-wrapper.xml
+	mkdir -p docs/images
+	../mathbook/script/mbx -vv -c latex-image -f svg -d ~/buntes/docs/images ~/buntes/buntes-wrapper.xml
 
 buntes-wrapper.xml:	*.pug pug-plugin.json
 	pug -O pug-plugin.json --extension xml buntes-wrapper.pug

@@ -58,7 +58,7 @@ var js_version = 0.12;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
@@ -346,6 +346,9 @@ var js_version = 0.12;
 <li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul><li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li></ul>
+</li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -423,7 +426,7 @@ Z \twoheadrightarrow V
 <p>represented by</p>
 <div class="displaymath">
 \begin{equation*}
-U\times U\xrightarrow{\phi_U\times\phi_U} G\times G \xrightarrow{\id\times\operatorname{inv}} G\times G \xrightarrow{m} \to G
+U\times U\xrightarrow{\phi_U\times\phi_U} G\times G \xrightarrow{\id\times\operatorname{inv}} G\times G \xrightarrow{m} G
 \end{equation*}
 </div>
 <div class="displaymath">
@@ -441,7 +444,7 @@ U\times U\xrightarrow{\phi_U\times\phi_U} G\times G \xrightarrow{\id\times\opera
 <article class="theorem-like" id="thm-milne-3-4"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.4.7</span>. <span class="title">Milne 3.4.</span>
 </h6>
-<p id="p-93">Let \(\alpha \colon V \times W \to A\) be a morphism from a product of nonsingular varieties into an abelian variety. If \(\alpha (V\times\{w_0\}) = \{a_0 \} =  \alpha(\{v_0 \}\times W)\) for some \(a_0 \in A\text{,}\) \(v_0\in W\text{,}\) \(w_0 \in W\text{,}\) then \(\alpha(V\times W) = \{a_0\}\text{.}\)</p></article><article class="theorem-like" id="cor-milne-3-7"><h6 class="heading">
+<p id="p-93">Let \(\alpha \colon V \times W \to A\) be a morphism from a product of nonsingular varieties into an abelian variety. If \(\alpha (V\times\{w_0\}) = \{a_0 \} =  \alpha(\{v_0 \}\times W)\) for some \(a_0 \in A\text{,}\) \(v_0\in V\text{,}\) \(w_0 \in W\text{,}\) then \(\alpha(V\times W) = \{a_0\}\text{.}\)</p></article><article class="theorem-like" id="cor-milne-3-7"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.4.8</span>. <span class="title">Milne 3.7.</span>
 </h6>
 <p id="p-94">Every rational map \(\alpha \colon G\dashrightarrow A\) from a group variety into an abelian variety is the composition of a homomorphism and a translation in \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-15"><a data-knowl="" class="id-ref" data-refid="hk-proof-15"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-15" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-95">Since group varieties are nonsingular, \(\alpha\colon G \to A\) is a regular map by <a data-knowl="./knowl/thm-milne-3-2.html" title="Theorem 1.4.5: Milne 3.2">Theorem 1.4.5</a>. The rest is as proof of Corollary 1.2.</p></article></div></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">

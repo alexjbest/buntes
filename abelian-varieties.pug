@@ -613,10 +613,10 @@ section#sec-rational-maps-avs
             statement: p
                 | Let #[m \phi\colon V \dashrightarrow G] be a map from a nonsingular variety to a group variety. Then either #[m \phi] is defined on all of #[m V] or the set where #[m \phi] is not defined is closed of pure codimension 1.
             proof: p
-                | Fix #[m (U, \phi_U) \in \phi] and consider 
+                | Fix #[m (U, \phi_U) \in \phi] and consider
                 me \Phi\colon V\times V \dashrightarrow G
                 | represented by
-                me U\times U\xrightarrow{\phi_U\times\phi_U} G\times G \xrightarrow{\id\times\operatorname{inv}} G\times G \xrightarrow{m} \to G
+                me U\times U\xrightarrow{\phi_U\times\phi_U} G\times G \xrightarrow{\id\times\operatorname{inv}} G\times G \xrightarrow{m} G
                 me (x,y) \mapsto \phi_U(x) \phi_U(y)^{-1}
                 | Check #[m \phi] is defined at #[m x] iff #[m \Phi] is defined at #[m (x,x)] (and in this case #[m \Phi(x,x) = e]).
                 | This is equivalent to the map #[m \Phi^*\colon \sheaf O_{G,e} \to K(V\times V)] induced by  #[m \Phi] satisfying   #[m \im(\sheaf O_{G,e}) \subseteq \sheaf O_{V\times V, (x,x)}]
@@ -631,7 +631,7 @@ section#sec-rational-maps-avs
             title Milne 3.4
             statement: p
                 | Let #[m \alpha \colon V \times W \to A] be a morphism from a product of nonsingular varieties into an abelian variety.
-                | If #[m \alpha (V\times\{w_0\}) = \{a_0 \} =  \alpha(\{v_0 \}\times W)] for some #[m a_0 \in A], #[m v_0\in W], #[m w_0 \in W], then #[m \alpha(V\times W) = \{a_0\}].
+                | If #[m \alpha (V\times\{w_0\}) = \{a_0 \} =  \alpha(\{v_0 \}\times W)] for some #[m a_0 \in A], #[m v_0\in V], #[m w_0 \in W], then #[m \alpha(V\times W) = \{a_0\}].
 
         corollary#cor-milne-3-7
             title Milne 3.7
@@ -740,7 +740,7 @@ section#sec-thm-cube
         exercise: statement: p
             me H^0(X,\sheaf O(d)) ( = \Gamma (X,\sheaf O(d)))
             m = k
-            | vector space spanned by deg. #[m d] homogenous polynomials  in 
+            | vector space spanned by deg. #[m d] homogeneous polynomials in 
             m k[x_0,\ldots, x_n]
             | .
 

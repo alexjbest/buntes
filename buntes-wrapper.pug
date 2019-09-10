@@ -9,6 +9,8 @@ pretext
             package newpxmath
             package cancel
             package mathrsfs
+            package mathtools
+            package pgfplots
 
 
         include ./macros.pug
@@ -21,6 +23,8 @@ pretext
 
         latex-image-preamble.
             \usepackage{tikz,tkz-graph,tkz-berge,tikz-cd,pstricks,auto-pst-pdf}
+            \usepackage{pgfplots}
+            \pgfplotsset{compat=newest}
 
 
     book#buntes
@@ -47,6 +51,9 @@ pretext
 
         chapter#chapter-buntes-shimura
             include ./shimura-buntes.pug
+
+        chapter#chapter-buntes-gz
+            include ./gross-zagier.pug
 
         backmatter
             include ./references.pug
