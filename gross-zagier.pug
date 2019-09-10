@@ -99,13 +99,14 @@ section#sec-gz-overview
             me  = \sum_{n\ge 1} \frac{a_n}{n^{-s}}
         p
             | We can tabulate the #[m a_n]
-            //tabular
-                table
-                    row n 1,2,3,4,5,6,7,8,9
-                    row a_n  1, -2, -2, 2, -4, 4, 0, 0, 1
+        table
+            title #[m a_n]s
+            tabular
+                row #[cell n] #[cell 1] #[cell 2] #[cell  3] #[cell  4] #[cell  5] #[cell  6] #[cell  7] #[cell  8] #[cell  9]
+                row #[cell a_n] #[cell  1] #[cell  -2] #[cell  -2] #[cell  2] #[cell  -4] #[cell  4] #[cell  0] #[cell  0] #[cell  1]
 
         p
-            | As we have #[m E/\QQ] we know that
+            | As we have #[m E/\QQ] we can determine that
             me E(\QQ) \simeq \ZZ \cdot \underbrace{P}_{=(0,0)}
             | .
 
