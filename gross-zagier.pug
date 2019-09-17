@@ -207,3 +207,261 @@ section#sec-gz-overview
             | as #[m \Omega _{E,\Delta }^+ = \Omega _E^-  / \sqrt \Delta ] we have cancellation and #[m c_\Delta ^2 = b_\Delta ^2] for all #[m \Delta ].
 
 
+section#sec-gz-mfs
+    title Modular Curves Background I (John)
+
+    p
+        | Main references are lecture notes by Darmon and Weinstein #[q introduction to modular forms].
+
+    definition
+        statement: p
+            | Let
+            me \Gamma (N) = \left\{\begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}\in \SL_2(\ZZ) : \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} \equiv \begin{pmatrix} 1 \amp 0 \\ 0 \amp 1 \end{pmatrix} \pmod N\right\}
+            | .
+            | #[m \Gamma\subseteq \SL_2(\ZZ)] is a  congruence subgroup if it contains #[m  \Gamma (N)] for some #[m N].
+            | Some important examples are
+            me \Gamma_1 (N) = \left\{\begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}\in \SL_2(\ZZ) : \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} \equiv \begin{pmatrix} 1 \amp \ast \\ 0 \amp 1 \end{pmatrix} \pmod N\right\}
+            me \Gamma_0 (N) = \left\{\begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}\in \SL_2(\ZZ) : \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} \equiv \begin{pmatrix} \ast \amp \ast \\ 0 \amp \ast \end{pmatrix} \pmod N\right\}
+
+    definition
+        statement: p
+            me f\colon \HH \to \CC
+            | is a modular form of weight #[m 2k] for #[m \Gamma ] (with character #[m \epsilon ]) if
+            ol
+                li
+                    | #[m f] is holomorphic on #[m \HH].
+                li
+                    | #[m f] is holomorphic at infinity.
+                li
+                    me f|_{2k} \gamma (z) = f(z)\,\forall\gamma \in \Gamma 
+                    | where
+                    me f|_{2k} \gamma (z) = (cz+d)^{-2k}f(\gamma z)\epsilon (d)
+
+    example
+        statement: p
+            | For #[m \Gamma =  \SL_2(\ZZ)] from now on.
+            me f(z+1) = f(z)
+            me f\left(-\frac 1z\right) = -\frac1{z^2k}f(z)
+    p
+        | Using this we can write
+        me f(z) = f(q),\,q= e^{2\pi  i z}
+        | , where #[m q] is a parameter at infinity.
+        me f(q) = \sum_{n=0}^\infty a_n q^n
+        | .
+
+    definition
+        statement: p
+            | A modular form is a cusp form if #[m a_0 = 0].
+
+    definition
+        statement: p
+            | #[m M_k(\Gamma )] is the space of weight #[m k] modular forms.
+            | #[m S_k(\Gamma )] is the space of weight #[m k] cusp forms.
+
+    example
+        statement: p
+            me G_{2k}(z) = \sum_{m,n\in \ZZ}' \frac{1}{(mz+n)^{2k}}
+            me g_{2} = G_4(z)/2\zeta (4)
+            me g_{3} = G_6(z)/2\zeta (6)
+            | then
+            me \Delta  = \frac{g_2^3 - g_3^2}{1728}
+            | is a cusp form of weight 12.
+
+    theorem
+        statement: p
+            me D\colon M_k \to S_{k+12}
+            me f\mapsto \Delta f
+            | is an isomorphism of vector spaces.
+            me \forall k \lt  0,\, M_k = 0
+            me k=2,\, M_k = 0
+            | #[m  k] odd, #[m M_k = 0].
+            me M_k = S_k + G_k \CC,\,\forall k \in 2\ZZ^+
+        proof
+            p
+                me (f\Delta) (-1/z) = (cz+d)^{-k}f(z) (cz+d)^{-12} \Delta (z)
+                me = (cz+d)^{-(k+12)}(f\Delta ) (z)
+                | .
+                | If #[m k \lt  0] , #[m f \in M_k] have #[m f^{12}\Delta ^k \in S_0 = 0].
+                | #[m M_0 =\CC] corresponds to holomorphic functions on #[m \SL_2(\ZZ) \backslash \HH].
+                me M_k \to \CC
+                me f(q) = a_0  + a_1 q + \cdots \mapsto a_0
+                me \dim(M_k / \ker) \le 1
+                me M_k = S_k + G_k \CC
+                | we get
+            table
+                title dimensions
+                tabular
+                    row #[cell: m n] #[cell: m \dim M_k] #[cell: m \dim S_k]
+                    row #[cell: m \lt 0] #[cell: m 0] #[cell: m 0]
+                    row #[cell: m 0] #[cell: m 1] #[cell: m 0]
+                    row #[cell: m 2] #[cell: m 0] #[cell: m 0]
+                    row #[cell: m 4] #[cell: m 1] #[cell: m 0]
+                    row #[cell: m 6] #[cell: m 1] #[cell: m 0]
+                    row #[cell: m 8] #[cell: m 1] #[cell: m 0]
+                    row #[cell: m 10] #[cell: m 1] #[cell: m 0]
+                    row #[cell: m 12] #[cell: m 2] #[cell: m 1]
+                    row #[cell: m 14] #[cell: m 1] #[cell: m 0]
+                    row #[cell: m 16] #[cell: m 2] #[cell: m 1]
+                    row #[cell: m 18] #[cell: m 2] #[cell: m 1]
+                    row #[cell: m 20] #[cell: m 2] #[cell: m 1]
+                    row #[cell: m 22] #[cell: m 2] #[cell: m 1]
+
+    paragraphs
+        title Hecke operators
+
+        definition
+            statement: p
+                | #[m \Lambda ] is a lattice if it is a rank 2 #[m \ZZ]-module in #[m \CC] s.t. #[m \CC/\Lambda ] is compact.
+                me \Lambda = \tau _1\ZZ + \tau _2 \ZZ
+                me \dim_\RR(\tau _1 \RR + \tau _2\RR) = 2
+                me \Im (\tau _2 / \tau _1 ) \gt 0
+                | #[m F] is a homogeneous lattice function of weight #[m k] if it is
+                me F\colon R \to \CC
+                | where #[m R] is the set of lattices, such that
+                me F(\lambda \Lambda ) = \lambda ^{-k}F(\Lambda )
+                | #[m F] is holomorphic if #[m f\colon  \HH \to \CC]
+                me f(\tau ) = F(\ZZ + \tau \ZZ)
+                | is holomorphic on #[m \HH].
+                me \{\text{holo. homog. wt. }k\text{ lattice fns.}\}\leftrightarrow \{\text{wt. }k\text{ mod. fms.}\}
+                me F\mapsto f_F\colon \tau  \mapsto F(\ZZ+ \tau \ZZ)
+                me F_f \mapsfrom f
+                me F_f (\tau _1 \ZZ+ \tau _2 \ZZ) = f(\tau _2/\tau _1)
+                | .
+
+        definition
+            statement: p
+                | #[m F] is a homogeneous holomorphic weight #[m k] lattice function then
+                me T_{n,k} F(\Delta ) = n^{k-1} \sum_{\Lambda ' \subseteq \Lambda ,\,[\Lambda : \Lambda '] = n} F(\Lambda ')
+                me T_{n,k}f = f_{T_{n,k}(F_f)}
+                me T_{n,k} f(z) = n^{k-1} \sum_{\gamma \in \SL_2(\ZZ)\backslash  M_n } f(\gamma  z)(cz+d)^{-k}
+                | where #[m M_n \subseteq  M_2(\ZZ)] is the set of integer matrices of determinant #[m n].
+                me f|\alpha \beta = (f|\alpha )|\beta 
+                | .
+                | The fourier expansions of these are given by
+                me f(q) = a_0 + a_1 q + \cdots
+                me T_{n,k}f(q) = \sum_{m = 0}^\infty \sum_{d|(m,n)} d^{k-1} a_{nm/d^2} q^m
+                | fixing #[m k] we have if #[m (a,b) = 1]
+                me T_aT_b = T_{ab}
+                | for #[m p ] prime
+                me  T_p T_{p^t} = T_{p^{k+1}} + p^{k-1} T_{p^{t-1}}
+                |.
+
+        figure
+            caption The fundamental domain
+            image: latex-image.
+
+                \pgfmathsetmacro{\myxlow}{-2}
+                \pgfmathsetmacro{\myxhigh}{2}
+                \pgfmathsetmacro{\myiterations}{6}
+
+                \begin{tikzpicture}[scale=2]
+                    \draw[-latex](\myxlow-0.1,0) -- (\myxhigh+0.2,0);
+                    \pgfmathsetmacro{\succofmyxlow}{\myxlow+0.5}
+                    \foreach \x in {\myxlow,\succofmyxlow,...,\myxhigh}
+                    {   \draw (\x,0) -- (\x,-0.05) node[below,font=\tiny] {\x};
+                    }
+                    \foreach \y  in {0.2,0.4,...,1.4}
+                    {   \draw (0,\y) -- (-0.05,\y) node[left,font=\tiny] {\pgfmathprintnumber{\y}};
+                    }
+                    \draw[-latex](0,-0.1) -- (0,1.6);
+                    \begin{scope}
+                        \clip (\myxlow,0) rectangle (\myxhigh,1.1);
+                        \foreach \i in {1,...,\myiterations}
+                        {   \pgfmathsetmacro{\mysecondelement}{\myxlow+1/pow(2,floor(\i/3))}
+                            \pgfmathsetmacro{\myradius}{pow(1/3,\i-1}
+                            \foreach \x in {-2,\mysecondelement,...,2}
+                            {   \draw[very thin, blue] (\x,0) arc(0:180:\myradius);
+                                \draw[very thin, blue] (\x,0) arc(180:0:\myradius);
+                            }
+                        }
+                    \end{scope}
+                    \begin{scope}
+                        \begin{pgfonlayer}{background}
+                            \clip (-0.5,0) rectangle (0.5,1.7);
+                            \clip   (1,1.7) -| (-1,0) arc (180:0:1) -- cycle;
+                            \fill[gray,opacity=0.8] (-1,-1) rectangle (1,2);
+                        \end{pgfonlayer}
+                    \end{scope}
+                \end{tikzpicture}
+
+        p
+            | These #[m T_{n,k}] operate on #[m M_k(\SL_2(\ZZ))] and we can define:
+
+        definition
+            statement: p
+                | Let #[m f\in M_k(\SL_2(\ZZ))] is an eigenform if it is a simultaneous eigenvector for #[m \{T_n\}_{n=1}^\infty ].
+                | We have
+                me \pair - - \colon  S_k \times S_k\to \CC
+                me \pair fg = \int_F f(z) \overline{g(z)} y^k \frac{\diff x \diff y}{y^2}
+                | .
+
+        proposition
+            statement: p
+                | #[m T_n] is self-adjoint in #[m S_k]
+                me \pair{T_n f}{g}=  \pair {f}{T_ng} 
+                me S_k = \bigoplus f_i \CC
+                | an orthogonal basis of eigenforms.
+                | #[m G_k] is an eigenform and
+                me M_k = G_k \CC + \bigoplus f_i \CC
+                | .
+
+        definition
+            statement: p
+                | #[m f] is a  normalized eigenform if
+                me a_1(f)  =1
+                me a_n(f) = a_1(T_nf) = a_1(\lambda _n f) = \lambda _na_1(f) = \lambda _n 
+                | .
+
+        proposition
+            statement: p
+                | If #[m f\in S_k] is a normalized eigenform then
+                me \QQ(a_1(f), a_2(f) , \ldots)
+                | is a finite totally real extension of #[m \QQ] with degree #[m \le \dim S_k = d].
+            proof
+                p
+                    | #[m G_k/\zeta (k)] and #[m \Delta ] have rational coefficients.
+                    me M_k(\QQ) = f_1 \QQ+ \cdots + f_d \QQ
+                    | #[m T_n] operates on #[m M_k(\QQ)] so
+                    me T_n \hookrightarrow \Mat_d(\QQ)
+                    me \mathbf T_k =\QQ[T_1,T_2, \ldots] \hookrightarrow \Mat_d(\QQ)
+                    | #[m \forall \phi  \in \Hom(\mathbf T_{k}, \overline \QQ)] have #[m \im (\phi )] lies in a degree #[m \le d] extension.
+                    | this is totally real because #[m T_n] are self adjoint w.r.t. a Hermitian inner product.
+
+
+
+    paragraphs
+        title Generalisation
+
+        p
+            | If #[m \Gamma ] is any congruence subgroup
+            me M_k(\Gamma ) = \operatorname{Eis}_k(\Gamma ) + S_k(\Gamma )
+            me M_k(\SL_2(\ZZ)) \subseteq M_k(\Gamma )
+
+        p
+            | Given #[m d|N] we have
+            me f \in M_k(\Gamma (d))
+            | can define dilation
+            me g(z) = f(N/d z) \in M_k(\Gamma )
+            | for large enough #[m k] we can find a basis of #[m M_k(\Gamma (N))] by taking dilations of products of #[m M_a(\Gamma (N))] for #[m a \lt k] and Hecke operators.
+
+        p
+            | For #[m (n,N) = 1], #[m f\in M_k(\Gamma (N))].
+            me T_{n,k} f = n^{k-1} \sum_{\gamma \in \Gamma (N) \backslash M_n} (f|\gamma )(z)
+            | #[m M_n] is integer upper triangular with determinant #[m n].
+            | For primes #[m l]
+            me l\nmid N,\, T_l f(q) = \sum a_n l q^n + l^{k-1} \sum a_n \langle l \rangle f q^{nl}
+            me l | N,\, T_lf(q) = \sum a_{nl} q^n
+            me \langle l \rangle f(z) = \left(f|_k \begin{pmatrix} l \amp 0 \\ 0 \amp l\inv \end{pmatrix}\right) (z)
+            | .
+
+        definition
+            statement: p
+                me g \in S_k(\Gamma (N))
+                | s.t.
+                me g(z) = f(d z)
+                | for some #[m f \in S_k(\Gamma (N/d))] is called an oldform.
+                | Newforms are #[m f\in S_k(\Gamma (N))] s.t.
+                me \pair fg = 0
+                | for all #[m g\in S_k(\Gamma (N))^{old}].
+
+

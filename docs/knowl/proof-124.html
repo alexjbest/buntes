@@ -12,42 +12,110 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>This is as</p>
 <div class="displaymath">
 \begin{equation*}
-\mathcal R = \varprojlim_k \mathcal R/ \ideal m ^k
+(f\Delta) (-1/z) = (cz+d)^{-k}f(z) (cz+d)^{-12} \Delta (z)
 \end{equation*}
 </div>
-<p>so</p>
 <div class="displaymath">
 \begin{equation*}
-\Gamma_n(\mathcal R) = \varprojlim_k \Gamma_n(\mathcal R/ \ideal m ^k)
+= (cz+d)^{-(k+12)}(f\Delta ) (z)\text{.}
 \end{equation*}
 </div>
-<p>now we can induct using that</p>
+<p>If \(k \lt  0\) , \(f \in M_k\) have \(f^{12}\Delta ^k \in S_0 = 0\text{.}\) \(M_0 =\CC\) corresponds to holomorphic functions on \(\SL_2(\ZZ) \backslash \HH\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\Gamma_n(R/\ideal m)  = \Gamma_n(k) = \{1\}
+M_k \to \CC
 \end{equation*}
 </div>
-<p>is trivially a \(p\)-group.</p>
-<p>Now each transition map</p>
 <div class="displaymath">
 \begin{equation*}
-\Gamma_n(R/\ideal m ^k) \to \Gamma_ n( R/\ideal  m^{k-1})
+f(q) = a_0  + a_1 q + \cdots \mapsto a_0
 \end{equation*}
 </div>
-<p>has image a \(p\)-group and the kernel is</p>
 <div class="displaymath">
 \begin{equation*}
-G_r \coloneqq 1 + M_n(\ideal m^{k-1}/\ideal m^{k})
+\dim(M_k / \ker) \le 1
 \end{equation*}
 </div>
-<p>which is isomorphic to</p>
 <div class="displaymath">
 \begin{equation*}
-M_n(\ideal m^{k-1}/\ideal m^{k})\text{.}
+M_k = S_k + G_k \CC
 \end{equation*}
-</div></article><span class="incontext"><a href="sec-explicit-deformations.html#proof-124">in-context</a></span>
+</div>
+<p>we get</p>
+<figure class="figure-like"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\dim M_k\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\dim S_k\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\lt 0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(6\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(8\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(10\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(12\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(14\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(16\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(18\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(20\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(22\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span> <span class="codenumber">6.2.8.</span> dimensions</figcaption></figure></article><span class="incontext"><a href="sec-gz-mfs.html#proof-124">in-context</a></span>
 </body>
 </html>

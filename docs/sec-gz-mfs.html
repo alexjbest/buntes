@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Modular Curves Background I (John)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gz-overview.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gz-overview.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs" class="active">Modular Curves Background I (John)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gz-mfs"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Modular Curves Background I (John)</span>
+</h2>
+<a href="sec-gz-mfs.html" class="permalink">¶</a><p id="p-1323">Main references are lecture notes by Darmon and Weinstein “introduction to modular forms”.</p>
+<article class="definition-like" id="definition-125"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.1</span>.</h6>
+<p id="p-1324">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma (N) = \left\{\begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}\in \SL_2(\ZZ) : \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} \equiv \begin{pmatrix} 1 \amp 0 \\ 0 \amp 1 \end{pmatrix} \pmod N\right\}\text{.}
+\end{equation*}
+</div>
+<p>\(\Gamma\subseteq \SL_2(\ZZ)\) is a  congruence subgroup if it contains \(\Gamma (N)\) for some \(N\text{.}\) Some important examples are</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma_1 (N) = \left\{\begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}\in \SL_2(\ZZ) : \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} \equiv \begin{pmatrix} 1 \amp \ast \\ 0 \amp 1 \end{pmatrix} \pmod N\right\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Gamma_0 (N) = \left\{\begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}\in \SL_2(\ZZ) : \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} \equiv \begin{pmatrix} \ast \amp \ast \\ 0 \amp \ast \end{pmatrix} \pmod N\right\}
+\end{equation*}
+</div></article><article class="definition-like" id="definition-126"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.2</span>.</h6>
+<div class="displaymath" id="p-1325">
+\begin{equation*}
+f\colon \HH \to \CC
+\end{equation*}
+</div>
+<p>is a modular form of weight \(2k\) for \(\Gamma \) (with character \(\epsilon \)) if</p>
+<ol class="decimal">
+<li id="li-318">\(f\) is holomorphic on \(\HH\text{.}\)</li>
+<li id="li-319">\(f\) is holomorphic at infinity.</li>
+<li id="li-320">
+<div class="displaymath">
+\begin{equation*}
+f|_{2k} \gamma (z) = f(z)\,\forall\gamma \in \Gamma 
+\end{equation*}
+</div>where<div class="displaymath">
+\begin{equation*}
+f|_{2k} \gamma (z) = (cz+d)^{-2k}f(\gamma z)\epsilon (d)
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="example-like" id="example-78"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.2.3</span>.</h6>
+<p id="p-1326">For \(\Gamma =  \SL_2(\ZZ)\) from now on.</p>
+<div class="displaymath">
+\begin{equation*}
+f(z+1) = f(z)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f\left(-\frac 1z\right) = -\frac1{z^2k}f(z)
+\end{equation*}
+</div></article><p id="p-1327">Using this we can write</p>
+<div class="displaymath">
+\begin{equation*}
+f(z) = f(q),\,q= e^{2\pi  i z}\text{,}
+\end{equation*}
+</div>
+<p>where \(q\) is a parameter at infinity.</p>
+<div class="displaymath">
+\begin{equation*}
+f(q) = \sum_{n=0}^\infty a_n q^n\text{.}
+\end{equation*}
+</div>
+<article class="definition-like" id="definition-127"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.4</span>.</h6>
+<p id="p-1328">A modular form is a cusp form if \(a_0 = 0\text{.}\)</p></article><article class="definition-like" id="definition-128"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.5</span>.</h6>
+<p id="p-1329">\(M_k(\Gamma )\) is the space of weight \(k\) modular forms. \(S_k(\Gamma )\) is the space of weight \(k\) cusp forms.</p></article><article class="example-like" id="example-79"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.2.6</span>.</h6>
+<div class="displaymath" id="p-1330">
+\begin{equation*}
+G_{2k}(z) = \sum_{m,n\in \ZZ}' \frac{1}{(mz+n)^{2k}}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+g_{2} = G_4(z)/2\zeta (4)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+g_{3} = G_6(z)/2\zeta (6)
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta  = \frac{g_2^3 - g_3^2}{1728}
+\end{equation*}
+</div>
+<p>is a cusp form of weight 12.</p></article><article class="theorem-like" id="theorem-89"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.2.7</span>.</h6>
+<div class="displaymath" id="p-1331">
+\begin{equation*}
+D\colon M_k \to S_{k+12}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f\mapsto \Delta f
+\end{equation*}
+</div>
+<p>is an isomorphism of vector spaces.</p>
+<div class="displaymath">
+\begin{equation*}
+\forall k \lt  0,\, M_k = 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+k=2,\, M_k = 0
+\end{equation*}
+</div>
+<p>\(k\) odd, \(M_k = 0\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+M_k = S_k + G_k \CC,\,\forall k \in 2\ZZ^+
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-124"><a data-knowl="" class="id-ref" data-refid="hk-proof-124"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-124" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-1332">
+\begin{equation*}
+(f\Delta) (-1/z) = (cz+d)^{-k}f(z) (cz+d)^{-12} \Delta (z)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= (cz+d)^{-(k+12)}(f\Delta ) (z)\text{.}
+\end{equation*}
+</div>
+<p>If \(k \lt  0\) , \(f \in M_k\) have \(f^{12}\Delta ^k \in S_0 = 0\text{.}\) \(M_0 =\CC\) corresponds to holomorphic functions on \(\SL_2(\ZZ) \backslash \HH\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+M_k \to \CC
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(q) = a_0  + a_1 q + \cdots \mapsto a_0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\dim(M_k / \ker) \le 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+M_k = S_k + G_k \CC
+\end{equation*}
+</div>
+<p>we get</p>
+<figure class="figure-like" id="table-2"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\dim M_k\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\dim S_k\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\lt 0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(6\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(8\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(10\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(12\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(14\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(16\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(18\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(20\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(22\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span> <span class="codenumber">6.2.8.</span> dimensions</figcaption></figure></article></div>
+<article class="paragraphs" id="paragraphs-52"><h5 class="heading"><span class="title">Hecke operators.</span></h5>
+<article class="definition-like" id="definition-129"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.9</span>.</h6>
+<p id="p-1333">\(\Lambda \) is a lattice if it is a rank 2 \(\ZZ\)-module in \(\CC\) s.t. \(\CC/\Lambda \) is compact.</p>
+<div class="displaymath">
+\begin{equation*}
+\Lambda = \tau _1\ZZ + \tau _2 \ZZ
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\dim_\RR(\tau _1 \RR + \tau _2\RR) = 2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Im (\tau _2 / \tau _1 ) \gt 0
+\end{equation*}
+</div>
+<p>\(F\) is a homogeneous lattice function of weight \(k\) if it is</p>
+<div class="displaymath">
+\begin{equation*}
+F\colon R \to \CC
+\end{equation*}
+</div>
+<p>where \(R\) is the set of lattices, such that</p>
+<div class="displaymath">
+\begin{equation*}
+F(\lambda \Lambda ) = \lambda ^{-k}F(\Lambda )
+\end{equation*}
+</div>
+<p>\(F\) is holomorphic if \(f\colon  \HH \to \CC\)</p>
+<div class="displaymath">
+\begin{equation*}
+f(\tau ) = F(\ZZ + \tau \ZZ)
+\end{equation*}
+</div>
+<p>is holomorphic on \(\HH\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{holo. homog. wt. }k\text{ lattice fns.}\}\leftrightarrow \{\text{wt. }k\text{ mod. fms.}\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+F\mapsto f_F\colon \tau  \mapsto F(\ZZ+ \tau \ZZ)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+F_f \mapsfrom f
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+F_f (\tau _1 \ZZ+ \tau _2 \ZZ) = f(\tau _2/\tau _1)\text{.}
+\end{equation*}
+</div></article><article class="definition-like" id="definition-130"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.10</span>.</h6>
+<p id="p-1334">\(F\) is a homogeneous holomorphic weight \(k\) lattice function then</p>
+<div class="displaymath">
+\begin{equation*}
+T_{n,k} F(\Delta ) = n^{k-1} \sum_{\Lambda ' \subseteq \Lambda ,\,[\Lambda : \Lambda '] = n} F(\Lambda ')
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T_{n,k}f = f_{T_{n,k}(F_f)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T_{n,k} f(z) = n^{k-1} \sum_{\gamma \in \SL_2(\ZZ)\backslash  M_n } f(\gamma  z)(cz+d)^{-k}
+\end{equation*}
+</div>
+<p>where \(M_n \subseteq  M_2(\ZZ)\) is the set of integer matrices of determinant \(n\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f|\alpha \beta = (f|\alpha )|\beta \text{.}
+\end{equation*}
+</div>
+<p>The fourier expansions of these are given by</p>
+<div class="displaymath">
+\begin{equation*}
+f(q) = a_0 + a_1 q + \cdots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T_{n,k}f(q) = \sum_{m = 0}^\infty \sum_{d|(m,n)} d^{k-1} a_{nm/d^2} q^m
+\end{equation*}
+</div>
+<p>fixing \(k\) we have if \((a,b) = 1\)</p>
+<div class="displaymath">
+\begin{equation*}
+T_aT_b = T_{ab}
+\end{equation*}
+</div>
+<p>for \(p \) prime</p>
+<div class="displaymath">
+\begin{equation*}
+T_p T_{p^t} = T_{p^{k+1}} + p^{k-1} T_{p^{t-1}}\text{.}
+\end{equation*}
+</div></article><figure class="figure-like" id="figure-4"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">6.2.11.</span> </figcaption></figure><p id="p-1335">These \(T_{n,k}\) operate on \(M_k(\SL_2(\ZZ))\) and we can define:</p>
+<article class="definition-like" id="definition-131"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.12</span>.</h6>
+<p id="p-1336">Let \(f\in M_k(\SL_2(\ZZ))\) is an eigenform if it is a simultaneous eigenvector for \(\{T_n\}_{n=1}^\infty \text{.}\) We have</p>
+<div class="displaymath">
+\begin{equation*}
+\pair - - \colon  S_k \times S_k\to \CC
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\pair fg = \int_F f(z) \overline{g(z)} y^k \frac{\diff x \diff y}{y^2}\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="proposition-75"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">6.2.13</span>.</h6>
+<p id="p-1337">\(T_n\) is self-adjoint in \(S_k\)</p>
+<div class="displaymath">
+\begin{equation*}
+\pair{T_n f}{g}=  \pair {f}{T_ng} 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+S_k = \bigoplus f_i \CC
+\end{equation*}
+</div>
+<p>an orthogonal basis of eigenforms. \(G_k\) is an eigenform and</p>
+<div class="displaymath">
+\begin{equation*}
+M_k = G_k \CC + \bigoplus f_i \CC\text{.}
+\end{equation*}
+</div></article><article class="definition-like" id="definition-132"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.14</span>.</h6>
+<p id="p-1338">\(f\) is a  normalized eigenform if</p>
+<div class="displaymath">
+\begin{equation*}
+a_1(f)  =1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+a_n(f) = a_1(T_nf) = a_1(\lambda _n f) = \lambda _na_1(f) = \lambda _n \text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="proposition-76"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">6.2.15</span>.</h6>
+<p id="p-1339">If \(f\in S_k\) is a normalized eigenform then</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ(a_1(f), a_2(f) , \ldots)
+\end{equation*}
+</div>
+<p>is a finite totally real extension of \(\QQ\) with degree \(\le \dim S_k = d\text{.}\)</p></article><article class="hiddenproof" id="proof-125"><a data-knowl="" class="id-ref" data-refid="hk-proof-125"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-125" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1340">\(G_k/\zeta (k)\) and \(\Delta \) have rational coefficients.</p>
+<div class="displaymath">
+\begin{equation*}
+M_k(\QQ) = f_1 \QQ+ \cdots + f_d \QQ
+\end{equation*}
+</div>
+<p>\(T_n\) operates on \(M_k(\QQ)\) so</p>
+<div class="displaymath">
+\begin{equation*}
+T_n \hookrightarrow \Mat_d(\QQ)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\mathbf T_k =\QQ[T_1,T_2, \ldots] \hookrightarrow \Mat_d(\QQ)
+\end{equation*}
+</div>
+<p>\(\forall \phi  \in \Hom(\mathbf T_{k}, \overline \QQ)\) have \(\im (\phi )\) lies in a degree \(\le d\) extension. this is totally real because \(T_n\) are self adjoint w.r.t. a Hermitian inner product.</p></article></div>
+<article class="paragraphs" id="paragraphs-53"><h5 class="heading"><span class="title">Generalisation.</span></h5>
+<p id="p-1341">If \(\Gamma \) is any congruence subgroup</p>
+<div class="displaymath">
+\begin{equation*}
+M_k(\Gamma ) = \operatorname{Eis}_k(\Gamma ) + S_k(\Gamma )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+M_k(\SL_2(\ZZ)) \subseteq M_k(\Gamma )
+\end{equation*}
+</div>
+<p id="p-1342">Given \(d|N\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+f \in M_k(\Gamma (d))
+\end{equation*}
+</div>
+<p>can define dilation</p>
+<div class="displaymath">
+\begin{equation*}
+g(z) = f(N/d z) \in M_k(\Gamma )
+\end{equation*}
+</div>
+<p>for large enough \(k\) we can find a basis of \(M_k(\Gamma (N))\) by taking dilations of products of \(M_a(\Gamma (N))\) for \(a \lt k\) and Hecke operators.</p>
+<p id="p-1343">For \((n,N) = 1\text{,}\) \(f\in M_k(\Gamma (N))\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+T_{n,k} f = n^{k-1} \sum_{\gamma \in \Gamma (N) \backslash M_n} (f|\gamma )(z)
+\end{equation*}
+</div>
+<p>\(M_n\) is integer upper triangular with determinant \(n\text{.}\) For primes \(l\)</p>
+<div class="displaymath">
+\begin{equation*}
+l\nmid N,\, T_l f(q) = \sum a_n l q^n + l^{k-1} \sum a_n \langle l \rangle f q^{nl}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+l | N,\, T_lf(q) = \sum a_{nl} q^n
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\langle l \rangle f(z) = \left(f|_k \begin{pmatrix} l \amp 0 \\ 0 \amp l\inv \end{pmatrix}\right) (z)\text{.}
+\end{equation*}
+</div>
+<article class="definition-like" id="definition-133"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.2.16</span>.</h6>
+<div class="displaymath" id="p-1344">
+\begin{equation*}
+g \in S_k(\Gamma (N))
+\end{equation*}
+</div>
+<p>s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+g(z) = f(d z)
+\end{equation*}
+</div>
+<p>for some \(f \in S_k(\Gamma (N/d))\) is called an oldform. Newforms are \(f\in S_k(\Gamma (N))\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\pair fg = 0
+\end{equation*}
+</div>
+<p>for all \(g\in S_k(\Gamma (N))^{old}\text{.}\)</p></article></article></article></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

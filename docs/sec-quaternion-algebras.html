@@ -347,7 +347,10 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul><li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li></ul>
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -377,7 +380,7 @@ E/K\colon y^2 = x^3 + \alpha x = f(x)\text{,}
 <p>simple eh? It's supersingular as the \(j\)-invariant is 0 (and are in characteristic 3). Alternatively, count points or even compute the Hasse invariant, the coefficient of \(p -1 = 2\) in \(f(x)^{(p-1)/2 = 1}\text{,}\) yep, it's 0.</p>
 <p id="p-869">We therefore have \(\#E(K) = 9 + 1 = 10\) so we have a \(2\)-torsion point (\(P = (0,0)\)) and any other point we can use to generate (will be \(5\) or \(10\) torsion). Let \(x = 1\) so \(y^2 = 1 + \alpha = \alpha^2\) so \(y = \pm\alpha\text{,}\) say \(Q = (1,\alpha)\text{.}\)</p>
 <p id="p-870">We have one endomorphism, \(p\)-power frobenius \(x\mapsto x^3\text{,}\) \(y\mapsto y^3\text{.}\) How to find another one?</p>
-<p id="p-871">Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\text{.}\) In general the formulae are  a little annoying <a data-knowl="./knowl/bib-velu.html" title="Bibliographic Entry 88: Isogénies entre courbes elliptiques">[88]</a>, when you have a 2-torsion point at \((0,0)\text{,}\) not as bad:</p>
+<p id="p-871">Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\text{.}\) In general the formulae are  a little annoying <a data-knowl="./knowl/bib-velu.html" title="Bibliographic Entry 90: Isogénies entre courbes elliptiques">[90]</a>, when you have a 2-torsion point at \((0,0)\text{,}\) not as bad:</p>
 <div class="displaymath">
 \begin{equation*}
 \psi = \left(x + \frac{f'(0)}{x}, y - \frac{yf'(0)}{x^2} \right)
@@ -477,7 +480,7 @@ y^2 = x^{3} + 1/\FF_{25}
 <article class="exercise-like" id="exercise-24"><a data-knowl="" class="id-ref" data-refid="hk-exercise-24"></a></article><div id="hk-exercise-24" class="hidden-content tex2jax_ignore"><article class="exercise-like"></article></div></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Quaternion Algebras</span>
 </h3>
-<section class="introduction" id="introduction-15"><p id="p-883">Pretty much all of this material was ripped with the utmost love and affection from <a data-knowl="./knowl/bib-voight-quat.html" title="Bibliographic Entry 89: Quaternion Algebras">[89]</a>, check it out.</p>
+<section class="introduction" id="introduction-15"><p id="p-883">Pretty much all of this material was ripped with the utmost love and affection from <a data-knowl="./knowl/bib-voight-quat.html" title="Bibliographic Entry 91: Quaternion Algebras">[91]</a>, check it out.</p>
 <article class="theorem-like" id="proposition-62"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.3.2</span>.</h6>
 <p id="p-884">The theory of Quaternion algebras is very rich.</p></article><article class="hiddenproof" id="proof-105"><a data-knowl="" class="id-ref" data-refid="hk-proof-105"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-105" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-885">The above book is 800 pages long.</p></article></div>
@@ -693,7 +696,7 @@ y^2 + y = x^3/\overline{\FF_2}
 <p id="p-928">Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.</p></article><p id="p-929">Warning: Quaternion algebras may not be ramified where you think they are?</p>
 <p id="p-930">Knowing the ramification of a quaternion algebra \(\QQ\) is enough to identify it uniquely, in fact we have the following theorem</p>
 <article class="theorem-like" id="theorem-66"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.3.21</span>. <span class="title">Main Theorem [89, 14.1.3].</span>
+<span class="type">Theorem</span> <span class="codenumber">3.3.21</span>. <span class="title">Main Theorem [91, 14.1.3].</span>
 </h6>
 <p id="p-931">There is a sequence of bijections</p>
 <div class="displaymath">

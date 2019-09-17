@@ -24,7 +24,11 @@ pretext
         latex-image-preamble.
             \usepackage{tikz,tkz-graph,tkz-berge,tikz-cd,pstricks,auto-pst-pdf}
             \usepackage{pgfplots}
+            \usetikzlibrary{arrows}
             \pgfplotsset{compat=newest}
+            \pgfdeclarelayer{background}
+            \pgfsetlayers{background,main}
+
 
 
     book#buntes
