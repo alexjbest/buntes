@@ -241,7 +241,7 @@ section#sec-gz-mfs
         statement: p
             | For #[m \Gamma =  \SL_2(\ZZ)] from now on.
             me f(z+1) = f(z)
-            me f\left(-\frac 1z\right) = -\frac1{z^2k}f(z)
+            me f\left(-\frac 1z\right) = z^{2k}f(z)
     p
         | Using this we can write
         me f(z) = f(q),\,q= e^{2\pi  i z}
@@ -352,7 +352,7 @@ section#sec-gz-mfs
 
                 \pgfmathsetmacro{\myxlow}{-2}
                 \pgfmathsetmacro{\myxhigh}{2}
-                \pgfmathsetmacro{\myiterations}{6}
+                \pgfmathsetmacro{\myiterations}{8}
 
                 \begin{tikzpicture}[scale=2]
                     \draw[-latex](\myxlow-0.1,0) -- (\myxhigh+0.2,0);

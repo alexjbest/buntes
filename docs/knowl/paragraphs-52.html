@@ -115,7 +115,7 @@ T_aT_b = T_{ab}
 T_p T_{p^t} = T_{p^{k+1}} + p^{k-1} T_{p^{t-1}}\text{.}
 \end{equation*}
 </div></article><figure class="figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-4.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">6.2.11.</span> </figcaption></figure><p>These \(T_{n,k}\) operate on \(M_k(\SL_2(\ZZ))\) and we can define:</p>
+<figcaption><span class="type">Figure</span> <span class="codenumber">6.2.11.</span> The fundamental domain</figcaption></figure><p>These \(T_{n,k}\) operate on \(M_k(\SL_2(\ZZ))\) and we can define:</p>
 <article class="definition-like"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">6.2.12</span>.</h6>
 <p>Let \(f\in M_k(\SL_2(\ZZ))\) is an eigenform if it is a simultaneous eigenvector for \(\{T_n\}_{n=1}^\infty \text{.}\) We have</p>
@@ -166,72 +166,6 @@ a_n(f) = a_1(T_nf) = a_1(\lambda _n f) = \lambda _na_1(f) = \lambda _n \text{.}
 \QQ(a_1(f), a_2(f) , \ldots)
 \end{equation*}
 </div>
-<p>is a finite totally real extension of \(\QQ\) with degree \(\le \dim S_k = d\text{.}\)</p></article><article class="hiddenproof"><a data-knowl="./knowl/proof-125-hidden.html" title="Proof 6.2.15.1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><article class="paragraphs"><h5 class="heading"><span class="title">Generalisation.</span></h5>
-<p>If \(\Gamma \) is any congruence subgroup</p>
-<div class="displaymath">
-\begin{equation*}
-M_k(\Gamma ) = \operatorname{Eis}_k(\Gamma ) + S_k(\Gamma )
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-M_k(\SL_2(\ZZ)) \subseteq M_k(\Gamma )
-\end{equation*}
-</div>
-<p>Given \(d|N\) we have</p>
-<div class="displaymath">
-\begin{equation*}
-f \in M_k(\Gamma (d))
-\end{equation*}
-</div>
-<p>can define dilation</p>
-<div class="displaymath">
-\begin{equation*}
-g(z) = f(N/d z) \in M_k(\Gamma )
-\end{equation*}
-</div>
-<p>for large enough \(k\) we can find a basis of \(M_k(\Gamma (N))\) by taking dilations of products of \(M_a(\Gamma (N))\) for \(a \lt k\) and Hecke operators.</p>
-<p>For \((n,N) = 1\text{,}\) \(f\in M_k(\Gamma (N))\text{.}\)</p>
-<div class="displaymath">
-\begin{equation*}
-T_{n,k} f = n^{k-1} \sum_{\gamma \in \Gamma (N) \backslash M_n} (f|\gamma )(z)
-\end{equation*}
-</div>
-<p>\(M_n\) is integer upper triangular with determinant \(n\text{.}\) For primes \(l\)</p>
-<div class="displaymath">
-\begin{equation*}
-l\nmid N,\, T_l f(q) = \sum a_n l q^n + l^{k-1} \sum a_n \langle l \rangle f q^{nl}
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-l | N,\, T_lf(q) = \sum a_{nl} q^n
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-\langle l \rangle f(z) = \left(f|_k \begin{pmatrix} l \amp 0 \\ 0 \amp l\inv \end{pmatrix}\right) (z)\text{.}
-\end{equation*}
-</div>
-<article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">6.2.16</span>.</h6>
-<div class="displaymath">
-\begin{equation*}
-g \in S_k(\Gamma (N))
-\end{equation*}
-</div>
-<p>s.t.</p>
-<div class="displaymath">
-\begin{equation*}
-g(z) = f(d z)
-\end{equation*}
-</div>
-<p>for some \(f \in S_k(\Gamma (N/d))\) is called an oldform. Newforms are \(f\in S_k(\Gamma (N))\) s.t.</p>
-<div class="displaymath">
-\begin{equation*}
-\pair fg = 0
-\end{equation*}
-</div>
-<p>for all \(g\in S_k(\Gamma (N))^{old}\text{.}\)</p></article></article></article><span class="incontext"><a href="sec-gz-mfs.html#paragraphs-52">in-context</a></span>
+<p>is a finite totally real extension of \(\QQ\) with degree \(\le \dim S_k = d\text{.}\)</p></article><article class="hiddenproof"><a data-knowl="./knowl/proof-125-hidden.html" title="Proof 6.2.15.1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article></article><span class="incontext"><a href="sec-gz-mfs.html#paragraphs-52">in-context</a></span>
 </body>
 </html>
