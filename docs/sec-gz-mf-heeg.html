@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Modular Curves and Heegner Points (Ricky)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gz-mfs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-gz-arch-I.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gz-mfs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-gz-arch-I.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg" class="active">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gz-mf-heeg"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">Modular Curves and Heegner Points (Ricky)</span>
+</h2>
+<a href="sec-gz-mf-heeg.html" class="permalink">¶</a><section class="subsection" id="subsec-cm-theory"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.1</span> <span class="title">CM theory</span>
+</h3>
+<a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="permalink">¶</a><p id="p-1345">Let \(E/CC\) be an elliptic curve so \(E(\CC) = \CC/\Lambda_\tau  \text{,}\) where \(\Lambda  = \ZZ + \ZZ\tau \text{,}\) writing \(E = E+\tau \text{,}\) \(\tau  \in \HH\text{.}\)</p>
+<p id="p-1346">Recall that</p>
+<div class="displaymath">
+\begin{equation*}
+\End(E) = \begin{cases} \ZZ \\ \ints \subseteq K ,\,K/\QQ \text{ im. quad.}\end{cases}
+\end{equation*}
+</div>
+<article class="theorem-like" id="lemma-27"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">6.3.1</span>.</h6>
+<div class="displaymath" id="p-1347">
+\begin{equation*}
+\Hom(\CC/\Lambda ,\CC/Lambda')= \{\alpha \in \CC : \alpha  \Lambda  \subseteq \Lambda '\}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-126"><a data-knowl="" class="id-ref" data-refid="hk-proof-126"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-126" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1348">Lift \(\phi  \colon \CC/\Lambda  \to \CC/\Lambda '\) to</p>
+<div class="displaymath">
+\begin{equation*}
+\phi  \colon \CC  \to \CC
+\end{equation*}
+</div>
+<p>to see \(\phi (z) = \alpha  z\) for some \(\alpha  \in \CC^\times\text{.}\)</p></article></div>
+<p id="p-1349">So \(\End(E_\tau ) = \{\alpha \in \CC : \alpha  \Lambda _\tau  \subseteq \Lambda _\tau \}\text{.}\) If \(\alpha  \cdot 1 = m_1 + m_2 \tau \) and</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha \cdot \tau  = n_1 + n_2 \tau 
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+m_2 \tau ^2 + (m_1 - n_1) \tau  - n_1 = 0
+\end{equation*}
+</div>
+<p>call these coefficients \(A,B,C \in \ZZ\text{.}\) And \(\Delta = B^2 - 4AC\text{,}\) so \(\Delta  = -f^2 d \lt 0\) where \(f\) is the <dfn class="terminology">conductor</dfn> of \(\tau \) and \(d\) is the discriminant of \(\tau \text{.}\)</p>
+<p id="p-1350">Then if \(\End(E_\tau ) \ne \ZZ\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\End(E_\tau ) = \ZZ \oplus f \ZZ \left\lb \frac {-d + \sqrt{-d}}{2} \right \rb = \ints_\Delta  \subseteq \ints_{\QQ(\sqrt{-d})}
+\end{equation*}
+</div>
+<p>We say \(E\) has <dfn class="terminology">CM</dfn> by \(\ints_\Delta \text{.}\)</p>
+<article class="remark-like" id="remark-38"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">6.3.2</span>.</h6>
+<p id="p-1351">We can create elliptic curves with CM by \(\ints\) by creating \(\CC/\ints\text{.}\) In fact, all elliptic curves with  CM by \(\ints\) are isomorphic to \(\CC/\ideal a\) for \(\ideal a\) a fractional ideal of \(\ints\text{.}\)</p></article><article class="theorem-like" id="theorem-90"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.3.3</span>.</h6>
+<p id="p-1352">Let \(E/\CC\) be an elliptic curve with CM by \(\ints_K\) for \(K/\QQ\) imaginary quadratic. Then \(j(E) \in \ints_{H_K}\text{.}\) Where \(H_K\) is the hilbert class field of \(K\text{,}\) so \(E\) admits a model over a number field.</p></article><article class="theorem-like" id="theorem-91"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.3.4</span>.</h6>
+<p id="p-1353">Let \(G = \Gal{H_K}{K}\) then we have an isomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+s\colon  \Pic(\ints_K) \to G
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\ideal b\mapsto s(\ideal b)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+j(\ideal a)^{s(\ideal b)} = j(\ideal b \inv \ideal a)\text{.}
+\end{equation*}
+</div>
+<p>(The \(j\)-invariants generate \(\ints_H\text{,}\) this characterises \(G\) as a Galois group).</p></article></section><section class="subsection" id="subsec-mod-curves"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.2</span> <span class="title">Modular curves</span>
+</h3>
+<a href="sec-gz-mf-heeg.html#subsec-mod-curves" class="permalink">¶</a><p id="p-1354">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma_0 (N) = \left\{\begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}\in \SL_2(\ZZ) : \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} \equiv \begin{pmatrix} \ast \amp \ast \\ 0 \amp \ast \end{pmatrix} \pmod N\right\}
+\end{equation*}
+</div>
+<p>degine \(Y_0(N) = \Gamma _0(N)\backslash \HH\) , \(X_0(N) = \Gamma _0(N)\backslash \overline \HH\text{.}\) Then \(X_0(N)\) can be given the structure of a projective algebraic variety \(/\QQ\text{.}\)</p>
+<p id="p-1355">The for \(L/\QQ\) a field we have the modular interpretation,</p>
+<div class="displaymath">
+\begin{equation*}
+Y_0(N)(L) = \{ (E,E',\phi ) : E,E' / L\text{ ell. curves},\, \phi \colon E \to E' / L\text{ cyclic isog. degree } N\}
+\end{equation*}
+</div>
+<p>i.e. \(\phi \) for which \(\ker \phi  \simeq \ZZ/N\text{.}\)</p>
+<article class="paragraphs" id="paragraphs-54"><h5 class="heading"><span class="title">Atkin-Lehner involutions.</span></h5>
+<p id="p-1356">Let \(d|N\text{,}\) \((d, N/d) = 1\text{.}\) We get an involution</p>
+<div class="displaymath">
+\begin{equation*}
+w_d  \colon X_0(N) \to X_0(N)
+\end{equation*}
+</div>
+<p>such that</p>
+<div class="displaymath">
+\begin{equation*}
+w_N(\epsilon  \colon E \to E') = (\hat \phi \colon E' \to E)
+\end{equation*}
+</div>
+<p>(and it swaps the two cusps.????????????)</p>
+<p id="p-1357">These generate a group \(W \subseteq \Aut(X_0(N))\) with the relation</p>
+<div class="displaymath">
+\begin{equation*}
+w_{d}w_{d'} = w_{dd'/(d,d')^2}\text{.}
+\end{equation*}
+</div>
+<p>So \(W \simeq (\ZZ/2)^s\) where \(s\) is the number of primes dividing \(N\text{.}\)</p></article></section></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

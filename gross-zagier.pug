@@ -465,3 +465,279 @@ section#sec-gz-mfs
                 | for all #[m g\in S_k(\Gamma (N))^{old}].
 
 
+section#sec-gz-mf-heeg
+    title Modular Curves and Heegner Points (Ricky)
+
+    subsection#subsec-cm-theory
+        title CM theory
+
+        p
+            | Let #[m E/CC] be an elliptic curve so #[m E(\CC) = \CC/\Lambda_\tau  ], where #[m  \Lambda  = \ZZ + \ZZ\tau ], writing #[m E = E+\tau ], #[m \tau  \in \HH].
+
+        p
+            | Recall that
+            me \End(E) = \begin{cases} \ZZ \\ \ints \subseteq K ,\,K/\QQ \text{ im. quad.}\end{cases}
+
+        lemma
+            statement: p
+                me \Hom(\CC/\Lambda ,\CC/Lambda')= \{\alpha \in \CC : \alpha  \Lambda  \subseteq \Lambda '\}
+            proof: p
+                | Lift #[m \phi  \colon \CC/\Lambda  \to \CC/\Lambda '] to
+                me \phi  \colon \CC  \to \CC
+                | to see #[m \phi (z) = \alpha  z] for some #[m \alpha  \in \CC^\times].
+
+        p
+            | So #[m \End(E_\tau ) = \{\alpha \in \CC : \alpha  \Lambda _\tau  \subseteq \Lambda _\tau \}].
+
+            | If #[m \alpha  \cdot 1 = m_1 + m_2 \tau ] and
+            me \alpha \cdot \tau  = n_1 + n_2 \tau 
+            | then
+            me m_2 \tau ^2 + (m_1 - n_1) \tau  - n_1 = 0
+            | call these coefficients #[m A,B,C \in \ZZ].
+            | And #[m \Delta = B^2 - 4AC], so #[m \Delta  = -f^2 d \lt 0] where #[m f] is the #[term conductor] of #[m \tau ] and #[m d] is the discriminant of #[m \tau ].
+        p
+            | Then if #[m \End(E_\tau ) \ne \ZZ] we have  
+            me \End(E_\tau ) = \ZZ \oplus f \ZZ \left\lb \frac {-d + \sqrt{-d}}{2} \right \rb = \ints_\Delta  \subseteq \ints_{\QQ(\sqrt{-d})}
+            | We say #[m E] has #[term CM] by #[m \ints_\Delta ].
+
+        remark
+            p
+                | We can create elliptic curves with CM by #[m \ints] by creating #[m \CC/\ints].
+                | In fact, all elliptic curves with  CM by #[m \ints] are isomorphic to #[m \CC/\ideal a] for #[m \ideal a] a fractional ideal of #[m \ints].
+        theorem
+            statement: p
+                | Let #[m E/\CC] be an elliptic curve with CM by #[m \ints_K] for #[m K/\QQ] imaginary quadratic.
+                | Then #[m j(E) \in \ints_{H_K}]. Where #[m H_K] is the hilbert class field of #[m K], so #[m E] admits a model over a number field.
+
+        theorem
+            statement: p
+                | Let #[m G = \Gal{H_K}{K}] then we have an isomorphism
+                me s\colon  \Pic(\ints_K) \to G
+                me \ideal b\mapsto s(\ideal b)
+                me j(\ideal a)^{s(\ideal b)} = j(\ideal b \inv \ideal a)
+                | .
+                | (The #[m j]-invariants generate #[m \ints_H], this characterises #[m G] as a Galois group).
+
+    subsection#subsec-mod-curves
+        title Modular curves
+
+        p
+            | Let
+            me \Gamma_0 (N) = \left\{\begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix}\in \SL_2(\ZZ) : \begin{pmatrix} a \amp b \\ c \amp d \end{pmatrix} \equiv \begin{pmatrix} \ast \amp \ast \\ 0 \amp \ast \end{pmatrix} \pmod N\right\}
+            | degine #[m Y_0(N) = \Gamma _0(N)\backslash \HH] , #[m X_0(N) = \Gamma _0(N)\backslash \overline \HH].
+            | Then #[m X_0(N)] can be given the structure of a projective algebraic variety #[m /\QQ].
+
+        p
+            | The for #[m L/\QQ] a field we have the modular interpretation,
+            me Y_0(N)(L) = \{ (E,E',\phi ) : E,E' / L\text{ ell. curves},\, \phi \colon E \to E' / L\text{ cyclic isog. degree } N\}
+            | i.e. #[m \phi ] for which #[m \ker \phi  \simeq \ZZ/N].
+
+
+        paragraphs
+            title Atkin-Lehner involutions
+
+            p
+                | Let #[m d|N], #[m (d, N/d) = 1]. We get an involution
+                me w_d  \colon X_0(N) \to X_0(N)
+                | such that
+                me w_N(\epsilon  \colon E \to E') = (\hat \phi \colon E' \to E)
+                | (and it swaps the two cusps.????????????)
+            p
+                | These generate a group #[m W \subseteq \Aut(X_0(N))] with the relation
+                me w_{d}w_{d'} = w_{dd'/(d,d')^2}
+                | .
+                | So #[m W \simeq (\ZZ/2)^s] where #[m s] is the number of primes dividing #[m N].
+
+
+
+
+
+
+section#sec-gz-arch-I
+    title Archimedean Local Heights I (Aash)
+
+    introduction
+        p
+            | Breuil-Conrad-Diamond-Taylor proved modularity of elliptic curves over #[m \QQ].
+            | Gross-Zagier assume this so we can now state results unconditionally.
+
+        theorem
+            statement: p
+                me g_A(z) = \sum_{m\ge 1} \pair c {T_m c^\sigma } e^{2\pi  i m z}
+                | is a cusp form of weight 2 on #[m \Gamma _0(N)] and satisfies
+                me (f,g_A) = \frac{u^2 |D|^{\frac 12} L'_A(f,1)}{8\pi ^2}
+                | for all #[m f] in the space of newforms of weight 2 in #[m \Gamma _0(N)].
+
+        p
+            me Cl_K \leftrightarrow \Gal HK
+            me A \leftrightarrow \sigma 
+            | the artin map.
+            me c = (x) - (\infty ) \in J(H)
+            | #[m x] a Heegner point and #[m \pair \cdot\cdot] is the global height pairing on #[m  J(H) \otimes \CC].
+
+        p
+            | #[m J] is the Jacobian of #[m X_0(N)], #[m K = \QQ(\sqrt{D})], class  number #[m h].
+        p
+            | #[m H/K] is the hilbert class field and #[m 2u] is the number of roots of unity in #[m K].
+        p
+            | Where #[m L_A] is a twisted #[m L]-function related to a component theta function, i.e.
+            me r_A(n) =\# \text{integral ideals in } A \text{ of norm }n
+            | .
+
+        p
+            | Also
+        theorem
+            statement: p
+                me L'(f,\chi ,1) = \frac{8\pi ^2 (f, f) \hat h(c_{x,f})}{hu^2 |D|^{\frac12}}
+                | .
+                me c_x = \sum_{\sigma \in \Gal HK} x\inv(\sigma ) c^\sigma 
+                | #[m x] a character of #[m \Gal HK].
+                | #[m c_{x,f}] is the projection to the #[m f]-isotypical component.
+
+
+    subsection
+        title Height Pairings
+
+        p
+            me | \cdot |_v \colon  H_v^\times \to \RR_+^\times
+            me |\alpha |_v = \alpha \bar \alpha
+            | if #[m H_v \cong \CC] or #[m q_v^{-v(\alpha )}] if #[m v] is non-archimidean.
+        p
+            | Neron's theory gives us a unique symbol on relatively primes divisors (divisors whose supports are disjoint).
+            | This pairing when defined splits up as
+            me \pair ab = \sum_v \pair ab_v
+            me g_A(z) = \sum_{m\ge1} \pair c{ T_m c^\sigma } e^{2\pi  i m z}
+            me c=(x) - (\infty )
+            me d = (x) - (0)
+            | #[m (0)-(\infty )] is of finite order in #[m J(\QQ)].
+
+        p
+            me \pair c{T_m c^\sigma } = \pair c {T_m d^\sigma }
+        remark
+            p
+                me r_A(m) = 0,\, N \gt1
+                | implies #[m c,T_m d^\sigma]  are relatively prime.
+
+        p
+            | If #[m S] is a compact Riemann surface then there exists a partially defined
+            me \pair \cdot \cdot \colon  \Div^0(S) \times \Div^0(S) \to \RR
+            | which satisfies
+            ol
+                li
+                    | #[m \pair ab] is defined when #[m a,b] have disjoint support.
+                li
+                    | #[m \pair \cdot\cdot] is bi-additive and symmetric whenever it is defined.
+                li
+                    | If #[m f] is meromorphic on #[m S] and
+                    me a= \sum_i n_i x_i
+                    me \pair{\divisor (f)} a = \sum n_i \log|f(x_i)|^2
+                li
+                    me \pair a {\sum_j m_j (y_j)}
+                    | is continuous on #[m S\smallsetminus |a|] w.r.t each #[m y_j].
+                    | Where
+                    me |a|
+                    | is the support of #[m a].
+        paragraphs
+            title Uniqueness
+            p
+                | Considering the difference of two symbols satisfying this then then it descends to the Jacobian as the values on #[m \divisor(f)] cancel.
+            p
+                | Therefore
+                me J\to \RR
+                me b\mapsto \pair b a
+                | is a continuous homorphism.
+                | Therefore the image is 0 (as 0 is the only compact function).
+
+        paragraphs
+            title Existence
+
+            p
+                | Fix #[m x_0, y_0 \in S]
+                me G(x,y)  = \pair{(x)  - (x_0)}{ (y) - (y_0)}
+                | where #[m x\ne y,y\ne x_0,x\ne y_0],
+                | #[m G] is a Green's function
+            p
+                | Biadditivity
+                me \implies \pair ab = \sum_{i,j} n_i m_j G(x_i, y_j)
+                | #[m a = \sum n_i(x_i)], #[m b = \sum m_j(y_j)], #[m y_0 \not \in |a|,x_0 \not \in |b|].
+
+            p
+                | Conversely given #[m G(x,y)] we can define a symbol #[m \pair \cdot \cdot] if for fixed #[m x \ne y_0] the function
+                me y \mapsto G(x,y)
+                | on #[m S\smallsetminus\{x,x_0\}] is:
+                ol
+                    li
+                        | continuous
+                    li
+                        | harmonic, i.e.
+                        me \Delta _y^2 G(x,y) = 0
+                        |.
+                    li
+                        | has logarithmic singularities of residue #[m +1,-1] at #[m y=x,y=x_0].
+            remark
+                p
+                    | #[m f] has logarithmic singularities at #[m z_0] if
+                    me f(z) - \alpha \log|\rho (z)|^2
+                    | is continuous near #[m z_0], #[m \rho ] is holomorphic near #[m z_0] and vanishing to order #[m 1] at #[m z_0].
+                p
+                    | #[m \alpha ] is called the residue of this singularity.
+                    | #[m \rho ] is the uniformizing parameter near #[m z_0].
+                    | Same symmetric condition on #[m x].
+            p
+                | So this is well defined, continuous and bi-additive if
+                me (|a| \cup\{x_0\}) \cap (|b| \cup \{y+0\} ) = \emptyset
+                | we want to extend to #[m |a|\cap |b| = \emptyset].
+
+            p
+                | Sufficient to show
+                me G(x_1,y) -G(x_2,y)
+                | makes sense as #[m y\to y_0], #[m x_1, x_2 \not \subset |b| \cup\{y_0\}].
+                me G(x_i, y) = - \log|\rho |^2 + c_i + O(\rho (y))
+                | therefore
+                me G(x_1,y) - G(x_2,y) \to c_1  - c_2
+                | as #[m y \to x_0].
+                | Therefore this is well defined and continuous by hypothesis 3. on #[m G(x,y)].
+
+            p
+
+                | #[m \pair\cdot\cdot] is defined and continuous and bi-additive now, consider
+                me (f) = \sum_{j=1}^ k m_j (y_j)
+                | a principal divisor, #[m x_0 \not \in |(f)|]
+                me \delta \colon x\mapsto \pair {(x) - (x_0) }{f} - \left(\log|f(x)|^2 - \log|f(x_0)|^2\right)
+                me = \sum m_j G(x,y_j) - \left( \log|f(x)| ^2 - \log|f(x_0)|^2\right)
+                | is harmonic for #[m x \in S - \{u_0, y_k\}] and continuous everywhere so the difference is constant.
+
+            p
+                me \pair {\sum n_i(x_i)}{(f)} - \sum n_i \log|f(x_i)|^2
+                me =\sum n_i \delta (x_i) = \sum n_i C = 0
+                | .
+            p
+                | If we take #[m G] with the given hypothesis as #[m \pair\cdot\cdot].
+                | #[m S  = X_0(N)(\CC)], #[m x_0 = \infty ], #[m y_0 = 0].
+                | Conditions on #[m G] needed:
+                ul
+                    li
+                        | G1 , #[m G] is a real valued continuous harmonic function on
+                        me E = \{ (z,z') \in \HH^2 : z\not \in \Gamma _0(N) z'\}
+                        | such that #[m G(\gamma  z, \gamma 'z') = G(z,z')] for all
+                        me (z,z')\in E, \gamma ,\gamma '\in \Gamma _0(N)
+                        | .
+                    li
+                        | G2 , Fix #[m z\in \HH]
+                        me G(z,z') = e_z\log|z- z'|^2 + O(1)
+                        | as #[m z'\to z], where #[m e_z] is the order of the stabilizer in #[m \Gamma _0(N)].
+                    li
+                        | G3 , For #[m z\in \HH] fixed
+                        me G(z,z') = 4\pi  y' + O(1)
+                        | as #[m z' = x' + iy' \to \infty ] and #[m G(z,z') = O(1)] at other cusps.
+                    li
+                        | G4 , For #[m z'\in \HH] fixed
+                        me G(z,z') = 4\pi  y/N|z|^2 + O(1)
+                        | as #[m z = x + iy \to 0 ] and #[m G(z,z') = O(1)] at other cusps.
+            p
+                | G2,G3,G4 come from uniformizing parameters , at #[m \infty ] #[m e^{2\pi i z} \leftrightarrow \rho ], non-cusp : #[m |z' -z|^{e_z} \leftrightarrow \rho ] , at 0 #[m e^{-2\pi i z}/|z|^2].
+                | applies the logarithmic singularity hypothesis on #[m G].
+
+            p
+                me G(z,z') = \lim_{s\to 1} \left( G_{N,s} (z,z') + 4 \pi  E_N(w_N z, s) + 4 \pi  E_N(z', s) + \frac{K_N}{s-1}\right) + c
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Existence.</span></h5>
+<p>Fix \(x_0, y_0 \in S\)</p>
+<div class="displaymath">
+\begin{equation*}
+G(x,y)  = \pair{(x)  - (x_0)}{ (y) - (y_0)}
+\end{equation*}
+</div>
+<p>where \(x\ne y,y\ne x_0,x\ne y_0\text{,}\) \(G\) is a Green's function</p>
+<p>Biadditivity</p>
+<div class="displaymath">
+\begin{equation*}
+\implies \pair ab = \sum_{i,j} n_i m_j G(x_i, y_j)
+\end{equation*}
+</div>
+<p>\(a = \sum n_i(x_i)\text{,}\) \(b = \sum m_j(y_j)\text{,}\) \(y_0 \not \in |a|,x_0 \not \in |b|\text{.}\)</p>
+<p>Conversely given \(G(x,y)\) we can define a symbol \(\pair \cdot \cdot\) if for fixed \(x \ne y_0\) the function</p>
+<div class="displaymath">
+\begin{equation*}
+y \mapsto G(x,y)
+\end{equation*}
+</div>
+<p>on \(S\smallsetminus\{x,x_0\}\) is:</p>
+<ol class="decimal">
+<li>continuous</li>
+<li>harmonic, i.e.<div class="displaymath">
+\begin{equation*}
+\Delta _y^2 G(x,y) = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li>has logarithmic singularities of residue \(+1,-1\) at \(y=x,y=x_0\text{.}\)</li>
+</ol>
+<article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">6.4.4</span>.</h6>
+<p>\(f\) has logarithmic singularities at \(z_0\) if</p>
+<div class="displaymath">
+\begin{equation*}
+f(z) - \alpha \log|\rho (z)|^2
+\end{equation*}
+</div>
+<p>is continuous near \(z_0\text{,}\) \(\rho \) is holomorphic near \(z_0\) and vanishing to order \(1\) at \(z_0\text{.}\)</p>
+<p>\(\alpha \) is called the residue of this singularity. \(\rho \) is the uniformizing parameter near \(z_0\text{.}\) Same symmetric condition on \(x\text{.}\)</p></article><p>So this is well defined, continuous and bi-additive if</p>
+<div class="displaymath">
+\begin{equation*}
+(|a| \cup\{x_0\}) \cap (|b| \cup \{y+0\} ) = \emptyset
+\end{equation*}
+</div>
+<p>we want to extend to \(|a|\cap |b| = \emptyset\text{.}\)</p>
+<p>Sufficient to show</p>
+<div class="displaymath">
+\begin{equation*}
+G(x_1,y) -G(x_2,y)
+\end{equation*}
+</div>
+<p>makes sense as \(y\to y_0\text{,}\) \(x_1, x_2 \not \subset |b| \cup\{y_0\}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+G(x_i, y) = - \log|\rho |^2 + c_i + O(\rho (y))
+\end{equation*}
+</div>
+<p>therefore</p>
+<div class="displaymath">
+\begin{equation*}
+G(x_1,y) - G(x_2,y) \to c_1  - c_2
+\end{equation*}
+</div>
+<p>as \(y \to x_0\text{.}\) Therefore this is well defined and continuous by hypothesis 3. on \(G(x,y)\text{.}\)</p>
+<p>\(\pair\cdot\cdot\) is defined and continuous and bi-additive now, consider</p>
+<div class="displaymath">
+\begin{equation*}
+(f) = \sum_{j=1}^ k m_j (y_j)
+\end{equation*}
+</div>
+<p>a principal divisor, \(x_0 \not \in |(f)|\)</p>
+<div class="displaymath">
+\begin{equation*}
+\delta \colon x\mapsto \pair {(x) - (x_0) }{f} - \left(\log|f(x)|^2 - \log|f(x_0)|^2\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \sum m_j G(x,y_j) - \left( \log|f(x)| ^2 - \log|f(x_0)|^2\right)
+\end{equation*}
+</div>
+<p>is harmonic for \(x \in S - \{u_0, y_k\}\) and continuous everywhere so the difference is constant.</p>
+<div class="displaymath">
+\begin{equation*}
+\pair {\sum n_i(x_i)}{(f)} - \sum n_i \log|f(x_i)|^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\sum n_i \delta (x_i) = \sum n_i C = 0\text{.}
+\end{equation*}
+</div>
+<p>If we take \(G\) with the given hypothesis as \(\pair\cdot\cdot\text{.}\) \(S  = X_0(N)(\CC)\text{,}\) \(x_0 = \infty \text{,}\) \(y_0 = 0\text{.}\) Conditions on \(G\) needed:</p>
+<ul class="disc">
+<li>G1 , \(G\) is a real valued continuous harmonic function on<div class="displaymath">
+\begin{equation*}
+E = \{ (z,z') \in \HH^2 : z\not \in \Gamma _0(N) z'\}
+\end{equation*}
+</div>such that \(G(\gamma  z, \gamma 'z') = G(z,z')\) for all<div class="displaymath">
+\begin{equation*}
+(z,z')\in E, \gamma ,\gamma '\in \Gamma _0(N)\text{.}
+\end{equation*}
+</div>
+</li>
+<li>G2 , Fix \(z\in \HH\)<div class="displaymath">
+\begin{equation*}
+G(z,z') = e_z\log|z- z'|^2 + O(1)
+\end{equation*}
+</div>as \(z'\to z\text{,}\) where \(e_z\) is the order of the stabilizer in \(\Gamma _0(N)\text{.}\)</li>
+<li>G3 , For \(z\in \HH\) fixed<div class="displaymath">
+\begin{equation*}
+G(z,z') = 4\pi  y' + O(1)
+\end{equation*}
+</div>as \(z' = x' + iy' \to \infty \) and \(G(z,z') = O(1)\) at other cusps.</li>
+<li>G4 , For \(z'\in \HH\) fixed<div class="displaymath">
+\begin{equation*}
+G(z,z') = 4\pi  y/N|z|^2 + O(1)
+\end{equation*}
+</div>as \(z = x + iy \to 0 \) and \(G(z,z') = O(1)\) at other cusps.</li>
+</ul>
+<p>G2,G3,G4 come from uniformizing parameters , at \(\infty \) \(e^{2\pi i z} \leftrightarrow \rho \text{,}\) non-cusp : \(|z' -z|^{e_z} \leftrightarrow \rho \) , at 0 \(e^{-2\pi i z}/|z|^2\text{.}\) applies the logarithmic singularity hypothesis on \(G\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+G(z,z') = \lim_{s\to 1} \left( G_{N,s} (z,z') + 4 \pi  E_N(w_N z, s) + 4 \pi  E_N(z', s) + \frac{K_N}{s-1}\right) + c
+\end{equation*}
+</div></article><span class="incontext"><a href="sec-gz-arch-I.html#paragraphs-56">in-context</a></span>
+</body>
+</html>

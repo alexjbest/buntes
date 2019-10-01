@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Archimedean Local Heights I (Aash)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gz-mf-heeg.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gz-mf-heeg.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I" class="active">Archimedean Local Heights I (Aash)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gz-arch-I"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.4</span> <span class="title">Archimedean Local Heights I (Aash)</span>
+</h2>
+<a href="sec-gz-arch-I.html" class="permalink">¶</a><section class="introduction" id="introduction-23"><p id="p-1358">Breuil-Conrad-Diamond-Taylor proved modularity of elliptic curves over \(\QQ\text{.}\) Gross-Zagier assume this so we can now state results unconditionally.</p>
+<article class="theorem-like" id="theorem-92"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.4.1</span>.</h6>
+<div class="displaymath" id="p-1359">
+\begin{equation*}
+g_A(z) = \sum_{m\ge 1} \pair c {T_m c^\sigma } e^{2\pi  i m z}
+\end{equation*}
+</div>
+<p>is a cusp form of weight 2 on \(\Gamma _0(N)\) and satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+(f,g_A) = \frac{u^2 |D|^{\frac 12} L'_A(f,1)}{8\pi ^2}
+\end{equation*}
+</div>
+<p>for all \(f\) in the space of newforms of weight 2 in \(\Gamma _0(N)\text{.}\)</p></article><div class="displaymath" id="p-1360">
+\begin{equation*}
+Cl_K \leftrightarrow \Gal HK
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+A \leftrightarrow \sigma 
+\end{equation*}
+</div>
+<p>the artin map.</p>
+<div class="displaymath">
+\begin{equation*}
+c = (x) - (\infty ) \in J(H)
+\end{equation*}
+</div>
+<p>\(x\) a Heegner point and \(\pair \cdot\cdot\) is the global height pairing on \(J(H) \otimes \CC\text{.}\)</p>
+<p id="p-1361">\(J\) is the Jacobian of \(X_0(N)\text{,}\) \(K = \QQ(\sqrt{D})\text{,}\) class  number \(h\text{.}\)</p>
+<p id="p-1362">\(H/K\) is the hilbert class field and \(2u\) is the number of roots of unity in \(K\text{.}\)</p>
+<p id="p-1363">Where \(L_A\) is a twisted \(L\)-function related to a component theta function, i.e.</p>
+<div class="displaymath">
+\begin{equation*}
+r_A(n) =\# \text{integral ideals in } A \text{ of norm }n\text{.}
+\end{equation*}
+</div>
+<p id="p-1364">Also</p>
+<article class="theorem-like" id="theorem-93"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.4.2</span>.</h6>
+<div class="displaymath" id="p-1365">
+\begin{equation*}
+L'(f,\chi ,1) = \frac{8\pi ^2 (f, f) \hat h(c_{x,f})}{hu^2 |D|^{\frac12}}\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+c_x = \sum_{\sigma \in \Gal HK} x\inv(\sigma ) c^\sigma 
+\end{equation*}
+</div>
+<p>\(x\) a character of \(\Gal HK\text{.}\) \(c_{x,f}\) is the projection to the \(f\)-isotypical component.</p></article></section><section class="subsection" id="subsection-96"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.4.1</span> <span class="title">Height Pairings</span>
+</h3>
+<div class="displaymath" id="p-1366">
+\begin{equation*}
+| \cdot |_v \colon  H_v^\times \to \RR_+^\times
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+|\alpha |_v = \alpha \bar \alpha
+\end{equation*}
+</div>
+<p>if \(H_v \cong \CC\) or \(q_v^{-v(\alpha )}\) if \(v\) is non-archimidean.</p>
+<p id="p-1367">Neron's theory gives us a unique symbol on relatively primes divisors (divisors whose supports are disjoint). This pairing when defined splits up as</p>
+<div class="displaymath">
+\begin{equation*}
+\pair ab = \sum_v \pair ab_v
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+g_A(z) = \sum_{m\ge1} \pair c{ T_m c^\sigma } e^{2\pi  i m z}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+c=(x) - (\infty )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+d = (x) - (0)
+\end{equation*}
+</div>
+<p>\((0)-(\infty )\) is of finite order in \(J(\QQ)\text{.}\)</p>
+<div class="displaymath" id="p-1368">
+\begin{equation*}
+\pair c{T_m c^\sigma } = \pair c {T_m d^\sigma }
+\end{equation*}
+</div>
+<article class="remark-like" id="remark-39"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">6.4.3</span>.</h6>
+<div class="displaymath" id="p-1369">
+\begin{equation*}
+r_A(m) = 0,\, N \gt1
+\end{equation*}
+</div>
+<p>implies \(c,T_m d^\sigma\)  are relatively prime.</p></article><p id="p-1370">If \(S\) is a compact Riemann surface then there exists a partially defined</p>
+<div class="displaymath">
+\begin{equation*}
+\pair \cdot \cdot \colon  \Div^0(S) \times \Div^0(S) \to \RR
+\end{equation*}
+</div>
+<p>which satisfies</p>
+<ol class="decimal">
+<li id="li-321">\(\pair ab\) is defined when \(a,b\) have disjoint support.</li>
+<li id="li-322">\(\pair \cdot\cdot\) is bi-additive and symmetric whenever it is defined.</li>
+<li id="li-323">If \(f\) is meromorphic on \(S\) and<div class="displaymath">
+\begin{equation*}
+a= \sum_i n_i x_i
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\pair{\divisor (f)} a = \sum n_i \log|f(x_i)|^2
+\end{equation*}
+</div>
+</li>
+<li id="li-324">
+<div class="displaymath">
+\begin{equation*}
+\pair a {\sum_j m_j (y_j)}
+\end{equation*}
+</div>is continuous on \(S\smallsetminus |a|\) w.r.t each \(y_j\text{.}\) Where<div class="displaymath">
+\begin{equation*}
+|a|
+\end{equation*}
+</div>is the support of \(a\text{.}\)</li>
+</ol>
+<article class="paragraphs" id="paragraphs-55"><h5 class="heading"><span class="title">Uniqueness.</span></h5>
+<p id="p-1371">Considering the difference of two symbols satisfying this then then it descends to the Jacobian as the values on \(\divisor(f)\) cancel.</p>
+<p id="p-1372">Therefore</p>
+<div class="displaymath">
+\begin{equation*}
+J\to \RR
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+b\mapsto \pair b a
+\end{equation*}
+</div>
+<p>is a continuous homorphism. Therefore the image is 0 (as 0 is the only compact function).</p></article><article class="paragraphs" id="paragraphs-56"><h5 class="heading"><span class="title">Existence.</span></h5>
+<p id="p-1373">Fix \(x_0, y_0 \in S\)</p>
+<div class="displaymath">
+\begin{equation*}
+G(x,y)  = \pair{(x)  - (x_0)}{ (y) - (y_0)}
+\end{equation*}
+</div>
+<p>where \(x\ne y,y\ne x_0,x\ne y_0\text{,}\) \(G\) is a Green's function</p>
+<p id="p-1374">Biadditivity</p>
+<div class="displaymath">
+\begin{equation*}
+\implies \pair ab = \sum_{i,j} n_i m_j G(x_i, y_j)
+\end{equation*}
+</div>
+<p>\(a = \sum n_i(x_i)\text{,}\) \(b = \sum m_j(y_j)\text{,}\) \(y_0 \not \in |a|,x_0 \not \in |b|\text{.}\)</p>
+<p id="p-1375">Conversely given \(G(x,y)\) we can define a symbol \(\pair \cdot \cdot\) if for fixed \(x \ne y_0\) the function</p>
+<div class="displaymath">
+\begin{equation*}
+y \mapsto G(x,y)
+\end{equation*}
+</div>
+<p>on \(S\smallsetminus\{x,x_0\}\) is:</p>
+<ol class="decimal">
+<li id="li-325">continuous</li>
+<li id="li-326">harmonic, i.e.<div class="displaymath">
+\begin{equation*}
+\Delta _y^2 G(x,y) = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-327">has logarithmic singularities of residue \(+1,-1\) at \(y=x,y=x_0\text{.}\)</li>
+</ol>
+<article class="remark-like" id="remark-40"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">6.4.4</span>.</h6>
+<p id="p-1376">\(f\) has logarithmic singularities at \(z_0\) if</p>
+<div class="displaymath">
+\begin{equation*}
+f(z) - \alpha \log|\rho (z)|^2
+\end{equation*}
+</div>
+<p>is continuous near \(z_0\text{,}\) \(\rho \) is holomorphic near \(z_0\) and vanishing to order \(1\) at \(z_0\text{.}\)</p>
+<p id="p-1377">\(\alpha \) is called the residue of this singularity. \(\rho \) is the uniformizing parameter near \(z_0\text{.}\) Same symmetric condition on \(x\text{.}\)</p></article><p id="p-1378">So this is well defined, continuous and bi-additive if</p>
+<div class="displaymath">
+\begin{equation*}
+(|a| \cup\{x_0\}) \cap (|b| \cup \{y+0\} ) = \emptyset
+\end{equation*}
+</div>
+<p>we want to extend to \(|a|\cap |b| = \emptyset\text{.}\)</p>
+<p id="p-1379">Sufficient to show</p>
+<div class="displaymath">
+\begin{equation*}
+G(x_1,y) -G(x_2,y)
+\end{equation*}
+</div>
+<p>makes sense as \(y\to y_0\text{,}\) \(x_1, x_2 \not \subset |b| \cup\{y_0\}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+G(x_i, y) = - \log|\rho |^2 + c_i + O(\rho (y))
+\end{equation*}
+</div>
+<p>therefore</p>
+<div class="displaymath">
+\begin{equation*}
+G(x_1,y) - G(x_2,y) \to c_1  - c_2
+\end{equation*}
+</div>
+<p>as \(y \to x_0\text{.}\) Therefore this is well defined and continuous by hypothesis 3. on \(G(x,y)\text{.}\)</p>
+<p id="p-1380">\(\pair\cdot\cdot\) is defined and continuous and bi-additive now, consider</p>
+<div class="displaymath">
+\begin{equation*}
+(f) = \sum_{j=1}^ k m_j (y_j)
+\end{equation*}
+</div>
+<p>a principal divisor, \(x_0 \not \in |(f)|\)</p>
+<div class="displaymath">
+\begin{equation*}
+\delta \colon x\mapsto \pair {(x) - (x_0) }{f} - \left(\log|f(x)|^2 - \log|f(x_0)|^2\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \sum m_j G(x,y_j) - \left( \log|f(x)| ^2 - \log|f(x_0)|^2\right)
+\end{equation*}
+</div>
+<p>is harmonic for \(x \in S - \{u_0, y_k\}\) and continuous everywhere so the difference is constant.</p>
+<div class="displaymath" id="p-1381">
+\begin{equation*}
+\pair {\sum n_i(x_i)}{(f)} - \sum n_i \log|f(x_i)|^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\sum n_i \delta (x_i) = \sum n_i C = 0\text{.}
+\end{equation*}
+</div>
+<p id="p-1382">If we take \(G\) with the given hypothesis as \(\pair\cdot\cdot\text{.}\) \(S  = X_0(N)(\CC)\text{,}\) \(x_0 = \infty \text{,}\) \(y_0 = 0\text{.}\) Conditions on \(G\) needed:</p>
+<ul class="disc">
+<li id="li-328">G1 , \(G\) is a real valued continuous harmonic function on<div class="displaymath">
+\begin{equation*}
+E = \{ (z,z') \in \HH^2 : z\not \in \Gamma _0(N) z'\}
+\end{equation*}
+</div>such that \(G(\gamma  z, \gamma 'z') = G(z,z')\) for all<div class="displaymath">
+\begin{equation*}
+(z,z')\in E, \gamma ,\gamma '\in \Gamma _0(N)\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-329">G2 , Fix \(z\in \HH\)<div class="displaymath">
+\begin{equation*}
+G(z,z') = e_z\log|z- z'|^2 + O(1)
+\end{equation*}
+</div>as \(z'\to z\text{,}\) where \(e_z\) is the order of the stabilizer in \(\Gamma _0(N)\text{.}\)</li>
+<li id="li-330">G3 , For \(z\in \HH\) fixed<div class="displaymath">
+\begin{equation*}
+G(z,z') = 4\pi  y' + O(1)
+\end{equation*}
+</div>as \(z' = x' + iy' \to \infty \) and \(G(z,z') = O(1)\) at other cusps.</li>
+<li id="li-331">G4 , For \(z'\in \HH\) fixed<div class="displaymath">
+\begin{equation*}
+G(z,z') = 4\pi  y/N|z|^2 + O(1)
+\end{equation*}
+</div>as \(z = x + iy \to 0 \) and \(G(z,z') = O(1)\) at other cusps.</li>
+</ul>
+<p id="p-1383">G2,G3,G4 come from uniformizing parameters , at \(\infty \) \(e^{2\pi i z} \leftrightarrow \rho \text{,}\) non-cusp : \(|z' -z|^{e_z} \leftrightarrow \rho \) , at 0 \(e^{-2\pi i z}/|z|^2\text{.}\) applies the logarithmic singularity hypothesis on \(G\text{.}\)</p>
+<div class="displaymath" id="p-1384">
+\begin{equation*}
+G(z,z') = \lim_{s\to 1} \left( G_{N,s} (z,z') + 4 \pi  E_N(w_N z, s) + 4 \pi  E_N(z', s) + \frac{K_N}{s-1}\right) + c
+\end{equation*}
+</div></article></section></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>
