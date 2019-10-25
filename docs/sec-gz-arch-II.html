@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Archimedean Local Heights II (Stevan)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gz-arch-I.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-deuring-lift.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gz-arch-I.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-deuring-lift.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+<li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II" class="active">Archimedean Local Heights II (Stevan)</a></li>
+<li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gz-arch-II"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.5</span> <span class="title">Archimedean Local Heights II (Stevan)</span>
+</h2>
+<a href="sec-gz-arch-II.html" class="permalink">¶</a><p id="p-1385">Last time: \(\pair \cdot\cdot \colon \Div^0(S) \times \Div^0(S) \to \RR\text{.}\) It is bi-additive and symmetric</p>
+<div class="displaymath">
+\begin{equation*}
+b   = \divisor(f),\,a = \sum n_i x_i
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\pair ab = \sum_j n_j \log|f(x_i)|^2
+\end{equation*}
+</div>
+<p>if \(x_0\ne y_0 \in S\)</p>
+<div class="displaymath">
+\begin{equation*}
+G(x,y) = \pair{x-x_0}{y-y_0}
+\end{equation*}
+</div>
+<p>if</p>
+<div class="displaymath">
+\begin{equation*}
+a =\sum n_ix_i,\,b = \sum m_j y_j
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+\pair a b = \sum n_im_j G(x_i,y_j)\text{.}
+\end{equation*}
+</div>
+<p id="p-1386">\(G \) is continuous, harmonic, has residue \(+1\) at \(\text{,}\) \(-1\) at \(x_0\text{.}\) And has logarithmic singularities.</p>
+<p id="p-1387">Now we pass to modular curves, \(S = X_0(N) = \HH^*/\Gamma _0(N)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+G(\gamma z,\gamma z') = G(z,z') \,\forall \gamma ,\gamma ' \in \Gamma _0(N)\text{.}
+\end{equation*}
+</div>
+<p id="p-1388">Continuous and harmonic when \(z \not \in \gamma  z',\,\gamma \in \Gamma _0(N)\text{.}\)</p>
+<div class="displaymath" id="p-1389">
+\begin{equation*}
+G(z,z')= e_z\log|z-z'|^2 + O(1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+z'\to z,\,z\text{fixed }
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+e_z =\#\Stab_z \Gamma _0(N)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G(z,z') = 4 \pi  y +O(1) \text{ as } z\to \infty 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G(z,z') = 4 \pi  y/N|z|^2 +O(1) \text{ as } z\to 0
+\end{equation*}
+</div>
+<p id="p-1390">Want \(G\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+g(\gamma z,\gamma z') = g(z,z'),\,\gamma \in \SL_2(\ZZ)
+\end{equation*}
+</div>
+<p>with \(g(z,z')\) continuous and harmonic in \(z,z'\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+g(z,z' ) = \log|z-z'|^2 + O(1),\,z'\to z\text{.}
+\end{equation*}
+</div>
+<p>A natural guess is</p>
+<div class="displaymath">
+\begin{equation*}
+g(z,z') = \log \left | \frac{z-z'}{\bar z- z'}\right |^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G(z,z') = \sum_{\gamma \in \Gamma _0(N)} g(z,\gamma z')
+\end{equation*}
+</div>
+<p>however this does not converge.</p>
+<p id="p-1391">Instead of asking for harmonic \(\Delta ^2 g = 0\) we instead ask that \(\Delta ^2 g = \epsilon  g\) and let \(\epsilon \to 0\text{.}\) This gives us a differential equation to solve.</p>
+<p id="p-1392">\(g\) is a function only of the hyperbolic distance between the points,</p>
+<div class="displaymath">
+\begin{equation*}
+t = 1 + \frac{|z-z'|^2}{2yy'}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+((1-t^2) \frac{\diff^2}{\diff t^2} - 2t \frac{\diff}{\diff t} + \epsilon )Q(t) = 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Q_{s-1}(t) = \frac{\Gamma (s)^2}{2\Gamma (2s)} \left(\frac{2}{1+t}\right)^2 F(s,s; 2s, \frac{2}{1+t}),\,t\gt 1,\,\epsilon  = s(s-1),\,s\gt1
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+F(a,b; c, z)= \sum_{n\ge 0} \frac{(a)_n (b)_n}{(c)_n} \frac{z^n}{n!}
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+(w)_n = \begin{cases} w(w+1)\cdots(w+n-1),\amp n\gt 0,\\1\\amp n=0\end{cases}\text{.}
+\end{equation*}
+</div>
+<p id="p-1393">So</p>
+<div class="displaymath">
+\begin{equation*}
+Q_{s-1}(t) = -\frac12 \log(t-1)  + O(1),\,t \to 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Q_{s-1}(t) = O(t^{-s}),\,t \to \infty 
+\end{equation*}
+</div>
+<p>and so we may now set</p>
+<div class="displaymath">
+\begin{equation*}
+g_s(z,z') = -2Q_{s-1}(t) = -2 Q_{s-1}\left(1+ \frac{|z-z'|^2}{2yy'}\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G_{N,s}(z,z') = \sum_{\gamma \in \Gamma _0(N)} g_s(z,\gamma z')
+\end{equation*}
+</div>
+<p id="p-1394">And our final Green's function is</p>
+<div class="displaymath">
+\begin{equation*}
+G(z,z') = \lim_{s\to 1} (G_{N,s}(z,z') + 4\pi  E_N(w_N z,s) + 2\pi  E_N(z', s)+\frac{K_N}{s-1}) +C
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+E_N(z,s) = \sum_{\gamma \in \begin{pmatrix}\ast\amp\ast\\0\amp\ast\end{pmatrix}\backslash \Gamma _0(N)} \Im(\gamma z)^s,\,z\in \HH,\,\Re(s) \gt 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+K_N = -\frac{12}{\lb \SL_2(\ZZ) : \Gamma _0(N)\rb } = \text{a residue of }G_{N,s} \text{ at } s=1,\,G_N(z) = -\frac{1}{N}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\kappa_{N}\left[\log N+2 \log 2-2 \gamma+2 \frac{\zeta^{\prime}}{\zeta}(2)-2 \sum_{p | N} \frac{p \log p}{p^{2}-1}\right]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+E_{N}(z, s)=N^{-s} \prod_{p | N}\left(1-p^{-2 s}\right)^{-1} \cdot \sum_{d | N} \frac{\mu(d)}{d^{s}} E\left(\frac{N}{d} z, s\right)
+\end{equation*}
+</div>
+<p id="p-1395">Asymptotics</p>
+<div class="displaymath">
+\begin{equation*}
+E(z, s)=y^{s}+\phi(s) y^{1-s}+O\left(e^{-y}\right) \quad(y=\operatorname{Im}(z) \rightarrow \infty)
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(s)=\frac{\Gamma\left(\frac{1}{2}\right) \Gamma\left(s-\frac{1}{2}\right)}{\Gamma(s)} \frac{\zeta(2 s-1)}{\zeta(2 s)}
+\end{equation*}
+</div>
+<p>and importantly</p>
+<div class="displaymath">
+\begin{equation*}
+G\left(z, z^{\prime}\right)=G\left(w_{N} z^{\prime}, w_{N} z\right)\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="proposition-77"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">6.5.1</span>.</h6>
+<p id="p-1396">Let \(x,x'\in X_0(N)\) be non-cuspidal</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}\langle(x)\amp\left.-(\infty),\left(x^{\prime}\right)-(0)\right\rangle_{\mathbb{C}} \\ \amp=\lim _{s \rightarrow 1}\left[G_{N, s}\left(z, z^{\prime}\right)+4 \pi E_{N}\left(w_{N} z, s\right)+4 \pi E_{N}\left(z^{\prime}, s\right)+\frac{\kappa_{N}}{s-1}\right]+C \end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>This can be re-stated as</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}\amp\langle(x)-(\infty), T_{m}\left(\left(x^{\prime}\right)-(0)\right)\rangle_{\mathbb{C}} \\=\amp \lim _{s \rightarrow 1}\left[G_{N, s}^{m}\left(z, z^{\prime}\right)+4 \pi \sigma_{1}(m) E_{N}\left(w_{N} z, s\right)\right.\\ \amp\left.+4 \pi m^{s} \sigma_{1-2 s}(m) E_{N}\left(z^{\prime}, s\right)+\frac{\sigma_{1}(m) \kappa_{N}}{s-1}\right]-\sigma_{1}(m) \lambda_{N}+2 \sigma_{1}(m) \kappa_{N} \end{aligned}
+\end{equation*}
+</div></article><p id="p-1397">Now let \(x\) be a Heegner point and take</p>
+<div class="displaymath">
+\begin{equation*}
+c= (x)  - (\infty )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+d = (x)-(0)
+\end{equation*}
+</div>
+<p>then \(\sigma \in \Gal HK \leftrightarrow \mathscr A\in \Cl_K\text{.}\) If \(\gcd(M,N) = 1\) then</p>
+<div class="displaymath">
+\begin{equation*}
+r_{\mathscr A} (m ) = 0 \implies |c| \cap |T_m (d)| = \emptyset\text{.}
+\end{equation*}
+</div>
+<p id="p-1398">What we want:</p>
+<div class="displaymath">
+\begin{equation*}
+S = \pair c {T_md}_\infty  = \sum_{v|\infty } \pair c {T_md^\sigma }_v
+\end{equation*}
+</div>
+<p>sum goes over \(h_K\) archimidean places of \(K\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+S = \sum_{\mathscr{A}_{1}, \mathscr{A}_{2} \in \mathrm{Cl}_{K} , \mathscr{A}_{1} \mathscr{A}_{2}^{-1}=\mathscr{A}, \mathscr{A}_{1} \mathscr{A}_{2}[\mathfrak{n}]^{-1}=\mathscr{B}} G_{N . s}^{m}\left(\tau_{\mathscr{A}_{1}, \mathbf{n}}, \tau_{\mathscr{A}_{2}, \mathrm{n}}\right)
+\end{equation*}
+</div>
+<p>we will compute \(S\) using the above</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}\left\langle c, T_{m} d^{\sigma}\right\rangle_{\infty}=\amp \lim _{s \rightarrow 1}\left[\gamma_{N, s}^{m}(\mathscr{A})+4 \pi \sigma_{1}(m) \sum_{\mathscr{A}_{1} \in \mathrm{Cl}_{K}} E_{N}\left(w_{N} \tau_{\mathscr{A}_{1}, \mathbf{n}}, S\right)\right.\\ \amp\left.+4 \pi m^{s} \sigma_{1-2 s}(m) \sum_{\mathscr{A}_{2} \in \mathrm{Cl}_{K}} E_{N}\left(\tau_{\mathscr{A}_{2}, \mathbf{n}}, S\right)+\frac{h_{K} \sigma_{1}(m) \kappa_{N}}{S-1}\right] \\ \amp-h_{K} \sigma_{1}(m) \hat{\lambda}_{N}+2 h_{K} \sigma_{1}(m) \kappa_{N} \end{aligned}
+\end{equation*}
+</div>
+<p>and apply</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \sum_{\mathscr{A} \in \mathrm{Cl}_{K}} E_{N}\left(w_{N} \tau_{\mathscr{A}, \mathfrak{w}}, s\right) \amp=\sum_{\mathscr{A} \in \mathrm{Cl}_{K_ { K }}} E_{N}\left(\tau_{\mathscr{A}, \mathfrak{n}}, s\right) \\ \amp=N^{-s} \prod_{p | N}\left(1-p^{-2 s}\right)^{-1} \sum_{d \backslash N} \frac{\mu(d)}{d^{s}} \sum_{\mathscr{A} \in \mathbb{Cl}_{K}} E\left(\frac{N}{d} \tau_{\mathscr{A}, \mathfrak{n}}, s\right) \end{aligned}
+\end{equation*}
+</div>
+<p>so we must only compute</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{\mathscr{A} \in \mathrm{Cl}_{K}} E\left(\frac{N}{d} \tau_{\mathscr{A}, \mathrm{n}}, s\right)\text{.}
+\end{equation*}
+</div>
+<p>\(\tau _{\mathscr A, \mathfrak n}\) is a solution of</p>
+<div class="displaymath">
+\begin{equation*}
+a\tau ^2 + b\tau  + c = 0
+\end{equation*}
+</div>
+<p>of discriminant \(D = b^2 -4ac\text{.}\) So all other \(\frac Nd \tau _{\mathscr A, \mathfrak n}\) is a solution of some quadratic equation of discriminant \(D = b^2 -4ac\text{.}\) From analytic number theory we have the formula</p>
+<div class="displaymath">
+\begin{equation*}
+E\left(\tau_{\mathscr{A}}, s\right)=2^{-s}|D|^{s / 2} u \zeta(2 s)^{-1} \zeta_{K}(\mathscr{A}, s)
+\end{equation*}
+</div>
+<p>with \(u\) half the number of units in \(K\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\zeta_{K}(\mathscr{A}, s)=\sum_{\mathfrak{a} \text { integral } ,\,[\mathfrak{a}]=\mathscr{A}} \frac{1}{N(\mathfrak{a})^{s}}
+\end{equation*}
+</div>
+<p>as we also have</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{\mathscr{A}} \zeta_{K}(\mathscr{A}, s)=\zeta_{K}(s)\text{.}
+\end{equation*}
+</div>
+<p id="p-1399">we then get</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}\left\langle c, T_{m} d^{\sigma}\right\rangle_{\infty}=\amp \lim _{s \rightarrow 1}\left[\gamma_{N, s}^{m}(\mathscr{A})+\frac{2^{2-s}|D|^{s / 2} \pi u}{N^{s} \prod_{p | N}\left(1+p^{-s}\right)}\left(\sigma_{1}(m)+m^{s} \sigma_{1-2 s}(m)\right) \frac{\zeta_{K}(s)}{\zeta(2 s)}\right.\\ \amp\left.+\frac{h_{K} \sigma_{1}(m) \kappa_{N}}{s-1}\right]-h_{K} \sigma_{1}(m) \lambda_{N}+2 h_{K} \sigma_{1}(m) \kappa_{N} \end{aligned}
+\end{equation*}
+</div>
+<p>where we may substitute</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \zeta_{K}(s) \amp=\zeta(s) L(s, \varepsilon) \\ \amp=\left(\frac{1}{s-1}+\gamma+O(s-1)\right)\left(L(1, \varepsilon)+L^{\prime}(1, \varepsilon)(s-1)+O(s-1)^{2}\right) \end{aligned}
+\end{equation*}
+</div>
+<p>to finally obtain</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}\left\langle c, T_{m} d^{\sigma}\right\rangle_{\infty}=\amp \lim _{s \rightarrow 1}\left[\gamma_{N, s}^{m}(\mathscr{A})-\frac{h_{K} \sigma_{1}(m) \kappa_{N}}{s-1}\right] \\ \amp+h_{K} \kappa_{N}\left[\sigma_{1}(m)\left(\log \frac{N}{|D|}+2 \sum_{p | N} \frac{\log p}{p^{2}-1}+2+2 \frac{\zeta^{\prime}}{\zeta}(2)-2 \frac{L^{\prime}}{L}(1, \varepsilon)\right)\right.\\ \amp\left.+\sum_{d | m} d \log \frac{m}{d^{2}}\right] \end{aligned}\text{.}
+\end{equation*}
+</div>
+<p id="p-1400">To compute the archimidean local height when the supports are not disjoint (i.e. \(r_{\mathscr A}(m) \ne 0\)) We consider the simplified case of</p>
+<div class="displaymath">
+\begin{equation*}
+\{x\} = |a| \cap |b|
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+\pair a b_{v,g} = \lim_{y\to x} (\pair {a_y}{b} - \ord_x(a) \ord_x(b) \log |g(y)|_v)
+\end{equation*}
+</div>
+<p>where \(g\) is a uniformizer at \(x\) i.e. \(\ord_x(g) =1\text{.}\) and \(a_y\) is the divisor \(a\) with \(y\) in place of \(x\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+a = n_x x + \cdots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+a_y = n_x y + \cdots
+\end{equation*}
+</div>
+<p>so \(|a_y | \cap |b| = \emptyset\text{.}\) If \(g'\) is another uniformizer at \(x\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{v} \pair a b_{v,g}  -\pair ab_{v,g'} = \ord_x(a) \ord_x(b) \log|g'/g(x)|_v
+\end{equation*}
+</div>
+<p>so this gives a well defined global height by the product formula.</p>
+<p id="p-1401">In our setting we have</p>
+<div class="displaymath">
+\begin{equation*}
+c = (x) -(\infty ),\,d = (x) - (0)
+\end{equation*}
+</div>
+<p>and \(\ord_x(c)  = 1,\,\ord_x(T_m(d^\sigma )) = r_{\mathscr A}(m)\) so under this definition</p>
+<div class="displaymath">
+\begin{equation*}
+\pair c {T_md^\sigma} = \lim_{y\to x} \pair {c_y}{T_md^\sigma } - r_{\mathscr A} (m)\log(|g(y)|_v)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\omega=\eta^{4}(z) \frac{d q}{q}=2 \pi i \eta^{4}(z) d z
+\end{equation*}
+</div>
+<p>with</p>
+<div class="displaymath">
+\begin{equation*}
+\eta(z)=q^{1/{24}} \prod_{n}\left(1-q^{n}\right)
+\end{equation*}
+</div>
+<p>the Dedekind eta-function.</p>
+<p id="p-1402">So for \(v\)  a complex places</p>
+<div class="displaymath">
+\begin{equation*}
+\log |g(y)|_{v}-u \log \left|2 \pi i \eta^{4}(z)(w-z)\right|_{v} \rightarrow 0
+\end{equation*}
+</div>
+<p>as \(y \to x\text{.}\)</p></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

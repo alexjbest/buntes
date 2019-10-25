@@ -673,7 +673,7 @@ section#sec-gz-arch-I
                         me \Delta _y^2 G(x,y) = 0
                         |.
                     li
-                        | has logarithmic singularities of residue #[m +1,-1] at #[m y=x,y=x_0].
+                        | has logarithmic singularities of residue #[m +1,-1] at #[m y=x,y=x_0, x=y_0].
             remark
                 p
                     | #[m f] has logarithmic singularities at #[m z_0] if
@@ -741,3 +741,380 @@ section#sec-gz-arch-I
             p
                 me G(z,z') = \lim_{s\to 1} \left( G_{N,s} (z,z') + 4 \pi  E_N(w_N z, s) + 4 \pi  E_N(z', s) + \frac{K_N}{s-1}\right) + c
 
+section#sec-gz-arch-II
+    title Archimedean Local Heights II (Stevan)
+
+    p
+        | Last time: #[m \pair \cdot\cdot \colon \Div^0(S) \times \Div^0(S) \to \RR].
+        | It is bi-additive and symmetric
+        me b   = \divisor(f),\,a = \sum n_i x_i
+        me \pair ab = \sum_j n_j \log|f(x_i)|^2
+        | if #[m x_0\ne y_0 \in S]
+        me G(x,y) = \pair{x-x_0}{y-y_0}
+        | if
+        me a =\sum n_ix_i,\,b = \sum m_j y_j
+        | then
+        me \pair a b = \sum n_im_j G(x_i,y_j)
+        | .
+    p
+        | #[m G ] is continuous, harmonic, has residue #[m +1] at #[m ], #[m -1] at #[m x_0].
+        | And has logarithmic singularities.
+
+    p
+        | Now we pass to modular curves, #[m S = X_0(N) = \HH^*/\Gamma _0(N)].
+        me G(\gamma z,\gamma z') = G(z,z') \,\forall \gamma ,\gamma ' \in \Gamma _0(N)
+        | .
+    p
+        | Continuous and harmonic when #[m z \not \in \gamma  z',\,\gamma \in \Gamma _0(N)].
+    p
+        me G(z,z')= e_z\log|z-z'|^2 + O(1)
+        me z'\to z,\,z\text{fixed }
+        me e_z =\#\Stab_z \Gamma _0(N)
+        me G(z,z') = 4 \pi  y +O(1) \text{ as } z\to \infty 
+        me G(z,z') = 4 \pi  y/N|z|^2 +O(1) \text{ as } z\to 0
+
+
+    p
+        | Want #[m G].
+        me g(\gamma z,\gamma z') = g(z,z'),\,\gamma \in \SL_2(\ZZ)
+        | with #[m g(z,z')] continuous and harmonic in #[m z,z'].
+        me g(z,z' ) = \log|z-z'|^2 + O(1),\,z'\to z
+        | .
+        | A natural guess is
+        me g(z,z') = \log \left | \frac{z-z'}{\bar z- z'}\right |^2
+        me G(z,z') = \sum_{\gamma \in \Gamma _0(N)} g(z,\gamma z')
+        | however this does not converge.
+    p
+        | Instead of asking for harmonic #[m \Delta ^2 g = 0] we instead ask that #[m \Delta ^2 g = \epsilon  g] and let #[m \epsilon \to 0].
+        | This gives us a differential equation to solve.
+
+    p
+        | #[m g] is a function only of the hyperbolic distance between the points,
+        me t = 1 + \frac{|z-z'|^2}{2yy'}
+        me ((1-t^2) \frac{\diff^2}{\diff t^2} - 2t \frac{\diff}{\diff t} + \epsilon )Q(t) = 0
+        me Q_{s-1}(t) = \frac{\Gamma (s)^2}{2\Gamma (2s)} \left(\frac{2}{1+t}\right)^2 F(s,s; 2s, \frac{2}{1+t}),\,t\gt 1,\,\epsilon  = s(s-1),\,s\gt1
+        | where
+        me F(a,b; c, z)= \sum_{n\ge 0} \frac{(a)_n (b)_n}{(c)_n} \frac{z^n}{n!}
+        |where
+        me (w)_n = \begin{cases} w(w+1)\cdots(w+n-1),\amp n\gt 0,\\1\\amp n=0\end{cases}
+        |.
+    p
+        |So
+        me Q_{s-1}(t) = -\frac12 \log(t-1)  + O(1),\,t \to 1
+        me Q_{s-1}(t) = O(t^{-s}),\,t \to \infty 
+        | and so we may now set
+        me g_s(z,z') = -2Q_{s-1}(t) = -2 Q_{s-1}\left(1+ \frac{|z-z'|^2}{2yy'}\right)
+        me G_{N,s}(z,z') = \sum_{\gamma \in \Gamma _0(N)} g_s(z,\gamma z')
+
+    p
+        | And our final Green's function is
+        me G(z,z') = \lim_{s\to 1} (G_{N,s}(z,z') + 4\pi  E_N(w_N z,s) + 2\pi  E_N(z', s)+\frac{K_N}{s-1}) +C
+        me E_N(z,s) = \sum_{\gamma \in \begin{pmatrix}\ast\amp\ast\\0\amp\ast\end{pmatrix}\backslash \Gamma _0(N)} \Im(\gamma z)^s,\,z\in \HH,\,\Re(s) \gt 1
+        me K_N = -\frac{12}{\lb \SL_2(\ZZ) : \Gamma _0(N)\rb } = \text{a residue of }G_{N,s} \text{ at } s=1,\,G_N(z) = -\frac{1}{N}
+        me =\kappa_{N}\left[\log N+2 \log 2-2 \gamma+2 \frac{\zeta^{\prime}}{\zeta}(2)-2 \sum_{p | N} \frac{p \log p}{p^{2}-1}\right]
+        me E_{N}(z, s)=N^{-s} \prod_{p | N}\left(1-p^{-2 s}\right)^{-1} \cdot \sum_{d | N} \frac{\mu(d)}{d^{s}} E\left(\frac{N}{d} z, s\right)
+    p
+        | Asymptotics
+        me E(z, s)=y^{s}+\phi(s) y^{1-s}+O\left(e^{-y}\right) \quad(y=\operatorname{Im}(z) \rightarrow \infty)
+        |where
+        me \phi(s)=\frac{\Gamma\left(\frac{1}{2}\right) \Gamma\left(s-\frac{1}{2}\right)}{\Gamma(s)} \frac{\zeta(2 s-1)}{\zeta(2 s)}
+        | and importantly
+        me G\left(z, z^{\prime}\right)=G\left(w_{N} z^{\prime}, w_{N} z\right)
+        | .
+    proposition: statement: p
+        | Let #[m x,x'\in X_0(N)] be non-cuspidal
+        me \begin{aligned}\langle(x)\amp\left.-(\infty),\left(x^{\prime}\right)-(0)\right\rangle_{\mathbb{C}} \\ \amp=\lim _{s \rightarrow 1}\left[G_{N, s}\left(z, z^{\prime}\right)+4 \pi E_{N}\left(w_{N} z, s\right)+4 \pi E_{N}\left(z^{\prime}, s\right)+\frac{\kappa_{N}}{s-1}\right]+C \end{aligned}
+        | .
+        | This can be re-stated as
+        me \begin{aligned}\amp\langle(x)-(\infty), T_{m}\left(\left(x^{\prime}\right)-(0)\right)\rangle_{\mathbb{C}} \\=\amp \lim _{s \rightarrow 1}\left[G_{N, s}^{m}\left(z, z^{\prime}\right)+4 \pi \sigma_{1}(m) E_{N}\left(w_{N} z, s\right)\right.\\ \amp\left.+4 \pi m^{s} \sigma_{1-2 s}(m) E_{N}\left(z^{\prime}, s\right)+\frac{\sigma_{1}(m) \kappa_{N}}{s-1}\right]-\sigma_{1}(m) \lambda_{N}+2 \sigma_{1}(m) \kappa_{N} \end{aligned}
+
+    p
+        | Now let #[m x] be a Heegner point and take
+        me c= (x)  - (\infty )
+        me d = (x)-(0)
+        | then #[m \sigma \in \Gal HK \leftrightarrow \mathscr A\in \Cl_K].
+        | If #[m \gcd(M,N) = 1] then
+        me r_{\mathscr A} (m ) = 0 \implies |c| \cap |T_m (d)| = \emptyset
+        | .
+
+    p
+        | What we want:
+        me S = \pair c {T_md}_\infty  = \sum_{v|\infty } \pair c {T_md^\sigma }_v
+        | sum goes over #[m h_K] archimidean places of #[m K].
+        me S = \sum_{\mathscr{A}_{1}, \mathscr{A}_{2} \in \mathrm{Cl}_{K} , \mathscr{A}_{1} \mathscr{A}_{2}^{-1}=\mathscr{A}, \mathscr{A}_{1} \mathscr{A}_{2}[\mathfrak{n}]^{-1}=\mathscr{B}} G_{N . s}^{m}\left(\tau_{\mathscr{A}_{1}, \mathbf{n}}, \tau_{\mathscr{A}_{2}, \mathrm{n}}\right)
+        | we will compute #[m S] using the above
+        me \begin{aligned}\left\langle c, T_{m} d^{\sigma}\right\rangle_{\infty}=\amp \lim _{s \rightarrow 1}\left[\gamma_{N, s}^{m}(\mathscr{A})+4 \pi \sigma_{1}(m) \sum_{\mathscr{A}_{1} \in \mathrm{Cl}_{K}} E_{N}\left(w_{N} \tau_{\mathscr{A}_{1}, \mathbf{n}}, S\right)\right.\\ \amp\left.+4 \pi m^{s} \sigma_{1-2 s}(m) \sum_{\mathscr{A}_{2} \in \mathrm{Cl}_{K}} E_{N}\left(\tau_{\mathscr{A}_{2}, \mathbf{n}}, S\right)+\frac{h_{K} \sigma_{1}(m) \kappa_{N}}{S-1}\right] \\ \amp-h_{K} \sigma_{1}(m) \hat{\lambda}_{N}+2 h_{K} \sigma_{1}(m) \kappa_{N} \end{aligned}
+        | and apply
+        me \begin{aligned} \sum_{\mathscr{A} \in \mathrm{Cl}_{K}} E_{N}\left(w_{N} \tau_{\mathscr{A}, \mathfrak{w}}, s\right) \amp=\sum_{\mathscr{A} \in \mathrm{Cl}_{K_ { K }}} E_{N}\left(\tau_{\mathscr{A}, \mathfrak{n}}, s\right) \\ \amp=N^{-s} \prod_{p | N}\left(1-p^{-2 s}\right)^{-1} \sum_{d \backslash N} \frac{\mu(d)}{d^{s}} \sum_{\mathscr{A} \in \mathbb{Cl}_{K}} E\left(\frac{N}{d} \tau_{\mathscr{A}, \mathfrak{n}}, s\right) \end{aligned}
+        | so we must only compute
+        me \sum_{\mathscr{A} \in \mathrm{Cl}_{K}} E\left(\frac{N}{d} \tau_{\mathscr{A}, \mathrm{n}}, s\right)
+        | .
+        | #[m \tau _{\mathscr A, \mathfrak n}] is a solution of
+        me a\tau ^2 + b\tau  + c = 0
+        | of discriminant #[m D = b^2 -4ac].
+        | So all other
+        | #[m \frac Nd \tau _{\mathscr A, \mathfrak n}] is a solution of some quadratic equation of discriminant #[m D = b^2 -4ac].
+        | From analytic number theory we have the formula
+        me E\left(\tau_{\mathscr{A}}, s\right)=2^{-s}|D|^{s / 2} u \zeta(2 s)^{-1} \zeta_{K}(\mathscr{A}, s)
+        | with #[m u] half the number of units in #[m K].
+        me \zeta_{K}(\mathscr{A}, s)=\sum_{\mathfrak{a} \text { integral } ,\,[\mathfrak{a}]=\mathscr{A}} \frac{1}{N(\mathfrak{a})^{s}}
+        | as we also have
+        me  \sum_{\mathscr{A}} \zeta_{K}(\mathscr{A}, s)=\zeta_{K}(s)
+        | .
+    p
+        | we then get
+        me \begin{aligned}\left\langle c, T_{m} d^{\sigma}\right\rangle_{\infty}=\amp \lim _{s \rightarrow 1}\left[\gamma_{N, s}^{m}(\mathscr{A})+\frac{2^{2-s}|D|^{s / 2} \pi u}{N^{s} \prod_{p | N}\left(1+p^{-s}\right)}\left(\sigma_{1}(m)+m^{s} \sigma_{1-2 s}(m)\right) \frac{\zeta_{K}(s)}{\zeta(2 s)}\right.\\ \amp\left.+\frac{h_{K} \sigma_{1}(m) \kappa_{N}}{s-1}\right]-h_{K} \sigma_{1}(m) \lambda_{N}+2 h_{K} \sigma_{1}(m) \kappa_{N} \end{aligned}
+        | where we may substitute
+        me \begin{aligned} \zeta_{K}(s) \amp=\zeta(s) L(s, \varepsilon) \\ \amp=\left(\frac{1}{s-1}+\gamma+O(s-1)\right)\left(L(1, \varepsilon)+L^{\prime}(1, \varepsilon)(s-1)+O(s-1)^{2}\right) \end{aligned}
+        | to finally obtain
+        me \begin{aligned}\left\langle c, T_{m} d^{\sigma}\right\rangle_{\infty}=\amp \lim _{s \rightarrow 1}\left[\gamma_{N, s}^{m}(\mathscr{A})-\frac{h_{K} \sigma_{1}(m) \kappa_{N}}{s-1}\right] \\ \amp+h_{K} \kappa_{N}\left[\sigma_{1}(m)\left(\log \frac{N}{|D|}+2 \sum_{p | N} \frac{\log p}{p^{2}-1}+2+2 \frac{\zeta^{\prime}}{\zeta}(2)-2 \frac{L^{\prime}}{L}(1, \varepsilon)\right)\right.\\ \amp\left.+\sum_{d | m} d \log \frac{m}{d^{2}}\right] \end{aligned}
+        | .
+    p
+        | To compute the archimidean local height when the supports are not disjoint (i.e. #[m r_{\mathscr A}(m) \ne 0])
+        | We consider the simplified case of
+        me \{x\} = |a| \cap |b|
+        | then
+        me \pair a b_{v,g} = \lim_{y\to x} (\pair {a_y}{b} - \ord_x(a) \ord_x(b) \log |g(y)|_v)
+        |where #[m g] is a uniformizer at #[m x] i.e. #[m \ord_x(g) =1].
+        | and #[m a_y] is the divisor #[m a] with #[m y] in place of #[m x].
+        me a = n_x x + \cdots
+        me a_y = n_x y + \cdots
+        | so #[m |a_y | \cap |b| = \emptyset].
+        | If #[m g'] is another uniformizer at #[m x] then
+        me \sum_{v} \pair a b_{v,g}  -\pair ab_{v,g'} = \ord_x(a) \ord_x(b) \log|g'/g(x)|_v
+        | so this gives a well defined global height by the product formula.
+
+    p
+        | In our setting we have
+        me c = (x) -(\infty ),\,d = (x) - (0)
+        | and #[m \ord_x(c)  = 1,\,\ord_x(T_m(d^\sigma )) = r_{\mathscr A}(m)]
+        | so under this definition
+        me \pair c {T_md^\sigma} = \lim_{y\to x} \pair {c_y}{T_md^\sigma } - r_{\mathscr A} (m)\log(|g(y)|_v)
+        me \omega=\eta^{4}(z) \frac{d q}{q}=2 \pi i \eta^{4}(z) d z
+        | with
+        me \eta(z)=q^{1/{24}} \prod_{n}\left(1-q^{n}\right)
+        | the Dedekind eta-function.
+    p
+        | So for #[m v]  a complex places
+        me \log |g(y)|_{v}-u \log \left|2 \pi i \eta^{4}(z)(w-z)\right|_{v} \rightarrow 0
+        | as #[m y \to x].
+
+section#sec-deuring-lift
+    title Deuring's theory of lifts (Angus)
+
+    p
+        | Notations:
+        | #[m X = X_0(N)/\QQ], #[m x  = (E \to E')] a heegner point of discriminant #[m D], with CM by #[m \ints_K].
+        | #[m H] the Hilbert class field of #[m K], #[m v] a place of #[m p].
+        me c = (x) - (\infty ),\, d = (x) - (0)
+        me \operatorname{Art}_K \colon \Cl_K \to \Gal H K
+        me \mathscr A \to \sigma 
+        me r_{\mathscr A}(m) = \# \text{integral ideals of }\ints_K\text{ in the class of }\mathscr A \text{ of norm }m
+        me \Lambda _v = \text{ring of integers in the completion }H_v
+        me W = (\Lambda _v^{nr})^\wedge
+        me \pi _v, k_v, q_v
+        me \mathcal X/\Lambda _v
+        | a model of #[m X] over #[m \Lambda _v].
+
+    paragraphs
+        title Meta-Goal
+
+        p
+            | Understand
+
+            me g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
+            | strategy is to decompose
+            me \pair a b = \sum_v \pair ab_v
+            | so far, seen the archimidean #[m v] case.
+            | Today, nonarchimidean.
+
+        p
+            | Following GZ and Michigan seminar.
+
+    subsection
+        title Generalities on nonarchimidean local heights
+
+        theorem
+            statement: p
+                | Let #[m a,b\in \Div^0(X \otimes H_v)] be relatively prime divisors.
+                | Let #[m A,B] be extensions of these to divisors on #[m \mathcal X] such that
+                me (A. \mathcal Y) = (B. \mathcal Y) = 0
+                | for all irreducible components #[m \mathcal Y] of #[m \mathcal X\otimes k_v].
+                | Then
+                me \pair ab_v = -(A.B) \log q_v
+        remark: p #[m \mathcal X] is an arithmetic surface.
+
+        theorem
+            title G-Z III.3.3
+            statement: p
+                | Let #[m m \ge 1] s.t. #[m (m,N) = 1] and #[m r_{\mathscr A}(m)= 0].
+                | Then
+                me \pair c{T_m d^\sigma }_v = -(\underline x. T_m \underline x^\sigma ) \log(q_v)
+                | where #[m \underline x \in \mathcal X(\Lambda _v)] corresponding to #[m x].
+        proposition
+            title G-Z III.4.4
+            statement: p
+                | Assumptions as  above, then
+                me (\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
+                | where for #[m \underline x = (E_1 \to E_1')] and #[m \underline y = (E_2 \to E_2')].
+                | An element #[m (f,f') \in \Hom(\underline x,\underline y) ] is
+                me.
+                    \xymatrix{
+                    E_1 \ar[r] \ar[d]_{f} &amp; E_1' \ar[d]^{f'}\\
+                    E_2 \ar[r] &amp; E_2'}
+                | .
+
+        p
+            | Today we will begin the proof of this proposition in the case that #[m p] is split in #[m K].
+            | In this case LHS and RHS are both 0.
+    subsection
+        title Deuring's theory of lifts
+
+        p
+            | Let #[m E/F] be an elliptic curve over a number field with CM by #[m K], (#[m \End (E) = \ints_K]).
+            | We'll begin by studying the reductions #[m \overline E \pmod p].
+
+        definition
+            statement: p
+                | Let #[m \overline E /\FF_q] be an elliptic curve.
+                | We say #[m \overline E] is ordinary if #[m \overline E\lb p\rb (\overline F_q) = \ZZ/p], supersingular if this group is 0.
+
+        theorem
+            statement: p
+                | TFAE
+                ol
+                    li
+
+                        me \overline E \lb p\rb (\overline \FF_q) = 0
+                    li
+                        me \lb p\rb \colon \overline E \to \overline E
+                        | is purely inseparable and #[m j(\overline E) \in \FF_{p^2}].
+                    li
+                        | #[m \End(\overline E)] is an order in a quaternion algebra.
+
+        remark: p One criterion for #[m \phi \colon C_1 \to C_2] to be separable is that #[me \phi ^* \colon \Omega _{C_2} \to \Omega_{C_1}] is nonzero.
+
+        proposition
+            statement: p
+                | Let #[m E/F] be an elliptic curve over a number field with CM by #[m K] (#[m \End (E) = \ints_K]).
+                | let #[m \wp| p] be a prime of #[m FK] s.t. #[m E] has good reduction #[m \overline E] mod #[m \wp \cap \ints_F]. Then
+                me \overline E \text{ is ordinary} \iff p \text{ splits in }K
+
+            proof
+                p
+                    | #[m p\ints K = \ideal p \ideal p'], sat #[m \wp / \ideal p].
+                    | Let #[m m] be the order of #[m \ideal p] in #[m \Cl_K], so that
+                    me \ideal p ^m  = (\mu ) , (\ideal p')^m = (\mu ')
+                    | change by units if necessary so that
+                    me \mu \mu ' = p^m
+                    | then
+                    me [\mu '] \in \End(E)
+
+                    | Let #[m \omega  \in \Omega _E] and note
+                    me [\mu ']^* \omega  = \mu '\omega 
+                    | since #[m \mu ' \not \in \ideal p], #[m \lb \mu '\rb ^*\omega   \not \equiv 0 \pmod {\ideal p}].
+                    | So #[m \lb \mu '\rb  \in \End(\overline E)] is separable and of #[m p]-power degree.
+                    | This implies
+                    me \lb p\rb 
+                    | is not purely inseparable so #[m \overline E ] is ordinary.
+                p
+                    | Consider #[m \overline E] ordinary,
+                    me \ints_K \otimes \ZZ_p \simeq \End(\overline E) \otimes \ZZ_p \to \End_{\ZZ_p}(T_p(\overline E)) \simeq \ZZ_p
+                    | tensoring with #[m \QQ] gives,
+                    me K\otimes \QQ_p \to \QQ_p
+                    | the LHS is 2-dimensional over #[m \QQ_p], so this map cannot be an injection.
+                    | So #[m K\otimes \QQ_p] cannot be a field so #[m p] splits in #[m K].
+
+
+        definition
+            statement: p
+                | Let #[m E/K] be an ordinary elliptic curve over a perfect field of characteristic #[m p].
+                | A canonical lift is an elliptic curve
+                me \mathscr E/W(K)
+                | s.t. the connected-etale sequence splits
+                me 0\mathscr E [p^\infty ]^0 \to \mathscr E [p^\infty ] \to \mathscr E[p^\infty ]^{et} \to 0
+                | splits.
+
+
+        theorem
+            statement: p
+                | Let
+                me E_0 /\overline \FF_p
+                | be an elliptic curve and #[m \alpha _ 0 \in \End(E_0)].
+                | Then there exists an elliptic #[m E/F] over a number field and #[m \alpha \in \End(E)] and #[m \ideal p /p] of #[m \ints_F] s.t.
+                me (E,\alpha ) \equiv  (E_0, \alpha _0) \pmod {\ideal p}
+                | .
+            proof: p
+                | First note that if we have a lift then we can trivially lift #[m \alpha _0 = \lb n\rb ].
+                | So we can reduce to the case
+                ol
+                    li
+                        | #[m \ker (\alpha _0)] is cyclic.
+                    li
+                        | #[m p\nmid \deg(\alpha _0)].
+
+                | now let #[m n = \deg(\alpha _0)].
+                | Let #[m j] be transcendental over #[m \QQ] and
+                me E(j)/\QQ(j)
+                |and elliptic curve with that #[m j]-invariant.
+                | Let #[m C_1, \ldots, C_{\psi (n)}] be the cyclic order #[m n] subgroups of #[m E(j)] and consider the isogenies
+                me E(j) \to E(j)/C_i = E(j_i)
+                | (#[m \psi] is the Dedekind #[m \psi] function #[m \psi(n) = n\prod_{p|n}(1+1/p)]).
+                | Fact: Each #[m j_i] is integral over #[m \ZZ\lb j\rb ]/
+                | Consider #[m \ZZ\lb j,j_1,\ldots, j_n\rb ] and its integral closure #[m R] in #[m \QQ(j,j_1, \ldots, j_n)].
+                | We have a map
+                me \ZZ[j] \to \overline \FF_p
+                me j \mapsto j(E_0)
+                | which can be extended to
+                me R \xrightarrow\phi \overline \FF_p
+                | and let
+                me \ideal m = \ker (\phi )
+                | we have #[m \overline {E(j)} \cong E_0 \pmod{\ideal m}].
+                | Consider the reductions
+                me \overline C_i,\overline{E(j_i)}
+                | . Since #[m p\nmid n] the reduction is injective on #[m n]-torsion.
+                | So #[m \overline C_i] cover all the cyclic order #[m n] subgroups of #[m E_0].
+                | This for some #[m i] we have #[m \ker(\alpha _0) = \overline C_i],
+                | so
+                me E(j) \to E(j_i)
+                | reduces to #[m \alpha _0].
+                | Note:
+                me \overline{E(j)} \cong \overline{E(j_i)} \implies (p, j-  j_i) \subseteq \ideal m
+                | .
+                | Pick a minimal prime over #[m (j - j_i)] in #[m R] and let #[m \ideal q] be an extension to #[m \overline R] (the integral closure of #[m R] in #[m \overline{\QQ(j)}].)
+                | Note #[m \ideal q \cap \ZZ = 0] else #[m \ideal q | q] and thus be height #[m \ge 2].
+                | So #[m \overline E/ \ideal q] is an integral extension of #[m \ZZ] and
+                me E(j)_{\ideal q} \simeq E(j_i)_{\ideal q}
+                | Let #[m F = \Frac (\overline R/\ideal q)], #[m E = E(j)_{\ideal q}], #[m \ideal p = \ideal m /\ideal q], let #[m \alpha ] be the composition
+                me \alpha  \colon E(j)_{\ideal q} \to E(j_i)_{\ideal q} \xrightarrow\sim E(j)_{\ideal q}
+                | .
+                | So #[m \alpha  \equiv  \alpha _0 \circ \sigma] for #[m \sigma  \in \Aut(E_0)].
+                | We can lift automorphisms because #[m \pm1 ] lift trivially and the only other possibilities are #[m j(E_0) = 0,1728] and these lift as #[m E\colon y^2 = x^3 - 1,E\colon y^2 = x^3-x] respectively.
+
+
+        p
+            | If #[m E_0] is ordinary #[m \End(E_0) = \ints_K = \ZZ+ \tau _0\ZZ] then applying Deuring lifting to #[m (E_0, \tau _0)] gives #[m (E, \tau )] i.e.
+            me \End(E) = \ZZ+ \tau  \ZZ \simeq \ints_K
+            | .
+
+
+    subsection
+        title Beginning of the proof of the Prop
+
+        proposition
+            statement: p
+                me (\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
+
+        fact
+            statement: p
+                ol
+                    li: me \Hom_{W/\pi _v^{n+1}}(\underline x^\sigma , \underline x) \hookrightarrow \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)
+                    li: me \Hom_{W}(\underline x^\sigma , \underline x) = \bigcap_n \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)
+                    li: me \# \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m} = r_{\mathscr A}(m)
+
+
+        p
+            | Deuring lifting implies that #[m \End_W(\underline x) \simeq \End_{W/\pi _v}(\underline x)].
+            | Serre-Tate gives that
+            | Deuring lifting implies that #[m \Hom_W(\underline x^\sigma , \underline x) \simeq \Hom_{W/\pi _v}(\underline x^\sigma , \underline x)].
+            | The LHS is then zero via computing the intersection.

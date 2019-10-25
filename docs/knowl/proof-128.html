@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>First note that if we have a lift then we can trivially lift \(\alpha _0 = \lb n\rb \text{.}\) So we can reduce to the case</p>
+<ol class="decimal">
+<li>\(\ker (\alpha _0)\) is cyclic.</li>
+<li>\(p\nmid \deg(\alpha _0)\text{.}\)</li>
+</ol>
+<p>now let \(n = \deg(\alpha _0)\text{.}\) Let \(j\) be transcendental over \(\QQ\) and</p>
+<div class="displaymath">
+\begin{equation*}
+E(j)/\QQ(j)
+\end{equation*}
+</div>
+<p>and elliptic curve with that \(j\)-invariant. Let \(C_1, \ldots, C_{\psi (n)}\) be the cyclic order \(n\) subgroups of \(E(j)\) and consider the isogenies</p>
+<div class="displaymath">
+\begin{equation*}
+E(j) \to E(j)/C_i = E(j_i)
+\end{equation*}
+</div>
+<p>(\(\psi\) is the Dedekind \(\psi\) function \(\psi(n) = n\prod_{p|n}(1+1/p)\)). Fact: Each \(j_i\) is integral over \(\ZZ\lb j\rb \)/ Consider \(\ZZ\lb j,j_1,\ldots, j_n\rb \) and its integral closure \(R\) in \(\QQ(j,j_1, \ldots, j_n)\text{.}\) We have a map</p>
+<div class="displaymath">
+\begin{equation*}
+\ZZ[j] \to \overline \FF_p
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+j \mapsto j(E_0)
+\end{equation*}
+</div>
+<p>which can be extended to</p>
+<div class="displaymath">
+\begin{equation*}
+R \xrightarrow\phi \overline \FF_p
+\end{equation*}
+</div>
+<p>and let</p>
+<div class="displaymath">
+\begin{equation*}
+\ideal m = \ker (\phi )
+\end{equation*}
+</div>
+<p>we have \(\overline {E(j)} \cong E_0 \pmod{\ideal m}\text{.}\) Consider the reductions</p>
+<div class="displaymath">
+\begin{equation*}
+\overline C_i,\overline{E(j_i)}\text{.}
+\end{equation*}
+</div>
+<p>Since \(p\nmid n\) the reduction is injective on \(n\)-torsion. So \(\overline C_i\) cover all the cyclic order \(n\) subgroups of \(E_0\text{.}\) This for some \(i\) we have \(\ker(\alpha _0) = \overline C_i\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+E(j) \to E(j_i)
+\end{equation*}
+</div>
+<p>reduces to \(\alpha _0\text{.}\) Note:</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{E(j)} \cong \overline{E(j_i)} \implies (p, j-  j_i) \subseteq \ideal m\text{.}
+\end{equation*}
+</div>
+<p>Pick a minimal prime over \((j - j_i)\) in \(R\) and let \(\ideal q\) be an extension to \(\overline R\) (the integral closure of \(R\) in \(\overline{\QQ(j)}\text{.}\)) Note \(\ideal q \cap \ZZ = 0\) else \(\ideal q | q\) and thus be height \(\ge 2\text{.}\) So \(\overline E/ \ideal q\) is an integral extension of \(\ZZ\) and</p>
+<div class="displaymath">
+\begin{equation*}
+E(j)_{\ideal q} \simeq E(j_i)_{\ideal q}
+\end{equation*}
+</div>
+<p>Let \(F = \Frac (\overline R/\ideal q)\text{,}\) \(E = E(j)_{\ideal q}\text{,}\) \(\ideal p = \ideal m /\ideal q\text{,}\) let \(\alpha \) be the composition</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha  \colon E(j)_{\ideal q} \to E(j_i)_{\ideal q} \xrightarrow\sim E(j)_{\ideal q}\text{.}
+\end{equation*}
+</div>
+<p>So \(\alpha  \equiv  \alpha _0 \circ \sigma\) for \(\sigma  \in \Aut(E_0)\text{.}\) We can lift automorphisms because \(\pm1 \) lift trivially and the only other possibilities are \(j(E_0) = 0,1728\) and these lift as \(E\colon y^2 = x^3 - 1,E\colon y^2 = x^3-x\) respectively.</p></article><span class="incontext"><a href="sec-deuring-lift.html#proof-128">in-context</a></span>
+</body>
+</html>
