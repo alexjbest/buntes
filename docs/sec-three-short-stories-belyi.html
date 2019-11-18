@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -399,7 +403,7 @@ E\colon y^2 = x^3 + x^2 + p
 </ol></article><article class="theorem-like" id="thm-beckmann"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.11.7</span>. <span class="title">Beckmann.</span>
 </h6>
-<p id="p-745">Let \(\phi \colon X \to \PP^1\) be a Belyi map with field of moduli \(M\text{.}\) Let \(G\) be the Galois group of the Galois closure of \(\phi\text{.}\) Then for all \(p\) such that \(p \nmid |G|\text{,}\) \(\tilde \phi \colon \tilde X \to \PP^1\) has good reduction at \(p\) and \(p\) is unramified in \(M\text{.}\)</p></article><article class="hiddenproof" id="proof-101"><a data-knowl="" class="id-ref" data-refid="hk-proof-101"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-101" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-746">Of Zapponi.</p>
+<p id="p-745">Let \(\phi \colon X \to \PP^1\) be a Belyi map with field of moduli \(M\text{.}\) Let \(G\) be the Galois group of the Galois closure of \(\phi\text{.}\) Then for all \(p\) such that \(p \nmid |G|\text{,}\) \(\tilde \phi \colon \tilde X \to \PP^1\) has good reduction at \(p\) and \(p\) is unramified in \(M\text{.}\)</p></article><article class="hiddenproof" id="proof-101"><a data-knowl="" class="id-ref" data-refid="hk-proof-101"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-101"><article class="hiddenproof"><p id="p-746">Of Zapponi.</p>
 <p id="p-747">Let \(\phi\colon X \to \PP^1\) be a Belyi map of degree \(n\text{.}\) Let \(K\) be the field of moduli of \(X\text{,}\) \(M\) the field of moduli of \(\phi\) then \(M/K\) is a finite extension. Take \(G\) as above and let \(\ideal p \subseteq \ints_K\) be a place of bad semistable reduction for \(X\text{.}\) Then \(\wp| \ideal p\) for \(\wp \subseteq \ints_M\) is a place of bad semistable reduction for \(\phi\text{.}\) By <a data-knowl="./knowl/thm-beckmann.html" title="Theorem 2.11.7: Beckmann">Theorem 2.11.7</a> \(p \mid |G|\) for \(p\in \ZZ\) below \(\ideal p\) but \(G \hookrightarrow S_n\) which implies \(p|n!\) so \(p\le n\text{.}\)</p></article></div></section><section class="subsection" id="subsection-65"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.11.2</span> <span class="title">Finitists Dream</span>
 </h3>
@@ -447,7 +451,7 @@ B(\phi) \subseteq \{0,1,\infty\}\text{.}
 \begin{equation*}
 e_\psi(P) \le 2\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-102"><a data-knowl="" class="id-ref" data-refid="hk-proof-102"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-102" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-753">Of Tame \(p\)-Belyi</p>
+</div></article><article class="hiddenproof" id="proof-102"><a data-knowl="" class="id-ref" data-refid="hk-proof-102"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-102"><article class="hiddenproof"><p id="p-753">Of Tame \(p\)-Belyi</p>
 <p id="p-754">Take \(\psi \colon C\to \PP^1\) as in the lemma then</p>
 <div class="displaymath">
 \begin{equation*}
@@ -536,7 +540,7 @@ B(\phi) = \{r_1,r_2,r_3,r_4\}
 <article class="theorem-like" id="theorem-60"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.11.17</span>. <span class="title">Braungardt.</span>
 </h6>
-<p id="p-763">For \(X/\overline \QQ\) an abelian surface \(X\) is birational to an étale cover of \(\mathcal M_{0,\lb 5 \rb}\text{.}\)</p></article><article class="hiddenproof" id="proof-103"><a data-knowl="" class="id-ref" data-refid="hk-proof-103"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-103" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-764">Sketch.</p>
+<p id="p-763">For \(X/\overline \QQ\) an abelian surface \(X\) is birational to an étale cover of \(\mathcal M_{0,\lb 5 \rb}\text{.}\)</p></article><article class="hiddenproof" id="proof-103"><a data-knowl="" class="id-ref" data-refid="hk-proof-103"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-103"><article class="hiddenproof"><p id="p-764">Sketch.</p>
 <p id="p-765">For an abelian surface over \(\overline \QQ\) there exists another isogenous to it which is principally polarized. Such surfaces come in two flavours</p>
 <div class="displaymath">
 \begin{equation*}

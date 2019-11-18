@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -389,7 +393,7 @@ f = \lb f_1 : \cdots : f_m\rb ,\,f_i\in \overline K (V_1)
 <article class="theorem-like" id="thm-poincare-reducibility"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.8.1</span>. <span class="title">Poincaré's complete reducibility theorem.</span>
 </h6>
-<p id="p-209">Let \(B\subseteq A\) then there is \(C\subseteq A\) s.t. \(B \cap C\) is finite and \(B+C = A\text{.}\) I.e. \(B\times C \to A,\,(b,c) \mapsto b+c\) is an isogeny.</p></article><article class="hiddenproof" id="proof-38"><a data-knowl="" class="id-ref" data-refid="hk-proof-38"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-38" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-210">Choose \(\sheaf L\) ample on \(A\)</p>
+<p id="p-209">Let \(B\subseteq A\) then there is \(C\subseteq A\) s.t. \(B \cap C\) is finite and \(B+C = A\text{.}\) I.e. \(B\times C \to A,\,(b,c) \mapsto b+c\) is an isogeny.</p></article><article class="hiddenproof" id="proof-38"><a data-knowl="" class="id-ref" data-refid="hk-proof-38"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><p id="p-210">Choose \(\sheaf L\) ample on \(A\)</p>
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
@@ -423,7 +427,7 @@ A \sim A_1^{n_1} \times \cdots \times A_k^{n_k}
 </div>
 <p>\(A_i \not\sim A_j\) for \(i\ne j\) and \(A_i\) simple.</p></article><article class="theorem-like" id="corollary-13"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.8.4</span>.</h6>
-<p id="p-214">\(\alpha \in \Hom(A,B)\) for \(A,B\) simple then \(\alpha\) is an isogeny or \(0\text{.}\)</p></article><article class="hiddenproof" id="proof-39"><a data-knowl="" class="id-ref" data-refid="hk-proof-39"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-39" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-215">\(\alpha(A) \subseteq B\) which implies \(\alpha(A)  = B\) or \(0\text{.}\) The connected component of 0 of \(\ker \alpha\) will be an abelian subvariety of \(A\text{,}\) denote it \(C\) If \(C = 0\) then \(\ker \alpha\) is finite, if \(C = A\) then \(\alpha = 0\text{.}\) So \(\alpha\) is an isogeny or \(0\text{.}\)</p></article></div>
+<p id="p-214">\(\alpha \in \Hom(A,B)\) for \(A,B\) simple then \(\alpha\) is an isogeny or \(0\text{.}\)</p></article><article class="hiddenproof" id="proof-39"><a data-knowl="" class="id-ref" data-refid="hk-proof-39"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-39"><article class="hiddenproof"><p id="p-215">\(\alpha(A) \subseteq B\) which implies \(\alpha(A)  = B\) or \(0\text{.}\) The connected component of 0 of \(\ker \alpha\) will be an abelian subvariety of \(A\text{,}\) denote it \(C\) If \(C = 0\) then \(\ker \alpha\) is finite, if \(C = A\) then \(\alpha = 0\text{.}\) So \(\alpha\) is an isogeny or \(0\text{.}\)</p></article></div>
 <article class="theorem-like" id="corollary-14"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.8.5</span>.</h6>
 <p id="p-216">If \(A,B\) are simple and  \(A\not\sim B\) then \(\Hom(A,B) = 0\text{.}\)</p></article><article class="definition-like" id="definition-29"><h6 class="heading">
@@ -434,7 +438,7 @@ A \sim A_1^{n_1} \times \cdots \times A_k^{n_k}
 \end{equation*}
 </div></article><article class="theorem-like" id="lemma-4"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">1.8.7</span>.</h6>
-<p id="p-218">If \(\alpha \colon A\to B\) is an isogeny, then there exists \(\beta \colon B\to A\) s.t. \(\beta \circ \alpha = n_A\) for some \(n \ge 1\text{.}\)</p></article><article class="hiddenproof" id="proof-40"><a data-knowl="" class="id-ref" data-refid="hk-proof-40"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-40" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-219">\(\alpha\) an isogeny implies \(\ker \alpha\) is finite. So there exists \(n\) with \(n \ker \alpha = 0\text{.}\) \(\ker\alpha \subseteq \ker n_A\)</p>
+<p id="p-218">If \(\alpha \colon A\to B\) is an isogeny, then there exists \(\beta \colon B\to A\) s.t. \(\beta \circ \alpha = n_A\) for some \(n \ge 1\text{.}\)</p></article><article class="hiddenproof" id="proof-40"><a data-knowl="" class="id-ref" data-refid="hk-proof-40"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><p id="p-219">\(\alpha\) an isogeny implies \(\ker \alpha\) is finite. So there exists \(n\) with \(n \ker \alpha = 0\text{.}\) \(\ker\alpha \subseteq \ker n_A\)</p>
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
@@ -461,7 +465,7 @@ A\sim A_1^{n_1} \times \cdots \times A_k^{n_k}
 \begin{equation*}
 \End^0(A) \simeq \prod \End^0(A_i)^{n_i^2}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-41"><a data-knowl="" class="id-ref" data-refid="hk-proof-41"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-41" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-222">
+</div></article><article class="hiddenproof" id="proof-41"><a data-knowl="" class="id-ref" data-refid="hk-proof-41"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-41"><article class="hiddenproof"><div class="displaymath" id="p-222">
 \begin{align*}
 \End(A) \otimes \QQ \amp \simeq \prod_{i,j} \Hom(A_i^{n_i}, A_j^{n_j}) \otimes \QQ\\
 \amp \simeq \prod_{i} \End(A_i)^{n_i^2} \otimes \QQ\\
@@ -473,7 +477,7 @@ A\sim A_1^{n_1} \times \cdots \times A_k^{n_k}
 </h6>
 <p id="p-223">If \(\dim A = g\) then \(\deg n_A  =n^{2g}\text{.}\)</p></article><article class="theorem-like" id="corollary-17"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.8.11</span>.</h6>
-<p id="p-224">\(\characteristic k \nmid n\) implies \(\ker(n_A) \simeq (\ZZ/n\ZZ)^{2g}\text{.}\)</p></article><article class="hiddenproof" id="proof-42"><a data-knowl="" class="id-ref" data-refid="hk-proof-42"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-42" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-225">If  \(m | n\) then \(|\ker (m_A)| = m^{2g}\text{,}\) then use structure theorem.</p></article></div>
+<p id="p-224">\(\characteristic k \nmid n\) implies \(\ker(n_A) \simeq (\ZZ/n\ZZ)^{2g}\text{.}\)</p></article><article class="hiddenproof" id="proof-42"><a data-knowl="" class="id-ref" data-refid="hk-proof-42"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-42"><article class="hiddenproof"><p id="p-225">If  \(m | n\) then \(|\ker (m_A)| = m^{2g}\text{,}\) then use structure theorem.</p></article></div>
 <p id="p-226">In particular if we let \(A\lb l^n\rb = A(k^\sep) \lb l^n\rb\text{,}\) then \(A\lb l^n\rb \simeq (\ZZ/l^n)^{2g}\) Define</p>
 <div class="displaymath">
 \begin{equation*}
@@ -503,7 +507,7 @@ T_l\alpha\colon T_l(A) \to T_l(B)
 \begin{equation*}
 \Hom(A,B) \hookrightarrow \Hom(T_l(A), T_l(B))
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-43"><a data-knowl="" class="id-ref" data-refid="hk-proof-43"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-43" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-230">Let \(\alpha \in \Hom(A,B)\) and assume \(T_l \alpha = 0\) then</p>
+</div></article><article class="hiddenproof" id="proof-43"><a data-knowl="" class="id-ref" data-refid="hk-proof-43"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-43"><article class="hiddenproof"><p id="p-230">Let \(\alpha \in \Hom(A,B)\) and assume \(T_l \alpha = 0\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \ker (\alpha|_{A_i}) \supseteq A_i[l^n] \forall n
@@ -551,7 +555,7 @@ f(\lambda_1 v_1 + \lambda_2 v_2 +\cdots + \lambda_m v_m) = P(\lambda_1,\ldots, \
 <p>\(\alpha\) an isogeny iff \(\deg \alpha\text{,}\) \(\alpha\) not an isogeny iff \(0\text{.}\)</p>
 <article class="theorem-like" id="theorem-20"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.8.16</span>.</h6>
-<p id="p-236">\(\deg\) uniquely extends to a polynomial function of degree \(2g\) on \(\End^0(A) \to \QQ\text{.}\)</p></article><article class="hiddenproof" id="proof-44"><a data-knowl="" class="id-ref" data-refid="hk-proof-44"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-44" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-237">(of above continued)</p>
+<p id="p-236">\(\deg\) uniquely extends to a polynomial function of degree \(2g\) on \(\End^0(A) \to \QQ\text{.}\)</p></article><article class="hiddenproof" id="proof-44"><a data-knowl="" class="id-ref" data-refid="hk-proof-44"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-44"><article class="hiddenproof"><p id="p-237">(of above continued)</p>
 <div class="displaymath" id="p-238">
 \begin{equation*}
 \End(A) \otimes \ZZ_l \hookrightarrow\End(T_l(A))

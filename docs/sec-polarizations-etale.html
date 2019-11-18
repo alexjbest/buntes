@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -445,7 +449,7 @@ H^0(X, \sheaf F) , H^1(X, \sheaf F) , H^2(X, \sheaf F) , \ldots\text{.}
 <article class="theorem-like" id="theorem-23"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.9.7</span>. <span class="title">Finiteness.</span>
 </h6>
-<p id="p-258">Let \(k\) be a finite field, and   \(g,d\ge 1\) integers. Up to isomorphism there are only finitely many abelian varieties \(A/k\) of dimension \(g\) and with a polarization of degree \(d^2\text{.}\)</p></article><article class="hiddenproof" id="proof-45"><a data-knowl="" class="id-ref" data-refid="hk-proof-45"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-45" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-259">(Super sketch)</p>
+<p id="p-258">Let \(k\) be a finite field, and   \(g,d\ge 1\) integers. Up to isomorphism there are only finitely many abelian varieties \(A/k\) of dimension \(g\) and with a polarization of degree \(d^2\text{.}\)</p></article><article class="hiddenproof" id="proof-45"><a data-knowl="" class="id-ref" data-refid="hk-proof-45"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-45"><article class="hiddenproof"><p id="p-259">(Super sketch)</p>
 <p id="p-260">Over a finite field implies there is an ample \(\sheaf L\) with \(\lambda_{\sheaf L}\) a polarization of degree \(d^2\text{,}\) then using above \(\chi(\sheaf L^3) = 3^g d\) and \(\sheaf L^3\) is very ample hence \(\dim H^0(A, \sheaf L^3) = 3^g d\) so we get an embedding into \(\PP^{3^g d - 1}\text{.}\)</p>
 <p id="p-261">The degree of \(A\) in \(\PP^{3^g d - 1}\) is \(((3D)^g) = 3^g d(g!)\) . It is determined by its Chow form, which by these formulae has some (large) bounded degree, as we are over a finite field however there are only finitely many such.</p></article></div></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Étale Cohomology of Abelian Varieties</span>
@@ -511,7 +515,7 @@ X \ar[r]_f &amp; Y
 </div>
 <p>so this matrix is singular exactly when \(x= 0\) (unless characteristic 3). So the map is not étale at these points.</p></article><article class="theorem-like" id="proposition-22"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.9.11</span>.</h6>
-<p id="p-274">The maps \(\lb n\rb\) are étale on an abelian variety \(A/k\) for all  \(\characteristic{k} \nmid n\)</p></article><article class="hiddenproof" id="proof-46"><a data-knowl="" class="id-ref" data-refid="hk-proof-46"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-46" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-275">Key point \(\diff (\alpha+ \beta)_0 = (\diff \alpha )_0 + (\diff \beta)_0\text{.}\) So the map on tangent spaces is simply multiplication by \(n\text{.}\)</p></article></div>
+<p id="p-274">The maps \(\lb n\rb\) are étale on an abelian variety \(A/k\) for all  \(\characteristic{k} \nmid n\)</p></article><article class="hiddenproof" id="proof-46"><a data-knowl="" class="id-ref" data-refid="hk-proof-46"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-46"><article class="hiddenproof"><p id="p-275">Key point \(\diff (\alpha+ \beta)_0 = (\diff \alpha )_0 + (\diff \beta)_0\text{.}\) So the map on tangent spaces is simply multiplication by \(n\text{.}\)</p></article></div>
 <article class="definition-like" id="def-etale"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.9.12</span>. <span class="title">Étale morphisms.</span>
 </h6>
@@ -552,7 +556,7 @@ F(Y) = \Hom(\tilde X ,Y) = \varinjlim_i \Hom(X_i, Y)\text{.}
 <article class="theorem-like" id="proposition-23"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.9.14</span>. <span class="title">surprising proposition.</span>
 </h6>
-<p id="p-284">Let \(X\)  be a complete variety over a field \(k\) with \(e\in X(k)\) and \(m \colon X\times X\to X\) s.t. \(m(e,x) = m(x,e) = x\) for all \(x \in X\text{.}\) Then \((X, m,e)\) is an abelian variety.</p></article><article class="hiddenproof" id="proof-47"><a data-knowl="" class="id-ref" data-refid="hk-proof-47"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-47" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-285">(Sketch)</p>
+<p id="p-284">Let \(X\)  be a complete variety over a field \(k\) with \(e\in X(k)\) and \(m \colon X\times X\to X\) s.t. \(m(e,x) = m(x,e) = x\) for all \(x \in X\text{.}\) Then \((X, m,e)\) is an abelian variety.</p></article><article class="hiddenproof" id="proof-47"><a data-knowl="" class="id-ref" data-refid="hk-proof-47"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-47"><article class="hiddenproof"><p id="p-285">(Sketch)</p>
 <p id="p-286">Let</p>
 <div class="displaymath">
 \begin{equation*}
@@ -618,7 +622,7 @@ y(zw) = y(x((yz)w)) = (yz)w
 <article class="theorem-like" id="theorem-24"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.9.15</span>. <span class="title">Lang-Serre.</span>
 </h6>
-<p id="p-290">Let \(X/k\) be an abelian variety and \(Y/k\) a variety with \(e_Y\in Y(k)\) s.t. \(f\colon Y \to X\) is an étale covering where \(f(e_Y) = e_X\text{.}\) Then \(Y\) can be given the structure of an abelian variety so that \(f\) is a separable isogeny.</p></article><article class="hiddenproof" id="proof-48"><a data-knowl="" class="id-ref" data-refid="hk-proof-48"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-48" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-291">Must construct a group law on \(Y\text{:}\)</p>
+<p id="p-290">Let \(X/k\) be an abelian variety and \(Y/k\) a variety with \(e_Y\in Y(k)\) s.t. \(f\colon Y \to X\) is an étale covering where \(f(e_Y) = e_X\text{.}\) Then \(Y\) can be given the structure of an abelian variety so that \(f\) is a separable isogeny.</p></article><article class="hiddenproof" id="proof-48"><a data-knowl="" class="id-ref" data-refid="hk-proof-48"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-48"><article class="hiddenproof"><p id="p-291">Must construct a group law on \(Y\text{:}\)</p>
 <p id="p-292">Take the graph of \(m\colon X\times X \to X\)</p>
 <div class="displaymath">
 \begin{equation*}

@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -400,7 +404,7 @@ y^2 = 4x^3 - g_2 x - g_3\text{.}
 A(\CC) \cong V/\Lambda
 \end{equation*}
 </div>
-<p>where \(V\) is a \(g\) dimensional complex vector space and \(\Lambda\) is a full rank lattice of \(V\) (i.e \(\Lambda\) is a discrete subgroup of \(V\) s.t. \(\RR\otimes \Lambda  = V\)).</p></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-43">Differential geometry gives us a map of complex manifolds, the exponential map</p>
+<p>where \(V\) is a \(g\) dimensional complex vector space and \(\Lambda\) is a full rank lattice of \(V\) (i.e \(\Lambda\) is a discrete subgroup of \(V\) s.t. \(\RR\otimes \Lambda  = V\)).</p></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-43">Differential geometry gives us a map of complex manifolds, the exponential map</p>
 <div class="displaymath">
 \begin{equation*}
 \exp\colon\Tgt_0(A(\CC)) \to A(\CC)
@@ -420,7 +424,7 @@ A(\CC) \cong \Tgt_0A(\CC)/ \ker(\exp)
 <p id="p-46">We call any such \(V/\Lambda\) a <dfn class="terminology">complex torus</dfn>.</p></article><p id="p-47">From the above isomorphism we can now read off properties of \(A(\CC)\) as a group.</p>
 <article class="theorem-like" id="proposition-5"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.3.4</span>.</h6>
-<p id="p-48">\(A(\CC)\) is divisible, and \(A(\CC)\lb n\rb \cong (\ZZ/n\ZZ)^{2g}\text{.}\)</p></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-49">
+<p id="p-48">\(A(\CC)\) is divisible, and \(A(\CC)\lb n\rb \cong (\ZZ/n\ZZ)^{2g}\text{.}\)</p></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><div class="displaymath" id="p-49">
 \begin{equation*}
 A(\CC)  \cong V/\Lambda \cong (\RR/\ZZ)^{2g}
 \end{equation*}
@@ -459,7 +463,7 @@ A(\CC)  \cong V/\Lambda \cong (\RR/\ZZ)^{2g}
 \begin{equation*}
 H^r (X,\ZZ) \cong \{\text{alternating }r\text{-forms } \Lambda\times\cdots\times\Lambda\to \ZZ\}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-10" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-55">\(\pi\colon V\to V/\Lambda\) is a universal covering map, so</p>
+</div></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-55">\(\pi\colon V\to V/\Lambda\) is a universal covering map, so</p>
 <div class="displaymath">
 \begin{equation*}
 \Lambda = \pi^{-1} (0 ) \cong \pi_1(X,0)\text{.}
@@ -563,7 +567,7 @@ L(H_1, \alpha_1) \otimes L(H_2, \alpha_2)  = L(H_1+ H_2, \alpha_1\alpha_2)\text{
 <p id="p-64">If \(H\) is positive definite, then the dimension of \(H^0(X, L(H,\alpha))\) is \(\sqrt{\det E}\) where we really mean the determinant of a matrix for \(E\) with respect to an integral basis.</p></article><article class="theorem-like" id="theorem-6"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.3.13</span>. <span class="title">Lefschetz.</span>
 </h6>
-<p id="p-65">Given a positive definite \(H\text{,}\) there exists an imbedding \(X \hookrightarrow \PP^m\text{.}\)</p></article><article class="hiddenproof" id="proof-11"><a data-knowl="" class="id-ref" data-refid="hk-proof-11"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-11" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-66">Sketch: Let \(L = L(H,\alpha)\text{,}\) consider \(L(H,\alpha)^{\otimes 3} = L(3H, \alpha^3)\text{,}\) take a basis of \(\theta_0,\ldots, \theta_d\) of \(H^0(X, L^{\otimes 3})\text{.}\)</p>
+<p id="p-65">Given a positive definite \(H\text{,}\) there exists an imbedding \(X \hookrightarrow \PP^m\text{.}\)</p></article><article class="hiddenproof" id="proof-11"><a data-knowl="" class="id-ref" data-refid="hk-proof-11"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><p id="p-66">Sketch: Let \(L = L(H,\alpha)\text{,}\) consider \(L(H,\alpha)^{\otimes 3} = L(3H, \alpha^3)\text{,}\) take a basis of \(\theta_0,\ldots, \theta_d\) of \(H^0(X, L^{\otimes 3})\text{.}\)</p>
 <p id="p-67">Claim: \(\Theta\colon z\mapsto (\theta_0(z) :\cdots :\theta_d (z)) \subseteq \PP^d\) is an embedding.</p>
 <p id="p-68">To see that this is well defined, we must give a section of \(L^{\otimes 3}\) not vanishing at \(z\) for all \(z\in X\text{.}\) Let \(\theta \in H^0(X,L)\smallsetminus \{0\}\text{.}\) Then pick \(a,b\) such that the section of \(L^{\otimes 3}\) given by</p>
 <div class="displaymath">

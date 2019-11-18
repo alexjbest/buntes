@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -420,7 +424,7 @@ G_\QQ \acts (X,D) \leftrightarrow (S,f) \acts G_\QQ
 \end{equation*}
 </div>
 <article class="exercise-like" id="exercise-17"><a data-knowl="" class="id-ref" data-refid="hk-exercise-17"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.7.3</span>.</h6></a></article><div id="hk-exercise-17" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-644">Prove this.</p></article></div>
+<span class="type">Exercise</span> <span class="codenumber">2.7.3</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-17"><article class="exercise-like"><p id="p-644">Prove this.</p></article></div>
 <article class="remark-like" id="remark-15"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.7.4</span>.</h6>
 <p id="p-645">\(D\) connected implies that \(\langle \sigma_0, \sigma_1 \rangle\) is transitive on \(\Sigma_N\text{.}\) As \(D\) is bicoloured the cycles on \(D\) contain an even number of edges.</p></article><p id="p-646">A dessin is not a triangulation of \(X\) but</p>
@@ -449,7 +453,7 @@ G_\QQ \acts (X,D) \leftrightarrow (S,f) \acts G_\QQ
 <p>is transitive.</p>
 <article class="theorem-like" id="proposition-57"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.7.6</span>.</h6>
-<p id="p-649">There exists \((X,D)\) with permutation representation \((\sigma_0, \sigma_1)\text{.}\)</p></article><article class="hiddenproof" id="proof-97"><a data-knowl="" class="id-ref" data-refid="hk-proof-97"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-97" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-650">Write \(\sigma_0\sigma_1 = \tau_1 \cdots \tau_k\text{,}\) \(\tau_i\) disjoint cycles each of length \(n_i\) with \(\sum n_i = N\text{.}\) Create \(k\) faces bounded by \(2n_1, \ldots, 2n_k\) vertices, and assign the vertices white and black colours so that the graph is bicoloured. As \(\sigma_0\sigma_1\) should jump two each time we get an identification of all edges which we then  glue using \(\sigma_0\text{.}\)</p></article></div>
+<p id="p-649">There exists \((X,D)\) with permutation representation \((\sigma_0, \sigma_1)\text{.}\)</p></article><article class="hiddenproof" id="proof-97"><a data-knowl="" class="id-ref" data-refid="hk-proof-97"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-97"><article class="hiddenproof"><p id="p-650">Write \(\sigma_0\sigma_1 = \tau_1 \cdots \tau_k\text{,}\) \(\tau_i\) disjoint cycles each of length \(n_i\) with \(\sum n_i = N\text{.}\) Create \(k\) faces bounded by \(2n_1, \ldots, 2n_k\) vertices, and assign the vertices white and black colours so that the graph is bicoloured. As \(\sigma_0\sigma_1\) should jump two each time we get an identification of all edges which we then  glue using \(\sigma_0\text{.}\)</p></article></div>
 <article class="definition-like" id="definition-63"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.7.7</span>.</h6>
 <p id="p-651">We say that</p>
@@ -551,9 +555,9 @@ G_\QQ\acts \{\text{Dessins}\}\leftrightarrow \{\text{Belyi pairs}\}
 <article class="example-like" id="example-32"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.7.11</span>.</h6>
 <p id="p-661">Same example \(\PP^1\) with a single edge, \(f_D  = z\text{,}\) \(\deg f_D = \#\) edges, \(m_v(f)=  \deg v\text{.}\)</p></article><article class="exercise-like" id="exercise-18"><a data-knowl="" class="id-ref" data-refid="hk-exercise-18"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.7.12</span>.</h6></a></article><div id="hk-exercise-18" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-662">String.</p></article></div>
+<span class="type">Exercise</span> <span class="codenumber">2.7.12</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-18"><article class="exercise-like"><p id="p-662">String.</p></article></div>
 <article class="exercise-like" id="exercise-19"><a data-knowl="" class="id-ref" data-refid="hk-exercise-19"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.7.13</span>.</h6></a></article><div id="hk-exercise-19" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-663">\(n\) star.</p></article></div></section></section></div></main>
+<span class="type">Exercise</span> <span class="codenumber">2.7.13</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-19"><article class="exercise-like"><p id="p-663">\(n\) star.</p></article></div></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>

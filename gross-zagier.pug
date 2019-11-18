@@ -472,7 +472,7 @@ section#sec-gz-mf-heeg
         title CM theory
 
         p
-            | Let #[m E/CC] be an elliptic curve so #[m E(\CC) = \CC/\Lambda_\tau  ], where #[m  \Lambda  = \ZZ + \ZZ\tau ], writing #[m E = E+\tau ], #[m \tau  \in \HH].
+            | Let #[m E/\CC] be an elliptic curve so #[m E(\CC) = \CC/\Lambda_\tau  ], where #[m  \Lambda  = \ZZ + \ZZ\tau ], writing #[m E = E+\tau ], #[m \tau  \in \HH].
 
         p
             | Recall that
@@ -480,7 +480,7 @@ section#sec-gz-mf-heeg
 
         lemma
             statement: p
-                me \Hom(\CC/\Lambda ,\CC/Lambda')= \{\alpha \in \CC : \alpha  \Lambda  \subseteq \Lambda '\}
+                me \Hom(\CC/\Lambda ,\CC/\Lambda')= \{\alpha \in \CC : \alpha  \Lambda  \subseteq \Lambda '\}
             proof: p
                 | Lift #[m \phi  \colon \CC/\Lambda  \to \CC/\Lambda '] to
                 me \phi  \colon \CC  \to \CC
@@ -942,6 +942,7 @@ section#sec-deuring-lift
                 | for all irreducible components #[m \mathcal Y] of #[m \mathcal X\otimes k_v].
                 | Then
                 me \pair ab_v = -(A.B) \log q_v
+                |.
         remark: p #[m \mathcal X] is an arithmetic surface.
 
         theorem
@@ -1031,8 +1032,8 @@ section#sec-deuring-lift
                 | Let #[m E/K] be an ordinary elliptic curve over a perfect field of characteristic #[m p].
                 | A canonical lift is an elliptic curve
                 me \mathscr E/W(K)
-                | s.t. the connected-etale sequence splits
-                me 0\mathscr E [p^\infty ]^0 \to \mathscr E [p^\infty ] \to \mathscr E[p^\infty ]^{et} \to 0
+                | s.t. the connected-etale sequence
+                me 0\to\mathscr E [p^\infty ]^0 \to \mathscr E [p^\infty ] \to \mathscr E[p^\infty ]^{et} \to 0
                 | splits.
 
 
@@ -1108,8 +1109,12 @@ section#sec-deuring-lift
         fact
             statement: p
                 ol
-                    li: me \Hom_{W/\pi _v^{n+1}}(\underline x^\sigma , \underline x) \hookrightarrow \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)
-                    li: me \Hom_{W}(\underline x^\sigma , \underline x) = \bigcap_n \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)
+                    li
+                        me \Hom_{W/\pi _v^{n+1}}(\underline x^\sigma , \underline x) \hookrightarrow \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)
+                        | (4.5) in Gross-Zagier
+                    li
+                        me \Hom_{W}(\underline x^\sigma , \underline x) = \bigcap_n \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)
+                        | (4.5) in Gross-Zagier
                     li: me \# \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m} = r_{\mathscr A}(m)
 
 
@@ -1118,3 +1123,422 @@ section#sec-deuring-lift
             | Serre-Tate gives that
             | Deuring lifting implies that #[m \Hom_W(\underline x^\sigma , \underline x) \simeq \Hom_{W/\pi _v}(\underline x^\sigma , \underline x)].
             | The LHS is then zero via computing the intersection.
+
+section#sec-gz-serre-tate
+    title Serre-Tate theory (Alex)
+
+
+    p
+
+        | We will work in generality following Katz's Serre-Tate Local Moduli #[xref(ref="bib-katz-serre-tate")/].
+        | Note that Hida #[xref(ref="bib-hida-geometric")/] also has a modernized exposition of the same.
+        | The original #[q source] material is Woods hole notes, sketchy at best.
+    p
+        | Recall that one thing we will try and do is to prove the following formula
+        me (\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
+        | 
+
+
+    p
+        | To do this we want to understand more about the special nature of Heegner points, representing pairs of CM elliptic curves.
+        | Angus told us last time about how to lift curves together with an endomorphism from #[m \FF_q] to a number field.
+        | The set of all lifts to positive characteristic of a given curve over a finite field, can be thought of as deformations of the given curve.
+        | The aim is to describe these deformations in terms of a simpler object.
+
+    p
+        | We will work in generality, because it isn't really any harder, and makes it a bit clearer in some cases.
+        | That is we will work with #[em abelian schemes] which are higher dimensional generalizations of elliptic curves (e.g. products of elliptic curves, weil restrictions, or jacobians of higher genus curves).
+        | You can replace abelian scheme with elliptic curve if you like and restrict to dimension #[m g =1].
+        | .
+        | We let #[m R] be a ring, and define the category
+        me \mathrm{AbSch}(R) = \{\text{abelian schemes over} R\}
+        | .
+    p
+        | We will fix #[m W] a complete DVR with residue field #[m \overline \FF_p] (i.e. #[m W] could be the Witt vectors of #[m \overline  \FF_p]).
+        | Complete means that
+        me W = W_\infty  =\varprojlim_{m} \underbrace{W/p^m}_{=W_m}
+        | The for #[m m =1,2,\ldots, \infty ] we let #[m R] be a base ring
+        | Given #[m R] ring we can reduce to the residue field, but this map is many to one, what is the smallest amount of data needed to recover #[m A/R] an abelian scheme from #[m A_0/R_0]?
+
+    p
+        | Our rings today will probably all be complete local #[mR]-algebras.
+
+    p
+        | Given any abelian scheme #[m A/R] over any ring we can form its #[m p]-divisible group, also known as a Barsotti-Tate group
+        me A[p^\infty ]
+        | this is #[q p-divisible] as given any #[m p]-power torsion point on #[m A] its division by #[m p] is also #[m p]-power torsion.
+        | Formally the definition is
+    definition
+        statement: p
+            | A #[m p]-divisible group #[m G] over #[m R] of height #[m h] is an inductive system
+            me G = (G_v, i_v),\,v \ge 0
+            | where each #[m G] is a finite group scheme over #[m R] of order #[m p^{vh}] and for each #[m v\ge0]
+            me 0 \to G_v \xrightarrow{i_v} G_{v+1} \xrightarrow{p^v} G_{v+1}
+            | is exact, so #[m i_v] is the kernel of #[m p^v].
+
+    example
+        statement: p
+            | For normal abelian groups (i.e. constant group schemes) we must have
+            me G_v = (\ZZ/p^v)^h
+            | with
+            me \lim G_v = (\QQ_p/\ZZ_p)^h
+            | .
+    example
+        statement: p
+            | For abelian varieties #[m A] of dimension #[m d] we have
+            me (A[p^v], i_v\colon A[p^v] \hookrightarrow A[p^{v+1}])
+            | of height #[m h =2d].
+            | Note this is true even in the supersingular case!
+
+    p
+        | Given a map of rings #[m R \to R_0] let the category of deformations be
+        me \mathrm{Def}(R,R_0) =\{(A_0, G, \epsilon ) : A_0/R_0\text{ abelian scheme},\,G/R\text{ a }p\text{-divisible group},\,\epsilon \colon G_0 \to A_0 [p^\infty ]\}
+        | #[m \epsilon ] an isom of #[m p]-divisible groups ove #[m R_0].
+        | So these are abelian schemes over the #[q small] ring and a choice of compatible #[m p]-divisible group over the big ring.
+    p
+        | With this setting we have a nice map as follows
+        | If #[m R] is a ring with #[m p] nilpotent, #[m I \subseteq R] a nilpotent ideal and #[m R_0 = R/I] then
+        me \mathrm{AbSch}(R) \to \mathrm{Def}(R,R_0)
+        me A \mapsto (A_0, A[p^\infty ],A[p^\infty ]\otimes R_0 \simeq A_0 [p^\infty ])
+        | .
+    theorem
+        title Serre-Tate
+        statement: p
+            | This functor is an equivalence of categories.
+
+    p
+        | Thus the set of deformations of a fixed #[m A_0] corresponds to deformations of #[m A_0\lb p^\infty \rb ].
+    p
+        | This is a kinda ridiculous theorem, it tells us that all the information in an abelian variety over #[m R] is contained in the reduction to #[m R_0] except the #[m p^\infty] torsion and the information of how this fits together.
+    p
+        | Hence to study the abelian varieties over #[m R] reducing to a given #[m A_{R_0}/R_0] we can just study the #[m p]-divisible groups over #[m R] with an isomorphism to #[m A_{R_0}\lb p^\infty\rb].
+
+
+    subsection
+        title Drinfeld's proof of Serre-Tate
+
+        p
+            | Drinfeld's proof cleverly extracts the content common to both things we are lifting, the abelian scheme and the #[m p]-divisible group.
+
+        p
+            | Let #[m R] be a local #[m W_m]-alg.
+            | #[m I \subseteq R] a nilpotent ideal with nilpotency index #[m \nu + 1], let #[m R_0 = R/I].
+            | #[m N = p^t] an integer s.t. #[m N I = 0].
+            | Given an #[m R]-algebra #[m A] we might consider
+            me A/IA = A \otimes R_0
+            | and also
+            me  A/\ideal m_A
+            | .
+        p
+            | So given a functor from #[m R]-algebras to an arbitrary abelian category
+            me G \colon R\text{-alg}\to C
+            | we have two natural #[em subfunctors]
+            me G_I \colon A \mapsto \ker( G(A) \to G(A\otimes R_0))
+            me \widehat G(A) \colon A \mapsto \ker(G(A) \to G(A/\ideal m_A))
+            |, note that
+            me G_I \subseteq \widehat G
+            |.
+
+
+        p
+            | What are formal groups?
+
+        definition#def-formal-gps
+            title Formal groups
+            statement
+                p
+                    | A #[m n]-dimensional #[term formal group] over a ring #[m R] is a power series
+                    me F(x,y) = (x_1, \ldots, x_n) + (y_1,\ldots,y_n) + O(\text{degree 2 terms}) \in (R[[x_1,\ldots, x_n,y_1,\ldots, y_n]])^n
+                    | that is associative in the sense that
+                    me F(F(x,y),z) = F(x,F(y,z))
+                    | .
+                p
+                    | The formal group is #[term commutative] if #[m F(x,y) = F(y,x)].
+
+        p
+            | Given an abelian variety we can get a 1-dimensional formal group by completing at the origin.
+            | E.g. for an elliptic curve
+            me y^2 = x^3 + ax +b
+            | we can express #[m x = x(t) =t^{-2} + \cdots], #[m y = -t^{-3} + \cdots]
+            me \frac{1}{t^{2}} - at^{2} - bt^{4} - a^{2}t^{6} - 3 a bt^{8} + \left(-2 a^{3} - 2 b^{2}\right)t^{10} - 10 a^{2} bt^{12} + \left(-5 a^{4} - 15 a b^{2}\right)t^{14} + \left(-35 a^{3} b - 7 b^{3}\right)t^{16} + \left(-14 a^{5} - 84 a^{2} b^{2}\right)t^{18} + O(t^{20})
+            me \frac{-1}{t^{3}} + at + bt^{3} + a^{2}t^{5} + 3 a bt^{7} + \left(2 a^{3} + 2 b^{2}\right)t^{9} + 10 a^{2} bt^{11} + \left(5 a^{4} + 15 a b^{2}\right)t^{13} + \left(35 a^{3} b + 7 b^{3}\right)t^{15} + \left(14 a^{5} + 84 a^{2} b^{2}\right)t^{17} + \left(126 a^{4} b + 84 a b^{3}\right)t^{19} + O(t^{20})
+            | then the group law in terms of #[m t] is
+            me t_{1} + t_{2} + \left(-2 a\right) t_{1}^{4} t_{2} + \left(-4 a\right) t_{1}^{3} t_{2}^{2} + \left(-4 a\right) t_{1}^{2} t_{2}^{3} + \left(-2 a\right) t_{1} t_{2}^{4} + \left(-3 b\right) t_{1}^{6} t_{2} + \left(-9 b\right) t_{1}^{5} t_{2}^{2} + \left(-15 b\right) t_{1}^{4} t_{2}^{3} + \left(-15 b\right) t_{1}^{3} t_{2}^{4} + \left(-9 b\right) t_{1}^{2} t_{2}^{5} + \left(-3 b\right) t_{1} t_{2}^{6} + \left(-2 a^{2}\right) t_{1}^{8} t_{2} + \left(8 a^{2}\right) t_{1}^{6} t_{2}^{3} + \left(16 a^{2}\right) t_{1}^{5} t_{2}^{4} + \left(16 a^{2}\right) t_{1}^{4} t_{2}^{5} + \left(8 a^{2}\right) t_{1}^{3} t_{2}^{6} + \left(-2 a^{2}\right) t_{1} t_{2}^{8} + O(t_{1}, t_{2})^{10}
+            | .
+        p
+            | In general an #[m n]-dimensional abelian variety gives an #[m n]-dimensional formal group.
+        p
+            | Given a complete local ring #[m R] we can evaluate by substituting #[m t] for anything in the maximal ideal.
+            | So a formal group #[m G] defines a functor
+            me G\colon \text{complete local }R\text{-algebras} \to \text{AbGrp}
+            me G(A) = (\ideal m_A)^n\text{with multiplication by }G
+            | .
+
+        lemma
+            statement: p
+                | Let #[m G] be a commutative formal group over #[m R], so  #[m G_I,\widehat G] are now sub-group functors.
+                | #[m G_I] is #[m N^\nu] torsion.
+            proof: p
+                | We need to show that #[m \lb N\rb a = 0] for any #[m a \in G_I(A) \subseteq G(A)] for which #[m a_i \in I] for all #[m i].
+                | An element of #[m G_I(A)] has coordinates in #[m IA] and #[m NR = 0] so we have
+                me  (\lb N\rb a)_i = N a_i + \text{h.o.t.} \in N(IA) + (IA)^2 = (IA)^2
+                | as #[m R] and hence #[m A] is #[m N] torsion, this gives inductively that
+                me ([N^\nu] a)_i \in (IA)^{2\nu}  =0
+                | as #[m I^{\nu + 1}   =0 ].
+
+
+        definition
+            statement: p
+                | Given a covariant functor
+                me G \colon \text{complete local} R-alg \to \text{AbGrp}
+                | which for any faithfully flat finite type #[m A \hookrightarrow C] we have
+                me G(A)\hookrightarrow G(C)
+                | and #[q the sheaf condition] w.r.t #[m A\hookrightarrow C]. Is called an fppf abelian sheaf.
+
+        example
+            statement: p
+                me G(A) = E(A)
+                | for #[m E] an abelian variety.
+
+        lemma
+            statement: p
+                | Let #[m G,H] be fppf abelian sheaves. And set #[m G_0, H_0] the corresponding objects restricted to #[m R_0].
+                | Suppose
+                ol
+                    li
+                        | #[m G] is #[m p]-divisible.
+                    li
+                        | #[m \hat H] is formal.
+                    li
+                        | #[m H (R) \to H(R/J)] surjective for any nilpotent #[m J] (this is known as formal smoothness of #[m J])
+                | then
+                ol
+                    li
+                        | Both
+                        me \Hom (G,H),\,\Hom(G_0,H_0)
+                        | are #[m p]-torsion free.
+
+                    li
+                        | The reduction mod #[m I]
+                        me \Hom(G, H) \to  \Hom(G_0, H_0)
+                        | is injective.
+                    li
+                        | For #[m f_0 \in \Hom(G_0,H_0)], there is a unique #[m \Phi (G, H)] with
+                        me \Phi \equiv  N^\nu f_0 \mod I
+                        | denote #[m \Phi = \tilde N^\nu f \in \Hom(G,H) \otimes \QQ]
+                    li
+                        | we get
+                        me f = \frac{\tilde N^\nu f}{N^\nu } \in \Hom (G,H)
+                        me \iff
+                        me \tilde N^\nu  (G[N^\nu  ] ) = 0
+            proof
+                p
+                    ol
+                        li
+                            | #[m p]-divisibility implies that if #[m pf = 0] so #[m pf(x)=  0] for all #[m x] then if #[m py = x] we have 
+                            me f(x) = pf(y) =0
+                            | so #[m f = 0].
+
+                        li
+                            | We can write
+                            me 0 \to H_I \to H \to H_0 \to 0
+                            | so that by left exactness of hom
+                            me 0 \to \Hom(G, H_I) \to  \Hom(G, H) \to  \Hom(G, H_0) = \Hom(G_0, H_0)
+                            | so the second map is what we want so we want
+                            me \im(\Hom(G, H_I) \to \Hom(G,H)) = 0
+                            | rhs p-tors free, and #[m H_I] is killed by #[m N^\nu ] (using formality of #[m \hat H ] here and another lemma I didn't really state).
+
+                        li
+                            | Uniqueness follows from 2. so we just lift 
+                            me f_0 \in \Hom(G_0, H_0)
+                            | to #[m y \in H(A)].
+
+
+    p
+        | Proof of serre tate:
+    p
+        | As above #[m N] is a p-power killing #[m I], #[m \nu ] an integer  such that #[m I^{\nu + 1} = 0].
+        | We can apply Drinfeld to each of #[m A, A', A\lb p^\infty \rb, A'\lb p^\infty \rb , A_0\lb p^\infty \rb , A'_0 \lb p^\infty \rb ].
+    p
+        | We show our functor is fully faithful ie.
+        me \operatorname{Hom}_{\mathcal{A}}\left(A, A^{\prime}\right) \rightarrow \operatorname{Hom}_{D E F}\left(\left(A_{0}, A\left[p^{\infty}\right], \text { id }_{A_{0}}\right),\left(A_{0}^{\prime}, A^{\prime}\left[p^{\infty}\right], \text { id }_{A_{0}^{\prime}}\right)\right)
+        | part 2. with #[m G =A], #[m H = A'] gives inj as an abvar is a p-div abelian fppf sheaf.
+    p
+        | To show surjectivity apply part 3. of drinfeld with #[m G = A], #[m H = A'] to get a lift from each #[m f_0\in \Hom(A_0, A_0')] of #[m N^\nu  f_0] to
+        me g = `` N^\nu f'' \in \Hom(A, A')
+        | to satisfy part 4 we need that #[m g] kills #[m A\lb N^\nu \rb ].
+        | We have #[m N^\nu  f = g] on #[m A\lb p^\infty \rb ] and as  #[m N] is a #[m p]-power in fact #[m A \lb  N^\nu \rb  \subseteq A\lb  p^\infty \rb ] is killed by #[m N^\nu f].
+
+    p
+        | To prove essential surjectivity onto #[m (A_0, D, \phi )], we lift #[m A_0] to #[m X] arbitrarily, and must match up the #[m p]-divisible group and iso.
+        | We have an isom #[m \alpha _0 \lb p^\infty \rb  \to A_0 \lb p^\infty \rb ].
+        | And so a lift
+        me g\colon  X[p^\infty ] \to D
+        | #[m N^\nu \alpha _0] applying the lemma to #[m G = X_0\lb p^\infty \rb ], #[m H = D].
+        | So we get an isogeny #[m g] and we quotient by the kernel.
+
+
+section#sec-gz-oana
+    title Non-archimidean local heights and intersection theory (Oana)
+    p
+        | See Oana's notes
+
+section#sec-gz-sachi
+    title ?????? (Sachi)
+
+    p
+        | This will be a reminder / recap / overview of where we are at.
+
+    subsection
+        title Recap of Initial Motivation
+
+        p
+            | Big motivation, finding infinite order points on elliptic curves, leads us to Gross-Zagier.
+
+        p
+            | If #[m J] is the Jacobian of #[m X_0(N)], #[m \Delta \lt  0] a fundamental discriminant of an imaginary quadratic field #[m  K].
+            me s \colon \Cl_K \xrightarrow\sim \Gal HK
+            | .
+
+        p
+            | For any #[m \mathcal A \in \Cl_K], we define the partial theta series
+            me \theta _{\mathcal A} (z) = \frac{1}{2u} + \sum _{a \subseteq \ints K,a\in \mathcal A} q^{\Nm(a)} = \frac{1}{2u} + \sum_{n \ge 1} r_{\mathcal A}(n)q^n
+            | .
+            me r_{\mathcal A}(n) = \#\text{integral ideals in }\mathcal A\text{ of norm }n
+            | .
+            | This series defines a modular form of weight 1 and level #[m \Gamma _1(\Delta )] with character
+            me \epsilon (n) = \legendre{\Delta }{n} \colon  \ZZ \to \{\pm 1\}
+            |.
+        p
+            | For any #[m f \in \sum a_n q^n \in S_2(\Gamma _0(N))^{\text{new}}] we define
+            me L_{\mathcal A} (f,s) = \sum_{n \ge 1, (n, \Delta  N_f) = 1} \legendre\Delta n^{1-2s} \sum_{n\ge 1}a_n r_{\mathcal A}(n)n^{-s}
+            | .
+        theorem
+            title Gross-Zagier
+            statement: p
+                | The series
+                me g_{\mathcal A} (z) = \sum_{m \ge 0} \pair c{T_m c^{s(A)}} q^m
+                | is a modular form of weight 2 and level #[m \Gamma _0(N)] and
+                me (f,g_{\mathcal A }) = \frac{u^2 \sqrt\Delta }{8\pi ^2} L'_{\mathcal A}(f,1)
+                |where #[m \pair \cdot \cdot ] is the Néron-Tate height pairing on
+                me J(H)\times J(H) \to \RR
+                | .
+                me c = (x) - (\infty )
+                | #[m x] a Heegner point over #[m H].
+
+        p
+            | Recall?: The Shimura correspondence
+        theorem
+            title Kohnen-Shimura
+            statement: p
+                | Let #[m \epsilon \in \{\pm 1\}]  then
+                me \dim S_{k+\frac{1}{2}}^\epsilon  (\Gamma_0 (4N)) = \dim S_{2k}^\epsilon (\Gamma _0(N))
+                | and for each Hecke eigenform
+                me f = \sum_{n\ge 1} a_n q^n\in S^\epsilon _{2k} (\Gamma _0(N))
+                | there is a 1-dimensional space of  forms #[m g \in S_{k+1/2}^\epsilon (\Gamma _0(4N))] whose fourier coefficients  #[m c_m] are related by
+                me a_n c_m= \sum _{d|n} \legendre{-m}d d^{k-1}c_{mn^2/d^2}
+                |.
+
+
+        remark: p
+            | If #[m f ] is a modular form attached to #[m E] an elliptic curve then #[m g] is weight #[m 3/2].
+
+        p
+            | Recall: To compute #[m \pair ab] compute as a sum of local height pairings.
+            | Néron-Tate local height for #[m v] a place of #[m H] has properties
+            ul
+                li
+                    | bi-additive, symmetric, continuous
+                li
+                    me a=\sum_P m_P P,\,b = \div f
+                    | with disjoint support then
+                    me \pair ab_v = \sum_P m_P |\log |f(P)||_v
+                    | .
+
+
+    subsection
+        title Heights
+
+        p
+            | Let #[m v] be a non-archimidean place, assume #[m m] is prime to #[m N].
+            | If #[m v|p] a place of #[m H] then #[m H_v] the completion #[m \Lambda _v] ring of inteegers and #[m \pi ] uniformizer, #[m \Lambda _v/\pi ] residue  field of cardinality #[m q].
+            | #[m W] the completion of the maximal unramified extension of #[m \Lambda _v].
+            me \pair ab_v = -(A.B) _v \log q
+            | where #[m A,B] are divisors on some regular model of #[m X] over  a DVR (like #[m \Lambda _v]) and #[m A] is fibral.
+
+        p
+            | Working with #[m c = (x)-(\infty )] #[m d = (x)-(0)].
+            me \pair c{T_m d^\sigma }_v = (\underline x. T_m \underline x^\sigma )\log q
+            |.
+
+        p
+            | So we need to compute a regular model for #[m X_0(N)/\ZZ].
+            | We need to identify components of #[m T_m \underline x^\sigma ].
+            | Need to compute RHS explicitly to show
+            me = \frac 12 \sum_{n\ge 1} \#\Hom _{W/\pi ^n} (\underline x ,\underline x^\sigma )_{\deg m}
+            | .
+
+    subsection
+        title Brief sketch of regular model
+        p
+            | Recall pts on #[m X_0(N)] correspond to cyclic isogenies
+            me \psi \colon E \to  E'
+            | of degree #[m N].
+            | The Heegner points have #[m \End(E) = \End(E') = \ints] an order in #[m K].
+            | Similarly consider generalized elliptic curves and cyclic isogenies of degree #[m N].
+
+
+        p
+            |  These components are isomorphic to #[m X_0(M) \otimes \ZZ/p].
+            | They intersect at supersingular points #[m E\xrightarrow \phi E'] where both are supersingular.
+            | We have  a good understanding of where the cusps are.
+
+    subsection
+        title Homomorphsims
+        p
+            |#[m S] complete local ring, #[m k] algebraically closed field
+            me \underline x = (\phi  \colon E \to E')
+            me \underline y = (\psi  \colon F \to F')
+            | points on #[m X_0(N)(S)] then homomorphisms #[m \underline x \to \underline y] are #[m f\colon E\to F, f'\colon E'\to F'] such that #[m f' \phi = f \psi].
+            | The set of such has a group structure inherited from #[m F,F'].
+            | This is a right module under #[m \End_S(\underline x)] by composition.
+        p
+            me \End_S(\underline x) = \ZZ, \text{ order in im quad }, \text{ order in indef. quat. alg.}
+            me \deg(f,f') = \deg f = \deg f'
+            | .
+        p
+            | To show above 
+            me (c.T_m d^\sigma ) = (\underline x. T_m \underline x^\sigma ) - (\underline x . T_m 0) - (\infty .T_m \underline x^\sigma ) + (\infty .T_m 0)
+            | 3 terms on right are 0.
+        p
+            | Main difficulty.
+            | #[m m] prime to #[m N] and #[m r_{\mathcal A} (m) = 0].
+            me (\underline x. T_m \underline x ^\sigma ) = \frac 12 \sum_{n\ge 1} \# \Hom _{W/\pi ^n}(\underline x ^\sigma , \underline x)_{\deg m}
+
+        remark
+            p
+                | This is a finite sum as #[m x, T_mx^\sigma ] are relatively prime divisors there are no degree #[m m] isogenies from #[m x^\sigma ] to #[m x].
+                | For large #[m n] therefore #[m \Hom_{W/\pi ^n,\deg m} = \emptyset].
+
+        p
+            | we denote by #[m h_n] this RHS summand.
+
+        proof
+            p
+                | When #[m p]-splits Deuring lifting gives
+                me \Hom_W (\underline x^\sigma ,\underline x) = \Hom_{W/\pi ^n}(\underline x^\sigma , \underline x)
+                | for all #[m n].
+                | As #[m r_{\mathcal A}(m)= 0] we have no elements of degree #[m m].
+
+            p
+                | If #[m p] is non-split
+                me \End_W(\underline x) = \ints
+                | an order in a quaternion algebra.
+                me h_n(\underline x^\sigma , \underline x) _{\deg m} = \sum_{\underline y\in T_m \underline x} h_n(\underline y, \underline x)_{\deg 1}
+
+
+        p
+            | Moral, can compute the fourier coefficients of #[m g_{\mathcal A}].
+
+
+

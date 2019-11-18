@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -523,7 +527,7 @@ e^{\alpha^* \sheaf L} (a,a') = e^{\sheaf L}(\alpha (a),\alpha(a'))
 \sheaf L \mapsto e^{\sheaf L}
 \end{equation*}
 </div>is a homomorphism (in particular \(e^{\sheaf L}\) is  skew-symmetric).</li>
-</ol></article><article class="hiddenproof" id="proof-49"><a data-knowl="" class="id-ref" data-refid="hk-proof-49"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-49" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><ol id="p-307" class="decimal">
+</ol></article><article class="hiddenproof" id="proof-49"><a data-knowl="" class="id-ref" data-refid="hk-proof-49"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-49"><article class="hiddenproof"><ol id="p-307" class="decimal">
 <li id="li-52">\(a = (a_n) \in T_lA\) \(b\in (b_n) \in T_l B^\vee\) fix a divisor \(D \) on \(B\) representing \(b_n\) and \(g\in k(B)\) s.t. \(\divisor (h) = (l^n_B)^* D\text{.}\) Then \(\alpha^* D\) represents \(\alpha^\vee(b_n)\) so:<div class="displaymath">
 \begin{equation*}
 \divisor(g\circ \alpha) = \alpha^*\divisor (g) = \alpha^*(l^n_B)^* D = (l_A^n)^* \alpha^* D\text{.}
@@ -589,11 +593,11 @@ T_l \times T_l \ar[r] &amp; T_l \mu \ni \zeta^m
 <article class="theorem-like" id="theorem-27"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.10.5</span>. <span class="title">13.4.</span>
 </h6>
-<p id="p-310">Let \(\alpha\colon A\to B\) be an isogeny of degree prime to \(\characteristic k\) and \(\lambda \in \NS(A)\) then \(\lambda = \alpha^* \lambda '\) for \(\lambda ' \in \NS(B) \iff \forall l |\deg(\alpha)\) \(l\) prime there exists a skew-symmetric form \(f\colon T_lB\times T_lB \to T_l\mu\) s.t. \(e^\lambda(a,a') = f(\alpha(a), \alpha(a'))\) for all \(a,a' \in T_l(A)\text{.}\)</p></article><article class="hiddenproof" id="proof-50"><a data-knowl="" class="id-ref" data-refid="hk-proof-50"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-50" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-311">Milne 1986 16.4</p></article></div>
+<p id="p-310">Let \(\alpha\colon A\to B\) be an isogeny of degree prime to \(\characteristic k\) and \(\lambda \in \NS(A)\) then \(\lambda = \alpha^* \lambda '\) for \(\lambda ' \in \NS(B) \iff \forall l |\deg(\alpha)\) \(l\) prime there exists a skew-symmetric form \(f\colon T_lB\times T_lB \to T_l\mu\) s.t. \(e^\lambda(a,a') = f(\alpha(a), \alpha(a'))\) for all \(a,a' \in T_l(A)\text{.}\)</p></article><article class="hiddenproof" id="proof-50"><a data-knowl="" class="id-ref" data-refid="hk-proof-50"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-50"><article class="hiddenproof"><p id="p-311">Milne 1986 16.4</p></article></div>
 <article class="theorem-like" id="corollary-20"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.10.6</span>. <span class="title">13.5.</span>
 </h6>
-<p id="p-312">\(l \ne \characteristic (k)\) \(\lambda \in \NS(A) \) is divisible by \(l^n \iff e^\lambda\) is divisible by \(l^n\) in \(\Hom (\bigwedge^2 T_lA, T_l \mu)\text{.}\)</p></article><article class="hiddenproof" id="proof-51"><a data-knowl="" class="id-ref" data-refid="hk-proof-51"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-51" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-313">Apply theorem 13.4 with \(\alpha = l^n\text{.}\)</p></article></div>
+<p id="p-312">\(l \ne \characteristic (k)\) \(\lambda \in \NS(A) \) is divisible by \(l^n \iff e^\lambda\) is divisible by \(l^n\) in \(\Hom (\bigwedge^2 T_lA, T_l \mu)\text{.}\)</p></article><article class="hiddenproof" id="proof-51"><a data-knowl="" class="id-ref" data-refid="hk-proof-51"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-51"><article class="hiddenproof"><p id="p-313">Apply theorem 13.4 with \(\alpha = l^n\text{.}\)</p></article></div>
 <article class="theorem-like" id="lemma-6"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">1.10.7</span>. <span class="title">13.7.</span>
 </h6>
@@ -603,7 +607,7 @@ T_l \times T_l \ar[r] &amp; T_l \mu \ni \zeta^m
 e^{\sheaf P} ((a,b),(a',b')) = \frac{e(a,b')}{e(a',b)}
 \end{equation*}
 </div>
-<p>for all \(a,a' \in T_l A\text{,}\) \(b,b' \in T_l A^\vee\text{.}\)</p></article><article class="hiddenproof" id="proof-52"><a data-knowl="" class="id-ref" data-refid="hk-proof-52"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-52" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-315">Milne 1986 16.7. Use:</p>
+<p>for all \(a,a' \in T_l A\text{,}\) \(b,b' \in T_l A^\vee\text{.}\)</p></article><article class="hiddenproof" id="proof-52"><a data-knowl="" class="id-ref" data-refid="hk-proof-52"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-52"><article class="hiddenproof"><p id="p-315">Milne 1986 16.7. Use:</p>
 <div class="displaymath">
 \begin{equation*}
 (1+ \lambda_{\sheaf L})^* \sheaf P \cong m^* \sheaf L \otimes p^* \sheaf L^{-1} \otimes q^* \sheaf L^{-1}
@@ -612,7 +616,7 @@ e^{\sheaf P} ((a,b),(a',b')) = \frac{e(a,b')}{e(a',b)}
 <article class="theorem-like" id="prop-milne-av-13-6"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.10.8</span>. <span class="title">13.6.</span>
 </h6>
-<p id="p-316">Assume \(\characteristic k \ne l,2\) then a homomorphism \(\lambda\colon A\to A^\vee\) is \(\lambda = \lambda_{\sheaf L}\) for some \(\sheaf L \in \Pic A\) iff \(e^\lambda\) is skew-symmetric.</p></article><article class="hiddenproof" id="proof-53"><a data-knowl="" class="id-ref" data-refid="hk-proof-53"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-53" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-11"><h6 class="heading">Case.</h6>
+<p id="p-316">Assume \(\characteristic k \ne l,2\) then a homomorphism \(\lambda\colon A\to A^\vee\) is \(\lambda = \lambda_{\sheaf L}\) for some \(\sheaf L \in \Pic A\) iff \(e^\lambda\) is skew-symmetric.</p></article><article class="hiddenproof" id="proof-53"><a data-knowl="" class="id-ref" data-refid="hk-proof-53"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-53"><article class="hiddenproof"><article class="case" id="case-11"><h6 class="heading">Case.</h6>
 <p id="p-317">Clear.</p></article><article class="case" id="case-12"><h6 class="heading">Case.</h6>
 <p id="p-318">\(e^\lambda\) is skew-symmetric, define \(\sheaf L = (1 \times \lambda)^* \sheaf P\) then  \(\forall a,a' \in T_l A\)</p>
 <div class="displaymath">
@@ -665,14 +669,14 @@ e^{\lambda} \text{ is trivial on } \ker (\alpha)\times \ker(\alpha)
 </div></article><article class="theorem-like" id="corollary-21"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.10.13</span>. <span class="title">13.10.</span>
 </h6>
-<p id="p-324">\(A\) an abelian variety, \(\lambda \colon A \to A^\vee\) is a polarization with \((\deg (\lambda), p) = 1\) then \(A\) is  isogenous to a principally polarized abelian variety.</p></article><article class="hiddenproof" id="proof-54"><a data-knowl="" class="id-ref" data-refid="hk-proof-54"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-54" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-325">Fix \(l |\deg(\lambda)\) prime. Choose a subgroup \(N\subseteq \ker \lambda\) of order \(l\) let \(\alpha \colon A\to A/N = B\) \(N\) is cyclic and \(e^\lambda\) is skew-symmetric so \(e^{\lambda}\) is trivial on \(N\times N\) so \(B\) has a polarization of degree \(\deg(\lambda) / l^2\) by 13.8.</p></article></div>
+<p id="p-324">\(A\) an abelian variety, \(\lambda \colon A \to A^\vee\) is a polarization with \((\deg (\lambda), p) = 1\) then \(A\) is  isogenous to a principally polarized abelian variety.</p></article><article class="hiddenproof" id="proof-54"><a data-knowl="" class="id-ref" data-refid="hk-proof-54"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-54"><article class="hiddenproof"><p id="p-325">Fix \(l |\deg(\lambda)\) prime. Choose a subgroup \(N\subseteq \ker \lambda\) of order \(l\) let \(\alpha \colon A\to A/N = B\) \(N\) is cyclic and \(e^\lambda\) is skew-symmetric so \(e^{\lambda}\) is trivial on \(N\times N\) so \(B\) has a polarization of degree \(\deg(\lambda) / l^2\) by 13.8.</p></article></div>
 <article class="theorem-like" id="corollary-22"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.10.14</span>. <span class="title">13.11.</span>
 </h6>
 <p id="p-326">Let \(\lambda\) be a polarization of \(A\) s.t. \(\ker (\lambda) \subseteq A\lb m \rb\) for some \((m,p)=1\text{.}\) If \(\exists \alpha \colon A \to A\) s.t. \(\alpha(\ker (\lambda)) \subseteq \ker(\lambda)\) and \(\alpha^\vee \lambda \alpha = - \lambda\) on \(A\lb m^2\rb\) then \(A\times A^\vee\) is principally polarized.</p></article><article class="theorem-like" id="theorem-28"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.10.15</span>. <span class="title">13.12 (Zarhin's trick).</span>
 </h6>
-<p id="p-327">For any abelian variety \(A\) \((A\times A^\vee)^4\) is principally polarized.</p></article><article class="hiddenproof" id="proof-55"><a data-knowl="" class="id-ref" data-refid="hk-proof-55"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-55" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-328">Fix \(\lambda \colon A\to A^\vee\) polarization, assume \(\ker (\lambda) \subseteq A\lb m \rb\) \((m, p) = 1\) there exists \(a,b,c,d \in \ZZ\) s.t. \(a^2 + b^2 + c^2 + d^2 = m^2  - 1 = -1 \pmod {m^2}\) then</p>
+<p id="p-327">For any abelian variety \(A\) \((A\times A^\vee)^4\) is principally polarized.</p></article><article class="hiddenproof" id="proof-55"><a data-knowl="" class="id-ref" data-refid="hk-proof-55"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-55"><article class="hiddenproof"><p id="p-328">Fix \(\lambda \colon A\to A^\vee\) polarization, assume \(\ker (\lambda) \subseteq A\lb m \rb\) \((m, p) = 1\) there exists \(a,b,c,d \in \ZZ\) s.t. \(a^2 + b^2 + c^2 + d^2 = m^2  - 1 = -1 \pmod {m^2}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{pmatrix} a\amp -b \amp-c\amp -d \\ b\amp a \amp d \amp -c \\ c\amp -d \amp a \amp b \\ d \amp c \amp -b \amp a\end{pmatrix}
@@ -682,7 +686,7 @@ e^{\lambda} \text{ is trivial on } \ker (\alpha)\times \ker(\alpha)
 <article class="theorem-like" id="corollary-23"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">1.10.16</span>. <span class="title">13.13.</span>
 </h6>
-<p id="p-329">Let \(k\) be a finite field, then for each \(g \in \ZZ\) there exist only finitely many isomorphism classes of abelian varieties of dimension \(g\) over \(k\text{.}\)</p></article><article class="hiddenproof" id="proof-56"><a data-knowl="" class="id-ref" data-refid="hk-proof-56"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-56" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-330">\(A/k\) an abelian variety of dimension \(g\text{,}\) so \((A\times A^\vee)^4\) is an abelian variety of dimension \(8g\) with a principal polarization so using theorem 11.2 there are finitely many (up to \(\simeq\)) of those. Also \((A\times A^\vee)^4\) has finitely many direct factors (theorem 15.3).</p></article></div></section></section></div></main>
+<p id="p-329">Let \(k\) be a finite field, then for each \(g \in \ZZ\) there exist only finitely many isomorphism classes of abelian varieties of dimension \(g\) over \(k\text{.}\)</p></article><article class="hiddenproof" id="proof-56"><a data-knowl="" class="id-ref" data-refid="hk-proof-56"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-56"><article class="hiddenproof"><p id="p-330">\(A/k\) an abelian variety of dimension \(g\text{,}\) so \((A\times A^\vee)^4\) is an abelian variety of dimension \(8g\) with a principal polarization so using theorem 11.2 there are finitely many (up to \(\simeq\)) of those. Also \((A\times A^\vee)^4\) has finitely many direct factors (theorem 15.3).</p></article></div></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>

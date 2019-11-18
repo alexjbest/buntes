@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -405,7 +409,7 @@ L \amp\mapsto \phi_L\text{.}
 \phi_{t_a^* L}  = \phi_L
 \end{equation*}
 </div></li>
-</ol></article><article class="hiddenproof" id="proof-32"><a data-knowl="" class="id-ref" data-refid="hk-proof-32"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-32" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-5"><h6 class="heading">1.</h6>
+</ol></article><article class="hiddenproof" id="proof-32"><a data-knowl="" class="id-ref" data-refid="hk-proof-32"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><article class="case" id="case-5"><h6 class="heading">1.</h6>
 <div class="displaymath" id="p-168">
 \begin{align*}
 \phi_{L\otimes M}(a) \amp = t_a^*(L\otimes M) \otimes(L\otimes M)^{-1}\\
@@ -446,7 +450,7 @@ L \amp\mapsto \phi_L\text{.}
 \begin{equation*}
 \Pic^0(A) = \{\text{line bundles which are alg. equiv to } \sheaf O_A\}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-33" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-175"><a data-knowl="./knowl/bib-polishchuck.html" title="Bibliographic Entry 75: Abelian varieties, theta functions and the Fourier transform">[75]</a>.</p></article></div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+</div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-175"><a data-knowl="./knowl/bib-polishchuck.html" title="Bibliographic Entry 75: Abelian varieties, theta functions and the Fourier transform">[75]</a>.</p></article></div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.3</span> <span class="title">See-Saws</span>
 </h3>
 <article class="theorem-like" id="thm-see-saw"><h6 class="heading">
@@ -497,7 +501,7 @@ m^* L \cong p_1^* L\otimes p_2^* L
 \phi_L(A(k)) \subseteq \Pic^0(A)
 \end{equation*}
 </div>for \(L \in \Pic (A)\text{.}\)</li>
-</ol></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-34" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><article class="case" id="case-7"><h6 class="heading">1.</h6>
+</ol></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><article class="case" id="case-7"><h6 class="heading">1.</h6>
 <div class="displaymath" id="p-180">
 \begin{equation*}
 (m^*L\otimes (p_1^*l)^{-1} \otimes (p_2^*l)^{-1})|_{A\times\{a\}} = t_a^*L \otimes L^{-1} = \sheaf O_A
@@ -522,7 +526,7 @@ m^* L \cong p_1^* L\otimes p_2^* L
 </div></article></article></div>
 <article class="theorem-like" id="proposition-18"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.7.10</span>.</h6>
-<p id="p-184">If \(L\) is nontrivial in \(\Pic^0(A)\) then \(H^i(A,L) = 0\) \(\forall i\text{.}\)</p></article><article class="hiddenproof" id="proof-35"><a data-knowl="" class="id-ref" data-refid="hk-proof-35"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-35" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-185">If \(H^0(A,L) \ne 0\text{,}\) we would have  a nontrivial section \(s\) of \(L\) then \(\lb -1\rb ^* s\) is   a nontrivial section of \(\lb-1\rb^* L = L^{-1}\text{.}\) But if both \(L\) and \(L^{-1}\) have  a nontrivial section then \(L \cong \sheaf O_A\text{.}\) So since \(L\) is nontrivial \(H^0(A,L) = 0\text{.}\) Now assume \(H^i(A,L) = 0\) for all \(i\lt j\text{.}\) Consider</p>
+<p id="p-184">If \(L\) is nontrivial in \(\Pic^0(A)\) then \(H^i(A,L) = 0\) \(\forall i\text{.}\)</p></article><article class="hiddenproof" id="proof-35"><a data-knowl="" class="id-ref" data-refid="hk-proof-35"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-35"><article class="hiddenproof"><p id="p-185">If \(H^0(A,L) \ne 0\text{,}\) we would have  a nontrivial section \(s\) of \(L\) then \(\lb -1\rb ^* s\) is   a nontrivial section of \(\lb-1\rb^* L = L^{-1}\text{.}\) But if both \(L\) and \(L^{-1}\) have  a nontrivial section then \(L \cong \sheaf O_A\text{.}\) So since \(L\) is nontrivial \(H^0(A,L) = 0\text{.}\) Now assume \(H^i(A,L) = 0\) for all \(i\lt j\text{.}\) Consider</p>
 <div class="displaymath">
 \begin{gather*}
 A\xrightarrow{\id \times 0} A\times A \xrightarrow m A\\
@@ -545,7 +549,7 @@ H^j(A\times A, m^*L) =  H^j(A\times A, p_1^*L \otimes p_2^*L) = \bigoplus_{i=0}^
 <p id="p-186">We now think of \(\phi_L\) as a map \(\phi_L \colon A(k) \to \Pic^0(A)\) with kernel \(K(L) (k)\text{.}\)</p>
 <article class="theorem-like" id="theorem-14"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.7.11</span>.</h6>
-<p id="p-187">If \(K(L)(k)\) is finite then \(\phi_L\) is surjective.</p></article><article class="hiddenproof" id="proof-36"><a data-knowl="" class="id-ref" data-refid="hk-proof-36"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-36" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-188">Idea is to study</p>
+<p id="p-187">If \(K(L)(k)\) is finite then \(\phi_L\) is surjective.</p></article><article class="hiddenproof" id="proof-36"><a data-knowl="" class="id-ref" data-refid="hk-proof-36"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><p id="p-188">Idea is to study</p>
 <div class="displaymath">
 \begin{equation*}
 \Lambda (L) =  m^* L \otimes (p_1^* L)^{-1} \otimes (p_2^* L)^{-1}\text{.}
@@ -562,7 +566,7 @@ A(k)/K(L)(k) \cong \Pic^0(A)
 </h3>
 <article class="theorem-like" id="theorem-15"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.7.12</span>.</h6>
-<p id="p-190">Let \(A\) be an abelian variety and \(L\) an ample line bundle on \(A\text{,}\) then the quotient scheme \(A/K(L)\) exists and is an abelian variety of the same dimension as \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-37"><a data-knowl="" class="id-ref" data-refid="hk-proof-37"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-37" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-191">(Sketch) (characteristic 0) Cover \(A\) by affine opens \(U_i = \Spec R_i\) such that for all \(a \in A\) the orbit \(K(L)a \subseteq U_i\) for some \(i\text{.}\) We can do this because abelian varieties are projective. Then we say \(U_i / K(L) = \Spec(R^{K(L)}_i)\) then glue. (details in Mumford, II sec, 6  appendix). Since we are in characteristic 0, the quotient scheme is in fact a variety.</p></article></div>
+<p id="p-190">Let \(A\) be an abelian variety and \(L\) an ample line bundle on \(A\text{,}\) then the quotient scheme \(A/K(L)\) exists and is an abelian variety of the same dimension as \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-37"><a data-knowl="" class="id-ref" data-refid="hk-proof-37"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof"><p id="p-191">(Sketch) (characteristic 0) Cover \(A\) by affine opens \(U_i = \Spec R_i\) such that for all \(a \in A\) the orbit \(K(L)a \subseteq U_i\) for some \(i\text{.}\) We can do this because abelian varieties are projective. Then we say \(U_i / K(L) = \Spec(R^{K(L)}_i)\) then glue. (details in Mumford, II sec, 6  appendix). Since we are in characteristic 0, the quotient scheme is in fact a variety.</p></article></div>
 <article class="definition-like" id="def-dual-abvar"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.7.13</span>. <span class="title">Dual abelian varieties.</span>
 </h6>

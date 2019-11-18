@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -426,7 +430,7 @@ P \mapsto [P] - [0]\text{.}
 A(\CC) = \CC^g/\Lambda
 \end{equation*}
 </div>
-<p>where \(g = \dim A\) and \(\Lambda \subseteq \CC^g\) is a rank \(2g\) lattice.</p></article><article class="hiddenproof" id="proof-111"><a data-knowl="" class="id-ref" data-refid="hk-proof-111"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-111" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1096">The lie algebra \(\Lie(A(\CC))\) is a complex vector space of dimension \(g\text{.}\) We have the exponential</p>
+<p>where \(g = \dim A\) and \(\Lambda \subseteq \CC^g\) is a rank \(2g\) lattice.</p></article><article class="hiddenproof" id="proof-111"><a data-knowl="" class="id-ref" data-refid="hk-proof-111"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-111"><article class="hiddenproof"><p id="p-1096">The lie algebra \(\Lie(A(\CC))\) is a complex vector space of dimension \(g\text{.}\) We have the exponential</p>
 <div class="displaymath">
 \begin{equation*}
 \exp \colon \Lie(A(\CC)) \to A(\CC)
@@ -467,7 +471,7 @@ H(u,v) = \overline{H(v,u)}
 \begin{equation*}
 \{\text{AVs}/\CC\} \leftrightarrow \{(V,\Lambda)\text{ s.t. there is a Riemann form on } (V, \Lambda)\}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-112"><a data-knowl="" class="id-ref" data-refid="hk-proof-112"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-112" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1100">Swinnerton-Dyer analytic theory of AVs ch.2.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-112"><a data-knowl="" class="id-ref" data-refid="hk-proof-112"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-112"><article class="hiddenproof"><p id="p-1100">Swinnerton-Dyer analytic theory of AVs ch.2.</p></article></div>
 <article class="example-like" id="example-64"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.3.7</span>.</h6>
 <p id="p-1101">For an elliptic curve \(E(\CC) = \CC/ \ZZ \omega_1 + \ZZ \omega_2\)</p>
@@ -495,7 +499,7 @@ H(u,v) = u\bar v/ \im(\omega_1 \bar \omega_2)\text{.}
 \end{equation*}
 </div></article><article class="remark-like" id="remark-28"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">5.3.10</span>.</h6>
-<p id="p-1104">This is false as stated unless \(X(k) \ne \emptyset\text{.}\)</p></article><article class="hiddenproof" id="proof-113"><a data-knowl="" class="id-ref" data-refid="hk-proof-113"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-113" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1105">Idea: Pick \(P_0 \in X(k)\) we have a bijection</p>
+<p id="p-1104">This is false as stated unless \(X(k) \ne \emptyset\text{.}\)</p></article><article class="hiddenproof" id="proof-113"><a data-knowl="" class="id-ref" data-refid="hk-proof-113"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-113"><article class="hiddenproof"><p id="p-1105">Idea: Pick \(P_0 \in X(k)\) we have a bijection</p>
 <div class="displaymath">
 \begin{equation*}
 \divisors^0(X) \to \divisors^r(X)
@@ -562,7 +566,7 @@ J(X) = H^0(X, \Omega_X^1) ^\vee/H_1(X,\ZZ)
 [P] - [Q] \mapsto (\omega \mapsto \int^P_Q \omega)
 \end{equation*}
 </div>
-<p>is an isomorphism of abelian groups.</p></article><article class="hiddenproof" id="proof-114"><a data-knowl="" class="id-ref" data-refid="hk-proof-114"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-114" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1108">For the first claim we need a Riemann form on</p>
+<p>is an isomorphism of abelian groups.</p></article><article class="hiddenproof" id="proof-114"><a data-knowl="" class="id-ref" data-refid="hk-proof-114"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-114"><article class="hiddenproof"><p id="p-1108">For the first claim we need a Riemann form on</p>
 <div class="displaymath">
 \begin{equation*}
 (H^0(X, \Omega_X^1)^\vee , H_1(X,\ZZ))

@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -403,7 +407,7 @@ g= 0 : \Sigma \amp\cong \hat \CC\\
 g= 1 : \Sigma \amp\cong \CC/ \Lambda\\
 g\ge2: \Sigma \amp\cong \HH/ K\text{.}
 \end{align*}
-</div></article><article class="hiddenproof" id="proof-86"><a data-knowl="" class="id-ref" data-refid="hk-proof-86"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-86" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-545">\(g = 0\) Uniformization.</p>
+</div></article><article class="hiddenproof" id="proof-86"><a data-knowl="" class="id-ref" data-refid="hk-proof-86"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-86"><article class="hiddenproof"><p id="p-545">\(g = 0\) Uniformization.</p>
 <p id="p-546">\(g \ge 1\) \(\hat \CC\) can't be a cover by Riemann-Hurwitz. \(g = 1\) \(\pi_1 (\Sigma) = \ZZ \oplus \ZZ\) abelian.</p>
 <p id="p-547">Claim: no subgroup of \(\Aut (\HH) \) is isomorphic to \(\ZZ \oplus \ZZ\) acting freely and properly discontinuously. So \(\widetilde\Sigma = \hat \CC\) \(z\mapsto az+b\) free id \(a=1\) so \(z\mapsto z+\lambda_1\) \(z\mapsto z+\lambda_2\text{.}\)</p>
 <p id="p-548">\(g= 2\) \(\pi_1(\Sigma)\) is not abelian but \(z\mapsto z + \lambda_1\) is abelian!</p>
@@ -520,7 +524,7 @@ x_1 = \id,\,x_2 = \frac{-1}{z-1}, x_3 = \frac{z-1}{z},\, x_4 = \frac{z-1}{z},\,x
 \begin{equation*}
 S_1 \cong S_2 \iff \Gamma_1 = T\circ \Gamma_2 \circ T\inv,\,T\in \PSL_2(\RR)\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-87"><a data-knowl="" class="id-ref" data-refid="hk-proof-87"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-87" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-564">\(\Leftarrow\) Define an \(\phi\colon S_1 \to S_2\) via \(\phi(\lb z\rb_1) = \lb T(z)\rb_2\text{.}\)</p>
+</div></article><article class="hiddenproof" id="proof-87"><a data-knowl="" class="id-ref" data-refid="hk-proof-87"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-87"><article class="hiddenproof"><p id="p-564">\(\Leftarrow\) Define an \(\phi\colon S_1 \to S_2\) via \(\phi(\lb z\rb_1) = \lb T(z)\rb_2\text{.}\)</p>
 <p id="p-565">\(\Rightarrow\) Take a lift</p>
 <div class="displaymath">
 \begin{equation*}
@@ -538,7 +542,7 @@ S_1 \cong S_2 \iff \Gamma_1 = T\circ \Gamma_2 \circ T\inv,\,T\in \PSL_2(\RR)\tex
 \begin{equation*}
 \Aut(\HH/\Gamma) = N(\Gamma)/\Gamma\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-88"><a data-knowl="" class="id-ref" data-refid="hk-proof-88"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-88" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-567">Previous proposition, set \(\Gamma_1 = \Gamma_2\)</p>
+</div></article><article class="hiddenproof" id="proof-88"><a data-knowl="" class="id-ref" data-refid="hk-proof-88"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-88"><article class="hiddenproof"><p id="p-567">Previous proposition, set \(\Gamma_1 = \Gamma_2\)</p>
 <div class="displaymath">
 \begin{equation*}
 N(\Gamma) \to \Aut(\HH/\Gamma)
@@ -552,7 +556,7 @@ N(\Gamma) \to \Aut(\HH/\Gamma)
 \begin{equation*}
 |\Aut(\Sigma)| \lt \infty\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-89"><a data-knowl="" class="id-ref" data-refid="hk-proof-89"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-89" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-569">
+</div></article><article class="hiddenproof" id="proof-89"><a data-knowl="" class="id-ref" data-refid="hk-proof-89"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-89"><article class="hiddenproof"><div class="displaymath" id="p-569">
 \begin{equation*}
 \xymatrix{
 \HH \ar[dr]^{\phi_1} \ar[d]_{\phi_2}\\
@@ -569,9 +573,9 @@ S =\HH/\Gamma \ar[r]_f &amp; \HH/N(\Gamma) = S/\Aut(S)
 </div>
 <p>where \(I(p)\) is the stabiliser of \(p\) in \(G\) and \(\{p_i\}\) area maximal set of fixed points of \(G\) inequivalent under the action of \(G\text{.}\)</p>
 <article class="exercise-like" id="exercise-14"><a data-knowl="" class="id-ref" data-refid="hk-exercise-14"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.4.15</span>.</h6></a></article><div id="hk-exercise-14" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-571">\(\Sigma,\,g\ge 2\) then \(|\Aut(\Sigma)| \le 84(g-1)\text{.}\) Hint: cases.</p></article></div>
+<span class="type">Exercise</span> <span class="codenumber">2.4.15</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-14"><article class="exercise-like"><p id="p-571">\(\Sigma,\,g\ge 2\) then \(|\Aut(\Sigma)| \le 84(g-1)\text{.}\) Hint: cases.</p></article></div>
 <article class="exercise-like" id="exercise-15"><a data-knowl="" class="id-ref" data-refid="hk-exercise-15"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.4.16</span>.</h6></a></article><div id="hk-exercise-15" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-572">Consider</p>
+<span class="type">Exercise</span> <span class="codenumber">2.4.16</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-15"><article class="exercise-like"><p id="p-572">Consider</p>
 <div class="displaymath">
 \begin{equation*}
 1 \to \Gamma(n) \to \Gamma(1) \to \PSL_2(\ZZ/n\ZZ) \to 1

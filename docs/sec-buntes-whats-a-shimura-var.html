@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -441,7 +445,7 @@ G^\sigma(A) = \{ g\in G(A \otimes \CC : \sigma(g) = \bar g\}
 </div>
 <p>is symmetric and positive definite.</p></article><article class="theorem-like" id="theorem-82"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">5.7.6</span>.</h6>
-<p id="p-1222">Let \(G/\RR\) be an algebraic group. Let \(C  \in G(\RR)\) s.t. \(C^2 \in Z(G(\RR))\text{.}\) Let \(\sigma \colon g\mapsto Cg C\inv\)  then \(\sigma\) is a Cartan involution iff \(G\) admits a faithful \(C\)-polarizable representation.</p></article><article class="hiddenproof" id="proof-121"><a data-knowl="" class="id-ref" data-refid="hk-proof-121"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-121" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1223">\(\Rightarrow\text{.}\) Assume \(G^\sigma \) is compact. Let \(V\) be a faithful \(\RR\)-representation of \(G^\sigma (\RR)\text{.}\) From last time, there exists a \(G^\sigma(\RR)\)-invariant positive definite symmetric form</p>
+<p id="p-1222">Let \(G/\RR\) be an algebraic group. Let \(C  \in G(\RR)\) s.t. \(C^2 \in Z(G(\RR))\text{.}\) Let \(\sigma \colon g\mapsto Cg C\inv\)  then \(\sigma\) is a Cartan involution iff \(G\) admits a faithful \(C\)-polarizable representation.</p></article><article class="hiddenproof" id="proof-121"><a data-knowl="" class="id-ref" data-refid="hk-proof-121"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-121"><article class="hiddenproof"><p id="p-1223">\(\Rightarrow\text{.}\) Assume \(G^\sigma \) is compact. Let \(V\) be a faithful \(\RR\)-representation of \(G^\sigma (\RR)\text{.}\) From last time, there exists a \(G^\sigma(\RR)\)-invariant positive definite symmetric form</p>
 <div class="displaymath">
 \begin{equation*}
 \Psi\colon V\times V\to \RR
@@ -488,7 +492,7 @@ V^{p,q}
 <ol class="decimal">
 <li id="li-296">\(\Psi\colon V\times V \to \RR(-k)\) is a morphism of  Hodge structures.</li>
 <li id="li-297">\(\Psi(v, h(i) w)\) is symmetric and positive definite.</li>
-</ol></article><article class="hiddenproof" id="proof-122"><a data-knowl="" class="id-ref" data-refid="hk-proof-122"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-122" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1231">\(\Leftarrow\) in Jared's notes.</p>
+</ol></article><article class="hiddenproof" id="proof-122"><a data-knowl="" class="id-ref" data-refid="hk-proof-122"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-122"><article class="hiddenproof"><p id="p-1231">\(\Leftarrow\) in Jared's notes.</p>
 <p id="p-1232">\(\Rightarrow\text{,}\) we want to show</p>
 <div class="displaymath">
 \begin{equation*}
@@ -537,7 +541,7 @@ V = \bigoplus_k V_k
 <ol class="decimal">
 <li id="li-298">\(G_1\) is reductive.</li>
 <li id="li-299">For some \(h \in X\) (equivalently for all \(h \in X\)) conjugation by \(h(i)\) is a Cartan involution on the adjoint group \(G_1^{\ad}\text{.}\)</li>
-</ol></article><article class="hiddenproof" id="proof-123"><a data-knowl="" class="id-ref" data-refid="hk-proof-123"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-123" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1237">\(\Rightarrow\) Let \(G_2 \subseteq G_1\) be the smallest subgroup containing \(h(U^1)\) for all \(h \in X\) where \(U^1 = \{|z| = 1\} \subseteq \CC^\times\text{.}\) Then \(G_1\) is generated by \(G_2\) and \(h(t)\) for all \(t \in \RR^\times, h \in X\text{.}\) Since \(h(t)\) is always central have \(G_1^{\ad}=  G_2^{\ad}\text{.}\) By the previous lemma, \(\forall z  \in U^1\)</p>
+</ol></article><article class="hiddenproof" id="proof-123"><a data-knowl="" class="id-ref" data-refid="hk-proof-123"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-123"><article class="hiddenproof"><p id="p-1237">\(\Rightarrow\) Let \(G_2 \subseteq G_1\) be the smallest subgroup containing \(h(U^1)\) for all \(h \in X\) where \(U^1 = \{|z| = 1\} \subseteq \CC^\times\text{.}\) Then \(G_1\) is generated by \(G_2\) and \(h(t)\) for all \(t \in \RR^\times, h \in X\text{.}\) Since \(h(t)\) is always central have \(G_1^{\ad}=  G_2^{\ad}\text{.}\) By the previous lemma, \(\forall z  \in U^1\)</p>
 <div class="displaymath">
 \begin{equation*}
 \Psi(h(z), v, h(z) w) = \Psi(v,w)

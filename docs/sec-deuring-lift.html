@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -281,10 +282,10 @@ var js_version = 0.12;
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gz-arch-II.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gz-arch-II.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-gz-serre-tate.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gz-arch-II.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gz-arch-II.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-gz-serre-tate.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift" class="active">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -434,7 +438,7 @@ g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
 <p>for all irreducible components \(\mathcal Y\) of \(\mathcal X\otimes k_v\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-\pair ab_v = -(A.B) \log q_v
+\pair ab_v = -(A.B) \log q_v\text{.}
 \end{equation*}
 </div></article><article class="remark-like" id="remark-41"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">6.6.2</span>.</h6>
@@ -500,7 +504,7 @@ E_2 \ar[r] &amp; E_2'}\text{.}
 \begin{equation*}
 \overline E \text{ is ordinary} \iff p \text{ splits in }K
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-127"><a data-knowl="" class="id-ref" data-refid="hk-proof-127"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-127" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1416">\(p\ints K = \ideal p \ideal p'\text{,}\) sat \(\wp / \ideal p\text{.}\) Let \(m\) be the order of \(\ideal p\) in \(\Cl_K\text{,}\) so that</p>
+</div></article><article class="hiddenproof" id="proof-127"><a data-knowl="" class="id-ref" data-refid="hk-proof-127"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-127"><article class="hiddenproof"><p id="p-1416">\(p\ints K = \ideal p \ideal p'\text{,}\) sat \(\wp / \ideal p\text{.}\) Let \(m\) be the order of \(\ideal p\) in \(\Cl_K\text{,}\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 \ideal p ^m  = (\mu ) , (\ideal p')^m = (\mu ')
@@ -552,10 +556,10 @@ K\otimes \QQ_p \to \QQ_p
 \mathscr E/W(K)
 \end{equation*}
 </div>
-<p>s.t. the connected-etale sequence splits</p>
+<p>s.t. the connected-etale sequence</p>
 <div class="displaymath">
 \begin{equation*}
-0\mathscr E [p^\infty ]^0 \to \mathscr E [p^\infty ] \to \mathscr E[p^\infty ]^{et} \to 0
+0\to\mathscr E [p^\infty ]^0 \to \mathscr E [p^\infty ] \to \mathscr E[p^\infty ]^{et} \to 0
 \end{equation*}
 </div>
 <p>splits.</p></article><article class="theorem-like" id="theorem-97"><h6 class="heading">
@@ -571,7 +575,7 @@ E_0 /\overline \FF_p
 \begin{equation*}
 (E,\alpha ) \equiv  (E_0, \alpha _0) \pmod {\ideal p}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-128"><a data-knowl="" class="id-ref" data-refid="hk-proof-128"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-128" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-1420">First note that if we have a lift then we can trivially lift \(\alpha _0 = \lb n\rb \text{.}\) So we can reduce to the case</p>
+</div></article><article class="hiddenproof" id="proof-128"><a data-knowl="" class="id-ref" data-refid="hk-proof-128"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-128"><article class="hiddenproof"><p id="p-1420">First note that if we have a lift then we can trivially lift \(\alpha _0 = \lb n\rb \text{.}\) So we can reduce to the case</p>
 <ol class="decimal">
 <li id="li-335">\(\ker (\alpha _0)\) is cyclic.</li>
 <li id="li-336">\(p\nmid \deg(\alpha _0)\text{.}\)</li>
@@ -659,16 +663,18 @@ E(j)_{\ideal q} \simeq E(j_i)_{\ideal q}
 </div></article><article class="theorem-like" id="fact-14"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">6.6.12</span>.</h6>
 <ol id="p-1423" class="decimal">
-<li id="li-337"><div class="displaymath">
+<li id="li-337">
+<div class="displaymath">
 \begin{equation*}
 \Hom_{W/\pi _v^{n+1}}(\underline x^\sigma , \underline x) \hookrightarrow \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)
 \end{equation*}
-</div></li>
-<li id="li-338"><div class="displaymath">
+</div>(4.5) in Gross-Zagier</li>
+<li id="li-338">
+<div class="displaymath">
 \begin{equation*}
 \Hom_{W}(\underline x^\sigma , \underline x) = \bigcap_n \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)
 \end{equation*}
-</div></li>
+</div>(4.5) in Gross-Zagier</li>
 <li id="li-339"><div class="displaymath">
 \begin{equation*}
 \# \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m} = r_{\mathscr A}(m)

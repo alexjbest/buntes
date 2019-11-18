@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -487,7 +491,7 @@ B = \legendre{-1,-23}{\QQ}
 <p id="p-957">The endomorphism algebra  \(\End(E)_\QQ = \End(E) \otimes \QQ\) of \(E\) is either \(\QQ\) an imaginary quadratic field or a definite quaternion algebra \(/\QQ\text{.}\)</p></article><article class="theorem-like" id="theorem-69"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.4.17</span>. <span class="title">Deuring, this proof by Lenstra.</span>
 </h6>
-<p id="p-958">Let \(E/\FF_q\) be a s.s. e.c. (i.e. assume \(\End(E) \otimes \QQ\) is a quaternion algebra). Then \(\operatorname{Ram}(B)  =    \{p, \infty\}\) and \(\ints = \End(E) \) is a maximal order in \(B\text{.}\)</p></article><article class="hiddenproof" id="proof-107"><a data-knowl="" class="id-ref" data-refid="hk-proof-107"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-107" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-959">Let \(n \gt 0\)  be prime to \(p \text{.}\) Then</p>
+<p id="p-958">Let \(E/\FF_q\) be a s.s. e.c. (i.e. assume \(\End(E) \otimes \QQ\) is a quaternion algebra). Then \(\operatorname{Ram}(B)  =    \{p, \infty\}\) and \(\ints = \End(E) \) is a maximal order in \(B\text{.}\)</p></article><article class="hiddenproof" id="proof-107"><a data-knowl="" class="id-ref" data-refid="hk-proof-107"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-107"><article class="hiddenproof"><p id="p-959">Let \(n \gt 0\)  be prime to \(p \text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
@@ -524,7 +528,7 @@ E \lb n \rb  \simeq \ZZ/ n \oplus \ZZ/n
 \begin{equation*}
 \left\{ \text{maximal orders }\ints \subseteq B_{p,\infty}\right\}/\sim \leftrightarrow \left\{ j \text{ s.s. }\in \FF_{p^2}\right\}/\Gal{\FF_{p^2}}{\FF_p}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-108"><a data-knowl="" class="id-ref" data-refid="hk-proof-108"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-108" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-968">Voight 42.4.7.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-108"><a data-knowl="" class="id-ref" data-refid="hk-proof-108"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-108"><article class="hiddenproof"><p id="p-968">Voight 42.4.7.</p></article></div>
 <article class="definition-like" id="definition-92"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.4.19</span>.</h6>
 <p id="p-969">Let \(I \subseteq \ints = \End(E)\) be an integral left \(\ints\)-ideal with \((\operatorname{nrd}(I), p) = 1\text{.}\) Define</p>
@@ -568,7 +572,7 @@ E\lb I \rb = \{ P \in E(\overline \FF_q) :  \alpha(P) = 0 \forall \alpha \in I\}
 </ol></article><p id="p-976">Recall: the (Charles-Goren-Lauter) CGL hash function is preimage resistant iff given 2 s.s. \(j\)-invariants \(j_1,j_2\) its computationally hard to compute a  positive integer \(e\) and an isogeny \(\phi \colon E_{j_1} \to E_{j_2}\) of degree \(l^e\text{.}\)</p>
 <article class="theorem-like" id="proposition-66"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">3.4.26</span>.</h6>
-<p id="p-977">Assume there's an efficient algorithm to solve P3. Then there is an efficient algorithm to solve the preimage problem for the CGL hash function</p></article><article class="hiddenproof" id="proof-109"><a data-knowl="" class="id-ref" data-refid="hk-proof-109"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-109" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-978">Algorithm</p>
+<p id="p-977">Assume there's an efficient algorithm to solve P3. Then there is an efficient algorithm to solve the preimage problem for the CGL hash function</p></article><article class="hiddenproof" id="proof-109"><a data-knowl="" class="id-ref" data-refid="hk-proof-109"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-109"><article class="hiddenproof"><p id="p-978">Algorithm</p>
 <p id="p-979">Input: two s.s. \(j\)-invariants \(j_s,j_t \in \FF_{p^2}\text{.}\)</p>
 <p id="p-980">Output: sequence of \(j\)-invariants</p>
 <div class="displaymath">

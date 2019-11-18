@@ -49,6 +49,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -355,6 +356,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
 <li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -451,7 +455,7 @@ f\colon S\to S'
 <p>such that for all charts \(\phi, \psi\) on  \(S, S'\) respectively we have \(\psi \circ f \circ \phi\inv\) is holomorphic.</p>
 <p id="p-487">We call a morphism \(f\colon S\to \CC\) a <dfn class="terminology">holomorphic function</dfn> on \(S\text{.}\)</p>
 <p id="p-488">We say \(f \colon S \to \CC\) is a <dfn class="terminology">meromorphic function</dfn> is \(f\circ \phi\inv\) is meromorphic.</p></article><article class="exercise-like" id="exercise-7"><a data-knowl="" class="id-ref" data-refid="hk-exercise-7"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.2.7</span>.</h6></a></article><div id="hk-exercise-7" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-489">The set of meromorphic functions on a Riemann surface form a field.</p></article></div>
+<span class="type">Exercise</span> <span class="codenumber">2.2.7</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-7"><article class="exercise-like"><p id="p-489">The set of meromorphic functions on a Riemann surface form a field.</p></article></div>
 <p id="p-490">We denote the field of meromorphic functions by \(\mathcal M (S)\text{.}\)</p>
 <article class="theorem-like" id="proposition-41"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.2.8</span>. <span class="title">1.26.</span>
@@ -460,7 +464,7 @@ f\colon S\to S'
 \begin{equation*}
 \mathcal M(\hat \CC) = \CC(z)\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-82"><a data-knowl="" class="id-ref" data-refid="hk-proof-82"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-82" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-492">Let \(f\colon \hat\CC \to \CC\) be meromorphic. Then the number of poles of \(f\) is finite say at \(a_1, \ldots, a_n\text{.}\) So, locally at  \(a_i\) we can write</p>
+</div></article><article class="hiddenproof" id="proof-82"><a data-knowl="" class="id-ref" data-refid="hk-proof-82"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-82"><article class="hiddenproof"><p id="p-492">Let \(f\colon \hat\CC \to \CC\) be meromorphic. Then the number of poles of \(f\) is finite say at \(a_1, \ldots, a_n\text{.}\) So, locally at  \(a_i\) we can write</p>
 <div class="displaymath">
 \begin{equation*}
 f(z) = \sum_{j=1}^{j_i} \frac{\lambda_{j,i}}{(z-a_i)^j} + h_i(z)
@@ -475,7 +479,7 @@ f(z) - \sum_{i=1}^n \sum_{j=1}^{j_i} \frac{\lambda_{j,i}}{(z-a_i)^j}
 <p>is holomorphic everywhere. By Liouville's theorem this is constant.</p></article></div>
 <p id="p-493">We say \(S,S'\) are isomorphic if \(\exists f\colon S\to S'\text{,}\) \(g\colon S'\to S\) morphisms such that \(f\circ g = \id_{S'}\text{,}\) \(g\circ f = \id_{S}\text{.}\)</p>
 <article class="exercise-like" id="exercise-8"><a data-knowl="" class="id-ref" data-refid="hk-exercise-8"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.2.9</span>.</h6></a></article><div id="hk-exercise-8" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-494">Show that</p>
+<span class="type">Exercise</span> <span class="codenumber">2.2.9</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-8"><article class="exercise-like"><p id="p-494">Show that</p>
 <div class="displaymath">
 \begin{equation*}
 \hat \CC \simeq \PP^1(\CC)\text{.}

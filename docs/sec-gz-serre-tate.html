@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Serre-Tate theory (Alex)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-deuring-lift.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-gz-oana.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-deuring-lift.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-gz-oana.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+<li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
+<li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate" class="active">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gz-serre-tate"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.7</span> <span class="title">Serre-Tate theory (Alex)</span>
+</h2>
+<a href="sec-gz-serre-tate.html" class="permalink">¶</a><p id="p-1425">We will work in generality following Katz's Serre-Tate Local Moduli <a data-knowl="./knowl/bib-katz-serre-tate.html" title="Bibliographic Entry 57: Serre-Tate local moduli">[57]</a>. Note that Hida <a data-knowl="./knowl/bib-hida-geometric.html" title="Bibliographic Entry 53: Geometric modular forms and elliptic curves">[53]</a> also has a modernized exposition of the same. The original “source” material is Woods hole notes, sketchy at best.</p>
+<p id="p-1426">Recall that one thing we will try and do is to prove the following formula</p>
+<div class="displaymath">
+\begin{equation*}
+(\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
+\end{equation*}
+</div>
+<p id="p-1427">To do this we want to understand more about the special nature of Heegner points, representing pairs of CM elliptic curves. Angus told us last time about how to lift curves together with an endomorphism from \(\FF_q\) to a number field. The set of all lifts to positive characteristic of a given curve over a finite field, can be thought of as deformations of the given curve. The aim is to describe these deformations in terms of a simpler object.</p>
+<p id="p-1428">We will work in generality, because it isn't really any harder, and makes it a bit clearer in some cases. That is we will work with <em class="emphasis">abelian schemes</em> which are higher dimensional generalizations of elliptic curves (e.g. products of elliptic curves, weil restrictions, or jacobians of higher genus curves). You can replace abelian scheme with elliptic curve if you like and restrict to dimension \(g =1\text{.}\) . We let \(R\) be a ring, and define the category</p>
+<div class="displaymath">
+\begin{equation*}
+\mathrm{AbSch}(R) = \{\text{abelian schemes over} R\}\text{.}
+\end{equation*}
+</div>
+<p id="p-1429">We will fix \(W\) a complete DVR with residue field \(\overline \FF_p\) (i.e. \(W\) could be the Witt vectors of \(\overline  \FF_p\)). Complete means that</p>
+<div class="displaymath">
+\begin{equation*}
+W = W_\infty  =\varprojlim_{m} \underbrace{W/p^m}_{=W_m}
+\end{equation*}
+</div>
+<p>The for \(m =1,2,\ldots, \infty \) we let \(R\) be a base ring Given \(R\) ring we can reduce to the residue field, but this map is many to one, what is the smallest amount of data needed to recover \(A/R\) an abelian scheme from \(A_0/R_0\text{?}\)</p>
+<p id="p-1430">Our rings today will probably all be complete local -algebras.</p>
+<p id="p-1431">Given any abelian scheme \(A/R\) over any ring we can form its \(p\)-divisible group, also known as a Barsotti-Tate group</p>
+<div class="displaymath">
+\begin{equation*}
+A[p^\infty ]
+\end{equation*}
+</div>
+<p>this is “p-divisible” as given any \(p\)-power torsion point on \(A\) its division by \(p\) is also \(p\)-power torsion. Formally the definition is</p>
+<article class="definition-like" id="definition-136"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.7.1</span>.</h6>
+<p id="p-1432">A \(p\)-divisible group \(G\) over \(R\) of height \(h\) is an inductive system</p>
+<div class="displaymath">
+\begin{equation*}
+G = (G_v, i_v),\,v \ge 0
+\end{equation*}
+</div>
+<p>where each \(G\) is a finite group scheme over \(R\) of order \(p^{vh}\) and for each \(v\ge0\)</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to G_v \xrightarrow{i_v} G_{v+1} \xrightarrow{p^v} G_{v+1}
+\end{equation*}
+</div>
+<p>is exact, so \(i_v\) is the kernel of \(p^v\text{.}\)</p></article><article class="example-like" id="example-80"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.7.2</span>.</h6>
+<p id="p-1433">For normal abelian groups (i.e. constant group schemes) we must have</p>
+<div class="displaymath">
+\begin{equation*}
+G_v = (\ZZ/p^v)^h
+\end{equation*}
+</div>
+<p>with</p>
+<div class="displaymath">
+\begin{equation*}
+\lim G_v = (\QQ_p/\ZZ_p)^h\text{.}
+\end{equation*}
+</div></article><article class="example-like" id="example-81"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.7.3</span>.</h6>
+<p id="p-1434">For abelian varieties \(A\) of dimension \(d\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+(A[p^v], i_v\colon A[p^v] \hookrightarrow A[p^{v+1}])
+\end{equation*}
+</div>
+<p>of height \(h =2d\text{.}\) Note this is true even in the supersingular case!</p></article><p id="p-1435">Given a map of rings \(R \to R_0\) let the category of deformations be</p>
+<div class="displaymath">
+\begin{equation*}
+\mathrm{Def}(R,R_0) =\{(A_0, G, \epsilon ) : A_0/R_0\text{ abelian scheme},\,G/R\text{ a }p\text{-divisible group},\,\epsilon \colon G_0 \to A_0 [p^\infty ]\}
+\end{equation*}
+</div>
+<p>\(\epsilon \) an isom of \(p\)-divisible groups ove \(R_0\text{.}\) So these are abelian schemes over the “small” ring and a choice of compatible \(p\)-divisible group over the big ring.</p>
+<p id="p-1436">With this setting we have a nice map as follows If \(R\) is a ring with \(p\) nilpotent, \(I \subseteq R\) a nilpotent ideal and \(R_0 = R/I\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\mathrm{AbSch}(R) \to \mathrm{Def}(R,R_0)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+A \mapsto (A_0, A[p^\infty ],A[p^\infty ]\otimes R_0 \simeq A_0 [p^\infty ])\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-98"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.7.4</span>. <span class="title">Serre-Tate.</span>
+</h6>
+<p id="p-1437">This functor is an equivalence of categories.</p></article><p id="p-1438">Thus the set of deformations of a fixed \(A_0\) corresponds to deformations of \(A_0\lb p^\infty \rb \text{.}\)</p>
+<p id="p-1439">This is a kinda ridiculous theorem, it tells us that all the information in an abelian variety over \(R\) is contained in the reduction to \(R_0\) except the \(p^\infty\) torsion and the information of how this fits together.</p>
+<p id="p-1440">Hence to study the abelian varieties over \(R\) reducing to a given \(A_{R_0}/R_0\) we can just study the \(p\)-divisible groups over \(R\) with an isomorphism to \(A_{R_0}\lb p^\infty\rb\text{.}\)</p>
+<section class="subsection" id="subsection-100"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.7.1</span> <span class="title">Drinfeld's proof of Serre-Tate</span>
+</h3>
+<p id="p-1441">Drinfeld's proof cleverly extracts the content common to both things we are lifting, the abelian scheme and the \(p\)-divisible group.</p>
+<p id="p-1442">Let \(R\) be a local \(W_m\)-alg. \(I \subseteq R\) a nilpotent ideal with nilpotency index \(\nu + 1\text{,}\) let \(R_0 = R/I\text{.}\) \(N = p^t\) an integer s.t. \(N I = 0\text{.}\) Given an \(R\)-algebra \(A\) we might consider</p>
+<div class="displaymath">
+\begin{equation*}
+A/IA = A \otimes R_0
+\end{equation*}
+</div>
+<p>and also</p>
+<div class="displaymath">
+\begin{equation*}
+A/\ideal m_A\text{.}
+\end{equation*}
+</div>
+<p id="p-1443">So given a functor from \(R\)-algebras to an arbitrary abelian category</p>
+<div class="displaymath">
+\begin{equation*}
+G \colon R\text{-alg}\to C
+\end{equation*}
+</div>
+<p>we have two natural <em class="emphasis">subfunctors</em></p>
+<div class="displaymath">
+\begin{equation*}
+G_I \colon A \mapsto \ker( G(A) \to G(A\otimes R_0))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\widehat G(A) \colon A \mapsto \ker(G(A) \to G(A/\ideal m_A))\text{,}
+\end{equation*}
+</div>
+<p>note that</p>
+<div class="displaymath">
+\begin{equation*}
+G_I \subseteq \widehat G\text{.}
+\end{equation*}
+</div>
+<p id="p-1444">What are formal groups?</p>
+<article class="definition-like" id="def-formal-gps"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.7.5</span>. <span class="title">Formal groups.</span>
+</h6>
+<p id="p-1445">A \(n\)-dimensional <dfn class="terminology">formal group</dfn> over a ring \(R\) is a power series</p>
+<div class="displaymath">
+\begin{equation*}
+F(x,y) = (x_1, \ldots, x_n) + (y_1,\ldots,y_n) + O(\text{degree 2 terms}) \in (R[[x_1,\ldots, x_n,y_1,\ldots, y_n]])^n
+\end{equation*}
+</div>
+<p>that is associative in the sense that</p>
+<div class="displaymath">
+\begin{equation*}
+F(F(x,y),z) = F(x,F(y,z))\text{.}
+\end{equation*}
+</div>
+<p id="p-1446">The formal group is <dfn class="terminology">commutative</dfn> if \(F(x,y) = F(y,x)\text{.}\)</p></article><p id="p-1447">Given an abelian variety we can get a 1-dimensional formal group by completing at the origin. E.g. for an elliptic curve</p>
+<div class="displaymath">
+\begin{equation*}
+y^2 = x^3 + ax +b
+\end{equation*}
+</div>
+<p>we can express \(x = x(t) =t^{-2} + \cdots\text{,}\) \(y = -t^{-3} + \cdots\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{t^{2}} - at^{2} - bt^{4} - a^{2}t^{6} - 3 a bt^{8} + \left(-2 a^{3} - 2 b^{2}\right)t^{10} - 10 a^{2} bt^{12} + \left(-5 a^{4} - 15 a b^{2}\right)t^{14} + \left(-35 a^{3} b - 7 b^{3}\right)t^{16} + \left(-14 a^{5} - 84 a^{2} b^{2}\right)t^{18} + O(t^{20})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{-1}{t^{3}} + at + bt^{3} + a^{2}t^{5} + 3 a bt^{7} + \left(2 a^{3} + 2 b^{2}\right)t^{9} + 10 a^{2} bt^{11} + \left(5 a^{4} + 15 a b^{2}\right)t^{13} + \left(35 a^{3} b + 7 b^{3}\right)t^{15} + \left(14 a^{5} + 84 a^{2} b^{2}\right)t^{17} + \left(126 a^{4} b + 84 a b^{3}\right)t^{19} + O(t^{20})
+\end{equation*}
+</div>
+<p>then the group law in terms of \(t\) is</p>
+<div class="displaymath">
+\begin{equation*}
+t_{1} + t_{2} + \left(-2 a\right) t_{1}^{4} t_{2} + \left(-4 a\right) t_{1}^{3} t_{2}^{2} + \left(-4 a\right) t_{1}^{2} t_{2}^{3} + \left(-2 a\right) t_{1} t_{2}^{4} + \left(-3 b\right) t_{1}^{6} t_{2} + \left(-9 b\right) t_{1}^{5} t_{2}^{2} + \left(-15 b\right) t_{1}^{4} t_{2}^{3} + \left(-15 b\right) t_{1}^{3} t_{2}^{4} + \left(-9 b\right) t_{1}^{2} t_{2}^{5} + \left(-3 b\right) t_{1} t_{2}^{6} + \left(-2 a^{2}\right) t_{1}^{8} t_{2} + \left(8 a^{2}\right) t_{1}^{6} t_{2}^{3} + \left(16 a^{2}\right) t_{1}^{5} t_{2}^{4} + \left(16 a^{2}\right) t_{1}^{4} t_{2}^{5} + \left(8 a^{2}\right) t_{1}^{3} t_{2}^{6} + \left(-2 a^{2}\right) t_{1} t_{2}^{8} + O(t_{1}, t_{2})^{10}\text{.}
+\end{equation*}
+</div>
+<p id="p-1448">In general an \(n\)-dimensional abelian variety gives an \(n\)-dimensional formal group.</p>
+<p id="p-1449">Given a complete local ring \(R\) we can evaluate by substituting \(t\) for anything in the maximal ideal. So a formal group \(G\) defines a functor</p>
+<div class="displaymath">
+\begin{equation*}
+G\colon \text{complete local }R\text{-algebras} \to \text{AbGrp}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G(A) = (\ideal m_A)^n\text{with multiplication by }G\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="lemma-28"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">6.7.6</span>.</h6>
+<p id="p-1450">Let \(G\) be a commutative formal group over \(R\text{,}\) so  \(G_I,\widehat G\) are now sub-group functors. \(G_I\) is \(N^\nu\) torsion.</p></article><article class="hiddenproof" id="proof-129"><a data-knowl="" class="id-ref" data-refid="hk-proof-129"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-129"><article class="hiddenproof"><p id="p-1451">We need to show that \(\lb N\rb a = 0\) for any \(a \in G_I(A) \subseteq G(A)\) for which \(a_i \in I\) for all \(i\text{.}\) An element of \(G_I(A)\) has coordinates in \(IA\) and \(NR = 0\) so we have</p>
+<div class="displaymath">
+\begin{equation*}
+(\lb N\rb a)_i = N a_i + \text{h.o.t.} \in N(IA) + (IA)^2 = (IA)^2
+\end{equation*}
+</div>
+<p>as \(R\) and hence \(A\) is \(N\) torsion, this gives inductively that</p>
+<div class="displaymath">
+\begin{equation*}
+([N^\nu] a)_i \in (IA)^{2\nu}  =0
+\end{equation*}
+</div>
+<p>as \(I^{\nu + 1}   =0 \text{.}\)</p></article></div>
+<article class="definition-like" id="definition-138"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.7.7</span>.</h6>
+<p id="p-1452">Given a covariant functor</p>
+<div class="displaymath">
+\begin{equation*}
+G \colon \text{complete local} R-alg \to \text{AbGrp}
+\end{equation*}
+</div>
+<p>which for any faithfully flat finite type \(A \hookrightarrow C\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+G(A)\hookrightarrow G(C)
+\end{equation*}
+</div>
+<p>and “the sheaf condition” w.r.t \(A\hookrightarrow C\text{.}\) Is called an fppf abelian sheaf.</p></article><article class="example-like" id="example-82"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.7.8</span>.</h6>
+<div class="displaymath" id="p-1453">
+\begin{equation*}
+G(A) = E(A)
+\end{equation*}
+</div>
+<p>for \(E\) an abelian variety.</p></article><article class="theorem-like" id="lemma-29"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">6.7.9</span>.</h6>
+<p id="p-1454">Let \(G,H\) be fppf abelian sheaves. And set \(G_0, H_0\) the corresponding objects restricted to \(R_0\text{.}\) Suppose</p>
+<ol class="decimal">
+<li id="li-340">\(G\) is \(p\)-divisible.</li>
+<li id="li-341">\(\hat H\) is formal.</li>
+<li id="li-342">\(H (R) \to H(R/J)\) surjective for any nilpotent \(J\) (this is known as formal smoothness of \(J\))</li>
+</ol>
+<p>then</p>
+<ol class="decimal">
+<li id="li-343">Both<div class="displaymath">
+\begin{equation*}
+\Hom (G,H),\,\Hom(G_0,H_0)
+\end{equation*}
+</div>are \(p\)-torsion free.</li>
+<li id="li-344">The reduction mod \(I\)<div class="displaymath">
+\begin{equation*}
+\Hom(G, H) \to  \Hom(G_0, H_0)
+\end{equation*}
+</div>is injective.</li>
+<li id="li-345">For \(f_0 \in \Hom(G_0,H_0)\text{,}\) there is a unique \(\Phi (G, H)\) with<div class="displaymath">
+\begin{equation*}
+\Phi \equiv  N^\nu f_0 \mod I
+\end{equation*}
+</div>denote \(\Phi = \tilde N^\nu f \in \Hom(G,H) \otimes \QQ\)</li>
+<li id="li-346">we get<div class="displaymath">
+\begin{equation*}
+f = \frac{\tilde N^\nu f}{N^\nu } \in \Hom (G,H)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\iff
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\tilde N^\nu  (G[N^\nu  ] ) = 0
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="hiddenproof" id="proof-130"><a data-knowl="" class="id-ref" data-refid="hk-proof-130"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-130"><article class="hiddenproof"><ol id="p-1455" class="decimal">
+<li id="li-347">\(p\)-divisibility implies that if \(pf = 0\) so \(pf(x)=  0\) for all \(x\) then if \(py = x\) we have<div class="displaymath">
+\begin{equation*}
+f(x) = pf(y) =0
+\end{equation*}
+</div>so \(f = 0\text{.}\)</li>
+<li id="li-348">We can write<div class="displaymath">
+\begin{equation*}
+0 \to H_I \to H \to H_0 \to 0
+\end{equation*}
+</div>so that by left exactness of hom<div class="displaymath">
+\begin{equation*}
+0 \to \Hom(G, H_I) \to  \Hom(G, H) \to  \Hom(G, H_0) = \Hom(G_0, H_0)
+\end{equation*}
+</div>so the second map is what we want so we want<div class="displaymath">
+\begin{equation*}
+\im(\Hom(G, H_I) \to \Hom(G,H)) = 0
+\end{equation*}
+</div>rhs p-tors free, and \(H_I\) is killed by \(N^\nu \) (using formality of \(\hat H \) here and another lemma I didn't really state).</li>
+<li id="li-349">Uniqueness follows from 2. so we just lift<div class="displaymath">
+\begin{equation*}
+f_0 \in \Hom(G_0, H_0)
+\end{equation*}
+</div>to \(y \in H(A)\text{.}\)</li>
+</ol></article></div></section><p id="p-1456">Proof of serre tate:</p>
+<p id="p-1457">As above \(N\) is a p-power killing \(I\text{,}\) \(\nu \) an integer  such that \(I^{\nu + 1} = 0\text{.}\) We can apply Drinfeld to each of \(A, A', A\lb p^\infty \rb, A'\lb p^\infty \rb , A_0\lb p^\infty \rb , A'_0 \lb p^\infty \rb \text{.}\)</p>
+<p id="p-1458">We show our functor is fully faithful ie.</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{Hom}_{\mathcal{A}}\left(A, A^{\prime}\right) \rightarrow \operatorname{Hom}_{D E F}\left(\left(A_{0}, A\left[p^{\infty}\right], \text { id }_{A_{0}}\right),\left(A_{0}^{\prime}, A^{\prime}\left[p^{\infty}\right], \text { id }_{A_{0}^{\prime}}\right)\right)
+\end{equation*}
+</div>
+<p>part 2. with \(G =A\text{,}\) \(H = A'\) gives inj as an abvar is a p-div abelian fppf sheaf.</p>
+<p id="p-1459">To show surjectivity apply part 3. of drinfeld with \(G = A\text{,}\) \(H = A'\) to get a lift from each \(f_0\in \Hom(A_0, A_0')\) of \(N^\nu  f_0\) to</p>
+<div class="displaymath">
+\begin{equation*}
+g = `` N^\nu f'' \in \Hom(A, A')
+\end{equation*}
+</div>
+<p>to satisfy part 4 we need that \(g\) kills \(A\lb N^\nu \rb \text{.}\) We have \(N^\nu  f = g\) on \(A\lb p^\infty \rb \) and as  \(N\) is a \(p\)-power in fact \(A \lb  N^\nu \rb  \subseteq A\lb  p^\infty \rb \) is killed by \(N^\nu f\text{.}\)</p>
+<p id="p-1460">To prove essential surjectivity onto \((A_0, D, \phi )\text{,}\) we lift \(A_0\) to \(X\) arbitrarily, and must match up the \(p\)-divisible group and iso. We have an isom \(\alpha _0 \lb p^\infty \rb  \to A_0 \lb p^\infty \rb \text{.}\) And so a lift</p>
+<div class="displaymath">
+\begin{equation*}
+g\colon  X[p^\infty ] \to D
+\end{equation*}
+</div>
+<p>\(N^\nu \alpha _0\) applying the lemma to \(G = X_0\lb p^\infty \rb \text{,}\) \(H = D\text{.}\) So we get an isogeny \(g\) and we quotient by the kernel.</p></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>
