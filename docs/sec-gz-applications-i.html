@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES A gallimaufry of applications (of Gross-Zagier) I (Alex)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gz-rankin-selberg.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-gz-applications-ii.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gz-rankin-selberg.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-gz-applications-ii.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+<li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
+<li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">Wrap Up of Non-Archimedean Local Heights (Sachi)</a></li>
+<li><a href="sec-gz-rankin-selberg.html" data-scroll="sec-gz-rankin-selberg">Rankin-Selberg (Aash)</a></li>
+<li><a href="sec-gz-applications-i.html" data-scroll="sec-gz-applications-i" class="active">A gallimaufry of applications (of Gross-Zagier) I (Alex)</a></li>
+<li><a href="sec-gz-applications-ii.html" data-scroll="sec-gz-applications-ii">A gallimaufry of applications (of Gross-Zagier) II (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gz-applications-i"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.11</span> <span class="title">A gallimaufry of applications (of Gross-Zagier) I (Alex)</span>
+</h2>
+<a href="sec-gz-applications-i.html" class="permalink">¶</a><section class="subsection" id="subsection-107"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.11.1</span> <span class="title">Heegner points on rank 1 curves</span>
+</h3>
+<blockquote class="blockquote" id="blockquote-2">
+<p id="p-1506">The fun of the subject seems to me to be in the examples.</p>
+<cite class="attribution">―Gross - Letter to Birch 1982</cite>
+</blockquote>
+<p id="p-1507">So let's do some examples of Heegner point computations, and see how Gross-Zagier gives us important information in a few ways.</p>
+<p id="p-1508">Following the algorithm in Cohen, Number theory part I.</p>
+<p id="p-1509">Fix an elliptic curve \(E(\QQ)\) of conductor \(N\text{,}\) we are interested in finding \(E(\QQ)\text{.}\) All elliptic curves over \(\QQ\) are now known to be modular and hence we may make use of the parameterisation</p>
+<div class="displaymath">
+\begin{equation*}
+\phi_N \colon X_0(N) \hookrightarrow J_0(N) \twoheadrightarrow E\text{.}
+\end{equation*}
+</div>
+<p>Over \(\CC\) the modular curve is classically</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal H / \Gamma_0(N)
+\end{equation*}
+</div>
+<p>and if \(E = E_f\) for \(f=  \sum a_n q^n\) we have \(\Phi_w \colon \CC/\Lambda_E \to E(\CC)\text{.}\) Then the modular parameterisation comes down to</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(\tau) = \phi_w(z_\tau) = \phi_w\underbrace{\left( c\int_{i\infty}^\tau 2\pi i f(z) \diff z\right)}_{c\sum_{n=1}^\infty \frac{a_n}{n} q^n}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi \colon X_0(N) \to \CC/\Lambda \text{.}
+\end{equation*}
+</div>
+<p id="p-1510">So integrating the \(q\)-expansion of a modular form and plugging in \(\tau\) gives us the corresponding point in the complex uniformization of the curve because the Abel-Jacobi map is defined by integration.</p>
+<article class="definition-like" id="definition-139"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">6.11.1</span>.</h6>
+<p id="p-1511">We have \(\tau \in \HH\) <dfn class="terminology">CM points</dfn> if they satisfy an equation</p>
+<div class="displaymath">
+\begin{equation*}
+A \tau ^2 + B'\tau  + C  = 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+A,B,C \in \ZZ
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Delta (\tau ) = B^2 - 4AC \lt 0
+\end{equation*}
+</div>
+<p>when we choose</p>
+<div class="displaymath">
+\begin{equation*}
+A \gt 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(A,B,C) = 1
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+Ax^2 + Bxy + Cy^2
+\end{equation*}
+</div>
+<p>is the associated quadratic form. A <dfn class="terminology">Heegner point</dfn> of level \(N\) is one for which</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta (N\tau ) = \Delta (\tau )\text{.}
+\end{equation*}
+</div></article><p id="p-1512">Proposition \(8.6 .3 .\) Let \(\tau \in \mathcal{H}\) be a quadratic irrationality and let \((A, B, C)\) be the quadratic form with discriminant \(D\) associated with \(\tau\text{.}\) Then \(\tau\) is a Heegner point of level \(N\) if and only if \(N | A\) and one of the following equivalent conditions is satisfied:</p>
+<ol class="decimal">
+<li id="li-352"><div class="displaymath">
+\begin{equation*}
+\operatorname{gcd}(A / N, B, C N)=1
+\end{equation*}
+</div></li>
+<li id="li-353"><div class="displaymath">
+\begin{equation*}
+\operatorname{gcd}(N, B, A C / N)=1
+\end{equation*}
+</div></li>
+<li id="li-354">There exists \(F \in \mathbb{Z}\) such that \(B^{2}-4 N F=D\) with \(\operatorname{gcd}(N, B, F)=1\)</li>
+</ol>
+<article class="theorem-like" id="corollary-40"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">6.11.2</span>.</h6>
+<p id="p-1513">If \(\tau \) is heegner level \(N\) disc \(D\) so is</p>
+<div class="displaymath">
+\begin{equation*}
+W(\tau ) = -1/(N\tau )\text{.}
+\end{equation*}
+</div></article><p id="p-1514">Proposition 8.6.6. There is a one-to-one correspondence between on the one hand classes modulo \(\Gamma_{0}(N)\) of Heegner points of discriminant \(D\) and level \(N,\) and on the other hand, pairs \((\beta,[\mathfrak{a}\))] where \(\beta \in \mathbb{Z} / 2 N \mathbb{Z}\) is such that \(b^{2} \equiv D(\bmod 4 N)\) for any lift \(b\) of \(\beta\) to \(\mathbb{Z}\text{,}\) and \([\mathfrak{a}\) \in C l(K)] is an ideal class. The correspondence is as follows: if \((\beta,[\mathfrak{a}\))] is as above, there exists a primitive quadratic form \((A, B, C)\) whose class is equal to [a] and such that \(N | A\) and \(B \equiv \beta(\bmod 2 N),\) and the corresponding Heegner point is \(\tau=(-B+\sqrt{D}) /(2 A) .\) Conversely, if \((A, B, C)\) is the quadratic form associated with a Heegner point \(\tau\) we take \(\beta=B\) mod \(2 N\) and \(\mathfrak{a}=\mathbb{Z}+\tau \mathbb{Z}\text{.}\)</p>
+<p id="p-1515">The action of Galois (via the main theorem of CM) shows that the image \(\phi (\tau )\) is defined over \(H\) the hilbert class field of \(K\text{.}\) To get back down to \(K\) we take traces</p>
+<div class="displaymath">
+\begin{equation*}
+P=\sum_{\sigma \in \operatorname{Gal}(H / K)} \varphi((\beta,[\mathfrak{a}]))^{\sigma}=\sum_{[\mathfrak{b}] \in C l(K)} \varphi\left(\left(\beta,\left[\mathfrak{a} \mathfrak{b}^{-1}\right]\right)\right)=\sum_{[\mathfrak{b}] \in C l(K)} \varphi((\beta,[\mathfrak{b}]))
+\end{equation*}
+</div>
+<p id="p-1516">Lemma 8.6.8. If \(\varepsilon=-1,\) then in fact \(P \in E(\mathbb{Q})\) Proof. Indeed, it is easy to see that \(\varepsilon=-1\) is equivalent to saying that \(\varphi \circ W=\varphi,\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+\varphi((\beta,[\mathfrak{b}]))=\overline{\varphi(W(\beta,[\mathfrak{b}]))}=\overline{\varphi\left(\left(-\beta,\left[6 \mathfrak{n}^{-1}\right]\right)\right)}=\varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right) \] hence \[ \begin{aligned} \bar{P}=\amp \sum_{[\mathfrak{b}] \in C l(K)} \varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right)=\sum_{[\mathfrak{b}] \in Cl(K)} \varphi((\beta,[\mathfrak{b}]))=P \end{aligned} 
+\end{equation*}
+</div>
+<p>so by Galois theory once again we deduce that \(P \in E(\mathbb{Q})\)</p>
+<p id="p-1517">Similarly if \(\epsilon  =1\) then \(P+ \overline P\) is torsion.</p>
+<p id="p-1518">We have the Gross-Zagier formula</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat{h}(P)=\frac{\sqrt{|D|}}{4 \operatorname{Vol}(E)} L^{\prime}(E, 1) L\left(E_{D}, 1\right)
+\end{equation*}
+</div>
+<p>which tells us the height of Heegner</p>
+<p id="p-1519">In rank 1 \(P = \ell G\) for some generator \(G\) of mordell-weil then GZ + BSD</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\ell^{2}}{|\operatorname{III}(E)|}=\omega_{1}(E) \frac{c(E) \sqrt{|D|}}{4 \operatorname{Vol}(E)\left|E_{t}(\mathbb{Q})\right|^{2}} L\left(E_{D}, 1\right)
+\end{equation*}
+</div>
+<p id="p-1520">To compute we evaluations of \(\phi ((-B+ D)/(2A))\) for the \(|Cl(K)|\) classes of quadratic forms \((A, B, C)\text{.}\)</p>
+<p id="p-1521">the convergence of the series for \(\phi(\tau)\) is essentially that of a geometric series with ratio \(\exp (-2 \pi \Im(\tau))=\exp (-2 \pi \sqrt{|D|} /(2 A))\)</p>
+<p id="p-1522">We can use</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{\varphi((\beta,[\mathfrak{a}]))}=\varphi\left(\left(\beta,\left[\mathfrak{a}^{-1} \mathfrak{n}\right]\right)\right)
+\end{equation*}
+</div>
+<p>to halve the work we do.</p>
+<p id="p-1523">So the heegner point method is</p>
+<ol class="decimal">
+<li id="li-355">via BSD find<div class="displaymath">
+\begin{equation*}
+|\operatorname{III}(E)| R(E)=\frac{\left|E_{t}(\mathbb{Q})\right|^{2} L^{\prime}(E, 1)}{c(E) \omega_{1}(E)}
+\end{equation*}
+</div>
+</li>
+<li id="li-356">find \(HB\) the height difference bound between canonical and naive heights<div class="displaymath">
+\begin{equation*}
+HB = h(j(E)) / 12+\mu(E)+1.946
+\end{equation*}
+</div>
+</li>
+<li id="li-357">
+<div class="displaymath">
+\begin{equation*}
+d=2(|\operatorname{III}(E)| R(E)+H B)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+d d=\lceil d / \log (10)\rceil+10
+\end{equation*}
+</div>this is the number of decimal digits we will work with</li>
+<li id="li-358">Run through fundamental discs \(D\) for each. Check \(D\) square mod \(4N\) all primes split and<div class="displaymath">
+\begin{equation*}
+L\left(E_{D}, 1\right)=2 \sum_{n \geq 1} \frac{a_{n}}{n}\left(\frac{D}{n}\right) \exp \left(\frac{-2 \pi n}{\sqrt{N D^{2} / \operatorname{gcd}(D, N)}}\right)
+\end{equation*}
+</div>not too close to zero if this is not satisfied, choose the next fundamental discriminant. Otherwise fix \(\beta \in\) \(\mathbb{Z} /(2 N) \mathbb{Z}\) such that \(D \equiv \beta^{2}(\bmod 4 N)\) and compute \(m&gt;0\) such that<div class="displaymath">
+\begin{equation*}
+m^{2}=\omega_{1}(E) \frac{c(E) \sqrt{|D|}(w(D) / 2)^{2}}{4 \operatorname{Vol}(E)\left|E_{t}(\mathbb{Q})\right|^{2}} 2^{\omega(\operatorname{gcd}(D, N))} L\left(E_{D}, 1\right)
+\end{equation*}
+</div>This m should be very close to an integer, or at least to a rational number with small denominator.</li>
+<li id="li-359">Find List of Forms below, compute a list \(L\) of \(|C l(K)|\) representatives \((A, B, C)\) of classes of positive definite quadratic forms of discriminant \(D\text{,}\) where \(A\) must be chosen divisible by \(N\) and minimal, and \(B \equiv \beta(\bmod 2 N)\) (this is always possible). Whenever possible pair elements \((A, B, C)\) and \(\left(A^{\prime}, B^{\prime}, C^{\prime}\right)\) of this list such that \(\left(A^{\prime}, B^{\prime}, C^{\prime}\right)\) is equivalent to \((C N, B, A / N)\) by computing the unique canonical reduced form equivalent to each.</li>
+<li id="li-360">
+<div class="displaymath">
+\begin{equation*}
+z=\sum_{(A, B, C) \in \mathcal{L}} \phi\left(\frac{-B+\sqrt{D}}{2 A}\right) \in \mathbb{C}
+\end{equation*}
+</div>taking a few more than \(A d /(\pi \sqrt{|D|})\) terms for \(\phi \text{.}\)</li>
+<li id="li-361">Find Rational Point Let \(e\) be the exponent of the group \(E_{t}(\mathbb{Q}),\) let \(\ell=\) \(\operatorname{gcd}\left(e, m^{\infty}\right)=\operatorname{gcd}\left(e, m^{3}\right),\) and \(m^{\prime}=m \ell .\) For each pair \((u, v) \in\left[0, m^{\prime}-\right.\) \(1\)^{2},] set \(z_{u, v}=\left(\ell z+u \omega_{1}(E)+v \omega_{2}(E)\right) / m^{\prime}\text{.}\) Compute \(x=\wp\left(z_{u, v}\right),\) where \(\left(\wp, \wp^{\prime}\right)\) is the isomorphism from \(\mathbb{C} / \Lambda\) to \(E(\mathbb{C})\text{.}\) For each \((u, v)\) such that the corresponding point \((x, y) \in E(\mathbb{C})\) has real coordinates.</li>
+</ol>
+<p id="p-1524">Algorithm choice of D</p>
+<p id="p-1525">Recall a congruent number is a number which appears as the area of a right triangle with rational side lengths. this reduces to finding non-torsion points on the congruent number curves</p>
+<div class="displaymath">
+\begin{equation*}
+E_n \colon  y^2 = x^3 - n^2 x\text{.}
+\end{equation*}
+</div>
+<p>E.g. for \(n = 157\) BSD predicts rank 1, but how do we find the point? Using standard techniques can compute real period, period volume (\(0.209262974439979^2\)) and torsion order (4), conductor (788768 outside LMFDB range) and Tamagawa product (8). Together we get</p>
+<div class="displaymath">
+\begin{equation*}
+|\Sha(E)|R(E) \approx 54.6
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+HB = 10.6
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+d \approx 130.4
+\end{equation*}
+</div>
+<p>need 67 decimal digits.</p>
+<p id="p-1526">Up to \(D = -40\) we have \(D =-31,-39\) are squares modulo \(4N\text{.}\)</p>
+<p id="p-1527">For both of these  \(D \) we try to compute \(m^2(D)\text{.}\) When we take \(-31\) we get a number close to 0. For \(-39\) we get \(\approx 16\) so fix \(D = -39\) and \(m=4\text{.}\)</p>
+<p id="p-1528">A square root \(b\) of \(D\) mod \(4N\) is</p>
+<div class="displaymath">
+\begin{equation*}
+b = 1275547\text{.}
+\end{equation*}
+</div>
+<p id="p-1529">The class group of</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ(\sqrt{-39})
+\end{equation*}
+</div>
+<p>is</p>
+<div class="displaymath">
+\begin{equation*}
+\ZZ/4\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+z = 2\Re(\phi (x_1) + \phi (x_2))
+\end{equation*}
+</div>
+<p>for</p>
+<div class="displaymath">
+\begin{equation*}
+x_i = (-b + \sqrt{-39})/(2j N)
+\end{equation*}
+</div>
+<p>So we have four classes of quadratic forms, of these the largest value of \(A\) is \(2N\text{.}\) So we need</p>
+<div class="displaymath">
+\begin{equation*}
+\approx 10 500 000
+\end{equation*}
+</div>
+<p>terms of the series</p>
+<div class="displaymath">
+\begin{equation*}
+\phi (\tau ) = \sum_{n=1}^\infty  \frac{a_n}{n} q^n,\,q = \exp(2\pi i \tau )
+\end{equation*}
+</div>
+<p>applying this we get</p>
+<div class="displaymath">
+\begin{equation*}
+z = -5.63911127500831766007696166307316036323562406574706\ldots
+\end{equation*}
+</div>
+<p>we can add multiples of the period lattice to make it smaller, as</p>
+<div class="displaymath">
+\begin{equation*}
+z/\omega \approx -26.9469552131277
+\end{equation*}
+</div>
+<p>we find that</p>
+<div class="displaymath">
+\begin{equation*}
+z' = z + 27 \omega  \approx 0.0111003098794358
+\end{equation*}
+</div>
+<p>so that</p>
+<div class="displaymath">
+\begin{equation*}
+\wp(\Lambda , (2 z' + 2 \omega )/8) \approx 344.99665832468973990799841297983141563953148876481
+\end{equation*}
+</div>
+<p>this we can recognise as</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{95732359354501581258364453}{526771095761^2}
+\end{equation*}
+</div>
+<p>(using the fact we are looking for something with square denominator) and compute the point</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{95732359354501581258364453}{526771095761^2} : \frac{834062764128948944072857085701103222940}{526771095761^3} : 1\right)
+\end{equation*}
+</div>
+<p>which is quite a big triangle. This is saturated and of height \(54.6008892940170\text{.}\)</p>
+<article class="remark-like" id="remark-45"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">6.11.3</span>.</h6>
+<p id="p-1530">Calling the sage function <code class="code-inline tex2jax_ignore">gens()</code> fails on this example!</p></article></section></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

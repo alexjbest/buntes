@@ -11,20 +11,144 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Meta-Goal.</span></h5>
-<p>Understand</p>
+<article class="paragraphs"><h5 class="heading"><span class="title">How to obtain an \(E\) with proven analytic rank 3.</span></h5>
+<p>Gross-Zagier showed that for</p>
 <div class="displaymath">
 \begin{equation*}
-g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
+E = 37b3\colon y^2 = x^{3} + 10 x^{2} - 20 x + 8
 \end{equation*}
 </div>
-<p>strategy is to decompose</p>
+<p>of conductor 37 and rank 0, we can twist by \(d=-139\) to get a curve of conductor \(714877\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\pair a b = \sum_v \pair ab_v
+E_{-139}\colon -139 y^2 = x^{3} + 10 x^{2} - 20 x + 8
 \end{equation*}
 </div>
-<p>so far, seen the archimidean \(v\) case. Today, nonarchimidean.</p>
-<p>Following GZ and Michigan seminar.</p></article><span class="incontext"><a href="sec-deuring-lift.html#paragraphs-57">in-context</a></span>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+L_E(s,\chi _d) = L_{E_{d}}(s)\text{.}
+\end{equation*}
+</div>
+<p>Doing a single Heegner point computation we find that \(P_d\) is zero and hence \(h(2P_d)= 0\text{.}\) Using Gross-Zagier we have</p>
+<div class="displaymath">
+\begin{equation*}
+L_E(1)L'_{E_d}(1) = c \Omega_d  \Omega h_{E_d}(2P_d)
+\end{equation*}
+</div>
+<p>This implies that</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E_d}(1)L_E'(1) = 0
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E_d}'(1) = 0
+\end{equation*}
+</div>
+<p>and as \(L_{E_d}(s)\) has odd functional equation we can calculate</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E_d}'''(1) \ne 0
+\end{equation*}
+</div>
+<p>hence the analytic rank is 3.</p>
+<p>So \(E_{-139}\) can be used for Goldfeld's technique.</p>
+<p>We now let \(E/\QQ\) be our twisted curve forgetting that it came from \(37b3\text{.}\)</p>
+<p>The \(L\)-function of this curve has functional equation</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{\sqrt{N}}{2 \pi}\right)^{1+s} \Gamma(1+s) L_{E}(1+s)=-\left(\frac{\sqrt{N}}{2 \pi}\right)^{1-s} \Gamma(1-s) L_{E}(1-s)
+\end{equation*}
+</div>
+<p>if \(D\) is a fundamental discriminant of class number 1 with \(|D| \gt 163\) we can define</p>
+<div class="displaymath">
+\begin{equation*}
+\Lambda_{D}(s)=\left(\frac{N|D|}{4 \pi^{2}}\right)^{s} \Gamma(1+s)^{2} L_{E}(s) L_{E}\left(s, \chi_{D}\right)
+\end{equation*}
+</div>
+<p>so that</p>
+<div class="displaymath">
+\begin{equation*}
+\Lambda_{D}(1+s)=w \cdot \Lambda_{D}(1-s)
+\end{equation*}
+</div>
+<p>with \(w=\chi _D(-37\cdot 139^2) = 1\text{.}\)</p>
+<p>The function</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E / \QQ(\sqrt{D})}(s) = L_E(s)L_E(s,\chi _D)
+\end{equation*}
+</div>
+<p>therefore has a zero of even order at \(s=1\text{,}\) given that \(L_{E}(s)\) has an order 3 zero by construction</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E / \QQ(\sqrt{D})}(s)
+\end{equation*}
+</div>
+<p>has an order 4 zero.</p>
+<p>To give a flavour of the class number one problem assume \(D\) sufficiently large with \(h(D) = 1\) still, then consider</p>
+<div class="displaymath">
+\begin{equation*}
+I_D = \frac{1}{2\pi i} \int_{2-i\infty }^{2+i\infty } \Lambda_D(1+s) \frac{\diff s}{s^3}\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} I_{D} \amp=\frac{1}{2 \pi i} \int_{-2-i \infty}^{-2+i \infty} \Lambda_{D}(1+s) \frac{d s}{s^{3}} \\ \amp=-\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty} \Lambda_{D}(1+s) \frac{d s}{s^{3}} \\ \amp=-I_{D} \end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>We now want to show that</p>
+<div class="displaymath">
+\begin{equation*}
+I_D \ne 0
+\end{equation*}
+</div>
+<p>under the same assumptions on \(D\text{.}\)</p>
+<p>Have euler products</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c}{L_{E}(s)=\prod_{p}\left(1-\frac{\alpha_{p}}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p}}{p^{s}}\right)^{-1}} \\ {L_{E}\left(s, \chi_{D}\right)=\prod_{p}\left(1-\frac{\alpha_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}}\end{array}
+\end{equation*}
+</div>
+<p>and once again many small primes splitting means that \(L_E(s)L_E(s,\chi _D)\) is analytically like</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(s):=\prod_{p}\left(1-\frac{\alpha_{p}^{2}}{p^{2 s}}\right)^{-1}\left(1-\frac{\beta_{p}^{2}}{p^{2 s}}\right)^{-1}
+\end{equation*}
+</div>
+<p>Goldfeld then uses</p>
+<div class="displaymath">
+\begin{equation*}
+I_{D}^{*}=\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty}\left(\frac{37 \cdot 139^{2}|D|}{4 \pi^{2}}\right)^{1+s} \Gamma(1+s)^{2} \phi(1+s) \frac{d s}{s^{3}}
+\end{equation*}
+</div>
+<p>and</p>
+<div class="displaymath">
+\begin{equation*}
+0=I_{D}=I_{D}^{*}+\text { Error }
+\end{equation*}
+</div>
+<p>to get the final contradiction.</p>
+<article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">6.12.4</span>.</h6>
+<p>There is also work by Mestre and Buhler-Gross-Zagier on</p>
+<div class="displaymath">
+\begin{equation*}
+y^{2}+y=x^{3}-7 x+6
+\end{equation*}
+</div>
+<p>the smallest conductor rank 3 curve 5077, where they verify BSD explicitly, giving one the first example in rank 3. (To this day, it is not possible, even in principle, to establish BSD for any curve of rank 4 or greater since there is no known method for rigorously establishing the value of the analytic rank when it is greater than 3.) Once again Gross-Zagier is used, if \(L'_E(1)\) is calculated to be small but possibly non-zero it must be a multiple of the height of a small point, but we can look and find no small points, hence we obtain vanishing of the derivative at \(s=1\text{.}\) This implies, for parity reasons that \(L_E(s)\) has analytic rank 3 or more. The third derivative can then be calculated and seen to be non-zero.</p>
+<p>This smaller curve gives better bounds in Goldfelds method.</p>
+<p>Using work of Oesterle they obtain</p>
+<div class="displaymath">
+\begin{equation*}
+h(D) \gt \frac{1}{55} \log|D|
+\end{equation*}
+</div>
+<p>for prime \(D\text{.}\)</p>
+<p>It's super effective?!</p></article></article><span class="incontext"><a href="sec-gz-applications-ii.html#paragraphs-57">in-context</a></span>
 </body>
 </html>

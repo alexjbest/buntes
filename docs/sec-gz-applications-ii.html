@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES A gallimaufry of applications (of Gross-Zagier) II (Alex)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gz-applications-i.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gz-applications-i.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-gz.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+<li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
+<li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">Wrap Up of Non-Archimedean Local Heights (Sachi)</a></li>
+<li><a href="sec-gz-rankin-selberg.html" data-scroll="sec-gz-rankin-selberg">Rankin-Selberg (Aash)</a></li>
+<li><a href="sec-gz-applications-i.html" data-scroll="sec-gz-applications-i">A gallimaufry of applications (of Gross-Zagier) I (Alex)</a></li>
+<li><a href="sec-gz-applications-ii.html" data-scroll="sec-gz-applications-ii" class="active">A gallimaufry of applications (of Gross-Zagier) II (Alex)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gz-applications-ii"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.12</span> <span class="title">A gallimaufry of applications (of Gross-Zagier) II (Alex)</span>
+</h2>
+<a href="sec-gz-applications-ii.html" class="permalink">¶</a><section class="subsection" id="subsection-108"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.12.1</span> <span class="title">More on computation</span>
+</h3>
+<p id="p-1531">A more advanced trick: We have the standard Heegner point outlined above, there are several speedups possible:</p>
+<ol class="decimal">
+<li id="li-362">Use Atkin-Lehner involutions to reduce the size of \(A\) in \((A,B,C)\text{.}\)</li>
+<li id="li-363">Use faster algorithms for point counting, e.g. on CM curves we have a simpler expression for \(a_p\)'s which can be computed with Cornichias algorithm.</li>
+<li id="li-364">Cremona-Silverman: Want to reduce the precision needed, how? What information do we know after running the method, an approximation of \(Q\approx P \in E(\RR)\text{.}\) We also know by Gross-Zagier<div class="displaymath">
+\begin{equation*}
+\hat h(P)\text{.}
+\end{equation*}
+</div>If<div class="displaymath">
+\begin{equation*}
+x(P) = \frac{n}{d^2}
+\end{equation*}
+</div>then<div class="displaymath">
+\begin{equation*}
+2 \log (d)=\widehat{h}(P)-\widehat{h}_{\infty}(P)-\sum_{p | N \atop {p \nmid d \atop p^{2} | \operatorname{disc}(E)}} \widehat{h}_{p}(P)\text{.}
+\end{equation*}
+</div>Using \(Q\) we can compute<div class="displaymath">
+\begin{equation*}
+\hat h_\infty (P)\text{.}
+\end{equation*}
+</div>For each \(\hat h_p\) there are only finitely many possibilities, and so in total we have finitely many possible values of<div class="displaymath">
+\begin{equation*}
+\widehat{h}(P)-\widehat{h}_{\infty}(P)-\sum_{p | N \atop {p \nmid d \atop p^{2} | \operatorname{disc}(E)}} \widehat{h}_{p}(P)
+\end{equation*}
+</div>giving finitely many possible \(d\) values, from which<div class="displaymath">
+\begin{equation*}
+numerator (x(P)) = round(x(P) d^2)
+\end{equation*}
+</div>can be found. In all this allows us to work as we wanted, with an accuracy slightly more than half.</li>
+</ol>
+<p id="p-1532">These speed ups are in PARI/GP and Remarks. as \(E\) in last times example is a CM curve, the computation time of the above example can be reduced from a couple of minutes to 7 seconds (factor of 20).</p>
+<p id="p-1533">Gotta get height:</p>
+<article class="example-like" id="example-83"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.12.1</span>. <span class="title">A big example.</span>
+</h6>
+<p id="p-1534">Let</p>
+<div class="displaymath">
+\begin{equation*}
+E\colon y^2 = x^3 + \underbrace{2^{5} \cdot 3^{3} \cdot 5^{5} \cdot 7^{3} \cdot 11^{5} \cdot 13^{4}}_{=4259854045547100000}
+\end{equation*}
+</div>
+<p>be a Mordell curve. We can compute that the analytic rank is 1 and that</p>
+<div class="displaymath">
+\begin{equation*}
+L(E,1) \approx 28.43512495
+\end{equation*}
+</div>
+<p>We need an imaginary number field in which \(2,3,5,7,11,13\) all split, the smallest such is</p>
+<div class="displaymath">
+\begin{equation*}
+K = \QQ(\sqrt{-1559})\text{.}
+\end{equation*}
+</div>
+<p>So this \(D = D_K = -1559\) is the smallest possible Heegner discriminant followed by \(-2999,-3071,-5711,-6431,-6551,-8399,-8711,-9071,-9239\text{.}\) We can also compute that the twist \(E_D\) has analytic rank 0 and</p>
+<div class="displaymath">
+\begin{equation*}
+L(E_D,1) \approx 0.34784
+\end{equation*}
+</div>
+<p>We can ask Pari/GP for a Heegner point and we obtain</p>
+<div class="displaymath">
+\begin{equation*}
+P=  (2673768366314301463225804132167786458743211296161665928714089443034915780624646102119694052638661139083614147052130407079631451208185292430763007319638022105825501399385761185566630883388394680375240310954529690758647194911112230527266639143771344809007916379476769393746579657952261851411688268671539912820072222763224027388823804772192104547803223898847305487037661307828748844799602593905135066916765339004127610241/14711766058713677663384943791747898516946843571332438782108054674511943585256352373257820891021633925632603928846607462754678923049647017632180676816464079929265454994902080754858496848491578669209122991110372607577751981118650453474461080043444438030297579085121835217242209089550661820106126782163015526489468149613211400477191028795214873959696995779238660836093943085146259968306971312571346641475392784100 : 138256584957437413549697979638187560540459292802582866047104251079871173001665466386110481033185180290975183359260945144859657131458366183036141245306630348292671101486345526463132664316934927829557544796041549654148869945306252397609306930530983551604764354393433405906021719607528424338682185259543058868693501829232087760637049066670461122157567207439393246729072214062375989571116431670132631712767339509965920423129094613543923419661857943413970492292794841174646487317425335124224816154049239888798416706708946385513743341645910420176133057435782209340663561195089350700342411480965751945453146090192411927796854564432961/56428332331562671615794363625451656023382470684636509020204202990180688177696621616970962649738545712542796767776584129330909917100366186924013354291641329738822701259890430806380424060475365542745244595324918343297529518263108027693527497847179482876257977247331950705161864795745543796461954042373098284699960118594562408063763160815610542420513488629513957169549566241725330887507912166227023322296844673603178204516200038314906488548391012692454233921581644355608983371337760875769764741031620675341450340457565846005848812354464193992153964872086150518588699778897808812845613993026309040085527357183723889000 : 1)
+\end{equation*}
+</div>
+<p>this has naïve height \(2.67 \times 10^{417}\) (numerator of the \(x\)-coord) and (logarithmic) canonical height \(\approx 956.282209515622\text{.}\)</p>
+<p id="p-1535">By saturating we find that in fact \(P  = 2\cdot Q\) where \(Q\) has canonical height</p>
+<div class="displaymath">
+\begin{equation*}
+956.282209515622/4 \approx 239.070552378906\text{.}
+\end{equation*}
+</div>
+<p>And</p>
+<div class="displaymath">
+\begin{equation*}
+Q =(8868405892624209482831543296890050376591681305386772268723757017948071928478387800757391866726575892769529/12199065318293186020638466216615329130692308979647554152111639302853625564281014711694611565598225 : 835157422328503915572710156100004478252440344488413901374204905998433900560826559924171903629096959304261439875564863428904842353573598701320904439166984417667/42607871079159903759545082718655204271158039869031410587066955866681866212965161047419746875287012910440605581735106219437475107311541956522410375 : 1)\text{.}
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-109"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.12.2</span> <span class="title">Gauss's class number problem</span>
+</h3>
+<p id="p-1536">Gauss was interested in binary quadratic forms and did a lot of computations with them. He in particular conjectured that</p>
+<article class="theorem-like" id="conjecture-5"><h6 class="heading">
+<span class="type">Conjecture</span> <span class="codenumber">6.12.2</span>. <span class="title">Gauss.</span>
+</h6>
+<p id="p-1537">As \(D \to- \infty \) runs through fundamental discriminants the class numbers of imaginary quadratic fields</p>
+<div class="displaymath">
+\begin{equation*}
+h(D ) = h(\QQ(\sqrt{D})) \to \infty 
+\end{equation*}
+</div>
+<p>also. (i.e. there are only finitely many imaginary quadratic fields of any given class number).</p></article><div class="displaymath" id="p-1538">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+h(D)                   \amp {1} \amp {2} \amp {3} \amp {4} \amp {5} \\
+\hline
+\# \text { of fields } \amp {9} \amp {18} \amp {16} \amp {54} \amp {25} \\
+\hline
+\text { largest } {|D |}\amp{163} \amp {427} \amp {907} \amp {1555} \amp {2683} \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1539">The most famous instance of this being the first column. The Gauss class number 1 problem (Section 303 of his Disquisitiones Arithmeticae (1798)) there are only 9 imaginary quadratic fields of class number 1. This was first proved by Heegner, where he introduced analytic techniques into the field of elliptic curves, hence the name  Heegner points. Warning: this is somewhat distinct and not exactly what we will mention now</p>
+<p id="p-1540">The first instances of the small class number phenomenon go back to Euler who noted that</p>
+<div class="displaymath">
+\begin{equation*}
+x^2 - x + 41
+\end{equation*}
+</div>
+<p>was prime for \(0 \le x \le 40\) (the maximum possible), Euler called such numbers lucky and could not find more.</p>
+<p id="p-1541">We now know that this is due to \(\QQ(\sqrt{-163})\) having class number one, hence all small primes remaining inert. If a small prime split we would have an element of small prime norm, but the norm form shows this is not possible. Explicitly all primes less than</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1 + |D_K|}4
+\end{equation*}
+</div>
+<p>are inert.</p>
+<p id="p-1542">Even when \(h(D) \gt 1\) we still observe a similar phenomenon.</p>
+<p id="p-1543">For \(\QQ(\sqrt{-427})\) as above we have of the primes up to \((1 + 427)/4 = 107\) only \(17,31,59,89,101\) are split (\(7,61\) ramified).</p>
+<p id="p-1544">Why am I telling you this? Because it leads to the following theorem:</p>
+<article class="theorem-like" id="theorem-101"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">6.12.3</span>. <span class="title">Goldfeld.</span>
+</h6>
+<p id="p-1545">Let \(D\) be a fundamental discriminant of an imaginary quadratic field. If there exists a modular elliptic curve \(E\) (defined over \(\QQ\)) whose associated base change Hasse-Weil \(L\)-function</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E / \QQ(\sqrt{D})}(s)
+\end{equation*}
+</div>
+<p>has a zero of order \(\geq 4\) at \(s=1\) then for every \(\epsilon&gt;0\text{,}\) there exists an effective computable constant \(c_{\epsilon}(E)&gt;0\text{,}\) depending only on \(\epsilon, E\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+h(D)&gt;c_{\epsilon}(E)(\log |D|)^{1-\epsilon}\text{.}
+\end{equation*}
+</div></article><p id="p-1546">Here</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E / \QQ(\sqrt{D})}(s)
+\end{equation*}
+</div>
+<p>has \(L_E\) as a factor so Goldfeld needed an elliptic curve \(E/\QQ\) with</p>
+<div class="displaymath">
+\begin{equation*}
+\ord_{s=1} L_E(s) = 3
+\end{equation*}
+</div>
+<p>that is analytic rank 3, to obtain the order 4 vanishing of</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E / \QQ(\sqrt{D})}(s)\text{.}
+\end{equation*}
+</div>
+<p id="p-1547">The bounds in this proof can be completely explicit, leading to lists of all imaginary quadratic fields with class number below \(100\text{.}\)</p>
+<p id="p-1548">If \(\chi _D = \legendre{D}{\bullet}\) is the associated character to \(\QQ(\sqrt{D})\) of small class number we therefore have</p>
+<div class="displaymath">
+\begin{equation*}
+L(s,\chi _D) = \prod_p \left(1-\frac{\chi _D(p)}{p^s}\right)^{-1}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sim \prod_p \left(1+\frac{1}{p^s}\right)^{-1} = \frac{\zeta (2s)}{\zeta (s)}\text{.}
+\end{equation*}
+</div>
+<p id="p-1549">(mumble mumble approximate functional equation).</p>
+<article class="paragraphs" id="paragraphs-57"><h5 class="heading"><span class="title">How to obtain an \(E\) with proven analytic rank 3.</span></h5>
+<p id="p-1550">Gross-Zagier showed that for</p>
+<div class="displaymath">
+\begin{equation*}
+E = 37b3\colon y^2 = x^{3} + 10 x^{2} - 20 x + 8
+\end{equation*}
+</div>
+<p>of conductor 37 and rank 0, we can twist by \(d=-139\) to get a curve of conductor \(714877\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+E_{-139}\colon -139 y^2 = x^{3} + 10 x^{2} - 20 x + 8
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+L_E(s,\chi _d) = L_{E_{d}}(s)\text{.}
+\end{equation*}
+</div>
+<p id="p-1551">Doing a single Heegner point computation we find that \(P_d\) is zero and hence \(h(2P_d)= 0\text{.}\) Using Gross-Zagier we have</p>
+<div class="displaymath">
+\begin{equation*}
+L_E(1)L'_{E_d}(1) = c \Omega_d  \Omega h_{E_d}(2P_d)
+\end{equation*}
+</div>
+<p>This implies that</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E_d}(1)L_E'(1) = 0
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E_d}'(1) = 0
+\end{equation*}
+</div>
+<p>and as \(L_{E_d}(s)\) has odd functional equation we can calculate</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E_d}'''(1) \ne 0
+\end{equation*}
+</div>
+<p>hence the analytic rank is 3.</p>
+<p id="p-1552">So \(E_{-139}\) can be used for Goldfeld's technique.</p>
+<p id="p-1553">We now let \(E/\QQ\) be our twisted curve forgetting that it came from \(37b3\text{.}\)</p>
+<p id="p-1554">The \(L\)-function of this curve has functional equation</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{\sqrt{N}}{2 \pi}\right)^{1+s} \Gamma(1+s) L_{E}(1+s)=-\left(\frac{\sqrt{N}}{2 \pi}\right)^{1-s} \Gamma(1-s) L_{E}(1-s)
+\end{equation*}
+</div>
+<p>if \(D\) is a fundamental discriminant of class number 1 with \(|D| \gt 163\) we can define</p>
+<div class="displaymath">
+\begin{equation*}
+\Lambda_{D}(s)=\left(\frac{N|D|}{4 \pi^{2}}\right)^{s} \Gamma(1+s)^{2} L_{E}(s) L_{E}\left(s, \chi_{D}\right)
+\end{equation*}
+</div>
+<p>so that</p>
+<div class="displaymath">
+\begin{equation*}
+\Lambda_{D}(1+s)=w \cdot \Lambda_{D}(1-s)
+\end{equation*}
+</div>
+<p>with \(w=\chi _D(-37\cdot 139^2) = 1\text{.}\)</p>
+<p id="p-1555">The function</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E / \QQ(\sqrt{D})}(s) = L_E(s)L_E(s,\chi _D)
+\end{equation*}
+</div>
+<p>therefore has a zero of even order at \(s=1\text{,}\) given that \(L_{E}(s)\) has an order 3 zero by construction</p>
+<div class="displaymath">
+\begin{equation*}
+L_{E / \QQ(\sqrt{D})}(s)
+\end{equation*}
+</div>
+<p>has an order 4 zero.</p>
+<p id="p-1556">To give a flavour of the class number one problem assume \(D\) sufficiently large with \(h(D) = 1\) still, then consider</p>
+<div class="displaymath">
+\begin{equation*}
+I_D = \frac{1}{2\pi i} \int_{2-i\infty }^{2+i\infty } \Lambda_D(1+s) \frac{\diff s}{s^3}\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} I_{D} \amp=\frac{1}{2 \pi i} \int_{-2-i \infty}^{-2+i \infty} \Lambda_{D}(1+s) \frac{d s}{s^{3}} \\ \amp=-\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty} \Lambda_{D}(1+s) \frac{d s}{s^{3}} \\ \amp=-I_{D} \end{aligned}\text{.}
+\end{equation*}
+</div>
+<p id="p-1557">We now want to show that</p>
+<div class="displaymath">
+\begin{equation*}
+I_D \ne 0
+\end{equation*}
+</div>
+<p>under the same assumptions on \(D\text{.}\)</p>
+<p id="p-1558">Have euler products</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c}{L_{E}(s)=\prod_{p}\left(1-\frac{\alpha_{p}}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p}}{p^{s}}\right)^{-1}} \\ {L_{E}\left(s, \chi_{D}\right)=\prod_{p}\left(1-\frac{\alpha_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}}\end{array}
+\end{equation*}
+</div>
+<p>and once again many small primes splitting means that \(L_E(s)L_E(s,\chi _D)\) is analytically like</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(s):=\prod_{p}\left(1-\frac{\alpha_{p}^{2}}{p^{2 s}}\right)^{-1}\left(1-\frac{\beta_{p}^{2}}{p^{2 s}}\right)^{-1}
+\end{equation*}
+</div>
+<p>Goldfeld then uses</p>
+<div class="displaymath">
+\begin{equation*}
+I_{D}^{*}=\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty}\left(\frac{37 \cdot 139^{2}|D|}{4 \pi^{2}}\right)^{1+s} \Gamma(1+s)^{2} \phi(1+s) \frac{d s}{s^{3}}
+\end{equation*}
+</div>
+<p>and</p>
+<div class="displaymath">
+\begin{equation*}
+0=I_{D}=I_{D}^{*}+\text { Error }
+\end{equation*}
+</div>
+<p>to get the final contradiction.</p>
+<article class="remark-like" id="remark-46"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">6.12.4</span>.</h6>
+<p id="p-1559">There is also work by Mestre and Buhler-Gross-Zagier on</p>
+<div class="displaymath">
+\begin{equation*}
+y^{2}+y=x^{3}-7 x+6
+\end{equation*}
+</div>
+<p>the smallest conductor rank 3 curve 5077, where they verify BSD explicitly, giving one the first example in rank 3. (To this day, it is not possible, even in principle, to establish BSD for any curve of rank 4 or greater since there is no known method for rigorously establishing the value of the analytic rank when it is greater than 3.) Once again Gross-Zagier is used, if \(L'_E(1)\) is calculated to be small but possibly non-zero it must be a multiple of the height of a small point, but we can look and find no small points, hence we obtain vanishing of the derivative at \(s=1\text{.}\) This implies, for parity reasons that \(L_E(s)\) has analytic rank 3 or more. The third derivative can then be calculated and seen to be non-zero.</p>
+<p id="p-1560">This smaller curve gives better bounds in Goldfelds method.</p>
+<p id="p-1561">Using work of Oesterle they obtain</p>
+<div class="displaymath">
+\begin{equation*}
+h(D) \gt \frac{1}{55} \log|D|
+\end{equation*}
+</div>
+<p>for prime \(D\text{.}\)</p>
+<p id="p-1562">It's super effective?!</p></article></article></section></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

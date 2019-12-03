@@ -901,27 +901,26 @@ section#sec-gz-arch-II
 
 section#sec-deuring-lift
     title Deuring's theory of lifts (Angus)
+    introduction
 
-    p
-        | Notations:
-        | #[m X = X_0(N)/\QQ], #[m x  = (E \to E')] a heegner point of discriminant #[m D], with CM by #[m \ints_K].
-        | #[m H] the Hilbert class field of #[m K], #[m v] a place of #[m p].
-        me c = (x) - (\infty ),\, d = (x) - (0)
-        me \operatorname{Art}_K \colon \Cl_K \to \Gal H K
-        me \mathscr A \to \sigma 
-        me r_{\mathscr A}(m) = \# \text{integral ideals of }\ints_K\text{ in the class of }\mathscr A \text{ of norm }m
-        me \Lambda _v = \text{ring of integers in the completion }H_v
-        me W = (\Lambda _v^{nr})^\wedge
-        me \pi _v, k_v, q_v
-        me \mathcal X/\Lambda _v
-        | a model of #[m X] over #[m \Lambda _v].
+        p
+            | Notations:
+            | #[m X = X_0(N)/\QQ], #[m x  = (E \to E')] a heegner point of discriminant #[m D], with CM by #[m \ints_K].
+            | #[m H] the Hilbert class field of #[m K], #[m v] a place of #[m p].
+            me c = (x) - (\infty ),\, d = (x) - (0)
+            me \operatorname{Art}_K \colon \Cl_K \to \Gal H K
+            me \mathscr A \to \sigma 
+            me r_{\mathscr A}(m) = \# \text{integral ideals of }\ints_K\text{ in the class of }\mathscr A \text{ of norm }m
+            me \Lambda _v = \text{ring of integers in the completion }H_v
+            me W = (\Lambda _v^{nr})^\wedge
+            me \pi _v, k_v, q_v
+            me \mathcal X/\Lambda _v
+            | a model of #[m X] over #[m \Lambda _v].
 
-    paragraphs
-        title Meta-Goal
+        p Meta-Goal
 
         p
             | Understand
-
             me g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
             | strategy is to decompose
             me \pair a b = \sum_v \pair ab_v
@@ -1128,90 +1127,92 @@ section#sec-gz-serre-tate
     title Serre-Tate theory (Alex)
 
 
-    p
+    subsection
+        title Intro/background
+        p
 
-        | We will work in generality following Katz's Serre-Tate Local Moduli #[xref(ref="bib-katz-serre-tate")/].
-        | Note that Hida #[xref(ref="bib-hida-geometric")/] also has a modernized exposition of the same.
-        | The original #[q source] material is Woods hole notes, sketchy at best.
-    p
-        | Recall that one thing we will try and do is to prove the following formula
-        me (\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
-        | 
+            | We will work in generality following Katz's Serre-Tate Local Moduli #[xref(ref="bib-katz-serre-tate")/].
+            | Note that Hida #[xref(ref="bib-hida-geometric")/] also has a modernized exposition of the same.
+            | The original #[q source] material is Woods hole notes, sketchy at best.
+        p
+            | Recall that one thing we will try and do is to prove the following formula
+            me (\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
+            | 
 
 
-    p
-        | To do this we want to understand more about the special nature of Heegner points, representing pairs of CM elliptic curves.
-        | Angus told us last time about how to lift curves together with an endomorphism from #[m \FF_q] to a number field.
-        | The set of all lifts to positive characteristic of a given curve over a finite field, can be thought of as deformations of the given curve.
-        | The aim is to describe these deformations in terms of a simpler object.
+        p
+            | To do this we want to understand more about the special nature of Heegner points, representing pairs of CM elliptic curves.
+            | Angus told us last time about how to lift curves together with an endomorphism from #[m \FF_q] to a number field.
+            | The set of all lifts to positive characteristic of a given curve over a finite field, can be thought of as deformations of the given curve.
+            | The aim is to describe these deformations in terms of a simpler object.
 
-    p
-        | We will work in generality, because it isn't really any harder, and makes it a bit clearer in some cases.
-        | That is we will work with #[em abelian schemes] which are higher dimensional generalizations of elliptic curves (e.g. products of elliptic curves, weil restrictions, or jacobians of higher genus curves).
-        | You can replace abelian scheme with elliptic curve if you like and restrict to dimension #[m g =1].
-        | .
-        | We let #[m R] be a ring, and define the category
-        me \mathrm{AbSch}(R) = \{\text{abelian schemes over} R\}
-        | .
-    p
-        | We will fix #[m W] a complete DVR with residue field #[m \overline \FF_p] (i.e. #[m W] could be the Witt vectors of #[m \overline  \FF_p]).
-        | Complete means that
-        me W = W_\infty  =\varprojlim_{m} \underbrace{W/p^m}_{=W_m}
-        | The for #[m m =1,2,\ldots, \infty ] we let #[m R] be a base ring
-        | Given #[m R] ring we can reduce to the residue field, but this map is many to one, what is the smallest amount of data needed to recover #[m A/R] an abelian scheme from #[m A_0/R_0]?
-
-    p
-        | Our rings today will probably all be complete local #[mR]-algebras.
-
-    p
-        | Given any abelian scheme #[m A/R] over any ring we can form its #[m p]-divisible group, also known as a Barsotti-Tate group
-        me A[p^\infty ]
-        | this is #[q p-divisible] as given any #[m p]-power torsion point on #[m A] its division by #[m p] is also #[m p]-power torsion.
-        | Formally the definition is
-    definition
-        statement: p
-            | A #[m p]-divisible group #[m G] over #[m R] of height #[m h] is an inductive system
-            me G = (G_v, i_v),\,v \ge 0
-            | where each #[m G] is a finite group scheme over #[m R] of order #[m p^{vh}] and for each #[m v\ge0]
-            me 0 \to G_v \xrightarrow{i_v} G_{v+1} \xrightarrow{p^v} G_{v+1}
-            | is exact, so #[m i_v] is the kernel of #[m p^v].
-
-    example
-        statement: p
-            | For normal abelian groups (i.e. constant group schemes) we must have
-            me G_v = (\ZZ/p^v)^h
-            | with
-            me \lim G_v = (\QQ_p/\ZZ_p)^h
+        p
+            | We will work in generality, because it isn't really any harder, and makes it a bit clearer in some cases.
+            | That is we will work with #[em abelian schemes] which are higher dimensional generalizations of elliptic curves (e.g. products of elliptic curves, weil restrictions, or jacobians of higher genus curves).
+            | You can replace abelian scheme with elliptic curve if you like and restrict to dimension #[m g =1].
             | .
-    example
-        statement: p
-            | For abelian varieties #[m A] of dimension #[m d] we have
-            me (A[p^v], i_v\colon A[p^v] \hookrightarrow A[p^{v+1}])
-            | of height #[m h =2d].
-            | Note this is true even in the supersingular case!
+            | We let #[m R] be a ring, and define the category
+            me \mathrm{AbSch}(R) = \{\text{abelian schemes over} R\}
+            | .
+        p
+            | We will fix #[m W] a complete DVR with residue field #[m \overline \FF_p] (i.e. #[m W] could be the Witt vectors of #[m \overline  \FF_p]).
+            | Complete means that
+            me W = W_\infty  =\varprojlim_{m} \underbrace{W/p^m}_{=W_m}
+            | The for #[m m =1,2,\ldots, \infty ] we let #[m R] be a base ring
+            | Given #[m R] ring we can reduce to the residue field, but this map is many to one, what is the smallest amount of data needed to recover #[m A/R] an abelian scheme from #[m A_0/R_0]?
 
-    p
-        | Given a map of rings #[m R \to R_0] let the category of deformations be
-        me \mathrm{Def}(R,R_0) =\{(A_0, G, \epsilon ) : A_0/R_0\text{ abelian scheme},\,G/R\text{ a }p\text{-divisible group},\,\epsilon \colon G_0 \to A_0 [p^\infty ]\}
-        | #[m \epsilon ] an isom of #[m p]-divisible groups ove #[m R_0].
-        | So these are abelian schemes over the #[q small] ring and a choice of compatible #[m p]-divisible group over the big ring.
-    p
-        | With this setting we have a nice map as follows
-        | If #[m R] is a ring with #[m p] nilpotent, #[m I \subseteq R] a nilpotent ideal and #[m R_0 = R/I] then
-        me \mathrm{AbSch}(R) \to \mathrm{Def}(R,R_0)
-        me A \mapsto (A_0, A[p^\infty ],A[p^\infty ]\otimes R_0 \simeq A_0 [p^\infty ])
-        | .
-    theorem
-        title Serre-Tate
-        statement: p
-            | This functor is an equivalence of categories.
+        p
+            | Our rings today will probably all be complete local #[m R]-algebras.
 
-    p
-        | Thus the set of deformations of a fixed #[m A_0] corresponds to deformations of #[m A_0\lb p^\infty \rb ].
-    p
-        | This is a kinda ridiculous theorem, it tells us that all the information in an abelian variety over #[m R] is contained in the reduction to #[m R_0] except the #[m p^\infty] torsion and the information of how this fits together.
-    p
-        | Hence to study the abelian varieties over #[m R] reducing to a given #[m A_{R_0}/R_0] we can just study the #[m p]-divisible groups over #[m R] with an isomorphism to #[m A_{R_0}\lb p^\infty\rb].
+        p
+            | Given any abelian scheme #[m A/R] over any ring we can form its #[m p]-divisible group, also known as a Barsotti-Tate group
+            me A[p^\infty ]
+            | this is #[q p-divisible] as given any #[m p]-power torsion point on #[m A] its division by #[m p] is also #[m p]-power torsion.
+            | Formally the definition is
+        definition
+            statement: p
+                | A #[m p]-divisible group #[m G] over #[m R] of height #[m h] is an inductive system
+                me G = (G_v, i_v),\,v \ge 0
+                | where each #[m G] is a finite group scheme over #[m R] of order #[m p^{vh}] and for each #[m v\ge0]
+                me 0 \to G_v \xrightarrow{i_v} G_{v+1} \xrightarrow{p^v} G_{v+1}
+                | is exact, so #[m i_v] is the kernel of #[m p^v].
+
+        example
+            statement: p
+                | For normal abelian groups (i.e. constant group schemes) we must have
+                me G_v = (\ZZ/p^v)^h
+                | with
+                me \lim G_v = (\QQ_p/\ZZ_p)^h
+                | .
+        example
+            statement: p
+                | For abelian varieties #[m A] of dimension #[m d] we have
+                me (A[p^v], i_v\colon A[p^v] \hookrightarrow A[p^{v+1}])
+                | of height #[m h =2d].
+                | Note this is true even in the supersingular case!
+
+        p
+            | Given a map of rings #[m R \to R_0] let the category of deformations be
+            me \mathrm{Def}(R,R_0) =\{(A_0, G, \epsilon ) : A_0/R_0\text{ abelian scheme},\,G/R\text{ a }p\text{-divisible group},\,\epsilon \colon G_0 \to A_0 [p^\infty ]\}
+            | #[m \epsilon ] an isom of #[m p]-divisible groups ove #[m R_0].
+            | So these are abelian schemes over the #[q small] ring and a choice of compatible #[m p]-divisible group over the big ring.
+        p
+            | With this setting we have a nice map as follows
+            | If #[m R] is a ring with #[m p] nilpotent, #[m I \subseteq R] a nilpotent ideal and #[m R_0 = R/I] then
+            me \mathrm{AbSch}(R) \to \mathrm{Def}(R,R_0)
+            me A \mapsto (A_0, A[p^\infty ],A[p^\infty ]\otimes R_0 \simeq A_0 [p^\infty ])
+            | .
+        theorem
+            title Serre-Tate
+            statement: p
+                | This functor is an equivalence of categories.
+
+        p
+            | Thus the set of deformations of a fixed #[m A_0] corresponds to deformations of #[m A_0\lb p^\infty \rb ].
+        p
+            | This is a kinda ridiculous theorem, it tells us that all the information in an abelian variety over #[m R] is contained in the reduction to #[m R_0] except the #[m p^\infty] torsion and the information of how this fits together.
+        p
+            | Hence to study the abelian varieties over #[m R] reducing to a given #[m A_{R_0}/R_0] we can just study the #[m p]-divisible groups over #[m R] with an isomorphism to #[m A_{R_0}\lb p^\infty\rb].
 
 
     subsection
@@ -1354,28 +1355,28 @@ section#sec-gz-serre-tate
                             | to #[m y \in H(A)].
 
 
-    p
-        | Proof of serre tate:
-    p
-        | As above #[m N] is a p-power killing #[m I], #[m \nu ] an integer  such that #[m I^{\nu + 1} = 0].
-        | We can apply Drinfeld to each of #[m A, A', A\lb p^\infty \rb, A'\lb p^\infty \rb , A_0\lb p^\infty \rb , A'_0 \lb p^\infty \rb ].
-    p
-        | We show our functor is fully faithful ie.
-        me \operatorname{Hom}_{\mathcal{A}}\left(A, A^{\prime}\right) \rightarrow \operatorname{Hom}_{D E F}\left(\left(A_{0}, A\left[p^{\infty}\right], \text { id }_{A_{0}}\right),\left(A_{0}^{\prime}, A^{\prime}\left[p^{\infty}\right], \text { id }_{A_{0}^{\prime}}\right)\right)
-        | part 2. with #[m G =A], #[m H = A'] gives inj as an abvar is a p-div abelian fppf sheaf.
-    p
-        | To show surjectivity apply part 3. of drinfeld with #[m G = A], #[m H = A'] to get a lift from each #[m f_0\in \Hom(A_0, A_0')] of #[m N^\nu  f_0] to
-        me g = `` N^\nu f'' \in \Hom(A, A')
-        | to satisfy part 4 we need that #[m g] kills #[m A\lb N^\nu \rb ].
-        | We have #[m N^\nu  f = g] on #[m A\lb p^\infty \rb ] and as  #[m N] is a #[m p]-power in fact #[m A \lb  N^\nu \rb  \subseteq A\lb  p^\infty \rb ] is killed by #[m N^\nu f].
+        p
+            | Proof of serre tate:
+        p
+            | As above #[m N] is a p-power killing #[m I], #[m \nu ] an integer  such that #[m I^{\nu + 1} = 0].
+            | We can apply Drinfeld to each of #[m A, A', A\lb p^\infty \rb, A'\lb p^\infty \rb , A_0\lb p^\infty \rb , A'_0 \lb p^\infty \rb ].
+        p
+            | We show our functor is fully faithful ie.
+            me \operatorname{Hom}_{\mathcal{A}}\left(A, A^{\prime}\right) \rightarrow \operatorname{Hom}_{D E F}\left(\left(A_{0}, A\left[p^{\infty}\right], \text { id }_{A_{0}}\right),\left(A_{0}^{\prime}, A^{\prime}\left[p^{\infty}\right], \text { id }_{A_{0}^{\prime}}\right)\right)
+            | part 2. with #[m G =A], #[m H = A'] gives inj as an abvar is a p-div abelian fppf sheaf.
+        p
+            | To show surjectivity apply part 3. of drinfeld with #[m G = A], #[m H = A'] to get a lift from each #[m f_0\in \Hom(A_0, A_0')] of #[m N^\nu  f_0] to
+            me g = `` N^\nu f'' \in \Hom(A, A')
+            | to satisfy part 4 we need that #[m g] kills #[m A\lb N^\nu \rb ].
+            | We have #[m N^\nu  f = g] on #[m A\lb p^\infty \rb ] and as  #[m N] is a #[m p]-power in fact #[m A \lb  N^\nu \rb  \subseteq A\lb  p^\infty \rb ] is killed by #[m N^\nu f].
 
-    p
-        | To prove essential surjectivity onto #[m (A_0, D, \phi )], we lift #[m A_0] to #[m X] arbitrarily, and must match up the #[m p]-divisible group and iso.
-        | We have an isom #[m \alpha _0 \lb p^\infty \rb  \to A_0 \lb p^\infty \rb ].
-        | And so a lift
-        me g\colon  X[p^\infty ] \to D
-        | #[m N^\nu \alpha _0] applying the lemma to #[m G = X_0\lb p^\infty \rb ], #[m H = D].
-        | So we get an isogeny #[m g] and we quotient by the kernel.
+        p
+            | To prove essential surjectivity onto #[m (A_0, D, \phi )], we lift #[m A_0] to #[m X] arbitrarily, and must match up the #[m p]-divisible group and iso.
+            | We have an isom #[m \alpha _0 \lb p^\infty \rb  \to A_0 \lb p^\infty \rb ].
+            | And so a lift
+            me g\colon  X[p^\infty ] \to D
+            | #[m N^\nu \alpha _0] applying the lemma to #[m G = X_0\lb p^\infty \rb ], #[m H = D].
+            | So we get an isogeny #[m g] and we quotient by the kernel.
 
 
 section#sec-gz-oana
@@ -1384,9 +1385,9 @@ section#sec-gz-oana
         | See Oana's notes
 
 section#sec-gz-sachi
-    title ?????? (Sachi)
+    title Wrap Up of Non-Archimedean Local Heights (Sachi)
 
-    p
+    introduction: p
         | This will be a reminder / recap / overview of where we are at.
 
     subsection
@@ -1542,3 +1543,550 @@ section#sec-gz-sachi
 
 
 
+section#sec-gz-rankin-selberg
+    title Rankin-Selberg (Aash)
+
+    introduction
+        p
+            | Notation:
+        p
+            | #[m K] imaginary quadratic field.
+        p
+            | #[m \mathscr A] ideal class of #[m K]
+        p
+            | #[m D] discriminant #[m K]
+        p
+            | #[m \epsilon (n) = \legendre{D}{n}] associated Dirichlet character.
+        p
+            | #[m h = \#\Cl_K].
+        p
+            | #[m w = 2u ] twice number of units.
+
+        p
+            | #[m f\in S_{2k}^{new}(\Gamma _0(N))] for #[m k\ge 1].
+            | #[m (N,D) = 1] write
+            me f(z) = \sum_{n \ge 1} a(n) e^{2\pi i n z}
+            me L(f,s) = \sum a_n n^s
+            | define
+            me L_{\mathscr A } (f,s) = L^{(N}) (2s-2k +1 , \epsilon ) \cdot \sum_{n=1}^\infty  a(n) r_{\mathscr A} (n)n^{-s}
+            me L^{(N)}  = \sum _{(n,N) = 1} \epsilon (n) n^{-2s +2k -1}
+            | .
+
+    subsection
+        title Rankin's method
+
+        p
+            me \theta _{\mathscr A} (z) = \sum_{n=1}^\infty  r_{\mathscr A}(n) q^n \in S_1(|D|, \epsilon )
+            me \frac{\Gamma (s+2k -1)}{(4\pi )^{s+2k-1}} \cdot \sum_{n=1}^\infty \frac{a(n) r_{\mathscr A}(n)}{n^{s+2k-1}}
+            me = \int_0^\infty  \sum_{n=1}^\infty  a(n)r_{\mathscr A}(n) e^{-4\pi n y} y^{s+2k-2} \diff y
+            me  = \int_0^\infty  \int_0^1 f(x+iy) \overline{\theta _{\mathscr A} (x+iy)} \diff x y^{s+2k -2 } \diff y
+            me  = \int\int_{\Gamma _\infty \backslash \HH} f(z) \overline{\theta _{\mathscr A} (z)} \diff x \diff y/y^2
+            me = ?????
+
+        p
+            | Choose #[m \mathcal F] to be a  fundamental domain for #[m \Gamma _0(M)] where #[m M = N|D|] consider
+            me \bigcup _{\gamma \in \Gamma _\infty \backslash \Gamma _0(M) } \gamma  \mathcal F
+            |have
+            me  \sum_{\gamma \in \Gamma _\alpha \backslash \Gamma _0(M)} \int \in_{\gamma \mathcal F} f(z) \overline{\theta _{\mathscr A}(z)} y^{s+2k} \frac{\diff x\diff y}{y^2}
+            me = \int\int _{ \mathcal F} f(\gamma z) \overline{\theta _{\mathscr A}(\gamma z)} (\Im \gamma  z)^{s+2k} \frac{\diff x\diff y}{y^2}
+
+        p
+            me \sum_{\gamma  =\pm \begin{pmatrix} \bullet \amp \bullet \\\ c \amp d \end{pmatrix} \in  \Gamma _\infty  \backslash \Gamma _0(M)} \int\int_{\mathcal F} f(z) \overline{\theta _{\mathscr A}(z)}
+            me  More formulae
+
+        p
+            me \frac{\Gamma (s+2k-1)}{(4\pi )^{s+2k-1}} L_{\mathscr A }(f, s+2k-1)
+            me  = \int\int_{\mathcal F} f(z) \overline{\theta _{\mathscr A}(z) E_s(z)} y^{2k} \frac{\diff x\diff y}{y^2}
+            me = (f, \theta _{\mathscr A} f)_{\Gamma _0(N)}
+        p
+            me  E_s(z) = \frac 12 \sum_{c,d\in \ZZ,\,c \equiv  0 \pmod M} \frac{\epsilon (d)}{(cz+d)^{2k-1}} \frac{y^s}{|cz+d|^{2s}}
+            | want to take #[m (d,M) =1] to #[m (d, N)=1]
+            | .
+        p
+            | we resolve this by letting
+            me \tr_N^M \colon \widetilde M_{2k}(\Gamma _0(M)) \hookrightarrow \widetilde M_{2k}(\Gamma _0(N))
+            me g \mapsto \sum _{\gamma \in \Gamma _0(M)\backslash \Gamma _0(N)} g|_{2k} \gamma 
+
+
+        p
+            me (f,g)_{\Gamma _0(M)} = (f,\tr_N^M f)_{\Gamma _0(N)}
+            | so
+            me (4\pi )^{-s-2k +1} \Gamma (s+2k-1) L_{\mathscr A}(f, s+2k-1)= (f, \tr_N^M \theta _{\mathscr A}E_s)
+        proposition
+            statement: p
+                | #[m D] a fundamental discriminant
+                me N \ge 1
+                | prime to #[m D].
+                me \tilde \phi _s(z) = \tr_N^{DN}
+
+        p
+            | Then for #[m f\in S_{2k}^{new}(\Gamma _0(N))]
+            me (4\pi )^{-s-2k +1} N^s\Gamma (s+2k-1) L_{\mathscr A}(f, s+2k-1)= (f, \tilde \phi _s)
+
+        p
+            | Computing the trace
+            me \tilde \phi _s = \epsilon _s(Nz) \theta _{\mathscr A}(z) U_{|D|} ???
+            | where
+            me \epsilon _s= \frac{\sum_{D= D_1\cdot D_2} \epsilon _{D_1}(N) \chi _{D_1D_2}(\mathscr A) E_s ^{(D_1)} (|D_2|z)}{\kappa (D_1) |D_1|^{s+2k-1}}
+            | #[m D] odd #[m \equiv 1\pmod 4]
+            | #[m D_1,D_2] fund disc.
+            | #[m \chi _{D_1,D_2}] genus character
+            | #[m \chi_{(a)} = \epsilon _{D_1}(N(a) ) = \epsilon _{D_2}(N(a))]
+            | for ideal prime to #[m D] with #[m \kappa  = 1 , D_1\gt 0], #[m \kappa = i] #[m D_2 \lt 0].
+            me E_s^{(D_1)} (z) =\frac 12 \sum_{m,n \in \ZZ,\,D_2 |m} \frac{\epsilon _1(m)\epsilon _2(n) y^s}{(mz+n)^{2k-1}{|mz+n|}^{2s}}
+            me U_n \colon  f(z) \mapsto \frac 1n \sum_{j\pmod n} f\left(\frac{z+j}{n}\right)
+            | on a function #[m f] of period 1.
+
+        p
+            | Fourier coefficients.
+            | Consider
+            me \epsilon _s(z) = \sum_{n\in \ZZ} e_s(n,y) e(nx)
+
+
+section#sec-gz-applications-i
+    title A gallimaufry of applications (of Gross-Zagier) I (Alex)
+
+
+    subsection
+        title Heegner points on rank 1 curves
+
+        blockquote
+            p
+                | The fun of the subject seems to me to be in the examples.
+            attribution: line Gross - Letter to Birch 1982
+
+
+        p
+            | So let's do some examples of Heegner point computations, and see how Gross-Zagier gives us important information in a few ways.
+        p
+            | Following the algorithm in Cohen, Number theory part I.
+
+        p
+            | Fix an elliptic curve #[m E(\QQ)] of conductor #[m N], we are interested in finding #[m E(\QQ)].
+            | All elliptic curves over #[m \QQ] are now known to be modular and hence we may make use of the parameterisation
+            me \phi_N \colon X_0(N) \hookrightarrow J_0(N) \twoheadrightarrow E
+            | .
+            | Over #[m \CC] the modular curve is classically
+            me \mathcal H / \Gamma_0(N)
+            | and if #[m E = E_f] for #[m f=  \sum a_n q^n] we have #[m \Phi_w \colon \CC/\Lambda_E \to E(\CC)].
+            | Then the modular parameterisation comes down to
+            me \phi(\tau) = \phi_w(z_\tau) = \phi_w\underbrace{\left( c\int_{i\infty}^\tau 2\pi i f(z) \diff z\right)}_{c\sum_{n=1}^\infty \frac{a_n}{n} q^n}
+            me \phi \colon X_0(N) \to \CC/\Lambda 
+            | .
+        p
+            | So integrating the #[m q]-expansion of a modular form and plugging in #[m \tau] gives us the corresponding point in the complex uniformization of the curve because the Abel-Jacobi map is defined by integration.
+
+        definition
+            statement: p
+                | We have #[m \tau \in \HH] #[term CM points] if they satisfy an equation
+                me A \tau ^2 + B'\tau  + C  = 0
+                me A,B,C \in \ZZ
+                me \Delta (\tau ) = B^2 - 4AC \lt 0
+                | when we choose
+                me A \gt 0
+                me (A,B,C) = 1
+                | then
+                me Ax^2 + Bxy + Cy^2
+                | is the associated quadratic form.
+                | A #[term Heegner point] of level #[m N] is one for which
+                me \Delta (N\tau ) = \Delta (\tau )
+                | .
+        p
+            |Proposition #[m 8.6 .3 .] Let #[m \tau \in \mathcal{H}] be a quadratic irrationality and let #[m (A, B, C)] be the quadratic form with discriminant #[m D] associated with #[m \tau]. Then #[m \tau] is a Heegner point of level #[m N] if and only if #[m N | A] and one of the following equivalent conditions is satisfied:
+            ol
+                li
+                    me \operatorname{gcd}(A / N, B, C N)=1
+                li
+                    me \operatorname{gcd}(N, B, A C / N)=1
+                li.
+                    There exists #[m F \in \mathbb{Z}] such that #[m B^{2}-4 N F=D] with #[m \operatorname{gcd}(N, B, F)=1]
+
+        corollary
+            statement: p
+                | If #[m \tau ] is heegner level #[m N] disc #[m D] so is
+                me W(\tau ) = -1/(N\tau )
+                | .
+
+        p.
+            Proposition 8.6.6. There is a one-to-one correspondence between on the one hand classes modulo #[m \Gamma_{0}(N)] of Heegner points of discriminant #[m D] and level #[m N,] and on the other hand, pairs #[m (\beta,[\mathfrak{a}])] where #[m \beta \in \mathbb{Z} / 2 N \mathbb{Z}] is such that #[m b^{2} \equiv D(\bmod 4 N)] for any lift #[m b] of #[m \beta] to #[m \mathbb{Z}], and #[m [\mathfrak{a}] \in C l(K)] is an ideal class. The correspondence is as follows: if #[m (\beta,[\mathfrak{a}])] is as above, there exists a primitive quadratic form #[m (A, B, C)] whose class is equal to [a] and such that #[m N | A] and #[m B \equiv \beta(\bmod 2 N),] and the corresponding Heegner point is #[m \tau=(-B+\sqrt{D}) /(2 A) .] Conversely, if #[m (A, B, C)] is the quadratic form associated with a Heegner point #[m \tau] we take #[m \beta=B] mod #[m 2 N] and #[m \mathfrak{a}=\mathbb{Z}+\tau \mathbb{Z}].
+
+        p
+            | The action of Galois (via the main theorem of CM) shows that the image #[m \phi (\tau )] is defined over #[m H] the hilbert class field of #[m K].
+            | To get back down to #[m K] we take traces
+            me P=\sum_{\sigma \in \operatorname{Gal}(H / K)} \varphi((\beta,[\mathfrak{a}]))^{\sigma}=\sum_{[\mathfrak{b}] \in C l(K)} \varphi\left(\left(\beta,\left[\mathfrak{a} \mathfrak{b}^{-1}\right]\right)\right)=\sum_{[\mathfrak{b}] \in C l(K)} \varphi((\beta,[\mathfrak{b}]))
+
+        p
+            |Lemma 8.6.8. If #[m \varepsilon=-1,] then in fact #[m P \in E(\mathbb{Q})]
+            |Proof. Indeed, it is easy to see that #[m \varepsilon=-1] is equivalent to saying that #[m \varphi \circ W=\varphi,] so that
+            me \varphi((\beta,[\mathfrak{b}]))=\overline{\varphi(W(\beta,[\mathfrak{b}]))}=\overline{\varphi\left(\left(-\beta,\left[6 \mathfrak{n}^{-1}\right]\right)\right)}=\varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right) \] hence \[ \begin{aligned} \bar{P}=\amp \sum_{[\mathfrak{b}] \in C l(K)} \varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right)=\sum_{[\mathfrak{b}] \in Cl(K)} \varphi((\beta,[\mathfrak{b}]))=P \end{aligned} 
+            | so by Galois theory once again we deduce that #[m P \in E(\mathbb{Q})]
+
+        p
+            | Similarly if #[m \epsilon  =1] then #[m P+ \overline P] is torsion.
+
+        p
+            | We have the Gross-Zagier formula
+            me \widehat{h}(P)=\frac{\sqrt{|D|}}{4 \operatorname{Vol}(E)} L^{\prime}(E, 1) L\left(E_{D}, 1\right)
+            | which tells us the height of Heegner
+        p
+            | In rank 1 #[m P = \ell G] for some generator #[m G] of mordell-weil
+            | then GZ + BSD
+            me \frac{\ell^{2}}{|\operatorname{III}(E)|}=\omega_{1}(E) \frac{c(E) \sqrt{|D|}}{4 \operatorname{Vol}(E)\left|E_{t}(\mathbb{Q})\right|^{2}} L\left(E_{D}, 1\right)
+        p
+            | To compute we evaluations of #[m \phi ((-B+ D)/(2A))] for the #[m |Cl(K)|] classes of quadratic forms #[m (A, B, C)].
+        p
+            | the convergence of the series for #[m \phi(\tau)] is essentially that of a geometric series with ratio #[m \exp (-2 \pi \Im(\tau))=\exp (-2 \pi \sqrt{|D|} /(2 A))]
+
+        p
+            | We can use
+            me \overline{\varphi((\beta,[\mathfrak{a}]))}=\varphi\left(\left(\beta,\left[\mathfrak{a}^{-1} \mathfrak{n}\right]\right)\right)
+            | to halve the work we do.
+
+
+        p
+            | So the heegner point method is
+            ol
+                li
+                    | via BSD find
+                    me |\operatorname{III}(E)| R(E)=\frac{\left|E_{t}(\mathbb{Q})\right|^{2} L^{\prime}(E, 1)}{c(E) \omega_{1}(E)}
+                li
+                    | find #[m HB] the height difference bound between canonical and naive heights
+                    me HB = h(j(E)) / 12+\mu(E)+1.946
+                li
+                    me d=2(|\operatorname{III}(E)| R(E)+H B)
+                    me d d=\lceil d / \log (10)\rceil+10
+                    | this is the number of decimal digits we will work with
+
+                li
+                    | Run through fundamental discs #[m D] for each.
+                    | Check #[m D] square mod #[m 4N] all primes split
+                    | and 
+                    me L\left(E_{D}, 1\right)=2 \sum_{n \geq 1} \frac{a_{n}}{n}\left(\frac{D}{n}\right) \exp \left(\frac{-2 \pi n}{\sqrt{N D^{2} / \operatorname{gcd}(D, N)}}\right)
+                    | not too close to zero if this is not satisfied, choose the next fundamental discriminant. Otherwise fix #[m \beta \in] #[m \mathbb{Z} /(2 N) \mathbb{Z}] such that #[m D \equiv \beta^{2}(\bmod 4 N)] and compute #[m m>0] such that
+                    me m^{2}=\omega_{1}(E) \frac{c(E) \sqrt{|D|}(w(D) / 2)^{2}}{4 \operatorname{Vol}(E)\left|E_{t}(\mathbb{Q})\right|^{2}} 2^{\omega(\operatorname{gcd}(D, N))} L\left(E_{D}, 1\right)
+                    | This m should be very close to an integer, or at least to a rational number with small denominator.
+
+                li
+                    | Find List of Forms below, compute a list #[m L] of #[m |C l(K)|] representatives #[m (A, B, C)] of classes of positive definite quadratic forms of discriminant #[m D], where #[m A] must be chosen divisible by #[m N] and minimal, and #[m B \equiv \beta(\bmod 2 N)] (this is always possible). Whenever possible pair elements #[m (A, B, C)] and #[m \left(A^{\prime}, B^{\prime}, C^{\prime}\right)] of this list such that #[m \left(A^{\prime}, B^{\prime}, C^{\prime}\right)] is equivalent to #[m (C N, B, A / N)] by computing the unique canonical reduced form equivalent to each.
+                li
+                    me z=\sum_{(A, B, C) \in \mathcal{L}} \phi\left(\frac{-B+\sqrt{D}}{2 A}\right) \in \mathbb{C}
+                    | taking a few more than #[m A d /(\pi \sqrt{|D|})] terms for #[m \phi ].
+                li
+                    |Find Rational Point Let #[m e] be the exponent of the group #[m E_{t}(\mathbb{Q}),] let #[m \ell=] #[m \operatorname{gcd}\left(e, m^{\infty}\right)=\operatorname{gcd}\left(e, m^{3}\right),] and #[m m^{\prime}=m \ell .] For each pair #[m (u, v) \in\left[0, m^{\prime}-\right.] #[m 1]^{2},] set #[m z_{u, v}=\left(\ell z+u \omega_{1}(E)+v \omega_{2}(E)\right) / m^{\prime}].
+                    | Compute #[m x=\wp\left(z_{u, v}\right),] where #[m \left(\wp, \wp^{\prime}\right)] is the isomorphism from #[m \mathbb{C} / \Lambda] to #[m E(\mathbb{C})]. For each #[m (u, v)] such that the corresponding point #[m (x, y) \in E(\mathbb{C})] has real coordinates.
+
+        p
+            | Algorithm
+            | choice of D
+        p
+            | Recall a congruent number is a number which appears as the area of a right triangle with rational side lengths.
+            | this reduces to finding non-torsion points on the congruent number curves
+            me E_n \colon  y^2 = x^3 - n^2 x
+            |.
+            | E.g. for #[m n = 157] BSD predicts rank 1, but how do we find the point?
+            | Using standard techniques can compute real period, period volume (#[m 0.209262974439979^2]) and torsion order (4), conductor (788768 outside LMFDB range) and Tamagawa product (8).
+            | Together we get
+            me |\Sha(E)|R(E) \approx 54.6
+            me HB = 10.6
+            me d \approx 130.4
+            | need 67 decimal digits.
+        p
+            | Up to #[m D = -40] we have #[m D =-31,-39] are squares modulo #[m 4N].
+        p
+
+            | For both of these  #[m D ] we try to compute #[m m^2(D)].
+            | When we take #[m -31] we get a number close to 0.
+            | For #[m -39] we get #[m \approx 16] so fix #[m D = -39] and #[m m=4].
+        p
+            | A square root #[m b] of #[m D] mod #[m 4N] is
+            me b = 1275547
+            | .
+        p
+            | The class group of
+            me \QQ(\sqrt{-39})
+            | is
+            me \ZZ/4
+            | .
+            me z = 2\Re(\phi (x_1) + \phi (x_2))
+            | for
+            me x_i = (-b + \sqrt{-39})/(2j N)
+            | So we have four classes of quadratic forms, of these the largest value of #[m A] is #[m 2N]. So we need
+            me \approx 10 500 000
+            | terms of the series
+            me \phi (\tau ) = \sum_{n=1}^\infty  \frac{a_n}{n} q^n,\,q = \exp(2\pi i \tau )
+            | applying this we get
+            me z = -5.63911127500831766007696166307316036323562406574706\ldots
+            | we can add multiples of the period lattice to make it smaller, as
+            me z/\omega \approx -26.9469552131277
+            | we find that
+            me z' = z + 27 \omega  \approx 0.0111003098794358
+            | so that
+            me \wp(\Lambda , (2 z' + 2 \omega )/8) \approx 344.99665832468973990799841297983141563953148876481
+            | this we can recognise as
+            me \frac{95732359354501581258364453}{526771095761^2}
+            | (using the fact we are looking for something with square denominator)
+            | and compute the point
+            me \left(\frac{95732359354501581258364453}{526771095761^2} : \frac{834062764128948944072857085701103222940}{526771095761^3} : 1\right)
+            | which is quite a big triangle.
+            | This is saturated and of height #[m 54.6008892940170].
+
+        remark: p
+            | Calling the sage function #[c gens()] fails on this example!
+
+
+section#sec-gz-applications-ii
+    title A gallimaufry of applications (of Gross-Zagier) II (Alex)
+
+    subsection
+        title More on computation
+        p
+            | A more advanced trick:
+            | We have the standard Heegner point outlined above, there are several speedups possible:
+            ol
+                li
+                    | Use Atkin-Lehner involutions to reduce the size of #[m A] in #[m (A,B,C)].
+                li
+                    | Use faster algorithms for point counting, e.g. on CM curves we have a simpler expression for #[m a_p]'s which can be computed with Cornichias algorithm.
+                li
+                    | Cremona-Silverman:
+                    | Want to reduce the precision needed, how?
+                    | What information do we know after running the method, an approximation of #[m Q\approx P \in E(\RR)].
+                    | We also know by Gross-Zagier
+                    me \hat h(P)
+                    | .
+                    | If
+                    me x(P) = \frac{n}{d^2}
+                    | then
+                    me 2 \log (d)=\widehat{h}(P)-\widehat{h}_{\infty}(P)-\sum_{p | N \atop {p \nmid d \atop p^{2} | \operatorname{disc}(E)}} \widehat{h}_{p}(P)
+                    | .
+                    | Using #[m Q] we can compute
+                    me \hat h_\infty (P)
+                    | . For each #[m \hat h_p] there are only finitely many possibilities, and so in total we have finitely many possible values of
+                    me \widehat{h}(P)-\widehat{h}_{\infty}(P)-\sum_{p | N \atop {p \nmid d \atop p^{2} | \operatorname{disc}(E)}} \widehat{h}_{p}(P)
+                    | giving finitely many possible #[m d] values, from which
+                    me numerator (x(P)) = round(x(P) d^2)
+                    | can be found.
+                    | In all this allows us to work as we wanted, with an accuracy slightly more than half.
+
+        p
+            |These speed ups are in PARI/GP and Remarks. as #[m E] in last times example is a CM curve, the computation time of the above example can be reduced from a couple of minutes to 7 seconds (factor of 20).
+
+
+        p
+            | Gotta get height:
+        example
+            title A big example
+            statement
+                p
+                    | Let
+                    me E\colon y^2 = x^3 + \underbrace{2^{5} \cdot 3^{3} \cdot 5^{5} \cdot 7^{3} \cdot 11^{5} \cdot 13^{4}}_{=4259854045547100000}
+                    | be a Mordell curve.
+                    | We can compute that the analytic rank is 1 and that
+                    me L(E,1) \approx 28.43512495
+                    | We need an imaginary number field in which #[m 2,3,5,7,11,13] all split, the smallest such is
+                    me K = \QQ(\sqrt{-1559})
+                    | . So this #[m D = D_K = -1559] is the smallest possible Heegner discriminant
+                    | followed by #[m -2999,-3071,-5711,-6431,-6551,-8399,-8711,-9071,-9239].
+                    | We can also compute that the twist #[m E_D] has analytic rank 0 and
+                    me L(E_D,1) \approx 0.34784
+                    | We can ask Pari/GP for a Heegner point and we obtain
+                    me P=  (2673768366314301463225804132167786458743211296161665928714089443034915780624646102119694052638661139083614147052130407079631451208185292430763007319638022105825501399385761185566630883388394680375240310954529690758647194911112230527266639143771344809007916379476769393746579657952261851411688268671539912820072222763224027388823804772192104547803223898847305487037661307828748844799602593905135066916765339004127610241/14711766058713677663384943791747898516946843571332438782108054674511943585256352373257820891021633925632603928846607462754678923049647017632180676816464079929265454994902080754858496848491578669209122991110372607577751981118650453474461080043444438030297579085121835217242209089550661820106126782163015526489468149613211400477191028795214873959696995779238660836093943085146259968306971312571346641475392784100 : 138256584957437413549697979638187560540459292802582866047104251079871173001665466386110481033185180290975183359260945144859657131458366183036141245306630348292671101486345526463132664316934927829557544796041549654148869945306252397609306930530983551604764354393433405906021719607528424338682185259543058868693501829232087760637049066670461122157567207439393246729072214062375989571116431670132631712767339509965920423129094613543923419661857943413970492292794841174646487317425335124224816154049239888798416706708946385513743341645910420176133057435782209340663561195089350700342411480965751945453146090192411927796854564432961/56428332331562671615794363625451656023382470684636509020204202990180688177696621616970962649738545712542796767776584129330909917100366186924013354291641329738822701259890430806380424060475365542745244595324918343297529518263108027693527497847179482876257977247331950705161864795745543796461954042373098284699960118594562408063763160815610542420513488629513957169549566241725330887507912166227023322296844673603178204516200038314906488548391012692454233921581644355608983371337760875769764741031620675341450340457565846005848812354464193992153964872086150518588699778897808812845613993026309040085527357183723889000 : 1)
+                    | this has naïve height #[m 2.67 \times 10^{417}] (numerator of the #[m x]-coord) and (logarithmic) canonical height #[m \approx 956.282209515622].
+                p
+                    | By saturating we find that in fact #[m P  = 2\cdot Q] where #[m Q] has canonical height
+                    me 956.282209515622/4 \approx 239.070552378906
+                    | .
+                    | And
+                    me Q =(8868405892624209482831543296890050376591681305386772268723757017948071928478387800757391866726575892769529/12199065318293186020638466216615329130692308979647554152111639302853625564281014711694611565598225 : 835157422328503915572710156100004478252440344488413901374204905998433900560826559924171903629096959304261439875564863428904842353573598701320904439166984417667/42607871079159903759545082718655204271158039869031410587066955866681866212965161047419746875287012910440605581735106219437475107311541956522410375 : 1)
+                    | .
+
+    subsection
+        title Gauss's class number problem
+
+        p
+            | Gauss was interested in binary quadratic forms and did a lot of computations with them.
+            | He in particular conjectured that
+        conjecture
+            title Gauss
+            statement: p
+                | As #[m D \to- \infty ] runs through fundamental discriminants the class numbers of imaginary quadratic fields
+                me h(D ) = h(\QQ(\sqrt{D})) \to \infty 
+                | also. (i.e. there are only finitely many imaginary quadratic fields of any given class number).
+
+        p: me.
+            \begin{array}{|c|c|c|c|c|c|}
+            \hline
+            h(D)                   \amp {1} \amp {2} \amp {3} \amp {4} \amp {5} \\
+            \hline
+            \# \text { of fields } \amp {9} \amp {18} \amp {16} \amp {54} \amp {25} \\
+            \hline
+            \text { largest } {|D |}\amp{163} \amp {427} \amp {907} \amp {1555} \amp {2683} \\
+            \hline
+            \end{array}
+
+        p
+            | The most famous instance of this being the first column.
+            | The Gauss class number 1 problem (Section 303 of his Disquisitiones Arithmeticae (1798)) there are only 9 imaginary quadratic fields of class number 1.
+            | This was first proved by Heegner, where he introduced analytic techniques into the field of elliptic curves, hence the name  Heegner points.
+            | Warning: this is somewhat distinct and not exactly what we will mention now
+
+
+        p
+            | The first instances of the small class number phenomenon go back to Euler who noted that
+            me x^2 - x + 41
+            | was prime for #[m 0 \le x \le 40] (the maximum possible), Euler called such numbers lucky and could not find more.
+        p
+            | We now know that this is due to #[m \QQ(\sqrt{-163})] having class number one, hence all small primes remaining inert.
+            | If a small prime split we would have an element of small prime norm, but the norm form shows this is not possible.
+            | Explicitly all primes less than
+            me \frac{1 + |D_K|}4
+            | are inert.
+
+        p
+            | Even when #[m h(D) \gt 1] we still observe a similar phenomenon.
+        p
+            | For #[m \QQ(\sqrt{-427})] as above we have of the primes up to #[m (1 + 427)/4 = 107] only #[m  17,31,59,89,101] are split (#[m 7,61] ramified).
+
+        p
+            | Why am I telling you this?
+            | Because it leads to the following theorem:
+        theorem
+            title Goldfeld
+            statement: p
+                | Let #[m D] be a fundamental discriminant of an imaginary quadratic field. If there exists a modular elliptic curve #[m E] (defined over #[m \QQ]) whose associated base change Hasse-Weil #[m L]-function
+                me L_{E / \QQ(\sqrt{D})}(s)
+                | has a zero of order #[m \geq 4] at #[m s=1] then for every #[m \epsilon>0], there exists an effective computable constant #[m c_{\epsilon}(E)>0], depending only on #[m \epsilon, E] such that
+                me h(D)>c_{\epsilon}(E)(\log |D|)^{1-\epsilon}
+                | .
+
+
+        p
+            | Here
+            me L_{E / \QQ(\sqrt{D})}(s)
+            | has #[m L_E] as a factor so Goldfeld needed an elliptic curve #[m E/\QQ] with
+            me \ord_{s=1} L_E(s) = 3
+            | that is analytic rank 3, to obtain the order 4 vanishing of
+            me L_{E / \QQ(\sqrt{D})}(s)
+            | .
+        p
+            | The bounds in this proof can be completely explicit, leading to lists of all imaginary quadratic fields with class number below #[m 100].
+
+        p
+            | If #[m \chi _D = \legendre{D}{\bullet}] is the associated character to #[m \QQ(\sqrt{D})] of small class number we therefore have
+            me L(s,\chi _D) = \prod_p \left(1-\frac{\chi _D(p)}{p^s}\right)^{-1}
+            me \sim \prod_p \left(1+\frac{1}{p^s}\right)^{-1} = \frac{\zeta (2s)}{\zeta (s)}
+            |.
+        p
+            | (mumble mumble approximate functional equation).
+
+        paragraphs
+            title How to obtain an #[m E] with proven analytic rank 3
+
+            p
+                | Gross-Zagier showed that for
+                me E = 37b3\colon y^2 = x^{3} + 10 x^{2} - 20 x + 8
+                | of conductor 37 and rank 0, we can twist by #[m d=-139] to get a curve of conductor #[m 714877].
+                me E_{-139}\colon -139 y^2 = x^{3} + 10 x^{2} - 20 x + 8
+                | where
+                me L_E(s,\chi _d) = L_{E_{d}}(s)
+                |.
+
+            p
+                | Doing a single Heegner point computation we find that #[m P_d] is zero and hence #[m h(2P_d)= 0].
+                |Using Gross-Zagier we have
+                me L_E(1)L'_{E_d}(1) = c \Omega_d  \Omega h_{E_d}(2P_d)
+                | This implies that
+                me L_{E_d}(1)L_E'(1) = 0
+                | we have
+                me L_{E_d}'(1) = 0
+                | and as #[m L_{E_d}(s)] has odd functional equation we can calculate
+                me L_{E_d}'''(1) \ne 0
+                | hence the analytic rank is 3.
+            p
+                | So #[m E_{-139}] can be used for Goldfeld's technique.
+
+
+            p
+                | We now let #[m E/\QQ] be our twisted curve forgetting that it came from #[m 37b3].
+
+            p
+                | The #[m L]-function of this curve has functional equation
+                me \left(\frac{\sqrt{N}}{2 \pi}\right)^{1+s} \Gamma(1+s) L_{E}(1+s)=-\left(\frac{\sqrt{N}}{2 \pi}\right)^{1-s} \Gamma(1-s) L_{E}(1-s)
+                | if #[m D] is a fundamental discriminant of class number 1 with #[m |D| \gt 163] we can define
+                me \Lambda_{D}(s)=\left(\frac{N|D|}{4 \pi^{2}}\right)^{s} \Gamma(1+s)^{2} L_{E}(s) L_{E}\left(s, \chi_{D}\right)
+                | so that
+                me  \Lambda_{D}(1+s)=w \cdot \Lambda_{D}(1-s)
+                | with #[m w=\chi _D(-37\cdot 139^2) = 1].
+            p
+                | The function
+                me L_{E / \QQ(\sqrt{D})}(s) = L_E(s)L_E(s,\chi _D)
+                | therefore has a zero of even order at #[m s=1], given that #[m L_{E}(s)] has an order 3 zero by construction
+                me L_{E / \QQ(\sqrt{D})}(s)
+                | has an order 4 zero.
+
+
+            p
+                | To give a flavour of the class number one problem assume #[m D] sufficiently large with #[m h(D) = 1] still, then consider
+                me I_D = \frac{1}{2\pi i} \int_{2-i\infty }^{2+i\infty } \Lambda_D(1+s) \frac{\diff s}{s^3}
+                | .
+                me \begin{aligned} I_{D} \amp=\frac{1}{2 \pi i} \int_{-2-i \infty}^{-2+i \infty} \Lambda_{D}(1+s) \frac{d s}{s^{3}} \\ \amp=-\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty} \Lambda_{D}(1+s) \frac{d s}{s^{3}} \\ \amp=-I_{D} \end{aligned}
+                | .
+
+            p
+                | We now want to show that
+                me I_D \ne 0
+                | under the same assumptions on #[m D].
+
+            p
+                | Have euler products
+                me \begin{array}{c}{L_{E}(s)=\prod_{p}\left(1-\frac{\alpha_{p}}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p}}{p^{s}}\right)^{-1}} \\ {L_{E}\left(s, \chi_{D}\right)=\prod_{p}\left(1-\frac{\alpha_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}}\end{array}
+                | and once again many small primes splitting means that #[m L_E(s)L_E(s,\chi _D)] is analytically like
+                me \phi(s):=\prod_{p}\left(1-\frac{\alpha_{p}^{2}}{p^{2 s}}\right)^{-1}\left(1-\frac{\beta_{p}^{2}}{p^{2 s}}\right)^{-1}
+                | Goldfeld then uses
+                me I_{D}^{*}=\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty}\left(\frac{37 \cdot 139^{2}|D|}{4 \pi^{2}}\right)^{1+s} \Gamma(1+s)^{2} \phi(1+s) \frac{d s}{s^{3}}
+                | and
+                me 0=I_{D}=I_{D}^{*}+\text { Error }
+                | to get the final contradiction.
+
+
+            remark
+                p
+                    | There is also work by Mestre and Buhler-Gross-Zagier on
+                    me y^{2}+y=x^{3}-7 x+6
+                    | the smallest conductor rank 3 curve 5077, where they verify BSD explicitly, giving one the first example in rank 3. (To this day, it is not possible, even in principle, to establish BSD for any curve of rank 4 or greater since there is no known method for rigorously establishing the value of the analytic rank when it is greater than 3.)
+                    | Once again Gross-Zagier is used, if #[m L'_E(1)] is calculated to be small but possibly non-zero it must be a multiple of the height of a small point, but we can look and find no small points, hence we obtain vanishing of the derivative at #[m s=1].
+                    | This implies, for parity reasons that #[m L_E(s)] has analytic rank 3 or more.
+                    | The third derivative can then be calculated and seen to be non-zero.
+                p
+                    | This smaller curve gives better bounds in Goldfelds method.
+                p
+                    | Using work of Oesterle they obtain
+                    me h(D) \gt \frac{1}{55} \log|D|
+                    | for prime #[m D].
+                p
+                    | It's super effective?!
+
+
+
+
+
+
+
+    //subsection
+        title Heegner points on covers
+
+        p
+            | 
+
+    //subsection
+        title Representation theoretic interpretation
+
+
+        p At the ICM in 1986, Faltings said:
+
+        blockquote
+            p
+                | Alles in allem handelt es sich um eine schöne Entdeckung, welche wir aber leider noch nicht "erklären" können: Warum ist sie richtig?
+            p
+                | All in all, this is a beautiful discovery, which unfortunately we can not #[q explain] yet: Why is it right?
+            attribution: line Gerd Faltings

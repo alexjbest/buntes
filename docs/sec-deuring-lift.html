@@ -358,7 +358,10 @@ var js_version = 0.12;
 <li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift" class="active">Deuring's theory of lifts (Angus)</a></li>
 <li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
 <li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
-<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">?????? (Sachi)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">Wrap Up of Non-Archimedean Local Heights (Sachi)</a></li>
+<li><a href="sec-gz-rankin-selberg.html" data-scroll="sec-gz-rankin-selberg">Rankin-Selberg (Aash)</a></li>
+<li><a href="sec-gz-applications-i.html" data-scroll="sec-gz-applications-i">A gallimaufry of applications (of Gross-Zagier) I (Alex)</a></li>
+<li><a href="sec-gz-applications-ii.html" data-scroll="sec-gz-applications-ii">A gallimaufry of applications (of Gross-Zagier) II (Alex)</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -368,7 +371,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-deuring-lift"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.6</span> <span class="title">Deuring's theory of lifts (Angus)</span>
 </h2>
-<a href="sec-deuring-lift.html" class="permalink">¶</a><p id="p-1403">Notations: \(X = X_0(N)/\QQ\text{,}\) \(x  = (E \to E')\) a heegner point of discriminant \(D\text{,}\) with CM by \(\ints_K\text{.}\) \(H\) the Hilbert class field of \(K\text{,}\) \(v\) a place of \(p\text{.}\)</p>
+<a href="sec-deuring-lift.html" class="permalink">¶</a><section class="introduction" id="introduction-24"><p id="p-1403">Notations: \(X = X_0(N)/\QQ\text{,}\) \(x  = (E \to E')\) a heegner point of discriminant \(D\text{,}\) with CM by \(\ints_K\text{.}\) \(H\) the Hilbert class field of \(K\text{,}\) \(v\) a place of \(p\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 c = (x) - (\infty ),\, d = (x) - (0)
@@ -410,8 +413,8 @@ W = (\Lambda _v^{nr})^\wedge
 \end{equation*}
 </div>
 <p>a model of \(X\) over \(\Lambda _v\text{.}\)</p>
-<article class="paragraphs" id="paragraphs-57"><h5 class="heading"><span class="title">Meta-Goal.</span></h5>
-<p id="p-1404">Understand</p>
+<p id="p-1404">Meta-Goal</p>
+<p id="p-1405">Understand</p>
 <div class="displaymath">
 \begin{equation*}
 g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
@@ -424,12 +427,12 @@ g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
 \end{equation*}
 </div>
 <p>so far, seen the archimidean \(v\) case. Today, nonarchimidean.</p>
-<p id="p-1405">Following GZ and Michigan seminar.</p></article><section class="subsection" id="subsection-97"><h3 class="heading hide-type">
+<p id="p-1406">Following GZ and Michigan seminar.</p></section><section class="subsection" id="subsection-97"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.6.1</span> <span class="title">Generalities on nonarchimidean local heights</span>
 </h3>
 <article class="theorem-like" id="theorem-94"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">6.6.1</span>.</h6>
-<p id="p-1406">Let \(a,b\in \Div^0(X \otimes H_v)\) be relatively prime divisors. Let \(A,B\) be extensions of these to divisors on \(\mathcal X\) such that</p>
+<p id="p-1407">Let \(a,b\in \Div^0(X \otimes H_v)\) be relatively prime divisors. Let \(A,B\) be extensions of these to divisors on \(\mathcal X\) such that</p>
 <div class="displaymath">
 \begin{equation*}
 (A. \mathcal Y) = (B. \mathcal Y) = 0
@@ -442,10 +445,10 @@ g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
 \end{equation*}
 </div></article><article class="remark-like" id="remark-41"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">6.6.2</span>.</h6>
-<p id="p-1407">\(\mathcal X\) is an arithmetic surface.</p></article><article class="theorem-like" id="theorem-95"><h6 class="heading">
+<p id="p-1408">\(\mathcal X\) is an arithmetic surface.</p></article><article class="theorem-like" id="theorem-95"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">6.6.3</span>. <span class="title">G-Z III.3.3.</span>
 </h6>
-<p id="p-1408">Let \(m \ge 1\) s.t. \((m,N) = 1\) and \(r_{\mathscr A}(m)= 0\text{.}\) Then</p>
+<p id="p-1409">Let \(m \ge 1\) s.t. \((m,N) = 1\) and \(r_{\mathscr A}(m)= 0\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \pair c{T_m d^\sigma }_v = -(\underline x. T_m \underline x^\sigma ) \log(q_v)
@@ -454,7 +457,7 @@ g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
 <p>where \(\underline x \in \mathcal X(\Lambda _v)\) corresponding to \(x\text{.}\)</p></article><article class="theorem-like" id="proposition-78"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">6.6.4</span>. <span class="title">G-Z III.4.4.</span>
 </h6>
-<p id="p-1409">Assumptions as  above, then</p>
+<p id="p-1410">Assumptions as  above, then</p>
 <div class="displaymath">
 \begin{equation*}
 (\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
@@ -467,15 +470,15 @@ g_{\mathscr A}(z) = \sum_{m=1}^\infty \pair c {T_m d^\sigma } e^{2\pi  i m z}
 E_1 \ar[r] \ar[d]_{f} &amp; E_1' \ar[d]^{f'}\\
 E_2 \ar[r] &amp; E_2'}\text{.}
 \end{equation*}
-</div></article><p id="p-1410">Today we will begin the proof of this proposition in the case that \(p\) is split in \(K\text{.}\) In this case LHS and RHS are both 0.</p></section><section class="subsection" id="subsection-98"><h3 class="heading hide-type">
+</div></article><p id="p-1411">Today we will begin the proof of this proposition in the case that \(p\) is split in \(K\text{.}\) In this case LHS and RHS are both 0.</p></section><section class="subsection" id="subsection-98"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.6.2</span> <span class="title">Deuring's theory of lifts</span>
 </h3>
-<p id="p-1411">Let \(E/F\) be an elliptic curve over a number field with CM by \(K\text{,}\) (\(\End (E) = \ints_K\)). We'll begin by studying the reductions \(\overline E \pmod p\text{.}\)</p>
+<p id="p-1412">Let \(E/F\) be an elliptic curve over a number field with CM by \(K\text{,}\) (\(\End (E) = \ints_K\)). We'll begin by studying the reductions \(\overline E \pmod p\text{.}\)</p>
 <article class="definition-like" id="definition-134"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">6.6.5</span>.</h6>
-<p id="p-1412">Let \(\overline E /\FF_q\) be an elliptic curve. We say \(\overline E\) is ordinary if \(\overline E\lb p\rb (\overline F_q) = \ZZ/p\text{,}\) supersingular if this group is 0.</p></article><article class="theorem-like" id="theorem-96"><h6 class="heading">
+<p id="p-1413">Let \(\overline E /\FF_q\) be an elliptic curve. We say \(\overline E\) is ordinary if \(\overline E\lb p\rb (\overline F_q) = \ZZ/p\text{,}\) supersingular if this group is 0.</p></article><article class="theorem-like" id="theorem-96"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">6.6.6</span>.</h6>
-<p id="p-1413">TFAE</p>
+<p id="p-1414">TFAE</p>
 <ol class="decimal">
 <li id="li-332"><div class="displaymath">
 \begin{equation*}
@@ -491,7 +494,7 @@ E_2 \ar[r] &amp; E_2'}\text{.}
 <li id="li-334">\(\End(\overline E)\) is an order in a quaternion algebra.</li>
 </ol></article><article class="remark-like" id="remark-42"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">6.6.7</span>.</h6>
-<p id="p-1414">One criterion for \(\phi \colon C_1 \to C_2\) to be separable is that</p>
+<p id="p-1415">One criterion for \(\phi \colon C_1 \to C_2\) to be separable is that</p>
 <div class="displaymath">
 \begin{equation*}
 \phi ^* \colon \Omega _{C_2} \to \Omega_{C_1}
@@ -499,12 +502,12 @@ E_2 \ar[r] &amp; E_2'}\text{.}
 </div>
 <p>is nonzero.</p></article><article class="theorem-like" id="proposition-79"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">6.6.8</span>.</h6>
-<p id="p-1415">Let \(E/F\) be an elliptic curve over a number field with CM by \(K\) (\(\End (E) = \ints_K\)). let \(\wp| p\) be a prime of \(FK\) s.t. \(E\) has good reduction \(\overline E\) mod \(\wp \cap \ints_F\text{.}\) Then</p>
+<p id="p-1416">Let \(E/F\) be an elliptic curve over a number field with CM by \(K\) (\(\End (E) = \ints_K\)). let \(\wp| p\) be a prime of \(FK\) s.t. \(E\) has good reduction \(\overline E\) mod \(\wp \cap \ints_F\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \overline E \text{ is ordinary} \iff p \text{ splits in }K
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-127"><a data-knowl="" class="id-ref" data-refid="hk-proof-127"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-127"><article class="hiddenproof"><p id="p-1416">\(p\ints K = \ideal p \ideal p'\text{,}\) sat \(\wp / \ideal p\text{.}\) Let \(m\) be the order of \(\ideal p\) in \(\Cl_K\text{,}\) so that</p>
+</div></article><article class="hiddenproof" id="proof-127"><a data-knowl="" class="id-ref" data-refid="hk-proof-127"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-127"><article class="hiddenproof"><p id="p-1417">\(p\ints K = \ideal p \ideal p'\text{,}\) sat \(\wp / \ideal p\text{.}\) Let \(m\) be the order of \(\ideal p\) in \(\Cl_K\text{,}\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 \ideal p ^m  = (\mu ) , (\ideal p')^m = (\mu ')
@@ -535,7 +538,7 @@ E_2 \ar[r] &amp; E_2'}\text{.}
 \end{equation*}
 </div>
 <p>is not purely inseparable so \(\overline E \) is ordinary.</p>
-<p id="p-1417">Consider \(\overline E\) ordinary,</p>
+<p id="p-1418">Consider \(\overline E\) ordinary,</p>
 <div class="displaymath">
 \begin{equation*}
 \ints_K \otimes \ZZ_p \simeq \End(\overline E) \otimes \ZZ_p \to \End_{\ZZ_p}(T_p(\overline E)) \simeq \ZZ_p
@@ -550,7 +553,7 @@ K\otimes \QQ_p \to \QQ_p
 <p>the LHS is 2-dimensional over \(\QQ_p\text{,}\) so this map cannot be an injection. So \(K\otimes \QQ_p\) cannot be a field so \(p\) splits in \(K\text{.}\)</p></article></div>
 <article class="definition-like" id="definition-135"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">6.6.9</span>.</h6>
-<p id="p-1418">Let \(E/K\) be an ordinary elliptic curve over a perfect field of characteristic \(p\text{.}\) A canonical lift is an elliptic curve</p>
+<p id="p-1419">Let \(E/K\) be an ordinary elliptic curve over a perfect field of characteristic \(p\text{.}\) A canonical lift is an elliptic curve</p>
 <div class="displaymath">
 \begin{equation*}
 \mathscr E/W(K)
@@ -564,7 +567,7 @@ K\otimes \QQ_p \to \QQ_p
 </div>
 <p>splits.</p></article><article class="theorem-like" id="theorem-97"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">6.6.10</span>.</h6>
-<p id="p-1419">Let</p>
+<p id="p-1420">Let</p>
 <div class="displaymath">
 \begin{equation*}
 E_0 /\overline \FF_p
@@ -575,7 +578,7 @@ E_0 /\overline \FF_p
 \begin{equation*}
 (E,\alpha ) \equiv  (E_0, \alpha _0) \pmod {\ideal p}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-128"><a data-knowl="" class="id-ref" data-refid="hk-proof-128"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-128"><article class="hiddenproof"><p id="p-1420">First note that if we have a lift then we can trivially lift \(\alpha _0 = \lb n\rb \text{.}\) So we can reduce to the case</p>
+</div></article><article class="hiddenproof" id="proof-128"><a data-knowl="" class="id-ref" data-refid="hk-proof-128"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-128"><article class="hiddenproof"><p id="p-1421">First note that if we have a lift then we can trivially lift \(\alpha _0 = \lb n\rb \text{.}\) So we can reduce to the case</p>
 <ol class="decimal">
 <li id="li-335">\(\ker (\alpha _0)\) is cyclic.</li>
 <li id="li-336">\(p\nmid \deg(\alpha _0)\text{.}\)</li>
@@ -646,7 +649,7 @@ E(j)_{\ideal q} \simeq E(j_i)_{\ideal q}
 \end{equation*}
 </div>
 <p>So \(\alpha  \equiv  \alpha _0 \circ \sigma\) for \(\sigma  \in \Aut(E_0)\text{.}\) We can lift automorphisms because \(\pm1 \) lift trivially and the only other possibilities are \(j(E_0) = 0,1728\) and these lift as \(E\colon y^2 = x^3 - 1,E\colon y^2 = x^3-x\) respectively.</p></article></div>
-<p id="p-1421">If \(E_0\) is ordinary \(\End(E_0) = \ints_K = \ZZ+ \tau _0\ZZ\) then applying Deuring lifting to \((E_0, \tau _0)\) gives \((E, \tau )\) i.e.</p>
+<p id="p-1422">If \(E_0\) is ordinary \(\End(E_0) = \ints_K = \ZZ+ \tau _0\ZZ\) then applying Deuring lifting to \((E_0, \tau _0)\) gives \((E, \tau )\) i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 \End(E) = \ZZ+ \tau  \ZZ \simeq \ints_K\text{.}
@@ -656,13 +659,13 @@ E(j)_{\ideal q} \simeq E(j_i)_{\ideal q}
 </h3>
 <article class="theorem-like" id="proposition-80"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">6.6.11</span>.</h6>
-<div class="displaymath" id="p-1422">
+<div class="displaymath" id="p-1423">
 \begin{equation*}
 (\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
 \end{equation*}
 </div></article><article class="theorem-like" id="fact-14"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">6.6.12</span>.</h6>
-<ol id="p-1423" class="decimal">
+<ol id="p-1424" class="decimal">
 <li id="li-337">
 <div class="displaymath">
 \begin{equation*}
@@ -680,7 +683,7 @@ E(j)_{\ideal q} \simeq E(j_i)_{\ideal q}
 \# \Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m} = r_{\mathscr A}(m)
 \end{equation*}
 </div></li>
-</ol></article><p id="p-1424">Deuring lifting implies that \(\End_W(\underline x) \simeq \End_{W/\pi _v}(\underline x)\text{.}\) Serre-Tate gives that Deuring lifting implies that \(\Hom_W(\underline x^\sigma , \underline x) \simeq \Hom_{W/\pi _v}(\underline x^\sigma , \underline x)\text{.}\) The LHS is then zero via computing the intersection.</p></section></section></div></main>
+</ol></article><p id="p-1425">Deuring lifting implies that \(\End_W(\underline x) \simeq \End_{W/\pi _v}(\underline x)\text{.}\) Serre-Tate gives that Deuring lifting implies that \(\Hom_W(\underline x^\sigma , \underline x) \simeq \Hom_{W/\pi _v}(\underline x^\sigma , \underline x)\text{.}\) The LHS is then zero via computing the intersection.</p></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>
