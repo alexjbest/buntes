@@ -350,6 +350,8 @@ section#sec-gz-mfs
             caption The fundamental domain
             image: latex-image.
 
+                \pgfdeclarelayer{background}
+
                 \pgfmathsetmacro{\myxlow}{-2}
                 \pgfmathsetmacro{\myxhigh}{2}
                 \pgfmathsetmacro{\myiterations}{8}
@@ -1244,7 +1246,7 @@ section#sec-gz-serre-tate
         p
             | What are formal groups?
 
-        definition#def-formal-gps
+        definition#def-gz-formal-gps
             title Formal groups
             statement
                 p
@@ -1708,17 +1710,17 @@ section#sec-gz-applications-i
                 | .
 
         p.
-            Proposition 8.6.6. There is a one-to-one correspondence between on the one hand classes modulo #[m \Gamma_{0}(N)] of Heegner points of discriminant #[m D] and level #[m N,] and on the other hand, pairs #[m (\beta,[\mathfrak{a}])] where #[m \beta \in \mathbb{Z} / 2 N \mathbb{Z}] is such that #[m b^{2} \equiv D(\bmod 4 N)] for any lift #[m b] of #[m \beta] to #[m \mathbb{Z}], and #[m [\mathfrak{a}] \in C l(K)] is an ideal class. The correspondence is as follows: if #[m (\beta,[\mathfrak{a}])] is as above, there exists a primitive quadratic form #[m (A, B, C)] whose class is equal to [a] and such that #[m N | A] and #[m B \equiv \beta(\bmod 2 N),] and the corresponding Heegner point is #[m \tau=(-B+\sqrt{D}) /(2 A) .] Conversely, if #[m (A, B, C)] is the quadratic form associated with a Heegner point #[m \tau] we take #[m \beta=B] mod #[m 2 N] and #[m \mathfrak{a}=\mathbb{Z}+\tau \mathbb{Z}].
+            Proposition 8.6.6. There is a one-to-one correspondence between on the one hand classes modulo #[m \Gamma_{0}(N)] of Heegner points of discriminant #[m D] and level #[m N,] and on the other hand, pairs #[m (\beta,[\mathfrak{a}])] where #[m \beta \in \mathbb{Z} / 2 N \mathbb{Z}] is such that #[m b^{2} \equiv D(\bmod 4 N)] for any lift #[m b] of #[m \beta] to #[m \mathbb{Z}], and #[m [\mathfrak{a}] \in \Cl(K)] is an ideal class. The correspondence is as follows: if #[m (\beta,[\mathfrak{a}])] is as above, there exists a primitive quadratic form #[m (A, B, C)] whose class is equal to [a] and such that #[m N | A] and #[m B \equiv \beta(\bmod 2 N),] and the corresponding Heegner point is #[m \tau=(-B+\sqrt{D}) /(2 A) .] Conversely, if #[m (A, B, C)] is the quadratic form associated with a Heegner point #[m \tau] we take #[m \beta=B] mod #[m 2 N] and #[m \mathfrak{a}=\mathbb{Z}+\tau \mathbb{Z}].
 
         p
             | The action of Galois (via the main theorem of CM) shows that the image #[m \phi (\tau )] is defined over #[m H] the hilbert class field of #[m K].
             | To get back down to #[m K] we take traces
-            me P=\sum_{\sigma \in \operatorname{Gal}(H / K)} \varphi((\beta,[\mathfrak{a}]))^{\sigma}=\sum_{[\mathfrak{b}] \in C l(K)} \varphi\left(\left(\beta,\left[\mathfrak{a} \mathfrak{b}^{-1}\right]\right)\right)=\sum_{[\mathfrak{b}] \in C l(K)} \varphi((\beta,[\mathfrak{b}]))
+            me P=\sum_{\sigma \in \operatorname{Gal}(H / K)} \varphi((\beta,[\mathfrak{a}]))^{\sigma}=\sum_{[\mathfrak{b}] \in \Cl(K)} \varphi\left(\left(\beta,\left[\mathfrak{a} \mathfrak{b}^{-1}\right]\right)\right)=\sum_{[\mathfrak{b}] \in \Cl(K)} \varphi((\beta,[\mathfrak{b}]))
 
         p
-            |Lemma 8.6.8. If #[m \varepsilon=-1,] then in fact #[m P \in E(\mathbb{Q})]
+            |Lemma 8.6.8. If #[m \varepsilon=-1], then in fact #[m P \in E(\mathbb{Q})]
             |Proof. Indeed, it is easy to see that #[m \varepsilon=-1] is equivalent to saying that #[m \varphi \circ W=\varphi,] so that
-            me \varphi((\beta,[\mathfrak{b}]))=\overline{\varphi(W(\beta,[\mathfrak{b}]))}=\overline{\varphi\left(\left(-\beta,\left[6 \mathfrak{n}^{-1}\right]\right)\right)}=\varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right) \] hence \[ \begin{aligned} \bar{P}=\amp \sum_{[\mathfrak{b}] \in C l(K)} \varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right)=\sum_{[\mathfrak{b}] \in Cl(K)} \varphi((\beta,[\mathfrak{b}]))=P \end{aligned} 
+            me \varphi((\beta,[\mathfrak{b}]))=\overline{\varphi(W(\beta,[\mathfrak{b}]))}=\overline{\varphi\left(\left(-\beta,\left[\ideal b \mathfrak{n}^{-1}\right]\right)\right)}=\varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right) \] hence \[ \begin{aligned} \bar{P}=\amp \sum_{[\mathfrak{b}] \in \Cl(K)} \varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right)=\sum_{[\mathfrak{b}] \in Cl(K)} \varphi((\beta,[\mathfrak{b}]))=P \end{aligned} 
             | so by Galois theory once again we deduce that #[m P \in E(\mathbb{Q})]
 
         p
@@ -1767,7 +1769,7 @@ section#sec-gz-applications-i
                     | This m should be very close to an integer, or at least to a rational number with small denominator.
 
                 li
-                    | Find List of Forms below, compute a list #[m L] of #[m |C l(K)|] representatives #[m (A, B, C)] of classes of positive definite quadratic forms of discriminant #[m D], where #[m A] must be chosen divisible by #[m N] and minimal, and #[m B \equiv \beta(\bmod 2 N)] (this is always possible). Whenever possible pair elements #[m (A, B, C)] and #[m \left(A^{\prime}, B^{\prime}, C^{\prime}\right)] of this list such that #[m \left(A^{\prime}, B^{\prime}, C^{\prime}\right)] is equivalent to #[m (C N, B, A / N)] by computing the unique canonical reduced form equivalent to each.
+                    | Find List of Forms below, compute a list #[m L] of #[m |\Cl(K)|] representatives #[m (A, B, C)] of classes of positive definite quadratic forms of discriminant #[m D], where #[m A] must be chosen divisible by #[m N] and minimal, and #[m B \equiv \beta(\bmod 2 N)] (this is always possible). Whenever possible pair elements #[m (A, B, C)] and #[m \left(A^{\prime}, B^{\prime}, C^{\prime}\right)] of this list such that #[m \left(A^{\prime}, B^{\prime}, C^{\prime}\right)] is equivalent to #[m (C N, B, A / N)] by computing the unique canonical reduced form equivalent to each.
                 li
                     me z=\sum_{(A, B, C) \in \mathcal{L}} \phi\left(\frac{-B+\sqrt{D}}{2 A}\right) \in \mathbb{C}
                     | taking a few more than #[m A d /(\pi \sqrt{|D|})] terms for #[m \phi ].
