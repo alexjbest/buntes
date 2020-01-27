@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES What is Abhyankar's conjecture?</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.13;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm{\textbf{#1}}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ur}{\mathrm{ur}}
+\newcommand{\tamer}{\mathrm{tr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+\newcommand{\semis}{\mathrm{ss}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-buntes-abyhankar.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-abyhankar.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-buntes-abyhankar.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-abyhankar.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+<li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
+<li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">Wrap Up of Non-Archimedean Local Heights (Sachi)</a></li>
+<li><a href="sec-gz-rankin-selberg.html" data-scroll="sec-gz-rankin-selberg">Rankin-Selberg (Aash)</a></li>
+<li><a href="sec-gz-applications-i.html" data-scroll="sec-gz-applications-i">A gallimaufry of applications (of Gross-Zagier) I (Alex)</a></li>
+<li><a href="sec-gz-applications-ii.html" data-scroll="sec-gz-applications-ii">A gallimaufry of applications (of Gross-Zagier) II (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is" class="active">What is Abhyankar's conjecture?</a></li></ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-abhyankar-what-is"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.1</span> <span class="title">What is Abhyankar's conjecture?</span>
+</h2>
+<a href="sec-abhyankar-what-is.html" class="permalink">¶</a><p id="p-1567">Consider the humble line, \(\aff^1\text{,}\) its \(\CC\) or \(\RR\) points with the “classical”/analytic topology are simply connected. Therefore there are no nontrivial finite covers.</p>
+<p id="p-1568">What happens in characteristic \(p\text{?}\)</p>
+<p id="p-1569">First we need to make the question precise, we need to define “covers” in a way that makes sense and try to define “topology” in a way that is non-trivial.</p>
+<p id="p-1570">It would be good to define a notion of topology that is defined algebraically, and recovers the usual fundamental group of the \(\CC\)-points for a curve over \(\CC\text{.}\)</p>
+<p id="p-1571">But first are there any “topological” covers of the affine line in characteristic \(p\text{.}\) We can easily make covers, just take any curve \(C \subseteq \aff^2 \to \aff^1\text{.}\)</p>
+<p id="p-1572">In general though these will be ramified, i.e. there will be points where the tangent line is perpendicular to the projection, this messes things up as Bezouts theorem will give us less geometric points. So not topological, like a parabola:</p>
+<div class="displaymath">
+\begin{equation*}
+V(y^2 - y = x - 1) \xrightarrow{x} \aff^1
+\end{equation*}
+</div>
+<p id="p-1573">To see where a cover is ramified  algebraically we take the derivative</p>
+<div class="displaymath">
+\begin{equation*}
+2y - 1 = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">hence \(y = 1/2\) and so \(x= 3/4\) is a ramified point. So this is ramified at \((3/4,1/2)\) above \(3/4\text{.}\) Not a topological cover!</p>
+<p id="p-1574">Hence \(V( y = x^{3423} + 12x + 1) \xrightarrow{x} \aff^1\) is an unramified cover, but it is trivial.</p>
+<p id="p-1575">In characteristic \(p\) though weirdness ensues, take characteristic \(2\text{.}\) The derivative above</p>
+<div class="displaymath">
+\begin{equation*}
+2y - 1 = 1
+\end{equation*}
+</div>
+<p data-braille="continuation">never vanishes! Hence there is no ramification locus.</p>
+<p id="p-1576">This can of course be generalised, an <dfn class="terminology">Artin-Schreier</dfn> cover in characteristic \(p\) is</p>
+<div class="displaymath">
+\begin{equation*}
+y^p - y - x = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">it is an unramified \(p\)-to-one cover.</p>
+<p id="p-1577">Given a topological cover the group of deck transformations of the cover gives a quotient of the fundamental group of the base.</p>
+<p id="p-1578">In the Artin-Schreier example we have a transformation of the cover given by</p>
+<div class="displaymath">
+\begin{equation*}
+y \mapsto y + 1
+\end{equation*}
+</div>
+<p data-braille="continuation">as in characteristic \(p\) we have.</p>
+<div class="displaymath">
+\begin{equation*}
+(y+1)^p - (y+1) - x = y^ p + 1 - 1 -y   -x = 0\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We can iterate this, giving a cyclic group of order \(p\) as the group of deck transformations.</p>
+<p id="p-1579">This says that the “fundamental group of the affine line in characteristic p contains the cyclic group of order p!” The line has non-trivial fundamental group.</p>
+<p id="p-1580">More generally note that</p>
+<div class="displaymath">
+\begin{equation*}
+y^q - y - x = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(q = p^n\) has the same property, but now we can add any element of \(\FF_{q}\) to \(y\) so the group of deck transformations is</p>
+<div class="displaymath">
+\begin{equation*}
+\FF_q \simeq (\ZZ/p)^n
+\end{equation*}
+</div>
+<p data-braille="continuation">we can do this for all \(n\text{.}\) This shows that the fundamental group of the affine line in characteristic \(p\) is not even topologically finitely generated! So even the affine line in characteristic \(p\) is wilder than any punctured curve in characteristic \(0\text{.}\)</p>
+<p id="p-1581">Clearly there characteristic \(p\) gave us a \(p\)-group in the fundamental group. Can we ever get anything other than a \(p\)-group?</p>
+<article class="example example-like" id="example-84"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar.</span>
+</h6>
+<p id="p-1582">The curve</p>
+<div class="displaymath">
+\begin{equation*}
+y^n - a x^s y^{t} + 1 = 0 \xrightarrow{x} \aff^1
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(a \ne 0 \in k\text{,}\) \(n = p + t\text{,}\) \(t \not \equiv 0 \pmod p\text{.}\) Is ramified where</p>
+<div class="displaymath">
+\begin{equation*}
+n y ^{n-1} - a x^s ty^{t-1} =  0\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">but</p>
+<div class="displaymath">
+\begin{equation*}
+t y ^{n-1} - a x^s ty^{t-1} = 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+y ^{n-1} - a x^s y^{t-1} = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">but in that case</p>
+<div class="displaymath">
+\begin{equation*}
+(y ^{n-1} - a x^s y^{t-1})y = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">which gives \(0 = 1\text{!}\)</p></article><p id="p-1583">We will define our fundamental group using these coverings, . A topological covering map is one that locally looks like a homeomorphism. For instance we can define a topological cover of \(\CC \smallsetminus \{0\}\) by itself using the algebraic map</p>
+<div class="displaymath">
+\begin{equation*}
+z\mapsto z^2
+\end{equation*}
+</div>
+<p data-braille="continuation">or even</p>
+<div class="displaymath">
+\begin{equation*}
+z \mapsto z^n\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This works nicely as this map is locally a diffeomorphism.</p>
+<article class="definition definition-like" id="definition-140"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-1584">An <dfn class="terminology">étale map</dfn> is one which is flat and unramified.</p></article><p id="p-1585">How is this number theoretic?</p>
+<p id="p-1586">There is a strong analogy between curves over finite fields, and dedekind rings, such as rings of integers of number fields Both give examples of dedekind schemes, dimension 1,... PICTURE. Back to Weil.</p>
+<p id="p-1587">On the side of function fields we have</p>
+<div class="displaymath">
+\begin{equation*}
+\FF_p((t)) \leftrightarrow \QQ
+\end{equation*}
+</div>
+<p data-braille="continuation">the function field of \(\aff^1_{\FF_p}\) and the function field of \(\Spec \ZZ\text{.}\)</p>
+<p id="p-1588">Covers of curves give us extensions of function fields. E.g. the Artin-Schreier covers on the left</p>
+<p id="p-1589">Spec of quadratic field like a hyperelliptic covering map.</p>
+<p id="p-1590">So the question of what covers we can have is like what field extensions can we have.</p>
+<p id="p-1591">More intriguingly the automorphisms of the cover, the covering group corresponds to galois automorphisms.</p>
+<p id="p-1592">On a hyperelliptic curve \(y=\sqrt{x^3+ 1} \leftrightarrow -y\) and \(\sqrt{2}\leftrightarrow - \sqrt{2} \text{.}\)</p>
+<p id="p-1593">So what covering groups translates into what Galois groups. So the question, what are the galois groups of covers of \(\aff^1_{\FF_p}\) and how do they fit together is like what are the possible galois groups of Galois extensions \(K/\QQ\text{.}\)</p>
+<p id="p-1594">To get a handle on what Galois groups can occur, we might take inspiration from number theory where we add conditions to get a quotient group, i.e. it is known the Galois groups of abelian extensions of \(\QQ\text{.}\)</p>
+<article class="definition definition-like" id="definition-141"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Decomposition and Inertia groups.</span>
+</h6>
+<p id="p-1595">Given a galois cover of curves</p>
+<div class="displaymath">
+\begin{equation*}
+\phi \colon C \to C'
+\end{equation*}
+</div>
+<p data-braille="continuation">we can fix a</p>
+<div class="displaymath">
+\begin{equation*}
+P \in C',\,Q\in \phi \inv (P)
+\end{equation*}
+</div>
+<p data-braille="continuation">then define the <dfn class="terminology">decomposition group</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+D_Q  = \{f \in \Gal C {C'} : f(Q) = Q\}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We also define the <dfn class="terminology">inertia group</dfn> to be the subgroup</p>
+<div class="displaymath">
+\begin{equation*}
+I_Q \subseteq D_Q
+\end{equation*}
+</div>
+<p data-braille="continuation">that fixes the residue field. For now we work over an algebraically closed field and so these are equal.</p></article><article class="example example-like" id="example-85"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-1596">Consider curves over \(\QQ\)</p>
+<div class="displaymath">
+\begin{equation*}
+V(y^2 = x) \xrightarrow{x} \aff^1
+\end{equation*}
+</div>
+<p data-braille="continuation">this is a (ramified at 0) double cover, with Galois group \(C_2\) given by \(y \mapsto -y\text{.}\) Given \(2 \in \aff^1\text{,}\) the preimage is the set of closed point</p>
+<div class="displaymath">
+\begin{equation*}
+\{ (y^2 - 2)\}
+\end{equation*}
+</div>
+<p data-braille="continuation">so there is only one preimage and the decomposition group is everything, however the morphism on the residue field</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ(\sqrt 2)
+\end{equation*}
+</div>
+<p data-braille="continuation">is nontrivial, so the inertia group is trivial.</p></article><p id="p-1597">Note that our maps are etale covers of \(\aff^1\text{,}\) but this allows the ramification to still be at infinity. We complete an affine curve to obtain a proper one with the same function field. In this case</p>
+<div class="displaymath">
+\begin{equation*}
+\aff^1 \subseteq \PP^1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">In general denote this as</p>
+<div class="displaymath">
+\begin{equation*}
+C \leadsto \overline C
+\end{equation*}
+</div>
+<p data-braille="continuation">and call the points of</p>
+<div class="displaymath">
+\begin{equation*}
+\overline C \smallsetminus C
+\end{equation*}
+</div>
+<p data-braille="continuation">“at infinity”.</p>
+<article class="definition definition-like" id="definition-142"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-1598">When over a field of characteristic \(p\text{,}\) ramification at a point \(P\) is called <dfn class="terminology">tame</dfn> when</p>
+<div class="displaymath">
+\begin{equation*}
+p\nmid |I_P|\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">in characteristic \(0\) we say it is \(p\)-tame if the same holds.</p></article><p id="p-1599">We then define</p>
+<div class="displaymath">
+\begin{equation*}
+\pi_1^{p-tame}(C) = \varprojlim_{C' \to C\text{tame ram. abv. } \overline C - C} \Gal {C'}{C}
+\end{equation*}
+</div>
+<p data-braille="continuation">and likewise</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1^t\text{.}
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="theorem-102"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-1600">Let \(X\) be curve over \(k\) and \(\mathcal X\) a lift to characteristic 0 then</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1^{p-tame} (\mathcal X - \mathcal S) \twoheadrightarrow \pi _1^t(X-S)
+\end{equation*}
+</div>
+<p data-braille="continuation">and their quotients by the unions of their \(p\)-Sylows</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1^{p-tame} (\mathcal X - \mathcal S)\simeq \pi _1^t(X-S)\text{.}
+\end{equation*}
+</div></article><p id="p-1601">Seeing as we “understand” fundamental groups of curves in characteristic zero, punctured riemann surfaces so generated by</p>
+<div class="displaymath">
+\begin{equation*}
+2g + |S| - 1
+\end{equation*}
+</div>
+<p data-braille="continuation">loops. This result implies that after we get rid of \(p\)-Sylow stuff we should end up with just those generators.</p>
+<p id="p-1602">Then we have</p>
+<p id="p-1603">From zbmath for serre's Let K be an algebraically closed field of characteristic \(p\gt 0\text{.}\) In the paper Coverings of algebraic curves, Am. J. Math. 79, 825-856 (1957; Zbl 0087.036), S. Abhyankar proved that the automorphism group of an étale Galois cover of the affine line over K is generated by its \(p\)-Sylow subgroups and conjectures that the converse should be true, namely that if a finite group G is generated by its p-Sylow subgroups then there exists an étale Galois cover of the affine line over K with Galois group G. The author proves a weaker form of this conjecture, i.e. the following theorem: Let G be a finite group that is generated by its p-Sylow subgroups, let N be a normal subgroup of G and let G be the quotient group \(G/N\text{.}\) Assume that N is solvable and that G is the Galois group of an étale cover of the affine line. - Under these assumptions there exists an étale Galois cover of the affine line over K with Galois group G. In particular, this result implies Abhyankar’s conjecture for a solvable group.</p>
+<article class="theorem theorem-like" id="thm-abhyankar-aff"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar's conjecture for \(\aff^1\).</span>
+</h6>
+<p id="p-1604">Let \(G\) be  such that \(G/p(G)\) (the quotient by the subgroup generated by its Sylow subgroups) is trivial (a quasi-\(p\) group). Then there exists an etale cover of \(\aff^1\) with Galois group \(G\text{.}\)</p></article><p id="p-1605">What does it mean to be generated by \(p\)-Sylow? Its complicated, but for instance</p>
+<div class="displaymath">
+\begin{equation*}
+S_n
+\end{equation*}
+</div>
+<p data-braille="continuation">is generated by transpositions and</p>
+<div class="displaymath">
+\begin{equation*}
+A_n
+\end{equation*}
+</div>
+<p data-braille="continuation">is generated by 3-cycles.</p>
+<p id="p-1606">Meanwhile \(S_n\) is not solvable for \(n \ge 5\) (hence the general quintic isn't, Abel-Ruffini).</p>
+<p id="p-1607">More generally we can generate \(A_n\) for \(n\ge 5\) with the subgroup of \(p\)-cycles for any \(p\) as it is simple and the subgroup is normal.</p>
+<p id="p-1608">Another example is \(\SL_n(\FF_p)\) which is quasi-\(p\) as it is generated by elementary matrices, \(\PSL_n(\FF_p)\) is simple for large enough parameters. What about swapping?</p>
+<p id="p-1609">Even more generally any finite simple group for which \(p\) divides the order is a quasi-\(p\)-group.</p>
+<p id="p-1610">For instance therefore we should be able to find a monster group cover of the affine line when</p>
+<div class="displaymath">
+\begin{equation*}
+p\in\{ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 47, 59, 71\}\text{.}
+\end{equation*}
+</div>
+<p id="p-1611">What can we not do then?</p>
+<article class="example example-like" id="example-86"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.8</span><span class="period">.</span>
+</h6>
+<p id="p-1612">The group</p>
+<div class="displaymath">
+\begin{equation*}
+\ZZ/p \times \ZZ/q
+\end{equation*}
+</div>
+<p data-braille="continuation">for primes \(p\ne q\) is not quasi-\(p\) or quasi-\(q\text{,}\) thus even though it is abelian, solvable and easy to make as a Galois group over \(\QQ\) we cannot obtain it here.</p></article><article class="theorem theorem-like" id="thm-abhyankar"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar's conjecture.</span>
+</h6>
+<p id="p-1613">Let \(G\) be a finite group such that \(G/p(G)\) (the quotient by the subgroup generated by its Sylow subgroups) is generated by \(t\) elements. Let \(X/\FF_p\) be a smooth projective curve of genus \(g\text{,}\) \(S\subset X\) a finite set of points with</p>
+<div class="displaymath">
+\begin{equation*}
+2g + |S| - 1 \ge t\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then there exists an etale cover of \(X\smallsetminus S\) with Galois group \(G\text{.}\)</p></article><article class="remark remark-like" id="remark-47"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-1614">This conjecture implies the first, taking \(t = 0\) we have \(g = 0\text{,}\) \(S = \{\infty \}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+0 + 1 -1 = 0\text{.}
+\end{equation*}
+</div>
+<p id="p-1615">Note that it is tight also we cannot remove \(t \gt 0\) points.</p></article><article class="example example-like" id="example-87"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.11</span><span class="period">.</span>
+</h6>
+<p id="p-1616">Over a once-punctured affine line we can now make non-quasi-\(p\)-groups as long as they aren't too far. For instance we can make \(\ZZ/\ell\) for any \(\ell \ne p\) as</p>
+<div class="displaymath">
+\begin{equation*}
+V(y^\ell  - x) \xrightarrow{x} \aff^1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This has the right Galois  group and is ramified only at \(0, \infty \text{.}\)</p></article><article class="example example-like" id="example-88"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.12</span><span class="period">.</span>
+</h6>
+<p id="p-1617">But we can't get \(\ZZ/\ell \times \ZZ/\ell\) without adding another ramification point.</p></article><article class="example example-like" id="example-89"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.13</span><span class="period">.</span>
+</h6>
+<p id="p-1618">We can stack an Artin-Schreier extension on a Kummeer</p>
+<div class="displaymath">
+\begin{equation*}
+x_l^\ell = x
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+y^p - y = x_1^d
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(\ell | (p-1)\text{,}\) \(p\nmid d\text{,}\) \(\ell\nmid d\text{.}\) Giving a degree \(\ell p\) cover. We then have automorphisms</p>
+<div class="displaymath">
+\begin{equation*}
+\tau  \colon  x_1\mapsto x_1,\, y \mapsto y + 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sigma \colon  x_1\mapsto \zeta _\ell x_1,\, y \mapsto \zeta _\ell^d y
+\end{equation*}
+</div>
+<p data-braille="continuation">but</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma \tau \sigma^{-1}(y)=y+\zeta_{\ell}^{-d} \neq \tau(y)
+\end{equation*}
+</div>
+<p data-braille="continuation">so the Galois group is the semidirect product</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbb{Z} / p \rtimes \mathbb{Z} / \ell\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Above \(\infty \) this is totally ramified, so \(D_\infty  = G\text{.}\) Is a non-cyclic decomposition group!</p></article><p id="p-1619">Why might you care? Spiritual connection to (one of the) most important questions in number theory, what is</p>
+<div class="displaymath">
+\begin{equation*}
+\absgal \QQ
+\end{equation*}
+</div>
+<p data-braille="continuation">conjectured that every finite group appears as a quotient, the inverse Galois problem.</p>
+<p id="p-1620">This is proved for solvable groups by Shafarevich, and many other inst resting examples of simple groups.</p>
+<p id="p-1621">Here the analogous question is what is</p>
+<div class="displaymath">
+\begin{equation*}
+\varprojlim_{S} \pi _1(\PP^1\smallsetminus S) \simeq \operatorname{Gal}\left(k(\PP^1)^{\operatorname{sep}} / k(\PP^1)\right)\text{?}
+\end{equation*}
+</div>
+<p data-braille="continuation">Where we allow more and more ramification.</p>
+<p id="p-1622">Or changing base for \(X\) a proper curve</p>
+<div class="displaymath">
+\begin{equation*}
+\varprojlim_{S} \pi _1(X\smallsetminus S) \simeq \operatorname{Gal}\left(k(X)^{\operatorname{sep}} / k(X)\right)\text{?}
+\end{equation*}
+</div>
+<p id="p-1623">That of what is</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1^\et(\aff^1)
+\end{equation*}
+</div>
+<p data-braille="continuation">is more like what is</p>
+<div class="displaymath">
+\begin{equation*}
+\Gal{\QQ_{\{2\}}}\QQ\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Where \(\QQ_{\{2\}}\) is the maximal extension of \(\QQ\) ramified at 2 only.</p>
+<article class="conjecture theorem-like" id="conjecture-6"><h6 class="heading">
+<span class="type">Conjecture</span><span class="space"> </span><span class="codenumber">7.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar's Inertia Conjecture.</span>
+</h6>
+<p id="p-1624">Let \(G\) be a finite quasi-p group. Let \(G_{0}\) be a subgroup of \(G\) which is an extension of a cyclic group of order prime-to-p by a p-group \(G_{1}\text{.}\) Then \(G_{0}\) occurs as an inertia group for a \(G\) - Galois cover of the projective line branched only at \(\infty \)  if and only if the conjugates of \(G_1\) generate \(G\)</p></article><p id="p-1625">the motivation for this comes from the fact that in characteristic 0 the inertia groups generate the Galois  group.</p>
+<p id="p-1626">If \(K\) is a finite field, then its algebraic closure \(\bar K\) is an infinite Galois extension of \(K\) whose finite subextensions all have cyclic Galois groups over \(K\text{.}\) This suggests that replacing the algebraically closed field of constants \(k\) by a finite subfield \(K\) adds a generator to the fundamental group of an affine curve, somewhat like the effect of deleting a point. This perspective motivated:</p>
+<article class="conjecture theorem-like" id="conjecture-7"><h6 class="heading">
+<span class="type">Conjecture</span><span class="space"> </span><span class="codenumber">7.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar's Affine Arithmetical Conjecture.</span>
+</h6>
+<p id="p-1627">A finite group \(A\) occurs as the Galois group of an unramified cover of the affine line over \(\mathbb{F}_{p}\) if and only if it occurs as the Galois group of an unramified cover of \(\mathbb{A}_{k}^{1}-\{0\}\) (in other words, if and only if \(A / p(A)\) is cyclic).</p></article></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
+</body>
+</html>

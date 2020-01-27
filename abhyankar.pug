@@ -1,0 +1,361 @@
+title Abhyankar's conjecture
+
+introduction
+    p
+        | What is the goal of the seminar?
+    p
+        | It's up to everyone, we can obviously be flexible as we go, but:
+    p
+        | Understand: the meaning of Abhyankar's conjecture, get some insight on the geometric perspective on Galois groups, statements of some useful tools and theories that come up in the proof and are generally useful to know (smattering of rigid geometry, some theorems about etale maps, general stuff on char p geometry), and learn something of the proof, how can rigid geometry tell us about characteristic p geometry?
+    p
+        | In particular we won't go into detail on proofs of fancy things like Rigid GAGA, but we will spend the last few lectures on various stages of the proof.
+
+
+section#sec-abhyankar-what-is
+    title What is Abhyankar's conjecture?
+
+    p
+        | One reference is #[(url(href="https://www.math.upenn.edu/~harbater/abhsurvey.pdf") Abhyankar's Conjectures In Galois Theory: Current Status And Future Directions] by David Harbater, Andrew Obus, Rachel Pries, And Katherine Stevenson.
+
+    p
+        | Consider the humble line, #[m \aff^1], its #[m \CC] or #[m \RR] points with the #[q classical]/analytic topology are simply connected.
+
+        | Therefore there are no nontrivial finite covers.
+
+    p
+        | What happens in characteristic #[m p]?
+    p
+        | First we need to make the question precise, we need to define #[q covers] in a way that makes sense and try to define #[q topology] in a way that is non-trivial.
+
+    p
+        | It would be good to define a notion of topology that is defined algebraically, and recovers the usual fundamental group of the #[m \CC]-points for a curve over #[m \CC].
+
+
+    p
+        | But first are there any #[q topological] covers of the affine line in characteristic #[m p].
+        | We can easily make covers, just take any curve #[m C \subseteq \aff^2 \to \aff^1].
+    p
+        | In general though these will be ramified, i.e. there will be points where the tangent line is perpendicular to the projection, this messes things up as Bezouts theorem will give us less geometric points. So not topological, like a parabola:
+        me V(y^2 - y = x - 1) \xrightarrow{x} \aff^1
+    p
+        | To see where a cover is ramified  algebraically we take the derivative
+        me 2y - 1 = 0
+        | hence #[m y = 1/2] and so #[m x= 3/4] is a ramified point.
+        | So this is ramified at #[m (3/4,1/2)] above #[m 3/4].
+        | Not a topological cover!
+
+
+    p
+        | Hence #[m V( y = x^{3423} + 12x + 1) \xrightarrow{x} \aff^1] is an unramified cover, but it is trivial.
+    p
+        | In characteristic #[m p] though weirdness ensues, take characteristic #[m 2].
+        | The derivative above
+        me 2y - 1 = 1
+        | never vanishes!
+        | Hence there is no ramification locus.
+        // TODO did it just move to infinity
+    p
+        | This can of course be generalised,
+        | an #[term Artin-Schreier] cover in characteristic #[m p] is
+        me y^p - y - x = 0
+        | it is an unramified #[m p]-to-one cover.
+    p
+        | Given a topological cover the group of deck transformations of the cover gives a quotient of the fundamental group of the base.
+    p
+        | In the Artin-Schreier example we have a transformation of the cover given by
+        me y \mapsto y + 1
+        | as in characteristic #[m p] we have.
+        me (y+1)^p - (y+1) - x = y^ p + 1 - 1 -y   -x = 0
+        | .
+        | We can iterate this, giving a cyclic group of order #[m p] as the group of deck transformations.
+    p
+        | This says that the #[q fundamental group of the affine line in characteristic p contains the cyclic group of order p!]
+        | The line has non-trivial fundamental group.
+
+    p
+        | More generally note that
+        me y^q - y - x = 0
+        | for #[m q = p^n] has the same property, but now we can add any element of #[m \FF_{q}] to #[m y] so the group of deck transformations is
+        me \FF_q \simeq (\ZZ/p)^n
+        | we can do this for all #[m n].
+        | This shows that the fundamental group of the affine line in characteristic #[m p] is not even topologically finitely generated!
+        | So even the affine line in characteristic #[m p] is wilder than any punctured curve in characteristic #[m 0].
+
+
+    p
+        | Clearly there characteristic #[m p] gave us a #[m p]-group in the fundamental group.
+        | Can we ever get anything other than a #[m p]-group?
+
+    example
+        title Abhyankar
+        statement: p
+            | The curve
+            me y^n - a x^s y^{t} + 1 = 0 \xrightarrow{x} \aff^1
+            | with #[m a \ne 0 \in k], #[m n = p + t], #[m t \not \equiv 0 \pmod p].
+            | Is ramified where
+            me n y ^{n-1} - a x^s ty^{t-1} =  0
+            | , but
+            me t y ^{n-1} - a x^s ty^{t-1} = 0
+            me y ^{n-1} - a x^s y^{t-1} = 0
+            | but in that case
+            me (y ^{n-1} - a x^s y^{t-1})y = 0
+            | which gives #[m 0 = 1]!
+
+
+
+    p
+        | We will define our fundamental group using these coverings, .
+        | A topological covering map is one that locally looks like a homeomorphism.
+        | For instance we can define a topological cover of #[m \CC \smallsetminus \{0\}] by itself using the algebraic map
+        me z\mapsto z^2
+        | or even
+        me z \mapsto z^n
+        | .
+        | This works nicely as this map is locally a diffeomorphism.
+
+    definition
+        statement: p
+            | An #[term étale map] is one which is flat and unramified.
+
+
+    p
+        | How is this number theoretic?
+    p
+        | There is a strong analogy between curves over finite fields, and dedekind rings, such as rings of integers of number fields
+        | Both give examples of dedekind schemes, dimension 1,...
+        | PICTURE.
+        | Back to Weil.
+
+    p
+        | On the side of function fields we have
+        me \FF_p((t)) \leftrightarrow \QQ
+        | the function field of #[m \aff^1_{\FF_p}] and the function field of #[m \Spec \ZZ].
+    p
+        | Covers of curves give us extensions of function fields.
+
+        | E.g. the Artin-Schreier covers on the left
+    p
+        | Spec of quadratic field like a hyperelliptic covering map.
+
+    p
+        | So the question of what covers we can have is like what field extensions can we have.
+
+    p
+        | More intriguingly the automorphisms of the cover, the covering group corresponds to galois automorphisms.
+    p
+        | On a hyperelliptic curve #[m y=\sqrt{x^3+ 1} \leftrightarrow -y] and #[m \sqrt{2}\leftrightarrow - \sqrt{2} ].
+
+    p
+        | So what covering groups translates into what Galois groups.
+        | So the question, what are the galois groups of covers of #[m \aff^1_{\FF_p}] and how do they fit together is like
+        | what are the possible galois groups of Galois extensions #[m K/\QQ].
+
+
+    p
+        | To get a handle on what Galois groups can occur, we might take inspiration from number theory where we add conditions to get a quotient group, i.e. it is known the Galois groups of abelian extensions of #[m \QQ].
+
+    definition
+        title Decomposition and Inertia groups
+        statement: p
+            | Given a galois cover of curves
+            me \phi \colon C \to C'
+            | we can fix a
+            me P \in C',\,Q\in \phi \inv (P)
+            | then define the #[term decomposition group]
+            me D_Q  = \{f \in \Gal C {C'} : f(Q) = Q\}
+            | .
+            | We also define the #[term inertia group] to be the subgroup
+            me I_Q \subseteq D_Q
+            | that fixes the residue field.
+            | For now we work over an algebraically closed field and so these are equal.
+
+    example
+        statement: p
+            | Consider curves over #[m \QQ]
+            me V(y^2 = x) \xrightarrow{x} \aff^1
+            | this is a (ramified at 0) double cover, with Galois group #[m C_2] given by #[m y \mapsto -y].
+            | Given #[m 2 \in \aff^1], the preimage is the set of closed point
+            me \{ (y^2 - 2)\}
+            | so there is only one preimage and the decomposition group is everything, however the morphism on the residue field
+            me \QQ(\sqrt 2)
+            | is nontrivial, so the inertia group is trivial.
+
+    p
+        | Note that our maps are etale covers of #[m \aff^1], but this allows the ramification to still be at infinity.
+        | We complete an affine curve to obtain a proper one with the same function field.
+        | In this case
+        me \aff^1 \subseteq \PP^1
+        |.
+        | In general denote this as
+        me C \leadsto \overline C
+        | and call the points of
+        me \overline C \smallsetminus C
+        | #[q at infinity].
+
+
+    definition
+        statement: p
+            | When over a field of characteristic #[m p], ramification at a point #[m P] is called #[term tame] when
+            me p\nmid |I_P|
+            | , in characteristic #[m 0] we say it is #[m p]-tame if the same holds.
+
+    p
+        | We then define
+        me \pi_1^{p-tame}(C) = \varprojlim_{C' \to C\text{tame ram. abv. } \overline C - C} \Gal {C'}{C}
+        | and likewise
+        me \pi _1^t
+        | .
+
+    theorem
+        statement: p
+            | Let #[m X] be curve over #[m k] and #[m \mathcal X] a lift to characteristic 0 then
+            me \pi _1^{p-tame} (\mathcal X - \mathcal S) \twoheadrightarrow \pi _1^t(X-S)
+            | and their quotients by the unions of their #[m p]-Sylows
+            me \pi _1^{p-tame} (\mathcal X - \mathcal S)\simeq \pi _1^t(X-S)
+            | .
+
+    p
+        | Seeing as we #[q understand] fundamental groups of curves in characteristic zero, punctured riemann surfaces so generated by
+        me 2g + |S| - 1
+        | loops.
+        | This result implies that after we get rid of #[m p]-Sylow stuff we should end up with just those generators.
+
+    p
+        | Then we have
+
+    p.
+        From zbmath for serre's 
+        Let K be an algebraically closed field of characteristic #[m p\gt 0]. In the paper Coverings of algebraic curves, Am. J. Math. 79, 825-856 (1957; Zbl 0087.036), S. Abhyankar proved that the automorphism group of an étale Galois cover of the affine line over K is generated by its #[m p]-Sylow subgroups and conjectures that the converse should be true, namely that if a finite group G is generated by its p-Sylow subgroups then there exists an étale Galois cover of the affine line over K with Galois group G.
+
+        The author proves a weaker form of this conjecture, i.e. the following theorem: Let G be a finite group that is generated by its p-Sylow subgroups, let N be a normal subgroup of G and let G be the quotient group #[m G/N]. Assume that N is solvable and that G is the Galois group of an étale cover of the affine line. - Under these assumptions there exists an étale Galois cover of the affine line over K with Galois group G.
+
+        In particular, this result implies Abhyankar’s conjecture for a solvable group.
+
+
+    theorem#thm-abhyankar-aff
+        title Abhyankar's conjecture for #[m \aff^1]
+        statement: p
+            | Let #[m G] be  such that #[m G/p(G)] (the quotient by the subgroup generated by its Sylow subgroups) is trivial (a quasi-#[m p] group).
+            | Then there exists an etale cover of #[m \aff^1] with Galois group #[m G].
+
+    p
+        | What does it mean to be generated by #[m p]-Sylow? Its complicated, but for instance
+        me S_n
+        | is generated by transpositions and
+        me A_n
+        | is generated by 3-cycles.
+    p
+        | Meanwhile #[m S_n] is not solvable for #[m n \ge 5] (hence the general quintic isn't, Abel-Ruffini).
+    p
+        | More generally we can generate #[m A_n] for #[m n\ge 5] with the subgroup of #[m p]-cycles for any #[m p] as it is simple and the subgroup is normal.
+    p
+        | Another example is #[m \SL_n(\FF_p)] which is quasi-#[m p] as it is generated by elementary matrices, #[m \PSL_n(\FF_p)] is simple for large enough parameters. What about swapping?
+    p
+        | Even more generally any finite simple group for which #[m p] divides the order is a quasi-#[m p]-group.
+    p
+        | For instance therefore we should be able to find a monster group cover of the affine line when
+        me p\in\{ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 47, 59, 71\}
+        |.
+
+
+    p
+        | What can we not do then?
+    example
+        statement: p
+            | The group
+            me \ZZ/p \times \ZZ/q
+            | for primes #[m p\ne q] is not quasi-#[m p] or quasi-#[m q], thus even though it is abelian, solvable and easy to make as a Galois group over #[m \QQ] we cannot obtain it here.
+
+
+    theorem#thm-abhyankar
+        title Abhyankar's conjecture
+        statement: p
+            | Let #[m G] be a finite group such that #[m G/p(G)] (the quotient by the subgroup generated by its Sylow subgroups) is generated by #[m t] elements.
+            | Let #[m X/\FF_p] be a smooth projective curve of genus #[m g], #[m S\subset X] a finite set of points with
+            me 2g + |S| - 1 \ge t
+            | .
+            | Then there exists an etale cover of #[m X\smallsetminus S] with Galois group #[m G].
+
+    remark
+        p
+            | This conjecture implies the first, taking #[m t = 0] we have #[m g = 0], #[m S = \{\infty \}] and
+            me 0 + 1 -1 = 0
+            | .
+        p
+            | Note that it is tight also we cannot remove #[m t \gt 0] points.
+
+
+    example
+        statement: p
+            | Over a once-punctured affine line we can now make non-quasi-#[m p]-groups as long as they aren't too far.
+            | For instance we can make #[m \ZZ/\ell] for any #[m \ell \ne p] as
+            me V(y^\ell  - x) \xrightarrow{x} \aff^1
+            | .
+            | This has the right Galois  group and is ramified only at #[m 0, \infty ].
+
+    example
+        statement: p
+            | But we can't get #[m \ZZ/\ell \times \ZZ/\ell] without adding another ramification point.
+
+    example
+        statement: p
+            | We can stack an Artin-Schreier extension on a Kummeer
+            me x_1^\ell = x
+            me y^p - y = x_1^d
+            | with #[m \ell | (p-1)], #[m p\nmid d], #[m \ell\nmid d].
+            | Giving a degree #[m \ell p] cover. We then have automorphisms
+            me \tau  \colon  x_1\mapsto x_1,\, y \mapsto y + 1
+            me  \sigma \colon  x_1\mapsto \zeta _\ell x_1,\, y \mapsto \zeta _\ell^d y
+            | but
+            me \sigma \tau \sigma^{-1}(y)=y+\zeta_{\ell}^{-d} \neq \tau(y)
+            | so the Galois group is the semidirect product
+            me \mathbb{Z} / p \rtimes \mathbb{Z} / \ell
+            | .
+            | Above #[m \infty ] this is totally ramified, so #[m D_\infty  = G]. Is a non-cyclic decomposition group!
+
+
+
+    p
+        | Why might you care?
+        | Spiritual connection to (one of the) most important questions in number theory, what is
+        me \absgal \QQ
+        | conjectured that every finite group appears as a quotient, the inverse Galois problem.
+    p
+        | This is proved for solvable groups by Shafarevich, and many other inst resting examples of simple groups.
+    p
+        | Here the analogous question is what is
+        me \varprojlim_{S} \pi _1(\PP^1\smallsetminus S) \simeq \operatorname{Gal}\left(k(\PP^1)^{\operatorname{sep}} / k(\PP^1)\right)
+        | ?
+        | Where we allow more and more ramification.
+    p
+        | Or changing base for #[m X] a proper curve
+        me \varprojlim_{S} \pi _1(X\smallsetminus S) \simeq \operatorname{Gal}\left(k(X)^{\operatorname{sep}} / k(X)\right)
+        | ?
+    p
+        | That of what is
+        me \pi _1^\et(\aff^1)
+        | is more like what is
+        me \Gal{\QQ_{\{2\}}}\QQ
+        |. Where #[m \QQ_{\{2\}}] is the maximal extension of #[m \QQ] ramified at 2 only.
+
+
+    conjecture
+        title Abhyankar's Inertia Conjecture
+        statement: p
+            | Let #[m G] be a finite quasi-#[m p] group. Let #[m G_{0}] be a subgroup of #[m G] which is an extension of a cyclic group of order prime-to-p by a p-group #[m G_{1}]. Then #[m G_{0}] occurs as an inertia group for a #[m G] - Galois cover of the projective line branched only at #[m  \infty ]  if and only if the conjugates of #[m G_1] generate #[m G]
+
+    p
+        | The motivation for this comes from the fact that in characteristic 0 the inertia groups generate the Galois  group.
+
+    p
+        | If #[m K] is a finite field, then its algebraic closure #[m \bar K] is an infinite Galois extension of #[m K] whose finite subextensions all have cyclic Galois groups over #[m K]. This suggests that replacing the algebraically closed field of constants #[m k] by a finite subfield #[m K] adds a generator to the fundamental group of an affine curve, somewhat like the effect of deleting a point. This perspective motivated:
+
+
+    conjecture
+        title Abhyankar's Affine Arithmetical Conjecture
+        statement: p
+            | A finite group #[m G] occurs as the Galois group of an unramified cover of the affine line over #[m \mathbb{F}_{p}] if and only if it occurs as the Galois group of an unramified cover of #[m \aff_{k}^{1}-\{0\}] (in other words, if and only if #[m G / p(G)] is cyclic).
+
+
+    p
+        | Both of these last two conjectures remain open I believe.

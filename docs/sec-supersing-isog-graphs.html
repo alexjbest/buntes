@@ -50,20 +50,23 @@ MathJax.Hub.Config({
                            languages: ['sage'],
                            evalButtonText: 'Evaluate (Sage)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.12;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -123,7 +126,7 @@ var js_version = 0.12;
 \newcommand{\subgroup}{\mathrel{\subseteq}}
 
 \newcommand{\cat}[1]{\mathcal{#1}}
-\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\catname}[1]{{\mathrm{\textbf{#1}}}}
 \newcommand{\Rings}{\mathrm{Rings}}
 
 \newcommand{\Ar}{\mathrm{Ar}}
@@ -154,6 +157,8 @@ var js_version = 0.12;
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\un}{\mathrm{un}}
 \newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ur}{\mathrm{ur}}
+\newcommand{\tamer}{\mathrm{tr}}
 \newcommand{\ns}{\mathrm{ns}}
 \newcommand{\op}{\mathrm{op}}
 \newcommand{\pre}{\mathrm{pre}}
@@ -164,6 +169,7 @@ var js_version = 0.12;
 \newcommand{\St}{\mathrm{St}}
 \newcommand{\tors}{\mathrm{tors}}
 \newcommand{\transpose}{\mathrm{T}}
+\newcommand{\semis}{\mathrm{ss}}
 
 
 \DeclareMathOperator{\Ann}{Ann}
@@ -372,6 +378,9 @@ var js_version = 0.12;
 <li><a href="sec-gz-applications-ii.html" data-scroll="sec-gz-applications-ii">A gallimaufry of applications (of Gross-Zagier) II (Alex)</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture?</a></li></ul>
+</li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -383,8 +392,8 @@ var js_version = 0.12;
 <span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">Background</span>
 </h3>
 <a href="sec-supersing-isog-graphs.html#subsec-supersing-isog-background" class="permalink">¶</a><p id="p-786">Let \(k = \FF_q\text{,}\) \(\characteristic (k) = p \ne 2,3\text{.}\)</p>
-<article class="definition-like" id="def-supersing-isog-ec"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.1.1</span>. <span class="title">Elliptic curves.</span>
+<article class="definition definition-like" id="def-supersing-isog-ec"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Elliptic curves.</span>
 </h6>
 <p id="p-787">An <dfn class="terminology">elliptic curve</dfn> \(E/k\) is a smooth projective curve of genus 1 together with a point \(\infty \in E(k)\text{.}\)</p></article><p id="p-788">We can always write such a curve using a Weierstrass equation</p>
 <div class="displaymath">
@@ -392,9 +401,9 @@ var js_version = 0.12;
 E\colon y^2=  x^3  + ax  +b,\,a,b    \in k
 \end{equation*}
 </div>
-<p>\(E\) is really the projective closure of this affine equation.</p>
-<article class="definition-like" id="def-supersing-isog-j-inv"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.1.2</span>. <span class="title">\(j\)-invariants.</span>
+<p data-braille="continuation">\(E\) is really the projective closure of this affine equation.</p>
+<article class="definition definition-like" id="def-supersing-isog-j-inv"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(j\)-invariants.</span>
 </h6>
 <p id="p-789">The \(j\)-invariant of an elliptic curve \(E\) is</p>
 <div class="displaymath">
@@ -402,8 +411,9 @@ E\colon y^2=  x^3  + ax  +b,\,a,b    \in k
 j(E) = j(a,b) = 1728 \frac{4a^3}{4a^3 + 27b^2}
 \end{equation*}
 </div>
-<p>doesn't depend on the choice of Weierstrass equation.</p></article><article class="theorem-like" id="fact-7"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">3.1.3</span>.</h6>
+<p data-braille="continuation">doesn't depend on the choice of Weierstrass equation.</p></article><article class="fact theorem-like" id="fact-7"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h6>
 <ol id="p-790" class="decimal">
 <li id="li-182">\(E,E'\) are isomorphic over \(\overline k \iff j(E)  = j(E')\text{.}\)</li>
 <li id="li-183">There is a 1-1 correspondence<div class="displaymath">
@@ -412,11 +422,12 @@ k \leftrightarrow \overline k \text{-isomorphism classes of EC's }/k\text{.}
 \end{equation*}
 </div>
 </li>
-</ol></article><article class="definition-like" id="def-supersing-isog-isog"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.1.4</span>. <span class="title">Isogenies.</span>
+</ol></article><article class="definition definition-like" id="def-supersing-isog-isog"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Isogenies.</span>
 </h6>
-<p id="p-791">Let \(E,E'/k\) be elliptic curves. An <dfn class="terminology">isogeny</dfn>, \(\phi \colon E\to E'\) is a non-constant morphism of pointed curves. The degree \(\deg \phi \) is the degree as a morphism. \(E,E'\) are said to be \(n\)-isogenous if there exists \(\phi\colon E\to E'\) of degree \(n\text{.}\) \(j,j'\in k\) are \(n\)-isogenous if the corresponding elliptic curves are.</p></article><article class="theorem-like" id="fact-8"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">3.1.5</span>.</h6>
+<p id="p-791">Let \(E,E'/k\) be elliptic curves. An <dfn class="terminology">isogeny</dfn>, \(\phi \colon E\to E'\) is a non-constant morphism of pointed curves. The degree \(\deg \phi \) is the degree as a morphism. \(E,E'\) are said to be \(n\)-isogenous if there exists \(\phi\colon E\to E'\) of degree \(n\text{.}\) \(j,j'\in k\) are \(n\)-isogenous if the corresponding elliptic curves are.</p></article><article class="fact theorem-like" id="fact-8"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+</h6>
 <ol id="p-792" class="decimal">
 <li id="li-184">If \(p \nmid n = \deg \phi\) then the kernel of \(\phi\) has size \(n\) (\(\phi\) is separable).</li>
 <li id="li-185">every finite subgoup of \(E(\overline k )\) is the kernel of a separable isogeny from \(E\text{,}\) unique up to isomorphism.</li>
@@ -430,9 +441,10 @@ k \leftrightarrow \overline k \text{-isomorphism classes of EC's }/k\text{.}
 E\lb n \rb = \left\{ P \in E(\overline k) : nP = \infty\right\}
 \end{equation*}
 </div>is isomorphic to \((\ZZ/n)^2\) if \(p\nmid n\text{.}\)</li>
-</ol></article><article class="theorem-like" id="lemma-16"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">3.1.6</span>.</h6>
-<p id="p-793">Let \(E/k\) be an elliptic curve with \(j(E) \not\in\{0,1728\}\) and let \(l\ne p\) be prime, up to isomorphism the number of \(l\)-isogenies from \(E\) defined over \(k\) is 0,1,2 or \(l+1\text{.}\)</p></article><article class="hiddenproof" id="proof-104"><a data-knowl="" class="id-ref" data-refid="hk-proof-104"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-104"><article class="hiddenproof"><p id="p-794">In Maria's notes.</p></article></div>
+</ol></article><article class="lemma theorem-like" id="lemma-16"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-793">Let \(E/k\) be an elliptic curve with \(j(E) \not\in\{0,1728\}\) and let \(l\ne p\) be prime, up to isomorphism the number of \(l\)-isogenies from \(E\) defined over \(k\) is 0,1,2 or \(l+1\text{.}\)</p></article><article class="hiddenproof" id="proof-104"><a data-knowl="" class="id-ref original" data-refid="hk-proof-104"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-104"><article class="hiddenproof"><p id="p-794">In Maria's notes.</p></article></div>
 <article class="paragraphs" id="paragraphs-23"><h5 class="heading"><span class="title">The modular equation.</span></h5>
 <p id="p-795">Let \(j(\tau)\) be the modular \(j\)-function. For each prime \(l\) the minimal polynomial \(\phi_l\) of \(j(l\tau)\) over \(\CC (j(\tau))\) is the modular polynomial</p>
 <div class="displaymath">
@@ -440,8 +452,9 @@ E\lb n \rb = \left\{ P \in E(\overline k) : nP = \infty\right\}
 \phi_l \in \ZZ[j(\tau)][y] \simeq \ZZ[x,y]\text{.}
 \end{equation*}
 </div>
-<article class="theorem-like" id="fact-9"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">3.1.7</span>.</h6>
+<article class="fact theorem-like" id="fact-9"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
+</h6>
 <ol id="p-796" class="decimal">
 <li id="li-188">\(\phi_l\) is symmetric in \(x,y\) and has a degree \(l+1\) in both variables.</li>
 <li id="li-189">The modular equation<div class="displaymath">
@@ -460,23 +473,25 @@ m_l(j,j') = m_l(j',j)\text{.}
 </div>
 </li>
 </ol></article></article><article class="paragraphs" id="paragraphs-24"><h5 class="heading"><span class="title">The endomorphism ring.</span></h5>
-<article class="definition-like" id="def-supersing-isog-endo"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.1.8</span>. <span class="title">Endomorphisms of elliptic curves.</span>
+<article class="definition definition-like" id="def-supersing-isog-endo"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Endomorphisms of elliptic curves.</span>
 </h6>
 <p id="p-797">An <dfn class="terminology">endomorphism</dfn> of an elliptic curve \(E\) is either the zero map or an isogeny from \(E\) to itself. They form a ring \(\End(E)\text{.}\)</p></article><p id="p-798">For \(n \in ZZ\) we ahve \(\lb n \rb \in \End(E)\) so \(\ZZ \subseteq \End(E)\) over a finite field \(k\text{,}\) \(\End(E)\) is always larger than \(\ZZ\text{.}\) It is either an order in an imaginary quadratic field, in which case we say \(E\) is ordinary. Or an order in an quaternion algebra, in which case we say \(E\) is supersingular. We say \(E\) has complex multiplication by \(\ints\text{.}\)</p>
-<article class="theorem-like" id="proposition-59"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">3.1.9</span>.</h6>
+<article class="proposition theorem-like" id="proposition-59"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
+</h6>
 <p id="p-799">Let \(E/k = \FF_{p^n}\) be an elliptic curve, TFAE</p>
 <ol class="decimal">
 <li id="li-191">\(E\) is supersingular.</li>
 <li id="li-192">\(E\lb p\rb\) is trivial.</li>
 <li id="li-193">The map \(\lb p\rb \colon E\to E\) is purely inseparable and \(j(E) \in \FF_{p^2}\text{.}\)</li>
-</ol></article><article class="remark-like" id="note-10"><h6 class="heading">
-<span class="type">Note</span> <span class="codenumber">3.1.10</span>.</h6>
+</ol></article><article class="note remark-like" id="note-10"><h6 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
+</h6>
 <p id="p-800">If \(E,E'\) are isogenous elliptic curves then \(\End(E) \otimes_\ZZ \QQ \simeq \End(E')\otimes_\ZZ \QQ\text{.}\) So supersingularity is preserved by isogenies.</p></article></article><article class="paragraphs" id="paragraphs-25"><h5 class="heading"><span class="title">Isogeny graphs of elliptic curves.</span></h5>
 <p id="p-801">Let \(k = \FF_q\) with \(\characteristic(k) = p\) and \(l \ne p \) be prime.</p>
-<article class="definition-like" id="def-supersing-isog-graph"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.1.11</span>. <span class="title">Isogeny graphs.</span>
+<article class="definition definition-like" id="def-supersing-isog-graph"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Isogeny graphs.</span>
 </h6>
 <p id="p-802">The \(l\)-isogeny graph \(G_l(k)\) is the directed graph with vertex set \(k\) and edges \((j,j')\) present with multiplicity</p>
 <div class="displaymath">
@@ -484,15 +499,15 @@ m_l(j,j') = m_l(j',j)\text{.}
 m_j(l,l') = \ord_{t=j} \phi_l(j,t)
 \end{equation*}
 </div>
-<p>vertices are \(\overline k\) isomorphism classes of  elliptic curves \(/k\text{,}\) edges are isomorphism classes of \(l\)-isogenies defined over \(k\text{.}\)</p></article><p id="p-803">Since \(m_l(j,j') =  m(j',j)\) whenever \(j,j' \ne  0,1728\) the subgraph of \(G_l(k)\) supported on \(k\smallsetminus \{0,1728\}\) can be thought of as undirected. By the last note \(G_l(k)\) consists of ordinary and supersingular components.</p></article><article class="paragraphs" id="paragraphs-26"><h5 class="heading"><span class="title">Supersingular isogeny graphs.</span></h5>
+<p data-braille="continuation">vertices are \(\overline k\) isomorphism classes of  elliptic curves \(/k\text{,}\) edges are isomorphism classes of \(l\)-isogenies defined over \(k\text{.}\)</p></article><p id="p-803">Since \(m_l(j,j') =  m(j',j)\) whenever \(j,j' \ne  0,1728\) the subgraph of \(G_l(k)\) supported on \(k\smallsetminus \{0,1728\}\) can be thought of as undirected. By the last note \(G_l(k)\) consists of ordinary and supersingular components.</p></article><article class="paragraphs" id="paragraphs-26"><h5 class="heading"><span class="title">Supersingular isogeny graphs.</span></h5>
 <p id="p-804">Since every supersingular \(j\)-invariant lives in \(\FF_{p^2}\) if \(E\) is supersingular all roots of \(\phi_l(j(E), y)\) live in \(\FF_{p^2}\text{.}\) Every vertex in a supersingular component has out-degree \(l+1\text{.}\)</p>
 <p id="p-805">Moreover by a result of Kohel \(G_l(\FF_{p^2})\) has only one supersingular component.</p>
 <p id="p-806">By the above if \(p \equiv 1 \pmod {12}\) then the supersingular component of \(G_l(\FF_{p^2})\) is an undirected \((l+1)\)-regular graph with around \(p/12\) vertices.</p>
-<article class="theorem-like" id="theorem-61"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.1.12</span>. <span class="title">Pizer.</span>
+<article class="theorem theorem-like" id="theorem-61"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Pizer.</span>
 </h6>
-<p id="p-807">The supersingular component of \(G_l(\FF_{p^2})\) is a Ramanujan graph.</p></article><article class="definition-like" id="def-supersing-isog-ramanujan"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.1.13</span>. <span class="title">Ramanujan graphs.</span>
+<p id="p-807">The supersingular component of \(G_l(\FF_{p^2})\) is a Ramanujan graph.</p></article><article class="definition definition-like" id="def-supersing-isog-ramanujan"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Ramanujan graphs.</span>
 </h6>
 <p id="p-808">A connected \(d\)-regular graph is a <dfn class="terminology">Ramanujan graph</dfn> if \(\lambda_2 \le \sqrt{d-1}\) where \(\lambda_2\) is the second largest eigenvalue of its adjacent matrix. (The largest one is always \(d\text{,}\) by \(d\)-regularity.)</p></article></article><article class="paragraphs" id="paragraphs-27"><h5 class="heading"><span class="title">Ordinary isogeny graphs.</span></h5>
 <p id="p-809">Let \(E/\FF_q\) be an ordinary elliptic curve, then \(\End(E) \simeq \ints\) is an order in an imaginary quadratic field \(K\) with \(\ZZ\lb \pi \rb \subseteq \ints \subseteq \ints_K\) where \(\pi\) is Frobenius and</p>
@@ -501,7 +516,7 @@ m_j(l,l') = \ord_{t=j} \phi_l(j,t)
 K = \QQ(\sqrt{(\trace \pi)^2 - 4q})
 \end{equation*}
 </div>
-<p>by Tate, isogenous elliptic curves have the same \(\trace \pi\text{.}\)</p>
+<p data-braille="continuation">by Tate, isogenous elliptic curves have the same \(\trace \pi\text{.}\)</p>
 <p id="p-810">We can separate the vertices in the component \(V\) of \(G_l(k)\) containing \(j(E)\) into levels \(V_0, \ldots, V_d\) so that \(j(E') \in V_i\) if \(i = v_l(\lb \ints_K : \ints'\rb)\text{.}\) We'll see that \(\bigcup_{i=0}^d V_i\) is connected.</p>
 <p id="p-811">Let \(\phi\colon E\to E'\) be an \(l\)-isogeny between two elliptic curves with CM by \(\ints = \ZZ+\tau\ZZ\text{,}\) \(\ints ' = \ZZ+\tau'\ZZ\text{.}\) Then \(\hat\phi \tau' \phi \in \End(E) \implies l\tau ' \in \ints\text{.}\) Similarly \(l\tau \in \ints'\text{.}\) There are 3 cases</p>
 <ol class="decimal">
@@ -509,14 +524,14 @@ K = \QQ(\sqrt{(\trace \pi)^2 - 4q})
 <li id="li-195">\(\lb\ints : \ints' \rb = l\) (\(\phi\) is descending).</li>
 <li id="li-196">\(\lb\ints' : \ints \rb = l\) (\(\phi\) is ascending).</li>
 </ol>
-<p>In the last two cases we say \(\phi\) is critical.</p></article><article class="paragraphs" id="paragraphs-28"><h5 class="heading"><span class="title">Horizontal isogenies.</span></h5>
+<p data-braille="continuation">In the last two cases we say \(\phi\) is critical.</p></article><article class="paragraphs" id="paragraphs-28"><h5 class="heading"><span class="title">Horizontal isogenies.</span></h5>
 <p id="p-812">\(E/k\) with CM by \(\ints \subseteq K\) imaginary quadratic. Let \(\ideal a\) be an invertible ideal.</p>
 <div class="displaymath">
 \begin{equation*}
 E\lb \ideal a \rb = \{ P \in E(\overline k) : \alpha (P)  = 0\, \forall \alpha \in \ideal a\}
 \end{equation*}
 </div>
-<p>this is a finite group so it is the kernel of a separable isogeny \(\phi_{\ideal a }\text{.}\) If \(p \nmid N(\ideal a)\) then \(\deg(\phi_{\ideal a}) = N(\ideal a)\) with \(\ideal a\) invertible implying \(\phi_{\ideal a} \) is horizontal.</p>
+<p data-braille="continuation">this is a finite group so it is the kernel of a separable isogeny \(\phi_{\ideal a }\text{.}\) If \(p \nmid N(\ideal a)\) then \(\deg(\phi_{\ideal a}) = N(\ideal a)\) with \(\ideal a\) invertible implying \(\phi_{\ideal a} \) is horizontal.</p>
 <p id="p-813">Each horizontal \(l\)-isogeny \(\phi\) arises from some invertible ideal \(\ideal a\) of norm \(l\text{.}\)</p>
 <p id="p-814">If \(l | \lb \ints_K : \ints \rb \) no such ideals exist, otherwise the number of invertible ideals of norm \(l\) is</p>
 <div class="displaymath">
@@ -525,18 +540,20 @@ E\lb \ideal a \rb = \{ P \in E(\overline k) : \alpha (P)  = 0\, \forall \alpha \
 \end{equation*}
 </div></article><article class="paragraphs" id="paragraphs-29"><h5 class="heading"><span class="title">Vertical isogenies.</span></h5>
 <p id="p-815">Let \(\ints\) be an order in an imaginary quadratic field \(K \) of discriminant \(D \lt -4\) and let \(\ints' = \ZZ+l\ints\text{.}\)</p>
-<article class="theorem-like" id="lemma-17"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">3.1.14</span>.</h6>
-<p id="p-816">Let \(E' / k\)  be an elliptic curve with CM by \(\ints '\) then there is a  unique ascending \(l\)-isogeny \(E'\to E\) with \(E/k\) an elliptic curve with CM by \(\ints\text{.}\)</p></article><article class="definition-like" id="definition-75"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.1.15</span>.</h6>
+<article class="lemma theorem-like" id="lemma-17"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
+</h6>
+<p id="p-816">Let \(E' / k\)  be an elliptic curve with CM by \(\ints '\) then there is a  unique ascending \(l\)-isogeny \(E'\to E\) with \(E/k\) an elliptic curve with CM by \(\ints\text{.}\)</p></article><article class="definition definition-like" id="definition-75"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span>
+</h6>
 <p id="p-817">An \(l\)-volcano \(V\) is a connected undirected graph whose vertices are partitioned into levels \(V_0, \ldots, V_d\text{.}\)</p>
 <ol class="decimal">
 <li id="li-197">The subgraph \(V_0\) is regular of degree \(\le 2\text{.}\)</li>
 <li id="li-198">For each \(i \gt 0\) each vertex in \(V_i\) has exactly one neighbour in level \(V_{i-1}\text{,}\) and this accounts for all edges outside of \(V_0\text{.}\)</li>
 <li id="li-199">For \(i \lt d\) each vertex has degree \(l+1\text{.}\)</li>
 </ol>
-<p>The number \(d\) is the depth.</p></article><figure class="figure-like" id="figure-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-1.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.1.16.</span> A \(3\)-volcano</figcaption></figure><p id="p-818">The Sage code used to make this picture was:</p>
+<p data-braille="continuation">The number \(d\) is the depth.</p></article><figure class="figure figure-like" id="figure-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.16<span class="period">.</span></span><span class="space"> </span>A \(3\)-volcano</figcaption></figure><p id="p-818">The Sage code used to make this picture was:</p>
 <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">N = 3 # number of flows
 p = 3
 d = 2
@@ -548,8 +565,8 @@ H.add_cycle([len(F.vertices())*i for i in range(N)])
 show(H)
 #latex(H) # for the code
 </script></div>
-<article class="theorem-like" id="theorem-62"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.1.17</span>. <span class="title">Kohel.</span>
+<article class="theorem theorem-like" id="theorem-62"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Kohel.</span>
 </h6>
 <p id="p-819">Let \(V\) be an ordinary component of \(G_l(\FF_q)\) that doesn't contain \(0\) or \(1728\) then \(V\) is an \(l\)-volcano s.t.</p>
 <ol class="decimal">
@@ -567,8 +584,8 @@ show(H)
 <li id="li-203">The depth of \(V\) is \(d = v_l (\lb \ints_K : \ZZ\lb\pi \rb\rb)\) where \(\pi\) is the Frobenius morphism on any \(E\) with \(j(E) \in V\text{.}\)</li>
 <li id="li-204">\(l \nmid \lb \ints_K : \ints_0 \rb\text{,}\) \(\lb \ints_i : \ints_{i+1}\rb = l\) for \(0\le i \lt d\text{.}\)</li>
 </ol></article></article><article class="paragraphs" id="paragraphs-30"><h5 class="heading"><span class="title">Application: Identifying supersingular elliptic curves.</span></h5>
-<article class="theorem-like" id="algorithm-1"><h6 class="heading">
-<span class="type">Algorithm</span> <span class="codenumber">3.1.18</span>. <span class="title">Sutherland.</span>
+<article class="algorithm theorem-like" id="algorithm-1"><h6 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">3.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Sutherland.</span>
 </h6>
 <p id="p-820">Input: Elliptic curve \(E/k\text{,}\) \(\characteristic k = p\text{.}\)</p>
 <p id="p-821">Output: Ordinary or supersingular.</p>
@@ -593,6 +610,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </script>
 <!--End: Google Classic code-->
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

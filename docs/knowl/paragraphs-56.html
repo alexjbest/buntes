@@ -18,21 +18,21 @@
 G(x,y)  = \pair{(x)  - (x_0)}{ (y) - (y_0)}
 \end{equation*}
 </div>
-<p>where \(x\ne y,y\ne x_0,x\ne y_0\text{,}\) \(G\) is a Green's function</p>
+<p data-braille="continuation">where \(x\ne y,y\ne x_0,x\ne y_0\text{,}\) \(G\) is a Green's function</p>
 <p>Biadditivity</p>
 <div class="displaymath">
 \begin{equation*}
 \implies \pair ab = \sum_{i,j} n_i m_j G(x_i, y_j)
 \end{equation*}
 </div>
-<p>\(a = \sum n_i(x_i)\text{,}\) \(b = \sum m_j(y_j)\text{,}\) \(y_0 \not \in |a|,x_0 \not \in |b|\text{.}\)</p>
+<p data-braille="continuation">\(a = \sum n_i(x_i)\text{,}\) \(b = \sum m_j(y_j)\text{,}\) \(y_0 \not \in |a|,x_0 \not \in |b|\text{.}\)</p>
 <p>Conversely given \(G(x,y)\) we can define a symbol \(\pair \cdot \cdot\) if for fixed \(x \ne y_0\) the function</p>
 <div class="displaymath">
 \begin{equation*}
 y \mapsto G(x,y)
 \end{equation*}
 </div>
-<p>on \(S\smallsetminus\{x,x_0\}\) is:</p>
+<p data-braille="continuation">on \(S\smallsetminus\{x,x_0\}\) is:</p>
 <ol class="decimal">
 <li>continuous</li>
 <li>harmonic, i.e.<div class="displaymath">
@@ -43,48 +43,49 @@ y \mapsto G(x,y)
 </li>
 <li>has logarithmic singularities of residue \(+1,-1\) at \(y=x,y=x_0, x=y_0\text{.}\)</li>
 </ol>
-<article class="remark-like"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">6.4.4</span>.</h6>
+<article class="remark remark-like"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span>
+</h6>
 <p>\(f\) has logarithmic singularities at \(z_0\) if</p>
 <div class="displaymath">
 \begin{equation*}
 f(z) - \alpha \log|\rho (z)|^2
 \end{equation*}
 </div>
-<p>is continuous near \(z_0\text{,}\) \(\rho \) is holomorphic near \(z_0\) and vanishing to order \(1\) at \(z_0\text{.}\)</p>
+<p data-braille="continuation">is continuous near \(z_0\text{,}\) \(\rho \) is holomorphic near \(z_0\) and vanishing to order \(1\) at \(z_0\text{.}\)</p>
 <p>\(\alpha \) is called the residue of this singularity. \(\rho \) is the uniformizing parameter near \(z_0\text{.}\) Same symmetric condition on \(x\text{.}\)</p></article><p>So this is well defined, continuous and bi-additive if</p>
 <div class="displaymath">
 \begin{equation*}
 (|a| \cup\{x_0\}) \cap (|b| \cup \{y+0\} ) = \emptyset
 \end{equation*}
 </div>
-<p>we want to extend to \(|a|\cap |b| = \emptyset\text{.}\)</p>
+<p data-braille="continuation">we want to extend to \(|a|\cap |b| = \emptyset\text{.}\)</p>
 <p>Sufficient to show</p>
 <div class="displaymath">
 \begin{equation*}
 G(x_1,y) -G(x_2,y)
 \end{equation*}
 </div>
-<p>makes sense as \(y\to y_0\text{,}\) \(x_1, x_2 \not \subset |b| \cup\{y_0\}\text{.}\)</p>
+<p data-braille="continuation">makes sense as \(y\to y_0\text{,}\) \(x_1, x_2 \not \subset |b| \cup\{y_0\}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 G(x_i, y) = - \log|\rho |^2 + c_i + O(\rho (y))
 \end{equation*}
 </div>
-<p>therefore</p>
+<p data-braille="continuation">therefore</p>
 <div class="displaymath">
 \begin{equation*}
 G(x_1,y) - G(x_2,y) \to c_1  - c_2
 \end{equation*}
 </div>
-<p>as \(y \to x_0\text{.}\) Therefore this is well defined and continuous by hypothesis 3. on \(G(x,y)\text{.}\)</p>
+<p data-braille="continuation">as \(y \to x_0\text{.}\) Therefore this is well defined and continuous by hypothesis 3. on \(G(x,y)\text{.}\)</p>
 <p>\(\pair\cdot\cdot\) is defined and continuous and bi-additive now, consider</p>
 <div class="displaymath">
 \begin{equation*}
 (f) = \sum_{j=1}^ k m_j (y_j)
 \end{equation*}
 </div>
-<p>a principal divisor, \(x_0 \not \in |(f)|\)</p>
+<p data-braille="continuation">a principal divisor, \(x_0 \not \in |(f)|\)</p>
 <div class="displaymath">
 \begin{equation*}
 \delta \colon x\mapsto \pair {(x) - (x_0) }{f} - \left(\log|f(x)|^2 - \log|f(x_0)|^2\right)
@@ -95,7 +96,7 @@ G(x_1,y) - G(x_2,y) \to c_1  - c_2
 = \sum m_j G(x,y_j) - \left( \log|f(x)| ^2 - \log|f(x_0)|^2\right)
 \end{equation*}
 </div>
-<p>is harmonic for \(x \in S - \{u_0, y_k\}\) and continuous everywhere so the difference is constant.</p>
+<p data-braille="continuation">is harmonic for \(x \in S - \{u_0, y_k\}\) and continuous everywhere so the difference is constant.</p>
 <div class="displaymath">
 \begin{equation*}
 \pair {\sum n_i(x_i)}{(f)} - \sum n_i \log|f(x_i)|^2

@@ -18,7 +18,7 @@
 \frac 1n + \frac 1m + \frac 1l \lt 1\text{.}
 \end{equation*}
 </div>
-<p>With area \(\pi(1 -  \frac 1n - \frac 1m - \frac 1l)\text{.}\)</p>
+<p data-braille="continuation">With area \(\pi(1 -  \frac 1n - \frac 1m - \frac 1l)\text{.}\)</p>
 <p>In the disk model we can start with a wedge of the disk and by adding a choice third geodesic with endpoints on the edge we can adjust the other angles to be what we like.So we can construct hyperbolic triangles with whatever angles we like. Then let \(R_1\) be the reflection over 1 edge, \(R_2\) , \(R_3\) similarly. By reflecting our original triangle \(T\) with these reflections we can tessellate the disk, colouring alternately the triangles obtained using an odd or even number of reflections.</p>
 <p>The only remaining problem is that \(R_i\)'s are not in \(\PSL_2(\RR)\text{.}\) The solution is to define \(x_1 = R_3 \circ R_1\text{,}\) \(x_2 = R_1 \circ R_2\text{,}\) \(x_3 = R_2 \circ R_3\) which are all in \(\PSL_2(\RR)\) now. Now we need to take the union of two adjacent triangles before as a fundamental domain, some quadrilateral that still tessellates. So we have formed a Fuchsian group from our triangles.</p>
 <p>A presentation for this group is</p>
@@ -27,12 +27,13 @@
 \langle x_1, x_2, x_3 | x_1 ^n = x_2 ^ m = x_3 ^l = x_1x_2x_3 = 1\rangle
 \end{equation*}
 </div>
-<p>note \(n,m,l\) can still be \(\infty\text{.}\)</p>
-<article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.4.7</span>. <span class="title">Triangle groups.</span>
+<p data-braille="continuation">note \(n,m,l\) can still be \(\infty\text{.}\)</p>
+<article class="definition definition-like"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Triangle groups.</span>
 </h6>
-<p>Let \(\Gamma_{n,m,l}\) be the <dfn class="terminology">triangle group</dfn> with signature \((1/n, 1/m, 1/l)\text{.}\)</p></article><article class="remark-like"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">2.4.8</span>.</h6>
+<p>Let \(\Gamma_{n,m,l}\) be the <dfn class="terminology">triangle group</dfn> with signature \((1/n, 1/m, 1/l)\text{.}\)</p></article><article class="remark remark-like"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
+</h6>
 <div class="displaymath">
 \begin{equation*}
 \frac 1n + \frac 1m + \frac 1l = 1
@@ -43,78 +44,84 @@
 \frac 1n + \frac 1m + \frac 1l \gt 1
 \end{equation*}
 </div>
-<p>still work on \(\CC\) and \(\hat \CC\) respectively.</p></article><article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.4.9</span>. <span class="title">\(\PSL_2(\ZZ)\).</span>
+<p data-braille="continuation">still work on \(\CC\) and \(\hat \CC\) respectively.</p></article><article class="example example-like"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">\(\PSL_2(\ZZ)\).</span>
 </h6>
-<p>Consider \(\Gamma_{2,3,\infty}\) angles \(\pi/2, \pi/3, 0\text{.}\) We can draw such a triangle in the upper half plane with vertices \(i, e^{\pi i/3}, \infty\text{.}\) So a fundamental domain will be the region obtained by reflecting through the imaginary axis, given by \(-\frac 12 \le \Re z \le \frac 12\text{,}\) \(|z| \ge 1\text{.}\) We have \(R_1 = \frac{1}{\bar z}, R_2 = -\bar z +1,R_3 = -\bar z\) so \(x_1 = \frac{-1}{z}, x_2 = \frac{1}{-z+1}, x_3 = z+1\text{.}\) Then \(\Gamma_{2,3,\infty} \cong \PSL_2(\ZZ)\text{.}\) Sometimes denoted \(\Gamma(1)\text{.}\)</p></article><article class="remark-like"><h6 class="heading">
-<span class="type">Observation</span> <span class="codenumber">2.4.10</span>.</h6>
+<p>Consider \(\Gamma_{2,3,\infty}\) angles \(\pi/2, \pi/3, 0\text{.}\) We can draw such a triangle in the upper half plane with vertices \(i, e^{\pi i/3}, \infty\text{.}\) So a fundamental domain will be the region obtained by reflecting through the imaginary axis, given by \(-\frac 12 \le \Re z \le \frac 12\text{,}\) \(|z| \ge 1\text{.}\) We have \(R_1 = \frac{1}{\bar z}, R_2 = -\bar z +1,R_3 = -\bar z\) so \(x_1 = \frac{-1}{z}, x_2 = \frac{1}{-z+1}, x_3 = z+1\text{.}\) Then \(\Gamma_{2,3,\infty} \cong \PSL_2(\ZZ)\text{.}\) Sometimes denoted \(\Gamma(1)\text{.}\)</p></article><article class="observation remark-like"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span>
+</h6>
 <p>If \(\Gamma_1 \lt \Gamma_2\) and \(T\) is a fundamental domain of \(\Gamma_2\) then if \(\gamma_1, \gamma_2, \ldots, \gamma_n \in \Gamma_2\) are representatives of \(\Gamma_1\backslash \Gamma_2\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \bigcup \gamma_i (T)
 \end{equation*}
 </div>
-<p>is a fundamental domain for \(\Gamma_1\text{.}\)</p></article><article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.4.11</span>. <span class="title">\(\Gamma(1)\).</span>
+<p data-braille="continuation">is a fundamental domain for \(\Gamma_1\text{.}\)</p></article><article class="example example-like"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">\(\Gamma(1)\).</span>
 </h6>
 <div class="displaymath">
 \begin{equation*}
 \Gamma(2) = \{\begin{pmatrix} a\amp b \\ c\amp d\end{pmatrix} = \id \pmod 2 \}
 \end{equation*}
 </div>
-<p>then</p>
+<p data-braille="continuation">then</p>
 <div class="displaymath">
 \begin{equation*}
 [\Gamma(1) : \Gamma(2)] = 6
 \end{equation*}
 </div>
-<p>representatives of \(\Gamma(2) \backslash \Gamma(1)\) are</p>
+<p data-braille="continuation">representatives of \(\Gamma(2) \backslash \Gamma(1)\) are</p>
 <div class="displaymath">
 \begin{equation*}
 x_1 = \id,\,x_2 = \frac{-1}{z-1}, x_3 = \frac{z-1}{z},\, x_4 = \frac{z-1}{z},\,x_5 = \frac{-z}{x-1},\,x_6 = \frac{-1}{z}\text{.}
 \end{equation*}
 </div>
-<p>Lets see what these do, for example if \(z= e^{i\theta}\)</p>
+<p data-braille="continuation">Lets see what these do, for example if \(z= e^{i\theta}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \Re(x_2(z) = \frac{-1}{e^{i\theta} - 1} = \frac{-e^{i\theta} + 1}{2- 2\cos \theta}) = \frac{1-\cos \theta}{ 2- 2\cos \theta} \frac 12
 \end{equation*}
 </div>
-<p>if we plot this we see we get two copies of a 0,0,0 triangle so this corresponds to \(\Gamma_{\infty,\infty,\infty}\text{.}\)</p>
+<p data-braille="continuation">if we plot this we see we get two copies of a 0,0,0 triangle so this corresponds to \(\Gamma_{\infty,\infty,\infty}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \langle x_1, x_2, x_3 | x_1x_2x_3 = 1\rangle = \langle x_1,x_2\rangle = \pi_1(\PP^1\smallsetminus\{0,1,\infty\})\text{.}
 \end{equation*}
-</div></article><article class="theorem-like"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.4.12</span>.</h6>
+</div></article><article class="proposition theorem-like"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.4.12</span><span class="period">.</span>
+</h6>
 <p>\(S_1 = \HH/ \Gamma_1\text{,}\) \(S_2 = \HH/\Gamma_2\) then</p>
 <div class="displaymath">
 \begin{equation*}
 S_1 \cong S_2 \iff \Gamma_1 = T\circ \Gamma_2 \circ T\inv,\,T\in \PSL_2(\RR)\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a data-knowl="./knowl/proof-87-hidden.html" title="Proof 2.4.12.1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><article class="theorem-like"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.4.13</span>.</h6>
+</div></article><article class="hiddenproof"><a class="original" data-knowl="./knowl/proof-87-hidden.html" title="Proof 2.4.12.1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><article class="proposition theorem-like"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.4.13</span><span class="period">.</span>
+</h6>
 <p>\(\Gamma\) a Fuchsian group acts freely</p>
 <div class="displaymath">
 \begin{equation*}
 \Aut(\HH/\Gamma) = N(\Gamma)/\Gamma\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a data-knowl="./knowl/proof-88-hidden.html" title="Proof 2.4.13.1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><article class="theorem-like"><h6 class="heading">
-<span class="type">Corollary</span> <span class="codenumber">2.4.14</span>.</h6>
+</div></article><article class="hiddenproof"><a class="original" data-knowl="./knowl/proof-88-hidden.html" title="Proof 2.4.13.1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><article class="corollary theorem-like"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.4.14</span><span class="period">.</span>
+</h6>
 <p>Let \(\Sigma\) be a Riemann surface with \(g \ge 2\) then</p>
 <div class="displaymath">
 \begin{equation*}
 |\Aut(\Sigma)| \lt \infty\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof"><a data-knowl="./knowl/proof-89-hidden.html" title="Proof 2.4.14.1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><p>Say \(\Sigma\text{,}\) \(g\ge 2\text{,}\) \(G\subseteq \Aut(\Sigma)\text{.}\) Let \(\bar g\) be the genus of \(\Sigma /G\)</p>
+</div></article><article class="hiddenproof"><a class="original" data-knowl="./knowl/proof-89-hidden.html" title="Proof 2.4.14.1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><p>Say \(\Sigma\text{,}\) \(g\ge 2\text{,}\) \(G\subseteq \Aut(\Sigma)\text{.}\) Let \(\bar g\) be the genus of \(\Sigma /G\)</p>
 <div class="displaymath">
 \begin{equation*}
 2g - 2 = |G| (2\bar g - 2) + \sum_p (I(p) - 1) = |G|(2\bar g - 2 + \sum_{i=1}^n (1 - \frac{1}{|I(p_i)|}))
 \end{equation*}
 </div>
-<p>where \(I(p)\) is the stabiliser of \(p\) in \(G\) and \(\{p_i\}\) area maximal set of fixed points of \(G\) inequivalent under the action of \(G\text{.}\)</p>
-<article class="exercise-like"><a data-knowl="./knowl/exercise-14-hidden.html" title="Exercise 2.4.15"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.4.15</span>.</h6></a></article><article class="exercise-like"><a data-knowl="./knowl/exercise-15-hidden.html" title="Exercise 2.4.16"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.4.16</span>.</h6></a></article></article><span class="incontext"><a href="sec-rs-discrete-groups.html#paragraphs-13">in-context</a></span>
+<p data-braille="continuation">where \(I(p)\) is the stabiliser of \(p\) in \(G\) and \(\{p_i\}\) area maximal set of fixed points of \(G\) inequivalent under the action of \(G\text{.}\)</p>
+<article class="exercise exercise-like"><a class="original" data-knowl="./knowl/exercise-14-hidden.html" title="Exercise 2.4.15"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.4.15</span><span class="period">.</span>
+</h6></a></article><article class="exercise exercise-like"><a class="original" data-knowl="./knowl/exercise-15-hidden.html" title="Exercise 2.4.16"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.4.16</span><span class="period">.</span>
+</h6></a></article></article><span class="incontext"><a href="sec-rs-discrete-groups.html#paragraphs-13">in-context</a></span>
 </body>
 </html>

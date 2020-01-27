@@ -12,55 +12,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's try and do an \(X_0(37)\) example. This time we are lucky as \(37\) splits in \(\QQ(\sqrt{-3})\) so we should be able to find an order of \(M_0(37)\) isomorphic to \(\ZZ\lb (1 + \sqrt{-3})/2\rb\text{.}\) If I wasn't so lazy I would think some more about how to do this in general, but matching the charpoly of a matrix of the form</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{pmatrix} \ast \amp \ast \\ 37 \amp \ast \end{pmatrix}
-\end{equation*}
-</div>
-<p>to \(x^2 - x + 1\) (the charpoly of \((1+ \sqrt{-3})/2\) we find)</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{pmatrix} -9   \amp  -3  \\ 37 \amp 10   \end{pmatrix}
-\end{equation*}
-</div>
-<p>so</p>
-<div class="displaymath">
-\begin{equation*}
-\ints \cong \ZZ + \ZZ \begin{pmatrix} -9   \amp  -3  \\ 37 \amp 10   \end{pmatrix}\text{,}
-\end{equation*}
-</div>
-<p>a \(\tau\) fixed by this is</p>
-<div class="displaymath">
-\begin{equation*}
-\tau = \frac{\sqrt{-3} - 21}{74}
-\end{equation*}
-</div>
-<p>so letting \(q= e^{2 \pi i \tau}\) we compute</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{n =1}^{1000} \frac{a_n}{n} q^n
-\end{equation*}
-</div>
-<p>using the <code class="code-inline tex2jax_ignore">anlist</code> of \(37a1\) to get</p>
-<div class="displaymath">
-\begin{equation*}
-0.204680500375773 - 1.22569469099339i
-\end{equation*}
-</div>
-<p>so we use Sage's <code class="code-inline tex2jax_ignore">elliptic_exponential</code> to find</p>
-<div class="displaymath">
-\begin{equation*}
-(-1.00000000000000 + 1.77644036369769e-15I : 2.22044604925031e-16 + 3.55288072739538e-15I : 1.00000000000000)
-\end{equation*}
-</div>
-<p>so we have discovered the point \((-1, 0 , 1)\) on</p>
-<div class="displaymath">
-\begin{equation*}
-y^2 + y  = x^3  - x\text{,}
-\end{equation*}
-</div>
-<p>amazing.</p>
-<span class="incontext"><a href="sec-gz-applications-i.html#p-1568">in-context</a></span>
+<p>What happens in characteristic \(p\text{?}\)</p>
+<span class="incontext"><a href="sec-abhyankar-what-is.html#p-1568">in-context</a></span>
 </body>
 </html>

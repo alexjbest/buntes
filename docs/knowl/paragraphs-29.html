@@ -22,18 +22,20 @@
 <body>
 <article class="paragraphs"><h5 class="heading"><span class="title">Vertical isogenies.</span></h5>
 <p>Let \(\ints\) be an order in an imaginary quadratic field \(K \) of discriminant \(D \lt -4\) and let \(\ints' = \ZZ+l\ints\text{.}\)</p>
-<article class="theorem-like"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">3.1.14</span>.</h6>
-<p>Let \(E' / k\)  be an elliptic curve with CM by \(\ints '\) then there is a  unique ascending \(l\)-isogeny \(E'\to E\) with \(E/k\) an elliptic curve with CM by \(\ints\text{.}\)</p></article><article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.1.15</span>.</h6>
+<article class="lemma theorem-like"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
+</h6>
+<p>Let \(E' / k\)  be an elliptic curve with CM by \(\ints '\) then there is a  unique ascending \(l\)-isogeny \(E'\to E\) with \(E/k\) an elliptic curve with CM by \(\ints\text{.}\)</p></article><article class="definition definition-like"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span>
+</h6>
 <p>An \(l\)-volcano \(V\) is a connected undirected graph whose vertices are partitioned into levels \(V_0, \ldots, V_d\text{.}\)</p>
 <ol class="decimal">
 <li>The subgraph \(V_0\) is regular of degree \(\le 2\text{.}\)</li>
 <li>For each \(i \gt 0\) each vertex in \(V_i\) has exactly one neighbour in level \(V_{i-1}\text{,}\) and this accounts for all edges outside of \(V_0\text{.}\)</li>
 <li>For \(i \lt d\) each vertex has degree \(l+1\text{.}\)</li>
 </ol>
-<p>The number \(d\) is the depth.</p></article><figure class="figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-1.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.1.16.</span> A \(3\)-volcano</figcaption></figure><p>The Sage code used to make this picture was:</p>
+<p data-braille="continuation">The number \(d\) is the depth.</p></article><figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.16<span class="period">.</span></span><span class="space"> </span>A \(3\)-volcano</figcaption></figure><p>The Sage code used to make this picture was:</p>
 <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">N = 3 # number of flows
 p = 3
 d = 2
@@ -45,8 +47,8 @@ H.add_cycle([len(F.vertices())*i for i in range(N)])
 show(H)
 #latex(H) # for the code
 </script></div>
-<article class="theorem-like"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.1.17</span>. <span class="title">Kohel.</span>
+<article class="theorem theorem-like"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Kohel.</span>
 </h6>
 <p>Let \(V\) be an ordinary component of \(G_l(\FF_q)\) that doesn't contain \(0\) or \(1728\) then \(V\) is an \(l\)-volcano s.t.</p>
 <ol class="decimal">
