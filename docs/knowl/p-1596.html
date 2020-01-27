@@ -12,25 +12,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider curves over \(\QQ\)</p>
+<p>Given a galois cover of curves</p>
 <div class="displaymath">
 \begin{equation*}
-V(y^2 = x) \xrightarrow{x} \aff^1
+\phi \colon C \to C'
 \end{equation*}
 </div>
-<p data-braille="continuation">this is a (ramified at 0) double cover, with Galois group \(C_2\) given by \(y \mapsto -y\text{.}\) Given \(2 \in \aff^1\text{,}\) the preimage is the set of closed point</p>
+<p data-braille="continuation">we can fix a</p>
 <div class="displaymath">
 \begin{equation*}
-\{ (y^2 - 2)\}
+P \in C',\,Q\in \phi \inv (P)
 \end{equation*}
 </div>
-<p data-braille="continuation">so there is only one preimage and the decomposition group is everything, however the morphism on the residue field</p>
+<p data-braille="continuation">then define the <dfn class="terminology">decomposition group</dfn></p>
 <div class="displaymath">
 \begin{equation*}
-\QQ(\sqrt 2)
+D_Q  = \{f \in \Gal C {C'} : f(Q) = Q\}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">is nontrivial, so the inertia group is trivial.</p>
+<p data-braille="continuation">We also define the <dfn class="terminology">inertia group</dfn> to be the subgroup</p>
+<div class="displaymath">
+\begin{equation*}
+I_Q \subseteq D_Q
+\end{equation*}
+</div>
+<p data-braille="continuation">that fixes the residue field. For now we work over an algebraically closed field and so these are equal.</p>
 <span class="incontext"><a href="sec-abhyankar-what-is.html#p-1596">in-context</a></span>
 </body>
 </html>

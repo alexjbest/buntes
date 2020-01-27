@@ -380,41 +380,42 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-abhyankar-what-is"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">7.1</span> <span class="title">What is Abhyankar's conjecture?</span>
 </h2>
-<a href="sec-abhyankar-what-is.html" class="permalink">¶</a><p id="p-1567">Consider the humble line, \(\aff^1\text{,}\) its \(\CC\) or \(\RR\) points with the “classical”/analytic topology are simply connected. Therefore there are no nontrivial finite covers.</p>
-<p id="p-1568">What happens in characteristic \(p\text{?}\)</p>
-<p id="p-1569">First we need to make the question precise, we need to define “covers” in a way that makes sense and try to define “topology” in a way that is non-trivial.</p>
-<p id="p-1570">It would be good to define a notion of topology that is defined algebraically, and recovers the usual fundamental group of the \(\CC\)-points for a curve over \(\CC\text{.}\)</p>
-<p id="p-1571">But first are there any “topological” covers of the affine line in characteristic \(p\text{.}\) We can easily make covers, just take any curve \(C \subseteq \aff^2 \to \aff^1\text{.}\)</p>
-<p id="p-1572">In general though these will be ramified, i.e. there will be points where the tangent line is perpendicular to the projection, this messes things up as Bezouts theorem will give us less geometric points. So not topological, like a parabola:</p>
+<a href="sec-abhyankar-what-is.html" class="permalink">¶</a><p id="p-1567">One reference is <a class="external" href="https://www.math.upenn.edu/~harbater/abhsurvey.pdf" target="_blank">Abhyankar's Conjectures In Galois Theory: Current Status And Future Directions</a> by David Harbater, Andrew Obus, Rachel Pries, And Katherine Stevenson.</p>
+<p id="p-1568">Consider the humble line, \(\aff^1\text{,}\) its \(\CC\) or \(\RR\) points with the “classical”/analytic topology are simply connected. Therefore there are no nontrivial finite covers.</p>
+<p id="p-1569">What happens in characteristic \(p\text{?}\)</p>
+<p id="p-1570">First we need to make the question precise, we need to define “covers” in a way that makes sense and try to define “topology” in a way that is non-trivial.</p>
+<p id="p-1571">It would be good to define a notion of topology that is defined algebraically, and recovers the usual fundamental group of the \(\CC\)-points for a curve over \(\CC\text{.}\)</p>
+<p id="p-1572">But first are there any “topological” covers of the affine line in characteristic \(p\text{.}\) We can easily make covers, just take any curve \(C \subseteq \aff^2 \to \aff^1\text{.}\)</p>
+<p id="p-1573">In general though these will be ramified, i.e. there will be points where the tangent line is perpendicular to the projection, this messes things up as Bezouts theorem will give us less geometric points. So not topological, like a parabola:</p>
 <div class="displaymath">
 \begin{equation*}
 V(y^2 - y = x - 1) \xrightarrow{x} \aff^1
 \end{equation*}
 </div>
-<p id="p-1573">To see where a cover is ramified  algebraically we take the derivative</p>
+<p id="p-1574">To see where a cover is ramified  algebraically we take the derivative</p>
 <div class="displaymath">
 \begin{equation*}
 2y - 1 = 0
 \end{equation*}
 </div>
 <p data-braille="continuation">hence \(y = 1/2\) and so \(x= 3/4\) is a ramified point. So this is ramified at \((3/4,1/2)\) above \(3/4\text{.}\) Not a topological cover!</p>
-<p id="p-1574">Hence \(V( y = x^{3423} + 12x + 1) \xrightarrow{x} \aff^1\) is an unramified cover, but it is trivial.</p>
-<p id="p-1575">In characteristic \(p\) though weirdness ensues, take characteristic \(2\text{.}\) The derivative above</p>
+<p id="p-1575">Hence \(V( y = x^{3423} + 12x + 1) \xrightarrow{x} \aff^1\) is an unramified cover, but it is trivial.</p>
+<p id="p-1576">In characteristic \(p\) though weirdness ensues, take characteristic \(2\text{.}\) The derivative above</p>
 <div class="displaymath">
 \begin{equation*}
 2y - 1 = 1
 \end{equation*}
 </div>
 <p data-braille="continuation">never vanishes! Hence there is no ramification locus.</p>
-<p id="p-1576">This can of course be generalised, an <dfn class="terminology">Artin-Schreier</dfn> cover in characteristic \(p\) is</p>
+<p id="p-1577">This can of course be generalised, an <dfn class="terminology">Artin-Schreier</dfn> cover in characteristic \(p\) is</p>
 <div class="displaymath">
 \begin{equation*}
 y^p - y - x = 0
 \end{equation*}
 </div>
 <p data-braille="continuation">it is an unramified \(p\)-to-one cover.</p>
-<p id="p-1577">Given a topological cover the group of deck transformations of the cover gives a quotient of the fundamental group of the base.</p>
-<p id="p-1578">In the Artin-Schreier example we have a transformation of the cover given by</p>
+<p id="p-1578">Given a topological cover the group of deck transformations of the cover gives a quotient of the fundamental group of the base.</p>
+<p id="p-1579">In the Artin-Schreier example we have a transformation of the cover given by</p>
 <div class="displaymath">
 \begin{equation*}
 y \mapsto y + 1
@@ -427,8 +428,8 @@ y \mapsto y + 1
 \end{equation*}
 </div>
 <p data-braille="continuation">We can iterate this, giving a cyclic group of order \(p\) as the group of deck transformations.</p>
-<p id="p-1579">This says that the “fundamental group of the affine line in characteristic p contains the cyclic group of order p!” The line has non-trivial fundamental group.</p>
-<p id="p-1580">More generally note that</p>
+<p id="p-1580">This says that the “fundamental group of the affine line in characteristic p contains the cyclic group of order p!” The line has non-trivial fundamental group.</p>
+<p id="p-1581">More generally note that</p>
 <div class="displaymath">
 \begin{equation*}
 y^q - y - x = 0
@@ -441,11 +442,11 @@ y^q - y - x = 0
 \end{equation*}
 </div>
 <p data-braille="continuation">we can do this for all \(n\text{.}\) This shows that the fundamental group of the affine line in characteristic \(p\) is not even topologically finitely generated! So even the affine line in characteristic \(p\) is wilder than any punctured curve in characteristic \(0\text{.}\)</p>
-<p id="p-1581">Clearly there characteristic \(p\) gave us a \(p\)-group in the fundamental group. Can we ever get anything other than a \(p\)-group?</p>
+<p id="p-1582">Clearly there characteristic \(p\) gave us a \(p\)-group in the fundamental group. Can we ever get anything other than a \(p\)-group?</p>
 <article class="example example-like" id="example-84"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar.</span>
 </h6>
-<p id="p-1582">The curve</p>
+<p id="p-1583">The curve</p>
 <div class="displaymath">
 \begin{equation*}
 y^n - a x^s y^{t} + 1 = 0 \xrightarrow{x} \aff^1
@@ -474,7 +475,7 @@ y ^{n-1} - a x^s y^{t-1} = 0
 (y ^{n-1} - a x^s y^{t-1})y = 0
 \end{equation*}
 </div>
-<p data-braille="continuation">which gives \(0 = 1\text{!}\)</p></article><p id="p-1583">We will define our fundamental group using these coverings, . A topological covering map is one that locally looks like a homeomorphism. For instance we can define a topological cover of \(\CC \smallsetminus \{0\}\) by itself using the algebraic map</p>
+<p data-braille="continuation">which gives \(0 = 1\text{!}\)</p></article><p id="p-1584">We will define our fundamental group using these coverings, . A topological covering map is one that locally looks like a homeomorphism. For instance we can define a topological cover of \(\CC \smallsetminus \{0\}\) by itself using the algebraic map</p>
 <div class="displaymath">
 \begin{equation*}
 z\mapsto z^2
@@ -490,26 +491,26 @@ z \mapsto z^n\text{.}
 <article class="definition definition-like" id="definition-140"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span>
 </h6>
-<p id="p-1584">An <dfn class="terminology">étale map</dfn> is one which is flat and unramified.</p></article><p id="p-1585">How is this number theoretic?</p>
-<p id="p-1586">There is a strong analogy between curves over finite fields, and dedekind rings, such as rings of integers of number fields Both give examples of dedekind schemes, dimension 1,... PICTURE. Back to Weil.</p>
-<p id="p-1587">On the side of function fields we have</p>
+<p id="p-1585">An <dfn class="terminology">étale map</dfn> is one which is flat and unramified.</p></article><p id="p-1586">How is this number theoretic?</p>
+<p id="p-1587">There is a strong analogy between curves over finite fields, and dedekind rings, such as rings of integers of number fields Both give examples of dedekind schemes, dimension 1,... PICTURE. Back to Weil.</p>
+<p id="p-1588">On the side of function fields we have</p>
 <div class="displaymath">
 \begin{equation*}
 \FF_p((t)) \leftrightarrow \QQ
 \end{equation*}
 </div>
 <p data-braille="continuation">the function field of \(\aff^1_{\FF_p}\) and the function field of \(\Spec \ZZ\text{.}\)</p>
-<p id="p-1588">Covers of curves give us extensions of function fields. E.g. the Artin-Schreier covers on the left</p>
-<p id="p-1589">Spec of quadratic field like a hyperelliptic covering map.</p>
-<p id="p-1590">So the question of what covers we can have is like what field extensions can we have.</p>
-<p id="p-1591">More intriguingly the automorphisms of the cover, the covering group corresponds to galois automorphisms.</p>
-<p id="p-1592">On a hyperelliptic curve \(y=\sqrt{x^3+ 1} \leftrightarrow -y\) and \(\sqrt{2}\leftrightarrow - \sqrt{2} \text{.}\)</p>
-<p id="p-1593">So what covering groups translates into what Galois groups. So the question, what are the galois groups of covers of \(\aff^1_{\FF_p}\) and how do they fit together is like what are the possible galois groups of Galois extensions \(K/\QQ\text{.}\)</p>
-<p id="p-1594">To get a handle on what Galois groups can occur, we might take inspiration from number theory where we add conditions to get a quotient group, i.e. it is known the Galois groups of abelian extensions of \(\QQ\text{.}\)</p>
+<p id="p-1589">Covers of curves give us extensions of function fields. E.g. the Artin-Schreier covers on the left</p>
+<p id="p-1590">Spec of quadratic field like a hyperelliptic covering map.</p>
+<p id="p-1591">So the question of what covers we can have is like what field extensions can we have.</p>
+<p id="p-1592">More intriguingly the automorphisms of the cover, the covering group corresponds to galois automorphisms.</p>
+<p id="p-1593">On a hyperelliptic curve \(y=\sqrt{x^3+ 1} \leftrightarrow -y\) and \(\sqrt{2}\leftrightarrow - \sqrt{2} \text{.}\)</p>
+<p id="p-1594">So what covering groups translates into what Galois groups. So the question, what are the galois groups of covers of \(\aff^1_{\FF_p}\) and how do they fit together is like what are the possible galois groups of Galois extensions \(K/\QQ\text{.}\)</p>
+<p id="p-1595">To get a handle on what Galois groups can occur, we might take inspiration from number theory where we add conditions to get a quotient group, i.e. it is known the Galois groups of abelian extensions of \(\QQ\text{.}\)</p>
 <article class="definition definition-like" id="definition-141"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Decomposition and Inertia groups.</span>
 </h6>
-<p id="p-1595">Given a galois cover of curves</p>
+<p id="p-1596">Given a galois cover of curves</p>
 <div class="displaymath">
 \begin{equation*}
 \phi \colon C \to C'
@@ -536,7 +537,7 @@ I_Q \subseteq D_Q
 <p data-braille="continuation">that fixes the residue field. For now we work over an algebraically closed field and so these are equal.</p></article><article class="example example-like" id="example-85"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span>
 </h6>
-<p id="p-1596">Consider curves over \(\QQ\)</p>
+<p id="p-1597">Consider curves over \(\QQ\)</p>
 <div class="displaymath">
 \begin{equation*}
 V(y^2 = x) \xrightarrow{x} \aff^1
@@ -554,7 +555,7 @@ V(y^2 = x) \xrightarrow{x} \aff^1
 \QQ(\sqrt 2)
 \end{equation*}
 </div>
-<p data-braille="continuation">is nontrivial, so the inertia group is trivial.</p></article><p id="p-1597">Note that our maps are etale covers of \(\aff^1\text{,}\) but this allows the ramification to still be at infinity. We complete an affine curve to obtain a proper one with the same function field. In this case</p>
+<p data-braille="continuation">is nontrivial, so the inertia group is trivial.</p></article><p id="p-1598">Note that our maps are etale covers of \(\aff^1\text{,}\) but this allows the ramification to still be at infinity. We complete an affine curve to obtain a proper one with the same function field. In this case</p>
 <div class="displaymath">
 \begin{equation*}
 \aff^1 \subseteq \PP^1\text{.}
@@ -576,13 +577,13 @@ C \leadsto \overline C
 <article class="definition definition-like" id="definition-142"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
 </h6>
-<p id="p-1598">When over a field of characteristic \(p\text{,}\) ramification at a point \(P\) is called <dfn class="terminology">tame</dfn> when</p>
+<p id="p-1599">When over a field of characteristic \(p\text{,}\) ramification at a point \(P\) is called <dfn class="terminology">tame</dfn> when</p>
 <div class="displaymath">
 \begin{equation*}
 p\nmid |I_P|\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">in characteristic \(0\) we say it is \(p\)-tame if the same holds.</p></article><p id="p-1599">We then define</p>
+<p data-braille="continuation">in characteristic \(0\) we say it is \(p\)-tame if the same holds.</p></article><p id="p-1600">We then define</p>
 <div class="displaymath">
 \begin{equation*}
 \pi_1^{p-tame}(C) = \varprojlim_{C' \to C\text{tame ram. abv. } \overline C - C} \Gal {C'}{C}
@@ -597,7 +598,7 @@ p\nmid |I_P|\text{,}
 <article class="theorem theorem-like" id="theorem-102"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
 </h6>
-<p id="p-1600">Let \(X\) be curve over \(k\) and \(\mathcal X\) a lift to characteristic 0 then</p>
+<p id="p-1601">Let \(X\) be curve over \(k\) and \(\mathcal X\) a lift to characteristic 0 then</p>
 <div class="displaymath">
 \begin{equation*}
 \pi _1^{p-tame} (\mathcal X - \mathcal S) \twoheadrightarrow \pi _1^t(X-S)
@@ -608,19 +609,19 @@ p\nmid |I_P|\text{,}
 \begin{equation*}
 \pi _1^{p-tame} (\mathcal X - \mathcal S)\simeq \pi _1^t(X-S)\text{.}
 \end{equation*}
-</div></article><p id="p-1601">Seeing as we “understand” fundamental groups of curves in characteristic zero, punctured riemann surfaces so generated by</p>
+</div></article><p id="p-1602">Seeing as we “understand” fundamental groups of curves in characteristic zero, punctured riemann surfaces so generated by</p>
 <div class="displaymath">
 \begin{equation*}
 2g + |S| - 1
 \end{equation*}
 </div>
 <p data-braille="continuation">loops. This result implies that after we get rid of \(p\)-Sylow stuff we should end up with just those generators.</p>
-<p id="p-1602">Then we have</p>
-<p id="p-1603">From zbmath for serre's Let K be an algebraically closed field of characteristic \(p\gt 0\text{.}\) In the paper Coverings of algebraic curves, Am. J. Math. 79, 825-856 (1957; Zbl 0087.036), S. Abhyankar proved that the automorphism group of an étale Galois cover of the affine line over K is generated by its \(p\)-Sylow subgroups and conjectures that the converse should be true, namely that if a finite group G is generated by its p-Sylow subgroups then there exists an étale Galois cover of the affine line over K with Galois group G. The author proves a weaker form of this conjecture, i.e. the following theorem: Let G be a finite group that is generated by its p-Sylow subgroups, let N be a normal subgroup of G and let G be the quotient group \(G/N\text{.}\) Assume that N is solvable and that G is the Galois group of an étale cover of the affine line. - Under these assumptions there exists an étale Galois cover of the affine line over K with Galois group G. In particular, this result implies Abhyankar’s conjecture for a solvable group.</p>
+<p id="p-1603">Then we have</p>
+<p id="p-1604">From zbmath for serre's Let K be an algebraically closed field of characteristic \(p\gt 0\text{.}\) In the paper Coverings of algebraic curves, Am. J. Math. 79, 825-856 (1957; Zbl 0087.036), S. Abhyankar proved that the automorphism group of an étale Galois cover of the affine line over K is generated by its \(p\)-Sylow subgroups and conjectures that the converse should be true, namely that if a finite group G is generated by its p-Sylow subgroups then there exists an étale Galois cover of the affine line over K with Galois group G. The author proves a weaker form of this conjecture, i.e. the following theorem: Let G be a finite group that is generated by its p-Sylow subgroups, let N be a normal subgroup of G and let G be the quotient group \(G/N\text{.}\) Assume that N is solvable and that G is the Galois group of an étale cover of the affine line. - Under these assumptions there exists an étale Galois cover of the affine line over K with Galois group G. In particular, this result implies Abhyankar’s conjecture for a solvable group.</p>
 <article class="theorem theorem-like" id="thm-abhyankar-aff"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar's conjecture for \(\aff^1\).</span>
 </h6>
-<p id="p-1604">Let \(G\) be  such that \(G/p(G)\) (the quotient by the subgroup generated by its Sylow subgroups) is trivial (a quasi-\(p\) group). Then there exists an etale cover of \(\aff^1\) with Galois group \(G\text{.}\)</p></article><p id="p-1605">What does it mean to be generated by \(p\)-Sylow? Its complicated, but for instance</p>
+<p id="p-1605">Let \(G\) be  such that \(G/p(G)\) (the quotient by the subgroup generated by its Sylow subgroups) is trivial (a quasi-\(p\) group). Then there exists an etale cover of \(\aff^1\) with Galois group \(G\text{.}\)</p></article><p id="p-1606">What does it mean to be generated by \(p\)-Sylow? Its complicated, but for instance</p>
 <div class="displaymath">
 \begin{equation*}
 S_n
@@ -633,21 +634,21 @@ A_n
 \end{equation*}
 </div>
 <p data-braille="continuation">is generated by 3-cycles.</p>
-<p id="p-1606">Meanwhile \(S_n\) is not solvable for \(n \ge 5\) (hence the general quintic isn't, Abel-Ruffini).</p>
-<p id="p-1607">More generally we can generate \(A_n\) for \(n\ge 5\) with the subgroup of \(p\)-cycles for any \(p\) as it is simple and the subgroup is normal.</p>
-<p id="p-1608">Another example is \(\SL_n(\FF_p)\) which is quasi-\(p\) as it is generated by elementary matrices, \(\PSL_n(\FF_p)\) is simple for large enough parameters. What about swapping?</p>
-<p id="p-1609">Even more generally any finite simple group for which \(p\) divides the order is a quasi-\(p\)-group.</p>
-<p id="p-1610">For instance therefore we should be able to find a monster group cover of the affine line when</p>
+<p id="p-1607">Meanwhile \(S_n\) is not solvable for \(n \ge 5\) (hence the general quintic isn't, Abel-Ruffini).</p>
+<p id="p-1608">More generally we can generate \(A_n\) for \(n\ge 5\) with the subgroup of \(p\)-cycles for any \(p\) as it is simple and the subgroup is normal.</p>
+<p id="p-1609">Another example is \(\SL_n(\FF_p)\) which is quasi-\(p\) as it is generated by elementary matrices, \(\PSL_n(\FF_p)\) is simple for large enough parameters. What about swapping?</p>
+<p id="p-1610">Even more generally any finite simple group for which \(p\) divides the order is a quasi-\(p\)-group.</p>
+<p id="p-1611">For instance therefore we should be able to find a monster group cover of the affine line when</p>
 <div class="displaymath">
 \begin{equation*}
 p\in\{ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 47, 59, 71\}\text{.}
 \end{equation*}
 </div>
-<p id="p-1611">What can we not do then?</p>
+<p id="p-1612">What can we not do then?</p>
 <article class="example example-like" id="example-86"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.8</span><span class="period">.</span>
 </h6>
-<p id="p-1612">The group</p>
+<p id="p-1613">The group</p>
 <div class="displaymath">
 \begin{equation*}
 \ZZ/p \times \ZZ/q
@@ -656,7 +657,7 @@ p\in\{ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 47, 59, 71\}\text{.}
 <p data-braille="continuation">for primes \(p\ne q\) is not quasi-\(p\) or quasi-\(q\text{,}\) thus even though it is abelian, solvable and easy to make as a Galois group over \(\QQ\) we cannot obtain it here.</p></article><article class="theorem theorem-like" id="thm-abhyankar"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar's conjecture.</span>
 </h6>
-<p id="p-1613">Let \(G\) be a finite group such that \(G/p(G)\) (the quotient by the subgroup generated by its Sylow subgroups) is generated by \(t\) elements. Let \(X/\FF_p\) be a smooth projective curve of genus \(g\text{,}\) \(S\subset X\) a finite set of points with</p>
+<p id="p-1614">Let \(G\) be a finite group such that \(G/p(G)\) (the quotient by the subgroup generated by its Sylow subgroups) is generated by \(t\) elements. Let \(X/\FF_p\) be a smooth projective curve of genus \(g\text{,}\) \(S\subset X\) a finite set of points with</p>
 <div class="displaymath">
 \begin{equation*}
 2g + |S| - 1 \ge t\text{.}
@@ -665,16 +666,16 @@ p\in\{ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 47, 59, 71\}\text{.}
 <p data-braille="continuation">Then there exists an etale cover of \(X\smallsetminus S\) with Galois group \(G\text{.}\)</p></article><article class="remark remark-like" id="remark-47"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.1.10</span><span class="period">.</span>
 </h6>
-<p id="p-1614">This conjecture implies the first, taking \(t = 0\) we have \(g = 0\text{,}\) \(S = \{\infty \}\) and</p>
+<p id="p-1615">This conjecture implies the first, taking \(t = 0\) we have \(g = 0\text{,}\) \(S = \{\infty \}\) and</p>
 <div class="displaymath">
 \begin{equation*}
 0 + 1 -1 = 0\text{.}
 \end{equation*}
 </div>
-<p id="p-1615">Note that it is tight also we cannot remove \(t \gt 0\) points.</p></article><article class="example example-like" id="example-87"><h6 class="heading">
+<p id="p-1616">Note that it is tight also we cannot remove \(t \gt 0\) points.</p></article><article class="example example-like" id="example-87"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.11</span><span class="period">.</span>
 </h6>
-<p id="p-1616">Over a once-punctured affine line we can now make non-quasi-\(p\)-groups as long as they aren't too far. For instance we can make \(\ZZ/\ell\) for any \(\ell \ne p\) as</p>
+<p id="p-1617">Over a once-punctured affine line we can now make non-quasi-\(p\)-groups as long as they aren't too far. For instance we can make \(\ZZ/\ell\) for any \(\ell \ne p\) as</p>
 <div class="displaymath">
 \begin{equation*}
 V(y^\ell  - x) \xrightarrow{x} \aff^1\text{.}
@@ -683,13 +684,13 @@ V(y^\ell  - x) \xrightarrow{x} \aff^1\text{.}
 <p data-braille="continuation">This has the right Galois  group and is ramified only at \(0, \infty \text{.}\)</p></article><article class="example example-like" id="example-88"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.12</span><span class="period">.</span>
 </h6>
-<p id="p-1617">But we can't get \(\ZZ/\ell \times \ZZ/\ell\) without adding another ramification point.</p></article><article class="example example-like" id="example-89"><h6 class="heading">
+<p id="p-1618">But we can't get \(\ZZ/\ell \times \ZZ/\ell\) without adding another ramification point.</p></article><article class="example example-like" id="example-89"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.13</span><span class="period">.</span>
 </h6>
-<p id="p-1618">We can stack an Artin-Schreier extension on a Kummeer</p>
+<p id="p-1619">We can stack an Artin-Schreier extension on a Kummeer</p>
 <div class="displaymath">
 \begin{equation*}
-x_l^\ell = x
+x_1^\ell = x
 \end{equation*}
 </div>
 <div class="displaymath">
@@ -720,28 +721,28 @@ y^p - y = x_1^d
 \mathbb{Z} / p \rtimes \mathbb{Z} / \ell\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Above \(\infty \) this is totally ramified, so \(D_\infty  = G\text{.}\) Is a non-cyclic decomposition group!</p></article><p id="p-1619">Why might you care? Spiritual connection to (one of the) most important questions in number theory, what is</p>
+<p data-braille="continuation">Above \(\infty \) this is totally ramified, so \(D_\infty  = G\text{.}\) Is a non-cyclic decomposition group!</p></article><p id="p-1620">Why might you care? Spiritual connection to (one of the) most important questions in number theory, what is</p>
 <div class="displaymath">
 \begin{equation*}
 \absgal \QQ
 \end{equation*}
 </div>
 <p data-braille="continuation">conjectured that every finite group appears as a quotient, the inverse Galois problem.</p>
-<p id="p-1620">This is proved for solvable groups by Shafarevich, and many other inst resting examples of simple groups.</p>
-<p id="p-1621">Here the analogous question is what is</p>
+<p id="p-1621">This is proved for solvable groups by Shafarevich, and many other inst resting examples of simple groups.</p>
+<p id="p-1622">Here the analogous question is what is</p>
 <div class="displaymath">
 \begin{equation*}
 \varprojlim_{S} \pi _1(\PP^1\smallsetminus S) \simeq \operatorname{Gal}\left(k(\PP^1)^{\operatorname{sep}} / k(\PP^1)\right)\text{?}
 \end{equation*}
 </div>
 <p data-braille="continuation">Where we allow more and more ramification.</p>
-<p id="p-1622">Or changing base for \(X\) a proper curve</p>
+<p id="p-1623">Or changing base for \(X\) a proper curve</p>
 <div class="displaymath">
 \begin{equation*}
 \varprojlim_{S} \pi _1(X\smallsetminus S) \simeq \operatorname{Gal}\left(k(X)^{\operatorname{sep}} / k(X)\right)\text{?}
 \end{equation*}
 </div>
-<p id="p-1623">That of what is</p>
+<p id="p-1624">That of what is</p>
 <div class="displaymath">
 \begin{equation*}
 \pi _1^\et(\aff^1)
@@ -757,12 +758,12 @@ y^p - y = x_1^d
 <article class="conjecture theorem-like" id="conjecture-6"><h6 class="heading">
 <span class="type">Conjecture</span><span class="space"> </span><span class="codenumber">7.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar's Inertia Conjecture.</span>
 </h6>
-<p id="p-1624">Let \(G\) be a finite quasi-p group. Let \(G_{0}\) be a subgroup of \(G\) which is an extension of a cyclic group of order prime-to-p by a p-group \(G_{1}\text{.}\) Then \(G_{0}\) occurs as an inertia group for a \(G\) - Galois cover of the projective line branched only at \(\infty \)  if and only if the conjugates of \(G_1\) generate \(G\)</p></article><p id="p-1625">the motivation for this comes from the fact that in characteristic 0 the inertia groups generate the Galois  group.</p>
-<p id="p-1626">If \(K\) is a finite field, then its algebraic closure \(\bar K\) is an infinite Galois extension of \(K\) whose finite subextensions all have cyclic Galois groups over \(K\text{.}\) This suggests that replacing the algebraically closed field of constants \(k\) by a finite subfield \(K\) adds a generator to the fundamental group of an affine curve, somewhat like the effect of deleting a point. This perspective motivated:</p>
+<p id="p-1625">Let \(G\) be a finite quasi-\(p\) group. Let \(G_{0}\) be a subgroup of \(G\) which is an extension of a cyclic group of order prime-to-p by a p-group \(G_{1}\text{.}\) Then \(G_{0}\) occurs as an inertia group for a \(G\) - Galois cover of the projective line branched only at \(\infty \)  if and only if the conjugates of \(G_1\) generate \(G\)</p></article><p id="p-1626">The motivation for this comes from the fact that in characteristic 0 the inertia groups generate the Galois  group.</p>
+<p id="p-1627">If \(K\) is a finite field, then its algebraic closure \(\bar K\) is an infinite Galois extension of \(K\) whose finite subextensions all have cyclic Galois groups over \(K\text{.}\) This suggests that replacing the algebraically closed field of constants \(k\) by a finite subfield \(K\) adds a generator to the fundamental group of an affine curve, somewhat like the effect of deleting a point. This perspective motivated:</p>
 <article class="conjecture theorem-like" id="conjecture-7"><h6 class="heading">
 <span class="type">Conjecture</span><span class="space"> </span><span class="codenumber">7.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar's Affine Arithmetical Conjecture.</span>
 </h6>
-<p id="p-1627">A finite group \(A\) occurs as the Galois group of an unramified cover of the affine line over \(\mathbb{F}_{p}\) if and only if it occurs as the Galois group of an unramified cover of \(\mathbb{A}_{k}^{1}-\{0\}\) (in other words, if and only if \(A / p(A)\) is cyclic).</p></article></section></div></main>
+<p id="p-1628">A finite group \(G\) occurs as the Galois group of an unramified cover of the affine line over \(\mathbb{F}_{p}\) if and only if it occurs as the Galois group of an unramified cover of \(\aff_{k}^{1}-\{0\}\) (in other words, if and only if \(G / p(G)\) is cyclic).</p></article><p id="p-1629">Both of these last two conjectures remain open I believe.</p></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>
