@@ -8,7 +8,7 @@
 
 <!-- Import the usual HTML conversion templates          -->
 <!-- Place ups-writers-html.xsl file into  mathbook/user -->
-<xsl:import href="../mathbook/xsl/mathbook-html.xsl" />
+<xsl:import href="../pretext/xsl/mathbook-html.xsl" />
 
 <xsl:include href="filter.xsl"/>
 
