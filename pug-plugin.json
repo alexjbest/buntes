@@ -89,7 +89,7 @@
 
             var ou = pugWalk(ast, function (node) {
                 // Don't replace text in certain blocks.
-                var bad = ['title' ,  'macros' ,  'xref' ,  'm' ,  'me' ,  "mrow" , "url"]
+                var bad = ['title' ,  'macros' ,  'xref' ,  'm' ,  'me' ,  'mrow' , 'url', 'input']
                 if (node.type === 'Tag') {
                     for (let type of bad)
                     {
