@@ -2,12 +2,13 @@
 
 XSLTPROC = xsltproc --timing --stringparam debug.datedfiles no --stringparam html.google-classic UA-48250536-1 # -v
 
-MATHBOOK_ROOT = ../mathbook/ # TODO implement this everywhere
+MATHBOOK_ROOT = ../pretext # TODO implement this everywhere
 
 docs/:	docs/buntes.pdf buntes-pretty.xml buntes.xsl filter.xsl
 	mkdir -p docs
 	cd docs/; \
 	$(XSLTPROC) ../buntes.xsl ../buntes-pretty.xml
+	cp courbes-semi-stables.pdf docs/
 	cp index.html docs/
 	cp buntes.css docs/
 
@@ -19,7 +20,7 @@ docs/buntes.pdf:	buntes.tex
 
 docs/images/:	docs buntes-wrapper.xml
 	mkdir -p docs/images
-	../mathbook/script/mbx -vv -c latex-image -f svg -d ~/buntes/docs/images ~/buntes/buntes-wrapper.xml
+	$(MATHBOOK_ROOT)/script/mbx -vv -c latex-image -f svg -d ~/buntes/docs/images ~/buntes/buntes-wrapper.xml
 
 buntes-wrapper.xml:	*.pug pug-plugin.json
 	pug -O pug-plugin.json --extension xml buntes-wrapper.pug
@@ -39,9 +40,9 @@ debug:	*.pug pug-plugin.json
 	pug -O pug-plugin.json --pretty --extension xml buntes-wrapper.pug
 
 check:	buntes-pretty.xml
-	jing ../mathbook/schema/pretext.rng buntes-pretty.xml
-	#xmllint --xinclude --postvalid --noout --dtdvalid ../mathbook/schema/dtd/mathbook.dtd buntes-pretty.xml
-	$(XSLTPROC) ../mathbook/schema/pretext-schematron.xsl buntes-pretty.xml
+	jing $(MATHBOOK_ROOT)/schema/pretext.rng buntes-pretty.xml
+	#xmllint --xinclude --postvalid --noout --dtdvalid $(MATHBOOK_ROOT)/schema/dtd/mathbook.dtd buntes-pretty.xml
+	$(XSLTPROC) $(MATHBOOK_ROOT)/schema/pretext-schematron.xsl buntes-pretty.xml
 
 clean-html:
 	rm -rf docs
