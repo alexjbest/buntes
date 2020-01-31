@@ -380,7 +380,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gz-overview"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</span>
 </h2>
-<a href="sec-gz-overview.html" class="permalink">¶</a><section class="introduction" id="introduction-22"><p id="p-1299">Goal today is to motivate and give some high level overview of the objects in Gross-Zagier. It involves many things \(L\)-functions, elliptic curves, modular forms.</p>
+<a href="sec-gz-overview.html" class="permalink">¶</a><section class="introduction" id="introduction-22"><p id="p-1299">Goal today is to motivate and give some high level overview of the objects in Gross-Zagier. It involves many things \(L\)-functions, <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, <a class="xref" data-knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a>.</p>
 <p id="p-1300">Main reference: <a class="xref" data-knowl="./knowl/bib-zagier-modular.html" title="Bibliographic Entry 106: Modular Points, Modular Curves, Modular Surfaces and Modular Forms">[106]</a>.</p></section><section class="subsection" id="subsection-93"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">A big example</span>
 </h3>
@@ -392,7 +392,7 @@ E\colon y^2 + y=  x^3 + x^2
 </div>
 <p data-braille="continuation">LMFDB label 43.a1, <a class="external" href="http://lmfdb.xyz/EllipticCurve/Q/43.a1/" target="_blank"><code class="code-inline tex2jax_ignore">http://lmfdb.xyz/EllipticCurve/Q/43.a1/</code></a>.</p>
 <figure class="figure figure-like" id="figure-2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-2.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1302">One fundamental invariant we can compute is the conductor, in this case 43, we only have bad reduction at 43 and no other prime.</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1302">One fundamental invariant we can compute is the <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">conductor</a>, in this case 43, we only have bad reduction at 43 and no other prime.</p>
 <p id="p-1303">To compute the real period we can transform to short Weierstrass form.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -510,7 +510,7 @@ E(\QQ) \simeq \ZZ \cdot \underbrace{P}_{=(0,0)}\text{.}
 \begin{equation*}
 \frac{\diff}{\diff s} \widetilde L_E(s)|_{s=1} = \underbrace{\hat h ( P) \omega _1}_{\approx 0.34352397} |\Sha|
 \end{equation*}
-</div>\(|\Sha|\) is predicted to be finite (in which case the order is a square). the LHS can be computed using<div class="displaymath">
+</div>\(|\Sha|\) is predicted to be finite (in which case the <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> is a square). the LHS can be computed using<div class="displaymath">
 \begin{equation*}
 2\sum_{n=1}^\infty  a_n \int_1^\infty  \log t \exp\left(- \frac{-2 n  \pi  t  }{\sqrt{43}}\right) \diff t\text{.}
 \end{equation*}
@@ -562,7 +562,7 @@ w_{43} =  \begin{pmatrix} 0 \amp \frac{-1}{\sqrt{43}} \\ \sqrt{43} \amp 0\end{pm
 \xi f^2, \eta f^3
 \end{equation*}
 </div>
-<p data-braille="continuation">should be holomorphic modular forms in \(M_4(\Gamma _0(43))\) and \(M_6(\Gamma _0(43))\text{.}\) we can compute \(q\)-series expansions and use modular symbols to prove they exist.</p></article><article class="paragraphs" id="paragraphs-51"><h5 class="heading"><span class="title">Quadratic twists of \(E\).</span></h5>
+<p data-braille="continuation">should be holomorphic <a class="xref" data-knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular forms</a> in \(M_4(\Gamma _0(43))\) and \(M_6(\Gamma _0(43))\text{.}\) we can compute \(q\)-series expansions and use modular symbols to prove they exist.</p></article><article class="paragraphs" id="paragraphs-51"><h5 class="heading"><span class="title">Quadratic twists of \(E\).</span></h5>
 <p id="p-1317">Let \(\Delta \lt  0\) be a fundamental discriminant.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -616,7 +616,7 @@ L_{E,\Delta } (1) = \Omega _{E,\Delta }^+  \prod_p c_p A_\Delta
 \hat h(P_\Delta ) = \frac{\sqrt{|\Delta |}}{8\pi ^2 \| f\|} L_E'(1) L_{E_\Delta }(1)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(P_\Delta \) is the Heegner point on \(E\) associated to the discriminant \(\Delta \text{.}\)</p></article><p id="p-1322">Adding in Waldspurger we get</p>
+<p data-braille="continuation">where \(P_\Delta \) is the <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner point</a> on \(E\) associated to the discriminant \(\Delta \text{.}\)</p></article><p id="p-1322">Adding in Waldspurger we get</p>
 <div class="displaymath">
 \begin{equation*}
 A(\Delta ) = c_\Delta ^2

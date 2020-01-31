@@ -390,21 +390,21 @@ var js_version = 0.13;
 (\underline x. T_m \underline x^\sigma ) = \frac12 \sum_{n=1}^\infty  \#\Hom_{W/\pi _v^n}(\underline x^\sigma , \underline x)_{\deg m}
 \end{equation*}
 </div>
-<p id="p-1428">To do this we want to understand more about the special nature of Heegner points, representing pairs of CM elliptic curves. Angus told us last time about how to lift curves together with an endomorphism from \(\FF_q\) to a number field. The set of all lifts to positive characteristic of a given curve over a finite field, can be thought of as deformations of the given curve. The aim is to describe these deformations in terms of a simpler object.</p>
-<p id="p-1429">We will work in generality, because it isn't really any harder, and makes it a bit clearer in some cases. That is we will work with <em class="emphasis">abelian schemes</em> which are higher dimensional generalizations of elliptic curves (e.g. products of elliptic curves, weil restrictions, or jacobians of higher genus curves). You can replace abelian scheme with elliptic curve if you like and restrict to dimension \(g =1\text{.}\) . We let \(R\) be a ring, and define the category</p>
+<p id="p-1428">To do this we want to understand more about the special nature of <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner points</a>, representing pairs of <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>. Angus told us last time about how to lift curves together with an <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> from \(\FF_q\) to a number field. The set of all lifts to positive characteristic of a given curve over a finite field, can be thought of as deformations of the given curve. The aim is to describe these deformations in terms of a simpler object.</p>
+<p id="p-1429">We will work in generality, because it isn't really any harder, and makes it a bit clearer in some cases. That is we will work with <em class="emphasis">abelian schemes</em> which are higher dimensional generalizations of <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> (e.g. products of <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, weil restrictions, or jacobians of higher <a class="xref" data-knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> curves). You can replace abelian scheme with <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> if you like and restrict to dimension \(g =1\text{.}\) . We let \(R\) be a ring, and define the category</p>
 <div class="displaymath">
 \begin{equation*}
 \mathrm{AbSch}(R) = \{\text{abelian schemes over} R\}\text{.}
 \end{equation*}
 </div>
-<p id="p-1430">We will fix \(W\) a complete DVR with residue field \(\overline \FF_p\) (i.e. \(W\) could be the Witt vectors of \(\overline  \FF_p\)). Complete means that</p>
+<p id="p-1430">We will fix \(W\) a <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> DVR with residue field \(\overline \FF_p\) (i.e. \(W\) could be the Witt vectors of \(\overline  \FF_p\)). Complete means that</p>
 <div class="displaymath">
 \begin{equation*}
 W = W_\infty  =\varprojlim_{m} \underbrace{W/p^m}_{=W_m}
 \end{equation*}
 </div>
 <p data-braille="continuation">The for \(m =1,2,\ldots, \infty \) we let \(R\) be a base ring Given \(R\) ring we can reduce to the residue field, but this map is many to one, what is the smallest amount of data needed to recover \(A/R\) an abelian scheme from \(A_0/R_0\text{?}\)</p>
-<p id="p-1431">Our rings today will probably all be complete local \(R\)-algebras.</p>
+<p id="p-1431">Our rings today will probably all be <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> local \(R\)-algebras.</p>
 <p id="p-1432">Given any abelian scheme \(A/R\) over any ring we can form its \(p\)-divisible group, also known as a Barsotti-Tate group</p>
 <div class="displaymath">
 \begin{equation*}
@@ -421,7 +421,7 @@ A[p^\infty ]
 G = (G_v, i_v),\,v \ge 0
 \end{equation*}
 </div>
-<p data-braille="continuation">where each \(G\) is a finite group scheme over \(R\) of order \(p^{vh}\) and for each \(v\ge0\)</p>
+<p data-braille="continuation">where each \(G\) is a finite group scheme over \(R\) of <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> \(p^{vh}\) and for each \(v\ge0\)</p>
 <div class="displaymath">
 \begin{equation*}
 0 \to G_v \xrightarrow{i_v} G_{v+1} \xrightarrow{p^v} G_{v+1}
@@ -444,7 +444,7 @@ G_v = (\ZZ/p^v)^h
 </div></article><article class="example example-like" id="example-81"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.7.3</span><span class="period">.</span>
 </h6>
-<p id="p-1435">For abelian varieties \(A\) of dimension \(d\) we have</p>
+<p id="p-1435">For <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> \(A\) of dimension \(d\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 (A[p^v], i_v\colon A[p^v] \hookrightarrow A[p^{v+1}])
@@ -456,7 +456,7 @@ G_v = (\ZZ/p^v)^h
 \mathrm{Def}(R,R_0) =\{(A_0, G, \epsilon ) : A_0/R_0\text{ abelian scheme},\,G/R\text{ a }p\text{-divisible group},\,\epsilon \colon G_0 \to A_0 [p^\infty ]\}
 \end{equation*}
 </div>
-<p data-braille="continuation">\(\epsilon \) an isom of \(p\)-divisible groups ove \(R_0\text{.}\) So these are abelian schemes over the “small” ring and a choice of compatible \(p\)-divisible group over the big ring.</p>
+<p data-braille="continuation">\(\epsilon \) an isom of \(p\)-divisible groups ove \(R_0\text{.}\) So these are abelian schemes over the “small” ring and a choice of <a class="xref" data-knowl="./knowl/def-buntes-compat.html" title="Definition 3.4.2: Compatibility">compatible</a> \(p\)-divisible group over the big ring.</p>
 <p id="p-1437">With this setting we have a nice map as follows If \(R\) is a ring with \(p\) nilpotent, \(I \subseteq R\) a nilpotent ideal and \(R_0 = R/I\) then</p>
 <div class="displaymath">
 \begin{equation*}
@@ -472,8 +472,8 @@ A \mapsto (A_0, A[p^\infty ],A[p^\infty ]\otimes R_0 \simeq A_0 [p^\infty ])\tex
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Serre-Tate.</span>
 </h6>
 <p id="p-1438">This functor is an equivalence of categories.</p></article><p id="p-1439">Thus the set of deformations of a fixed \(A_0\) corresponds to deformations of \(A_0\lb p^\infty \rb \text{.}\)</p>
-<p id="p-1440">This is a kinda ridiculous theorem, it tells us that all the information in an abelian variety over \(R\) is contained in the reduction to \(R_0\) except the \(p^\infty\) torsion and the information of how this fits together.</p>
-<p id="p-1441">Hence to study the abelian varieties over \(R\) reducing to a given \(A_{R_0}/R_0\) we can just study the \(p\)-divisible groups over \(R\) with an isomorphism to \(A_{R_0}\lb p^\infty\rb\text{.}\)</p></section><section class="subsection" id="subsection-101"><h3 class="heading hide-type">
+<p id="p-1440">This is a kinda ridiculous theorem, it tells us that all the information in an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(R\) is contained in the reduction to \(R_0\) except the \(p^\infty\) torsion and the information of how this fits together.</p>
+<p id="p-1441">Hence to study the <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> over \(R\) reducing to a given \(A_{R_0}/R_0\) we can just study the \(p\)-divisible groups over \(R\) with an isomorphism to \(A_{R_0}\lb p^\infty\rb\text{.}\)</p></section><section class="subsection" id="subsection-101"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.7.2</span> <span class="title">Drinfeld's proof of Serre-Tate</span>
 </h3>
 <p id="p-1442">Drinfeld's proof cleverly extracts the content common to both things we are lifting, the abelian scheme and the \(p\)-divisible group.</p>
@@ -512,7 +512,7 @@ G_I \colon A \mapsto \ker( G(A) \to G(A\otimes R_0))
 G_I \subseteq \widehat G\text{.}
 \end{equation*}
 </div>
-<p id="p-1445">What are formal groups?</p>
+<p id="p-1445">What are <a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">formal groups</a>?</p>
 <article class="definition definition-like" id="def-gz-formal-gps"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Formal groups.</span>
 </h6>
@@ -528,7 +528,7 @@ F(x,y) = (x_1, \ldots, x_n) + (y_1,\ldots,y_n) + O(\text{degree 2 terms}) \in (R
 F(F(x,y),z) = F(x,F(y,z))\text{.}
 \end{equation*}
 </div>
-<p id="p-1447">The formal group is <dfn class="terminology">commutative</dfn> if \(F(x,y) = F(y,x)\text{.}\)</p></article><p id="p-1448">Given an abelian variety we can get a 1-dimensional formal group by completing at the origin. E.g. for an elliptic curve</p>
+<p id="p-1447">The <a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">formal group</a> is <dfn class="terminology">commutative</dfn> if \(F(x,y) = F(y,x)\text{.}\)</p></article><p id="p-1448">Given an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> we can get a 1-dimensional <a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">formal group</a> by completing at the origin. E.g. for an <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a></p>
 <div class="displaymath">
 \begin{equation*}
 y^2 = x^3 + ax +b
@@ -551,8 +551,8 @@ y^2 = x^3 + ax +b
 t_{1} + t_{2} + \left(-2 a\right) t_{1}^{4} t_{2} + \left(-4 a\right) t_{1}^{3} t_{2}^{2} + \left(-4 a\right) t_{1}^{2} t_{2}^{3} + \left(-2 a\right) t_{1} t_{2}^{4} + \left(-3 b\right) t_{1}^{6} t_{2} + \left(-9 b\right) t_{1}^{5} t_{2}^{2} + \left(-15 b\right) t_{1}^{4} t_{2}^{3} + \left(-15 b\right) t_{1}^{3} t_{2}^{4} + \left(-9 b\right) t_{1}^{2} t_{2}^{5} + \left(-3 b\right) t_{1} t_{2}^{6} + \left(-2 a^{2}\right) t_{1}^{8} t_{2} + \left(8 a^{2}\right) t_{1}^{6} t_{2}^{3} + \left(16 a^{2}\right) t_{1}^{5} t_{2}^{4} + \left(16 a^{2}\right) t_{1}^{4} t_{2}^{5} + \left(8 a^{2}\right) t_{1}^{3} t_{2}^{6} + \left(-2 a^{2}\right) t_{1} t_{2}^{8} + O(t_{1}, t_{2})^{10}\text{.}
 \end{equation*}
 </div>
-<p id="p-1449">In general an \(n\)-dimensional abelian variety gives an \(n\)-dimensional formal group.</p>
-<p id="p-1450">Given a complete local ring \(R\) we can evaluate by substituting \(t\) for anything in the maximal ideal. So a formal group \(G\) defines a functor</p>
+<p id="p-1449">In general an \(n\)-dimensional <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> gives an \(n\)-dimensional <a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">formal group</a>.</p>
+<p id="p-1450">Given a <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> local ring \(R\) we can evaluate by substituting \(t\) for anything in the maximal ideal. So a <a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">formal group</a> \(G\) defines a functor</p>
 <div class="displaymath">
 \begin{equation*}
 G\colon \text{complete local }R\text{-algebras} \to \text{AbGrp}
@@ -566,7 +566,7 @@ G(A) = (\ideal m_A)^n\text{with multiplication by }G\text{.}
 <article class="lemma theorem-like" id="lemma-28"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">6.7.6</span><span class="period">.</span>
 </h6>
-<p id="p-1451">Let \(G\) be a commutative formal group over \(R\text{,}\) so  \(G_I,\widehat G\) are now sub-group functors. \(G_I\) is \(N^\nu\) torsion.</p></article><article class="hiddenproof" id="proof-129"><a data-knowl="" class="id-ref original" data-refid="hk-proof-129"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-129"><article class="hiddenproof"><p id="p-1452">We need to show that \(\lb N\rb a = 0\) for any \(a \in G_I(A) \subseteq G(A)\) for which \(a_i \in I\) for all \(i\text{.}\) An element of \(G_I(A)\) has coordinates in \(IA\) and \(NR = 0\) so we have</p>
+<p id="p-1451">Let \(G\) be a <a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">commutative</a> <a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">formal group</a> over \(R\text{,}\) so  \(G_I,\widehat G\) are now sub-group functors. \(G_I\) is \(N^\nu\) torsion.</p></article><article class="hiddenproof" id="proof-129"><a data-knowl="" class="id-ref original" data-refid="hk-proof-129"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-129"><article class="hiddenproof"><p id="p-1452">We need to show that \(\lb N\rb a = 0\) for any \(a \in G_I(A) \subseteq G(A)\) for which \(a_i \in I\) for all \(i\text{.}\) An element of \(G_I(A)\) has coordinates in \(IA\) and \(NR = 0\) so we have</p>
 <div class="displaymath">
 \begin{equation*}
 (\lb N\rb a)_i = N a_i + \text{h.o.t.} \in N(IA) + (IA)^2 = (IA)^2
@@ -602,7 +602,7 @@ G(A)\hookrightarrow G(C)
 G(A) = E(A)
 \end{equation*}
 </div>
-<p data-braille="continuation">for \(E\) an abelian variety.</p></article><article class="lemma theorem-like" id="lemma-29"><h6 class="heading">
+<p data-braille="continuation">for \(E\) an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>.</p></article><article class="lemma theorem-like" id="lemma-29"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">6.7.9</span><span class="period">.</span>
 </h6>
 <p id="p-1455">Let \(G,H\) be fppf abelian sheaves. And set \(G_0, H_0\) the corresponding objects restricted to \(R_0\text{.}\) Suppose</p>
@@ -691,7 +691,7 @@ g = `` N^\nu f'' \in \Hom(A, A')
 g\colon  X[p^\infty ] \to D
 \end{equation*}
 </div>
-<p data-braille="continuation">\(N^\nu \alpha _0\) applying the lemma to \(G = X_0\lb p^\infty \rb \text{,}\) \(H = D\text{.}\) So we get an isogeny \(g\) and we quotient by the kernel.</p></section></section></div></main>
+<p data-braille="continuation">\(N^\nu \alpha _0\) applying the lemma to \(G = X_0\lb p^\infty \rb \text{,}\) \(H = D\text{.}\) So we get an <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(g\) and we quotient by the kernel.</p></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>

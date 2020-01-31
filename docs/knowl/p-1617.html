@@ -12,13 +12,41 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Over a once-punctured affine line we can now make non-quasi-\(p\)-groups as long as they aren't too far. For instance we can make \(\ZZ/\ell\) for any \(\ell \ne p\) as</p>
+<p>We can stack an <a href="sec-abhyankar-what-is.html" class="internal" title="Section 7.1: What is Abhyankar's conjecture? (Alex)">Artin-Schreier</a> extension on a Kummer</p>
 <div class="displaymath">
 \begin{equation*}
-V(y^\ell  - x) \xrightarrow{x} \aff^1\text{.}
+x_1^\ell = x
 \end{equation*}
 </div>
-<p data-braille="continuation">This has the right Galois  group and is ramified only at \(0, \infty \text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+y^p - y = x_1^d
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(\ell | (p-1)\text{,}\) \(p\nmid d\text{,}\) \(\ell\nmid d\text{.}\) Giving a degree \(\ell p\) cover. We then have automorphisms</p>
+<div class="displaymath">
+\begin{equation*}
+\tau  \colon  x_1\mapsto x_1,\, y \mapsto y + 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sigma \colon  x_1\mapsto \zeta _\ell x_1,\, y \mapsto \zeta _\ell^d y
+\end{equation*}
+</div>
+<p data-braille="continuation">but</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma \tau \sigma^{-1}(y)=y+\zeta_{\ell}^{-d} \neq \tau(y)
+\end{equation*}
+</div>
+<p data-braille="continuation">so the Galois group is the semidirect product</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbb{Z} / p \rtimes \mathbb{Z} / \ell\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Above \(\infty \) this is totally <a class="xref" data-knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a>, so \(D_\infty  = G\text{.}\) Is a non-cyclic decomposition group!</p>
 <span class="incontext"><a href="sec-abhyankar-what-is.html#p-1617">in-context</a></span>
 </body>
 </html>

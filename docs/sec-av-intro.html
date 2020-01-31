@@ -386,7 +386,7 @@ var js_version = 0.13;
 <a href="sec-av-intro.html#subsec-abvar-defs" class="permalink">¶</a><article class="definition definition-like" id="def-buntes-abvar"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Abelian varieties.</span>
 </h6>
-<p id="p-5">An <dfn class="terminology">abelian variety</dfn> is a complete connected algebraic group.</p></article><article class="definition definition-like" id="def-alg-gp"><h6 class="heading">
+<p id="p-5">An <dfn class="terminology">abelian variety</dfn> is a <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> connected <a class="xref" data-knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a>.</p></article><article class="definition definition-like" id="def-alg-gp"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Algebraic groups.</span>
 </h6>
 <p id="p-6">An <dfn class="terminology">algebraic group</dfn> is an algebraic variety \(G\) along with regular maps \(m\colon G\times G\to G\text{,}\) \(e \colon * \to G\text{,}\)  \(\operatorname{inv}\colon G\to G\) such that the following diagrams commute.</p>
@@ -430,13 +430,13 @@ X\times Y \to Y
 </h6>
 <ul id="p-11" class="disc">
 <li id="li-1">Elliptic curves.</li>
-<li id="li-2">Weil restriction \(\Res_{K/\QQ} E\) of an elliptic curve \(E\text{.}\)</li>
+<li id="li-2">Weil restriction \(\Res_{K/\QQ} E\) of an <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E\text{.}\)</li>
 <li id="li-3">Jacobian varieties of curves.</li>
 </ul></article><p id="p-12">Plan:</p>
 <ul class="disc">
-<li id="li-4">Some motivation via elliptic curves.</li>
+<li id="li-4">Some motivation via <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>.</li>
 <li id="li-5">Gathering some material about “completeness”.</li>
-<li id="li-6">Prove that abelian varieties are abelian.</li>
+<li id="li-6">Prove that <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> are abelian.</li>
 </ul></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Elliptic curves (\(\characteristic(k) \ne 2,3\))</span>
 </h3>
@@ -446,9 +446,9 @@ X\times Y \to Y
 <p id="p-13">TFAE for a projective curve \(E\) over \(k\text{.}\)</p>
 <ol class="decimal">
 <li id="item-cubic-eq">\(E\) is given by \(Y^2Z = X^3 + aXZ^2 + bZ^3\text{,}\) \(4a^3 + 27b^2 \ne 0\text{.}\)</li>
-<li id="item-nonsing-pt">\(E\) is nonsingular of genus 1 with a distinguished point \(P_0\text{.}\)</li>
-<li id="item-nonsing-gp">\(E\) is nonsingular with an algebraic group structure.</li>
-<li id="item-cmplx">(if \(k \subseteq \CC\)) such that \(E(\CC) = \CC/\Lambda\) for some lattice \(\Lambda \subseteq \CC\text{.}\)</li>
+<li id="item-nonsing-pt">\(E\) is nonsingular of <a class="xref" data-knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> 1 with a distinguished point \(P_0\text{.}\)</li>
+<li id="item-nonsing-gp">\(E\) is nonsingular with an <a class="xref" data-knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> structure.</li>
+<li id="item-cmplx">(if \(k \subseteq \CC\)) such that \(E(\CC) = \CC/\Lambda\) for some <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> \(\Lambda \subseteq \CC\text{.}\)</li>
 </ol></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-14">Strategy: <a class="xref" data-knowl="./knowl/item-cubic-eq.html" title="Item 1">Item 1</a> \(\iff\) <a class="xref" data-knowl="./knowl/item-nonsing-pt.html" title="Item 2">Item 2</a> \(\iff\)<a class="xref" data-knowl="./knowl/item-nonsing-gp.html" title="Item 3">Item 3</a> and <a class="xref" data-knowl="./knowl/item-nonsing-pt.html" title="Item 2">Item 2</a> \(\implies\) <a class="xref" data-knowl="./knowl/item-cmplx.html" title="Item 4">Item 4</a> \(\implies\) <a class="xref" data-knowl="./knowl/item-cubic-eq.html" title="Item 1">Item 1</a>.</p>
 <p id="p-15"><a class="xref" data-knowl="./knowl/item-cubic-eq.html" title="Item 1">Item 1</a> \(\implies\) <a class="xref" data-knowl="./knowl/item-nonsing-pt.html" title="Item 2">Item 2</a> is done.</p>
 <p id="p-16"><a class="xref" data-knowl="./knowl/item-nonsing-pt.html" title="Item 2">Item 2</a> \(\implies\)<a class="xref" data-knowl="./knowl/item-cubic-eq.html" title="Item 1">Item 1</a>: Riemann-Roch states that \(l(D) = l(K-D) +  \deg(D) + 1 -g \) so here \(l(D) = l(K-D) + \deg (D)\) further is \(D\gt 0\) then \(l(K-D) = 0\) in which case \(l(D) = \deg(D)\text{.}\) Consider \(L(nP_0)\) for \(n \gt 0\) Riemann-Roch implies that \(l(nP_0) = n\) then it always contains the constants.</p>
@@ -497,7 +497,7 @@ P_0 \mapsto (0:1 : 0)
 <article class="definition definition-like" id="def-abelian-elliptic-curve"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Elliptic curves.</span>
 </h6>
-<p id="p-17">An <dfn class="terminology">elliptic curve</dfn> over \(k\) is any/all of <a class="xref" data-knowl="./knowl/thm-equivalent-ec.html" title="Theorem 1.2.5">that 1.2.5</a>.</p></article><p id="p-18">Which of the above characterisations generalise to abelian varieties?</p>
+<p id="p-17">An <dfn class="terminology">elliptic curve</dfn> over \(k\) is any/all of <a class="xref" data-knowl="./knowl/thm-equivalent-ec.html" title="Theorem 1.2.5">that 1.2.5</a>.</p></article><p id="p-18">Which of the above characterisations generalise to <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>?</p>
 <ol class="decimal">
 <li id="li-11">No, in general we don't know that the equations look like.</li>
 <li id="li-12">One could possibly replace “genus” with a condition on the dimension of cohomology groups.</li>
@@ -506,20 +506,20 @@ P_0 \mapsto (0:1 : 0)
 </ol></section><section class="subsection" id="subsec-complete-vars"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.3</span> <span class="title">Complete varieties</span>
 </h3>
-<a href="sec-av-intro.html#subsec-complete-vars" class="permalink">¶</a><p id="p-19">Idea: if \(X \times Y\) had product topology (instead of its Zariski topology) then complete is equivalent to compact.</p>
-<p id="p-20">We'd like to gather a few results about complete varieties we can use to access properties of abelian varieties (like abelianness).</p>
+<a href="sec-av-intro.html#subsec-complete-vars" class="permalink">¶</a><p id="p-19">Idea: if \(X \times Y\) had product topology (instead of its Zariski topology) then <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> is equivalent to compact.</p>
+<p id="p-20">We'd like to gather a few results about <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> varieties we can use to access properties of <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> (like abelianness).</p>
 <article class="proposition theorem-like" id="proposition-1"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
 </h6>
-<p id="p-21">Let \(V\) be a complete variety. Given any morphism \(\phi\colon V \to W\) \(\phi (V) \) is closed.</p></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-22">Let \(\Gamma_\phi = \{(v, \phi(v))\} \subseteq V\times W\) be the graph of \(\phi\text{.}\) Its a closed subvariety of \(V\times W\text{.}\) Under the projection \(V\times W \to W\text{,}\) the image of \(\Gamma_\phi\) is \(\phi(V)\) and thus closed.</p></article></div>
+<p id="p-21">Let \(V\) be a <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> variety. Given any morphism \(\phi\colon V \to W\) \(\phi (V) \) is closed.</p></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-22">Let \(\Gamma_\phi = \{(v, \phi(v))\} \subseteq V\times W\) be the graph of \(\phi\text{.}\) Its a closed subvariety of \(V\times W\text{.}\) Under the projection \(V\times W \to W\text{,}\) the image of \(\Gamma_\phi\) is \(\phi(V)\) and thus closed.</p></article></div>
 <article class="corollary theorem-like" id="corollary-1"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
 </h6>
-<p id="p-23">If \(V\) is complete and connected, any regular function on \(V\) is constant.</p></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-24">A regular function is a morphism \(f\colon V \to \aff^1\text{.}\) By the above \(f(V) \subseteq \aff^1\) is closed, and this is a finite set of points. But connected implies we just have one point.</p></article></div>
+<p id="p-23">If \(V\) is <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> and connected, any regular function on \(V\) is constant.</p></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-24">A regular function is a morphism \(f\colon V \to \aff^1\text{.}\) By the above \(f(V) \subseteq \aff^1\) is closed, and this is a finite set of points. But connected implies we just have one point.</p></article></div>
 <article class="corollary theorem-like" id="corollary-2"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span>
 </h6>
-<p id="p-25">Let \(V \) be a complete connected variety. Let \(W\) be an affine variety. Given \(\phi\colon V\to W\text{,}\) then \(\phi (V)\) is a point.</p></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-26">We have an embedding \(W \hookrightarrow \aff^n\text{.}\) On \(\aff^n\) we have the coordinate functions \(\aff^n \xrightarrow{x_i} \aff^1\text{.}\) The composition</p>
+<p id="p-25">Let \(V \) be a <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> connected variety. Let \(W\) be an affine variety. Given \(\phi\colon V\to W\text{,}\) then \(\phi (V)\) is a point.</p></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-26">We have an embedding \(W \hookrightarrow \aff^n\text{.}\) On \(\aff^n\) we have the coordinate functions \(\aff^n \xrightarrow{x_i} \aff^1\text{.}\) The composition</p>
 <div class="displaymath">
 \begin{equation*}
 V \xrightarrow\phi W \hookrightarrow\aff^n \to \aff^1
@@ -530,18 +530,18 @@ V \xrightarrow\phi W \hookrightarrow\aff^n \to \aff^1
 <article class="theorem theorem-like" id="theorem-2"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span>
 </h6>
-<p id="p-28">Projective varieties are complete.</p></article><p id="p-29">The main goal of this section is to prove the following theorem:</p>
+<p id="p-28">Projective varieties are <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a>.</p></article><p id="p-29">The main goal of this section is to prove the following theorem:</p>
 <article class="theorem theorem-like" id="thm-rigidity"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Rigidity.</span>
 </h6>
-<p id="p-30">Let \(V,W\) be varieties such that \(V\) is complete and  \(V\times W\) is geometrically irreducible. Let \(\alpha\colon V\times W \to U\) be a morphism such that \(\exists u_0\in U(k), v_0\in V(k), w_0\in W(k)\) with \(\alpha(V\times\{w_0\}) = \alpha (\{v_0\}\times W ) = \{u_0\}\text{.}\) Then \(\alpha (V\times W) = \{u_0\}\text{.}\)</p></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-31">Since \(V\times W\) is geometrically irreducible, \(V\) must be connected. Denote the projection \(q\colon V\times W \to W\text{.}\) Let \(U_0 \ni u_0\) be an open neighborhood. We consider the set</p>
+<p id="p-30">Let \(V,W\) be varieties such that \(V\) is <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> and  \(V\times W\) is geometrically irreducible. Let \(\alpha\colon V\times W \to U\) be a morphism such that \(\exists u_0\in U(k), v_0\in V(k), w_0\in W(k)\) with \(\alpha(V\times\{w_0\}) = \alpha (\{v_0\}\times W ) = \{u_0\}\text{.}\) Then \(\alpha (V\times W) = \{u_0\}\text{.}\)</p></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-31">Since \(V\times W\) is geometrically irreducible, \(V\) must be connected. Denote the projection \(q\colon V\times W \to W\text{.}\) Let \(U_0 \ni u_0\) be an open neighborhood. We consider the set</p>
 <div class="displaymath">
 \begin{equation*}
 Z = \{w\in W : \alpha((v,w)) \not\in U_0 \text{ for some } v\in V\} = q(\alpha^{-1}(U\smallsetminus U_0))
 \end{equation*}
 </div>
 <p data-braille="continuation">Since \(q\) is closed, \(Z\subseteq W\) is closed. Since \(w_0\in W\smallsetminus Z\text{,}\) \(W\smallsetminus Z\) is a nonempty open subset of \(W\text{.}\)</p>
-<p id="p-32">Consider \(w \in W\smallsetminus Z\text{.}\) Since \(V\times\{w\} \cong V\) it is complete and connected. Thus</p>
+<p id="p-32">Consider \(w \in W\smallsetminus Z\text{.}\) Since \(V\times\{w\} \cong V\) it is <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> and connected. Thus</p>
 <div class="displaymath">
 \begin{equation*}
 \alpha(V\times \{w\}) = \{\text{pt}\} = \alpha((v_0,w)) = \{u_0\}
@@ -557,7 +557,7 @@ Z = \{w\in W : \alpha((v,w)) \not\in U_0 \text{ for some } v\in V\} = q(\alpha^{
 <article class="proposition theorem-like" id="proposition-2"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.2.12</span><span class="period">.</span>
 </h6>
-<p id="p-33">Let \(A,B\) be abelian varieties. Every morphism \(\alpha \colon A \to B \) is the composition of a homomorphism and a translation.</p></article><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-34">First compose by a translation on \(B\) such that \(\alpha(0) = 0\text{.}\) Consider the map</p>
+<p id="p-33">Let \(A,B\) be <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a>. Every morphism \(\alpha \colon A \to B \) is the composition of a homomorphism and a translation.</p></article><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-34">First compose by a translation on \(B\) such that \(\alpha(0) = 0\text{.}\) Consider the map</p>
 <div class="displaymath">
 \begin{align*}
 \phi \colon A\times A\amp\to B\\

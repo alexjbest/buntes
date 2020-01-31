@@ -381,7 +381,7 @@ var js_version = 0.13;
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Quaternion Algebras (Alex)</span>
 </h2>
 <a href="sec-quaternion-algebras.html" class="permalink">¶</a><section class="introduction" id="introduction-14"><p id="p-865">Q: Why study quaternion algebras?</p>
-<p id="p-866">A: They arise as the endomorphism algebras of <em class="emphasis">supersingular</em> elliptic curves \(/\FF_{p^2}\text{.}\)</p>
+<p id="p-866">A: They arise as the <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebras of <em class="emphasis">supersingular</em> <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> \(/\FF_{p^2}\text{.}\)</p>
 <p id="p-867">I don't want to spoiler next week at all, but I cannot talk about quaternion algebras without a little bit of motivation first!</p>
 <article class="example example-like" id="example-42"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">What are we doing again?</span>
@@ -398,9 +398,9 @@ K = \FF_9 = \FF_3[\alpha] = \FF_3[x]/(x^2- x - 1)
 E/K\colon y^2 = x^3 + \alpha x = f(x)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">simple eh? It's supersingular as the \(j\)-invariant is 0 (and are in characteristic 3). Alternatively, count points or even compute the Hasse invariant, the coefficient of \(p -1 = 2\) in \(f(x)^{(p-1)/2 = 1}\text{,}\) yep, it's 0.</p>
+<p data-braille="continuation"><a class="xref" data-knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> eh? It's supersingular as the \(j\)-invariant is 0 (and are in characteristic 3). Alternatively, count points or even compute the Hasse invariant, the coefficient of \(p -1 = 2\) in \(f(x)^{(p-1)/2 = 1}\text{,}\) yep, it's 0.</p>
 <p id="p-869">We therefore have \(\#E(K) = 9 + 1 = 10\) so we have a \(2\)-torsion point (\(P = (0,0)\)) and any other point we can use to generate (will be \(5\) or \(10\) torsion). Let \(x = 1\) so \(y^2 = 1 + \alpha = \alpha^2\) so \(y = \pm\alpha\text{,}\) say \(Q = (1,\alpha)\text{.}\)</p>
-<p id="p-870">We have one endomorphism, \(p\)-power frobenius \(x\mapsto x^3\text{,}\) \(y\mapsto y^3\text{.}\) How to find another one?</p>
+<p id="p-870">We have one <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a>, \(p\)-power frobenius \(x\mapsto x^3\text{,}\) \(y\mapsto y^3\text{.}\) How to find another one?</p>
 <p id="p-871">Lets compute an isogenous curve and see what happens! We will compute \(\psi\colon  E \to E/\langle P \rangle = E'\text{.}\) In general the formulae are  a little annoying <a class="xref" data-knowl="./knowl/bib-velu.html" title="Bibliographic Entry 100: Isogénies entre courbes elliptiques">[100]</a>, when you have a 2-torsion point at \((0,0)\text{,}\) not as bad:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -424,7 +424,7 @@ f'(0) = \alpha
 E'\colon y^2 = x^3 + 0x^2 + (\alpha - 5\alpha)x +0 = x^3  - \alpha x\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">I think really here we're just recovering those classic formulae for 2-isogenies between curves with a rational 2 torsion point at \((0,0)\) (used in 2-descent).</p>
+<p data-braille="continuation">I think really here we're just recovering those classic formulae for 2-<a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> between curves with a rational 2 torsion point at \((0,0)\) (used in 2-descent).</p>
 <div class="displaymath">
 \begin{align*}
 C\amp\colon y^2 = x(x^2+ax+b)\\
@@ -472,7 +472,7 @@ y^2 = x^3 - \alpha^{-3} x = x^3 +\alpha x\text{,}
 (\alpha : -\alpha -1 : 1) \mapsto (-1 : \alpha -1 : 1),\, (-\alpha : 1 : 1) \mapsto (1 : \alpha : 1),\, (-\alpha : -1 : 1) \mapsto (1 : -\alpha : 1)
 \end{gather*}
 </div>
-<p data-braille="continuation">A word of caution: If you are very awake you may check and be led to believe that this is just the multiplication by \(-2\) isogeny on \(E\text{,}\) its action on \(E(\FF_9)\) points is the same!!!!! It's not the same isogeny though so you can relax. Now we have an endomorphism ring with two elements, what are the relations between themselves, and each other?</p>
+<p data-braille="continuation">A word of caution: If you are very awake you may check and be led to believe that this is just the multiplication by \(-2\) <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> on \(E\text{,}\) its action on \(E(\FF_9)\) points is the same!!!!! It's not the same <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> though so you can relax. Now we have an <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring with two elements, what are the relations between themselves, and each other?</p>
 <p id="p-874">As we quotiented by a rational \(2\)-torsion point we have computed a factor of \(\pi - 1\text{,}\) the other factor comes from quotienting by \(5\)-torsion. In fact we find. The frobenius has characteristic polynomial \(t^2 + 9 = (t + 3i)(t-3i)\) \(\pi\) looks like \(3i\text{.}\) \(\psi\) has characteristic polynomial \(t^2 - 2t + 2 = (t+1)^2 + 1\text{,}\) so \(\psi + 1\) looks like \(\pm i\text{.}\) \(?? \cdot \psi = \pi - 1\)  \(?? \cdot (i - 1) = 3i - 1\text{,}\) so \(?? = 2 - i = 2 - (\psi + 1) = 1 - \psi\text{.}\)</p>
 <p id="p-875">So what if we quotient by non-rational 2-torsion? Pass to the quadratic extension \(\FF_{3^4}\text{,}\) which we get from adjoining the other roots of \(0 = x^3 + \alpha x\) i.e. \(\pm \sqrt{-\alpha}\text{.}\) Denote this extension \(\FF_3 \lb \beta \rb\text{,}\)  \((\beta^2 - 1)^2 = -\alpha\text{.}\) We can use Vélu again, it's degree two still but a bit more ugh, you might need a computer from now on, actually I've been using one all along.</p>
 <div class="displaymath">
@@ -481,7 +481,7 @@ y^2 = x^3 - \alpha^{-3} x = x^3 +\alpha x\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">doing a computation it looks like \(\phi\) satisfies \(\phi^2 -\phi + 2\text{.}\)</p>
-<p id="p-876">What are the relations between these? Hopefully they generate the endomorphism ring by now but without relations we are screwed! Do they commute? Computing \(\tau = \phi \psi  - \psi \phi\) is relevant, if 0, commutative, otherwise not! Note that if they are algebraically dependant they must commute! In our example we can compute \(\tau^2 + 3 = 0\)</p></article><article class="exercise exercise-like" id="exercise-22"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-22"></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-22"><article class="exercise exercise-like"></article></div>
+<p id="p-876">What are the relations between these? Hopefully they generate the <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring by now but without relations we are screwed! Do they commute? Computing \(\tau = \phi \psi  - \psi \phi\) is relevant, if 0, <a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">commutative</a>, otherwise not! Note that if they are algebraically dependant they must commute! In our example we can compute \(\tau^2 + 3 = 0\)</p></article><article class="exercise exercise-like" id="exercise-22"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-22"></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-22"><article class="exercise exercise-like"></article></div>
 <p id="p-878">Aside: I now believe Asra when she says not to use Vélu's formulae for large degree!</p>
 <p id="p-879">Aside 2: Frobenius can be weird for supersingular curves, e.g. for</p>
 <div class="displaymath">
@@ -496,7 +496,7 @@ y^2 = x^{3} + 1/\FF_{25}
 \end{equation*}
 </div>
 <p data-braille="continuation">we have \(\pi = -5\)</p>
-<p id="p-880">Indeed one can find on the internet claims like, all elliptic curves over finite fields have extra endomorphisms because frobenius exists!</p>
+<p id="p-880">Indeed one can find on the internet claims like, all <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> over finite fields have extra <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphisms</a> because frobenius exists!</p>
 <article class="exercise exercise-like" id="exercise-23"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-23">Good for long walks on the beach</a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-23"><article class="exercise exercise-like"></article></div>
 <article class="exercise exercise-like" id="exercise-24"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-24"></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-24"><article class="exercise exercise-like"></article></div></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Quaternion Algebras</span>
@@ -543,7 +543,7 @@ i^2 = a,j^2=b,k=ij=-ji\text{,}
 \legendre{1,1}{F} \left( = \legendre{1,-1}{F}\right)\text{?}
 \end{equation*}
 </div>
-<p data-braille="continuation">We have another way to come up with \(4\)-dimensional non-commutative algebras over fields, matrices! Let</p>
+<p data-braille="continuation">We have another way to come up with \(4\)-dimensional non-<a class="xref" data-knowl="./knowl/def-gz-formal-gps.html" title="Definition 6.7.5: Formal groups">commutative</a> algebras over fields, matrices! Let</p>
 <div class="displaymath">
 \begin{equation*}
 i=  \begin{pmatrix} 1\amp0\\0\amp -1\end{pmatrix}
@@ -619,23 +619,23 @@ j = i\begin{pmatrix} 0\amp1\\1\amp 0\end{pmatrix} = \begin{pmatrix} 0\amp i\\i\a
 </div></article></section><section class="subsubsection" id="subsubsection-1"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">3.3.1.1</span> <span class="title">Orders</span>
 </h4>
-<p id="p-904">In our example, while the endomorphism algebra \(\End(E)\otimes \QQ\) was of interest, the endomorphism ring \(\End(E)\) was the more fundamental object. What is this? A quaternion ring?</p>
+<p id="p-904">In our example, while the <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebra \(\End(E)\otimes \QQ\) was of interest, the <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring \(\End(E)\) was the more fundamental object. What is this? A quaternion ring?</p>
 <article class="definition definition-like" id="def-order-quaternion"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Orders in quaternion algebras.</span>
 </h6>
 <p id="p-905">Let \(B/\QQ\) be a quaternion algebra, an <dfn class="terminology">order</dfn> in \(B\) is a full rank sub-\(\ZZ\)-module that is also a subring.</p></article><article class="example example-like" id="ex-lipshitz-order"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">The Lipschitz order.</span>
 </h6>
-<p id="p-906">\(B = \legendre{-1,-1}{\QQ}\) (Hamilton quaternions with \(\QQ\)-coefficients) then we have an order</p>
+<p id="p-906">\(B = \legendre{-1,-1}{\QQ}\) (Hamilton quaternions with \(\QQ\)-coefficients) then we have an <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a></p>
 <div class="displaymath">
 \begin{equation*}
 \ZZ + \ZZ i + \ZZ j + \ZZ ij
 \end{equation*}
 </div>
-<p data-braille="continuation">the <dfn class="terminology">Lipschitz order</dfn>.</p></article><article class="definition definition-like" id="def-maximal-order"><h6 class="heading">
+<p data-braille="continuation">the <dfn class="terminology">Lipschitz <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a></dfn>.</p></article><article class="definition definition-like" id="def-maximal-order"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Maximality.</span>
 </h6>
-<p id="p-907">Orders are ordered (heh) with respect to inclusion, thus we get notions of maximality of orders etc.</p></article><p id="p-908">Is the Lipschitz order maximal? NO! Whats going on? \(\ZZ\lb i\rb\) is maximal in \(\QQ(i)\) after all. Consider</p>
+<p id="p-907">Orders are ordered (heh) with respect to inclusion, thus we get notions of maximality of <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">orders</a> etc.</p></article><p id="p-908">Is the <a class="xref" data-knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.12: The Lipschitz order">Lipschitz order</a> maximal? NO! Whats going on? \(\ZZ\lb i\rb\) is maximal in \(\QQ(i)\) after all. Consider</p>
 <div class="displaymath">
 \begin{equation*}
 i + j + k,\,(i+j + k)^2 = i^2 + j^2 + k^2 + \cancelto{0}{ij + ji} + \cancelto{0}{ik + ki} + \cancelto{0}{jk + kj} = -3
@@ -651,24 +651,24 @@ i + j + k,\,(i+j + k)^2 = i^2 + j^2 + k^2 + \cancelto{0}{ij + ji} + \cancelto{0}
 \ZZ+  \ZZ i + \ZZ j + \ZZ \left(\frac{i + j + k}{2}\right)
 \end{equation*}
 </div>
-<p data-braille="continuation">is an index two suborder of the Lipschitz order, called the <dfn class="terminology">Hurwitz order</dfn>, this <em class="emphasis">is</em> maximal.</p></article><p id="p-910">Warning, just because \(\sqrt{-3} \in \legendre{-1,-1}{\QQ}\) we do not have \(\legendre{-1,-3}{\QQ} = \legendre{-1,-1}{\QQ}\text{!}\)</p>
+<p data-braille="continuation">is an index two suborder of the <a class="xref" data-knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.12: The Lipschitz order">Lipschitz order</a>, called the <dfn class="terminology">Hurwitz <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a></dfn>, this <em class="emphasis">is</em> maximal.</p></article><p id="p-910">Warning, just because \(\sqrt{-3} \in \legendre{-1,-1}{\QQ}\) we do not have \(\legendre{-1,-3}{\QQ} = \legendre{-1,-1}{\QQ}\text{!}\)</p>
 <article class="example example-like" id="example-49"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">/Exercise.</span>
 </h6>
-<p id="p-911">Show that the elliptic curve from the exercise earlier</p>
+<p id="p-911">Show that the <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> from the exercise earlier</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 + y = x^3/\overline{\FF_2}
 \end{equation*}
 </div>
-<p data-braille="continuation">has endomorphism algebra the Hurwitz order.</p>
+<p data-braille="continuation">has <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> algebra the <a class="xref" data-knowl="./knowl/ex-hurwitz-order.html" title="Example 3.3.14: The Hurwitz order">Hurwitz order</a>.</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
-<p id="p-912">Here is what me and Angus think, we have the 2-power frobenius \(\pi\) a degree 2 isogeny whose square is minus 2, we also have the isogeny \(\phi \colon x\mapsto \zeta_3 x, y\mapsto y\) which is in fact an automorphism (degree 1) and satisifies \(\phi^2 + \phi + 1 = 0\text{.}\) The relation between these two isogenies is that \(\pi \phi  = \phi^2 \pi \colon x\mapsto \zeta_3^2 x^2, y\mapsto y^2\text{.}\)</p>
-<p id="p-913">Inside the Huwitz order we have some candidates for an element whose square is \(-2\) there are a few, coming in two types \(a+ b\) for \(a \ne b \in \{i,j,k\}\) and \(a-b\) for \(a\ne b\in \{i,j,k\}\text{,}\) we choose the second type (why? because it works and the other doesn't), let \(p = i + j\) for concreteness. We also have a cube root of unity in the Hurwitz order, it is \(f = (-1 + i + j + k)/2\text{.}\)</p>
-<p id="p-914">We can calculate now what \(pf\) and \(f^2 p\) are, they both come out to be \(- i + k\text{,}\) some other square root of minus 2, which makes sense because degree is multiplicative. Anyway this is consistent with the endomorphism ring but there is a slight problem, the order generated here has discriminant \(6\text{,}\) so its non-maximal as we know its contained in the Hurwitz order but the discriminant is higher, Deuring tells us we have to get a maximal order so we need something extra.</p>
+<p id="p-912">Here is what me and Angus think, we have the 2-power frobenius \(\pi\) a degree 2 <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> whose square is minus 2, we also have the <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(\phi \colon x\mapsto \zeta_3 x, y\mapsto y\) which is in fact an automorphism (degree 1) and satisifies \(\phi^2 + \phi + 1 = 0\text{.}\) The relation between these two <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogenies</a> is that \(\pi \phi  = \phi^2 \pi \colon x\mapsto \zeta_3^2 x^2, y\mapsto y^2\text{.}\)</p>
+<p id="p-913">Inside the Huwitz <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> we have some candidates for an element whose square is \(-2\) there are a few, coming in two types \(a+ b\) for \(a \ne b \in \{i,j,k\}\) and \(a-b\) for \(a\ne b\in \{i,j,k\}\text{,}\) we choose the second type (why? because it works and the other doesn't), let \(p = i + j\) for concreteness. We also have a cube root of unity in the <a class="xref" data-knowl="./knowl/ex-hurwitz-order.html" title="Example 3.3.14: The Hurwitz order">Hurwitz order</a>, it is \(f = (-1 + i + j + k)/2\text{.}\)</p>
+<p id="p-914">We can calculate now what \(pf\) and \(f^2 p\) are, they both come out to be \(- i + k\text{,}\) some other square root of minus 2, which makes sense because degree is multiplicative. Anyway this is consistent with the <a class="xref" data-knowl="./knowl/def-supersing-isog-endo.html" title="Definition 3.1.8: Endomorphisms of elliptic curves">endomorphism</a> ring but there is a slight problem, the <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> generated here has discriminant \(6\text{,}\) so its non-maximal as we know its contained in the <a class="xref" data-knowl="./knowl/ex-hurwitz-order.html" title="Example 3.3.14: The Hurwitz order">Hurwitz order</a> but the discriminant is higher, Deuring tells us we have to get a maximal <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> so we need something extra.</p>
 </div></div>
-</div></article><p id="p-915">Warning, there is no such thing as <em class="emphasis">the</em> maximal order of a quaternion algebra! Rather there are multiple maximal orders due to non-commutativity, e.g. if \(\ints\) is a maximal order then so is</p>
+</div></article><p id="p-915">Warning, there is no such thing as <em class="emphasis">the</em> maximal <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> of a quaternion algebra! Rather there are multiple maximal <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">orders</a> due to non-commutativity, e.g. if \(\ints\) is a maximal <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> then so is</p>
 <div class="displaymath">
 \begin{equation*}
 \alpha \ints \alpha\inv \ne \ints\text{.}
@@ -676,7 +676,7 @@ y^2 + y = x^3/\overline{\FF_2}
 </div>
 <p id="p-916">Normally when we have unique maximal things with a certain property, its because we can always take spans/unions and they still have that property.</p>
 <p id="p-917">This is no longer true here, the sum of two elements with integral trace and norm need not remain so, nor the product.</p>
-<p id="p-918">We can define discriminants of orders which like normal give a hint as to their maximality</p>
+<p id="p-918">We can define discriminants of <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">orders</a> which like normal give a hint as to their maximality</p>
 <div class="displaymath">
 \begin{equation*}
 \ints = \ZZ + \ZZ i + \ZZ j + \ZZ ij \subseteq \legendre{a,b}{\QQ}
@@ -689,7 +689,7 @@ y^2 + y = x^3/\overline{\FF_2}
 </div>
 <article class="exercise exercise-like" id="exercise-25"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-25"><h6 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.3.16</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-25"><article class="exercise exercise-like"><p id="p-919">Find the discriminant of the Lipschitz order.</p></article></div></section><section class="subsubsection" id="subsubsection-2"><h4 class="heading hide-type">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-25"><article class="exercise exercise-like"><p id="p-919">Find the discriminant of the <a class="xref" data-knowl="./knowl/ex-lipshitz-order.html" title="Example 3.3.12: The Lipschitz order">Lipschitz order</a>.</p></article></div></section><section class="subsubsection" id="subsubsection-2"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">3.3.1.2</span> <span class="title">Local theory</span>
 </h4>
 <article class="theorem theorem-like" id="theorem-63"><h6 class="heading">
@@ -715,15 +715,15 @@ y^2 + y = x^3/\overline{\FF_2}
 \end{cases}
 \end{equation*}
 </div>
-<p id="p-924">Correspondingly we say that \(B/\QQ\) is split/ramified at a place \(v\) if the corresponding \(B\otimes \QQ_v\) has that property.</p></article><p id="p-925">The terminology definite for quaternion algebras ramified at infinity is also used (i.e. for which \(B\otimes \RR = \HH\)).</p>
+<p id="p-924">Correspondingly we say that \(B/\QQ\) is split/ramified at a place \(v\) if the corresponding \(B\otimes \QQ_v\) has that property.</p></article><p id="p-925">The terminology definite for quaternion algebras <a class="xref" data-knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at infinity is also used (i.e. for which \(B\otimes \RR = \HH\)).</p>
 <article class="theorem theorem-like" id="theorem-64"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Albert-Brauer-Hasse-Noether.</span>
 </h6>
-<p id="p-926">Let \(B/F\) be a quaternion algebra  over  a  number field \(F\) (or any central simple algebra), if \(B\) splits at every place \(v\) of \(F\) then \(B\) is a matrix algebra \(M_d (F)\text{.}\)</p></article><p id="p-927">In fact:</p>
+<p id="p-926">Let \(B/F\) be a quaternion algebra  over  a  number field \(F\) (or any <a class="xref" data-knowl="./knowl/def-abvar-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebra</a>), if \(B\) splits at every place \(v\) of \(F\) then \(B\) is a matrix algebra \(M_d (F)\text{.}\)</p></article><p id="p-927">In fact:</p>
 <article class="theorem theorem-like" id="theorem-65"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.20</span><span class="period">.</span>
 </h6>
-<p id="p-928">Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.</p></article><p id="p-929">Warning: Quaternion algebras may not be ramified where you think they are?</p>
+<p id="p-928">Two quaternion algebras are isomorphic if and only if they are isomorphic everywhere locally, i.e. if the set of places at which they ramify is the same.</p></article><p id="p-929">Warning: Quaternion algebras may not be <a class="xref" data-knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> where you think they are?</p>
 <p id="p-930">Knowing the ramification of a quaternion algebra \(\QQ\) is enough to identify it uniquely, in fact we have the following theorem</p>
 <article class="theorem theorem-like" id="theorem-66"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.21</span><span class="period">.</span><span class="space"> </span><span class="title">Main Theorem [101, 14.1.3].</span>
@@ -741,7 +741,7 @@ D \mapsto \{p|D\} \cup \{\infty\} \text{ if }2\nmid \omega(D)\amp\updownarrow S 
 <article class="theorem theorem-like" id="theorem-67"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Pizer.</span>
 </h6>
-<p id="p-933">Let \(\QQ_{p,\infty}\) be the unique quaternion algebra ramified at \(p,\infty\text{,}\) let \(q \equiv 3 \pmod 4\) be such that \(\legendre pq = -1\text{,}\) then</p>
+<p id="p-933">Let \(\QQ_{p,\infty}\) be the unique quaternion algebra <a class="xref" data-knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a> at \(p,\infty\text{,}\) let \(q \equiv 3 \pmod 4\) be such that \(\legendre pq = -1\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \QQ_{p,\infty} \cong
@@ -752,22 +752,22 @@ D \mapsto \{p|D\} \cup \{\infty\} \text{ if }2\nmid \omega(D)\amp\updownarrow S 
 \legendre{-p,-q}{\QQ} \amp \text{ if }p\equiv 5\pmod 8.
 \end{cases}
 \end{equation*}
-</div></article><p id="p-934">Ibukiyama has given a nice description of a maximal order in such.</p>
+</div></article><p id="p-934">Ibukiyama has given a nice description of a maximal <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> in such.</p>
 <p id="p-935">Here are some nice references:</p>
 <ol class="decimal">
-<li id="li-227">Computational Problems in Supersingular Elliptic Curve Isogenies - Steven D. Galbraith and Frederik Vercauteren <a class="external" href="https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf</code></a>
+<li id="li-227">Computational Problems in Supersingular <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">Elliptic Curve</a> <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">Isogenies</a> - Steven D. Galbraith and Frederik Vercauteren <a class="external" href="https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://www.esat.kuleuven.be/cosic/publications/article-2842.pdf</code></a>
 </li>
-<li id="li-228">Computing Isogenies Between Abelian Varieties - David Lubicz Damien Robert <a class="external" href="https://perso.univ-rennes1.fr/david.lubicz/articles/isogenies.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://perso.univ-rennes1.fr/david.lubicz/articles/isogenies.pdf</code></a>
+<li id="li-228">Computing <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">Isogenies</a> Between <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">Abelian Varieties</a> - David Lubicz Damien Robert <a class="external" href="https://perso.univ-rennes1.fr/david.lubicz/articles/isogenies.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://perso.univ-rennes1.fr/david.lubicz/articles/isogenies.pdf</code></a>
 </li>
-<li id="li-229">Toric forms of elliptic curves and their arithmetic - Wouter Castryck and Frederik Vercauteren <a class="external" href="https://homes.esat.kuleuven.be/~fvercaut/papers/ec_forms.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://homes.esat.kuleuven.be/~fvercaut/papers/ec_forms.pdf</code></a>
+<li id="li-229">Toric forms of <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> and their arithmetic - Wouter Castryck and Frederik Vercauteren <a class="external" href="https://homes.esat.kuleuven.be/~fvercaut/papers/ec_forms.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://homes.esat.kuleuven.be/~fvercaut/papers/ec_forms.pdf</code></a>
 </li>
-<li id="li-230">Isogenies of Elliptic Curves: A Computational Approach - Daniel Shumow <a class="external" href="https://www.sagemath.org/files/thesis/shumow-thesis-2009.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://www.sagemath.org/files/thesis/shumow-thesis-2009.pdf</code></a>
+<li id="li-230">Isogenies of <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">Elliptic Curves</a>: A Computational Approach - Daniel Shumow <a class="external" href="https://www.sagemath.org/files/thesis/shumow-thesis-2009.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://www.sagemath.org/files/thesis/shumow-thesis-2009.pdf</code></a>
 </li>
-<li id="li-231">Hard and Easy Problems for Supersingular Isogeny Graphs - Christophe Petit and Kristin Lauter <a class="external" href="https://eprint.iacr.org/2017/962.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://eprint.iacr.org/2017/962.pdf</code></a>
+<li id="li-231">Hard and Easy Problems for Supersingular <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">Isogeny</a> Graphs - Christophe Petit and Kristin Lauter <a class="external" href="https://eprint.iacr.org/2017/962.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://eprint.iacr.org/2017/962.pdf</code></a>
 </li>
 <li id="li-232">Perspectives on the Albert-Brauer-Hasse-Noether Theorem for Quaternion Algebras -  Thomas R. Shemanske <a class="external" href="https://www.math.dartmouth.edu/~trs/expository-papers/tex/ABHN.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://www.math.dartmouth.edu/~trs/expository-papers/tex/ABHN.pdf</code></a>
 </li>
-<li id="li-233">COMPUTING ISOGENIES BETWEEN SUPERSINGULAR ELLIPTIC CURVES OVER Fp CHRISTINA DELFS AND STEVEN D. GALBRAITH <a class="external" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.740.6509&amp;rep=rep1&amp;type=pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.740.6509&amp;rep=rep1&amp;type=pdf</code></a>
+<li id="li-233">COMPUTING <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">ISOGENIES</a> BETWEEN SUPERSINGULAR <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">ELLIPTIC CURVES</a> OVER Fp CHRISTINA DELFS AND STEVEN D. GALBRAITH <a class="external" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.740.6509&amp;rep=rep1&amp;type=pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.740.6509&amp;rep=rep1&amp;type=pdf</code></a>
 </li>
 </ol></section></section></section></div></main>
 </div>
