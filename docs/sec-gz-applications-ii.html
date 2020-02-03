@@ -371,7 +371,10 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li></ul>
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -383,10 +386,10 @@ var js_version = 0.13;
 <a href="sec-gz-applications-ii.html" class="permalink">¶</a><section class="subsection" id="subsection-108"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.12.1</span> <span class="title">More on computation</span>
 </h3>
-<p id="p-1531">A more advanced trick: We have the standard <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner point</a> outlined above, there are several speedups possible:</p>
+<p id="p-1531">A more advanced trick: We have the standard Heegner point outlined above, there are several speedups possible:</p>
 <ol class="decimal">
 <li id="li-362">Use Atkin-Lehner involutions to reduce the size of \(A\) in \((A,B,C)\text{.}\)</li>
-<li id="li-363">Use faster algorithms for point counting, e.g. on <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> curves we have a simpler expression for \(a_p\)'s which can be computed with Cornichias algorithm.</li>
+<li id="li-363">Use faster algorithms for point counting, e.g. on CM curves we have a simpler expression for \(a_p\)'s which can be computed with Cornichias algorithm.</li>
 <li id="li-364">Cremona-Silverman: Want to reduce the precision needed, how? What information do we know after running the method, an approximation of \(Q\approx P \in E(\RR)\text{.}\) We also know by Gross-Zagier<div class="displaymath">
 \begin{equation*}
 \hat h(P)\text{.}
@@ -413,7 +416,7 @@ numerator (x(P)) = round(x(P) d^2)
 \end{equation*}
 </div>can be found. In all this allows us to work as we wanted, with an accuracy slightly more than half.</li>
 </ol>
-<p id="p-1532">These speed ups are in PARI/GP and Remarks. as \(E\) in last times example is a <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> curve, the computation time of the above example can be reduced from a couple of minutes to 7 seconds (factor of 20).</p>
+<p id="p-1532">These speed ups are in PARI/GP and Remarks. as \(E\) in last times example is a CM curve, the computation time of the above example can be reduced from a couple of minutes to 7 seconds (factor of 20).</p>
 <p id="p-1533">Gotta get height:</p>
 <article class="example example-like" id="example-83"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.12.1</span><span class="period">.</span><span class="space"> </span><span class="title">A big example.</span>
@@ -442,7 +445,7 @@ K = \QQ(\sqrt{-1559})\text{.}
 L(E_D,1) \approx 0.34784
 \end{equation*}
 </div>
-<p data-braille="continuation">We can ask Pari/GP for a <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner point</a> and we obtain</p>
+<p data-braille="continuation">We can ask Pari/GP for a Heegner point and we obtain</p>
 <div class="displaymath">
 \begin{equation*}
 P=  (2673768366314301463225804132167786458743211296161665928714089443034915780624646102119694052638661139083614147052130407079631451208185292430763007319638022105825501399385761185566630883388394680375240310954529690758647194911112230527266639143771344809007916379476769393746579657952261851411688268671539912820072222763224027388823804772192104547803223898847305487037661307828748844799602593905135066916765339004127610241/14711766058713677663384943791747898516946843571332438782108054674511943585256352373257820891021633925632603928846607462754678923049647017632180676816464079929265454994902080754858496848491578669209122991110372607577751981118650453474461080043444438030297579085121835217242209089550661820106126782163015526489468149613211400477191028795214873959696995779238660836093943085146259968306971312571346641475392784100 : 138256584957437413549697979638187560540459292802582866047104251079871173001665466386110481033185180290975183359260945144859657131458366183036141245306630348292671101486345526463132664316934927829557544796041549654148869945306252397609306930530983551604764354393433405906021719607528424338682185259543058868693501829232087760637049066670461122157567207439393246729072214062375989571116431670132631712767339509965920423129094613543923419661857943413970492292794841174646487317425335124224816154049239888798416706708946385513743341645910420176133057435782209340663561195089350700342411480965751945453146090192411927796854564432961/56428332331562671615794363625451656023382470684636509020204202990180688177696621616970962649738545712542796767776584129330909917100366186924013354291641329738822701259890430806380424060475365542745244595324918343297529518263108027693527497847179482876257977247331950705161864795745543796461954042373098284699960118594562408063763160815610542420513488629513957169549566241725330887507912166227023322296844673603178204516200038314906488548391012692454233921581644355608983371337760875769764741031620675341450340457565846005848812354464193992153964872086150518588699778897808812845613993026309040085527357183723889000 : 1)
@@ -486,7 +489,7 @@ h(D)                   \amp {1} \amp {2} \amp {3} \amp {4} \amp {5} \\
 \end{array}
 \end{equation*}
 </div>
-<p id="p-1539">The most famous instance of this being the first column. The Gauss class number 1 problem (Section 303 of his Disquisitiones Arithmeticae (1798)) there are only 9 imaginary quadratic fields of class number 1. This was first proved by Heegner, where he introduced analytic techniques into the field of <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, hence the name  <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner points</a>. Warning: this is somewhat distinct and not exactly what we will mention now</p>
+<p id="p-1539">The most famous instance of this being the first column. The Gauss class number 1 problem (Section 303 of his Disquisitiones Arithmeticae (1798)) there are only 9 imaginary quadratic fields of class number 1. This was first proved by Heegner, where he introduced analytic techniques into the field of elliptic curves, hence the name  Heegner points. Warning: this is somewhat distinct and not exactly what we will mention now</p>
 <p id="p-1540">The first instances of the small class number phenomenon go back to Euler who noted that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -502,18 +505,18 @@ x^2 - x + 41
 </div>
 <p data-braille="continuation">are inert.</p>
 <p id="p-1542">Even when \(h(D) \gt 1\) we still observe a similar phenomenon.</p>
-<p id="p-1543">For \(\QQ(\sqrt{-427})\) as above we have of the primes up to \((1 + 427)/4 = 107\) only \(17,31,59,89,101\) are split (\(7,61\) <a class="xref" data-knowl="./knowl/def-dess-ramified.html" title="Definition 2.1.2: Ramified">ramified</a>).</p>
+<p id="p-1543">For \(\QQ(\sqrt{-427})\) as above we have of the primes up to \((1 + 427)/4 = 107\) only \(17,31,59,89,101\) are split (\(7,61\) ramified).</p>
 <p id="p-1544">Why am I telling you this? Because it leads to the following theorem:</p>
 <article class="theorem theorem-like" id="theorem-101"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.12.3</span><span class="period">.</span><span class="space"> </span><span class="title">Goldfeld.</span>
 </h6>
-<p id="p-1545">Let \(D\) be a fundamental discriminant of an imaginary quadratic field. If there exists a modular <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E\) (defined over \(\QQ\)) whose associated base change Hasse-Weil \(L\)-function</p>
+<p id="p-1545">Let \(D\) be a fundamental discriminant of an imaginary quadratic field. If there exists a modular elliptic curve \(E\) (defined over \(\QQ\)) whose associated base change Hasse-Weil \(L\)-function</p>
 <div class="displaymath">
 \begin{equation*}
 L_{E / \QQ(\sqrt{D})}(s)
 \end{equation*}
 </div>
-<p data-braille="continuation">has a zero of <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> \(\geq 4\) at \(s=1\) then for every \(\epsilon&gt;0\text{,}\) there exists an effective computable constant \(c_{\epsilon}(E)&gt;0\text{,}\) depending only on \(\epsilon, E\) such that</p>
+<p data-braille="continuation">has a zero of order \(\geq 4\) at \(s=1\) then for every \(\epsilon&gt;0\text{,}\) there exists an effective computable constant \(c_{\epsilon}(E)&gt;0\text{,}\) depending only on \(\epsilon, E\) such that</p>
 <div class="displaymath">
 \begin{equation*}
 h(D)&gt;c_{\epsilon}(E)(\log |D|)^{1-\epsilon}\text{.}
@@ -524,13 +527,13 @@ h(D)&gt;c_{\epsilon}(E)(\log |D|)^{1-\epsilon}\text{.}
 L_{E / \QQ(\sqrt{D})}(s)
 \end{equation*}
 </div>
-<p data-braille="continuation">has \(L_E\) as a factor so Goldfeld needed an <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E/\QQ\) with</p>
+<p data-braille="continuation">has \(L_E\) as a factor so Goldfeld needed an elliptic curve \(E/\QQ\) with</p>
 <div class="displaymath">
 \begin{equation*}
 \ord_{s=1} L_E(s) = 3
 \end{equation*}
 </div>
-<p data-braille="continuation">that is analytic rank 3, to obtain the <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> 4 vanishing of</p>
+<p data-braille="continuation">that is analytic rank 3, to obtain the order 4 vanishing of</p>
 <div class="displaymath">
 \begin{equation*}
 L_{E / \QQ(\sqrt{D})}(s)\text{.}
@@ -556,7 +559,7 @@ L(s,\chi _D) = \prod_p \left(1-\frac{\chi _D(p)}{p^s}\right)^{-1}
 E = 37b3\colon y^2 = x^{3} + 10 x^{2} - 20 x + 8
 \end{equation*}
 </div>
-<p data-braille="continuation">of <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">conductor</a> 37 and rank 0, we can twist by \(d=-139\) to get a curve of <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">conductor</a> \(714877\text{.}\)</p>
+<p data-braille="continuation">of conductor 37 and rank 0, we can twist by \(d=-139\) to get a curve of conductor \(714877\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 E_{-139}\colon -139 y^2 = x^{3} + 10 x^{2} - 20 x + 8
@@ -568,7 +571,7 @@ E_{-139}\colon -139 y^2 = x^{3} + 10 x^{2} - 20 x + 8
 L_E(s,\chi _d) = L_{E_{d}}(s)\text{.}
 \end{equation*}
 </div>
-<p id="p-1551">Doing a single <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner point</a> computation we find that \(P_d\) is zero and hence \(h(2P_d)= 0\text{.}\) Using Gross-Zagier we have</p>
+<p id="p-1551">Doing a single Heegner point computation we find that \(P_d\) is zero and hence \(h(2P_d)= 0\text{.}\) Using Gross-Zagier we have</p>
 <div class="displaymath">
 \begin{equation*}
 L_E(1)L'_{E_d}(1) = c \Omega_d  \Omega h_{E_d}(2P_d)
@@ -620,13 +623,13 @@ L_{E_d}'''(1) \ne 0
 L_{E / \QQ(\sqrt{D})}(s) = L_E(s)L_E(s,\chi _D)
 \end{equation*}
 </div>
-<p data-braille="continuation">therefore has a zero of even <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> at \(s=1\text{,}\) given that \(L_{E}(s)\) has an <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> 3 zero by construction</p>
+<p data-braille="continuation">therefore has a zero of even order at \(s=1\text{,}\) given that \(L_{E}(s)\) has an order 3 zero by construction</p>
 <div class="displaymath">
 \begin{equation*}
 L_{E / \QQ(\sqrt{D})}(s)
 \end{equation*}
 </div>
-<p data-braille="continuation">has an <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> 4 zero.</p>
+<p data-braille="continuation">has an order 4 zero.</p>
 <p id="p-1556">To give a flavour of the class number one problem assume \(D\) sufficiently large with \(h(D) = 1\) still, then consider</p>
 <div class="displaymath">
 \begin{equation*}
@@ -679,7 +682,7 @@ I_{D}^{*}=\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty}\left(\frac{37 \cdot 1
 y^{2}+y=x^{3}-7 x+6
 \end{equation*}
 </div>
-<p data-braille="continuation">the smallest <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">conductor</a> rank 3 curve 5077, where they verify BSD explicitly, giving one the first example in rank 3. (To this day, it is not possible, even in principle, to establish BSD for any curve of rank 4 or greater since there is no known method for rigorously establishing the value of the analytic rank when it is greater than 3.) Once again Gross-Zagier is used, if \(L'_E(1)\) is calculated to be small but possibly non-zero it must be a multiple of the height of a small point, but we can look and find no small points, hence we obtain vanishing of the derivative at \(s=1\text{.}\) This implies, for parity reasons that \(L_E(s)\) has analytic rank 3 or more. The third derivative can then be calculated and seen to be non-zero.</p>
+<p data-braille="continuation">the smallest conductor rank 3 curve 5077, where they verify BSD explicitly, giving one the first example in rank 3. (To this day, it is not possible, even in principle, to establish BSD for any curve of rank 4 or greater since there is no known method for rigorously establishing the value of the analytic rank when it is greater than 3.) Once again Gross-Zagier is used, if \(L'_E(1)\) is calculated to be small but possibly non-zero it must be a multiple of the height of a small point, but we can look and find no small points, hence we obtain vanishing of the derivative at \(s=1\text{.}\) This implies, for parity reasons that \(L_E(s)\) has analytic rank 3 or more. The third derivative can then be calculated and seen to be non-zero.</p>
 <p id="p-1560">This smaller curve gives better bounds in Goldfelds method.</p>
 <p id="p-1561">Using work of Oesterle they obtain</p>
 <div class="displaymath">

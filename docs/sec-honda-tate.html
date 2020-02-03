@@ -371,7 +371,10 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li></ul>
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -380,7 +383,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-honda-tate"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.14</span> <span class="title">The Honda Tate Theorem (Angus)</span>
 </h2>
-<a href="sec-honda-tate.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-402">\(q = p^n\text{,}\) \(A\) a <a class="xref" data-knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\FF_q\text{,}\) \(\pi_A\) the frobenius on \(A\text{,}\) \(\End^0(A) = \QQ\otimes \End(A)\text{,}\) \(f_A\) is the charpoly of \(A\) (i.e. of \(\pi_A\)).</p>
+<a href="sec-honda-tate.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-402">\(q = p^n\text{,}\) \(A\) a simple abelian variety over \(\FF_q\text{,}\) \(\pi_A\) the frobenius on \(A\text{,}\) \(\End^0(A) = \QQ\otimes \End(A)\text{,}\) \(f_A\) is the charpoly of \(A\) (i.e. of \(\pi_A\)).</p>
 <article class="fact theorem-like" id="fact-3"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.14.1</span><span class="period">.</span>
 </h6>
@@ -405,7 +408,7 @@ var js_version = 0.13;
 \forall \iota \colon \QQ\lb \pi\rb \hookrightarrow \CC,\,|\iota(\pi)| = \sqrt q
 \end{equation*}
 </div>
-<p data-braille="continuation">we say that two \(q\)-<a href="sec-honda-tate.html" class="internal" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil numbers</a> are conjugate if they have the same minimal polynomial over \(\QQ\text{,}\) and write \(\pi \sim \pi'\text{.}\)</p></article><p id="p-406">From the facts so far we have a map</p>
+<p data-braille="continuation">we say that two \(q\)-Weil numbers are conjugate if they have the same minimal polynomial over \(\QQ\text{,}\) and write \(\pi \sim \pi'\text{.}\)</p></article><p id="p-406">From the facts so far we have a map</p>
 <div class="displaymath">
 \begin{equation*}
 \{\text{simple AVs}/\FF_q\}\to \{q\text{-Weil numbers}\}
@@ -436,7 +439,7 @@ A \mapsto \pi_A\text{.}
 <article class="corollary theorem-like" id="corollary-26"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.14.5</span><span class="period">.</span>
 </h6>
-<p id="p-410">Let \(A,B\) be <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> over \(\FF_q\) with rational Tate modules \(V_l A, V_lB\) then</p>
+<p id="p-410">Let \(A,B\) be abelian varieties over \(\FF_q\) with rational Tate modules \(V_l A, V_lB\) then</p>
 <div class="displaymath">
 \begin{equation*}
 A\sim_{\text{isog}} B \iff V_l A \simeq V_l B \forall l \ne p\text{.}
@@ -477,18 +480,18 @@ r(f_A, f_B) = \rank \Hom(A,B)\text{.}
 <article class="definition definition-like" id="def-abvar-csa"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.14.9</span><span class="period">.</span><span class="space"> </span><span class="title">Central simple algebras.</span>
 </h6>
-<p id="p-421">A <dfn class="terminology">central <a class="xref" data-knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> algebra</dfn> \(B/k\) is a \(k\)-algebra \(B\) with no two-sided ideals and \(Z(B) = k\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-35"><h6 class="heading">
+<p id="p-421">A <dfn class="terminology">central simple algebra</dfn> \(B/k\) is a \(k\)-algebra \(B\) with no two-sided ideals and \(Z(B) = k\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-35"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.10</span><span class="period">.</span><span class="space"> </span><span class="title">Artin-Wedderburn.</span>
 </h6>
 <p id="p-422">Any such algebra is isomorphic to \(M_n(D)\) for \(D\) a division ring over \(k\text{.}\)</p></article><article class="definition definition-like" id="def-brauer-gp"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.14.11</span><span class="period">.</span><span class="space"> </span><span class="title">Brauer groups.</span>
 </h6>
-<p id="p-423">The <dfn class="terminology">Brauer group</dfn> of \(k\) \(\operatorname{Br}(k)\) is the set of <a class="xref" data-knowl="./knowl/def-abvar-csa.html" title="Definition 1.14.9: Central simple algebras">central simple algebras</a> under \(\otimes\) modulo the algebras \(M_n(k)\text{.}\)</p></article><article class="fact theorem-like" id="fact-4"><h6 class="heading">
+<p id="p-423">The <dfn class="terminology">Brauer group</dfn> of \(k\) \(\operatorname{Br}(k)\) is the set of central simple algebras under \(\otimes\) modulo the algebras \(M_n(k)\text{.}\)</p></article><article class="fact theorem-like" id="fact-4"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.14.12</span><span class="period">.</span>
 </h6>
 <ul id="p-424" class="disc">
 <li id="li-84">If \(k = \overline k\text{,}\) \(\operatorname{Br}(k) = 0\text{.}\)</li>
-<li id="li-85">\(k\) <a class="xref" data-knowl="./knowl/def-abelian-complete-var.html" title="Definition 1.2.3: Complete varieties">complete</a> nonarchimidean \(\operatorname{Br}(k) = \QQ/\ZZ\)</li>
+<li id="li-85">\(k\) complete nonarchimidean \(\operatorname{Br}(k) = \QQ/\ZZ\)</li>
 <li id="li-86">\(\displaystyle \operatorname{Br}(\RR) = \ZZ/2\ZZ\)</li>
 </ul>
 <p data-braille="continuation">Given a place \(v\) of \(k\) we get a map</p>
@@ -516,7 +519,7 @@ D\mapsto (\operatorname{inv}_v(D))_v
 <p data-braille="continuation">these \(\operatorname{inv}_v(D)\) are called the <dfn class="terminology">local invariants</dfn>.</p></article><article class="proposition theorem-like" id="prop-elem-av-local-invs"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.14.13</span><span class="period">.</span>
 </h6>
-<p id="p-425">Let \(A/\FF_q\) be an elementary <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a>. Let \(K = \QQ(\pi_A)\) then</p>
+<p id="p-425">Let \(A/\FF_q\) be an elementary abelian variety. Let \(K = \QQ(\pi_A)\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{inv}_v(\End^0(A)) = \begin{cases} \frac{v(\pi_A)}{v(q)} [k_v: \QQ_p], \amp v|p\\ \frac 12,\amp v\text{ real}\\ 0, \amp \text{else}\end{cases}
@@ -536,15 +539,15 @@ D\mapsto (\operatorname{inv}_v(D))_v
 <p id="p-430">\(\Rightarrow\) Let \(D_{\pi_A} , D_{\pi_B}\) be the division rings with invariants specified as in <a class="xref" data-knowl="./knowl/prop-elem-av-local-invs.html" title="Proposition 1.14.13">Proposition 1.14.13</a>. \(\pi_A\sim \pi_B \implies D_{\pi_A} \simeq D_{\pi_B} \implies f_A = \operatorname{minpoly}(\pi_A) ^d = f_B\text{.}\)</p></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.14.3</span> <span class="title">Surjectivity and CM theory</span>
 </h3>
-<p id="p-431">We need to show that for \(\pi\) a \(q\)-<a href="sec-honda-tate.html" class="internal" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> there exists an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\FF_q\) such that \(\pi_A \sim \pi\text{.}\)</p>
+<p id="p-431">We need to show that for \(\pi\) a \(q\)-Weil number there exists an abelian variety \(A/\FF_q\) such that \(\pi_A \sim \pi\text{.}\)</p>
 <article class="definition definition-like" id="definition-42"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.14.16</span><span class="period">.</span>
 </h6>
-<p id="p-432">Such a \(q\)-<a href="sec-honda-tate.html" class="internal" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> \(\pi\) is called effective.</p></article><article class="proposition theorem-like" id="proposition-38"><h6 class="heading">
+<p id="p-432">Such a \(q\)-Weil number \(\pi\) is called effective.</p></article><article class="proposition theorem-like" id="proposition-38"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.14.17</span><span class="period">.</span>
 </h6>
-<p id="p-433">A \(q\)-<a href="sec-honda-tate.html" class="internal" title="Section 1.14: The Honda Tate Theorem (Angus)">Weil number</a> \(\pi\) is effective if and only if \(\pi^N\) is effective for some \(N\in \ZZ_{\ge 1}\text{.}\)</p></article><article class="hiddenproof" id="proof-74"><a data-knowl="" class="id-ref original" data-refid="hk-proof-74"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-74"><article class="hiddenproof"><p id="p-434">\(\Rightarrow\) clear.</p>
-<p id="p-435">\(\Leftarrow\) By assumption we have \(A'/k\) a <a class="xref" data-knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> s.t. \(\pi_{A'} \sim  \pi^N\) for \(k\) a degree \(N\) extension of \(\FF_q\text{.}\) Let</p>
+<p id="p-433">A \(q\)-Weil number \(\pi\) is effective if and only if \(\pi^N\) is effective for some \(N\in \ZZ_{\ge 1}\text{.}\)</p></article><article class="hiddenproof" id="proof-74"><a data-knowl="" class="id-ref original" data-refid="hk-proof-74"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-74"><article class="hiddenproof"><p id="p-434">\(\Rightarrow\) clear.</p>
+<p id="p-435">\(\Leftarrow\) By assumption we have \(A'/k\) a simple abelian variety s.t. \(\pi_{A'} \sim  \pi^N\) for \(k\) a degree \(N\) extension of \(\FF_q\text{.}\) Let</p>
 <div class="displaymath">
 \begin{equation*}
 A = \Res_{k/\FF_q}(A')
@@ -573,13 +576,13 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 \Ind_{G_k}^{G_{\FF_q}} (\pi_{A'}) = \pi_A^N
 \end{equation*}
 </div>
-<p data-braille="continuation">in particular \(f_A(T) = f_{A'}(T^N)\text{.}\) Choosing a <a class="xref" data-knowl="./knowl/def-simple-av.html" title="Definition 1.8.2: Simple abelian varieties">simple</a> factor \(A_i\) one gets \(\pi_{A_i} \sim \pi\text{.}\)</p></article></div>
+<p data-braille="continuation">in particular \(f_A(T) = f_{A'}(T^N)\text{.}\) Choosing a simple factor \(A_i\) one gets \(\pi_{A_i} \sim \pi\text{.}\)</p></article></div>
 <p id="p-436">So it is sufficient to show \(\pi^N\) is effective.</p>
 <p id="p-437">Strategy for proving surjectivity</p>
 <ol class="decimal">
 <li id="li-87">Construct a division algebra \(D_\pi\text{.}\)</li>
-<li id="li-88">Choose a <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> field \(L\) splitting \(D_\pi\text{.}\)</li>
-<li id="li-89">Find an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\CC\) of type \((L, \Phi)\text{.}\)</li>
+<li id="li-88">Choose a CM field \(L\) splitting \(D_\pi\text{.}\)</li>
+<li id="li-89">Find an abelian variety \(A/\CC\) of type \((L, \Phi)\text{.}\)</li>
 <li id="li-90">In fact \(A\) is defined over  a number field \(K\) and has good reduction at \(v|p\text{.}\)</li>
 <li id="li-91">Apply the Shimura-Taniyama formula to relate \(\pi_A\) to \(\Phi\text{.}\)</li>
 <li id="li-92">Choose \(\Phi\) wisely (in retrospect in 3) to relate \(\pi\) to \(\pi_A\text{.}\)</li>
@@ -589,7 +592,7 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 <article class="proposition theorem-like" id="proposition-39"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.14.18</span><span class="period">.</span>
 </h6>
-<p id="p-439">There exists a <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> field \(L/\QQ(\pi)\) such that \(L\) splits \(D_\pi\) and further</p>
+<p id="p-439">There exists a CM field \(L/\QQ(\pi)\) such that \(L\) splits \(D_\pi\) and further</p>
 <div class="displaymath">
 \begin{equation*}
 [L:\QQ(\pi) ] = [ D_\pi: \QQ(\pi)]^{1/2}
@@ -597,7 +600,7 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 </div></article><article class="hiddenproof" id="proof-75"><a data-knowl="" class="id-ref original" data-refid="hk-proof-75"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-75"><article class="hiddenproof"><p id="p-440">Two cases:</p>
 <ol class="decimal">
 <li id="li-94">\(\QQ(\pi)\) is totally real, in which case \(\QQ(\pi) = \QQ\) or \(\QQ(\sqrt{p})\text{.}\)</li>
-<li id="li-95">\(\QQ(\pi)\) is a <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> field with totally real subfield \(\QQ(\pi + q/\pi)\text{.}\)</li>
+<li id="li-95">\(\QQ(\pi)\) is a CM field with totally real subfield \(\QQ(\pi + q/\pi)\text{.}\)</li>
 </ol>
 <p data-braille="continuation">In the case</p>
 <ol class="decimal">
@@ -607,7 +610,7 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 <article class="definition definition-like" id="def-cm-type"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.14.19</span><span class="period">.</span><span class="space"> </span><span class="title">CM types.</span>
 </h6>
-<p id="p-441">For a <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> field \(L\) all the embeddings</p>
+<p id="p-441">For a CM field \(L\) all the embeddings</p>
 <div class="displaymath">
 \begin{equation*}
 \iota\colon L \hookrightarrow \CC
@@ -624,7 +627,7 @@ G_{\FF_q} = \Gal{\overline{\FF_q}}{\FF_q}
 \Phi \cap \overline \Phi = \emptyset
 \end{equation*}
 </div>
-<p data-braille="continuation">such a choice of \(\Phi \) is called a <dfn class="terminology">CM type</dfn>.</p></article><p id="p-442">Let \(A/\CC\) be an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> with <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> by \(L\) i.e.</p>
+<p data-braille="continuation">such a choice of \(\Phi \) is called a <dfn class="terminology">CM type</dfn>.</p></article><p id="p-442">Let \(A/\CC\) be an abelian variety with CM by \(L\) i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 L\hookrightarrow \End^0(A)
@@ -640,15 +643,15 @@ L\hookrightarrow \End^0(A)
 <article class="proposition theorem-like" id="proposition-40"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.14.20</span><span class="period">.</span>
 </h6>
-<p id="p-443">The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some <a class="xref" data-knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \(\Phi\text{.}\) We then say \(A/\CC\) is of type \((L,\Phi)\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-36"><h6 class="heading">
+<p id="p-443">The action of \(\CC\otimes L\) factors through the quotient \(\prod_{\iota\in \Phi} \CC\) for some CM type \(\Phi\text{.}\) We then say \(A/\CC\) is of type \((L,\Phi)\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-36"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.21</span><span class="period">.</span>
 </h6>
-<p id="p-444">For any <a class="xref" data-knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \((L,\Phi)\) there exists an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A/\CC\) of type \((L, \Phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-76"><a data-knowl="" class="id-ref original" data-refid="hk-proof-76"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-76"><article class="hiddenproof"><p id="p-445">Found in Shimura-Taniyama.</p></article></div>
+<p id="p-444">For any CM type \((L,\Phi)\) there exists an abelian variety \(A/\CC\) of type \((L, \Phi)\text{.}\)</p></article><article class="hiddenproof" id="proof-76"><a data-knowl="" class="id-ref original" data-refid="hk-proof-76"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-76"><article class="hiddenproof"><p id="p-445">Found in Shimura-Taniyama.</p></article></div>
 <p id="p-446">The fact that \(A\) is in fact defined over  a number field \(K\) is also in Shimura-Taniyama.</p>
 <article class="theorem theorem-like" id="theorem-37"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.22</span><span class="period">.</span>
 </h6>
-<p id="p-447">Let \(A/K\) be an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> which admits <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a>. Then \(A/K\) admits potentially good reduction at all places \(v\) of \(K\text{.}\)</p></article><article class="hiddenproof" id="proof-77"><a data-knowl="" class="id-ref original" data-refid="hk-proof-77"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-77"><article class="hiddenproof"><p id="p-448">Highly nontrivial, Neron models, Chevalley decomposition, Neron-Ogg-Shafarevich criterion, result of Grothendieck on potentially stable reduction.</p></article></div>
+<p id="p-447">Let \(A/K\) be an abelian variety which admits CM. Then \(A/K\) admits potentially good reduction at all places \(v\) of \(K\text{.}\)</p></article><article class="hiddenproof" id="proof-77"><a data-knowl="" class="id-ref original" data-refid="hk-proof-77"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-77"><article class="hiddenproof"><p id="p-448">Highly nontrivial, Neron models, Chevalley decomposition, Neron-Ogg-Shafarevich criterion, result of Grothendieck on potentially stable reduction.</p></article></div>
 <p id="p-449">After passing to a finite extension we will assume \(A/K\) has good reduction at places \(v|p\text{.}\) So we have a reduction \(A_{\FF_{q'}}/\FF_{q'}\text{.}\) For a place \(w|p\) of \(L\) let</p>
 <div class="displaymath">
 \begin{equation*}
@@ -668,7 +671,7 @@ L\hookrightarrow \End^0(A)
 \begin{equation*}
 \frac{w(\pi_{A_{\FF_{q'}}})}{w(q')} = \frac{\#\Phi_w}{\#\Sigma_w}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-78"><a data-knowl="" class="id-ref original" data-refid="hk-proof-78"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-78"><article class="hiddenproof"><p id="p-451">Tate has a proof using <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a> theory of \(p\)-divisible groups.</p></article></div>
+</div></article><article class="hiddenproof" id="proof-78"><a data-knowl="" class="id-ref original" data-refid="hk-proof-78"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-78"><article class="hiddenproof"><p id="p-451">Tate has a proof using CM theory of \(p\)-divisible groups.</p></article></div>
 <p id="p-452">Recall we fixed \(\pi\) and from this we deterministically formed \(\QQ(\pi), D_{\pi}, L\) however we have no restriction on our choice of \(\Phi\text{.}\)</p>
 <article class="lemma theorem-like" id="lemma-11"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.14.24</span><span class="period">.</span>
@@ -689,7 +692,7 @@ n_w = \frac{w(\pi)}{w(q)}\#\Sigma_w = \frac{w(\pi)}{w(q)}[L_w :\QQ_p]
 = \frac{w(\pi)}{w(q)}[L_w :\QQ(\pi)_v ][ \QQ(\pi)_v:\QQ_p]
 \end{equation*}
 </div>
-<p data-braille="continuation">by recalling the formula for the <a class="xref" data-knowl="./knowl/def-brauer-gp.html" title="Definition 1.14.11: Brauer groups">local invariants</a> of \(D_\pi\) we get</p>
+<p data-braille="continuation">by recalling the formula for the local invariants of \(D_\pi\) we get</p>
 <div class="displaymath">
 \begin{equation*}
 n_w = \operatorname{inv}_w(D_\pi\otimes_{\QQ(\pi)} L)\text{.}
@@ -706,7 +709,7 @@ n_w + n_{\overline w} = \left( \frac{w(\pi)}{w(q)}  + \frac{\overline w(\pi)}{\o
 = \left( \frac{w(\pi\overline \pi)}{w(q)} \right) \#\Sigma_w = \#\Sigma_w
 \end{equation*}
 </div>
-<p data-braille="continuation">check the <a class="xref" data-knowl="./knowl/def-cm-type.html" title="Definition 1.14.19: CM types">CM type</a> \(\Phi = \bigcup_w \Phi_w\) where for each \(w\) \(\# \Phi_w = n_w\text{.}\) Then the formula follows.</p></article></div>
+<p data-braille="continuation">check the CM type \(\Phi = \bigcup_w \Phi_w\) where for each \(w\) \(\# \Phi_w = n_w\text{.}\) Then the formula follows.</p></article></div>
 <p id="p-455">Combining the previous result with the Shimura-Taniyama formula we get that for all places \(w|p\)</p>
 <div class="displaymath">
 \begin{equation*}

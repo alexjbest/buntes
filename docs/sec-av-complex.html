@@ -371,7 +371,10 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li></ul>
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -380,9 +383,9 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-av-complex"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Abelian varieties over \(\CC\) (Alex)</span>
 </h2>
-<a href="sec-av-complex.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-37">The goal of this talk is to understand what <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian varieties</a> look like over \(\CC\text{.}\) The goal for me is to understand what a (principal) polarisation is and why it is important.</p>
+<a href="sec-av-complex.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-37">The goal of this talk is to understand what abelian varieties look like over \(\CC\text{.}\) The goal for me is to understand what a (principal) polarisation is and why it is important.</p>
 <p id="p-38">First immediate question: why study complex theory at all? The most classical field, algebraically closed, archimidean, characteristic 0.</p>
-<p id="p-39">Recall/rapidly learn the picture for <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a>, given \(E\) an <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> we have for some \(\Lambda\) a rank 2 <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> in \(\CC\)</p>
+<p id="p-39">Recall/rapidly learn the picture for elliptic curves, given \(E\) an elliptic curve we have for some \(\Lambda\) a rank 2 lattice in \(\CC\)</p>
 <div class="displaymath">
 \begin{align*}
 \CC/\Lambda \amp\xrightarrow{\sim} E(\CC) \subseteq \PP^2(\CC)\\
@@ -396,29 +399,29 @@ z\amp\mapsto (\wp(z) : \wp'(z) : 1)\\
 \wp(z) = \frac{1}{z^2} + \sum_{\lambda \in \Lambda\smallsetminus\{0\}} \frac{1}{(z-\lambda)^2} - \frac{1}{\lambda^2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This is a <a class="xref" data-knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic function</a> whose image lands in</p>
+<p data-braille="continuation">This is a meromorphic function whose image lands in</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 = 4x^3 - g_2 x - g_3\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">So the \(\CC\) points of an <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> are topologically a torus.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<p data-braille="continuation">So the \(\CC\) points of an elliptic curve are topologically a torus.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Abelian varieties</span>
 </h3>
-<p id="p-40">Naturally one asks: does this generalise? Let \(A\) be an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> over \(\CC\text{,}\) what does \(A(\CC)\) look like? Another torus?</p>
+<p id="p-40">Naturally one asks: does this generalise? Let \(A\) be an abelian variety over \(\CC\text{,}\) what does \(A(\CC)\) look like? Another torus?</p>
 <article class="proposition theorem-like" id="proposition-3"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
 </h6>
 <p id="p-41">\(A(\CC)\) is a compact, connected, complex lie group.</p></article><article class="proposition theorem-like" id="proposition-4"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
 </h6>
-<p id="p-42">Let \(A\) be an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> of dimension \(g\) over \(\CC\text{.}\) Then we have</p>
+<p id="p-42">Let \(A\) be an abelian variety of dimension \(g\) over \(\CC\text{.}\) Then we have</p>
 <div class="displaymath">
 \begin{equation*}
 A(\CC) \cong V/\Lambda
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(V\) is a \(g\) dimensional complex vector space and \(\Lambda\) is a full rank <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> of \(V\) (i.e \(\Lambda\) is a discrete subgroup of \(V\) s.t. \(\RR\otimes \Lambda  = V\)).</p></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref original" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-43">Differential geometry gives us a map of complex manifolds, the exponential map</p>
+<p data-braille="continuation">where \(V\) is a \(g\) dimensional complex vector space and \(\Lambda\) is a full rank lattice of \(V\) (i.e \(\Lambda\) is a discrete subgroup of \(V\) s.t. \(\RR\otimes \Lambda  = V\)).</p></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref original" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-43">Differential geometry gives us a map of complex manifolds, the exponential map</p>
 <div class="displaymath">
 \begin{equation*}
 \exp\colon\Tgt_0(A(\CC)) \to A(\CC)
@@ -426,7 +429,7 @@ A(\CC) \cong V/\Lambda
 </div>
 <p data-braille="continuation">this is holomorphic. And since \(A(\CC)\) is abelian, this is a homomorphism also. In general this is locally an isomorphism around 0.</p>
 <p id="p-44">Claim: \(\exp\) is injective. There exists a neighborhood \(U\supseteq 0\) s.t. \(\exp(U) \cong U\text{.}\) Consider the image \(\exp(\Tgt_0 A(\CC))\text{.}\) For \(x\in \exp(\Tgt_0 A(\CC))\text{,}\) \(\{U+x\}\) are all open and give a cover. Thus \(\exp(\Tgt_0A(\CC))\) is open. Since \(A(\CC)\) is connected we are thus reduced to showing \(\exp(\Tgt_0 A(\CC))\) is closed also. Since \(\exp\) is a homomorphism, the image is a subgroup. So its complement is the union of its non-trivial cosets, which is open. Thus \(\exp(\Tgt_0A(\CC))\) is closed. Giving \(\exp(\Tgt_0A(\CC)) = A(\CC)\text{,}\) which proves the claim.</p>
-<p id="p-45">\(\exp\) is a local isomorphism, which gives that \(\ker(\exp)\) is discrete, i.e. a <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>. We now have</p>
+<p id="p-45">\(\exp\) is a local isomorphism, which gives that \(\ker(\exp)\) is discrete, i.e. a lattice. We now have</p>
 <div class="displaymath">
 \begin{equation*}
 A(\CC) \cong \Tgt_0A(\CC)/ \ker(\exp)
@@ -446,7 +449,7 @@ A(\CC)  \cong V/\Lambda \cong (\RR/\ZZ)^{2g}
 \end{equation*}
 </div>
 <p data-braille="continuation">isomorphisms as groups, thus \(A(\CC)\) is divisible. Further, \((\RR/\ZZ)\lb n \rb = (\frac 1n \ZZ)/\ZZ\text{.}\)</p></article></div>
-<p id="p-50">Question: Given a <a class="xref" data-knowl="./knowl/def-complex-torus.html" title="Definition 1.3.3">complex torus</a> \(V/\Lambda\text{,}\) does there exist an <a class="xref" data-knowl="./knowl/def-buntes-abvar.html" title="Definition 1.2.1: Abelian varieties">abelian variety</a> \(A\) such that \(A(\CC) \cong V/\Lambda\text{?}\)</p>
+<p id="p-50">Question: Given a complex torus \(V/\Lambda\text{,}\) does there exist an abelian variety \(A\) such that \(A(\CC) \cong V/\Lambda\text{?}\)</p>
 <article class="example example-like" id="example-2"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
 </h6>
@@ -470,7 +473,7 @@ A(\CC)  \cong V/\Lambda \cong (\RR/\ZZ)^{2g}
 </ul></article><article class="theorem theorem-like" id="theorem-4"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Chow.</span>
 </h6>
-<p id="p-52">If \(X\) is an analytic submanifold of \(\PP^n(\CC)\) then \(X\) is an algebraic subvariety.</p></article><p id="p-53">By this theorem it is enough to analytically imbed \(V/\Lambda \hookrightarrow \PP^m\text{.}\) We can try and do this by mimicing the <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> strategy, find enough functions \(\theta \colon V/\Lambda \to \CC\text{.}\)</p></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<p id="p-52">If \(X\) is an analytic submanifold of \(\PP^n(\CC)\) then \(X\) is an algebraic subvariety.</p></article><p id="p-53">By this theorem it is enough to analytically imbed \(V/\Lambda \hookrightarrow \PP^m\text{.}\) We can try and do this by mimicing the elliptic curve strategy, find enough functions \(\theta \colon V/\Lambda \to \CC\text{.}\)</p></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Cohomology</span>
 </h3>
 <article class="proposition theorem-like" id="proposition-6"><h6 class="heading">
@@ -517,17 +520,17 @@ E(iu,v)+ i E(u,v) \amp\mapsfrom E\text{.}
 </div></article></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">Line bundles</span>
 </h3>
-<p id="p-57">Now we will consider <a class="xref" data-knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on \(X = V/\Lambda\text{,}\) that is</p>
+<p id="p-57">Now we will consider line bundles on \(X = V/\Lambda\text{,}\) that is</p>
 <div class="displaymath">
 \begin{equation*}
 L\xrightarrow{\pi} X
 \end{equation*}
 </div>
-<p data-braille="continuation">such that for any \(x\in X\) there exists \(U\ni x\) with \(\pi^{-1} (U) \cong \CC \times U\text{.}\) We can obtain these from <a class="xref" data-knowl="./knowl/def-herm-form.html" title="Definition 5.3.5: Hermitian forms">hermitian forms</a> and some auxiliary data as follows.</p>
+<p data-braille="continuation">such that for any \(x\in X\) there exists \(U\ni x\) with \(\pi^{-1} (U) \cong \CC \times U\text{.}\) We can obtain these from hermitian forms and some auxiliary data as follows.</p>
 <article class="definition definition-like" id="definition-8"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span>
 </h6>
-<p id="p-58">If \(H\) is a <a class="xref" data-knowl="./knowl/def-herm-form.html" title="Definition 5.3.5: Hermitian forms">hermitian form</a> on \(V\) such that \(E(\Lambda\times\Lambda) \subseteq \ZZ\) there exists a map</p>
+<p id="p-58">If \(H\) is a hermitian form on \(V\) such that \(E(\Lambda\times\Lambda) \subseteq \ZZ\) there exists a map</p>
 <div class="displaymath">
 \begin{equation*}
 \alpha \colon \Lambda \to \CC^*_1  = \{z\in \CC^* : |z| = 1\}
@@ -539,7 +542,7 @@ L\xrightarrow{\pi} X
 \alpha(u + v) = e^{i\pi E(u,v)} \alpha(u) \alpha(v)\text{.}
 \end{equation*}
 </div>
-<p id="p-59">Further, there is a <a class="xref" data-knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> \(L(H, \alpha)\) on \(X\) which is defined by quotienting \(\CC\times V\) by \(\Lambda\) which acts via</p>
+<p id="p-59">Further, there is a line bundle \(L(H, \alpha)\) on \(X\) which is defined by quotienting \(\CC\times V\) by \(\Lambda\) which acts via</p>
 <div class="displaymath">
 \begin{equation*}
 \phi_u(\lambda, v) = (\alpha(u)e^{\pi H(v,u) + \frac12 \pi H(u,u)}\lambda, v+u)\text{ for } u\in \Lambda\text{,}
@@ -548,7 +551,7 @@ L\xrightarrow{\pi} X
 <p data-braille="continuation">we'll denote by \(e_u\) the factor \(\alpha(u)e^{\pi H(v,u) + \frac12 \pi H(u,u)}\) for brevity.</p></article><article class="theorem theorem-like" id="thm-appell-humbert"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Appell-Humbert.</span>
 </h6>
-<p id="p-60">Any <a class="xref" data-knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundle</a> on \(X\) is of the form \(L(H,\alpha)\) for some \(H\text{,}\) \(\alpha\) as above. Further</p>
+<p id="p-60">Any line bundle on \(X\) is of the form \(L(H,\alpha)\) for some \(H\text{,}\) \(\alpha\) as above. Further</p>
 <div class="displaymath">
 \begin{equation*}
 L(H_1, \alpha_1) \otimes L(H_2, \alpha_2)  = L(H_1+ H_2, \alpha_1\alpha_2)\text{.}
@@ -571,11 +574,11 @@ L(H_1, \alpha_1) \otimes L(H_2, \alpha_2)  = L(H_1+ H_2, \alpha_1\alpha_2)\text{
 }
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(\Pic(X)\) is the group of all <a class="xref" data-knowl="./knowl/def-line-bundle.html" title="Definition 1.5.3: Line bundles">line bundles</a> on \(X\) and \(\Pic^0\) is the subgroup of those which are topologically trivial.</p></article><p id="p-61">We wanted functions \(X\to \CC\text{.}\) Now we can instead consider sections \(s\) of \(L(H,\alpha) \xrightarrow{\pi} X\) i.e. maps \(s\colon X\to L(H,\alpha)\) with \(\pi\circ s = \id\text{.}\) Denote the space of such sections \(H^0(X,L(H,\alpha))\text{.}\)</p>
+<p data-braille="continuation">where \(\Pic(X)\) is the group of all line bundles on \(X\) and \(\Pic^0\) is the subgroup of those which are topologically trivial.</p></article><p id="p-61">We wanted functions \(X\to \CC\text{.}\) Now we can instead consider sections \(s\) of \(L(H,\alpha) \xrightarrow{\pi} X\) i.e. maps \(s\colon X\to L(H,\alpha)\) with \(\pi\circ s = \id\text{.}\) Denote the space of such sections \(H^0(X,L(H,\alpha))\text{.}\)</p>
 <article class="definition definition-like" id="def-theta-function"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Theta functions.</span>
 </h6>
-<p id="p-62">The sections of \(L(H, \alpha)\)  correspond to <a class="xref" data-knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">holomorphic functions</a></p>
+<p id="p-62">The sections of \(L(H, \alpha)\)  correspond to holomorphic functions</p>
 <div class="displaymath">
 \begin{equation*}
 \theta \colon V \to \CC
@@ -597,7 +600,7 @@ L(H_1, \alpha_1) \otimes L(H_2, \alpha_2)  = L(H_1+ H_2, \alpha_1\alpha_2)\text{
 \end{equation*}
 </div>
 <p data-braille="continuation">does not vanish. This is possible and thus we have a nonvanishing section of \(L^{\otimes 3}\text{.}\)</p>
-<p id="p-69">For injectivity, show that if the above section has the same values on \(z_1,z_2\) then it is a <a class="xref" data-knowl="./knowl/def-theta-function.html" title="Definition 1.3.11: Theta functions">theta function</a> for some sublattice. Almost all sections aren't <a class="xref" data-knowl="./knowl/def-theta-function.html" title="Definition 1.3.11: Theta functions">theta functions</a> for a sublattice (this uses <a class="xref" data-knowl="./knowl/prop-dimension-sections-complex.html" title="Proposition 1.3.12">Proposition 1.3.12</a>).</p>
+<p id="p-69">For injectivity, show that if the above section has the same values on \(z_1,z_2\) then it is a theta function for some sublattice. Almost all sections aren't theta functions for a sublattice (this uses <a class="xref" data-knowl="./knowl/prop-dimension-sections-complex.html" title="Proposition 1.3.12">Proposition 1.3.12</a>).</p>
 <p id="p-70">Something similar must be done for tangent vectors.</p></article></div>
 <article class="definition definition-like" id="def-riemann-form"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Riemann forms.</span>
@@ -608,20 +611,20 @@ L(H_1, \alpha_1) \otimes L(H_2, \alpha_2)  = L(H_1+ H_2, \alpha_1\alpha_2)\text{
 E_\RR \colon V\times V\to \RR
 \end{equation*}
 </div>
-<p data-braille="continuation">has the property that \(E(iu,iv) = E(u,v)\) and  the corresponding <a class="xref" data-knowl="./knowl/def-herm-form.html" title="Definition 5.3.5: Hermitian forms">Hermitian form</a> is positive definite.</p></article><article class="definition definition-like" id="def-polarizable"><h6 class="heading">
+<p data-braille="continuation">has the property that \(E(iu,iv) = E(u,v)\) and  the corresponding Hermitian form is positive definite.</p></article><article class="definition definition-like" id="def-polarizable"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Polarizable tori.</span>
 </h6>
-<p id="p-72">A <a class="xref" data-knowl="./knowl/def-complex-torus.html" title="Definition 1.3.3">complex torus</a> \(X = V/\Lambda\) is <dfn class="terminology">polarizable</dfn> if there exists a <a class="xref" data-knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a> \(E\) on \(\Lambda\text{.}\)</p></article><article class="example example-like" id="example-3"><h6 class="heading">
+<p id="p-72">A complex torus \(X = V/\Lambda\) is <dfn class="terminology">polarizable</dfn> if there exists a Riemann form \(E\) on \(\Lambda\text{.}\)</p></article><article class="example example-like" id="example-3"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Proposition.</span>
 </h6>
-<p id="p-73">Every \(\CC/\Lambda\) where \(\Lambda = \langle 1,\tau\rangle_{\ZZ}\) is <a class="xref" data-knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a>.</p>
+<p id="p-73">Every \(\CC/\Lambda\) where \(\Lambda = \langle 1,\tau\rangle_{\ZZ}\) is polarizable.</p>
 <p id="p-74">To see this take</p>
 <div class="displaymath">
 \begin{equation*}
 E(u,v) = \frac{u\bar v}{\im \tau}
 \end{equation*}
 </div>
-<p data-braille="continuation">as a <a class="xref" data-knowl="./knowl/def-riemann-form.html" title="Definition 1.3.14: Riemann forms">Riemann form</a>.</p></article><p id="p-75">Putting everything together we have obtained an equivalence of categories</p>
+<p data-braille="continuation">as a Riemann form.</p></article><p id="p-75">Putting everything together we have obtained an equivalence of categories</p>
 <div class="displaymath">
 \begin{equation*}
 \{\text{abelian varieties over } \CC\} \leftrightarrow \{\text{polarizable complex tori}\}\text{.}
@@ -641,7 +644,7 @@ E(u,v) = \frac{u\bar v}{\im \tau}
 V^* = \{f\colon V\to \CC : f(u+v) = f(u)+f(v),\,f(\alpha v) = \bar \alpha f(v) \}
 \end{equation*}
 </div>
-<p data-braille="continuation">and given \(\Lambda \subset V\) a <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a>, let</p>
+<p data-braille="continuation">and given \(\Lambda \subset V\) a lattice, let</p>
 <div class="displaymath">
 \begin{equation*}
 \Lambda^* = \{f\in V^* : f(\lambda) \in \ZZ\,\forall \lambda\in \Lambda\}\text{.}
@@ -663,18 +666,18 @@ X\times X^\vee \to \CC
 X[n] \times X^\vee[n] \to \left(\frac{1}{n^2} \ZZ/\frac{1}{n} \ZZ\right) \cong \ZZ/n\ZZ
 \end{equation*}
 </div>
-<p data-braille="continuation">this is called the <dfn class="terminology">Weil pairing</dfn>.</p></article><p id="p-80">Can a <a class="xref" data-knowl="./knowl/def-complex-torus.html" title="Definition 1.3.3">complex torus</a> be isogenous to its own dual? If \(X\) is <a class="xref" data-knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> then</p>
+<p data-braille="continuation">this is called the <dfn class="terminology">Weil pairing</dfn>.</p></article><p id="p-80">Can a complex torus be isogenous to its own dual? If \(X\) is polarizable then</p>
 <div class="displaymath">
 \begin{align*}
 X \amp\to X^\vee\\
 v\amp\mapsto H(v,-)
 \end{align*}
 </div>
-<p data-braille="continuation">is an <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a>.</p>
+<p data-braille="continuation">is an isogeny.</p>
 <article class="definition definition-like" id="def-complex-pol"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.21</span><span class="period">.</span>
 </h6>
-<p id="p-81">A <dfn class="terminology">polarization</dfn> is an <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> \(X \to X^\vee\text{.}\)</p></article></section></section></div></main>
+<p id="p-81">A <dfn class="terminology">polarization</dfn> is an isogeny \(X \to X^\vee\text{.}\)</p></article></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>

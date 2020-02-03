@@ -371,7 +371,10 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li></ul>
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -380,7 +383,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-buntes-canonical-models"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.8</span> <span class="title">Canonical models (Alex)</span>
 </h2>
-<a href="sec-buntes-canonical-models.html" class="permalink">¶</a><section class="introduction" id="introduction-20"><p id="p-1244">Recall we defined Shimura varieties given a <a class="xref" data-knowl="./knowl/def-buntes-shimura-datum.html" title="Definition 5.7.10: Shimura data">Shimura datum</a> \((G,X)\) and a compact open \(K \subseteq G(\adeles^\infty)\) as</p>
+<a href="sec-buntes-canonical-models.html" class="permalink">¶</a><section class="introduction" id="introduction-20"><p id="p-1244">Recall we defined Shimura varieties given a Shimura datum \((G,X)\) and a compact open \(K \subseteq G(\adeles^\infty)\) as</p>
 <div class="displaymath">
 \begin{equation*}
 {\operatorname{Sh}}_K (G,X) = G(\QQ) \backslash (X \times G(\adeles^\infty)) / K
@@ -444,7 +447,7 @@ E_0\times_{\QQ} \CC  \simeq E\text ?
 \underbrace{E^\sigma}_{y^2 = x^3 + \sigma(i)x + 1} \xleftarrow{f^\sigma, \sim} E_0 \times_\QQ \CC \xrightarrow{f,\sim} E
 \end{equation*}
 </div>
-<p data-braille="continuation">but two <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> are isomorphic (over \(\CC\)) if and only if they have the same \(j\)-invariant.</p>
+<p data-braille="continuation">but two elliptic curves are isomorphic (over \(\CC\)) if and only if they have the same \(j\)-invariant.</p>
 <div class="displaymath">
 \begin{equation*}
 j(E) = 1728 \frac{4i^3}{4i^3 + 27\cdot 1^2} = 1728\left(1+ \frac{ - 27}{-4i + 27}\right)
@@ -487,14 +490,14 @@ E_0' \colon 2 y^2 = x^3 + x + 1 \simeq y^2 = x^3 + 4 x + 8/\QQ\text{,}
 f_\sigma \colon X\xrightarrow{\sim} X^\sigma
 \end{equation*}
 </div>
-<p data-braille="continuation">does \(X\) descend to \(k\text{?}\)</p></article><p id="p-1256">For <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> we have \(j(E^\sigma) = \sigma(j(E))\) so \(E \simeq E^\sigma\) for all \(\sigma\) implies \(j(E) \in k\) and hence there is an <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E_0/ k\) with \(j(E_0) = j(E)\) hence they are isomorphic over \(\CC\text{,}\) explicitly:</p>
+<p data-braille="continuation">does \(X\) descend to \(k\text{?}\)</p></article><p id="p-1256">For elliptic curves we have \(j(E^\sigma) = \sigma(j(E))\) so \(E \simeq E^\sigma\) for all \(\sigma\) implies \(j(E) \in k\) and hence there is an elliptic curve \(E_0/ k\) with \(j(E_0) = j(E)\) hence they are isomorphic over \(\CC\text{,}\) explicitly:</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 + xy = x^3 - \frac{36}{j(E) - 1728} x - \frac{1}{j(E) - 1728}
 \end{equation*}
 </div>
 <p data-braille="continuation">when \(j\ne 0,1728\text{.}\)</p>
-<p id="p-1257">So our necessary condition is sufficient for <a class="xref" data-knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> 1 (exercise: <a class="xref" data-knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> 0).</p></article><p id="p-1258">Now I will subtly switch to quasiprojective-variety-land.</p>
+<p id="p-1257">So our necessary condition is sufficient for genus 1 (exercise: genus 0).</p></article><p id="p-1258">Now I will subtly switch to quasiprojective-variety-land.</p>
 <p id="p-1259">Notice however that given</p>
 <div class="displaymath">
 \begin{equation*}
@@ -526,7 +529,7 @@ f_{\sigma\tau} = (f_\tau)^\sigma f_\sigma\colon X \to X^\sigma \to X^{\sigma\tau
 <article class="remark remark-like" id="remark-36"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.8.7</span><span class="period">.</span>
 </h6>
-<p id="p-1262">If \(X/\CC\) has no automorphisms (i.e. a generic <a class="xref" data-knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> \(g \ge 3\) curve) then the cocycle condition is trivial and we just need the isomorphisms as in our first necessary condition. This is as \(f_{\sigma\tau}\inv f_\tau ^\sigma f_\sigma\) is just some automorphism, we want it to be the identity.</p>
+<p id="p-1262">If \(X/\CC\) has no automorphisms (i.e. a generic genus \(g \ge 3\) curve) then the cocycle condition is trivial and we just need the isomorphisms as in our first necessary condition. This is as \(f_{\sigma\tau}\inv f_\tau ^\sigma f_\sigma\) is just some automorphism, we want it to be the identity.</p>
 <p id="p-1263">Unfortunately many curves of interest have a lot of automorphisms however. Like superelliptic curves/cyclic covers.</p></article><p id="p-1264">This motivates the following definition:</p>
 <article class="definition definition-like" id="def-field-of-mod"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Field of moduli.</span>
@@ -536,18 +539,18 @@ f_{\sigma\tau} = (f_\tau)^\sigma f_\sigma\colon X \to X^\sigma \to X^{\sigma\tau
 \begin{equation*}
 \{\sigma \in \Gal{\CC}{\QQ} : X^\sigma \simeq X\}\text{.}
 \end{equation*}
-</div></article><p id="p-1266">It would be great if every curve could be defined over its <a class="xref" data-knowl="./knowl/def-field-of-mod.html" title="Definition 5.8.8: Field of moduli">field of moduli</a>.</p>
+</div></article><p id="p-1266">It would be great if every curve could be defined over its field of moduli.</p>
 <p id="p-1267">“You can't always get what you want, but if you try sometimes, you might find, you get what you need” - The philosopher Jagger.</p>
 <article class="example example-like" id="example-75"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Shimura.</span>
 </h6>
-<p id="p-1268">Let \(m\) be odd and define a hyperelliptic curve of <a class="xref" data-knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> \(m - 1\) (which is even) as</p>
+<p id="p-1268">Let \(m\) be odd and define a hyperelliptic curve of genus \(m - 1\) (which is even) as</p>
 <div class="displaymath">
 \begin{equation*}
 X\colon y^2 = a_0 x^m + \sum_{r= 1}^m (a_r x^{m+r} + (-1)^r a_r^\rho x^{m-r}),\,a_i \in \CC,\,a_m = 1,\,a_0 \in \RR
 \end{equation*}
 </div>
-<p data-braille="continuation">\(\rho\) is complex <a class="xref" data-knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a>, then we have an isomorphism</p>
+<p data-braille="continuation">\(\rho\) is complex conjugation, then we have an isomorphism</p>
 <div class="displaymath">
 \begin{equation*}
 \mu\colon X \to X^\rho,\,\mu(x,y) = (-x\inv, i x^{-m} y)
@@ -558,7 +561,7 @@ X\colon y^2 = a_0 x^m + \sum_{r= 1}^m (a_r x^{m+r} + (-1)^r a_r^\rho x^{m-r}),\,
 \mu^\rho \mu \colon (x,y)\mapsto (x,-y)
 \end{equation*}
 </div>
-<p data-braille="continuation">so the <a class="xref" data-knowl="./knowl/def-field-of-mod.html" title="Definition 5.8.8: Field of moduli">field of moduli</a> is contained in \(\RR\text{.}\) As long as we pick all \(a_i,a_i^\rho\) algebraically independent over \(\QQ\) there are no automorphisms except \(\pm 1\text{.}\) Exercise, in this case \(X\) has no model over \(\RR\text{.}\)</p></article><p id="p-1269">Warning even though trivial automorphism group is best, it is not really the case that more automorphisms is worse for you.</p>
+<p data-braille="continuation">so the field of moduli is contained in \(\RR\text{.}\) As long as we pick all \(a_i,a_i^\rho\) algebraically independent over \(\QQ\) there are no automorphisms except \(\pm 1\text{.}\) Exercise, in this case \(X\) has no model over \(\RR\text{.}\)</p></article><p id="p-1269">Warning even though trivial automorphism group is best, it is not really the case that more automorphisms is worse for you.</p>
 <p id="p-1270">What does help is points</p>
 <article class="theorem theorem-like" id="theorem-85"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.8.10</span><span class="period">.</span><span class="space"> </span><span class="title">Weil 1956, Milne 14.6.</span>
@@ -571,18 +574,18 @@ X\colon y^2 = a_0 x^m + \sum_{r= 1}^m (a_r x^{m+r} + (-1)^r a_r^\rho x^{m-r}),\,
 <p id="p-1272">Identify a special set of points, and some field \(L\) as above where we “know” the galois action.</p></article></section><section class="subsection" id="subsection-90"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.8.2</span> <span class="title">Reflex fields</span>
 </h3>
-<p id="p-1273">First we define a field based on a <a class="xref" data-knowl="./knowl/def-buntes-shimura-datum.html" title="Definition 5.7.10: Shimura data">Shimura datum</a>, this will (eventually) be the field we hope to descend the associated Shimura variety to.</p>
+<p id="p-1273">First we define a field based on a Shimura datum, this will (eventually) be the field we hope to descend the associated Shimura variety to.</p>
 <article class="definition definition-like" id="def-alg-torus"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.8.11</span><span class="period">.</span><span class="space"> </span><span class="title">Algebraic tori.</span>
 </h6>
-<p id="p-1274">An <dfn class="terminology">algebraic torus</dfn> over a field  \(k \) is an <a class="xref" data-knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> \(T\) such that \(T_{\bar k} \simeq (\mathbf G_m)^n\text{.}\)</p></article><p id="p-1275">Let \(G/\QQ\) be reductive, \(k \subseteq \CC\) and let</p>
+<p id="p-1274">An <dfn class="terminology">algebraic torus</dfn> over a field  \(k \) is an algebraic group \(T\) such that \(T_{\bar k} \simeq (\mathbf G_m)^n\text{.}\)</p></article><p id="p-1275">Let \(G/\QQ\) be reductive, \(k \subseteq \CC\) and let</p>
 <div class="displaymath">
 \begin{equation*}
 C(k) = G(K) \backslash \Hom(\mathbf G_m, G_k)
 \end{equation*}
 </div>
 <p data-braille="continuation">be the set of conj. classes of cocharacters \(/k\text{.}\)</p>
-<p id="p-1276">For \((G,X)\) a <a class="xref" data-knowl="./knowl/def-buntes-shimura-datum.html" title="Definition 5.7.10: Shimura data">Shimura datum</a> we can take</p>
+<p id="p-1276">For \((G,X)\) a Shimura datum we can take</p>
 <div class="displaymath">
 \begin{equation*}
 X \ni x \mapsto \mu_x(z) = h_{x\CC} (z,1) \in C(\QQ^\alg) \subseteq C(\CC)\text{.}
@@ -626,7 +629,7 @@ h_x(\CC^\times) \subseteq T(\RR)
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.8.15</span><span class="period">.</span>
 </h6>
 <p id="p-1284">\((T,x)\) special means \(T(\RR)\) fixes \(x\text{.}\)</p>
-<p id="p-1285">Conversely if \(T\) is a maximal torus of \(G\) with \(T(\RR)\) fixing \(x\) then \(h_x(\CC^\times)\) is in the centraliser of \(T(\RR)\) inside \(G(\RR)\) which is itself \(\implies (T,x)\) is special.</p></article><p id="p-1286">I said this generalises <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">CM points</a>, how?</p>
+<p id="p-1285">Conversely if \(T\) is a maximal torus of \(G\) with \(T(\RR)\) fixing \(x\) then \(h_x(\CC^\times)\) is in the centraliser of \(T(\RR)\) inside \(G(\RR)\) which is itself \(\implies (T,x)\) is special.</p></article><p id="p-1286">I said this generalises CM points, how?</p>
 <article class="example example-like" id="example-76"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.8.16</span><span class="period">.</span>
 </h6>
@@ -692,7 +695,7 @@ r_x \colon \adeles^\times_{E(x)} \to T(\adeles_f)\text{.}
 <article class="definition definition-like" id="def-canonical-model"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.8.17</span><span class="period">.</span><span class="space"> </span><span class="title">Milne 12.8.</span>
 </h6>
-<p id="p-1293">Let \((G,X)\) be a <a class="xref" data-knowl="./knowl/def-buntes-shimura-datum.html" title="Definition 5.7.10: Shimura data">Shimura datum</a>, and let \(K\) be a compact open subgroup of \(G(\adeles_f)\text{.}\) A model \(M_K(G,X)\) of \({\operatorname{Sh}}_K(G,X)\) over \(E(G,X)\) is a <dfn class="terminology">canonical model</dfn> if, for every special pair \((T, x) \subseteq (G,X)\) and \(a \in G(\adeles_f)\text{,}\) \(\lb x,a\rb _K\) has coordinates in \(E(x)^\ab\) and</p>
+<p id="p-1293">Let \((G,X)\) be a Shimura datum, and let \(K\) be a compact open subgroup of \(G(\adeles_f)\text{.}\) A model \(M_K(G,X)\) of \({\operatorname{Sh}}_K(G,X)\) over \(E(G,X)\) is a <dfn class="terminology">canonical model</dfn> if, for every special pair \((T, x) \subseteq (G,X)\) and \(a \in G(\adeles_f)\text{,}\) \(\lb x,a\rb _K\) has coordinates in \(E(x)^\ab\) and</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma [x,a]_K = [x, r_x(s) a]_K
@@ -722,13 +725,13 @@ s\in \adeles^\times_{E(x)}
 </div></article><article class="example example-like" id="example-77"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.8.18</span><span class="period">.</span>
 </h6>
-<p id="p-1294">\(T \) an <a class="xref" data-knowl="./knowl/def-alg-torus.html" title="Definition 5.8.11: Algebraic tori">algebraic torus</a> over \(\QQ\) and</p>
+<p id="p-1294">\(T \) an algebraic torus over \(\QQ\) and</p>
 <div class="displaymath">
 \begin{equation*}
 h \colon \mathbf S \to T_\RR
 \end{equation*}
 </div>
-<p data-braille="continuation">then  \((T,h)\) is a <a class="xref" data-knowl="./knowl/def-buntes-shimura-datum.html" title="Definition 5.7.10: Shimura data">Shimura datum</a> \(E = E(T,h)\) is the field of definition \(\mu_h\) in this case</p>
+<p data-braille="continuation">then  \((T,h)\) is a Shimura datum \(E = E(T,h)\) is the field of definition \(\mu_h\) in this case</p>
 <div class="displaymath">
 \begin{equation*}
 {\operatorname{Sh}}_K(T,h) = T(\QQ) \backslash \{h\}  \times T(\adeles_f) / K
@@ -743,7 +746,7 @@ h \colon \mathbf S \to T_\RR
 <p data-braille="continuation">this action defines a model of \({\operatorname{Sh}}_K(T, h)\) over \(E\) which by definition is canonical.</p></article><article class="theorem theorem-like" id="theorem-86"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.8.19</span><span class="period">.</span><span class="space"> </span><span class="title">Langlands conjecture, Milne 1983.</span>
 </h6>
-<p id="p-1295">Let \((G,X)\) be a <a class="xref" data-knowl="./knowl/def-buntes-shimura-datum.html" title="Definition 5.7.10: Shimura data">shimura datum</a>, \(\sigma\) an automorphism of \(\CC\text{.}\) Langlands defined</p>
+<p id="p-1295">Let \((G,X)\) be a shimura datum, \(\sigma\) an automorphism of \(\CC\text{.}\) Langlands defined</p>
 <div class="displaymath">
 \begin{equation*}
 (G^\sigma, X^\sigma)
@@ -758,13 +761,13 @@ f_\sigma \colon {\operatorname{Sh}}(G^\sigma, X^\sigma) \to {\operatorname{Sh}}(
 <p data-braille="continuation">satisfying some conditions. Then the \(f_\sigma\) for \(\sigma\in \Gal{\CC}{E(G,X)}\) are a descent datum, and the model is canonical.</p></article><article class="theorem theorem-like" id="theorem-87"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.8.20</span><span class="period">.</span>
 </h6>
-<p id="p-1296">For any <a class="xref" data-knowl="./knowl/def-buntes-shimura-datum.html" title="Definition 5.7.10: Shimura data">Shimura datum</a> \((G,X)\text{,}\) \({\operatorname{Sh}}_K(G,X)\) has a <a class="xref" data-knowl="./knowl/def-canonical-model.html" title="Definition 5.8.17: Milne 12.8">canonical model</a> (defined to be a <a class="xref" data-knowl="./knowl/def-buntes-compat.html" title="Definition 3.4.2: Compatibility">compatible</a> system of <a class="xref" data-knowl="./knowl/def-canonical-model.html" title="Definition 5.8.17: Milne 12.8">canonical models</a> for \({\operatorname{Sh}}_K\)). The <a class="xref" data-knowl="./knowl/def-canonical-model.html" title="Definition 5.8.17: Milne 12.8">canonical model</a> is unique up to unique isomorphism.</p></article><p id="p-1297">Some references:</p>
+<p id="p-1296">For any Shimura datum \((G,X)\text{,}\) \({\operatorname{Sh}}_K(G,X)\) has a canonical model (defined to be a compatible system of canonical models for \({\operatorname{Sh}}_K\)). The canonical model is unique up to unique isomorphism.</p></article><p id="p-1297">Some references:</p>
 <ol class="decimal">
 <li id="li-307">Weil’s Galois Descent Theorem; A Computational Point Of View - Ruben A. Hidalgo And Sebastian Reyes-carocca</li>
-<li id="li-308">On the <a class="xref" data-knowl="./knowl/def-field-of-mod.html" title="Definition 5.8.8: Field of moduli">field of moduli</a> of superelliptic curves - Ruben Hidalgo and Tony Shaska</li>
+<li id="li-308">On the field of moduli of superelliptic curves - Ruben Hidalgo and Tony Shaska</li>
 <li id="li-309">Varieties Without Extra Automorphisms I: Curves - Bjorn Poonen</li>
-<li id="li-310">Lecture On Shimura Curves 6: <a class="xref" data-knowl="./knowl/def-special-pt.html" title="Definition 5.8.14: Special points">Special Points</a> And <a class="xref" data-knowl="./knowl/def-canonical-model.html" title="Definition 5.8.17: Milne 12.8">Canonical Models</a> Pete L. Clark <a class="external" href="http://math.uga.edu/~pete/SC7-CMpoints.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://math.uga.edu/~pete/SC7-CMpoints.pdf</code></a> (Shimura curves only but still)</li>
-<li id="li-311">Shimura Varieties and <a class="xref" data-knowl="./knowl/def-canonical-model.html" title="Definition 5.8.17: Milne 12.8">Canonical models</a> (slides) - Brian Smithling <a class="external" href="http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf</code></a>.</li>
+<li id="li-310">Lecture On Shimura Curves 6: Special Points And Canonical Models Pete L. Clark <a class="external" href="http://math.uga.edu/~pete/SC7-CMpoints.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://math.uga.edu/~pete/SC7-CMpoints.pdf</code></a> (Shimura curves only but still)</li>
+<li id="li-311">Shimura Varieties and Canonical models (slides) - Brian Smithling <a class="external" href="http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf</code></a>.</li>
 <li id="li-312">
 <a class="external" href="https://tlovering.wordpress.com/2014/09/03/galois-descent-for-transcendental-extensions/" target="_blank"><code class="code-inline tex2jax_ignore">https://tlovering.wordpress.com/2014/09/03/galois-descent-for-transcendental-extensions/</code></a>.</li>
 <li id="li-313">Canonical models of Shimura curves -  J.S. Milne (a great article I found after the talk...)</li>

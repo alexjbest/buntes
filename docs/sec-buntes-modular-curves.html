@@ -371,7 +371,10 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li></ul>
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -401,7 +404,7 @@ var js_version = 0.13;
 \Lambda = \gamma \Lambda ',\,\gamma \in \CC
 \end{equation*}
 </div>
-<p data-braille="continuation">then we say the two <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a> are <dfn class="terminology">homothetic</dfn>.</p></article><p id="p-1023">Any <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> is <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">homothetic</a> to one of the form</p>
+<p data-braille="continuation">then we say the two lattices are <dfn class="terminology">homothetic</dfn>.</p></article><p id="p-1023">Any lattice is homothetic to one of the form</p>
 <div class="displaymath">
 \begin{equation*}
 \Lambda = \langle 1 , \tau \rangle
@@ -413,7 +416,7 @@ var js_version = 0.13;
 \tau \in \HH = \{ z\in \CC: \Im(z) \gt 0 \}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">So there is a bijection between \(\HH\) and ordered bases of <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattices</a>.</p>
+<p data-braille="continuation">So there is a bijection between \(\HH\) and ordered bases of lattices.</p>
 <p id="p-1024">\(\SL_2(\ZZ)\) acts on \(\HH\) and the action corresponds to changing bases.</p>
 <p id="p-1025">The action of \(\PSL_2(\ZZ)\) is faithful. \(i,\rho = e^{\pi i /3}\) have non-trivial stabilisers</p>
 <div class="displaymath">
@@ -426,7 +429,7 @@ var js_version = 0.13;
 \Stab_\rho =  \langle TS\rangle,\,T = \begin{pmatrix} 1\amp1 \\ 0 \amp 1 \end{pmatrix}
 \end{equation*}
 </div>
-<p id="p-1026">We can determine the <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> of elements by looking at the characteristic polynomials.</p>
+<p id="p-1026">We can determine the order of elements by looking at the characteristic polynomials.</p>
 <p id="p-1027">We then have</p>
 <div class="displaymath">
 \begin{equation*}
@@ -468,9 +471,9 @@ D = \{ z\in \CC : |z|  \ge 1,\, |\Re(z)| \le \frac 12 \}
 X(1) = \SL_2(\ZZ) \backslash \HH^*
 \end{equation*}
 </div>
-<p data-braille="continuation">which is now compact, <a class="xref" data-knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> 0, which matches up with \(Y(1)\) having \(\CC\) points \(\CC\) earlier.</p>
-<p id="p-1034">If \(X\) is a projective curve then \(X(\CC)\) has the structure of a compact <a class="xref" data-knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surface</a>. If \(S\) is such a surface then there exists a unique up to isomorphism \(X\) with \(X(\CC) = S\text{.}\)</p>
-<p id="p-1035">The <a class="xref" data-knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on \(S\) are the function field of \(X\) and there is a correspondence</p>
+<p data-braille="continuation">which is now compact, genus 0, which matches up with \(Y(1)\) having \(\CC\) points \(\CC\) earlier.</p>
+<p id="p-1034">If \(X\) is a projective curve then \(X(\CC)\) has the structure of a compact Riemann surface. If \(S\) is such a surface then there exists a unique up to isomorphism \(X\) with \(X(\CC) = S\text{.}\)</p>
+<p id="p-1035">The meromorphic functions on \(S\) are the function field of \(X\) and there is a correspondence</p>
 <div class="displaymath">
 \begin{equation*}
 \text{Compact Riemann surfaces} \leftrightarrow \text{Smooth proj. curves}
@@ -501,7 +504,7 @@ X(1) = \SL_2(\ZZ) \backslash \HH^*
 </div>
 <p id="p-1037">\(\Gamma(N)\) is normal inside \(\SL_2(\ZZ)\) and \(\Gamma_1(N)\) is normal inside \(\Gamma_0(N)\text{.}\)</p>
 <p id="p-1038">The aforementioned equivalence of categories gives us a smooth projective curve for each of these examples.</p>
-<p id="p-1039">In fact one can find a smooth projective curve with \(\QQ\)-coefficients realising each of these <a class="xref" data-knowl="./knowl/def-top-riem-surface.html" title="Definition 2.2.1">Riemann surfaces</a>.</p>
+<p id="p-1039">In fact one can find a smooth projective curve with \(\QQ\)-coefficients realising each of these Riemann surfaces.</p>
 <p id="p-1040">For</p>
 <div class="displaymath">
 \begin{equation*}
@@ -541,7 +544,7 @@ g = \prod_{\gamma} (Y - j(\gamma Nz))
 \end{equation*}
 </div>
 <p data-braille="continuation">the product over the cosets of \(\Gamma_0(N) \subseteq \SL_2(\ZZ)\text{.}\)</p>
-<p id="p-1042">The coefficients of \(g\) are <a class="xref" data-knowl="./knowl/def-morph-riem-surf.html" title="Definition 2.2.6: (Holo/Mero)-morphisms of Riemann surfaces">meromorphic functions</a> on \(X(1) = \CC\lb j \rb\text{.}\) So we have</p>
+<p id="p-1042">The coefficients of \(g\) are meromorphic functions on \(X(1) = \CC\lb j \rb\text{.}\) So we have</p>
 <div class="displaymath">
 \begin{equation*}
 g(Y) = F(j(z), Y)
@@ -582,7 +585,7 @@ z \mapsto (j(z), j(Nz))
 <article class="paragraphs" id="paragraphs-40"><h5 class="heading"><span class="title">Elliptic curves.</span></h5>
 <p id="p-1047">Several definitions:</p>
 <ol class="decimal">
-<li id="li-265">Smooth proj. curve <a class="xref" data-knowl="./knowl/def-genus-order.html" title="Definition 3.4.12">genus</a> 1 with a rational point.</li>
+<li id="li-265">Smooth proj. curve genus 1 with a rational point.</li>
 <li id="li-266">smooth curve given by Weierstrass eqn.<div class="displaymath">
 \begin{equation*}
 y^2 + a_1xy + a_3 y =  x^3 + a_2x^2 + a_4 x + a_6\text{.}

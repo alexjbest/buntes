@@ -360,3 +360,294 @@ section#sec-abhyankar-what-is
 
         In particular, this result implies Abhyankar’s conjecture for a solvable group.
 
+
+
+section#sec-abhyankar-ramification
+    title Ramification of curves (John)
+
+
+    p
+        | Two main references:
+        |  P. A. Castillejo, Grothendieck-Ogg-Shafarevich formula for #[m \ell]-adic sheaves, Master Thesis (2016). #[url(href="http://www.mi.fu-berlin.de/users/castillejo/docs/160429_Master_GOS_formula_l-adic_sheaves.pdf")].
+        | Lars Kindler, Kay Rülling Introductory course on #[m \ell]-adic sheaves and their ramification theory on curves. #[url(href="https://arxiv.org/pdf/1409.6899.pdf")]
+        | Also: Fundamental Groups in Characteristic #[m p] - Pete L. Clark.
+        | Takashi Saito: Intro to wild ramification of schemes and sheaves.
+
+    p
+        | Interested in ramification of #[m \AA^1] in characteristic #[m p]. This is interesting because of wild ramification, which we will talk about today.
+
+    theorem
+        title Grothendieck
+        statement: p
+            | There exists a canonical surjection
+            me sp\colon \pi _1(C_{\bar\eta}) ^{tame} \to \pi _1(C/k)^{tame}
+            | where
+            me C_{\eta}
+            | is the generic fibre for a lift of #[m C/k] over a complete local noetherian ring with residue field #[m k].
+
+    theorem
+        statement: p
+            | For #[m \mathcal F] a lisse #[m \overline \QQ_\ell]-sheaf on #[m U] (a curve over a perfect field of characteristic #[m p \ne \ell]).
+            me \chi _c ( U, \mathcal F) =  \rk (\mathcal F) \chi _c(\overline U, \overline \QQ_\ell) - \sum_{x \in C\smallsetminus U} \lb  k(x) : k\rb ]\operatorname{Swan}_x(\mathcal F)
+            | #[m C] is the compactification of #[m U].
+            me \overline U = U \otimes_k \overline k
+            me \chi  _c(\overline U, \mathcal F) = \sum_{i=0}^2 (-1)^i \dim H_c^i(\overline U_\et, \mathcal F)
+            | .
+
+
+    p
+        | Let #[m K] be a complete local field.
+
+    definition
+        statement: p
+            | Let #[m L/K] be a finite Galois  ext. let
+            me G = \Gal L K
+            | and for #[m i\ge -1]
+            me G_i  = \{ \sigma  \in G : \sigma \text{ acts trivially on }B/\ideal m L ^{i+1}\}
+            | where #[m B = \ints_L], and #[m \ideal m_L] is the maximal ideal.
+    p
+        | Problem: this numbering only behaves well w.r.t. subgroups not quotients.
+    proposition
+        statement: p
+            | If #[m H \subset G], then
+            me H_i = H \cap G_i
+            | .
+    proposition
+        statement: p
+            me G_{-1} = G
+            me G_{0} = \text{inertia}
+            me G_{0}/G_1 = \text{tamely ramified part}
+            me G_1 \ne 0 \iff L/K \text{ is wildly ramified}
+            me i\ge 1,\,G_i \text{ are }p\text{-groups}
+
+    definition#def-herbrand-fn
+        title Herbrand function
+        statement: p
+            | Let #[m G_u = G_{\lceil u \rceil}] then we define
+            me \phi _{L/K} \colon  \lb -1,\infty ) \to \lb -1 , \infty )
+            me \phi _{L/K}(u) = \int_0^u \frac{\diff t}{(G_0 : G_t)}
+            | if #[m t\in (-1,0)] let #[m (G_0: G_t)  = 1],
+            | if #[m t=-1] let #[m (G_0: G_t)  = 1/f],
+            | in particular #[m u \in \ZZ_{\ge 0}]
+            me 1 + \phi _{L/K}(u) = \frac{1}{|G_0|} \sum_{i=0}^u |G_i|
+            | the formula arises from computing the image of #[m G_i] in #[m G/H] for
+            me H \triangleleft G
+            | .
+
+
+    proposition
+        statement: p
+            me H \triangleleft G
+            | for all #[m u \in \RR_{\ge -1}]
+            me G_uH/H = (G/H)_{\phi_{L/L^H}}(u)
+            | .
+
+    definition
+        statement: p
+            | Let #[m \psi _{L/K} = \phi \inv_{L/K}] for #[m u \in \RR_{\ge -1}]
+            me G^u = G_{\psi _{L/K}}(u)
+            | .
+
+    example
+        title
+            | Artin-Schreier
+        statement: p
+            me L = K\lb t \rb /(t^{p^n}  - t - x^{-m})
+            | with #[m (m,p) = 1] where #[m K = k ((x )) ],
+            | lower numbering
+            me \ZZ/p^n  = G_0 = \cdots = G_m \supsetneq G_{m+1} = 0
+            me \phi _{L/K} (u) = \begin{cases}  u \amp \text{ if } 0 \le u \le m\\ m + \frac{u-m}p \amp \text{ if }u \gt m\end{cases}
+            | so
+            me \psi _{L/K} (v)  = \begin{cases} v \amp \text{ if } 0 \le v \le m\\ p(v-m) + m \amp \text{ if } v \gt m \end{cases}
+            | .
+
+    theorem
+        title Hasse-Arf
+        statement: p
+            | If #[m G] is abelian, then the jumps in the upper numbering filtration are all at integers.
+
+    p
+        | The point being:
+
+    proposition
+        statement: p
+            | If #[m H \triangleleft G] we have
+            me G^u / (H\cap G^u ) = (G/H)^u
+            | .
+
+    p
+        | #[m L/K], #[m x] a uniformizer
+        me i_G \colon  G \to \ZZ_{\ge 0} \cup\{\infty \}
+        me \sigma  \mapsto v_L(\sigma (x) - x)
+        | .
+    theorem
+        statement: p
+            me.
+                a_G(g) = \begin{cases}
+                - fi_G(g) \amp\text{ if } g \ne 1\\
+                f\sum_{g' \ne 1} i_G(g') \amp\text{ if } g = 1
+                \end{cases}
+            | is a character of a #[m G]-representation over #[m \CC].
+
+    definition
+        statement: p
+            me \mathrm{sw}_G = a_G - (r_G - r_{G/G_0})
+            | where #[m r_G] is the character of the regular representation of #[m G]
+            | If #[m L/K] is totally ramified then
+            me \mathrm{sw}_G = a_G - u_G
+            | where
+            me u_G = r_G - \mathrm{triv}_G
+            | .
+
+    theorem
+        statement: p
+            | If #[m \ell ] is a prime not equal to the residue characteristic of #[m K], then
+            ol
+                li #[m a_G] and #[m \mathrm{sw}_G] are realisable over #[m \QQ_\ell]
+                li
+                    | There exists a f.g. projective left #[m \ZZ_\ell \lb G\rb]-module #[m \mathrm{Sw}_G] unique up to iso. such that
+                    me \mathrm{Sw}_G \otimes \ZZ_\ell \QQ_\ell
+                    | is isomorphic to the Swan representation.
+            | reference: Serre, Linear representations of finite groups.
+
+
+    p
+        | Fix #[m K^{sep} /K] with #[m K] having residue field #[m k] and #[m \characteristic (k) = p \gt 0]. #[m k] perfect, #[m \ell \ne p] prime.
+    p
+        | #[m E/ \QQ_\ell] finite extension and
+        me \rho\colon G_K \to \GL(V)
+        | for #[m V] fin. dim. vector space #[m /E].
+    definition
+        statement: p
+            me P_K \subset G_K = \Gal{K^{\sep}}{K}
+            | the wild ramification subgroup is the closed pro-#[m p]-group
+            me \varprojlim_{L/K} \Gal L K _1
+            | .
+    definition
+        statement: p
+            | Let #[m R] bee a commutative ring and
+            me \rho\colon G_K \to \GL_n(R)
+            | a group homomorphism, then we say:
+            ol
+                li
+                    | #[m \rho] is unramified if 
+                    me \underbrace{G_K^0}_{\varprojlim \Gal L K ^0} \subseteq \ker \rho
+                    | .
+                li
+                    | #[m \rho] is tamely ramified if 
+                    me P_K\subseteq \ker \rho
+                    | .
+                li
+                    | #[m \rho] is wildly ramified otherwise.
+
+
+    lemma
+        statement: p
+            | Let #[m G] be a compact group
+            me \rho\colon G \to \GL (V)
+            | a continuous representation over #[m E], then there exists a free #[m \ints_E]-module #[m \mathcal V \subseteq V] s.t.
+            me V = \mathcal V \otimes E
+            | and #[m \rho] factors as
+            me \rho\colon G \to \GL(\mathcal V) \to \GL(V)
+            | .
+
+
+    definition
+        statement: p
+            | If #[m \lambda] is a local parameter of #[m \ints_E] and
+            me \rho\colon G_K \to \GL(\mathcal V)
+            | is a representation over #[m \ints_E]. The composition
+            me \bar \rho \colon G_K \to \GL(\mathcal V) \to \GL(\overline V)
+            | where #[m \overline V =\mathcal V / \lambda\mathcal V] is the reduction modulo #[m \lambda] of #[m \rho].
+            | #[m \bar \rho ] is  a #[m \FF_\lambda = \ints_E / \lambda]-rep.
+
+    lemma
+        statement: p
+            | If #[m P] is a pro-#[m p]-group and
+            me \rho\colon P \to \GL_r(\ints_E)
+            | is a continuous representation. Then the image of #[m \rho] is finite and
+            me \rho(P) \cap \ker(\GL_r(\ints_E) \twoheadrightarrow \GL_r(\FF_\lambda)) = \{1\}
+            | .
+
+    corollary
+        statement: p
+            | #[m \rho] is tame if and only if #[m \bar \rho ] is tame.
+
+    paragraphs
+        title Wild ramification
+
+        definition
+            statement: p
+                me \rho\colon G_K \to \GL(\mathcal V)
+                | be a continuous representation where #[m \mathcal V] is a free #[m \ints _E]-module.
+                | Let #[m G = G_K/ \ker(\bar \rho)] correspond to #[m L/K].
+                | Consider the swan representation over #[m \ZZ_\ell] of #[m G]
+                me b(\rho) = b(\mathcal V) = \dim_{\FF_\lambda} \Hom_{\FF_\lambda\lb G\rb }(\mathrm{Sw}_G \otimes_{\ZZ_\ell} \FF_\lambda ,  \bar \rho)
+                | .
+
+        remark: p
+            | #[m b(\mathcal V)] depends only on the class of #[m \mathcal V] in the Grothendieck ring #[m R_{\FF_\lambda}(G)].
+        remark: p
+            | If #[m \rho] factors through a finite quotient then 
+            me b(\rho) = \dim_{\FF_\lambda} \Hom_{\FF_\lambda\lb G\rb }(\mathrm{Sw}_G \otimes_{\ZZ_\ell} \FF_\lambda ,  \bar \rho)
+            me         = \dim_{E          } \Hom_{E          \lb G\rb }(\mathrm{Sw}_G \otimes_{\ZZ_\ell} E, \rho\otimes E)
+
+        proposition
+            statement: p
+                me G = G_K/ \ker(\bar \rho)
+                | then
+                me b(\mathcal V) = \sum_{i=1}^\infty \frac{|G_i|}{|G_0|} \dim_{\FF_\lambda} (\overline {\mathcal V} / \overline {\mathcal V}^{G_i})A
+                | .
+        proposition
+            statement: p
+                | If #[m \rho \colon G_K \to \GL_r(\ints_E)] is a continuous representation then TFAE:
+                ol
+                    li #[m \rho \otimes E \colon G_K \to \GL_r(\ints_E) \hookrightarrow \GL_r(E)]
+                        | is tame
+                    li #[m \rho] is tame
+                    li #[m \bar \rho] is tame
+                    li #[m b(\mathcal V) = 0]
+
+        p
+            | Swan conductor.
+        p
+            | Break decomposition
+        lemma: statement: p
+            | #[m \lambda \in \RR_{\ge 0 }],
+            me G_K^{\lambda+} = \overline{\bigcup_{\lambda'  \gt \lambda} G_K^{\lambda'}}
+            | then the upper numbering filtration satisfies
+            ol
+                li
+                    me \bigcap_{\lambda\gt 0} G_K^\lambda = \{1\}
+                li
+                    me \lambda\gt 0,\, G_K^\lambda = \bigcap_{0 \lt \lambda' \lt \lambda} G_K^{\lambda'}
+                li
+                    me P_K = G_K ^{0+}
+
+
+        definition
+            statement: p
+                | #[m P_K]-modules are #[m \ZZ \lb 1/p\rb]-modules #[m M] with a morphism
+                me \rho\colon P_K \to \Aut_\ZZ(M)
+                | which factors through a finite discrete quotient.
+                | Morphisms are #[m \ZZ\lb1/p\rb]-module morphisms that respect the factoring.
+        proposition
+            statement: p
+                | #[m M] is a #[m P_K]-module. Then
+                | There is a unique decomposition
+                me M = \bigoplus _{x\in \RR_{\ge 0}} M(X)
+                | of #[m P_K]-modules s.t.
+                me M(0) = M^{P_K}
+                me M(x)^{G^x}) = 0
+                | for #[m x \gt 0], and for #[m x,y     \in \RR_{\ge 0}]
+                me M(x) ^{G^y} = M(x)
+                | for #[m x \gt y],
+                me M(x) = 0
+                | for all but fin many #[m x].
+                me M \to M(x)
+                | is an exact endofunctor on #[m P_K]-modules.
+
+        corollary
+            statement: p
+                | Let #[m A ] be a #[m \ZZ]-algebra, #[m M] be an #[m A]-module, with a  #[m P_K]-action, that TODO, complete
+

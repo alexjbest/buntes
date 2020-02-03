@@ -371,7 +371,10 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li></ul>
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -413,29 +416,29 @@ Y_0(N) = \GL_2(\QQ)Z(\GL_2(\adeles)) \backslash \GL_2(\adeles) / K_0(N) \special
 h \colon \mathbf S \to G\text{ for } G/\RR
 \end{equation*}
 </div>
-<p data-braille="continuation">an <a class="xref" data-knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> s.t.</p>
+<p data-braille="continuation">an algebraic group s.t.</p>
 <ol class="decimal">
 <li id="li-292"><div class="displaymath">
 \begin{equation*}
 h(\RR^\times)  \subseteq Z(G(\RR))
 \end{equation*}
 </div></li>
-<li id="li-293">The <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">hodge structure</a> on \(\Lie(G)\) induced by \(\ad \circ h\) is of type \(\{(-1,1), (0,0), (1,-1)\}\text{.}\)</li>
+<li id="li-293">The hodge structure on \(\Lie(G)\) induced by \(\ad \circ h\) is of type \(\{(-1,1), (0,0), (1,-1)\}\text{.}\)</li>
 </ol>
-<p id="p-1215">We also began studying <a class="xref" data-knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involutions</a>. Take an involution \(\sigma\) of \(G\) and define</p>
+<p id="p-1215">We also began studying Cartan involutions. Take an involution \(\sigma\) of \(G\) and define</p>
 <div class="displaymath">
 \begin{equation*}
 G^\sigma(A) = \{ g\in G(A \otimes \CC : \sigma(g) = \bar g\}
 \end{equation*}
 </div>
-<p data-braille="continuation">this \(G^\sigma\) is another <a class="xref" data-knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a> \(/\RR\text{.}\)</p>
+<p data-braille="continuation">this \(G^\sigma\) is another algebraic group \(/\RR\text{.}\)</p>
 <article class="remark remark-like" id="remark-34"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.7.3</span><span class="period">.</span>
 </h6>
 <p id="p-1216">\(G^\sigma\) is a real form of \(G\text{,}\) i.e. \(G^\sigma \otimes \CC \simeq G \otimes \CC\text{.}\)</p></article><article class="example example-like" id="example-70"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.7.4</span><span class="period">.</span>
 </h6>
-<p id="p-1217">\(G  =\GL_n\text{,}\) \(\sigma(g) = (g^\transpose)\inv\) then \(G^\sigma =  U(n)\text{.}\)</p></article><p id="p-1218">Recall the definition of a <a class="xref" data-knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a>.</p>
+<p id="p-1217">\(G  =\GL_n\text{,}\) \(\sigma(g) = (g^\transpose)\inv\) then \(G^\sigma =  U(n)\text{.}\)</p></article><p id="p-1218">Recall the definition of a Cartan involution.</p>
 <p id="p-1219">For \(C \in G(\RR)\) s.t. \(C^2 \in Z(G(\RR))\) then</p>
 <div class="displaymath">
 \begin{equation*}
@@ -447,7 +450,7 @@ G^\sigma(A) = \{ g\in G(A \otimes \CC : \sigma(g) = \bar g\}
 <article class="definition definition-like" id="def-c-pol"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.7.5</span><span class="period">.</span>
 </h6>
-<p id="p-1221">An \(\RR\)-representation \(V\) of \(G\) is \(C\)-<a class="xref" data-knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> if there exists a \(G\)-invariant bilinear form</p>
+<p id="p-1221">An \(\RR\)-representation \(V\) of \(G\) is \(C\)-polarizable if there exists a \(G\)-invariant bilinear form</p>
 <div class="displaymath">
 \begin{equation*}
 \Psi \colon V \times V \to \RR
@@ -459,23 +462,23 @@ G^\sigma(A) = \{ g\in G(A \otimes \CC : \sigma(g) = \bar g\}
 \Psi(x,Cy)
 \end{equation*}
 </div>
-<p data-braille="continuation">is <a class="xref" data-knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> and positive definite.</p></article><article class="theorem theorem-like" id="theorem-82"><h6 class="heading">
+<p data-braille="continuation">is symmetric and positive definite.</p></article><article class="theorem theorem-like" id="theorem-82"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.7.6</span><span class="period">.</span>
 </h6>
-<p id="p-1222">Let \(G/\RR\) be an <a class="xref" data-knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a>. Let \(C  \in G(\RR)\) s.t. \(C^2 \in Z(G(\RR))\text{.}\) Let \(\sigma \colon g\mapsto Cg C\inv\)  then \(\sigma\) is a <a class="xref" data-knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a> iff \(G\) admits a faithful \(C\)-<a class="xref" data-knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> representation.</p></article><article class="hiddenproof" id="proof-121"><a data-knowl="" class="id-ref original" data-refid="hk-proof-121"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-121"><article class="hiddenproof"><p id="p-1223">\(\Rightarrow\text{.}\) Assume \(G^\sigma \) is compact. Let \(V\) be a faithful \(\RR\)-representation of \(G^\sigma (\RR)\text{.}\) From last time, there exists a \(G^\sigma(\RR)\)-invariant positive definite <a class="xref" data-knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> form</p>
+<p id="p-1222">Let \(G/\RR\) be an algebraic group. Let \(C  \in G(\RR)\) s.t. \(C^2 \in Z(G(\RR))\text{.}\) Let \(\sigma \colon g\mapsto Cg C\inv\)  then \(\sigma\) is a Cartan involution iff \(G\) admits a faithful \(C\)-polarizable representation.</p></article><article class="hiddenproof" id="proof-121"><a data-knowl="" class="id-ref original" data-refid="hk-proof-121"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-121"><article class="hiddenproof"><p id="p-1223">\(\Rightarrow\text{.}\) Assume \(G^\sigma \) is compact. Let \(V\) be a faithful \(\RR\)-representation of \(G^\sigma (\RR)\text{.}\) From last time, there exists a \(G^\sigma(\RR)\)-invariant positive definite symmetric form</p>
 <div class="displaymath">
 \begin{equation*}
 \Psi\colon V\times V\to \RR
 \end{equation*}
 </div>
-<p data-braille="continuation">consider \(\Phi(u,v) = \Psi(u, C\inv v)\text{.}\) Then \(\Phi(x,Cy)\) is positive definite and <a class="xref" data-knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> so \(\Phi\) is a \(C\)-<a class="xref" data-knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a>.</p>
-<p id="p-1224">\(\Leftarrow\text{.}\) Let \(V\) be \(C\)-<a class="xref" data-knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> so we have \(\Psi \colon V\times V \to  \RR\text{.}\) Then \(\Psi_\CC \colon V_\CC \times V_\CC \to \CC\) is <a class="xref" data-knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> bilinear \(G\)-invariant. Let \(H(u,v) = \Psi_\CC(u,\bar v)\) consider \(H^\sigma(u,v) = H(u,Cv)\text{.}\)</p>
+<p data-braille="continuation">consider \(\Phi(u,v) = \Psi(u, C\inv v)\text{.}\) Then \(\Phi(x,Cy)\) is positive definite and symmetric so \(\Phi\) is a \(C\)-polarization.</p>
+<p id="p-1224">\(\Leftarrow\text{.}\) Let \(V\) be \(C\)-polarizable so we have \(\Psi \colon V\times V \to  \RR\text{.}\) Then \(\Psi_\CC \colon V_\CC \times V_\CC \to \CC\) is symmetric bilinear \(G\)-invariant. Let \(H(u,v) = \Psi_\CC(u,\bar v)\) consider \(H^\sigma(u,v) = H(u,Cv)\text{.}\)</p>
 <p id="p-1225">\(H^\sigma\) is \(G^\sigma(\RR)\)-invariant positive definite, Hermitian. From last time \(G^\sigma\) is compact.</p></article></div>
-<p id="p-1226">Now introduce <a class="xref" data-knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarizations</a> on <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a>.</p>
+<p id="p-1226">Now introduce polarizations on Hodge structures.</p>
 <article class="definition definition-like" id="definition-117"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.7.7</span><span class="period">.</span>
 </h6>
-<p id="p-1227">A <dfn class="terminology">polarization</dfn> on a weight \(k\) <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a></p>
+<p id="p-1227">A <dfn class="terminology">polarization</dfn> on a weight \(k\) Hodge structure</p>
 <div class="displaymath">
 \begin{equation*}
 h\colon \mathbf S \to \GL(V)
@@ -503,14 +506,14 @@ V^{p,q}
 \end{equation*}
 </div>are orthogonal with respect to \(H\) and \(H|_{V^{p,q}}\) has sign \(i^{p-q- k}\text{.}\)</li>
 </ol></article><p id="p-1228">Why polarize?</p>
-<p id="p-1229">Recall: the set of polarized <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a> on \(\RR^{2g}\) of type \(\{(-1,0), (0,-1)\}\) is the <a class="xref" data-knowl="./knowl/def-siegel-space.html" title="Definition 5.4.2">Siegel upper half space</a> \(\mathcal H_g\text{.}\)</p>
+<p id="p-1229">Recall: the set of polarized Hodge structures on \(\RR^{2g}\) of type \(\{(-1,0), (0,-1)\}\) is the Siegel upper half space \(\mathcal H_g\text{.}\)</p>
 <article class="lemma theorem-like" id="lemma-26"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.7.8</span><span class="period">.</span>
 </h6>
-<p id="p-1230">Let \(\RR(n) \) be the vector space \(\RR\) with <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> \(z\mapsto |z|^n\text{.}\) A bilinear form \(\Psi\) on \(V\) (of weight \(k\)) is a <a class="xref" data-knowl="./knowl/def-c-pol.html" title="Definition 5.7.5">polarization</a> iff</p>
+<p id="p-1230">Let \(\RR(n) \) be the vector space \(\RR\) with Hodge structure \(z\mapsto |z|^n\text{.}\) A bilinear form \(\Psi\) on \(V\) (of weight \(k\)) is a polarization iff</p>
 <ol class="decimal">
-<li id="li-296">\(\Psi\colon V\times V \to \RR(-k)\) is a morphism of  <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structures</a>.</li>
-<li id="li-297">\(\Psi(v, h(i) w)\) is <a class="xref" data-knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> and positive definite.</li>
+<li id="li-296">\(\Psi\colon V\times V \to \RR(-k)\) is a morphism of  Hodge structures.</li>
+<li id="li-297">\(\Psi(v, h(i) w)\) is symmetric and positive definite.</li>
 </ol></article><article class="hiddenproof" id="proof-122"><a data-knowl="" class="id-ref original" data-refid="hk-proof-122"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-122"><article class="hiddenproof"><p id="p-1231">\(\Leftarrow\) in Jared's notes.</p>
 <p id="p-1232">\(\Rightarrow\text{,}\) we want to show</p>
 <div class="displaymath">
@@ -539,14 +542,14 @@ V^{p,q}
 \end{equation*}
 </div>
 <p data-braille="continuation">using orthogonality.</p></article></div>
-<p id="p-1233">Let \(V \) be a faithful representation of \(G \) s.t. for all \(h\in X\) we get  a <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on \(V\text{.}\)</p>
-<p id="p-1234">Call \(V\) <a class="xref" data-knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> if in the weight decomposition</p>
+<p id="p-1233">Let \(V \) be a faithful representation of \(G \) s.t. for all \(h\in X\) we get  a Hodge structure on \(V\text{.}\)</p>
+<p id="p-1234">Call \(V\) polarizable if in the weight decomposition</p>
 <div class="displaymath">
 \begin{equation*}
 V = \bigoplus_k V_k
 \end{equation*}
 </div>
-<p data-braille="continuation">each \(V_k\) admits a bilinear form \(\Psi_k\) s.t. \(h \in X\) gives a polarized <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on \(V_k\text{.}\)</p>
+<p data-braille="continuation">each \(V_k\) admits a bilinear form \(\Psi_k\) s.t. \(h \in X\) gives a polarized Hodge structure on \(V_k\text{.}\)</p>
 <p id="p-1235">To define the adjoint group, take the adjoint representation</p>
 <div class="displaymath">
 \begin{equation*}
@@ -557,28 +560,28 @@ V = \bigoplus_k V_k
 <article class="theorem theorem-like" id="theorem-83"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.7.9</span><span class="period">.</span>
 </h6>
-<p id="p-1236">Let \(G_1\) be the smallest subgroup of \(G\) through  which all the \(h \in X\) factor. A faithful representation \(V\) is <a class="xref" data-knowl="./knowl/def-polarizable.html" title="Definition 1.3.15: Polarizable tori">polarizable</a> iff</p>
+<p id="p-1236">Let \(G_1\) be the smallest subgroup of \(G\) through  which all the \(h \in X\) factor. A faithful representation \(V\) is polarizable iff</p>
 <ol class="decimal">
 <li id="li-298">\(G_1\) is reductive.</li>
-<li id="li-299">For some \(h \in X\) (equivalently for all \(h \in X\)) <a class="xref" data-knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a> by \(h(i)\) is a <a class="xref" data-knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a> on the adjoint group \(G_1^{\ad}\text{.}\)</li>
+<li id="li-299">For some \(h \in X\) (equivalently for all \(h \in X\)) conjugation by \(h(i)\) is a Cartan involution on the adjoint group \(G_1^{\ad}\text{.}\)</li>
 </ol></article><article class="hiddenproof" id="proof-123"><a data-knowl="" class="id-ref original" data-refid="hk-proof-123"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-123"><article class="hiddenproof"><p id="p-1237">\(\Rightarrow\) Let \(G_2 \subseteq G_1\) be the smallest subgroup containing \(h(U^1)\) for all \(h \in X\) where \(U^1 = \{|z| = 1\} \subseteq \CC^\times\text{.}\) Then \(G_1\) is generated by \(G_2\) and \(h(t)\) for all \(t \in \RR^\times, h \in X\text{.}\) Since \(h(t)\) is always central have \(G_1^{\ad}=  G_2^{\ad}\text{.}\) By the previous lemma, \(\forall z  \in U^1\)</p>
 <div class="displaymath">
 \begin{equation*}
 \Psi(h(z), v, h(z) w) = \Psi(v,w)
 \end{equation*}
 </div>
-<p data-braille="continuation">so \(\Psi\) is \(G_2\) invariant. Father \(\Psi(v, h(i) w)\) is <a class="xref" data-knowl="./knowl/def-princ-pol.html" title="Definition 1.7.21: Symmetric morphisms, (principal) polarizations">symmetric</a> positive definite for all \(h \in X\text{.}\) So <a class="xref" data-knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a> by \(h(i)\) is a <a class="xref" data-knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a> on \(G_2\) so on \(G_2^{\ad} = G_1^{\ad}\text{.}\)</p></article></div>
+<p data-braille="continuation">so \(\Psi\) is \(G_2\) invariant. Father \(\Psi(v, h(i) w)\) is symmetric positive definite for all \(h \in X\text{.}\) So conjugation by \(h(i)\) is a Cartan involution on \(G_2\) so on \(G_2^{\ad} = G_1^{\ad}\text{.}\)</p></article></div>
 <article class="definition definition-like" id="def-buntes-shimura-datum"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Shimura data.</span>
 </h6>
 <p id="p-1238">A <dfn class="terminology">Shimura datum</dfn> is a pair \((G,X)\) where</p>
 <ol class="decimal">
-<li id="li-300">\(G/\QQ\) is a reductive <a class="xref" data-knowl="./knowl/def-alg-gp.html" title="Definition 1.2.2: Algebraic groups">algebraic group</a>.</li>
+<li id="li-300">\(G/\QQ\) is a reductive algebraic group.</li>
 <li id="li-301">
 <p id="p-1239">\(X\) is a \(G(\RR)\)-conjugacy class of morphisms \(h\colon \mathbf  S \to  G_\RR\) s.t.</p>
 <ol class="lower-alpha">
-<li id="li-302">\(\forall h \in X\) the <a class="xref" data-knowl="./knowl/def-hodge-str.html" title="Definition 5.4.8: Hodge structures">Hodge structure</a> on \(\Lie (G_\RR)\) induced by \(\ad \circ h\) is of type \(\{(-1,1), (0,0), (1,-1)\}\text{.}\)</li>
-<li id="li-303">The involution \(\ad h(i)\) (i.e. <a class="xref" data-knowl="./knowl/def-quat-alg-conj-trace-norm.html" title="Definition 3.3.10: Conjugate, trace and norm">conjugation</a> by \(h(i)\)) is a <a class="xref" data-knowl="./knowl/def-cartan-inv.html" title="Definition 5.6.7: Cartan involutions">Cartan involution</a> on \(G^{\ad}\text{.}\)</li>
+<li id="li-302">\(\forall h \in X\) the Hodge structure on \(\Lie (G_\RR)\) induced by \(\ad \circ h\) is of type \(\{(-1,1), (0,0), (1,-1)\}\text{.}\)</li>
+<li id="li-303">The involution \(\ad h(i)\) (i.e. conjugation by \(h(i)\)) is a Cartan involution on \(G^{\ad}\text{.}\)</li>
 <li id="li-304">\(G\) has no \(\QQ\)-factor on which the projection of \(h\) is trivial.</li>
 </ol>
 </li>
@@ -605,7 +608,7 @@ V = \bigoplus_k V_k
 h \mapsto i
 \end{equation*}
 </div>
-<p data-braille="continuation">Let \(E/\CC\) be an <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a>. We have the full Tate module</p>
+<p data-braille="continuation">Let \(E/\CC\) be an elliptic curve. We have the full Tate module</p>
 <div class="displaymath">
 \begin{equation*}
 TE = \varprojlim_N E[N]  \simeq \widehat\ZZ^2
@@ -624,7 +627,7 @@ V^\infty E = TE \otimes \adeles^\infty \simeq (\adeles^\infty)^2
 </div></article><article class="proposition theorem-like" id="proposition-74"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.7.13</span><span class="period">.</span>
 </h6>
-<p id="p-1242">\({\operatorname{Sh}}(\GL_2, X)\) classifies <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> classes of pairs \((E, \eta)\) where</p>
+<p id="p-1242">\({\operatorname{Sh}}(\GL_2, X)\) classifies isogeny classes of pairs \((E, \eta)\) where</p>
 <div class="displaymath">
 \begin{equation*}
 E/\CC \text{ an elliptic curve}
@@ -638,7 +641,7 @@ E/\CC \text{ an elliptic curve}
 <p data-braille="continuation">an \(\adeles^\infty\) linear isomorphism.</p></article><article class="remark remark-like" id="remark-35"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.7.14</span><span class="period">.</span>
 </h6>
-<p id="p-1243">An <a class="xref" data-knowl="./knowl/def-supersing-isog-isog.html" title="Definition 3.1.4: Isogenies">isogeny</a> is \(f \in \Hom(E, E') \otimes \QQ\) sending \(\eta \mapsto \eta'\) \({\operatorname{Sh}}(\GL_2, X)\) has components indexed by \(\widehat \ZZ^\times\text{.}\)</p></article></section></div></main>
+<p id="p-1243">An isogeny is \(f \in \Hom(E, E') \otimes \QQ\) sending \(\eta \mapsto \eta'\) \({\operatorname{Sh}}(\GL_2, X)\) has components indexed by \(\widehat \ZZ^\times\text{.}\)</p></article></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>

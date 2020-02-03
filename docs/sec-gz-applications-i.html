@@ -371,7 +371,10 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul><li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li></ul>
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -387,9 +390,9 @@ var js_version = 0.13;
 <p id="p-1506">The fun of the subject seems to me to be in the examples.</p>
 <cite class="attribution">―Gross - Letter to Birch 1982</cite>
 </blockquote>
-<p id="p-1507">So let's do some examples of <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner point</a> computations, and see how Gross-Zagier gives us important information in a few ways.</p>
+<p id="p-1507">So let's do some examples of Heegner point computations, and see how Gross-Zagier gives us important information in a few ways.</p>
 <p id="p-1508">Following the algorithm in Cohen, Number theory part I.</p>
-<p id="p-1509">Fix an <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curve</a> \(E(\QQ)\) of <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">conductor</a> \(N\text{,}\) we are interested in finding \(E(\QQ)\text{.}\) All <a class="xref" data-knowl="./knowl/def-supersing-isog-ec.html" title="Definition 3.1.1: Elliptic curves">elliptic curves</a> over \(\QQ\) are now known to be modular and hence we may make use of the parameterisation</p>
+<p id="p-1509">Fix an elliptic curve \(E(\QQ)\) of conductor \(N\text{,}\) we are interested in finding \(E(\QQ)\text{.}\) All elliptic curves over \(\QQ\) are now known to be modular and hence we may make use of the parameterisation</p>
 <div class="displaymath">
 \begin{equation*}
 \phi_N \colon X_0(N) \hookrightarrow J_0(N) \twoheadrightarrow E\text{.}
@@ -412,7 +415,7 @@ var js_version = 0.13;
 \phi \colon X_0(N) \to \CC/\Lambda \text{.}
 \end{equation*}
 </div>
-<p id="p-1510">So integrating the \(q\)-expansion of a <a class="xref" data-knowl="./knowl/def-buntes-mfs.html" title="Definition 5.2.4: Modular forms">modular form</a> and plugging in \(\tau\) gives us the corresponding point in the complex uniformization of the curve because the Abel-Jacobi map is defined by integration.</p>
+<p id="p-1510">So integrating the \(q\)-expansion of a modular form and plugging in \(\tau\) gives us the corresponding point in the complex uniformization of the curve because the Abel-Jacobi map is defined by integration.</p>
 <article class="definition definition-like" id="definition-139"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.11.1</span><span class="period">.</span>
 </h6>
@@ -454,7 +457,7 @@ Ax^2 + Bxy + Cy^2
 \begin{equation*}
 \Delta (N\tau ) = \Delta (\tau )\text{.}
 \end{equation*}
-</div></article><p id="p-1512">Proposition \(8.6 .3 .\) Let \(\tau \in \mathcal{H}\) be a quadratic irrationality and let \((A, B, C)\) be the quadratic form with discriminant \(D\) associated with \(\tau\text{.}\) Then \(\tau\) is a <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner point</a> of level \(N\) if and only if \(N | A\) and one of the following equivalent conditions is satisfied:</p>
+</div></article><p id="p-1512">Proposition \(8.6 .3 .\) Let \(\tau \in \mathcal{H}\) be a quadratic irrationality and let \((A, B, C)\) be the quadratic form with discriminant \(D\) associated with \(\tau\text{.}\) Then \(\tau\) is a Heegner point of level \(N\) if and only if \(N | A\) and one of the following equivalent conditions is satisfied:</p>
 <ol class="decimal">
 <li id="li-352"><div class="displaymath">
 \begin{equation*}
@@ -476,8 +479,8 @@ Ax^2 + Bxy + Cy^2
 \begin{equation*}
 W(\tau ) = -1/(N\tau )\text{.}
 \end{equation*}
-</div></article><p id="p-1514">Proposition 8.6.6. There is a one-to-one correspondence between on the one hand classes modulo \(\Gamma_{0}(N)\) of <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner points</a> of discriminant \(D\) and level \(N,\) and on the other hand, pairs \((\beta,[\mathfrak{a}\))] where \(\beta \in \mathbb{Z} / 2 N \mathbb{Z}\) is such that \(b^{2} \equiv D(\bmod 4 N)\) for any lift \(b\) of \(\beta\) to \(\mathbb{Z}\text{,}\) and \([\mathfrak{a}\) \in \Cl(K)] is an ideal class. The correspondence is as follows: if \((\beta,[\mathfrak{a}\))] is as above, there exists a primitive quadratic form \((A, B, C)\) whose class is equal to [a] and such that \(N | A\) and \(B \equiv \beta(\bmod 2 N),\) and the corresponding <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner point</a> is \(\tau=(-B+\sqrt{D}) /(2 A) .\) Conversely, if \((A, B, C)\) is the quadratic form associated with a <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">Heegner point</a> \(\tau\) we take \(\beta=B\) mod \(2 N\) and \(\mathfrak{a}=\mathbb{Z}+\tau \mathbb{Z}\text{.}\)</p>
-<p id="p-1515">The action of Galois (via the main theorem of <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">CM</a>) shows that the image \(\phi (\tau )\) is defined over \(H\) the hilbert class field of \(K\text{.}\) To get back down to \(K\) we take traces</p>
+</div></article><p id="p-1514">Proposition 8.6.6. There is a one-to-one correspondence between on the one hand classes modulo \(\Gamma_{0}(N)\) of Heegner points of discriminant \(D\) and level \(N,\) and on the other hand, pairs \((\beta,[\mathfrak{a}\))] where \(\beta \in \mathbb{Z} / 2 N \mathbb{Z}\) is such that \(b^{2} \equiv D(\bmod 4 N)\) for any lift \(b\) of \(\beta\) to \(\mathbb{Z}\text{,}\) and \([\mathfrak{a}\) \in \Cl(K)] is an ideal class. The correspondence is as follows: if \((\beta,[\mathfrak{a}\))] is as above, there exists a primitive quadratic form \((A, B, C)\) whose class is equal to [a] and such that \(N | A\) and \(B \equiv \beta(\bmod 2 N),\) and the corresponding Heegner point is \(\tau=(-B+\sqrt{D}) /(2 A) .\) Conversely, if \((A, B, C)\) is the quadratic form associated with a Heegner point \(\tau\) we take \(\beta=B\) mod \(2 N\) and \(\mathfrak{a}=\mathbb{Z}+\tau \mathbb{Z}\text{.}\)</p>
+<p id="p-1515">The action of Galois (via the main theorem of CM) shows that the image \(\phi (\tau )\) is defined over \(H\) the hilbert class field of \(K\text{.}\) To get back down to \(K\) we take traces</p>
 <div class="displaymath">
 \begin{equation*}
 P=\sum_{\sigma \in \operatorname{Gal}(H / K)} \varphi((\beta,[\mathfrak{a}]))^{\sigma}=\sum_{[\mathfrak{b}] \in \Cl(K)} \varphi\left(\left(\beta,\left[\mathfrak{a} \mathfrak{b}^{-1}\right]\right)\right)=\sum_{[\mathfrak{b}] \in \Cl(K)} \varphi((\beta,[\mathfrak{b}]))
@@ -513,7 +516,7 @@ P=\sum_{\sigma \in \operatorname{Gal}(H / K)} \varphi((\beta,[\mathfrak{a}]))^{\
 \end{equation*}
 </div>
 <p data-braille="continuation">to halve the work we do.</p>
-<p id="p-1523">So the <a href="sec-gz-applications-i.html" class="internal" title="Section 6.11: A gallimaufry of applications (of Gross-Zagier) I (Alex)">heegner point</a> method is</p>
+<p id="p-1523">So the heegner point method is</p>
 <ol class="decimal">
 <li id="li-355">via BSD find<div class="displaymath">
 \begin{equation*}
@@ -563,7 +566,7 @@ z=\sum_{(A, B, C) \in \mathcal{L}} \phi\left(\frac{-B+\sqrt{D}}{2 A}\right) \in 
 E_n \colon  y^2 = x^3 - n^2 x\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">E.g. for \(n = 157\) BSD predicts rank 1, but how do we find the point? Using standard techniques can compute real period, period volume (\(0.209262974439979^2\)) and torsion <a class="xref" data-knowl="./knowl/def-order-quaternion.html" title="Definition 3.3.11: Orders in quaternion algebras">order</a> (4), <a href="sec-gz-mf-heeg.html#subsec-cm-theory" class="internal" title="Subsection 6.3.1: CM theory">conductor</a> (788768 outside LMFDB range) and Tamagawa product (8). Together we get</p>
+<p data-braille="continuation">E.g. for \(n = 157\) BSD predicts rank 1, but how do we find the point? Using standard techniques can compute real period, period volume (\(0.209262974439979^2\)) and torsion order (4), conductor (788768 outside LMFDB range) and Tamagawa product (8). Together we get</p>
 <div class="displaymath">
 \begin{equation*}
 |\Sha(E)|R(E) \approx 54.6
@@ -629,7 +632,7 @@ x_i = (-b + \sqrt{-39})/(2j N)
 z = -5.63911127500831766007696166307316036323562406574706\ldots
 \end{equation*}
 </div>
-<p data-braille="continuation">we can add multiples of the period <a class="xref" data-knowl="./knowl/def-buntes-lattice.html" title="Definition 5.1.1: Lattices">lattice</a> to make it smaller, as</p>
+<p data-braille="continuation">we can add multiples of the period lattice to make it smaller, as</p>
 <div class="displaymath">
 \begin{equation*}
 z/\omega \approx -26.9469552131277

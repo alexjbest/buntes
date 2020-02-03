@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Ramification of curves (John)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.13;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm{\textbf{#1}}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ur}{\mathrm{ur}}
+\newcommand{\tamer}{\mathrm{tr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+\newcommand{\semis}{\mathrm{ss}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-abhyankar-what-is.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-abyhankar.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-abhyankar-what-is.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-abyhankar.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+<li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
+<li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">Wrap Up of Non-Archimedean Local Heights (Sachi)</a></li>
+<li><a href="sec-gz-rankin-selberg.html" data-scroll="sec-gz-rankin-selberg">Rankin-Selberg (Aash)</a></li>
+<li><a href="sec-gz-applications-i.html" data-scroll="sec-gz-applications-i">A gallimaufry of applications (of Gross-Zagier) I (Alex)</a></li>
+<li><a href="sec-gz-applications-ii.html" data-scroll="sec-gz-applications-ii">A gallimaufry of applications (of Gross-Zagier) II (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification" class="active">Ramification of curves (John)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-abhyankar-ramification"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.2</span> <span class="title">Ramification of curves (John)</span>
+</h2>
+<a href="sec-abhyankar-ramification.html" class="permalink">¶</a><p id="p-1628">Two main references: P. A. Castillejo, Grothendieck-Ogg-Shafarevich formula for \(\ell\)-adic sheaves, Master Thesis (2016). <a class="external" href="http://www.mi.fu-berlin.de/users/castillejo/docs/160429_Master_GOS_formula_l-adic_sheaves.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://www.mi.fu-berlin.de/users/castillejo/docs/160429_Master_GOS_formula_l-adic_sheaves.pdf</code></a>. Lars Kindler, Kay Rülling Introductory course on \(\ell\)-adic sheaves and their ramification theory on curves. <a class="external" href="https://arxiv.org/pdf/1409.6899.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://arxiv.org/pdf/1409.6899.pdf</code></a> Also: Fundamental Groups in Characteristic \(p\) - Pete L. Clark. Takashi Saito: Intro to wild ramification of schemes and sheaves.</p>
+<p id="p-1629">Interested in ramification of \(\AA^1\) in characteristic \(p\text{.}\) This is interesting because of wild ramification, which we will talk about today.</p>
+<article class="theorem theorem-like" id="theorem-105"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Grothendieck.</span>
+</h6>
+<p id="p-1630">There exists a canonical surjection</p>
+<div class="displaymath">
+\begin{equation*}
+sp\colon \pi _1(C_{\bar\eta}) ^{tame} \to \pi _1(C/k)^{tame}
+\end{equation*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+C_{\eta}
+\end{equation*}
+</div>
+<p data-braille="continuation">is the generic fibre for a lift of \(C/k\) over a complete local noetherian ring with residue field \(k\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-106"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-1631">For \(\mathcal F\) a lisse \(\overline \QQ_\ell\)-sheaf on \(U\) (a curve over a perfect field of characteristic \(p \ne \ell\)).</p>
+<div class="displaymath">
+\begin{equation*}
+\chi _c ( U, \mathcal F) =  \rk (\mathcal F) \chi _c(\overline U, \overline \QQ_\ell) - \sum_{x \in C\smallsetminus U} \lb  k(x) : k\rb ]\operatorname{Swan}_x(\mathcal F)
+\end{equation*}
+</div>
+<p data-braille="continuation">\(C\) is the compactification of \(U\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\overline U = U \otimes_k \overline k
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\chi  _c(\overline U, \mathcal F) = \sum_{i=0}^2 (-1)^i \dim H_c^i(\overline U_\et, \mathcal F)\text{.}
+\end{equation*}
+</div></article><p id="p-1632">Let \(K\) be a complete local field.</p>
+<article class="definition definition-like" id="definition-143"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-1633">Let \(L/K\) be a finite Galois  ext. let</p>
+<div class="displaymath">
+\begin{equation*}
+G = \Gal L K
+\end{equation*}
+</div>
+<p data-braille="continuation">and for \(i\ge -1\)</p>
+<div class="displaymath">
+\begin{equation*}
+G_i  = \{ \sigma  \in G : \sigma \text{ acts trivially on }B/\ideal m L ^{i+1}\}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(B = \ints_L\text{,}\) and \(\ideal m_L\) is the maximal ideal.</p></article><p id="p-1634">Problem: this numbering only behaves well w.r.t. subgroups not quotients.</p>
+<article class="proposition theorem-like" id="proposition-82"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-1635">If \(H \subset G\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+H_i = H \cap G_i\text{.}
+\end{equation*}
+</div></article><article class="proposition theorem-like" id="proposition-83"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-1636">
+\begin{equation*}
+G_{-1} = G
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G_{0} = \text{inertia}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G_{0}/G_1 = \text{tamely ramified part}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G_1 \ne 0 \iff L/K \text{ is wildly ramified}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+i\ge 1,\,G_i \text{ are }p\text{-groups}
+\end{equation*}
+</div></article><article class="definition definition-like" id="def-herbrand-fn"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Herbrand function.</span>
+</h6>
+<p id="p-1637">Let \(G_u = G_{\lceil u \rceil}\) then we define</p>
+<div class="displaymath">
+\begin{equation*}
+\phi _{L/K} \colon  \lb -1,\infty ) \to \lb -1 , \infty )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi _{L/K}(u) = \int_0^u \frac{\diff t}{(G_0 : G_t)}
+\end{equation*}
+</div>
+<p data-braille="continuation">if \(t\in (-1,0)\) let \((G_0: G_t)  = 1\text{,}\) if \(t=-1\) let \((G_0: G_t)  = 1/f\text{,}\) in particular \(u \in \ZZ_{\ge 0}\)</p>
+<div class="displaymath">
+\begin{equation*}
+1 + \phi _{L/K}(u) = \frac{1}{|G_0|} \sum_{i=0}^u |G_i|
+\end{equation*}
+</div>
+<p data-braille="continuation">the formula arises from computing the image of \(G_i\) in \(G/H\) for</p>
+<div class="displaymath">
+\begin{equation*}
+H \triangleleft G\text{.}
+\end{equation*}
+</div></article><article class="proposition theorem-like" id="proposition-84"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.7</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-1638">
+\begin{equation*}
+H \triangleleft G
+\end{equation*}
+</div>
+<p data-braille="continuation">for all \(u \in \RR_{\ge -1}\)</p>
+<div class="displaymath">
+\begin{equation*}
+G_uH/H = (G/H)_{\phi_{L/L^H}}(u)\text{.}
+\end{equation*}
+</div></article><article class="definition definition-like" id="definition-145"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-1639">Let \(\psi _{L/K} = \phi \inv_{L/K}\) for \(u \in \RR_{\ge -1}\)</p>
+<div class="displaymath">
+\begin{equation*}
+G^u = G_{\psi _{L/K}}(u)\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="example-90"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Artin-Schreier.</span>
+</h6>
+<div class="displaymath" id="p-1640">
+\begin{equation*}
+L = K\lb t \rb /(t^{p^n}  - t - x^{-m})
+\end{equation*}
+</div>
+<p data-braille="continuation">with \((m,p) = 1\) where \(K = k ((x )) \text{,}\) lower numbering</p>
+<div class="displaymath">
+\begin{equation*}
+\ZZ/p^n  = G_0 = \cdots = G_m \supsetneq G_{m+1} = 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi _{L/K} (u) = \begin{cases}  u \amp \text{ if } 0 \le u \le m\\ m + \frac{u-m}p \amp \text{ if }u \gt m\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">so</p>
+<div class="displaymath">
+\begin{equation*}
+\psi _{L/K} (v)  = \begin{cases} v \amp \text{ if } 0 \le v \le m\\ p(v-m) + m \amp \text{ if } v \gt m \end{cases}\text{.}
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="theorem-107"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Hasse-Arf.</span>
+</h6>
+<p id="p-1641">If \(G\) is abelian, then the jumps in the upper numbering filtration are all at integers.</p></article><p id="p-1642">The point being:</p>
+<article class="proposition theorem-like" id="proposition-85"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.11</span><span class="period">.</span>
+</h6>
+<p id="p-1643">If \(H \triangleleft G\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+G^u / (H\cap G^u ) = (G/H)^u\text{.}
+\end{equation*}
+</div></article><p id="p-1644">\(L/K\text{,}\) \(x\) a uniformizer</p>
+<div class="displaymath">
+\begin{equation*}
+i_G \colon  G \to \ZZ_{\ge 0} \cup\{\infty \}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sigma  \mapsto v_L(\sigma (x) - x)\text{.}
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="theorem-108"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.12</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-1645">
+\begin{equation*}
+a_G(g) = \begin{cases}
+- fi_G(g) \amp\text{ if } g \ne 1\\
+f\sum_{g' \ne 1} i_G(g') \amp\text{ if } g = 1
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">is a character of a \(G\)-representation over \(\CC\text{.}\)</p></article><article class="definition definition-like" id="definition-146"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.13</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-1646">
+\begin{equation*}
+\mathrm{sw}_G = a_G - (r_G - r_{G/G_0})
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(r_G\) is the character of the regular representation of \(G\) If \(L/K\) is totally ramified then</p>
+<div class="displaymath">
+\begin{equation*}
+\mathrm{sw}_G = a_G - u_G
+\end{equation*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+u_G = r_G - \mathrm{triv}_G\text{.}
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="theorem-109"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.14</span><span class="period">.</span>
+</h6>
+<p id="p-1647">If \(\ell \) is a prime not equal to the residue characteristic of \(K\text{,}\) then</p>
+<ol class="decimal">
+<li id="li-365">\(a_G\) and \(\mathrm{sw}_G\) are realisable over \(\QQ_\ell\)</li>
+<li id="li-366">There exists a f.g. projective left \(\ZZ_\ell \lb G\rb\)-module \(\mathrm{Sw}_G\) unique up to iso. such that<div class="displaymath">
+\begin{equation*}
+\mathrm{Sw}_G \otimes \ZZ_\ell \QQ_\ell
+\end{equation*}
+</div>is isomorphic to the Swan representation.</li>
+</ol>
+<p data-braille="continuation">reference: Serre, Linear representations of finite groups.</p></article><p id="p-1648">Fix \(K^{sep} /K\) with \(K\) having residue field \(k\) and \(\characteristic (k) = p \gt 0\text{.}\) \(k\) perfect, \(\ell \ne p\) prime.</p>
+<p id="p-1649">\(E/ \QQ_\ell\) finite extension and</p>
+<div class="displaymath">
+\begin{equation*}
+\rho\colon G_K \to \GL(V)
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(V\) fin. dim. vector space \(/E\text{.}\)</p>
+<article class="definition definition-like" id="definition-147"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.15</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-1650">
+\begin{equation*}
+P_K \subset G_K = \Gal{K^{\sep}}{K}
+\end{equation*}
+</div>
+<p data-braille="continuation">the wild ramification subgroup is the closed pro-\(p\)-group</p>
+<div class="displaymath">
+\begin{equation*}
+\varprojlim_{L/K} \Gal L K _1\text{.}
+\end{equation*}
+</div></article><article class="definition definition-like" id="definition-148"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.16</span><span class="period">.</span>
+</h6>
+<p id="p-1651">Let \(R\) bee a commutative ring and</p>
+<div class="displaymath">
+\begin{equation*}
+\rho\colon G_K \to \GL_n(R)
+\end{equation*}
+</div>
+<p data-braille="continuation">a group homomorphism, then we say:</p>
+<ol class="decimal">
+<li id="li-367">\(\rho\) is unramified if<div class="displaymath">
+\begin{equation*}
+\underbrace{G_K^0}_{\varprojlim \Gal L K ^0} \subseteq \ker \rho\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-368">\(\rho\) is tamely ramified if<div class="displaymath">
+\begin{equation*}
+P_K\subseteq \ker \rho\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-369">\(\rho\) is wildly ramified otherwise.</li>
+</ol></article><article class="lemma theorem-like" id="lemma-30"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.2.17</span><span class="period">.</span>
+</h6>
+<p id="p-1652">Let \(G\) be a compact group</p>
+<div class="displaymath">
+\begin{equation*}
+\rho\colon G \to \GL (V)
+\end{equation*}
+</div>
+<p data-braille="continuation">a continuous representation over \(E\text{,}\) then there exists a free \(\ints_E\)-module \(\mathcal V \subseteq V\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+V = \mathcal V \otimes E
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(\rho\) factors as</p>
+<div class="displaymath">
+\begin{equation*}
+\rho\colon G \to \GL(\mathcal V) \to \GL(V)\text{.}
+\end{equation*}
+</div></article><article class="definition definition-like" id="definition-149"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.18</span><span class="period">.</span>
+</h6>
+<p id="p-1653">If \(\lambda\) is a local parameter of \(\ints_E\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\rho\colon G_K \to \GL(\mathcal V)
+\end{equation*}
+</div>
+<p data-braille="continuation">is a representation over \(\ints_E\text{.}\) The composition</p>
+<div class="displaymath">
+\begin{equation*}
+\bar \rho \colon G_K \to \GL(\mathcal V) \to \GL(\overline V)
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\overline V =\mathcal V / \lambda\mathcal V\) is the reduction modulo \(\lambda\) of \(\rho\text{.}\) \(\bar \rho \) is  a \(\FF_\lambda = \ints_E / \lambda\)-rep.</p></article><article class="lemma theorem-like" id="lemma-31"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.2.19</span><span class="period">.</span>
+</h6>
+<p id="p-1654">If \(P\) is a pro-\(p\)-group and</p>
+<div class="displaymath">
+\begin{equation*}
+\rho\colon P \to \GL_r(\ints_E)
+\end{equation*}
+</div>
+<p data-braille="continuation">is a continuous representation. Then the image of \(\rho\) is finite and</p>
+<div class="displaymath">
+\begin{equation*}
+\rho(P) \cap \ker(\GL_r(\ints_E) \twoheadrightarrow \GL_r(\FF_\lambda)) = \{1\}\text{.}
+\end{equation*}
+</div></article><article class="corollary theorem-like" id="corollary-41"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.2.20</span><span class="period">.</span>
+</h6>
+<p id="p-1655">\(\rho\) is tame if and only if \(\bar \rho \) is tame.</p></article><article class="paragraphs" id="paragraphs-58"><h5 class="heading"><span class="title">Wild ramification.</span></h5>
+<article class="definition definition-like" id="definition-150"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.21</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-1656">
+\begin{equation*}
+\rho\colon G_K \to \GL(\mathcal V)
+\end{equation*}
+</div>
+<p data-braille="continuation">be a continuous representation where \(\mathcal V\) is a free \(\ints _E\)-module. Let \(G = G_K/ \ker(\bar \rho)\) correspond to \(L/K\text{.}\) Consider the swan representation over \(\ZZ_\ell\) of \(G\)</p>
+<div class="displaymath">
+\begin{equation*}
+b(\rho) = b(\mathcal V) = \dim_{\FF_\lambda} \Hom_{\FF_\lambda\lb G\rb }(\mathrm{Sw}_G \otimes_{\ZZ_\ell} \FF_\lambda ,  \bar \rho)\text{.}
+\end{equation*}
+</div></article><article class="remark remark-like" id="remark-48"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.22</span><span class="period">.</span>
+</h6>
+<p id="p-1657">\(b(\mathcal V)\) depends only on the class of \(\mathcal V\) in the Grothendieck ring \(R_{\FF_\lambda}(G)\text{.}\)</p></article><article class="remark remark-like" id="remark-49"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.23</span><span class="period">.</span>
+</h6>
+<p id="p-1658">If \(\rho\) factors through a finite quotient then</p>
+<div class="displaymath">
+\begin{equation*}
+b(\rho) = \dim_{\FF_\lambda} \Hom_{\FF_\lambda\lb G\rb }(\mathrm{Sw}_G \otimes_{\ZZ_\ell} \FF_\lambda ,  \bar \rho)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \dim_{E          } \Hom_{E          \lb G\rb }(\mathrm{Sw}_G \otimes_{\ZZ_\ell} E, \rho\otimes E)
+\end{equation*}
+</div></article><article class="proposition theorem-like" id="proposition-86"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.24</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-1659">
+\begin{equation*}
+G = G_K/ \ker(\bar \rho)
+\end{equation*}
+</div>
+<p data-braille="continuation">then</p>
+<div class="displaymath">
+\begin{equation*}
+b(\mathcal V) = \sum_{i=1}^\infty \frac{|G_i|}{|G_0|} \dim_{\FF_\lambda} (\overline {\mathcal V} / \overline {\mathcal V}^{G_i})A\text{.}
+\end{equation*}
+</div></article><article class="proposition theorem-like" id="proposition-87"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.25</span><span class="period">.</span>
+</h6>
+<p id="p-1660">If \(\rho \colon G_K \to \GL_r(\ints_E)\) is a continuous representation then TFAE:</p>
+<ol class="decimal">
+<li id="li-370">\(\rho \otimes E \colon G_K \to \GL_r(\ints_E) \hookrightarrow \GL_r(E)\)is tame</li>
+<li id="li-371">\(\rho\) is tame</li>
+<li id="li-372">\(\bar \rho\) is tame</li>
+<li id="li-373">\(\displaystyle b(\mathcal V) = 0\)</li>
+</ol></article><p id="p-1661">Swan conductor.</p>
+<p id="p-1662">Break decomposition</p>
+<article class="lemma theorem-like" id="lemma-32"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.2.26</span><span class="period">.</span>
+</h6>
+<p id="p-1663">\(\lambda \in \RR_{\ge 0 }\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+G_K^{\lambda+} = \overline{\bigcup_{\lambda'  \gt \lambda} G_K^{\lambda'}}
+\end{equation*}
+</div>
+<p data-braille="continuation">then the upper numbering filtration satisfies</p>
+<ol class="decimal">
+<li id="li-374"><div class="displaymath">
+\begin{equation*}
+\bigcap_{\lambda\gt 0} G_K^\lambda = \{1\}
+\end{equation*}
+</div></li>
+<li id="li-375"><div class="displaymath">
+\begin{equation*}
+\lambda\gt 0,\, G_K^\lambda = \bigcap_{0 \lt \lambda' \lt \lambda} G_K^{\lambda'}
+\end{equation*}
+</div></li>
+<li id="li-376"><div class="displaymath">
+\begin{equation*}
+P_K = G_K ^{0+}
+\end{equation*}
+</div></li>
+</ol></article><article class="definition definition-like" id="definition-151"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.27</span><span class="period">.</span>
+</h6>
+<p id="p-1664">\(P_K\)-modules are \(\ZZ \lb 1/p\rb\)-modules \(M\) with a morphism</p>
+<div class="displaymath">
+\begin{equation*}
+\rho\colon P_K \to \Aut_\ZZ(M)
+\end{equation*}
+</div>
+<p data-braille="continuation">which factors through a finite discrete quotient. Morphisms are \(\ZZ\lb1/p\rb\)-module morphisms that respect the factoring.</p></article><article class="proposition theorem-like" id="proposition-88"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.28</span><span class="period">.</span>
+</h6>
+<p id="p-1665">\(M\) is a \(P_K\)-module. Then There is a unique decomposition</p>
+<div class="displaymath">
+\begin{equation*}
+M = \bigoplus _{x\in \RR_{\ge 0}} M(X)
+\end{equation*}
+</div>
+<p data-braille="continuation">of \(P_K\)-modules s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+M(0) = M^{P_K}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+M(x)^{G^x}) = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(x \gt 0\text{,}\) and for \(x,y     \in \RR_{\ge 0}\)</p>
+<div class="displaymath">
+\begin{equation*}
+M(x) ^{G^y} = M(x)
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(x \gt y\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+M(x) = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">for all but fin many \(x\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+M \to M(x)
+\end{equation*}
+</div>
+<p data-braille="continuation">is an exact endofunctor on \(P_K\)-modules.</p></article><article class="corollary theorem-like" id="corollary-42"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.2.29</span><span class="period">.</span>
+</h6>
+<p id="p-1666">Let \(A \) be a \(\ZZ\)-algebra, \(M\) be an \(A\)-module, with a  \(P_K\)-action, that TODO, complete</p></article></article></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
+</body>
+</html>
