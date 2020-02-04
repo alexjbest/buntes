@@ -4,7 +4,7 @@ XSLTPROC = xsltproc --timing --stringparam debug.datedfiles no --stringparam htm
 
 MATHBOOK_ROOT = ../pretext # TODO implement this everywhere
 
-docs/:	docs/buntes.pdf buntes-pretty.xml buntes.xsl filter.xsl
+docs/:	docs/buntes.pdf buntes-pretty.xml buntes.xsl filter.xsl index.html buntes.css
 	mkdir -p docs
 	cd docs/; \
 	$(XSLTPROC) ../buntes.xsl ../buntes-pretty.xml
