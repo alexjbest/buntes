@@ -649,5 +649,37 @@ section#sec-abhyankar-ramification
 
         corollary
             statement: p
-                | Let #[m A ] be a #[m \ZZ]-algebra, #[m M] be an #[m A]-module, with a  #[m P_K]-action, that TODO, complete
+                | Let #[m A ] be a #[m \ZZ]-algebra, #[m M] be an #[m A]-module, with a  #[m P_K]-action, that factors through a finite quotient:
+                | Then
+                ul
+                    li
+                        | for a break decomposition of #[m M], #[m M(x)] is an #[m A]-module.
 
+                    li
+                        | for #[m B] an  #[m A]-algebra a break decomposition of #[m M\oplus B] is #[m \bigoplus (M(x) \oplus B)].
+                    li
+                        | if #[m A ] is local noetherian and #[m M] is a free #[m A]-module of finite rank, then #[m M(x)] is also free of finite rank for all #[m x].
+
+        definition#def-swan-conductors
+            title Swan conductors
+            statement: p
+                | A local noetherian #[m \ZZ\lb 1/p\rb ]-algebra #[m M] as above.
+                | The #[term Swan conductor] is
+                me \operatorname{Swan}(M) = \sum_{x\ge 0} x  \rank_A(M(x))
+                | for representations over fields
+                me \operatorname{Swan}(V) = \sum_{x\ge 0} x \dim_A(M(x))
+                | .
+
+        proposition
+            statement: p
+                ul
+                    li
+                        me \operatorname{Swan}(M) = 0
+                        | iff #[m P_K] acts trivially on #[m M].
+                    li
+                        | For #[m V = \mathcal V \otimes E] we get #[m V(x) = \mathcal V (x) \otimes E] and #[m \operatorname{Swan}(V) = \operatorname{Swan}(\mathcal V)]
+
+                    li
+                        | Similarly
+                        me \operatorname{Swan}(\mathcal V) = \operatorname{Swan}(\overline{\mathcal V})
+                        | .
