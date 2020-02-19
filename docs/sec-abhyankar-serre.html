@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Serre's proof in the solvable case (Angus)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.13;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm{\textbf{#1}}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ur}{\mathrm{ur}}
+\newcommand{\tamer}{\mathrm{tr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+\newcommand{\semis}{\mathrm{ss}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-abhyankar-coho-interlude.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-abyhankar.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-abhyankar-coho-interlude.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-abyhankar.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+<li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
+<li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">Wrap Up of Non-Archimedean Local Heights (Sachi)</a></li>
+<li><a href="sec-gz-rankin-selberg.html" data-scroll="sec-gz-rankin-selberg">Rankin-Selberg (Aash)</a></li>
+<li><a href="sec-gz-applications-i.html" data-scroll="sec-gz-applications-i">A gallimaufry of applications (of Gross-Zagier) I (Alex)</a></li>
+<li><a href="sec-gz-applications-ii.html" data-scroll="sec-gz-applications-ii">A gallimaufry of applications (of Gross-Zagier) II (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+<li><a href="sec-abhyankar-coho-interlude.html" data-scroll="sec-abhyankar-coho-interlude">A cohomological interlude (Ricky)</a></li>
+<li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre" class="active">Serre's proof in the solvable case (Angus)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-abhyankar-serre"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.4</span> <span class="title">Serre's proof in the solvable case (Angus)</span>
+</h2>
+<a href="sec-abhyankar-serre.html" class="permalink">¶</a><p id="p-1699">\(k = \bar k\) field of char \(p \gt  0\text{.}\)</p>
+<article class="definition definition-like" id="def-quasi-p-group"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.4.1</span><span class="period">.</span>
+</h6>
+<p id="p-1700">A <dfn class="terminology">quasi \(p\)-group</dfn> is a group that is generated by its Sylow-\(p\) subgroups.</p></article><p id="p-1701">Let \(\Pi(\aff^1)\) be the set of groups occurring as Galois groups of covers</p>
+<div class="displaymath">
+\begin{equation*}
+X \to \aff^1\text{.}
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="theorem-110"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar.</span>
+</h6>
+<p id="p-1702">\(G \in \Pi(\aff^1) \implies G\) is a quasi-\(p\) group.</p></article><article class="conjecture theorem-like" id="conjecture-9"><h6 class="heading">
+<span class="type">Conjecture</span><span class="space"> </span><span class="codenumber">7.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Abhyankar.</span>
+</h6>
+<p id="p-1703">\(G\) is a quasi-\(p\) group \(\implies\) \(G \in \Pi(\aff^1) \text{.}\)</p></article><p id="p-1704">Today we will prove this when \(G\) is solvable.</p>
+<article class="definition definition-like" id="def-abhy-solvable-group"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Solvable groups.</span>
+</h6>
+<p id="p-1705">A group \(G\) is called <dfn class="terminology">solvable</dfn> if there exists a series</p>
+<div class="displaymath">
+\begin{equation*}
+G = G_{k}  \triangleright G_{k-1}\triangleright \cdots \triangleright G_0 = 1
+\end{equation*}
+</div>
+<p data-braille="continuation">such that each \(G_k/G_{k-1}\) is abelian.</p></article><p id="p-1706">Reminders/background:</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{covers } X\to \aff^1 \text{ w/ gal. gp. }G\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\updownarrow
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\{L/k(T) : \text{Gal. extn. w/ gp. }G\text{ unram. outside }\infty \}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\updownarrow
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\{\text{surjections }\pi _1^\et(aff^1) \twoheadrightarrow G\}\text{.}
+\end{equation*}
+</div>
+<p id="p-1707">Fixing \(\bar x\in X\) we have an equivalence of categories</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{loc. const. }\FF_\ell\text{-sheaves on }X\text{ w/ finite stalks}\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\updownarrow
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\{\text{finite dim. }\pi _1^\et(X, \bar x)\text{ reps over }\FF_\ell\}
+\end{equation*}
+</div>
+<p data-braille="continuation">given by</p>
+<div class="displaymath">
+\begin{equation*}
+\sheaf F \mapsto \sheaf F_{\bar x}\text{.}
+\end{equation*}
+</div>
+<p id="p-1708">Etale cohomology satisfies:</p>
+<p id="p-1709">Exactness axiom: Let \(Z\subseteq X\) a closed subscheme with \(U = X\smallsetminus Z\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma _Z (X, \sheaf F) = \ker(\Gamma (X, \sheaf F) \to \Gamma (U, \sheaf F))
+\end{equation*}
+</div>
+<p data-braille="continuation">the right derived functor of</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma _Z(X, -)
+\end{equation*}
+</div>
+<p data-braille="continuation">is</p>
+<div class="displaymath">
+\begin{equation*}
+H^* _Z(X, -)
+\end{equation*}
+</div>
+<p data-braille="continuation">the cohomology with support on \(Z\text{.}\) Then we have a LES</p>
+<div class="displaymath">
+\begin{equation*}
+\cdots \to H_Z^i(X, \sheaf F) \to H^i(X, \sheaf F) \to H^i(U, \sheaf F) \to H_Z^{i+1}(X, \sheaf F)\to \cdots\text{.}
+\end{equation*}
+</div>
+<p id="p-1710">For \(X\) an affine curve, \(\pi _1(X)\) has cohomological dimension \(\le 1\text{.}\) In particular given a surjection</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1(X) \twoheadrightarrow G/H
+\end{equation*}
+</div>
+<p data-braille="continuation">we can lift to a map</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1(X) \to G\text{.}
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="theorem-111"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Serre.</span>
+</h6>
+<p id="p-1711">Let \(\widetilde G\) be a quasi-\(p\) group and \(N\) a normal subgroup with \(G = \widetilde G/N\text{,}\) if \(G \in \Pi(\aff^1)\) and \(N\) is solvable, then \(\widetilde G \in \Pi(\aff^1)\text{.}\)</p></article><article class="corollary theorem-like" id="corollary-43"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.4.6</span><span class="period">.</span>
+</h6>
+<p id="p-1712">Abhyankar's conjecture in the solvable case.</p></article><article class="hiddenproof" id="proof-135"><a data-knowl="" class="id-ref original" data-refid="hk-proof-135"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-135"><article class="hiddenproof"><p id="p-1713">Let \(\widetilde G = N\text{.}\)</p></article></div>
+<p id="p-1714">The advantage of this is the following:</p>
+<article class="lemma theorem-like" id="lemma-36"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.4.7</span><span class="period">.</span>
+</h6>
+<p id="p-1715">It is sufficient to prove the theorem in the case</p>
+<div class="displaymath">
+\begin{equation*}
+N = (\ZZ/\ell)^n 
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+G\acts N
+\end{equation*}
+</div>
+<p data-braille="continuation">is irreducible.</p></article><article class="hiddenproof" id="proof-136"><a data-knowl="" class="id-ref original" data-refid="hk-proof-136"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-136"><article class="hiddenproof"><p id="p-1716">Consider a SES</p>
+<div class="displaymath">
+\begin{equation*}
+1 \to K \to N \to H \to 1
+\end{equation*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+G = \widetilde G/N = (\widetilde G/ K) / (N / K) = (\widetilde G/K)/H\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(N\) is solvable, given a sequence of subgroups with abelian quotients we can reduce to the abelian case, which can then be reduced to \((\ZZ/\ell)^n\text{.}\) Further can be reduced to the irreducible \(G\)-module case.</p></article></div>
+<p id="p-1717">\(\widetilde G\) is an extension of \(G\) by \(N\) which gives a class</p>
+<div class="displaymath">
+\begin{equation*}
+e \in H^2(G, N)
+\end{equation*}
+</div>
+<p data-braille="continuation">we have cases</p>
+<ol class="decimal">
+<li id="li-396"><div class="displaymath">
+\begin{equation*}
+e\ne 0\text{ essential extension}
+\end{equation*}
+</div></li>
+<li id="li-397"><div class="displaymath">
+\begin{equation*}
+e= 0,\,\widetilde G  = N\rtimes G
+\end{equation*}
+</div></li>
+</ol>
+<p id="p-1718">Proof of the theorem in case 1:</p>
+<div class="displaymath">
+\begin{equation*}
+G \in \Pi(\aff^1) \leadsto \phi \colon \pi \to G
+\end{equation*}
+</div>
+<p data-braille="continuation">by the cohomological dimension argument there exists a lift</p>
+<div class="displaymath">
+\begin{equation*}
+\tilde \phi  \colon  \pi  \to \widetilde G
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(H = \im(\tilde \phi) \) so \(NH = \widetilde G\) and \(N\cap H \) is a sub-\(G\)-module of \(N\text{.}\) If \(N\cap H = 1\) then \(\widetilde G = N\rtimes G\text{,}\) a contradiction with the fact we are in case 1.</p>
+<p id="p-1719">Then by irreducibility of \(N\text{,}\) \(N \cap H = N\) and</p>
+<div class="displaymath">
+\begin{equation*}
+N \subseteq H \implies H = NH = \widetilde G\text{.}
+\end{equation*}
+</div>
+<p id="p-1720">In case 2. Choose a surjection</p>
+<div class="displaymath">
+\begin{equation*}
+\phi \colon  \pi  \twoheadrightarrow G
+\end{equation*}
+</div>
+<p data-braille="continuation">this endows \(N\) with  a \(\pi \)-module structure, \(N_\phi \) we get a corresponding sheaf \(\sheaf N_\phi \) on \(\aff^1\text{.}\) We have</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(G, N) \hookrightarrow H^1(\pi , N_\phi) \xrightarrow\sim H^1(\aff^1, \sheaf N_\phi )\text{.}
+\end{equation*}
+</div>
+<article class="proposition theorem-like" id="proposition-93"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.4.8</span><span class="period">.</span>
+</h6>
+<p id="p-1721">There exists a surjection</p>
+<div class="displaymath">
+\begin{equation*}
+\tilde \phi  \colon  \pi  \to \widetilde G
+\end{equation*}
+</div>
+<p data-braille="continuation">lifting \(\phi \) iff</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(G, N)\subsetneq H^1(\pi , N_\phi )\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-137"><a data-knowl="" class="id-ref original" data-refid="hk-proof-137"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-137"><article class="hiddenproof"><p id="p-1722">We only need (\(\Leftarrow\)) today. Let \((a  \colon  \pi  \to N_\phi ) \in H^1(\pi , N_\phi ) \smallsetminus H^1(G, N)\text{.}\) Then, combined with \(\phi \) with we construct a morphism</p>
+<div class="displaymath">
+\begin{equation*}
+\tilde \phi  \colon  \pi  \to N\cdot G  = \widetilde G\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Assume that</p>
+<div class="displaymath">
+\begin{equation*}
+\im(\tilde \phi ) = H \subsetneq \widetilde G
+\end{equation*}
+</div>
+<p data-braille="continuation">then</p>
+<div class="displaymath">
+\begin{equation*}
+N\cap H = 1,\,NH = \widetilde G\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Given this, \(a \) arises from a cocycle in \(H^1(G, N)\) a contradiction.</p></article></div>
+<p id="p-1723">We are reduced to finding</p>
+<div class="displaymath">
+\begin{equation*}
+\phi \colon \pi  \to G
+\end{equation*}
+</div>
+<p data-braille="continuation">such that</p>
+<div class="displaymath">
+\begin{equation*}
+\dim_{\FF_\ell} H^1(G, N) \lt \dim _{\FF_\ell} H^1(\pi , N_\phi )
+\end{equation*}
+</div>
+<p data-braille="continuation">two cases, \(\ell \ne p\) and \(\ell = p\text{.}\)</p>
+<p id="p-1724">In the \(\ell \ne p\) case we must have</p>
+<div class="displaymath">
+\begin{equation*}
+G  \acts N
+\end{equation*}
+</div>
+<p data-braille="continuation">non-trivial else</p>
+<div class="displaymath">
+\begin{equation*}
+\widetilde G = N\times G
+\end{equation*}
+</div>
+<p data-braille="continuation">is not quasi-\(p\text{.}\)</p>
+<p id="p-1725">Let \(I \subseteq G\) be the inertia group at \(\infty \text{,}\) consider the ramification groups</p>
+<div class="displaymath">
+\begin{equation*}
+I \supseteq I_1\supseteq I_2 \supseteq I_3 \supseteq \cdots
+\end{equation*}
+</div>
+<p data-braille="continuation">we have the swan conductor of \(N_\phi \) is</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{Swan}_{\infty } (N_\phi ) = \sum_{n \ge 1 } \frac{1}{\lb I:I_n\rb }   \dim (N/N^{I_n})\text{.}
+\end{equation*}
+</div>
+<article class="proposition theorem-like" id="proposition-94"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.4.9</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-1726">
+\begin{equation*}
+\dim H^1(\pi , N_\phi ) = \operatorname{Swan}_\infty (N_\phi ) - \dim N
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-138"><a data-knowl="" class="id-ref original" data-refid="hk-proof-138"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-138"><article class="hiddenproof"><p id="p-1727">Note</p>
+<div class="displaymath">
+\begin{equation*}
+H^0( \pi , N_\phi ) = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">since nontrivial irreducible</p>
+<div class="displaymath">
+\begin{equation*}
+H^{i\ge  2}( \pi , N_\phi ) = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">by cohomological dimension. Then</p>
+<div class="displaymath">
+\begin{equation*}
+\dim H^1(\pi , N_\phi ) = - \chi ( H^*(\pi , N_\phi ))= - \chi ( H^*(\aff^1 , \sheaf N_\phi ))
+\end{equation*}
+</div>
+<p data-braille="continuation">let</p>
+<div class="displaymath">
+\begin{equation*}
+i\colon  \aff^1 \hookrightarrow \PP^1
+\end{equation*}
+</div>
+<p data-braille="continuation">then exactness gives</p>
+<div class="displaymath">
+\begin{equation*}
+\chi (H^*(\aff^1, \sheaf  N_\phi )) =  \chi (H^*(\PP^1, i^* \sheaf  N_\phi )) -  \chi (H^*_\infty (\PP^1,i^* \sheaf  N_\phi ))
+\end{equation*}
+</div>
+<p data-braille="continuation">now</p>
+<div class="displaymath">
+\begin{equation*}
+\chi (H^*_\infty (\PP^1,i^* \sheaf  N_\phi )) = \dim N^I\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Grothendieck-Ogg-Shafarevich gives</p>
+<div class="displaymath">
+\begin{equation*}
+\chi (H^*(\PP^1, i^* \sheaf  N_\phi )) = \dim N + \dim N^I - \operatorname{Swan}_\infty (N_\phi )\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-1728">We are reduced to</p>
+<div class="displaymath">
+\begin{equation*}
+\dim_{\FF_\ell} H^1(G, N) \lt \operatorname{Swan}_\infty (N_\phi ) - \dim _{\aff_\ell} N
+\end{equation*}
+</div>
+<p data-braille="continuation">there exists \(\phi \) for which this can be an equality (Artin-Schreier). We can always introduce extra ramification. Consider</p>
+<div class="displaymath">
+\begin{equation*}
+(m)\colon  \aff^1 \to \aff^1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T \mapsto T^m
+\end{equation*}
+</div>
+<p data-braille="continuation">and write \(\psi \colon Y \to \aff^1\) the cover corresponding to \(\phi \text{.}\) Take the pullback to get \(\psi _m\colon Y_m \to \aff^1\) a Galois cover with group \(G\text{.}\) \(\leadsto \phi _m \colon  \pi  \twoheadrightarrow G\text{.}\) One can show that</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{Swan}_\infty (N_{\phi _m}) = m \operatorname{Swan}_\infty (N_\phi )
+\end{equation*}
+</div>
+<p data-braille="continuation">so choosing \(m \gt 1\) forces the inequality to be strict.</p>
+<p id="p-1729">In this case we show</p>
+<div class="displaymath">
+\begin{equation*}
+\dim H^1(\pi , N_\phi ) = \infty 
+\end{equation*}
+</div>
+<p data-braille="continuation">exactness gives</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(\pi , N_\phi ) = H^1(\aff^1, \sheaf N_\phi ) \to H^2_\infty (\PP^1, i_*\sheaf N_\phi ) \to H^2(\PP^1, i_* \sheaf N_\phi ) = 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+H^2_\infty (\PP^1, i_*\sheaf N_\phi ) = H^2_\infty (\Spec k \lb \lb t\inv \rb \rb , i_*\sheaf N_\phi ) =  H61 (k ((T\inv )) , N_\phi )\text{.}
+\end{equation*}
+</div>
+<article class="proposition theorem-like" id="proposition-95"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.4.10</span><span class="period">.</span>
+</h6>
+<p id="p-1730">Let \(F = k((t))\) and \(G_F =\Gal {F^\sep}{F}\text{.}\) Then let \(V\) be a finite dimensional \(G_F\)-representation over \(\FF_p\text{.}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(G_F, V) = \infty \text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-139"><a data-knowl="" class="id-ref original" data-refid="hk-proof-139"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-139"><article class="hiddenproof"><p id="p-1731">We can take</p>
+<div class="displaymath">
+\begin{equation*}
+G_F \acts V
+\end{equation*}
+</div>
+<p data-braille="continuation">irreducible, then if \(I_1\) is the pro-\(p\)-Sylow subgroup of \(G_F\) then the action of</p>
+<div class="displaymath">
+\begin{equation*}
+I_1\acts V
+\end{equation*}
+</div>
+<p data-braille="continuation">is trivial so the action factors through the tame quotient</p>
+<div class="displaymath">
+\begin{equation*}
+I_t = G_F/I_1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Choosing an identification of \(V\) with</p>
+<div class="displaymath">
+\begin{equation*}
+\FF_q / \FF_p
+\end{equation*}
+</div>
+<p data-braille="continuation">then</p>
+<div class="displaymath">
+\begin{equation*}
+I_t \acts V
+\end{equation*}
+</div>
+<p data-braille="continuation">is determined by a character</p>
+<div class="displaymath">
+\begin{equation*}
+\psi \colon I_t \to \FF_p^\times
+\end{equation*}
+</div></article></div></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
+</body>
+</html>
