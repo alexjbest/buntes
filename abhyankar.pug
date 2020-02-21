@@ -1176,6 +1176,34 @@ section#sec-abhyankar-serre
             | then
             me I_t \acts V
             |is determined by a character
-            me \psi \colon I_t \to \FF_p^\times
+            me \psi \colon I_t \to \FF_q^\times
+            | let #[m m = \operatorname{order}(\psi)], #[m t_m  = t^{1/m}] and #[m F_m = k((t_m))].
+            | The Galois group
+            me C_m = \Gal{F_m}F
+            | is identified with the group of #[m m]-th roots of unity by a character
+            me \chi \colon C_m \to k^\times
+            | . Choosing #[m \FF_q \hookrightarrow k] gives
+            me \psi = \chi ^i
+            | for some #[m i \in (\ZZ/m)^\times], then
+            me H^1(G_F, V)\simeq H^0(C_m, H^1(I_m, V)) = H^0(C_m, \Hom(I_m, \FF_p) \otimes V
+            | when #[m I_m = \Gal {F^\sep}{F_m}].
+            | We have
+            me \Hom(I_m, \FF_p) = F_m / \wp F_m
+            | for #[m \wp] the Artin-Schreier map, so it is sufficient to show that any character of #[m C_m] occurs in the #[m C_m]-representation
+            me F_m/ \wp F_m) \otimes \FF_p
+            | infinitely often.
+            | The group #[m F_m / \wp F_m] has representatives Laurent series
+            me \sum a_j t_m^j
+            | for #[m a_j \in k,\,j \gt 0,(j,p) = 1].
+            | Consider the subgroup
+            me k \{t_m^{-j}\}
+            | on which #[m C_m] acts by #[m \chi ^{-j}].
+            | Since #[m \lb  k : \FF_q \rb  = \infty ], #[m \chi ^{-j}] occurs infinitely often.
+    p
+        | So
+        me \dim H^1(\pi , N_\phi ) = \infty 
+        | and the desired inequality is satisfied and we have a surjective lift
+        me \pi  \to \widetilde G
+        | in all cases giving the original theorem.
 
 
