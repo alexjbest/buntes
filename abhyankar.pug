@@ -1207,3 +1207,380 @@ section#sec-abhyankar-serre
         | in all cases giving the original theorem.
 
 
+section#sec-abhyankar-rigid
+    title Rigid analytic spaces (Aash)
+
+    paragraphs
+        title References
+        p
+            ol
+                li.
+                    Several approaches to non-archimidean geomeetry - Conrad
+                li.
+                    Lectures on formal and rigid geometry - Bosch
+                li.
+                    Non-Archimidean geometry - Matt Baker
+                li.
+                    Rigid geometry and applications - Fresnel, van der Put
+
+
+    p
+        | Usual geomeetry involves polynomial rings over fields, we switsch to tate algebras.
+        | Fix a non-archimidean field #[m k], #[m R] a valuation ring and #[m \tilde k] its residue field.
+
+
+    p
+        | Tate algebras over #[m k].
+    p
+        me T_n = T_n(k) = \left\{ \sum a_J x^J : |a_J| \to 0 \text{ as } |J| \to \infty \right\}
+        me J = \{j_1, \ldots, j_n\}
+        me x^J = \prod x_i ^{j_i}
+        | #[m f] converges on
+        me \mathbf B^n(\overline k) \iff f \in k \langle x_1, \ldots, x_n \rangle = T_n(k)
+    p
+        | The Gauss norm / sup norm
+        me |\sum a_J x^J | = \max_J |a_J| \ge 0
+        | properties
+        ol
+            li
+                me |f| = 0 \iff f = 0
+            li
+                me |cf| = |c|_k |f|
+            li
+                me |f + g| \le \max\{|f|, |g|\}
+            li
+                me |fg| = |f||g|
+    theorem
+        title The maximum principle
+        statement: p
+            me \exists x_0 \in \mathbf B^n(\overline k)
+            |s.t.
+            me |f(x_0)| = |f|
+            | .
+        proof
+            p
+                me |f(x)| \le |f|,\,\forall x \in \mathbf B^n(\overline k)
+                | consider
+                me \pi  \colon R\langle x_1, \ldots, x_n \rangle \to \tilde k \lb x_1,\ldots, x_n\rb 
+                | let #[m \tilde f = \pi(f)] be non-trivial (#[m |f| = 1]), then there exists
+                me \tilde x \in \overline{\tilde k}^n
+                | s.t.
+                me \tilde f (\tilde x) \ne 0
+                | .
+            p
+                | Have
+                me.
+                    \xymatrix{
+                    \overline R \lb x_1, \ldots, x_n \rb  \ar[r] \ar[d] &amp; \overline{\tilde k} \lb x_1, \ldots, x_n\rb \ar[d] \\
+                    \overline R                           \ar[r]        &amp; \overline{\tilde k}
+                    }
+                | so lift #[m \tilde x] to #[m x \in \overline R^n].
+                | Since
+                me f(x)\mapsto \tilde f( \tilde x)
+                | and #[m \tilde f(\tilde x) \ne 0] and #[m |f(x)| = 1].
+
+    p
+        | Algebraic properties of #[m T_n].
+    p
+        ol
+            li
+                | #[m T_n] is noetherian, regular and a UFD, for every maximal ideal #[m \ideal m] of #[m T_n], #[m T_n /\ideal m] has finite degree over #[m k].
+
+            li
+                | #[m T_n] is Jacobson: #[m x\in T_n / I] is nilpotent iff #[m x] lies in all maximal ideals of #[m T_n/I].
+
+            li
+                | #[m I] is closed w.r.t. the Gauss norm for all ideals.
+
+    definition
+        title Affinoid algebras
+        statement: p
+            | A #[m k]-affinoid  algebra is a #[m k]-algebra #[m A] admitting an isomorphism #[m A \simeq T_n/I] as #[m k]-algebras #[m I\subseteq T_n].
+            | The set #[m \maxspec(A)] for maximal ideals is denoted #[m M(A)].
+
+    p
+        | Properties
+        ol
+            li
+                | A Noetherian, Jacobson, finite Krull dimension, #[m A/\ideal m] is a finite extension of #[m k], where #[m \ideal m \in M(A)].
+            li
+                | #[m k(x) = A/ \ideal m_x] for #[m \ideal m_x \in M(A)] then #[m a] is nilpotent iff #[m a(x) = 0 ] for all #[m x\in M(A)].
+            li
+                | #[m M(A)] is functorial with pullback.
+
+
+                | if #[m \phi  \colon  A \to A' ] then
+                me \phi \inv (x) \in M(A)
+                | for  all #[m x\in M(A')] as
+                me \phi \colon A \to A'
+                me A/ \phi \inv (x) \hookrightarrow A'/ x
+                me A/\phi \inv (x)
+                | is a finite extension of #[m k] hence a field, so #[m \phi \inv(x)] is maximal.
+
+            li
+                | Noether normalization:
+                | For #[m A] affinoid, then #[m \exists d = \dim(A)] s.t.
+                me T_d (k) \hookrightarrow A
+                | then #[m A/T_d(k)]  is a  finite module extension.
+
+            li
+                | Maximum modulus
+                me \|f\|_{\sup} = \max_{x\in M(A)} |f(x)| \lt \infty 
+                | .
+
+    p
+        | Topology on #[m M(A)].
+    fact
+        statement: p
+            me M(A) \leftrightarrow A(\overline k)/ \Aut(\overline k/k)
+            | where #[m A(\overline k)] is #[m k]-algebra homomorphisms from #[m A \to \overline k] which have image in a finite extension of #[m k].
+
+            | Consider sets
+            me \{x\in A(\overline k) : |f_i(x)| \ge \epsilon _i , |g_j(x)| \le n_j,\text{ for }i,j\}
+            | this is a basis for a topology on #[m A(\overline k)].
+            | Endow #[m M(A)] with quotient topology, this is Hausdorff and totally disconnected and functorial.
+    example
+        statement: p
+            me M(T_n)
+            | is disconnected
+            me U = \{| x_1|=  \cdots = |x_n| = 1\}
+            me V = U^c
+            | .
+
+    definition
+        statement: p
+            | Tate algebras over #[m k]-Banach algebras #[m \mathcal A]
+            me \mathcal A \langle Y_1, \ldots , Y_n \rangle = \{ \sum a_J Y^J : |a_J| \to 0 \text{ as } | J|\to \infty \}
+
+    p
+        | Universal property
+        me \Hom(\mathcal A \langle X_1,\ldots, X_n\rangle, B) \to (B^0)^n
+        | is bijective.
+        me \phi \mapsto (\phi (X_1), \ldots, \phi (X_n))
+        me B
+        | is an
+        me \mathcal A
+        | algebra, #[m B^0] are powerbounded elements.
+    p
+        | Given #[m a', a_1, \ldots, a_n] with no common zeroes.
+        me A \langle a_1/a', \ldots, a_n/a'\rangle = A\langle \underline X \rangle / \langle a' X_1 - a_1, \ldots\rangle
+        |.
+
+    lemma
+        statement: p
+            | For any #[m \phi\colon A \to B] there exists at most one way to fill in #[m A\langle ... \rangle \to B] such that the diagram commutes.
+            | This one way exists iff #[m \exists M(\phi ) \colon M(B)\to M(A)] factors through
+            me \{x \in M(A) : |a_i(x)| \le |a'(x)| \forall 1\le i \le n\}
+
+        proof
+            p
+                | By universal  property  we have
+                me b_1, \ldots , b_n \in B^0
+                | s.t. #[m \phi (a')b_j = \phi (a_j)]l, #[m \phi (a') ] is a unit otherwise there is #[m y] s.t. #[m \phi (a' ) (y) = 0] so #[m \phi (a_j)(y) = 0 \forall j] so common zero.
+                | Hence #[m b_j]'s are unique
+                me |\phi (a_j)(y)|/|\phi (a')(y)| = |b_j(y)| \le 1
+                | for all #[m y\in M(B)]
+                | .
+            p
+                | Conversely if #[m |\phi (a_j)| \le |\phi (a')|], #[m \phi (a')] a unit else common zero, let
+                me b_j = \phi (a_j )/\phi (a')
+                | want #[m |b_j(y) |\le 1] for all #[m y \in M(B)] but 
+                me |\phi (a_j)(y)| \le |\phi (a')(y)|
+                | for all #[m y \in M(B)].
+
+    p
+        | Call
+        me \{ x \in M(A) : |a_j(x)| \le |a'(x)| \}
+        | a rational domain: this canonically determines #[m A \langle a_1/a', \ldots, a_n/'\rangle].
+        | Let #[m A\langle \underline a, \underline a'\inv\rangle]  a laurent domain, if they are equal a weierstrass domain.
+
+    p
+        | Affinoid subdomains: a #[m k]-affinoid subalgebra #[m U \subseteq M(A)] is called an affinoid subdomain if #[m \exists i \colon A \to A'] such that
+        me M(i)\colon M(A') \to M(A)
+        | lands in #[m U] and is universal. This diagram commutes iff #[m M(\phi )(M(B)) \subseteq U]
+        | .
+
+    p
+        | Completed tensor products
+        me A \widehat \otimes _k A'
+        |  give us intersection and pullback.
+
+    p
+        | Gerritzen-Grauert
+
+
+
+
+section#sec-abhyankar-rigid-gaga
+    title Rigid GAGA (Aash)
+
+    definition
+        statement: p
+            | Let #[m (Z, \sheaf O_Z)] be a #[m k]-scheme of locally finite type.
+            | A rigid analytification is a rigid space #[m (Z^{rig}, \sheaf O_{Z^{rig}})] together with  a morphism of locally ringed #[m G]-spaces
+            me (i, i^*) \colon  (Z^{rig}, \sheaf O_{Z^{rig}}) \to (Z, \sheaf O_Z)
+            | satisfying:
+            | Given #[m (Y, \sheaf O_Y)] a rigid #[m k]-space and a morphism
+            me (Y, \sheaf O_Y) \to (Z, \sheaf O_Z)
+            | this factors through #[m (i, i^*)] via a unique morphism #[m (Y, \sheaf O_Y)\to(Z^{rig}, \sheaf O_{Z^{rig}})].
+
+    example
+        title Affine space
+        statement: p
+            | Recall we had maps
+            me \overbrace{k \langle \zeta _{1, j+1}, \ldots, \zeta _{n, j+1}\rangle}^{T_{n,j+1}} \to k \langle \zeta _{1, j}, \ldots, \zeta _{n, j}\rangle 
+            me \zeta _{i, j+1} \mapsto c\zeta _{i,j}
+            | for some #[m |c| \lt  1].
+            | Glue along these maps
+            me B_j \subseteq B_{j+1}
+            | as larger balls.
+            | This is an admissible covering so we have
+            me \aff^{k, rig} = \bigcup _{j=0}^\infty  B_j
+            |.
+            | Consider #[m k \lb \zeta _1, \ldots, \zeta _n\rb ] mapping to each of  #[m T_{j}] compatibly.
+            | This induces an inclusion of max specs
+            me \Sp(T_{n,0}) \subseteq \Sp(T_{n,1}) \subseteq \cdots \Max k\lb \zeta \rb 
+            | claim that for
+            me \ideal m \subseteq k\lange \zeta \rangle
+            | a maximal ideal, then
+            me \ideal m'  \ideal m \cap k\lb \zeta \rb 
+            | s.t.
+            me \ideal m  =  \ideal m'k \langle \zeta  \rangle
+            | . Additionally claim given #[m \ideal m' \subset k \lb \zeta \rb ], there exists #[m i_0 \in \NN] s.t. #[m \forall i \ge i_0, \ideal m'k\langle x^i \zeta \rangle] is maximal in #[m k\langle c^i \zeta \rangle = T_{n,i}].
+            | So all #[m T_{n,i} \xrightarrow\phi k \lb \zeta \rb /\ideal m'] and the maximal spectra of #[m k\lb \zeta \rb ] equals #[m \bigcup B_i].
+
+
+    p
+        | More generally given an affine scheme #[m Z = \Spec k\lb \zeta \rb /a] and glue 
+        me T_{n,0}/(a) \leftarrow T_{n,1}/(a) \leftarrow \cdots
+        | and #[m k\lb \zeta \rb / a] maps to each.
+        | Giving #[m \Spm (T_{n,0}/a) \hookrightarrow \Spm (T_{n,1}/a) \hookrightarrow ]
+        me \Spm(k\lb \zeta \rb/a) = \bigcup_{j=0}^\infty  \Spm(T_{n,j}/a)
+    p
+        | In order to check the properties of this construction, we note that
+        me Z^{rig} \to Z
+        | via
+        me k\lb \zeta \rb /a \to T_{n,i}/a
+        | locally, giving
+        me \sheaf O_Z(Z) \to \sheaf O_{Z^{rig}}(Z^{rig})
+        | .
+    fact
+        statement: p
+            | #[m Z] affine #[m k]-scheme of finite type, #[m Y] a rigid #[m k]-space.
+            me (Y, \sheaf O_Y) \to (Z, \sheaf O_Z)
+            me \updownarrow
+            me k\text{-alg. homs. } \sheaf O_Z(Z) \to \sheaf O_Y(Y)
+            | .
+
+    p
+        | So we have 
+        me (i, i^*) \colon  (Z^{rig}, \sheaf O_{Z^{rig}}) \to (Z, \sheaf O_Z)
+        | need to check universal property:
+        | WLOG let #[m (Y, \sheaf O_Y)] be an affinoid space
+        me (Y, \sheaf O_Y) \to (Z, \sheaf O_Z)
+        | gives
+        me k\lb \zeta \rb /a \xrightarrow \sigma  B
+        | wts
+        me k\lb \zeta \rb /a \to T_{n,i}/a \to B
+        | choose #[m i] big enough s.t.
+        me | \sigma (\bar \zeta _j)| \le \frac{1}{|c|^i}
+        | #[m \sigma ] will extend uniquely though
+        me T_{n,i}/a
+        |.
+
+    p
+        | We get morphisms and hence a functor for rigidification by universality.
+        | Call this the GAGA functor.
+
+    p
+        | It respects fibre products.
+    p
+        | #[m \sheaf O_{Z^{rig},z}] is the completion at #[m z\in Z^{rig}] is the same as the completion of #[m \sheaf O_{Z,z}] at #[m z].
+    p
+        | GAGA is faithful but not full.
+
+    definition
+        statement: p
+            | We have a sheaf #[m \sheaf F] associated to #[m A] modules #[m M]
+            me \sheaf F =  M\otimes _A \sheaf O_X
+            | this functor is fully faithful commutes with kernels, cokernels, images and tensor products.
+
+    theorem
+        statement: p
+            | Coherent modules are the images of this functor for f.g. #[m M].
+    p
+        | A coherent module has finite type, in that there exists a covering with
+        me \sheaf O_X^{s_i}|_{X_i} \to \sheaf F|_{X_i} \to 0
+        | and also the kernel here is finite type.
+    p
+        | Cohomology, we have a section functor
+        me \Gamma (X, -) \colon  \sheaf F \to \sheaf F(X)
+        | and
+        me \phi \colon X\to Y
+        me \phi _*\colon \sheaf F \to \phi _*\sheaf F
+        | is left exact, need an injective resolution.
+
+    p
+        | An object #[m \sheaf F] is injective if given
+        me 0 \to \sheaf E ' \to \sheaf E \to \sheaf E'' \to 0
+        me 0 \to \Hom(\sheaf E ', \sheaf F) \to \Hom(\sheaf E, \sheaf F) \to \Hom(\sheaf E'', \sheaf F) \to 0
+
+    theorem
+        title Grothendieck
+        statement: p
+            | The category of #[m \sheaf O_X]-modules has enough injectives, consider injective resolution for #[m \sheaf O_X]-module #[m \sheaf F]
+            me 0 \to I^0 \xrightarrow{ \alpha _0} I^1 \xrightarrow{\alpha _1} \cdots
+            | and consider
+            me 0 \to \Gamma (X, I^0) \xrightarrow{\Gamma (\alpha _0)} \Gamma (X, I^1) \to \cdots
+            me H^q(X, \sheaf F) = \ker \Gamma (\alpha ^q)/ \im \Gamma (\alpha ^{q-1}) = R^q \Gamma (X, \sheaf F)
+            | the #[m q]th cohomology group of #[m X] with values in #[m \sheaf F].
+    p
+        | Cech cohomology #[m \varinjlim_U H(U, \sheaf F)] the limit over admissible coverings, ordered by refinement.
+        me C^q(U, \sheaf F) = \prod_{i_0, \ldots, i_q \in I} \sheaf F(\bigcap _k U_{i_k})
+        | have a coboundary map which makes this a complex.
+
+    theorem
+        title Tate's acyclicity theorem
+        statement: p
+            | If #[m U] is a finite covering of #[m X] by affinoids then #[m U] is acyclic w.r.t. presheaf #[m \sheaf O_X] (or any coherent module).
+
+    definition
+        statement: p
+            | #[m \phi \colon X\to Y] is called a closed immersion if there exists an admissible affinoid covering #[m (V_j)_j] s.t. for all #[m j \in J]
+            me \phi _j \colon  \phi \inv (V_j) \to V_j
+            | is a morphism of affinoid spaces with corresponding algebra map
+            me B_j \twoheadrightarrow A_j
+            | .
+
+
+    definition
+        statement: p
+            | #[m \phi \colon X\to Y] is called a separated if
+            me \Delta \colon X \to X\times_X X
+            | is a closed immersion.
+
+    fact
+        statement: p
+            | #[m \phi  \colon  \Spm(A) \to \Spm(B)] is always separated.
+
+    p
+        | In rigid geometry we do not have that for #[m \phi  \colon X \to Y] with #[m \Delta \colon  X\to X\times_Y X] locally closed then sep iff closed immer.
+
+    definition
+        title Properness
+        statement: p
+            | A map #[m f: X \rightarrow Y] of rigid spaces is proper if it is separated and quasi-compact and there exists an admissible affinoid open covering #[m \left\{U_{i}\right\}] of #[m Y] and a pair of finite (necessarily admissible) affinoid open coverings #[m \left\{V_{i j}\right\}_{j \in J_{i}}] and #[m \left\{V_{i j}^{\prime}\right\}_{j \in J_{i}}] (same index set #[m J_{i}] of #[m j^{\prime}] s! of #[m f^{-1}\left(U_{i}\right)] such that two conditions hold: #[m V_{i j} \subseteq V_{i j}^{\prime}] for all #[m j,] and for all #[m j \in J_{i}] there is an #[m n \geq 1] and a closed immersion #[m V_{i j}^{\prime} \hookrightarrow U_{i} \times \mathbf{B}^{n}] over #[m U_{i}] such that #[m V_{i j} \subseteq U_{i} \times\left\{\left|t_{1}\right|, \ldots,\left|t_{n_{i}}\right| \leq r\right\}] for some #[m 0\lt r\lt 1] with #[m r \in \sqrt{| k}^{\times} | .] (Equivalently, by the Maximum Modulus Principle, we can replace #[m * \leq r "] with #[m {*}\lt 1] ".)
+
+
+    theorem
+        statement: p
+            | If #[m f: X \rightarrow Y] is a proper map of rigid spaces and #[m \mathscr{F}] is a coherent sheaf on #[m X] then the higher direct image sheaves #[m \mathrm{R}^{i}\left(f_{*}\right)(\mathscr{F})] on #[m Y] are coherent. In particular, if #[m X] is proper over #[m \operatorname{Sp}(k)] then #[m \mathrm{H}^{i}(X, \mathscr{F})] is finite-dimensional over #[m k] for all coherent sheaves #[m \mathscr{F}] on #[m X] and all #[m i].
+
+
+    theorem
+        title GAGA applications
+        statement: p
+            me H^q(X, \sheaf F) \to H^q(X^{rig}, \sheaf F^{rig})
+            | are isoms for #[m X] proper, #[m \sheaf F] coherent #[m \sheaf O_X]-module.
+            | Also for, the #[m rig] functor on sheaves is fully faithful.
+            | Also gives essential surj of #[m rig] on coherent rigid sheaves.

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BUNTES Rigid GAGA (Aash)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.13;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm{\textbf{#1}}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ur}{\mathrm{ur}}
+\newcommand{\tamer}{\mathrm{tr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+\newcommand{\semis}{\mathrm{ss}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="buntes.html"><span class="title">BUNTES:</span> <span class="subtitle">BU Number Theory Expository Seminar</span></a></h1>
+<p class="byline">BUNTES Attendees (notes by Alex)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-abhyankar-rigid.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-buntes-abyhankar.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-abhyankar-rigid.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-buntes-abyhankar.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="chapter-abelian-varieties.html" data-scroll="chapter-abelian-varieties"><span class="codenumber">1</span> <span class="title">Abelian Varieties</span></a><ul>
+<li><a href="sec-av-basics.html" data-scroll="sec-av-basics">Basics</a></li>
+<li><a href="sec-av-intro.html" data-scroll="sec-av-intro">Introduction (Angus)</a></li>
+<li><a href="sec-av-complex.html" data-scroll="sec-av-complex">Abelian varieties over \(\CC\) (Alex)</a></li>
+<li><a href="sec-rational-maps-avs.html" data-scroll="sec-rational-maps-avs">Rational Maps into Abelian Varieties (Maria)</a></li>
+<li><a href="sec-thm-cube.html" data-scroll="sec-thm-cube">Theorem of the Cube (Ricky)</a></li>
+<li><a href="sec-adventures-buntes.html" data-scroll="sec-adventures-buntes">The Adventures of BUNTES (Sachi)</a></li>
+<li><a href="sec-dual-ab.html" data-scroll="sec-dual-ab">Line Bundles and the Dual Abelian Variety (Angus)</a></li>
+<li><a href="sec-endomorphisms.html" data-scroll="sec-endomorphisms">Endomorphisms and the Tate module (Berke)</a></li>
+<li><a href="sec-polarizations-etale.html" data-scroll="sec-polarizations-etale">Polarizations and Étale cohomology (Alex)</a></li>
+<li><a href="sec-weil-pairings.html" data-scroll="sec-weil-pairings">Weil pairings (Maria)</a></li>
+<li><a href="sec-rosati.html" data-scroll="sec-rosati">The Rosati involution (Alex)</a></li>
+<li><a href="sec-avs-over-ffs.html" data-scroll="sec-avs-over-ffs">Abelian Varieties over finite fields (Ricky)</a></li>
+<li><a href="sec-tate-thm.html" data-scroll="sec-tate-thm">Tate's Isogeny Theorem (Sachi)</a></li>
+<li><a href="sec-honda-tate.html" data-scroll="sec-honda-tate">The Honda Tate Theorem (Angus)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-dessins.html" data-scroll="chapter-dessins"><span class="codenumber">2</span> <span class="title">Dessins d'Enfants</span></a><ul>
+<li><a href="sec-dessins-overview.html" data-scroll="sec-dessins-overview">Overview (Angus)</a></li>
+<li><a href="sec-dessins-riemann-surfaces.html" data-scroll="sec-dessins-riemann-surfaces">Riemann Surfaces I (Ricky)</a></li>
+<li><a href="sec-riemann-hurwitz.html" data-scroll="sec-riemann-hurwitz">Riemann Hurwitz Formula (Sachi)</a></li>
+<li><a href="sec-rs-discrete-groups.html" data-scroll="sec-rs-discrete-groups">Riemann Surfaces and Discrete Groups (Rod)</a></li>
+<li><a href="sec-rs-discrete-groups-ii.html" data-scroll="sec-rs-discrete-groups-ii">Riemann Surfaces and Discrete Groups II (Jim)</a></li>
+<li><a href="sec-belyi-thm.html" data-scroll="sec-belyi-thm">Belyi's theorem (Maria)</a></li>
+<li><a href="sec-dessins.html" data-scroll="sec-dessins">Dessins (Berke)</a></li>
+<li><a href="sec-sandwich.html" data-scroll="sec-sandwich">A Sandwich Table of Dessins d'Enfants</a></li>
+<li><a href="sec-beyi-abc.html" data-scroll="sec-beyi-abc">Belyi's theorem, effective Mordell and ABC (Angus)</a></li>
+<li><a href="sec-dessins-integer-pts-abc.html" data-scroll="sec-dessins-integer-pts-abc">Dessins, integer points on elliptic curves and a proof of the ABC conjecture (Alex)</a></li>
+<li><a href="sec-three-short-stories-belyi.html" data-scroll="sec-three-short-stories-belyi">Three Short Stories about Belyi's theorem (Ricky)</a></li>
+<li><a href="sec-dessins-physics.html" data-scroll="sec-dessins-physics">Dessins in Physics (Jim)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-supersing-isog.html" data-scroll="chapter-supersing-isog"><span class="codenumber">3</span> <span class="title">Supersingular isogeny graphs and Quaternion Algebras</span></a><ul>
+<li><a href="sec-supersing-isog-graphs.html" data-scroll="sec-supersing-isog-graphs">Isogeny graphs: background and motivation (Maria Ines)</a></li>
+<li><a href="sec-supersing-isog-crypto.html" data-scroll="sec-supersing-isog-crypto">Supersingular isogeny graph cryptography (Asra)</a></li>
+<li><a href="sec-quaternion-algebras.html" data-scroll="sec-quaternion-algebras">Quaternion Algebras (Alex)</a></li>
+<li><a href="sec-deuring.html" data-scroll="sec-deuring">The Deuring Correspondence (Maria Ines)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-p-div.html" data-scroll="chapter-p-div"><span class="codenumber">4</span> <span class="title">\(p\)-divisible groups</span></a><ul><li><a href="sec-p-div-gps.html" data-scroll="sec-p-div-gps">\(p\)-divisible groups (Sachi)</a></li></ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-shimura.html" data-scroll="chapter-buntes-shimura"><span class="codenumber">5</span> <span class="title">Shimura varieties</span></a><ul>
+<li><a href="sec-buntes-modular-curves.html" data-scroll="sec-buntes-modular-curves">Modular curves (Aash)</a></li>
+<li><a href="sec-buntes-modular-forms.html" data-scroll="sec-buntes-modular-forms">Modular forms (Asra)</a></li>
+<li><a href="sec-buntes-av-jac.html" data-scroll="sec-buntes-av-jac">Abelian varieties and Jacobians (Angus)</a></li>
+<li><a href="sec-buntes-hs.html" data-scroll="sec-buntes-hs">Ricky Show</a></li>
+<li><a href="sec-buntes-vhs.html" data-scroll="sec-buntes-vhs">Variations of Hodge Structures (Sachi)</a></li>
+<li><a href="sec-buntes-ricky2.html" data-scroll="sec-buntes-ricky2">Moduli of linearized \(\CC\)-structures (RICKY)</a></li>
+<li><a href="sec-buntes-whats-a-shimura-var.html" data-scroll="sec-buntes-whats-a-shimura-var">What is ... a Shimura Variety? (Angus)</a></li>
+<li><a href="sec-buntes-canonical-models.html" data-scroll="sec-buntes-canonical-models">Canonical models (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-gz.html" data-scroll="chapter-buntes-gz"><span class="codenumber">6</span> <span class="title">Gross-Zagier</span></a><ul>
+<li><a href="sec-gz-overview.html" data-scroll="sec-gz-overview">An Overview of Gross-Zagier and Related Objects / Formulas of interest (Sachi)</a></li>
+<li><a href="sec-gz-mfs.html" data-scroll="sec-gz-mfs">Modular Curves Background I (John)</a></li>
+<li><a href="sec-gz-mf-heeg.html" data-scroll="sec-gz-mf-heeg">Modular Curves and Heegner Points (Ricky)</a></li>
+<li><a href="sec-gz-arch-I.html" data-scroll="sec-gz-arch-I">Archimedean Local Heights I (Aash)</a></li>
+<li><a href="sec-gz-arch-II.html" data-scroll="sec-gz-arch-II">Archimedean Local Heights II (Stevan)</a></li>
+<li><a href="sec-deuring-lift.html" data-scroll="sec-deuring-lift">Deuring's theory of lifts (Angus)</a></li>
+<li><a href="sec-gz-serre-tate.html" data-scroll="sec-gz-serre-tate">Serre-Tate theory (Alex)</a></li>
+<li><a href="sec-gz-oana.html" data-scroll="sec-gz-oana">Non-archimidean local heights and intersection theory (Oana)</a></li>
+<li><a href="sec-gz-sachi.html" data-scroll="sec-gz-sachi">Wrap Up of Non-Archimedean Local Heights (Sachi)</a></li>
+<li><a href="sec-gz-rankin-selberg.html" data-scroll="sec-gz-rankin-selberg">Rankin-Selberg (Aash)</a></li>
+<li><a href="sec-gz-applications-i.html" data-scroll="sec-gz-applications-i">A gallimaufry of applications (of Gross-Zagier) I (Alex)</a></li>
+<li><a href="sec-gz-applications-ii.html" data-scroll="sec-gz-applications-ii">A gallimaufry of applications (of Gross-Zagier) II (Alex)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-abyhankar.html" data-scroll="chapter-buntes-abyhankar"><span class="codenumber">7</span> <span class="title">Abhyankar's conjecture</span></a><ul>
+<li><a href="sec-abhyankar-what-is.html" data-scroll="sec-abhyankar-what-is">What is Abhyankar's conjecture? (Alex)</a></li>
+<li><a href="sec-abhyankar-ramification.html" data-scroll="sec-abhyankar-ramification">Ramification of curves (John)</a></li>
+<li><a href="sec-abhyankar-coho-interlude.html" data-scroll="sec-abhyankar-coho-interlude">A cohomological interlude (Ricky)</a></li>
+<li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
+<li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid">Rigid analytic spaces (Aash)</a></li>
+<li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga" class="active">Rigid GAGA (Aash)</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/buntes/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-abhyankar-rigid-gaga"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.6</span> <span class="title">Rigid GAGA (Aash)</span>
+</h2>
+<a href="sec-abhyankar-rigid-gaga.html" class="permalink">¶</a><article class="definition definition-like" id="definition-159"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.6.1</span><span class="period">.</span>
+</h6>
+<p id="p-1758">Let \((Z, \sheaf O_Z)\) be a \(k\)-scheme of locally finite type. A rigid analytification is a rigid space \((Z^{rig}, \sheaf O_{Z^{rig}})\) together with  a morphism of locally ringed \(G\)-spaces</p>
+<div class="displaymath">
+\begin{equation*}
+(i, i^*) \colon  (Z^{rig}, \sheaf O_{Z^{rig}}) \to (Z, \sheaf O_Z)
+\end{equation*}
+</div>
+<p data-braille="continuation">satisfying: Given \((Y, \sheaf O_Y)\) a rigid \(k\)-space and a morphism</p>
+<div class="displaymath">
+\begin{equation*}
+(Y, \sheaf O_Y) \to (Z, \sheaf O_Z)
+\end{equation*}
+</div>
+<p data-braille="continuation">this factors through \((i, i^*)\) via a unique morphism \((Y, \sheaf O_Y)\to(Z^{rig}, \sheaf O_{Z^{rig}})\text{.}\)</p></article><article class="example example-like" id="example-92"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Affine space.</span>
+</h6>
+<p id="p-1759">Recall we had maps</p>
+<div class="displaymath">
+\begin{equation*}
+\overbrace{k \langle \zeta _{1, j+1}, \ldots, \zeta _{n, j+1}\rangle}^{T_{n,j+1}} \to k \langle \zeta _{1, j}, \ldots, \zeta _{n, j}\rangle 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\zeta _{i, j+1} \mapsto c\zeta _{i,j}
+\end{equation*}
+</div>
+<p data-braille="continuation">for some \(|c| \lt  1\text{.}\) Glue along these maps</p>
+<div class="displaymath">
+\begin{equation*}
+B_j \subseteq B_{j+1}
+\end{equation*}
+</div>
+<p data-braille="continuation">as larger balls. This is an admissible covering so we have</p>
+<div class="displaymath">
+\begin{equation*}
+\aff^{k, rig} = \bigcup _{j=0}^\infty  B_j\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Consider \(k \lb \zeta _1, \ldots, \zeta _n\rb \) mapping to each of  \(T_{j}\) compatibly. This induces an inclusion of max specs</p>
+<div class="displaymath">
+\begin{equation*}
+\Sp(T_{n,0}) \subseteq \Sp(T_{n,1}) \subseteq \cdots \Max k\lb \zeta \rb 
+\end{equation*}
+</div>
+<p data-braille="continuation">claim that for</p>
+<div class="displaymath">
+\begin{equation*}
+\ideal m \subseteq k\lange \zeta \rangle
+\end{equation*}
+</div>
+<p data-braille="continuation">a maximal ideal, then</p>
+<div class="displaymath">
+\begin{equation*}
+\ideal m'  \ideal m \cap k\lb \zeta \rb 
+\end{equation*}
+</div>
+<p data-braille="continuation">s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\ideal m  =  \ideal m'k \langle \zeta  \rangle\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Additionally claim given \(\ideal m' \subset k \lb \zeta \rb \text{,}\) there exists \(i_0 \in \NN\) s.t. \(\forall i \ge i_0, \ideal m'k\langle x^i \zeta \rangle\) is maximal in \(k\langle c^i \zeta \rangle = T_{n,i}\text{.}\) So all \(T_{n,i} \xrightarrow\phi k \lb \zeta \rb /\ideal m'\) and the maximal spectra of \(k\lb \zeta \rb \) equals \(\bigcup B_i\text{.}\)</p></article><p id="p-1760">More generally given an affine scheme \(Z = \Spec k\lb \zeta \rb /a\) and glue</p>
+<div class="displaymath">
+\begin{equation*}
+T_{n,0}/(a) \leftarrow T_{n,1}/(a) \leftarrow \cdots
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(k\lb \zeta \rb / a\) maps to each. Giving \(\Spm (T_{n,0}/a) \hookrightarrow \Spm (T_{n,1}/a) \hookrightarrow \)</p>
+<div class="displaymath">
+\begin{equation*}
+\Spm(k\lb \zeta \rb/a) = \bigcup_{j=0}^\infty  \Spm(T_{n,j}/a)
+\end{equation*}
+</div>
+<p id="p-1761">In order to check the properties of this construction, we note that</p>
+<div class="displaymath">
+\begin{equation*}
+Z^{rig} \to Z
+\end{equation*}
+</div>
+<p data-braille="continuation">via</p>
+<div class="displaymath">
+\begin{equation*}
+k\lb \zeta \rb /a \to T_{n,i}/a
+\end{equation*}
+</div>
+<p data-braille="continuation">locally, giving</p>
+<div class="displaymath">
+\begin{equation*}
+\sheaf O_Z(Z) \to \sheaf O_{Z^{rig}}(Z^{rig})\text{.}
+\end{equation*}
+</div>
+<article class="fact theorem-like" id="fact-17"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">7.6.3</span><span class="period">.</span>
+</h6>
+<p id="p-1762">\(Z\) affine \(k\)-scheme of finite type, \(Y\) a rigid \(k\)-space.</p>
+<div class="displaymath">
+\begin{equation*}
+(Y, \sheaf O_Y) \to (Z, \sheaf O_Z)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\updownarrow
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+k\text{-alg. homs. } \sheaf O_Z(Z) \to \sheaf O_Y(Y)\text{.}
+\end{equation*}
+</div></article><p id="p-1763">So we have</p>
+<div class="displaymath">
+\begin{equation*}
+(i, i^*) \colon  (Z^{rig}, \sheaf O_{Z^{rig}}) \to (Z, \sheaf O_Z)
+\end{equation*}
+</div>
+<p data-braille="continuation">need to check universal property: WLOG let \((Y, \sheaf O_Y)\) be an affinoid space</p>
+<div class="displaymath">
+\begin{equation*}
+(Y, \sheaf O_Y) \to (Z, \sheaf O_Z)
+\end{equation*}
+</div>
+<p data-braille="continuation">gives</p>
+<div class="displaymath">
+\begin{equation*}
+k\lb \zeta \rb /a \xrightarrow \sigma  B
+\end{equation*}
+</div>
+<p data-braille="continuation">wts</p>
+<div class="displaymath">
+\begin{equation*}
+k\lb \zeta \rb /a \to T_{n,i}/a \to B
+\end{equation*}
+</div>
+<p data-braille="continuation">choose \(i\) big enough s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+| \sigma (\bar \zeta _j)| \le \frac{1}{|c|^i}
+\end{equation*}
+</div>
+<p data-braille="continuation">\(\sigma \) will extend uniquely though</p>
+<div class="displaymath">
+\begin{equation*}
+T_{n,i}/a\text{.}
+\end{equation*}
+</div>
+<p id="p-1764">We get morphisms and hence a functor for rigidification by universality. Call this the GAGA functor.</p>
+<p id="p-1765">It respects fibre products.</p>
+<p id="p-1766">\(\sheaf O_{Z^{rig},z}\) is the completion at \(z\in Z^{rig}\) is the same as the completion of \(\sheaf O_{Z,z}\) at \(z\text{.}\)</p>
+<p id="p-1767">GAGA is faithful but not full.</p>
+<article class="definition definition-like" id="definition-160"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.6.4</span><span class="period">.</span>
+</h6>
+<p id="p-1768">We have a sheaf \(\sheaf F\) associated to \(A\) modules \(M\)</p>
+<div class="displaymath">
+\begin{equation*}
+\sheaf F =  M\otimes _A \sheaf O_X
+\end{equation*}
+</div>
+<p data-braille="continuation">this functor is fully faithful commutes with kernels, cokernels, images and tensor products.</p></article><article class="theorem theorem-like" id="theorem-113"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.6.5</span><span class="period">.</span>
+</h6>
+<p id="p-1769">Coherent modules are the images of this functor for f.g. \(M\text{.}\)</p></article><p id="p-1770">A coherent module has finite type, in that there exists a covering with</p>
+<div class="displaymath">
+\begin{equation*}
+\sheaf O_X^{s_i}|_{X_i} \to \sheaf F|_{X_i} \to 0
+\end{equation*}
+</div>
+<p data-braille="continuation">and also the kernel here is finite type.</p>
+<p id="p-1771">Cohomology, we have a section functor</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma (X, -) \colon  \sheaf F \to \sheaf F(X)
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\phi \colon X\to Y
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi _*\colon \sheaf F \to \phi _*\sheaf F
+\end{equation*}
+</div>
+<p data-braille="continuation">is left exact, need an injective resolution.</p>
+<p id="p-1772">An object \(\sheaf F\) is injective if given</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \sheaf E ' \to \sheaf E \to \sheaf E'' \to 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0 \to \Hom(\sheaf E ', \sheaf F) \to \Hom(\sheaf E, \sheaf F) \to \Hom(\sheaf E'', \sheaf F) \to 0
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="theorem-114"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Grothendieck.</span>
+</h6>
+<p id="p-1773">The category of \(\sheaf O_X\)-modules has enough injectives, consider injective resolution for \(\sheaf O_X\)-module \(\sheaf F\)</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to I^0 \xrightarrow{ \alpha _0} I^1 \xrightarrow{\alpha _1} \cdots
+\end{equation*}
+</div>
+<p data-braille="continuation">and consider</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \Gamma (X, I^0) \xrightarrow{\Gamma (\alpha _0)} \Gamma (X, I^1) \to \cdots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+H^q(X, \sheaf F) = \ker \Gamma (\alpha ^q)/ \im \Gamma (\alpha ^{q-1}) = R^q \Gamma (X, \sheaf F)
+\end{equation*}
+</div>
+<p data-braille="continuation">the \(q\)th cohomology group of \(X\) with values in \(\sheaf F\text{.}\)</p></article><p id="p-1774">Cech cohomology \(\varinjlim_U H(U, \sheaf F)\) the limit over admissible coverings, ordered by refinement.</p>
+<div class="displaymath">
+\begin{equation*}
+C^q(U, \sheaf F) = \prod_{i_0, \ldots, i_q \in I} \sheaf F(\bigcap _k U_{i_k})
+\end{equation*}
+</div>
+<p data-braille="continuation">have a coboundary map which makes this a complex.</p>
+<article class="theorem theorem-like" id="theorem-115"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Tate's acyclicity theorem.</span>
+</h6>
+<p id="p-1775">If \(U\) is a finite covering of \(X\) by affinoids then \(U\) is acyclic w.r.t. presheaf \(\sheaf O_X\) (or any coherent module).</p></article><article class="definition definition-like" id="definition-161"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.6.8</span><span class="period">.</span>
+</h6>
+<p id="p-1776">\(\phi \colon X\to Y\) is called a closed immersion if there exists an admissible affinoid covering \((V_j)_j\) s.t. for all \(j \in J\)</p>
+<div class="displaymath">
+\begin{equation*}
+\phi _j \colon  \phi \inv (V_j) \to V_j
+\end{equation*}
+</div>
+<p data-braille="continuation">is a morphism of affinoid spaces with corresponding algebra map</p>
+<div class="displaymath">
+\begin{equation*}
+B_j \twoheadrightarrow A_j\text{.}
+\end{equation*}
+</div></article><article class="definition definition-like" id="definition-162"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.6.9</span><span class="period">.</span>
+</h6>
+<p id="p-1777">\(\phi \colon X\to Y\) is called a separated if</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta \colon X \to X\times_X X
+\end{equation*}
+</div>
+<p data-braille="continuation">is a closed immersion.</p></article><article class="fact theorem-like" id="fact-18"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">7.6.10</span><span class="period">.</span>
+</h6>
+<p id="p-1778">\(\phi  \colon  \Spm(A) \to \Spm(B)\) is always separated.</p></article><p id="p-1779">In rigid geometry we do not have that for \(\phi  \colon X \to Y\) with \(\Delta \colon  X\to X\times_Y X\) locally closed then sep iff closed immer.</p>
+<article class="definition definition-like" id="definition-163"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.6.11</span><span class="period">.</span><span class="space"> </span><span class="title">Properness.</span>
+</h6>
+<p id="p-1780">A map \(f: X \rightarrow Y\) of rigid spaces is proper if it is separated and quasi-compact and there exists an admissible affinoid open covering \(\left\{U_{i}\right\}\) of \(Y\) and a pair of finite (necessarily admissible) affinoid open coverings \(\left\{V_{i j}\right\}_{j \in J_{i}}\) and \(\left\{V_{i j}^{\prime}\right\}_{j \in J_{i}}\) (same index set \(J_{i}\) of \(j^{\prime}\) s! of \(f^{-1}\left(U_{i}\right)\) such that two conditions hold: \(V_{i j} \subseteq V_{i j}^{\prime}\) for all \(j,\) and for all \(j \in J_{i}\) there is an \(n \geq 1\) and a closed immersion \(V_{i j}^{\prime} \hookrightarrow U_{i} \times \mathbf{B}^{n}\) over \(U_{i}\) such that \(V_{i j} \subseteq U_{i} \times\left\{\left|t_{1}\right|, \ldots,\left|t_{n_{i}}\right| \leq r\right\}\) for some \(0\lt r\lt 1\) with \(r \in \sqrt{| k}^{\times} | .\) (Equivalently, by the Maximum Modulus Principle, we can replace \(* \leq r "\) with \({*}\lt 1\) ".)</p></article><article class="theorem theorem-like" id="theorem-116"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.6.12</span><span class="period">.</span>
+</h6>
+<p id="p-1781">If \(f: X \rightarrow Y\) is a proper map of rigid spaces and \(\mathscr{F}\) is a coherent sheaf on \(X\) then the higher direct image sheaves \(\mathrm{R}^{i}\left(f_{*}\right)(\mathscr{F})\) on \(Y\) are coherent. In particular, if \(X\) is proper over \(\operatorname{Sp}(k)\) then \(\mathrm{H}^{i}(X, \mathscr{F})\) is finite-dimensional over \(k\) for all coherent sheaves \(\mathscr{F}\) on \(X\) and all \(i\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-117"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.6.13</span><span class="period">.</span><span class="space"> </span><span class="title">GAGA applications.</span>
+</h6>
+<div class="displaymath" id="p-1782">
+\begin{equation*}
+H^q(X, \sheaf F) \to H^q(X^{rig}, \sheaf F^{rig})
+\end{equation*}
+</div>
+<p data-braille="continuation">are isoms for \(X\) proper, \(\sheaf F\) coherent \(\sheaf O_X\)-module. Also for, the \(rig\) functor on sheaves is fully faithful. Also gives essential surj of \(rig\) on coherent rigid sheaves.</p></article></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
+</body>
+</html>
