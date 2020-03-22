@@ -391,12 +391,12 @@ var js_version = 0.13;
 <span class="type">Subsection</span> <span class="codenumber">6.11.1</span> <span class="title">Heegner points on rank 1 curves</span>
 </h3>
 <blockquote class="blockquote" id="blockquote-2">
-<p id="p-1506">The fun of the subject seems to me to be in the examples.</p>
+<p id="p-1507">The fun of the subject seems to me to be in the examples.</p>
 <cite class="attribution">―Gross - Letter to Birch 1982</cite>
 </blockquote>
-<p id="p-1507">So let's do some examples of Heegner point computations, and see how Gross-Zagier gives us important information in a few ways.</p>
-<p id="p-1508">Following the algorithm in Cohen, Number theory part I.</p>
-<p id="p-1509">Fix an elliptic curve \(E(\QQ)\) of conductor \(N\text{,}\) we are interested in finding \(E(\QQ)\text{.}\) All elliptic curves over \(\QQ\) are now known to be modular and hence we may make use of the parameterisation</p>
+<p id="p-1508">So let's do some examples of Heegner point computations, and see how Gross-Zagier gives us important information in a few ways.</p>
+<p id="p-1509">Following the algorithm in Cohen, Number theory part I.</p>
+<p id="p-1510">Fix an elliptic curve \(E(\QQ)\) of conductor \(N\text{,}\) we are interested in finding \(E(\QQ)\text{.}\) All elliptic curves over \(\QQ\) are now known to be modular and hence we may make use of the parameterisation</p>
 <div class="displaymath">
 \begin{equation*}
 \phi_N \colon X_0(N) \hookrightarrow J_0(N) \twoheadrightarrow E\text{.}
@@ -419,11 +419,11 @@ var js_version = 0.13;
 \phi \colon X_0(N) \to \CC/\Lambda \text{.}
 \end{equation*}
 </div>
-<p id="p-1510">So integrating the \(q\)-expansion of a modular form and plugging in \(\tau\) gives us the corresponding point in the complex uniformization of the curve because the Abel-Jacobi map is defined by integration.</p>
+<p id="p-1511">So integrating the \(q\)-expansion of a modular form and plugging in \(\tau\) gives us the corresponding point in the complex uniformization of the curve because the Abel-Jacobi map is defined by integration.</p>
 <article class="definition definition-like" id="definition-139"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.11.1</span><span class="period">.</span>
 </h6>
-<p id="p-1511">We have \(\tau \in \HH\) <dfn class="terminology">CM points</dfn> if they satisfy an equation</p>
+<p id="p-1512">We have \(\tau \in \HH\) <dfn class="terminology">CM points</dfn> if they satisfy an equation</p>
 <div class="displaymath">
 \begin{equation*}
 A \tau ^2 + B'\tau  + C  = 0
@@ -461,7 +461,7 @@ Ax^2 + Bxy + Cy^2
 \begin{equation*}
 \Delta (N\tau ) = \Delta (\tau )\text{.}
 \end{equation*}
-</div></article><p id="p-1512">Proposition \(8.6 .3 .\) Let \(\tau \in \mathcal{H}\) be a quadratic irrationality and let \((A, B, C)\) be the quadratic form with discriminant \(D\) associated with \(\tau\text{.}\) Then \(\tau\) is a Heegner point of level \(N\) if and only if \(N | A\) and one of the following equivalent conditions is satisfied:</p>
+</div></article><p id="p-1513">Proposition \(8.6 .3 .\) Let \(\tau \in \mathcal{H}\) be a quadratic irrationality and let \((A, B, C)\) be the quadratic form with discriminant \(D\) associated with \(\tau\text{.}\) Then \(\tau\) is a Heegner point of level \(N\) if and only if \(N | A\) and one of the following equivalent conditions is satisfied:</p>
 <ol class="decimal">
 <li id="li-352"><div class="displaymath">
 \begin{equation*}
@@ -478,49 +478,55 @@ Ax^2 + Bxy + Cy^2
 <article class="corollary theorem-like" id="corollary-40"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.11.2</span><span class="period">.</span>
 </h6>
-<p id="p-1513">If \(\tau \) is heegner level \(N\) disc \(D\) so is</p>
+<p id="p-1514">If \(\tau \) is heegner level \(N\) disc \(D\) so is</p>
 <div class="displaymath">
 \begin{equation*}
 W(\tau ) = -1/(N\tau )\text{.}
 \end{equation*}
-</div></article><p id="p-1514">Proposition 8.6.6. There is a one-to-one correspondence between on the one hand classes modulo \(\Gamma_{0}(N)\) of Heegner points of discriminant \(D\) and level \(N,\) and on the other hand, pairs \((\beta,[\mathfrak{a}\))] where \(\beta \in \mathbb{Z} / 2 N \mathbb{Z}\) is such that \(b^{2} \equiv D(\bmod 4 N)\) for any lift \(b\) of \(\beta\) to \(\mathbb{Z}\text{,}\) and \([\mathfrak{a}\) \in \Cl(K)] is an ideal class. The correspondence is as follows: if \((\beta,[\mathfrak{a}\))] is as above, there exists a primitive quadratic form \((A, B, C)\) whose class is equal to [a] and such that \(N | A\) and \(B \equiv \beta(\bmod 2 N),\) and the corresponding Heegner point is \(\tau=(-B+\sqrt{D}) /(2 A) .\) Conversely, if \((A, B, C)\) is the quadratic form associated with a Heegner point \(\tau\) we take \(\beta=B\) mod \(2 N\) and \(\mathfrak{a}=\mathbb{Z}+\tau \mathbb{Z}\text{.}\)</p>
-<p id="p-1515">The action of Galois (via the main theorem of CM) shows that the image \(\phi (\tau )\) is defined over \(H\) the hilbert class field of \(K\text{.}\) To get back down to \(K\) we take traces</p>
+</div></article><p id="p-1515">Proposition 8.6.6. There is a one-to-one correspondence between on the one hand classes modulo \(\Gamma_{0}(N)\) of Heegner points of discriminant \(D\) and level \(N,\) and on the other hand, pairs \((\beta,[\mathfrak{a}\))] where \(\beta \in \mathbb{Z} / 2 N \mathbb{Z}\) is such that \(b^{2} \equiv D(\bmod 4 N)\) for any lift \(b\) of \(\beta\) to \(\mathbb{Z}\text{,}\) and \([\mathfrak{a}\) \in \Cl(K)] is an ideal class. The correspondence is as follows: if \((\beta,[\mathfrak{a}\))] is as above, there exists a primitive quadratic form \((A, B, C)\) whose class is equal to [a] and such that \(N | A\) and \(B \equiv \beta(\bmod 2 N),\) and the corresponding Heegner point is \(\tau=(-B+\sqrt{D}) /(2 A) .\) Conversely, if \((A, B, C)\) is the quadratic form associated with a Heegner point \(\tau\) we take \(\beta=B\) mod \(2 N\) and \(\mathfrak{a}=\mathbb{Z}+\tau \mathbb{Z}\text{.}\)</p>
+<p id="p-1516">The action of Galois (via the main theorem of CM) shows that the image \(\phi (\tau )\) is defined over \(H\) the hilbert class field of \(K\text{.}\) To get back down to \(K\) we take traces</p>
 <div class="displaymath">
 \begin{equation*}
 P=\sum_{\sigma \in \operatorname{Gal}(H / K)} \varphi((\beta,[\mathfrak{a}]))^{\sigma}=\sum_{[\mathfrak{b}] \in \Cl(K)} \varphi\left(\left(\beta,\left[\mathfrak{a} \mathfrak{b}^{-1}\right]\right)\right)=\sum_{[\mathfrak{b}] \in \Cl(K)} \varphi((\beta,[\mathfrak{b}]))
 \end{equation*}
 </div>
-<p id="p-1516">Lemma 8.6.8. If \(\varepsilon=-1\text{,}\) then in fact \(P \in E(\mathbb{Q})\) Proof. Indeed, it is easy to see that \(\varepsilon=-1\) is equivalent to saying that \(\varphi \circ W=\varphi,\) so that</p>
+<p id="p-1517">Lemma 8.6.8. If \(\varepsilon=-1\text{,}\) then in fact \(P \in E(\mathbb{Q})\) Proof. Indeed, it is easy to see that \(\varepsilon=-1\) is equivalent to saying that \(\varphi \circ W=\varphi,\) so that</p>
 <div class="displaymath">
 \begin{equation*}
-\varphi((\beta,[\mathfrak{b}]))=\overline{\varphi(W(\beta,[\mathfrak{b}]))}=\overline{\varphi\left(\left(-\beta,\left[\ideal b \mathfrak{n}^{-1}\right]\right)\right)}=\varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right) \] hence \[ \begin{aligned} \bar{P}=\amp \sum_{[\mathfrak{b}] \in \Cl(K)} \varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right)=\sum_{[\mathfrak{b}] \in Cl(K)} \varphi((\beta,[\mathfrak{b}]))=P \end{aligned} 
+\varphi((\beta,[\mathfrak{b}]))=\overline{\varphi(W(\beta,[\mathfrak{b}]))}=\overline{\varphi\left(\left(-\beta,\left[\ideal b \mathfrak{n}^{-1}\right]\right)\right)}=\varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">hence</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \bar{P}=\amp \sum_{[\mathfrak{b}] \in \Cl(K)} \varphi\left(\left(\beta,\left[\mathfrak{b}^{-1} \mathfrak{n}\right]\right)\right)=\sum_{[\mathfrak{b}] \in Cl(K)} \varphi((\beta,[\mathfrak{b}]))=P \end{aligned} 
 \end{equation*}
 </div>
 <p data-braille="continuation">so by Galois theory once again we deduce that \(P \in E(\mathbb{Q})\)</p>
-<p id="p-1517">Similarly if \(\epsilon  =1\) then \(P+ \overline P\) is torsion.</p>
-<p id="p-1518">We have the Gross-Zagier formula</p>
+<p id="p-1518">Similarly if \(\epsilon  =1\) then \(P+ \overline P\) is torsion.</p>
+<p id="p-1519">We have the Gross-Zagier formula</p>
 <div class="displaymath">
 \begin{equation*}
 \widehat{h}(P)=\frac{\sqrt{|D|}}{4 \operatorname{Vol}(E)} L^{\prime}(E, 1) L\left(E_{D}, 1\right)
 \end{equation*}
 </div>
 <p data-braille="continuation">which tells us the height of Heegner</p>
-<p id="p-1519">In rank 1 \(P = \ell G\) for some generator \(G\) of mordell-weil then GZ + BSD</p>
+<p id="p-1520">In rank 1 \(P = \ell G\) for some generator \(G\) of mordell-weil then GZ + BSD</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{\ell^{2}}{|\operatorname{III}(E)|}=\omega_{1}(E) \frac{c(E) \sqrt{|D|}}{4 \operatorname{Vol}(E)\left|E_{t}(\mathbb{Q})\right|^{2}} L\left(E_{D}, 1\right)
 \end{equation*}
 </div>
-<p id="p-1520">To compute we evaluations of \(\phi ((-B+ D)/(2A))\) for the \(|Cl(K)|\) classes of quadratic forms \((A, B, C)\text{.}\)</p>
-<p id="p-1521">the convergence of the series for \(\phi(\tau)\) is essentially that of a geometric series with ratio \(\exp (-2 \pi \Im(\tau))=\exp (-2 \pi \sqrt{|D|} /(2 A))\)</p>
-<p id="p-1522">We can use</p>
+<p id="p-1521">To compute we evaluations of \(\phi ((-B+ D)/(2A))\) for the \(|Cl(K)|\) classes of quadratic forms \((A, B, C)\text{.}\)</p>
+<p id="p-1522">the convergence of the series for \(\phi(\tau)\) is essentially that of a geometric series with ratio \(\exp (-2 \pi \Im(\tau))=\exp (-2 \pi \sqrt{|D|} /(2 A))\)</p>
+<p id="p-1523">We can use</p>
 <div class="displaymath">
 \begin{equation*}
 \overline{\varphi((\beta,[\mathfrak{a}]))}=\varphi\left(\left(\beta,\left[\mathfrak{a}^{-1} \mathfrak{n}\right]\right)\right)
 \end{equation*}
 </div>
 <p data-braille="continuation">to halve the work we do.</p>
-<p id="p-1523">So the heegner point method is</p>
+<p id="p-1524">So the heegner point method is</p>
 <ol class="decimal">
 <li id="li-355">via BSD find<div class="displaymath">
 \begin{equation*}
@@ -563,8 +569,8 @@ z=\sum_{(A, B, C) \in \mathcal{L}} \phi\left(\frac{-B+\sqrt{D}}{2 A}\right) \in 
 </div>taking a few more than \(A d /(\pi \sqrt{|D|})\) terms for \(\phi \text{.}\)</li>
 <li id="li-361">Find Rational Point Let \(e\) be the exponent of the group \(E_{t}(\mathbb{Q}),\) let \(\ell=\) \(\operatorname{gcd}\left(e, m^{\infty}\right)=\operatorname{gcd}\left(e, m^{3}\right),\) and \(m^{\prime}=m \ell .\) For each pair \((u, v) \in\left[0, m^{\prime}-\right.\) \(1\)^{2},] set \(z_{u, v}=\left(\ell z+u \omega_{1}(E)+v \omega_{2}(E)\right) / m^{\prime}\text{.}\) Compute \(x=\wp\left(z_{u, v}\right),\) where \(\left(\wp, \wp^{\prime}\right)\) is the isomorphism from \(\mathbb{C} / \Lambda\) to \(E(\mathbb{C})\text{.}\) For each \((u, v)\) such that the corresponding point \((x, y) \in E(\mathbb{C})\) has real coordinates.</li>
 </ol>
-<p id="p-1524">Algorithm choice of D</p>
-<p id="p-1525">Recall a congruent number is a number which appears as the area of a right triangle with rational side lengths. this reduces to finding non-torsion points on the congruent number curves</p>
+<p id="p-1525">Algorithm choice of D</p>
+<p id="p-1526">Recall a congruent number is a number which appears as the area of a right triangle with rational side lengths. this reduces to finding non-torsion points on the congruent number curves</p>
 <div class="displaymath">
 \begin{equation*}
 E_n \colon  y^2 = x^3 - n^2 x\text{.}
@@ -587,15 +593,15 @@ d \approx 130.4
 \end{equation*}
 </div>
 <p data-braille="continuation">need 67 decimal digits.</p>
-<p id="p-1526">Up to \(D = -40\) we have \(D =-31,-39\) are squares modulo \(4N\text{.}\)</p>
-<p id="p-1527">For both of these  \(D \) we try to compute \(m^2(D)\text{.}\) When we take \(-31\) we get a number close to 0. For \(-39\) we get \(\approx 16\) so fix \(D = -39\) and \(m=4\text{.}\)</p>
-<p id="p-1528">A square root \(b\) of \(D\) mod \(4N\) is</p>
+<p id="p-1527">Up to \(D = -40\) we have \(D =-31,-39\) are squares modulo \(4N\text{.}\)</p>
+<p id="p-1528">For both of these  \(D \) we try to compute \(m^2(D)\text{.}\) When we take \(-31\) we get a number close to 0. For \(-39\) we get \(\approx 16\) so fix \(D = -39\) and \(m=4\text{.}\)</p>
+<p id="p-1529">A square root \(b\) of \(D\) mod \(4N\) is</p>
 <div class="displaymath">
 \begin{equation*}
 b = 1275547\text{.}
 \end{equation*}
 </div>
-<p id="p-1529">The class group of</p>
+<p id="p-1530">The class group of</p>
 <div class="displaymath">
 \begin{equation*}
 \QQ(\sqrt{-39})
@@ -670,7 +676,7 @@ z' = z + 27 \omega  \approx 0.0111003098794358
 <article class="remark remark-like" id="remark-45"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.11.3</span><span class="period">.</span>
 </h6>
-<p id="p-1530">Calling the sage function <code class="code-inline tex2jax_ignore">gens()</code> fails on this example!</p></article></section></section></div></main>
+<p id="p-1531">Calling the sage function <code class="code-inline tex2jax_ignore">gens()</code> fails on this example!</p></article></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>

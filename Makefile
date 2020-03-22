@@ -10,6 +10,7 @@ docs/:	docs/buntes.pdf buntes-pretty.xml buntes.xsl filter.xsl index.html buntes
 	$(XSLTPROC) ../buntes.xsl ../buntes-pretty.xml
 	cp courbes-semi-stables.pdf docs/
 	cp index.html docs/
+	cp notes docs/
 	cp buntes.css docs/
 
 buntes.tex:	buntes-pretty.xml buntes-latex.xsl filter.xsl

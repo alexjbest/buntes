@@ -12,13 +12,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>There is also work by Mestre and Buhler-Gross-Zagier on</p>
+<p>Have euler products</p>
 <div class="displaymath">
 \begin{equation*}
-y^{2}+y=x^{3}-7 x+6
+\begin{array}{c}{L_{E}(s)=\prod_{p}\left(1-\frac{\alpha_{p}}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p}}{p^{s}}\right)^{-1}} \\ {L_{E}\left(s, \chi_{D}\right)=\prod_{p}\left(1-\frac{\alpha_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}}\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">the smallest conductor rank 3 curve 5077, where they verify BSD explicitly, giving one the first example in rank 3. (To this day, it is not possible, even in principle, to establish BSD for any curve of rank 4 or greater since there is no known method for rigorously establishing the value of the analytic rank when it is greater than 3.) Once again Gross-Zagier is used, if \(L'_E(1)\) is calculated to be small but possibly non-zero it must be a multiple of the height of a small point, but we can look and find no small points, hence we obtain vanishing of the derivative at \(s=1\text{.}\) This implies, for parity reasons that \(L_E(s)\) has analytic rank 3 or more. The third derivative can then be calculated and seen to be non-zero.</p>
+<p data-braille="continuation">and once again many small primes splitting means that \(L_E(s)L_E(s,\chi _D)\) is analytically like</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(s):=\prod_{p}\left(1-\frac{\alpha_{p}^{2}}{p^{2 s}}\right)^{-1}\left(1-\frac{\beta_{p}^{2}}{p^{2 s}}\right)^{-1}
+\end{equation*}
+</div>
+<p data-braille="continuation">Goldfeld then uses</p>
+<div class="displaymath">
+\begin{equation*}
+I_{D}^{*}=\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty}\left(\frac{37 \cdot 139^{2}|D|}{4 \pi^{2}}\right)^{1+s} \Gamma(1+s)^{2} \phi(1+s) \frac{d s}{s^{3}}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+0=I_{D}=I_{D}^{*}+\text { Error }
+\end{equation*}
+</div>
+<p data-braille="continuation">to get the final contradiction.</p>
 <span class="incontext"><a href="sec-gz-applications-ii.html#p-1559">in-context</a></span>
 </body>
 </html>

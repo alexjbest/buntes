@@ -12,36 +12,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>A more advanced trick: We have the standard Heegner point outlined above, there are several speedups possible:</p>
-<ol class="decimal">
-<li>Use Atkin-Lehner involutions to reduce the size of \(A\) in \((A,B,C)\text{.}\)</li>
-<li>Use faster algorithms for point counting, e.g. on CM curves we have a simpler expression for \(a_p\)'s which can be computed with Cornichias algorithm.</li>
-<li>Cremona-Silverman: Want to reduce the precision needed, how? What information do we know after running the method, an approximation of \(Q\approx P \in E(\RR)\text{.}\) We also know by Gross-Zagier<div class="displaymath">
-\begin{equation*}
-\hat h(P)\text{.}
-\end{equation*}
-</div>If<div class="displaymath">
-\begin{equation*}
-x(P) = \frac{n}{d^2}
-\end{equation*}
-</div>then<div class="displaymath">
-\begin{equation*}
-2 \log (d)=\widehat{h}(P)-\widehat{h}_{\infty}(P)-\sum_{p | N \atop {p \nmid d \atop p^{2} | \operatorname{disc}(E)}} \widehat{h}_{p}(P)\text{.}
-\end{equation*}
-</div>Using \(Q\) we can compute<div class="displaymath">
-\begin{equation*}
-\hat h_\infty (P)\text{.}
-\end{equation*}
-</div>For each \(\hat h_p\) there are only finitely many possibilities, and so in total we have finitely many possible values of<div class="displaymath">
-\begin{equation*}
-\widehat{h}(P)-\widehat{h}_{\infty}(P)-\sum_{p | N \atop {p \nmid d \atop p^{2} | \operatorname{disc}(E)}} \widehat{h}_{p}(P)
-\end{equation*}
-</div>giving finitely many possible \(d\) values, from which<div class="displaymath">
-\begin{equation*}
-numerator (x(P)) = round(x(P) d^2)
-\end{equation*}
-</div>can be found. In all this allows us to work as we wanted, with an accuracy slightly more than half.</li>
-</ol>
-<span class="incontext"><a href="sec-gz-applications-ii.html#p-1531">in-context</a></span>
+<p>Calling the sage function <code class="code-inline tex2jax_ignore">gens()</code> fails on this example!</p>
+<span class="incontext"><a href="sec-gz-applications-i.html#p-1531">in-context</a></span>
 </body>
 </html>

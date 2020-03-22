@@ -390,7 +390,7 @@ var js_version = 0.13;
 <a href="sec-gz-applications-ii.html" class="permalink">¶</a><section class="subsection" id="subsection-108"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.12.1</span> <span class="title">More on computation</span>
 </h3>
-<p id="p-1531">A more advanced trick: We have the standard Heegner point outlined above, there are several speedups possible:</p>
+<p id="p-1532">A more advanced trick: We have the standard Heegner point outlined above, there are several speedups possible:</p>
 <ol class="decimal">
 <li id="li-362">Use Atkin-Lehner involutions to reduce the size of \(A\) in \((A,B,C)\text{.}\)</li>
 <li id="li-363">Use faster algorithms for point counting, e.g. on CM curves we have a simpler expression for \(a_p\)'s which can be computed with Cornichias algorithm.</li>
@@ -420,12 +420,12 @@ numerator (x(P)) = round(x(P) d^2)
 \end{equation*}
 </div>can be found. In all this allows us to work as we wanted, with an accuracy slightly more than half.</li>
 </ol>
-<p id="p-1532">These speed ups are in PARI/GP and Remarks. as \(E\) in last times example is a CM curve, the computation time of the above example can be reduced from a couple of minutes to 7 seconds (factor of 20).</p>
-<p id="p-1533">Gotta get height:</p>
+<p id="p-1533">These speed ups are in PARI/GP and Remarks. as \(E\) in last times example is a CM curve, the computation time of the above example can be reduced from a couple of minutes to 7 seconds (factor of 20).</p>
+<p id="p-1534">Gotta get height:</p>
 <article class="example example-like" id="example-83"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.12.1</span><span class="period">.</span><span class="space"> </span><span class="title">A big example.</span>
 </h6>
-<p id="p-1534">Let</p>
+<p id="p-1535">Let</p>
 <div class="displaymath">
 \begin{equation*}
 E\colon y^2 = x^3 + \underbrace{2^{5} \cdot 3^{3} \cdot 5^{5} \cdot 7^{3} \cdot 11^{5} \cdot 13^{4}}_{=4259854045547100000}
@@ -456,7 +456,7 @@ P=  (267376836631430146322580413216778645874321129616166592871408944303491578062
 \end{equation*}
 </div>
 <p data-braille="continuation">this has naïve height \(2.67 \times 10^{417}\) (numerator of the \(x\)-coord) and (logarithmic) canonical height \(\approx 956.282209515622\text{.}\)</p>
-<p id="p-1535">By saturating we find that in fact \(P  = 2\cdot Q\) where \(Q\) has canonical height</p>
+<p id="p-1536">By saturating we find that in fact \(P  = 2\cdot Q\) where \(Q\) has canonical height</p>
 <div class="displaymath">
 \begin{equation*}
 956.282209515622/4 \approx 239.070552378906\text{.}
@@ -470,17 +470,17 @@ Q =(8868405892624209482831543296890050376591681305386772268723757017948071928478
 </div></article></section><section class="subsection" id="subsection-109"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.12.2</span> <span class="title">Gauss's class number problem</span>
 </h3>
-<p id="p-1536">Gauss was interested in binary quadratic forms and did a lot of computations with them. He in particular conjectured that</p>
+<p id="p-1537">Gauss was interested in binary quadratic forms and did a lot of computations with them. He in particular conjectured that</p>
 <article class="conjecture theorem-like" id="conjecture-5"><h6 class="heading">
 <span class="type">Conjecture</span><span class="space"> </span><span class="codenumber">6.12.2</span><span class="period">.</span><span class="space"> </span><span class="title">Gauss.</span>
 </h6>
-<p id="p-1537">As \(D \to- \infty \) runs through fundamental discriminants the class numbers of imaginary quadratic fields</p>
+<p id="p-1538">As \(D \to- \infty \) runs through fundamental discriminants the class numbers of imaginary quadratic fields</p>
 <div class="displaymath">
 \begin{equation*}
 h(D ) = h(\QQ(\sqrt{D})) \to \infty 
 \end{equation*}
 </div>
-<p data-braille="continuation">also. (i.e. there are only finitely many imaginary quadratic fields of any given class number).</p></article><div class="displaymath" id="p-1538">
+<p data-braille="continuation">also. (i.e. there are only finitely many imaginary quadratic fields of any given class number).</p></article><div class="displaymath" id="p-1539">
 \begin{equation*}
 \begin{array}{|c|c|c|c|c|c|}
 \hline
@@ -493,28 +493,28 @@ h(D)                   \amp {1} \amp {2} \amp {3} \amp {4} \amp {5} \\
 \end{array}
 \end{equation*}
 </div>
-<p id="p-1539">The most famous instance of this being the first column. The Gauss class number 1 problem (Section 303 of his Disquisitiones Arithmeticae (1798)) there are only 9 imaginary quadratic fields of class number 1. This was first proved by Heegner, where he introduced analytic techniques into the field of elliptic curves, hence the name  Heegner points. Warning: this is somewhat distinct and not exactly what we will mention now</p>
-<p id="p-1540">The first instances of the small class number phenomenon go back to Euler who noted that</p>
+<p id="p-1540">The most famous instance of this being the first column. The Gauss class number 1 problem (Section 303 of his Disquisitiones Arithmeticae (1798)) there are only 9 imaginary quadratic fields of class number 1. This was first proved by Heegner, where he introduced analytic techniques into the field of elliptic curves, hence the name  Heegner points. Warning: this is somewhat distinct and not exactly what we will mention now</p>
+<p id="p-1541">The first instances of the small class number phenomenon go back to Euler who noted that</p>
 <div class="displaymath">
 \begin{equation*}
 x^2 - x + 41
 \end{equation*}
 </div>
 <p data-braille="continuation">was prime for \(0 \le x \le 40\) (the maximum possible), Euler called such numbers lucky and could not find more.</p>
-<p id="p-1541">We now know that this is due to \(\QQ(\sqrt{-163})\) having class number one, hence all small primes remaining inert. If a small prime split we would have an element of small prime norm, but the norm form shows this is not possible. Explicitly all primes less than</p>
+<p id="p-1542">We now know that this is due to \(\QQ(\sqrt{-163})\) having class number one, hence all small primes remaining inert. If a small prime split we would have an element of small prime norm, but the norm form shows this is not possible. Explicitly all primes less than</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1 + |D_K|}4
 \end{equation*}
 </div>
 <p data-braille="continuation">are inert.</p>
-<p id="p-1542">Even when \(h(D) \gt 1\) we still observe a similar phenomenon.</p>
-<p id="p-1543">For \(\QQ(\sqrt{-427})\) as above we have of the primes up to \((1 + 427)/4 = 107\) only \(17,31,59,89,101\) are split (\(7,61\) ramified).</p>
-<p id="p-1544">Why am I telling you this? Because it leads to the following theorem:</p>
+<p id="p-1543">Even when \(h(D) \gt 1\) we still observe a similar phenomenon.</p>
+<p id="p-1544">For \(\QQ(\sqrt{-427})\) as above we have of the primes up to \((1 + 427)/4 = 107\) only \(17,31,59,89,101\) are split (\(7,61\) ramified).</p>
+<p id="p-1545">Why am I telling you this? Because it leads to the following theorem:</p>
 <article class="theorem theorem-like" id="theorem-101"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.12.3</span><span class="period">.</span><span class="space"> </span><span class="title">Goldfeld.</span>
 </h6>
-<p id="p-1545">Let \(D\) be a fundamental discriminant of an imaginary quadratic field. If there exists a modular elliptic curve \(E\) (defined over \(\QQ\)) whose associated base change Hasse-Weil \(L\)-function</p>
+<p id="p-1546">Let \(D\) be a fundamental discriminant of an imaginary quadratic field. If there exists a modular elliptic curve \(E\) (defined over \(\QQ\)) whose associated base change Hasse-Weil \(L\)-function</p>
 <div class="displaymath">
 \begin{equation*}
 L_{E / \QQ(\sqrt{D})}(s)
@@ -525,7 +525,7 @@ L_{E / \QQ(\sqrt{D})}(s)
 \begin{equation*}
 h(D)&gt;c_{\epsilon}(E)(\log |D|)^{1-\epsilon}\text{.}
 \end{equation*}
-</div></article><p id="p-1546">Here</p>
+</div></article><p id="p-1547">Here</p>
 <div class="displaymath">
 \begin{equation*}
 L_{E / \QQ(\sqrt{D})}(s)
@@ -543,8 +543,8 @@ L_{E / \QQ(\sqrt{D})}(s)
 L_{E / \QQ(\sqrt{D})}(s)\text{.}
 \end{equation*}
 </div>
-<p id="p-1547">The bounds in this proof can be completely explicit, leading to lists of all imaginary quadratic fields with class number below \(100\text{.}\)</p>
-<p id="p-1548">If \(\chi _D = \legendre{D}{\bullet}\) is the associated character to \(\QQ(\sqrt{D})\) of small class number we therefore have</p>
+<p id="p-1548">The bounds in this proof can be completely explicit, leading to lists of all imaginary quadratic fields with class number below \(100\text{.}\)</p>
+<p id="p-1549">If \(\chi _D = \legendre{D}{\bullet}\) is the associated character to \(\QQ(\sqrt{D})\) of small class number we therefore have</p>
 <div class="displaymath">
 \begin{equation*}
 L(s,\chi _D) = \prod_p \left(1-\frac{\chi _D(p)}{p^s}\right)^{-1}
@@ -555,9 +555,9 @@ L(s,\chi _D) = \prod_p \left(1-\frac{\chi _D(p)}{p^s}\right)^{-1}
 \sim \prod_p \left(1+\frac{1}{p^s}\right)^{-1} = \frac{\zeta (2s)}{\zeta (s)}\text{.}
 \end{equation*}
 </div>
-<p id="p-1549">(mumble mumble approximate functional equation).</p>
+<p id="p-1550">(mumble mumble approximate functional equation).</p>
 <article class="paragraphs" id="paragraphs-57"><h5 class="heading"><span class="title">How to obtain an \(E\) with proven analytic rank 3.</span></h5>
-<p id="p-1550">Gross-Zagier showed that for</p>
+<p id="p-1551">Gross-Zagier showed that for</p>
 <div class="displaymath">
 \begin{equation*}
 E = 37b3\colon y^2 = x^{3} + 10 x^{2} - 20 x + 8
@@ -575,7 +575,7 @@ E_{-139}\colon -139 y^2 = x^{3} + 10 x^{2} - 20 x + 8
 L_E(s,\chi _d) = L_{E_{d}}(s)\text{.}
 \end{equation*}
 </div>
-<p id="p-1551">Doing a single Heegner point computation we find that \(P_d\) is zero and hence \(h(2P_d)= 0\text{.}\) Using Gross-Zagier we have</p>
+<p id="p-1552">Doing a single Heegner point computation we find that \(P_d\) is zero and hence \(h(2P_d)= 0\text{.}\) Using Gross-Zagier we have</p>
 <div class="displaymath">
 \begin{equation*}
 L_E(1)L'_{E_d}(1) = c \Omega_d  \Omega h_{E_d}(2P_d)
@@ -600,9 +600,9 @@ L_{E_d}'''(1) \ne 0
 \end{equation*}
 </div>
 <p data-braille="continuation">hence the analytic rank is 3.</p>
-<p id="p-1552">So \(E_{-139}\) can be used for Goldfeld's technique.</p>
-<p id="p-1553">We now let \(E/\QQ\) be our twisted curve forgetting that it came from \(37b3\text{.}\)</p>
-<p id="p-1554">The \(L\)-function of this curve has functional equation</p>
+<p id="p-1553">So \(E_{-139}\) can be used for Goldfeld's technique.</p>
+<p id="p-1554">We now let \(E/\QQ\) be our twisted curve forgetting that it came from \(37b3\text{.}\)</p>
+<p id="p-1555">The \(L\)-function of this curve has functional equation</p>
 <div class="displaymath">
 \begin{equation*}
 \left(\frac{\sqrt{N}}{2 \pi}\right)^{1+s} \Gamma(1+s) L_{E}(1+s)=-\left(\frac{\sqrt{N}}{2 \pi}\right)^{1-s} \Gamma(1-s) L_{E}(1-s)
@@ -621,7 +621,7 @@ L_{E_d}'''(1) \ne 0
 \end{equation*}
 </div>
 <p data-braille="continuation">with \(w=\chi _D(-37\cdot 139^2) = 1\text{.}\)</p>
-<p id="p-1555">The function</p>
+<p id="p-1556">The function</p>
 <div class="displaymath">
 \begin{equation*}
 L_{E / \QQ(\sqrt{D})}(s) = L_E(s)L_E(s,\chi _D)
@@ -634,7 +634,7 @@ L_{E / \QQ(\sqrt{D})}(s)
 \end{equation*}
 </div>
 <p data-braille="continuation">has an order 4 zero.</p>
-<p id="p-1556">To give a flavour of the class number one problem assume \(D\) sufficiently large with \(h(D) = 1\) still, then consider</p>
+<p id="p-1557">To give a flavour of the class number one problem assume \(D\) sufficiently large with \(h(D) = 1\) still, then consider</p>
 <div class="displaymath">
 \begin{equation*}
 I_D = \frac{1}{2\pi i} \int_{2-i\infty }^{2+i\infty } \Lambda_D(1+s) \frac{\diff s}{s^3}\text{.}
@@ -645,14 +645,14 @@ I_D = \frac{1}{2\pi i} \int_{2-i\infty }^{2+i\infty } \Lambda_D(1+s) \frac{\diff
 \begin{aligned} I_{D} \amp=\frac{1}{2 \pi i} \int_{-2-i \infty}^{-2+i \infty} \Lambda_{D}(1+s) \frac{d s}{s^{3}} \\ \amp=-\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty} \Lambda_{D}(1+s) \frac{d s}{s^{3}} \\ \amp=-I_{D} \end{aligned}\text{.}
 \end{equation*}
 </div>
-<p id="p-1557">We now want to show that</p>
+<p id="p-1558">We now want to show that</p>
 <div class="displaymath">
 \begin{equation*}
 I_D \ne 0
 \end{equation*}
 </div>
 <p data-braille="continuation">under the same assumptions on \(D\text{.}\)</p>
-<p id="p-1558">Have euler products</p>
+<p id="p-1559">Have euler products</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c}{L_{E}(s)=\prod_{p}\left(1-\frac{\alpha_{p}}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p}}{p^{s}}\right)^{-1}} \\ {L_{E}\left(s, \chi_{D}\right)=\prod_{p}\left(1-\frac{\alpha_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}\left(1-\frac{\beta_{p} \chi_{D}(p)}{p^{s}}\right)^{-1}}\end{array}
@@ -680,22 +680,22 @@ I_{D}^{*}=\frac{1}{2 \pi i} \int_{2-i \infty}^{2+i \infty}\left(\frac{37 \cdot 1
 <article class="remark remark-like" id="remark-46"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.12.4</span><span class="period">.</span>
 </h6>
-<p id="p-1559">There is also work by Mestre and Buhler-Gross-Zagier on</p>
+<p id="p-1560">There is also work by Mestre and Buhler-Gross-Zagier on</p>
 <div class="displaymath">
 \begin{equation*}
 y^{2}+y=x^{3}-7 x+6
 \end{equation*}
 </div>
 <p data-braille="continuation">the smallest conductor rank 3 curve 5077, where they verify BSD explicitly, giving one the first example in rank 3. (To this day, it is not possible, even in principle, to establish BSD for any curve of rank 4 or greater since there is no known method for rigorously establishing the value of the analytic rank when it is greater than 3.) Once again Gross-Zagier is used, if \(L'_E(1)\) is calculated to be small but possibly non-zero it must be a multiple of the height of a small point, but we can look and find no small points, hence we obtain vanishing of the derivative at \(s=1\text{.}\) This implies, for parity reasons that \(L_E(s)\) has analytic rank 3 or more. The third derivative can then be calculated and seen to be non-zero.</p>
-<p id="p-1560">This smaller curve gives better bounds in Goldfelds method.</p>
-<p id="p-1561">Using work of Oesterle they obtain</p>
+<p id="p-1561">This smaller curve gives better bounds in Goldfelds method.</p>
+<p id="p-1562">Using work of Oesterle they obtain</p>
 <div class="displaymath">
 \begin{equation*}
 h(D) \gt \frac{1}{55} \log|D|
 \end{equation*}
 </div>
 <p data-braille="continuation">for prime \(D\text{.}\)</p>
-<p id="p-1562">It's super effective?!</p></article></article></section></section></div></main>
+<p id="p-1563">It's super effective?!</p></article></article></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>

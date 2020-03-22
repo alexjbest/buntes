@@ -12,30 +12,48 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We are reduced to</p>
+<p>Note</p>
 <div class="displaymath">
 \begin{equation*}
-\dim_{\FF_\ell} H^1(G, N) \lt \operatorname{Swan}_\infty (N_\phi ) - \dim _{\aff_\ell} N
+H^0( \pi , N_\phi ) = 0
 \end{equation*}
 </div>
-<p data-braille="continuation">there exists \(\phi \) for which this can be an equality (Artin-Schreier). We can always introduce extra ramification. Consider</p>
+<p data-braille="continuation">since nontrivial irreducible</p>
 <div class="displaymath">
 \begin{equation*}
-(m)\colon  \aff^1 \to \aff^1
+H^{i\ge  2}( \pi , N_\phi ) = 0
 \end{equation*}
 </div>
+<p data-braille="continuation">by cohomological dimension. Then</p>
 <div class="displaymath">
 \begin{equation*}
-T \mapsto T^m
+\dim H^1(\pi , N_\phi ) = - \chi ( H^*(\pi , N_\phi ))= - \chi ( H^*(\aff^1 , \sheaf N_\phi ))
 \end{equation*}
 </div>
-<p data-braille="continuation">and write \(\psi \colon Y \to \aff^1\) the cover corresponding to \(\phi \text{.}\) Take the pullback to get \(\psi _m\colon Y_m \to \aff^1\) a Galois cover with group \(G\text{.}\) \(\leadsto \phi _m \colon  \pi  \twoheadrightarrow G\text{.}\) One can show that</p>
+<p data-braille="continuation">let</p>
 <div class="displaymath">
 \begin{equation*}
-\operatorname{Swan}_\infty (N_{\phi _m}) = m \operatorname{Swan}_\infty (N_\phi )
+i\colon  \aff^1 \hookrightarrow \PP^1
 \end{equation*}
 </div>
-<p data-braille="continuation">so choosing \(m \gt 1\) forces the inequality to be strict.</p>
+<p data-braille="continuation">then exactness gives</p>
+<div class="displaymath">
+\begin{equation*}
+\chi (H^*(\aff^1, \sheaf  N_\phi )) =  \chi (H^*(\PP^1, i_* \sheaf  N_\phi )) -  \chi (H^*_\infty (\PP^1,i_* \sheaf  N_\phi ))
+\end{equation*}
+</div>
+<p data-braille="continuation">now</p>
+<div class="displaymath">
+\begin{equation*}
+\chi (H^*_\infty (\PP^1,i_* \sheaf  N_\phi )) = \dim N^I\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Grothendieck-Ogg-Shafarevich gives</p>
+<div class="displaymath">
+\begin{equation*}
+\chi (H^*(\PP^1, i_* \sheaf  N_\phi )) = \dim N + \dim N^I - \operatorname{Swan}_\infty (N_\phi )\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="sec-abhyankar-serre.html#p-1728">in-context</a></span>
 </body>
 </html>

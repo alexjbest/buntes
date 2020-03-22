@@ -12,13 +12,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Cech cohomology \(\varinjlim_U H(U, \sheaf F)\) the limit over admissible coverings, ordered by refinement.</p>
+<p>The category of \(\sheaf O_X\)-modules has enough injectives, consider injective resolution for \(\sheaf O_X\)-module \(\sheaf F\)</p>
 <div class="displaymath">
 \begin{equation*}
-C^q(U, \sheaf F) = \prod_{i_0, \ldots, i_q \in I} \sheaf F(\bigcap _k U_{i_k})
+0 \to I^0 \xrightarrow{ \alpha _0} I^1 \xrightarrow{\alpha _1} \cdots
 \end{equation*}
 </div>
-<p data-braille="continuation">have a coboundary map which makes this a complex.</p>
+<p data-braille="continuation">and consider</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \Gamma (X, I^0) \xrightarrow{\Gamma (\alpha _0)} \Gamma (X, I^1) \to \cdots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+H^q(X, \sheaf F) = \ker \Gamma (\alpha ^q)/ \im \Gamma (\alpha ^{q-1}) = R^q \Gamma (X, \sheaf F)
+\end{equation*}
+</div>
+<p data-braille="continuation">the \(q\)th cohomology group of \(X\) with values in \(\sheaf F\text{.}\)</p>
 <span class="incontext"><a href="sec-abhyankar-rigid-gaga.html#p-1774">in-context</a></span>
 </body>
 </html>
