@@ -58,7 +58,7 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
-{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\small
 \array{#1}}
 {\endarray}
 
@@ -371,7 +371,11 @@ MathJax.Hub.Config({
 <li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
 <li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid">Rigid analytic spaces (Aash)</a></li>
 <li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga">Rigid GAGA (Aash)</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Raynaud 3) example?</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-cm.html" data-scroll="chapter-buntes-cm"><span class="codenumber">8</span> <span class="title"></span></a><ul><li><a href="section-59.html" data-scroll="section-59">CM abelian varieties</a></li></ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -382,8 +386,8 @@ MathJax.Hub.Config({
 </h2>
 <a href="sec-deuring.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-936">References:</p>
 <ol id="p-937" class="decimal">
-<li id="li-234">Voight ch. 16,17,42</li>
-<li id="li-235">Hard and Easy Problems for Supersingular Isogeny Graphs - Christophe Petit and Kristin Lauter <a class="external" href="https://eprint.iacr.org/2017/962.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://eprint.iacr.org/2017/962.pdf</code></a>
+<li id="li-235">Voight ch. 16,17,42</li>
+<li id="li-236">Hard and Easy Problems for Supersingular Isogeny Graphs - Christophe Petit and Kristin Lauter <a class="external" href="https://eprint.iacr.org/2017/962.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://eprint.iacr.org/2017/962.pdf</code></a>
 </li>
 </ol></section><section class="subsection" id="subsection-75"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Background: Ideals and Ideal classes</span>
@@ -472,8 +476,8 @@ I\sim_L J
 </h6>
 <p id="p-952">Let \(\ints \subseteq B\) be an order.</p>
 <ol class="decimal">
-<li id="li-236">The <dfn class="terminology">genus</dfn> \(\operatorname{Gen}(\ints)\) of \(\ints \) is the set of orders in \(B \) connected to \(\ints\text{.}\)</li>
-<li id="li-237">The type set \(\operatorname{Typ}(\ints)\) of \(\ints\) is the set of \(\ZZ\)-algebra isomorphism classes of orders in \(\operatorname{Gen} (\ints)\text{.}\)</li>
+<li id="li-237">The <dfn class="terminology">genus</dfn> \(\operatorname{Gen}(\ints)\) of \(\ints \) is the set of orders in \(B \) connected to \(\ints\text{.}\)</li>
+<li id="li-238">The type set \(\operatorname{Typ}(\ints)\) of \(\ints\) is the set of \(\ZZ\)-algebra isomorphism classes of orders in \(\operatorname{Gen} (\ints)\text{.}\)</li>
 </ol></article><article class="lemma theorem-like" id="lemma-20"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span>
 </h6>
@@ -487,8 +491,8 @@ I\sim_L J
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span>
 </h6>
 <ol id="p-954" class="decimal">
-<li id="li-238">Any two maximal orders in \(B\) are connected.</li>
-<li id="li-239">In particular there are only finitely many conjugacy classes of maximal orders in \(B\text{.}\)</li>
+<li id="li-239">Any two maximal orders in \(B\) are connected.</li>
+<li id="li-240">In particular there are only finitely many conjugacy classes of maximal orders in \(B\text{.}\)</li>
 </ol></article><article class="example example-like" id="example-50"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Voight 17.6.3.</span>
 </h6>
@@ -592,9 +596,9 @@ E\lb I \rb = \{ P \in E(\overline \FF_q) :  \alpha(P) = 0 \forall \alpha \in I\}
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.25</span><span class="period">.</span>
 </h6>
 <ol id="p-975" class="decimal">
-<li id="li-240">Problem 1 can be solved in polynomial time, (Prop. 14 in Petit-Lauter).</li>
-<li id="li-241">P2 and P3 are polynomially equivalent but this isn't obvious (P-L sec.3.1 and 3.2)</li>
-<li id="li-242">There is no known efficient algorithm to solve P3.</li>
+<li id="li-241">Problem 1 can be solved in polynomial time, (Prop. 14 in Petit-Lauter).</li>
+<li id="li-242">P2 and P3 are polynomially equivalent but this isn't obvious (P-L sec.3.1 and 3.2)</li>
+<li id="li-243">There is no known efficient algorithm to solve P3.</li>
 </ol></article><p id="p-976">Recall: the (Charles-Goren-Lauter) CGL hash function is preimage resistant iff given 2 s.s. \(j\)-invariants \(j_1,j_2\) its computationally hard to compute a  positive integer \(e\) and an isogeny \(\phi \colon E_{j_1} \to E_{j_2}\) of degree \(l^e\text{.}\)</p>
 <article class="proposition theorem-like" id="proposition-66"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.4.26</span><span class="period">.</span>
@@ -608,16 +612,16 @@ j_s,\ldots,j_0,\ldots, j_t\text{.}
 \end{equation*}
 </div>
 <ol id="p-981" class="decimal">
-<li id="li-243">Compute \(\End(j_s),\End(j_t)\text{.}\)</li>
-<li id="li-244">Compute \(\ints_s \simeq \End(E_{j_s})\text{,}\) \(\ints_t \simeq \End(E_{j_t})\)</li>
-<li id="li-245">Compute ideals \(I_s\) and \(I_t\) connecting \(\ints_0 \) to \(\ints_s\text{,}\) \(\ints_t\)</li>
-<li id="li-246">Compute ideals \(J_s \in \lb I_s \rb\text{,}\)\(J_t \in \lb I_t \rb\text{,}\) with norms \(l^{e_s},l^{e_t}\text{.}\)</li>
-<li id="li-247">For \(J \in \{J_s,J_t\}\) and corresponding \(E \in \{E_s,E_t\}\) and \(e\in \{e_s, e_t\}\) compute \(J_i = \ints_0 p^2 + \ints_0 l^i\) for \(i = 0,\ldots, e\text{.}\) For \(i = 0,\ldots, e\) compute \(K_i \in \lb J_i \rb_L\) with powersmooth norm. Translate \(K_i\) into an isogeny<div class="displaymath">
+<li id="li-244">Compute \(\End(j_s),\End(j_t)\text{.}\)</li>
+<li id="li-245">Compute \(\ints_s \simeq \End(E_{j_s})\text{,}\) \(\ints_t \simeq \End(E_{j_t})\)</li>
+<li id="li-246">Compute ideals \(I_s\) and \(I_t\) connecting \(\ints_0 \) to \(\ints_s\text{,}\) \(\ints_t\)</li>
+<li id="li-247">Compute ideals \(J_s \in \lb I_s \rb\text{,}\)\(J_t \in \lb I_t \rb\text{,}\) with norms \(l^{e_s},l^{e_t}\text{.}\)</li>
+<li id="li-248">For \(J \in \{J_s,J_t\}\) and corresponding \(E \in \{E_s,E_t\}\) and \(e\in \{e_s, e_t\}\) compute \(J_i = \ints_0 p^2 + \ints_0 l^i\) for \(i = 0,\ldots, e\text{.}\) For \(i = 0,\ldots, e\) compute \(K_i \in \lb J_i \rb_L\) with powersmooth norm. Translate \(K_i\) into an isogeny<div class="displaymath">
 \begin{equation*}
 \phi\colon E_0 \to E_i
 \end{equation*}
 </div>Deduce a sequence \((j_0, j(E_1),\ldots,j(E) = j_e)\text{.}\)</li>
-<li id="li-248">Return \((j(E_s), \ldots,j_0, \ldots,j(E_t))\text{.}\)</li>
+<li id="li-249">Return \((j(E_s), \ldots,j_0, \ldots,j(E_t))\text{.}\)</li>
 </ol>
 <p id="p-982">Except for step 1 everything can be done efficiently.</p></article></div>
 <article class="remark remark-like" id="remark-24"><h6 class="heading">

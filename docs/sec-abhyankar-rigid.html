@@ -58,7 +58,7 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
-{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\small
 \array{#1}}
 {\endarray}
 
@@ -371,7 +371,11 @@ MathJax.Hub.Config({
 <li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
 <li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid" class="active">Rigid analytic spaces (Aash)</a></li>
 <li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga">Rigid GAGA (Aash)</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Raynaud 3) example?</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-cm.html" data-scroll="chapter-buntes-cm"><span class="codenumber">8</span> <span class="title"></span></a><ul><li><a href="section-59.html" data-scroll="section-59">CM abelian varieties</a></li></ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -382,10 +386,10 @@ MathJax.Hub.Config({
 </h2>
 <a href="sec-abhyankar-rigid.html" class="permalink">¶</a><article class="paragraphs" id="paragraphs-60"><h5 class="heading"><span class="title">References.</span></h5>
 <ol id="p-1734" class="decimal">
-<li id="li-398">Several approaches to non-archimidean geomeetry - Conrad</li>
-<li id="li-399">Lectures on formal and rigid geometry - Bosch</li>
-<li id="li-400">Non-Archimidean geometry - Matt Baker</li>
-<li id="li-401">Rigid geometry and applications - Fresnel, van der Put</li>
+<li id="li-399">Several approaches to non-archimidean geomeetry - Conrad</li>
+<li id="li-400">Lectures on formal and rigid geometry - Bosch</li>
+<li id="li-401">Non-Archimidean geometry - Matt Baker</li>
+<li id="li-402">Rigid geometry and applications - Fresnel, van der Put</li>
 </ol></article><p id="p-1735">Usual geomeetry involves polynomial rings over fields, we switsch to tate algebras. Fix a non-archimidean field \(k\text{,}\) \(R\) a valuation ring and \(\tilde k\) its residue field.</p>
 <p id="p-1736">Tate algebras over \(k\text{.}\)</p>
 <div class="displaymath" id="p-1737">
@@ -417,22 +421,22 @@ x^J = \prod x_i ^{j_i}
 </div>
 <p data-braille="continuation">properties</p>
 <ol class="decimal">
-<li id="li-402"><div class="displaymath">
+<li id="li-403"><div class="displaymath">
 \begin{equation*}
 |f| = 0 \iff f = 0
 \end{equation*}
 </div></li>
-<li id="li-403"><div class="displaymath">
+<li id="li-404"><div class="displaymath">
 \begin{equation*}
 |cf| = |c|_k |f|
 \end{equation*}
 </div></li>
-<li id="li-404"><div class="displaymath">
+<li id="li-405"><div class="displaymath">
 \begin{equation*}
 |f + g| \le \max\{|f|, |g|\}
 \end{equation*}
 </div></li>
-<li id="li-405"><div class="displaymath">
+<li id="li-406"><div class="displaymath">
 \begin{equation*}
 |fg| = |f||g|
 \end{equation*}
@@ -492,18 +496,18 @@ f(x)\mapsto \tilde f( \tilde x)
 <p data-braille="continuation">and \(\tilde f(\tilde x) \ne 0\) and \(|f(x)| = 1\text{.}\)</p></article></div>
 <p id="p-1742">Algebraic properties of \(T_n\text{.}\)</p>
 <ol id="p-1743" class="decimal">
-<li id="li-406">\(T_n\) is noetherian, regular and a UFD, for every maximal ideal \(\ideal m\) of \(T_n\text{,}\) \(T_n /\ideal m\) has finite degree over \(k\text{.}\)</li>
-<li id="li-407">\(T_n\) is Jacobson: \(x\in T_n / I\) is nilpotent iff \(x\) lies in all maximal ideals of \(T_n/I\text{.}\)</li>
-<li id="li-408">\(I\) is closed w.r.t. the Gauss norm for all ideals.</li>
+<li id="li-407">\(T_n\) is noetherian, regular and a UFD, for every maximal ideal \(\ideal m\) of \(T_n\text{,}\) \(T_n /\ideal m\) has finite degree over \(k\text{.}\)</li>
+<li id="li-408">\(T_n\) is Jacobson: \(x\in T_n / I\) is nilpotent iff \(x\) lies in all maximal ideals of \(T_n/I\text{.}\)</li>
+<li id="li-409">\(I\) is closed w.r.t. the Gauss norm for all ideals.</li>
 </ol>
 <article class="definition definition-like" id="definition-157"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Affinoid algebras.</span>
 </h6>
 <p id="p-1744">A \(k\)-affinoid  algebra is a \(k\)-algebra \(A\) admitting an isomorphism \(A \simeq T_n/I\) as \(k\)-algebras \(I\subseteq T_n\text{.}\) The set \(\Max(A)\) for maximal ideals is denoted \(M(A)\text{.}\)</p></article><p id="p-1745">Properties</p>
 <ol class="decimal">
-<li id="li-409">A Noetherian, Jacobson, finite Krull dimension, \(A/\ideal m\) is a finite extension of \(k\text{,}\) where \(\ideal m \in M(A)\text{.}\)</li>
-<li id="li-410">\(k(x) = A/ \ideal m_x\) for \(\ideal m_x \in M(A)\) then \(a\) is nilpotent iff \(a(x) = 0 \) for all \(x\in M(A)\text{.}\)</li>
-<li id="li-411">\(M(A)\) is functorial with pullback. if \(\phi  \colon  A \to A' \) then<div class="displaymath">
+<li id="li-410">A Noetherian, Jacobson, finite Krull dimension, \(A/\ideal m\) is a finite extension of \(k\text{,}\) where \(\ideal m \in M(A)\text{.}\)</li>
+<li id="li-411">\(k(x) = A/ \ideal m_x\) for \(\ideal m_x \in M(A)\) then \(a\) is nilpotent iff \(a(x) = 0 \) for all \(x\in M(A)\text{.}\)</li>
+<li id="li-412">\(M(A)\) is functorial with pullback. if \(\phi  \colon  A \to A' \) then<div class="displaymath">
 \begin{equation*}
 \phi \inv (x) \in M(A)
 \end{equation*}
@@ -522,12 +526,12 @@ A/ \phi \inv (x) \hookrightarrow A'/ x
 A/\phi \inv (x)
 \end{equation*}
 </div>is a finite extension of \(k\) hence a field, so \(\phi \inv(x)\) is maximal.</li>
-<li id="li-412">Noether normalization: For \(A\) affinoid, then \(\exists d = \dim(A)\) s.t.<div class="displaymath">
+<li id="li-413">Noether normalization: For \(A\) affinoid, then \(\exists d = \dim(A)\) s.t.<div class="displaymath">
 \begin{equation*}
 T_d (k) \hookrightarrow A
 \end{equation*}
 </div>then \(A/T_d(k)\)  is a  finite module extension.</li>
-<li id="li-413">Maximum modulus<div class="displaymath">
+<li id="li-414">Maximum modulus<div class="displaymath">
 \begin{equation*}
 \|f\|_{\sup} = \max_{x\in M(A)} |f(x)| \lt \infty \text{.}
 \end{equation*}

@@ -12,7 +12,15 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">5</span><span class="period">.</span>
-</h6>Find List of Forms below, compute a list \(L\) of \(|\Cl(K)|\) representatives \((A, B, C)\) of classes of positive definite quadratic forms of discriminant \(D\text{,}\) where \(A\) must be chosen divisible by \(N\) and minimal, and \(B \equiv \beta(\bmod 2 N)\) (this is always possible). Whenever possible pair elements \((A, B, C)\) and \(\left(A^{\prime}, B^{\prime}, C^{\prime}\right)\) of this list such that \(\left(A^{\prime}, B^{\prime}, C^{\prime}\right)\) is equivalent to \((C N, B, A / N)\) by computing the unique canonical reduced form equivalent to each.</article><span class="incontext"><a href="sec-gz-applications-i.html#li-359">in-context</a></span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span>
+</h6>Run through fundamental discs \(D\) for each. Check \(D\) square mod \(4N\) all primes split and<div class="displaymath">
+\begin{equation*}
+L\left(E_{D}, 1\right)=2 \sum_{n \geq 1} \frac{a_{n}}{n}\left(\frac{D}{n}\right) \exp \left(\frac{-2 \pi n}{\sqrt{N D^{2} / \operatorname{gcd}(D, N)}}\right)
+\end{equation*}
+</div>not too close to zero if this is not satisfied, choose the next fundamental discriminant. Otherwise fix \(\beta \in\) \(\mathbb{Z} /(2 N) \mathbb{Z}\) such that \(D \equiv \beta^{2}(\bmod 4 N)\) and compute \(m&gt;0\) such that<div class="displaymath">
+\begin{equation*}
+m^{2}=\omega_{1}(E) \frac{c(E) \sqrt{|D|}(w(D) / 2)^{2}}{4 \operatorname{Vol}(E)\left|E_{t}(\mathbb{Q})\right|^{2}} 2^{\omega(\operatorname{gcd}(D, N))} L\left(E_{D}, 1\right)
+\end{equation*}
+</div>This m should be very close to an integer, or at least to a rational number with small denominator.</article><span class="incontext"><a href="sec-gz-applications-i.html#li-359">in-context</a></span>
 </body>
 </html>

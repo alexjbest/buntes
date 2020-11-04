@@ -58,7 +58,7 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
-{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\small
 \array{#1}}
 {\endarray}
 
@@ -371,7 +371,11 @@ MathJax.Hub.Config({
 <li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
 <li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid">Rigid analytic spaces (Aash)</a></li>
 <li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga">Rigid GAGA (Aash)</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Raynaud 3) example?</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-cm.html" data-scroll="chapter-buntes-cm"><span class="codenumber">8</span> <span class="title"></span></a><ul><li><a href="section-59.html" data-scroll="section-59">CM abelian varieties</a></li></ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -565,8 +569,8 @@ X\colon y^2 = a_0 x^m + \sum_{r= 1}^m (a_r x^{m+r} + (-1)^r a_r^\rho x^{m-r}),\,
 </h6>
 <p id="p-1271">\(X/\CC\) descends to \(k\) if all \(X^\sigma \simeq X\) and there exists a set of points \(P_1,\ldots, P_n\in  X(\CC)\) s.t.</p>
 <ol class="decimal">
-<li id="li-305">The only automorphism of \(X\) fixing each \(P_i\) is the identity.</li>
-<li id="li-306">There exists a subfield \(L \subseteq \CC\) finitely generated \(/k\) s.t. \(\sigma P_i = P_i\) for all \(\sigma\) fixing \(L\text{.}\)</li>
+<li id="li-306">The only automorphism of \(X\) fixing each \(P_i\) is the identity.</li>
+<li id="li-307">There exists a subfield \(L \subseteq \CC\) finitely generated \(/k\) s.t. \(\sigma P_i = P_i\) for all \(\sigma\) fixing \(L\text{.}\)</li>
 </ol></article><article class="paragraphs" id="paragraphs-49"><h5 class="heading"><span class="title">Goal.</span></h5>
 <p id="p-1272">Identify a special set of points, and some field \(L\) as above where we “know” the galois action.</p></article></section><section class="subsection" id="subsection-90"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.8.2</span> <span class="title">Reflex fields</span>
@@ -760,14 +764,14 @@ f_\sigma \colon {\operatorname{Sh}}(G^\sigma, X^\sigma) \to {\operatorname{Sh}}(
 </h6>
 <p id="p-1296">For any Shimura datum \((G,X)\text{,}\) \({\operatorname{Sh}}_K(G,X)\) has a canonical model (defined to be a compatible system of canonical models for \({\operatorname{Sh}}_K\)). The canonical model is unique up to unique isomorphism.</p></article><p id="p-1297">Some references:</p>
 <ol class="decimal">
-<li id="li-307">Weil’s Galois Descent Theorem; A Computational Point Of View - Ruben A. Hidalgo And Sebastian Reyes-carocca</li>
-<li id="li-308">On the field of moduli of superelliptic curves - Ruben Hidalgo and Tony Shaska</li>
-<li id="li-309">Varieties Without Extra Automorphisms I: Curves - Bjorn Poonen</li>
-<li id="li-310">Lecture On Shimura Curves 6: Special Points And Canonical Models Pete L. Clark <a class="external" href="http://math.uga.edu/~pete/SC7-CMpoints.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://math.uga.edu/~pete/SC7-CMpoints.pdf</code></a> (Shimura curves only but still)</li>
-<li id="li-311">Shimura Varieties and Canonical models (slides) - Brian Smithling <a class="external" href="http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf</code></a>.</li>
-<li id="li-312">
+<li id="li-308">Weil’s Galois Descent Theorem; A Computational Point Of View - Ruben A. Hidalgo And Sebastian Reyes-carocca</li>
+<li id="li-309">On the field of moduli of superelliptic curves - Ruben Hidalgo and Tony Shaska</li>
+<li id="li-310">Varieties Without Extra Automorphisms I: Curves - Bjorn Poonen</li>
+<li id="li-311">Lecture On Shimura Curves 6: Special Points And Canonical Models Pete L. Clark <a class="external" href="http://math.uga.edu/~pete/SC7-CMpoints.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://math.uga.edu/~pete/SC7-CMpoints.pdf</code></a> (Shimura curves only but still)</li>
+<li id="li-312">Shimura Varieties and Canonical models (slides) - Brian Smithling <a class="external" href="http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf" target="_blank"><code class="code-inline tex2jax_ignore">http://www.math.mcgill.ca/goren/Montreal-Toronto/Brian.pdf</code></a>.</li>
+<li id="li-313">
 <a class="external" href="https://tlovering.wordpress.com/2014/09/03/galois-descent-for-transcendental-extensions/" target="_blank"><code class="code-inline tex2jax_ignore">https://tlovering.wordpress.com/2014/09/03/galois-descent-for-transcendental-extensions/</code></a>.</li>
-<li id="li-313">Canonical models of Shimura curves -  J.S. Milne (a great article I found after the talk...)</li>
+<li id="li-314">Canonical models of Shimura curves -  J.S. Milne (a great article I found after the talk...)</li>
 </ol></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->

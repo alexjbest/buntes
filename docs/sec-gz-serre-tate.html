@@ -58,7 +58,7 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
-{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\small
 \array{#1}}
 {\endarray}
 
@@ -371,7 +371,11 @@ MathJax.Hub.Config({
 <li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
 <li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid">Rigid analytic spaces (Aash)</a></li>
 <li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga">Rigid GAGA (Aash)</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Raynaud 3) example?</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-cm.html" data-scroll="chapter-buntes-cm"><span class="codenumber">8</span> <span class="title"></span></a><ul><li><a href="section-59.html" data-scroll="section-59">CM abelian varieties</a></li></ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -607,28 +611,28 @@ G(A) = E(A)
 </h6>
 <p id="p-1455">Let \(G,H\) be fppf abelian sheaves. And set \(G_0, H_0\) the corresponding objects restricted to \(R_0\text{.}\) Suppose</p>
 <ol class="decimal">
-<li id="li-340">\(G\) is \(p\)-divisible.</li>
-<li id="li-341">\(\hat H\) is formal.</li>
-<li id="li-342">\(H (R) \to H(R/J)\) surjective for any nilpotent \(J\) (this is known as formal smoothness of \(J\))</li>
+<li id="li-341">\(G\) is \(p\)-divisible.</li>
+<li id="li-342">\(\hat H\) is formal.</li>
+<li id="li-343">\(H (R) \to H(R/J)\) surjective for any nilpotent \(J\) (this is known as formal smoothness of \(J\))</li>
 </ol>
 <p data-braille="continuation">then</p>
 <ol class="decimal">
-<li id="li-343">Both<div class="displaymath">
+<li id="li-344">Both<div class="displaymath">
 \begin{equation*}
 \Hom (G,H),\,\Hom(G_0,H_0)
 \end{equation*}
 </div>are \(p\)-torsion free.</li>
-<li id="li-344">The reduction mod \(I\)<div class="displaymath">
+<li id="li-345">The reduction mod \(I\)<div class="displaymath">
 \begin{equation*}
 \Hom(G, H) \to  \Hom(G_0, H_0)
 \end{equation*}
 </div>is injective.</li>
-<li id="li-345">For \(f_0 \in \Hom(G_0,H_0)\text{,}\) there is a unique \(\Phi (G, H)\) with<div class="displaymath">
+<li id="li-346">For \(f_0 \in \Hom(G_0,H_0)\text{,}\) there is a unique \(\Phi (G, H)\) with<div class="displaymath">
 \begin{equation*}
 \Phi \equiv  N^\nu f_0 \mod I
 \end{equation*}
 </div>denote \(\Phi = \tilde N^\nu f \in \Hom(G,H) \otimes \QQ\)</li>
-<li id="li-346">we get<div class="displaymath">
+<li id="li-347">we get<div class="displaymath">
 \begin{equation*}
 f = \frac{\tilde N^\nu f}{N^\nu } \in \Hom (G,H)
 \end{equation*}
@@ -645,12 +649,12 @@ f = \frac{\tilde N^\nu f}{N^\nu } \in \Hom (G,H)
 </div>
 </li>
 </ol></article><article class="hiddenproof" id="proof-130"><a data-knowl="" class="id-ref original" data-refid="hk-proof-130"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-130"><article class="hiddenproof"><ol id="p-1456" class="decimal">
-<li id="li-347">\(p\)-divisibility implies that if \(pf = 0\) so \(pf(x)=  0\) for all \(x\) then if \(py = x\) we have<div class="displaymath">
+<li id="li-348">\(p\)-divisibility implies that if \(pf = 0\) so \(pf(x)=  0\) for all \(x\) then if \(py = x\) we have<div class="displaymath">
 \begin{equation*}
 f(x) = pf(y) =0
 \end{equation*}
 </div>so \(f = 0\text{.}\)</li>
-<li id="li-348">We can write<div class="displaymath">
+<li id="li-349">We can write<div class="displaymath">
 \begin{equation*}
 0 \to H_I \to H \to H_0 \to 0
 \end{equation*}
@@ -663,7 +667,7 @@ f(x) = pf(y) =0
 \im(\Hom(G, H_I) \to \Hom(G,H)) = 0
 \end{equation*}
 </div>rhs p-tors free, and \(H_I\) is killed by \(N^\nu \) (using formality of \(\hat H \) here and another lemma I didn't really state).</li>
-<li id="li-349">Uniqueness follows from 2. so we just lift<div class="displaymath">
+<li id="li-350">Uniqueness follows from 2. so we just lift<div class="displaymath">
 \begin{equation*}
 f_0 \in \Hom(G_0, H_0)
 \end{equation*}

@@ -12,7 +12,31 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
-</h6>\(a_G\) and \(\mathrm{sw}_G\) are realisable over \(\QQ_\ell\)</article><span class="incontext"><a href="sec-abhyankar-ramification.html#li-365">in-context</a></span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span>
+</h6>Cremona-Silverman: Want to reduce the precision needed, how? What information do we know after running the method, an approximation of \(Q\approx P \in E(\RR)\text{.}\) We also know by Gross-Zagier<div class="displaymath">
+\begin{equation*}
+\hat h(P)\text{.}
+\end{equation*}
+</div>If<div class="displaymath">
+\begin{equation*}
+x(P) = \frac{n}{d^2}
+\end{equation*}
+</div>then<div class="displaymath">
+\begin{equation*}
+2 \log (d)=\widehat{h}(P)-\widehat{h}_{\infty}(P)-\sum_{p | N \atop {p \nmid d \atop p^{2} | \operatorname{disc}(E)}} \widehat{h}_{p}(P)\text{.}
+\end{equation*}
+</div>Using \(Q\) we can compute<div class="displaymath">
+\begin{equation*}
+\hat h_\infty (P)\text{.}
+\end{equation*}
+</div>For each \(\hat h_p\) there are only finitely many possibilities, and so in total we have finitely many possible values of<div class="displaymath">
+\begin{equation*}
+\widehat{h}(P)-\widehat{h}_{\infty}(P)-\sum_{p | N \atop {p \nmid d \atop p^{2} | \operatorname{disc}(E)}} \widehat{h}_{p}(P)
+\end{equation*}
+</div>giving finitely many possible \(d\) values, from which<div class="displaymath">
+\begin{equation*}
+numerator (x(P)) = round(x(P) d^2)
+\end{equation*}
+</div>can be found. In all this allows us to work as we wanted, with an accuracy slightly more than half.</article><span class="incontext"><a href="sec-gz-applications-ii.html#li-365">in-context</a></span>
 </body>
 </html>

@@ -58,7 +58,7 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
-{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\small
 \array{#1}}
 {\endarray}
 
@@ -371,7 +371,11 @@ MathJax.Hub.Config({
 <li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
 <li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid">Rigid analytic spaces (Aash)</a></li>
 <li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga">Rigid GAGA (Aash)</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Raynaud 3) example?</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-cm.html" data-scroll="chapter-buntes-cm"><span class="codenumber">8</span> <span class="title"></span></a><ul><li><a href="section-59.html" data-scroll="section-59">CM abelian varieties</a></li></ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -596,8 +600,8 @@ u_G = r_G - \mathrm{triv}_G\text{.}
 </h6>
 <p id="p-1648">If \(\ell \) is a prime not equal to the residue characteristic of \(K\text{,}\) then</p>
 <ol class="decimal">
-<li id="li-365">\(a_G\) and \(\mathrm{sw}_G\) are realisable over \(\QQ_\ell\)</li>
-<li id="li-366">There exists a f.g. projective left \(\ZZ_\ell \lb G\rb\)-module \(\mathrm{Sw}_G\) unique up to iso. such that<div class="displaymath">
+<li id="li-366">\(a_G\) and \(\mathrm{sw}_G\) are realisable over \(\QQ_\ell\)</li>
+<li id="li-367">There exists a f.g. projective left \(\ZZ_\ell \lb G\rb\)-module \(\mathrm{Sw}_G\) unique up to iso. such that<div class="displaymath">
 \begin{equation*}
 \mathrm{Sw}_G \otimes_{ \ZZ_\ell }\QQ_\ell
 \end{equation*}
@@ -635,19 +639,19 @@ P_K \subset G_K = \Gal{K^{\sep}}{K}
 </div>
 <p data-braille="continuation">a group homomorphism, then we say:</p>
 <ol class="decimal">
-<li id="li-367">\(\rho\) is unramified if<div class="displaymath">
+<li id="li-368">\(\rho\) is unramified if<div class="displaymath">
 \begin{equation*}
 \underbrace{G_K^0}_{\varprojlim \Gal L K ^0} \subseteq \ker \rho\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-368">\(\rho\) is tamely ramified if<div class="displaymath">
+<li id="li-369">\(\rho\) is tamely ramified if<div class="displaymath">
 \begin{equation*}
 P_K\subseteq \ker \rho\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-369">\(\rho\) is wildly ramified otherwise.</li>
+<li id="li-370">\(\rho\) is wildly ramified otherwise.</li>
 </ol></article><article class="lemma theorem-like" id="lemma-30"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.2.17</span><span class="period">.</span>
 </h6>
@@ -748,10 +752,10 @@ b(\mathcal V) = \sum_{i=1}^\infty \frac{|G_i|}{|G_0|} \dim_{\FF_\lambda} (\overl
 </h6>
 <p id="p-1661">If \(\rho \colon G_K \to \GL_r(\ints_E)\) is a continuous representation then TFAE:</p>
 <ol class="decimal">
-<li id="li-370">\(\rho \otimes E \colon G_K \to \GL_r(\ints_E) \hookrightarrow \GL_r(E)\)is tame</li>
-<li id="li-371">\(\rho\) is tame</li>
-<li id="li-372">\(\bar \rho\) is tame</li>
-<li id="li-373">\(\displaystyle b(\mathcal V) = 0\)</li>
+<li id="li-371">\(\rho \otimes E \colon G_K \to \GL_r(\ints_E) \hookrightarrow \GL_r(E)\)is tame</li>
+<li id="li-372">\(\rho\) is tame</li>
+<li id="li-373">\(\bar \rho\) is tame</li>
+<li id="li-374">\(\displaystyle b(\mathcal V) = 0\)</li>
 </ol></article><p id="p-1662">Swan conductor.</p>
 <p id="p-1663">Break decomposition</p>
 <article class="lemma theorem-like" id="lemma-32"><h6 class="heading">
@@ -765,17 +769,17 @@ G_K^{\lambda+} = \overline{\bigcup_{\lambda'  \gt \lambda} G_K^{\lambda'}}
 </div>
 <p data-braille="continuation">then the upper numbering filtration satisfies</p>
 <ol class="decimal">
-<li id="li-374"><div class="displaymath">
+<li id="li-375"><div class="displaymath">
 \begin{equation*}
 \bigcap_{\lambda\gt 0} G_K^\lambda = \{1\}
 \end{equation*}
 </div></li>
-<li id="li-375"><div class="displaymath">
+<li id="li-376"><div class="displaymath">
 \begin{equation*}
 \lambda\gt 0,\, G_K^\lambda = \bigcap_{0 \lt \lambda' \lt \lambda} G_K^{\lambda'}
 \end{equation*}
 </div></li>
-<li id="li-376"><div class="displaymath">
+<li id="li-377"><div class="displaymath">
 \begin{equation*}
 P_K = G_K ^{0+}
 \end{equation*}
@@ -832,9 +836,9 @@ M \to M(x)
 </h6>
 <p id="p-1667">Let \(A \) be a \(\ZZ\)-algebra, \(M\) be an \(A\)-module, with a  \(P_K\)-action, that factors through a finite quotient: Then</p>
 <ul class="disc">
-<li id="li-377">for a break decomposition of \(M\text{,}\) \(M(x)\) is an \(A\)-module.</li>
-<li id="li-378">for \(B\) an  \(A\)-algebra a break decomposition of \(M\oplus B\) is \(\bigoplus (M(x) \oplus B)\text{.}\)</li>
-<li id="li-379">if \(A \) is local noetherian and \(M\) is a free \(A\)-module of finite rank, then \(M(x)\) is also free of finite rank for all \(x\text{.}\)</li>
+<li id="li-378">for a break decomposition of \(M\text{,}\) \(M(x)\) is an \(A\)-module.</li>
+<li id="li-379">for \(B\) an  \(A\)-algebra a break decomposition of \(M\oplus B\) is \(\bigoplus (M(x) \oplus B)\text{.}\)</li>
+<li id="li-380">if \(A \) is local noetherian and \(M\) is a free \(A\)-module of finite rank, then \(M(x)\) is also free of finite rank for all \(x\text{.}\)</li>
 </ul></article><article class="definition definition-like" id="def-swan-conductors"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.30</span><span class="period">.</span><span class="space"> </span><span class="title">Swan conductors.</span>
 </h6>
@@ -853,14 +857,14 @@ M \to M(x)
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.31</span><span class="period">.</span>
 </h6>
 <ul id="p-1669" class="disc">
-<li id="li-380">
+<li id="li-381">
 <div class="displaymath">
 \begin{equation*}
 \operatorname{Swan}(M) = 0
 \end{equation*}
 </div>iff \(P_K\) acts trivially on \(M\text{.}\)</li>
-<li id="li-381">For \(V = \mathcal V \otimes E\) we get \(V(x) = \mathcal V (x) \otimes E\) and \(\operatorname{Swan}(V) = \operatorname{Swan}(\mathcal V)\)</li>
-<li id="li-382">Similarly<div class="displaymath">
+<li id="li-382">For \(V = \mathcal V \otimes E\) we get \(V(x) = \mathcal V (x) \otimes E\) and \(\operatorname{Swan}(V) = \operatorname{Swan}(\mathcal V)\)</li>
+<li id="li-383">Similarly<div class="displaymath">
 \begin{equation*}
 \operatorname{Swan}(\mathcal V) = \operatorname{Swan}(\overline{\mathcal V})\text{.}
 \end{equation*}

@@ -58,7 +58,7 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
-{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\small
 \array{#1}}
 {\endarray}
 
@@ -371,7 +371,11 @@ MathJax.Hub.Config({
 <li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
 <li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid">Rigid analytic spaces (Aash)</a></li>
 <li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga">Rigid GAGA (Aash)</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Raynaud 3) example?</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-cm.html" data-scroll="chapter-buntes-cm"><span class="codenumber">8</span> <span class="title"></span></a><ul><li><a href="section-59.html" data-scroll="section-59">CM abelian varieties</a></li></ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -491,9 +495,9 @@ r_A(m) = 0,\, N \gt1
 </div>
 <p data-braille="continuation">which satisfies</p>
 <ol class="decimal">
-<li id="li-321">\(\pair ab\) is defined when \(a,b\) have disjoint support.</li>
-<li id="li-322">\(\pair \cdot\cdot\) is bi-additive and symmetric whenever it is defined.</li>
-<li id="li-323">If \(f\) is meromorphic on \(S\) and<div class="displaymath">
+<li id="li-322">\(\pair ab\) is defined when \(a,b\) have disjoint support.</li>
+<li id="li-323">\(\pair \cdot\cdot\) is bi-additive and symmetric whenever it is defined.</li>
+<li id="li-324">If \(f\) is meromorphic on \(S\) and<div class="displaymath">
 \begin{equation*}
 a= \sum_i n_i x_i
 \end{equation*}
@@ -504,7 +508,7 @@ a= \sum_i n_i x_i
 \end{equation*}
 </div>
 </li>
-<li id="li-324">
+<li id="li-325">
 <div class="displaymath">
 \begin{equation*}
 \pair a {\sum_j m_j (y_j)}
@@ -551,14 +555,14 @@ y \mapsto G(x,y)
 </div>
 <p data-braille="continuation">on \(S\smallsetminus\{x,x_0\}\) is:</p>
 <ol class="decimal">
-<li id="li-325">continuous</li>
-<li id="li-326">harmonic, i.e.<div class="displaymath">
+<li id="li-326">continuous</li>
+<li id="li-327">harmonic, i.e.<div class="displaymath">
 \begin{equation*}
 \Delta _y^2 G(x,y) = 0\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-327">has logarithmic singularities of residue \(+1,-1\) at \(y=x,y=x_0, x=y_0\text{.}\)</li>
+<li id="li-328">has logarithmic singularities of residue \(+1,-1\) at \(y=x,y=x_0, x=y_0\text{.}\)</li>
 </ol>
 <article class="remark remark-like" id="remark-40"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span>
@@ -626,7 +630,7 @@ G(x_1,y) - G(x_2,y) \to c_1  - c_2
 </div>
 <p id="p-1382">If we take \(G\) with the given hypothesis as \(\pair\cdot\cdot\text{.}\) \(S  = X_0(N)(\CC)\text{,}\) \(x_0 = \infty \text{,}\) \(y_0 = 0\text{.}\) Conditions on \(G\) needed:</p>
 <ul class="disc">
-<li id="li-328">G1 , \(G\) is a real valued continuous harmonic function on<div class="displaymath">
+<li id="li-329">G1 , \(G\) is a real valued continuous harmonic function on<div class="displaymath">
 \begin{equation*}
 E = \{ (z,z') \in \HH^2 : z\not \in \Gamma _0(N) z'\}
 \end{equation*}
@@ -636,17 +640,17 @@ E = \{ (z,z') \in \HH^2 : z\not \in \Gamma _0(N) z'\}
 \end{equation*}
 </div>
 </li>
-<li id="li-329">G2 , Fix \(z\in \HH\)<div class="displaymath">
+<li id="li-330">G2 , Fix \(z\in \HH\)<div class="displaymath">
 \begin{equation*}
 G(z,z') = e_z\log|z- z'|^2 + O(1)
 \end{equation*}
 </div>as \(z'\to z\text{,}\) where \(e_z\) is the order of the stabilizer in \(\Gamma _0(N)\text{.}\)</li>
-<li id="li-330">G3 , For \(z\in \HH\) fixed<div class="displaymath">
+<li id="li-331">G3 , For \(z\in \HH\) fixed<div class="displaymath">
 \begin{equation*}
 G(z,z') = 4\pi  y' + O(1)
 \end{equation*}
 </div>as \(z' = x' + iy' \to \infty \) and \(G(z,z') = O(1)\) at other cusps.</li>
-<li id="li-331">G4 , For \(z'\in \HH\) fixed<div class="displaymath">
+<li id="li-332">G4 , For \(z'\in \HH\) fixed<div class="displaymath">
 \begin{equation*}
 G(z,z') = 4\pi  y/N|z|^2 + O(1)
 \end{equation*}

@@ -58,7 +58,7 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
-{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\small
 \array{#1}}
 {\endarray}
 
@@ -371,7 +371,11 @@ MathJax.Hub.Config({
 <li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
 <li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid">Rigid analytic spaces (Aash)</a></li>
 <li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga">Rigid GAGA (Aash)</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Raynaud 3) example?</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-cm.html" data-scroll="chapter-buntes-cm"><span class="codenumber">8</span> <span class="title"></span></a><ul><li><a href="section-59.html" data-scroll="section-59">CM abelian varieties</a></li></ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -723,32 +727,34 @@ f(x) = \frac{64x^3}{(x+9)^3 (x+1)},\,f(x) - 1 = -\frac{(x^2 - 18x -27)^2}{(x+9)^
 <article class="paragraphs" id="paragraphs-20"><h5 class="heading"><span class="title">References.</span></h5>
 <p id="p-734">A semi-random order, maybe starting at the top is nice though. If you have trouble finding something let me know.</p>
 <ol class="decimal">
-<li id="li-150">On Computing Belyi Maps - J. Sijsling, J. Voight</li>
-<li id="li-151">Belyi Functions: Examples, Properties, and Applications - Zvonkin (really nice survey)</li>
-<li id="li-152">On Davenport’s bound for the degree of \(f^3 - g^2\) and Riemann's Existence Theorem - Umberto Zannier</li>
-<li id="li-153">Unifying Themes Suggested by Belyi's Theorem - Wushi Goldring</li>
-<li id="li-154">Polynomial Identities and Hauptmoduln - W. W. Stothers</li>
-<li id="li-155">Elliptic Surfaces and Davenport-Stothers Triples -  Tetsuji Shioda</li>
-<li id="li-156">The abc-theorem, Davenport’s inequality and elliptic surfaces - Tetsuji Shioda</li>
-<li id="li-157">It's As Easy As abc -  Andrew Granville, Thomas J. Tucker</li>
-<li id="li-158">Polynomial and Fermat-Pell families that attain the Davenport-Mason bound - Noam D. Elkies, Mark Watkins (on Watkins webpage)</li>
-<li id="li-159">Halltripels en kindertekeningen - Hans Montanus (in Dutch, but math is universal right?)</li>
-<li id="li-160">Computational Number Theory and Algebraic Geometry Spring 2012, taught by Noam Elkies, notes by Jason Bland</li>
-<li id="li-161">Davenport-Zannier polynomials over \(\QQ\) - Fedor Pakovich, Alexander K. Zvonkin (a nice extension perhaps?)</li>
-<li id="li-162">Minimum Degree of the Difference of Two Polynomials over Q, and Weighted Plane Trees -  Fedor Pakovich,  Alexander K. Zvonkin (as above)</li>
-<li id="li-163">The ABC-conjecture for polynomials - Abhishek Parab</li>
-<li id="li-164">On Marshall Hall's Conjecture and Gaps Between Integer Points on Mordell Elliptic Curves - Ryan D'Mello</li>
-<li id="li-165">Neighboring powers - F. Beukers, C. L. Stewart (a more general problem, but nice history and examples)</li>
-<li id="li-166">Rational Points Near Curves and Small Nonzero \(| x^3 - y^2|\) via Lattice Reduction - Elkies</li>
-<li id="li-167">ABC implies Mordell - Elkies</li>
-<li id="li-168">Dessins d'enfant -  Jeroen Sijsling (master thesis)</li>
-<li id="li-169">Algorithms and differential relations for Belyi functions - Mark van Hoeij, Raimundas Vidunas.</li>
-<li id="li-170">Belyi functions for hyperbolic hypergeometric-to-Heun transformations -  Mark van Hoeij, Raimundas Vidunas (has application to ABC over number fields at the end)</li>
-<li id="li-171">Some remarks on the S-unit equation in function fields  - Umberto Zannier</li>
-<li id="li-172">A note on integral points on elliptic curves - Mark Watkins</li>
-<li id="li-173">On Hall’s conjecture - Andrej Dujella (more recent progress)</li>
-<li id="li-174">Hecke Groups, Dessins d'Enfants and the Archimedean Solids -  Yang-Hui He, and James Read</li>
-<li id="li-175">Belyi functions for Archimedean solids - Nicolas Magot, Alexander Zvonkin (didn't really use this but it's nice!)</li>
+<li id="li-150">Belyi’s theorem and Dessins d’enfant - Koundinya Vajjha <a class="external" href="https://kodyvajjha.github.io/images/bel.pdf" target="_blank"><code class="code-inline tex2jax_ignore">https://kodyvajjha.github.io/images/bel.pdf</code></a>
+</li>
+<li id="li-151">On Computing Belyi Maps - J. Sijsling, J. Voight</li>
+<li id="li-152">Belyi Functions: Examples, Properties, and Applications - Zvonkin (really nice survey)</li>
+<li id="li-153">On Davenport’s bound for the degree of \(f^3 - g^2\) and Riemann's Existence Theorem - Umberto Zannier</li>
+<li id="li-154">Unifying Themes Suggested by Belyi's Theorem - Wushi Goldring</li>
+<li id="li-155">Polynomial Identities and Hauptmoduln - W. W. Stothers</li>
+<li id="li-156">Elliptic Surfaces and Davenport-Stothers Triples -  Tetsuji Shioda</li>
+<li id="li-157">The abc-theorem, Davenport’s inequality and elliptic surfaces - Tetsuji Shioda</li>
+<li id="li-158">It's As Easy As abc -  Andrew Granville, Thomas J. Tucker</li>
+<li id="li-159">Polynomial and Fermat-Pell families that attain the Davenport-Mason bound - Noam D. Elkies, Mark Watkins (on Watkins webpage)</li>
+<li id="li-160">Halltripels en kindertekeningen - Hans Montanus (in Dutch, but math is universal right?)</li>
+<li id="li-161">Computational Number Theory and Algebraic Geometry Spring 2012, taught by Noam Elkies, notes by Jason Bland</li>
+<li id="li-162">Davenport-Zannier polynomials over \(\QQ\) - Fedor Pakovich, Alexander K. Zvonkin (a nice extension perhaps?)</li>
+<li id="li-163">Minimum Degree of the Difference of Two Polynomials over Q, and Weighted Plane Trees -  Fedor Pakovich,  Alexander K. Zvonkin (as above)</li>
+<li id="li-164">The ABC-conjecture for polynomials - Abhishek Parab</li>
+<li id="li-165">On Marshall Hall's Conjecture and Gaps Between Integer Points on Mordell Elliptic Curves - Ryan D'Mello</li>
+<li id="li-166">Neighboring powers - F. Beukers, C. L. Stewart (a more general problem, but nice history and examples)</li>
+<li id="li-167">Rational Points Near Curves and Small Nonzero \(| x^3 - y^2|\) via Lattice Reduction - Elkies</li>
+<li id="li-168">ABC implies Mordell - Elkies</li>
+<li id="li-169">Dessins d'enfant -  Jeroen Sijsling (master thesis)</li>
+<li id="li-170">Algorithms and differential relations for Belyi functions - Mark van Hoeij, Raimundas Vidunas.</li>
+<li id="li-171">Belyi functions for hyperbolic hypergeometric-to-Heun transformations -  Mark van Hoeij, Raimundas Vidunas (has application to ABC over number fields at the end)</li>
+<li id="li-172">Some remarks on the S-unit equation in function fields  - Umberto Zannier</li>
+<li id="li-173">A note on integral points on elliptic curves - Mark Watkins</li>
+<li id="li-174">On Hall’s conjecture - Andrej Dujella (more recent progress)</li>
+<li id="li-175">Hecke Groups, Dessins d'Enfants and the Archimedean Solids -  Yang-Hui He, and James Read</li>
+<li id="li-176">Belyi functions for Archimedean solids - Nicolas Magot, Alexander Zvonkin (didn't really use this but it's nice!)</li>
 </ol></article></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->

@@ -58,7 +58,7 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{mathrsfs}\require{mathtools}\require{pgfplots}
 
 \newenvironment{smallermatrix}[1]
-{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\small
 \array{#1}}
 {\endarray}
 
@@ -371,7 +371,11 @@ MathJax.Hub.Config({
 <li><a href="sec-abhyankar-serre.html" data-scroll="sec-abhyankar-serre">Serre's proof in the solvable case (Angus)</a></li>
 <li><a href="sec-abhyankar-rigid.html" data-scroll="sec-abhyankar-rigid">Rigid analytic spaces (Aash)</a></li>
 <li><a href="sec-abhyankar-rigid-gaga.html" data-scroll="sec-abhyankar-rigid-gaga">Rigid GAGA (Aash)</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Raynaud 3) example?</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chapter-buntes-cm.html" data-scroll="chapter-buntes-cm"><span class="codenumber">8</span> <span class="title"></span></a><ul><li><a href="section-59.html" data-scroll="section-59">CM abelian varieties</a></li></ul>
 </li>
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="references-1.html" data-scroll="references-1"><span class="title">References</span></a></li>
@@ -412,8 +416,8 @@ MathJax.Hub.Config({
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
 </h6>
 <ol id="p-838" class="decimal">
-<li id="li-210">Preimage resistant iff when given \(j\) it is difficult to compute a positive integer \(e\) and an isogeny \(\phi\colon E_{j_0} \to E_j\) with degree \(l^e\text{.}\)</li>
-<li id="li-211">Collision resistant iff when given \(j\) it is difficult to compute \(e\) and  \(\phi \colon E_{j_0} \to E_{j_0}\) with degree \(l^e\text{.}\)</li>
+<li id="li-211">Preimage resistant iff when given \(j\) it is difficult to compute a positive integer \(e\) and an isogeny \(\phi\colon E_{j_0} \to E_j\) with degree \(l^e\text{.}\)</li>
+<li id="li-212">Collision resistant iff when given \(j\) it is difficult to compute \(e\) and  \(\phi \colon E_{j_0} \to E_{j_0}\) with degree \(l^e\text{.}\)</li>
 </ol></article></article></section><section class="subsection" id="subsection-70"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Diffie-Hellman Key Exchange (1976)</span>
 </h3>
@@ -434,24 +438,24 @@ MathJax.Hub.Config({
 <p id="p-850">Both compute \(\phi'_A\colon E_B \to E_B/\langle m_A\phi_B(P_A) + n_A\phi_B(Q_A)\rangle\) or analogous.</p>
 <p id="p-851">Shared secret is \(j(E_{AB})\text{.}\)</p></article><article class="paragraphs" id="paragraphs-36"><h5 class="heading"><span class="title">Hardness.</span></h5>
 <ol id="p-852" class="decimal">
-<li id="li-212">(Decisional supersingular isogeny problem) Given \(E, (P_A,Q_A)\) a basis for \(l_A^{e_A}\) torsion, let \(E_A\) be another curve, is \(E_A\) \(l_A^{e_A}\) isogenous to \(E\text{?}\)</li>
-<li id="li-213">(Computational supersingular isogeny problem) Let \(\phi_A \colon E \to E_A\) be an isogeny with a kernel of the form \(\langle m_AP_A + n_AQ_A \rangle\text{.}\) Given \(E_A\) and \(\phi_A(P_B)\) \(\phi_A(Q_B)\text{,}\) find \(R_A\text{.}\) \(p^{1/4}\) classical, \(p^{1/6}\) quantum.</li>
-<li id="li-214">Given \(E_A, E_B, \phi_A(P_B), \phi_A(Q_B), \phi_B(P_A), \phi_B(Q_A)\) find \(j\)-invariant of \(E_{AB}\text{.}\)</li>
+<li id="li-213">(Decisional supersingular isogeny problem) Given \(E, (P_A,Q_A)\) a basis for \(l_A^{e_A}\) torsion, let \(E_A\) be another curve, is \(E_A\) \(l_A^{e_A}\) isogenous to \(E\text{?}\)</li>
+<li id="li-214">(Computational supersingular isogeny problem) Let \(\phi_A \colon E \to E_A\) be an isogeny with a kernel of the form \(\langle m_AP_A + n_AQ_A \rangle\text{.}\) Given \(E_A\) and \(\phi_A(P_B)\) \(\phi_A(Q_B)\text{,}\) find \(R_A\text{.}\) \(p^{1/4}\) classical, \(p^{1/6}\) quantum.</li>
+<li id="li-215">Given \(E_A, E_B, \phi_A(P_B), \phi_A(Q_B), \phi_B(P_A), \phi_B(Q_A)\) find \(j\)-invariant of \(E_{AB}\text{.}\)</li>
 </ol></article></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.5</span> <span class="title">Supersingular isogeny public key</span>
 </h3>
 <p id="p-853">Classically DH key-exchange \(\leadsto\) ElGamal encryption.</p>
 <ol id="p-854" class="decimal">
-<li id="li-215">
+<li id="li-216">
 <p id="p-855">Key generation.</p>
 <p id="p-856">Alice: secret \(\phi_A \colon E \to E_A\text{,}\) public \(E_A\) and \(\phi_A(P_B), \phi_A(Q_B)\text{.}\)</p>
 </li>
-<li id="li-216">
+<li id="li-217">
 <p id="p-857">Encryption.</p>
 <p id="p-858">Bob: choose \(\phi_B \colon E \to E_B\text{,}\) compute \(j(E_{AB})\text{.}\)</p>
 <p id="p-859">Send Alice \(c = (E_B, \phi_B(P_A), \phi_B(Q_A), m\oplus j(E_{AB}))\)</p>
 </li>
-<li id="li-217">
+<li id="li-218">
 <p id="p-860">Decryption.</p>
 <p id="p-861">Alice use \((E_B, \phi_B(P_A), \phi_B(Q_A))\) to compute \(j(E_{AB})\text{.}\) Computes \((m\oplus j(E_{AB})) \oplus j(E_{AB}) = m\text{.}\)</p>
 </li>
@@ -460,19 +464,19 @@ MathJax.Hub.Config({
 <span class="type">Subsection</span> <span class="codenumber">3.2.6</span> <span class="title">Algorithmic aspects</span>
 </h3>
 <ol id="p-863" class="decimal">
-<li id="li-218">(Choosing \(f\)) Prime number theorem for arithmetic progressions gives you a bound on the density of primes of the form \(l_A^{e_A} l_B^{e_B} f \pm 1\)</li>
-<li id="li-219">Choosing a s.s. e.c. with the right group order, Broker's algorithm.</li>
-<li id="li-220">
+<li id="li-219">(Choosing \(f\)) Prime number theorem for arithmetic progressions gives you a bound on the density of primes of the form \(l_A^{e_A} l_B^{e_B} f \pm 1\)</li>
+<li id="li-220">Choosing a s.s. e.c. with the right group order, Broker's algorithm.</li>
+<li id="li-221">
 <p id="p-864">Finding a basis for \(E\lb l_A^{e_A}\rb\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-221">Find a random point in \(E(\FF_{p^2})\) say \(P\text{.}\)</li>
-<li id="li-222">Check the order of \((l_B^{e_B} f)^2 \cdot P\text{.}\) If its \(l_A^{e_A}\) set \(P_A = P\text{.}\) Otherwise repeat from 1.</li>
-<li id="li-223">Do the same with \(Q_A = Q\text{.}\)</li>
-<li id="li-224">Check independence by seeing if \(e(P_A,Q_A) \) has the right order, so that it is in \(E\lb l_A^{e_A} \rb\) torsion.</li>
+<li id="li-222">Find a random point in \(E(\FF_{p^2})\) say \(P\text{.}\)</li>
+<li id="li-223">Check the order of \((l_B^{e_B} f)^2 \cdot P\text{.}\) If its \(l_A^{e_A}\) set \(P_A = P\text{.}\) Otherwise repeat from 1.</li>
+<li id="li-224">Do the same with \(Q_A = Q\text{.}\)</li>
+<li id="li-225">Check independence by seeing if \(e(P_A,Q_A) \) has the right order, so that it is in \(E\lb l_A^{e_A} \rb\) torsion.</li>
 </ol>
 </li>
-<li id="li-225">Computing the kernels generated by \(R_A = m_A P_A + n_A Q_A\text{,}\) \(m_A, n_A \in \ZZ/l_A^{e_A} \ZZ\text{.}\) Analogue of double and add. Set \(R_A = P_A + \lb m_A\inv n_A\rb Q_A\text{.}\) Use differential addition (when you compute \(A+B\) with side info \(A-B\)) and a Montgomery ladder</li>
-<li id="li-226">(Computing smooth degree isogenies) Decompose the \(l_A^{e_A}\) isogeny into \(e_A\) different \(l_A\)-isogenies, \(\phi_i\colon E_i \to E_{i+1}\) the kernel of \(\phi_i\) is \(\langle l_A^{e_A - i - 1} R_A\rangle\text{.}\) Vélu's formula runs in \(O(l)\) for \(l\)-isogeny.</li>
+<li id="li-226">Computing the kernels generated by \(R_A = m_A P_A + n_A Q_A\text{,}\) \(m_A, n_A \in \ZZ/l_A^{e_A} \ZZ\text{.}\) Analogue of double and add. Set \(R_A = P_A + \lb m_A\inv n_A\rb Q_A\text{.}\) Use differential addition (when you compute \(A+B\) with side info \(A-B\)) and a Montgomery ladder</li>
+<li id="li-227">(Computing smooth degree isogenies) Decompose the \(l_A^{e_A}\) isogeny into \(e_A\) different \(l_A\)-isogenies, \(\phi_i\colon E_i \to E_{i+1}\) the kernel of \(\phi_i\) is \(\langle l_A^{e_A - i - 1} R_A\rangle\text{.}\) Vélu's formula runs in \(O(l)\) for \(l\)-isogeny.</li>
 </ol></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
