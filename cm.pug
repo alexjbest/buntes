@@ -1,0 +1,168 @@
+section
+    title CM abelian varieties 
+    introduction
+
+        p
+            | Let #[m k] be a field.
+
+        p
+            | Recall that an abelian variety is a proper group variety over #[m k].
+            | Let #[m A/k] be an abelian variety.
+
+        definition
+            title Endomorphism algebra
+            statement: p
+                | The endomorphism ring of #[m A] is the ring of all isogenies #[m A \to A]
+                me \End(A) = \Hom_{k-isog}(A,A)
+                | the endomorphism algebra is
+                me \End^0(A) = \End(A) \otimes \QQ
+                | this is a possibly non-commutative semisimple #[m \QQ]-alg.
+
+        p
+            | for a semisimple algebra the reduced degree is defined by decomposing
+            me B = \prod B_i
+            | simple algebras with center #[m k_i].
+        p
+            me [B: k]_{\mathrm{red}}=\sum_{i}\left[B_{i}: k_{i}\right]^{1 / 2} \cdot\left[k_{i}: k\right]
+        p
+            | We can bound the dimension of this algebra by  observing that it acts faithfully on the homology / tate module for #[m \ell \ne \characteristic k], these are dimension #[m 2\dim A]).
+            | With Artin-Wedderburn this gives
+            me 2\dim A \ge [ \End^0(A) : \QQ] _{red} \ge [ E:\QQ]
+            | for any etale algebra #[m E] in #[m \End^0(A)].
+
+        p
+            | If the first inequality is an equality they both are and we say that #[m A] has CM.
+            | In this case #[m \End^0(A)] is a product of matrix algebras over fields.
+
+        example
+            title Elliptic curves
+            statement: p
+                | We have several possibilities
+                ol
+                    li
+                        me A\colon  y^2+ y = x^3- x^2/\QQ
+                        | has #[m \End^0(A)= \QQ], dim #[m \sqrt 1 \cdot 1 \le 2] no CM
+                    li
+                        me A\colon  y^2 = x^3+ 1/\QQ(\zeta _3)
+                        | has #[m \End^0(A)= \QQ(\zeta _3)], dim #[m \sqrt 1 \cdot 2 \le 2], CM, own maximal etale.
+                    li
+                        me A\colon y^2 + y  = x^3 + x^2 +x + 1/\FF_4
+                        | we can find 24 automorphisms, that make the group #[m \SL_2(\FF_3)].
+                        | And #[m \End^0(A)] is the quaternion algebra #[m \QQ] ramified at #[m 2,\infty ].
+                        | So
+                        me [\End^0(A) : \QQ]_{red} = \sqrt 4 \cdot 1 = 2
+                        | here the maximal etale algebras inside are the imaginary quadratic fields contained in this quaternion algebra.
+                        me \left(\frac{-1,-1}{\QQ}\right)
+                    li
+                        | The same example over #[m \FF_2], of the 24 automorphisms only 2 are defined over #[m \FF_2], and we have
+                        me \End^0(A) = \QQ(\sqrt{-2})
+                        me [\End^0(A) : \QQ]_{red} = \sqrt 1 \cdot 2 = 2
+                        | so CM again with one of the same etale algebras #[m E] as before.
+                    li
+                        | Given a CM elliptic curve #[m A/\QQ] with CM by #[m F] can take the product
+                        me A \times A / k
+                        | this has dimension two and
+                        me \End^0(A) = \Mat_{2\times 2}(F)
+                        | this is a 4-dim algebra over its center of dim 2
+                        me \sqrt 4 \cdot 2 = 4 = 2 \dim A
+                        | etale algebra
+                        me E = F \times F
+                        | .
+                    li
+                        | Given non-isogenous CM elliptic curves #[m A,A'/\QQ] with CM by #[m F,F'] can take the product
+                        me A \times A' / k
+                        | this has dimension two and
+                        me \End^0(A) = F \times F'
+                        | this is a product of two 1-dimensional algebras over their centers
+                        me \sqrt 1 \cdot 2 +\sqrt 1 \cdot 2 = 4 = 2 \dim A
+                        | etale algebra
+                        me E = F \times F'
+                        | .
+
+    subsection
+        title Construction over #[m \CC]
+        p
+            | We can construct many examples over #[m \CC] as follows.
+
+        definition
+            title CM-pairs
+            statement: p
+                |  A CM-pair is  a pair
+                me E, \Phi 
+                | where  #[m E] is a product of CM fields (aka a CM-algebra).
+                | Such an algebra has an involution
+                me \iota _E \colon E\to E
+                | non-trivial on each field such that for any embedding
+                me \phi \in \Hom(E, \CC)
+                me \phi \circ \iota _E = \bar \cdot \circ \phi 
+                | .
+
+                | #[m \Phi ] is a CM-type
+                me \Phi  \subset \Hom(E, \CC)
+                | of cardinality #[m \dim E/2]
+                | s.t
+                me \iota _E \Phi \cup \Phi  = \Hom(E, \CC)
+                | .
+
+        p
+            | Given such a CM-pair and a choice of lattice
+            me \Lambda  \subseteq E
+            | we can form a complex torus
+            me \CC^\Phi  / \Phi (\Lambda )
+            | .
+            | To make this into an abelian variety we need the existence of a polarization.
+            | The relevant Riemann forms are given by
+            me E\times E \to \QQ
+            me (x,y ) \mapsto \trace_{E/\QQ}(\alpha  x \iota _E( y))
+            | for #[m \alpha  \in E^\times] satisfying
+            me \iota _E \alpha  = -\alpha 
+            me \im(\phi (\alpha )) \gt 0,\,\forall \phi  \in \Phi 
+            | .
+            
+        p
+            | So we can make a choice of #[m \alpha ] and obtain an abelian variety in this way.
+            | Such abelian varieties have CM as
+            me \End^0(A)
+            | contains etale algebra #[m E] which has dimension #[m 2 \cdot \# \Phi  = 2 \dim A].
+
+        theorem
+            title Tate
+            statement: p
+                | Every abelian variety over a finite field has CM.
+
+        theorem
+            title Grothendieck
+            statement: p
+                | Every abelian variety with CM over an algebraically closed field #[m K] of characteristic #[m p] is isogenous to a CM abelian variety over a finite field.
+
+
+        p
+            | Over #[m \CC]: A simple abelian variety has CM iff #[m \End^0(A)] is  a field of dimension #[m 2 \dim A], moreover such a field is necessarily a CM field.
+
+        proposition
+            statement: p
+                | Let #[m k \subseteq \CC] be algebraically closed them
+                me \{\text{abvar }/k\} \to \{\text{abvar }/k\}
+                | is fully faithful and the essential image contains all CM abelian varieties.
+            proof
+                statement: p
+                    | (Sketch)
+                    | Full faithfulness follows from: The torsion points are algebraic and Zariski dense.
+                    | For essential image take #[m A] we can find #[m A' /k] with same CM-type by spreading out type stuff, so #[m A'_\CC] is isogenous to the original.
+                    | Now the kernel of the isogeny is algebraic again so can quotient by it in both categories.
+
+        p
+            | So CM abvars #[m /k] are equivalent to CM abvars #[m /\CC].
+
+
+        p
+            | Using Neron(-Ogg-Shafarevich) we get 
+        proposition
+            statement: p
+                | Let #[m A] be an abelian variety over a number field #[m  k] with complex multiplication. Then #[m A] has potential good reduction at all finite primes of #[m k].
+
+
+        p
+            | Let #[m A] be an abelian variety with complex multiplication by $E$ over a field $k,$ and let $\mathfrak{a}$ be a lattice ideal in $R .$ A surjective homomorphism $\lambda^{\mathfrak{a}}: A \rightarrow A^{\mathfrak{a}}$ is an a-multiplication if every homomorphism $a: A \rightarrow A$ with $a \in \mathfrak{a}$ factors through $\lambda^{\mathfrak{a}},$ and $\lambda^{\mathfrak{a}}$ is universal for this property, in the sense that, for every surjective homomorphism $\lambda^{\prime}: A \rightarrow A^{\prime}$
+
+
